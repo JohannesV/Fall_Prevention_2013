@@ -1,11 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.6)  6 FEB 2013 15:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.12)  7 FEB 2013 21:17
 entering extended mode
 **ReportMain.tex
-
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\ReportM
-ain.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
 lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
@@ -261,9 +259,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2009/06/22 v3.00
 )
-(C:\Users\FilipAndreLarsen\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspa
-ce.sty
-Package: setspace 2011/12/19 v6.7a set line spacing
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -286,18 +285,17 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\ReportM
-ain.aux)
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
@@ -310,9 +308,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
-
-(C:\Users\FilipAndreLarsen\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf
-.mkii
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count89
 \scratchdimen=\dimen105
@@ -323,13 +319,12 @@ LaTeX Font Info:    ... okay on input line 10.
 \MPscratchCnt=\count92
 \MPscratchDim=\dimen106
 \MPnumerator=\count93
-\makeMPintoPDFobject=\count94
 \everyMPtoPDFconversion=\toks19
 )
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\ReportM
-ain.toc
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 3.
@@ -339,15 +334,15 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ))
 \tf@toc=\write3
 
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\Introdu
-ctionChapter.tex [1
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\IntroductionCha
+pter.tex [1
 
 
-{C:/Users/FilipAndreLarsen/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Chapter 1.
 )
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\Require
-mentsChapter.tex [2
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\RequirementsCha
+pter.tex [2
 
 ]
 Chapter 2.
@@ -358,49 +353,55 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
 )
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\AltSolu
-tionsChapter.tex [3
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\AltSolutionsCha
+pter.tex [3
 
 ]
 Chapter 3.
 )
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\Project
-ManagementChapter.tex [4
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ProjectManageme
+ntChapter.tex [4
 
 ]
 Chapter 4.
 )
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\Develop
-mentEnviromentChapter.tex [5
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\DevelopmentEnvi
+romentChapter.tex [5
 
 ]
 Chapter 5.
+
+Overfull \hbox (34.85837pt too wide) in paragraph at lines 3--5
+\OT1/cmr/m/n/12 The repos-i-tory that was to be used for the project was called
+ "Fall[]Prevention[]2013".
+ []
+
 )
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\Impleme
-ntationChapter.tex [6
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ImplementationC
+hapter.tex [6
 
 ]
 Chapter 6.
 ) [7
 
 ]
-(C:\Users\FilipAndreLarsen\Documents\GitHub\Fall_Prevention_2013\Report\ReportM
-ain.aux) ) 
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
+ ) 
 Here is how much of TeX's memory you used:
- 1723 strings out of 494045
- 23081 string characters out of 3145937
- 68556 words of memory out of 3000000
- 4995 multiletter control sequences out of 15000+200000
+ 1717 strings out of 494049
+ 22703 string characters out of 3146056
+ 68519 words of memory out of 3000000
+ 4985 multiletter control sequences out of 15000+200000
  11503 words of font info for 45 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  27i,8n,22p,435b,214s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ReportMain.pdf (7 pages, 76070 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on ReportMain.pdf (7 pages, 77094 bytes).
 PDF statistics:
  50 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
