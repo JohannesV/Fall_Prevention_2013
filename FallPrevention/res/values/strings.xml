@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MockOnTheTable</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_skriv_namn">SkrivNamn</string>
+    <string name="hei">Hei!</string>
+    <string name="kva_heiter_du">Kva heiter du?</string>
+    <string name="skriv_namn">Namn</string>
+    <string name="knapp">Trykk her</string>
+    <string name="title_activity_hovudskjerm">Hovudskjerm</string>
+    <string name="title_activity_hendingsforlop">Hendingsforlop</string>
+    <string name="title_activity_hendingsdetalj">Hendingsdetalj</string>
+
+</resources>
