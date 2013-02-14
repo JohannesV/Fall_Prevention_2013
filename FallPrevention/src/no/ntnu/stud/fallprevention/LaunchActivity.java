@@ -35,6 +35,7 @@ public class LaunchActivity extends Activity {
 			// namnesyn.setText(getString(R.string.greeting)+", "+namn);
 			startActivity(intent);
 		}
+		this.finish();
 	}
 
 	@Override
