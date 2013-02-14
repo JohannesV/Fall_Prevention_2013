@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:hint="@string/skriv_namn" >
+        android:hint="@string/write_name" >
     </EditText>
 
     <TextView
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/editText1"
         android:layout_centerHorizontal="true"
-        android:text="@string/kva_heiter_du"
+        android:text="@string/your_name_query"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:text="@string/hei"
+        android:text="@string/hi"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText1"
         android:layout_centerHorizontal="true"
-        android:text="@string/knapp"
+        android:text="@string/button"
         android:onClick="fyrNamn" />
 
 </RelativeLayout>

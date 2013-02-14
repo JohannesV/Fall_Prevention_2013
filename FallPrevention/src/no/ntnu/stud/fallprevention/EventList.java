@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
 
-public class Hendingsforlop extends ListActivity {
+public class EventList extends ListActivity {
 	
 	String[] strings = new String[] {"Du har gjort som du skulle!", "Hugs å gjera øvingane dine!", "Legen din er fornøgd :)", "Dette går bra!", "Skjerp deg!"};
 	
@@ -28,7 +28,7 @@ public class Hendingsforlop extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		String selectedString = strings[position];
-		Intent intent = new Intent(this, Hendingsdetalj.class);
+		Intent intent = new Intent(this, EventDetail.class);
 		intent.putExtra("com.example.mockonthetable.MESSAGE", selectedString);
 		startActivity(intent);
 	}

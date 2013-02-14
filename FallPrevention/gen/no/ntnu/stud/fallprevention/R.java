@@ -29,12 +29,12 @@ public final class R {
         public static final int textView2=0x7f070004;
     }
     public static final class layout {
-        public static final int activity_hendingsdetalj=0x7f030000;
-        public static final int activity_hendingsforlop=0x7f030001;
-        public static final int activity_hovudskjerm=0x7f030002;
-        public static final int activity_launch=0x7f030003;
-        public static final int activity_skriv_namn=0x7f030004;
-        public static final int hendingar=0x7f030005;
+        public static final int activity_eventdetail=0x7f030000;
+        public static final int activity_eventlist=0x7f030001;
+        public static final int activity_launch=0x7f030002;
+        public static final int activity_mainscreen=0x7f030003;
+        public static final int activity_write_name=0x7f030004;
+        public static final int events=0x7f030005;
     }
     public static final class menu {
         public static final int activity_hendingsdetalj=0x7f060000;
@@ -45,15 +45,16 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f040000;
-        public static final int hei=0x7f040003;
-        public static final int knapp=0x7f040006;
-        public static final int kva_heiter_du=0x7f040004;
+        public static final int button=0x7f040006;
+        public static final int greeting=0x7f04000a;
+        public static final int hi=0x7f040003;
         public static final int menu_settings=0x7f040001;
-        public static final int skriv_namn=0x7f040005;
-        public static final int title_activity_hendingsdetalj=0x7f040009;
-        public static final int title_activity_hendingsforlop=0x7f040008;
-        public static final int title_activity_hovudskjerm=0x7f040007;
-        public static final int title_activity_skriv_namn=0x7f040002;
+        public static final int title_activity_eventdetail=0x7f040009;
+        public static final int title_activity_eventlist=0x7f040008;
+        public static final int title_activity_mainscreen=0x7f040007;
+        public static final int title_activity_write_name=0x7f040002;
+        public static final int write_name=0x7f040005;
+        public static final int your_name_query=0x7f040004;
     }
     public static final class style {
         /** 

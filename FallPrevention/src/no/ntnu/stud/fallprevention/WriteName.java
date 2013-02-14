@@ -9,12 +9,12 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
-public class SkrivNamn extends Activity {
+public class WriteName extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_skriv_namn);
+		setContentView(R.layout.activity_write_name);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class SkrivNamn extends Activity {
 	
 	/** Blir fyrt av knappen. Skift til hovudskjerm **/
 	public void fyrNamn(View view) {
-		Intent intent = new Intent(this, Hovudskjerm.class);
+		Intent intent = new Intent(this, MainScreen.class);
 		// Hent ut info frå teksten
 		EditText eText = (EditText) findViewById(R.id.editText1);
 		String namn = eText.getText().toString();
@@ -39,6 +39,7 @@ public class SkrivNamn extends Activity {
 		editor.commit();
 		// Fyr neste aktivitet
 		startActivity(intent);
+		this.finish();
 		
 	}
 

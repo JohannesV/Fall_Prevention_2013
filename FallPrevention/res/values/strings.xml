@@ -2,12 +2,13 @@
 <resources>
     <string name="app_name">FallPrevention</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_skriv_namn">SkrivNamn</string>
-    <string name="hei">Hei!</string>
-    <string name="kva_heiter_du">Kva heiter du?</string>
-    <string name="skriv_namn">Namn</string>
-    <string name="knapp">Trykk her</string>
-    <string name="title_activity_hovudskjerm">Hovudskjerm</string>
-    <string name="title_activity_hendingsforlop">Hendingsforlop</string>
-    <string name="title_activity_hendingsdetalj">Hendingsdetalj</string>
+    <string name="title_activity_write_name">SkrivNamn</string>
+    <string name="hi">Hei!</string>
+    <string name="your_name_query">Kva heiter du?</string>
+    <string name="write_name">Namn</string>
+    <string name="button">Trykk her</string>
+    <string name="title_activity_mainscreen">Hovudskjerm</string>
+    <string name="title_activity_eventlist">Hendingsforlop</string>
+    <string name="title_activity_eventdetail">Hendingsdetalj</string>
+    <string name="greeting">Hei</string>
 </resources>

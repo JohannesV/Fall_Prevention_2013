@@ -7,12 +7,12 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
-public class Hovudskjerm extends Activity {
+public class MainScreen extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_hovudskjerm);
+		setContentView(R.layout.activity_mainscreen);
 		
 		// Hent ut infoen som kom med intenten
 		Intent morIntent = getIntent();
@@ -31,7 +31,7 @@ public class Hovudskjerm extends Activity {
 	}
 	
 	public void fyrHending(View view) {
-		Intent intent = new Intent(this, Hendingsforlop.class);
+		Intent intent = new Intent(this, EventList.class);
 		startActivity(intent);
 	}
 

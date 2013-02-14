@@ -15,27 +15,28 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="no.ntnu.stud.fallprevention.LaunchActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="no.ntnu.stud.fallprevention.SkrivNamn"
-            android:label="@string/title_activity_skriv_namn" >
+            android:name="no.ntnu.stud.fallprevention.WriteName"
+            android:label="@string/title_activity_write_name" >
         </activity>
         <activity
-            android:name="no.ntnu.stud.fallprevention.Hovudskjerm"
-            android:label="@string/title_activity_hovudskjerm" >
+            android:name="no.ntnu.stud.fallprevention.MainScreen"
+            android:label="@string/title_activity_mainscreen" >
         </activity>
         <activity
-            android:name="no.ntnu.stud.fallprevention.Hendingsforlop"
-            android:label="@string/title_activity_hendingsforlop" >
+            android:name="no.ntnu.stud.fallprevention.EventList"
+            android:label="@string/title_activity_eventlist" >
         </activity>
         <activity
-            android:name="no.ntnu.stud.fallprevention.Hendingsdetalj"
-            android:label="@string/title_activity_hendingsdetalj" >
+            android:name="no.ntnu.stud.fallprevention.EventDetail"
+            android:label="@string/title_activity_eventdetail" >
         </activity>
     </application>
 

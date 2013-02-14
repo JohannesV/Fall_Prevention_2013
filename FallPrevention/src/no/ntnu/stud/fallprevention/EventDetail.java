@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.view.Menu;
 import android.widget.TextView;
 
-public class Hendingsdetalj extends Activity {
+public class EventDetail extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_hendingsdetalj);
+		setContentView(R.layout.activity_eventdetail);
 		
 		Intent morIntent = getIntent();
 		String beskjed = morIntent.getStringExtra("com.example.mockonthetable.MESSAGE");
