@@ -12,11 +12,12 @@ public class EventDetail extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_eventdetail);
-		
-		Intent morIntent = getIntent();
-		String beskjed = morIntent.getStringExtra("com.example.mockonthetable.MESSAGE");
+
+		Intent motherIntent = getIntent();
+		String message = motherIntent
+				.getStringExtra("no.ntnu.stud.fallprevention.MESSAGE");
 		TextView btw = (TextView) findViewById(R.id.textView1);
-		btw.setText(beskjed);
+		btw.setText(message);
 	}
 
 	@Override

@@ -18,21 +18,21 @@ public class LaunchActivity extends Activity {
 		
 		
 		// Open SharedPrefrences-fila, og finn ut om namn allereie er lagra i mobilen
-		SharedPreferences sp = getSharedPreferences("com.example.mockonthetable.PREFILE", Context.MODE_PRIVATE);
-		String namn = sp.getString("namn", "NONAME");
+		SharedPreferences sp = getSharedPreferences("no.ntnu.stud.fallprevention.PREFILE", Context.MODE_PRIVATE);
+		String name = sp.getString("name", "NONAME");
 		
 		// Anten gå rett til hovudmeny, eller be brukar skrive inn namn
-		if (namn.equals("NONAME")) {
+		if (name.equals("NONAME")) {
 			Intent intent = new Intent(this, WriteName.class);
 			//setContentView(R.layout.activity_write_name);
 			startActivity(intent);
 		} else {
 			
 			Intent intent = new Intent(this, MainScreen.class);
-			intent.putExtra("com.example.mockonthetable.MESSAGE", namn);
+			intent.putExtra("no.ntnu.stud.fallprevention.MESSAGE", name);
 			//setContentView(R.layout.activity_mainscreen);
 			//TextView namnesyn = (TextView) findViewById(R.id.textView1);
-			//namnesyn.setText(getString(R.string.greeting)+", "+namn);
+			// namnesyn.setText(getString(R.string.greeting)+", "+namn);
 			startActivity(intent);
 		}
 	}

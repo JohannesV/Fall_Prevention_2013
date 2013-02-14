@@ -8,13 +8,15 @@ import android.view.View;
 import android.widget.ListView;
 
 public class EventList extends ListActivity {
-	
-	String[] strings = new String[] {"Du har gjort som du skulle!", "Hugs å gjera øvingane dine!", "Legen din er fornøgd :)", "Dette går bra!", "Skjerp deg!"};
-	
+
+	String[] strings = new String[] { "Du har gjort som du skulle!",
+			"Hugs å gjera øvingane dine!", "Legen din er fornøgd :)",
+			"Dette går bra!", "Skjerp deg!" };
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		setListAdapter(new ListDrawAdapter(this, strings));
 	}
 
@@ -24,12 +26,12 @@ public class EventList extends ListActivity {
 		getMenuInflater().inflate(R.menu.activity_hendingsforlop, menu);
 		return true;
 	}
-	
+
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		String selectedString = strings[position];
 		Intent intent = new Intent(this, EventDetail.class);
-		intent.putExtra("com.example.mockonthetable.MESSAGE", selectedString);
+		intent.putExtra("no.ntnu.stud.fallprevention.MESSAGE", selectedString);
 		startActivity(intent);
 	}
 

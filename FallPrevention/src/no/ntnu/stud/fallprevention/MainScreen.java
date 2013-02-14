@@ -13,14 +13,15 @@ public class MainScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mainscreen);
-		
+
 		// Hent ut infoen som kom med intenten
-		Intent morIntent = getIntent();
-		String namn = morIntent.getStringExtra("com.example.mockonthetable.MESSAGE");
-		namn = "Hei, " + namn + "!";
+		Intent motherIntent = getIntent();
+		String name = motherIntent
+				.getStringExtra("no.ntnu.stud.fallprevention.MESSAGE");
+		name = getString(R.string.greeting) + ", " + name + "!";
 		// Vis namnet på skjermen
 		TextView namnesyn = (TextView) findViewById(R.id.textView1);
-		namnesyn.setText(namn);
+		namnesyn.setText(name);
 	}
 
 	@Override
@@ -29,8 +30,8 @@ public class MainScreen extends Activity {
 		getMenuInflater().inflate(R.menu.activity_hovudskjerm, menu);
 		return true;
 	}
-	
-	public void fyrHending(View view) {
+
+	public void fireEvent(View view) {
 		Intent intent = new Intent(this, EventList.class);
 		startActivity(intent);
 	}

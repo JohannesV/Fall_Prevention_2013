@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SkrivNamn" >
+    tools:context=".WriteName" >
 
     <EditText
         android:id="@+id/editText1"
@@ -39,6 +39,6 @@
         android:layout_below="@+id/editText1"
         android:layout_centerHorizontal="true"
         android:text="@string/button"
-        android:onClick="fyrNamn" />
+        android:onClick="fireName" />
 
 </RelativeLayout>

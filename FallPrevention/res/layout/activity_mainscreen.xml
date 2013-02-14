@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Hovudskjerm" >
+    tools:context=".MainScreen" >
 
     <TextView
         android:id="@+id/textView1"
@@ -17,6 +17,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.56"
         android:src="@drawable/smiley"
-        android:onClick="fyrHending" />
+        android:onClick="fireEvent" />
 
 </LinearLayout>

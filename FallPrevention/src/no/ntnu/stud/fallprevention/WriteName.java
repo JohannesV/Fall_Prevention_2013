@@ -25,20 +25,21 @@ public class WriteName extends Activity {
 	}
 	
 	/** Blir fyrt av knappen. Skift til hovudskjerm **/
-	public void fyrNamn(View view) {
+	public void fireName(View view) {
 		Intent intent = new Intent(this, MainScreen.class);
 		// Hent ut info frå teksten
 		EditText eText = (EditText) findViewById(R.id.editText1);
-		String namn = eText.getText().toString();
+		String name = eText.getText().toString();
 		// Legg inn teksten i intenten
-		intent.putExtra("com.example.mockonthetable.MESSAGE", namn);
+		intent.putExtra("no.ntnu.stud.fallprevention.MESSAGE", name);
 		// Lagre namn i prefrences-fila
-		SharedPreferences sp = getSharedPreferences("com.example.mockonthetable.PREFILE", Context.MODE_PRIVATE);
+		SharedPreferences sp = getSharedPreferences("no.ntnu.stud.fallprevention.PREFILE", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = sp.edit();
-		editor.putString("namn",namn);
+		editor.putString("name",name);
 		editor.commit();
 		// Fyr neste aktivitet
 		startActivity(intent);
+		//Makes sure this activity goes away and cannot be accessed with back-button
 		this.finish();
 		
 	}
