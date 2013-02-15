@@ -23,17 +23,14 @@ public class LaunchActivity extends Activity {
 		// Either go the main screen, or go to write name screen
 		if (name.equals("NONAME")) {
 			Intent intent = new Intent(this, WriteName.class);
-			//setContentView(R.layout.activity_write_name);
 			startActivity(intent);
 		} else {
 			
 			Intent intent = new Intent(this, MainScreen.class);
 			intent.putExtra("no.ntnu.stud.fallprevention.MESSAGE", name);
-			//setContentView(R.layout.activity_mainscreen);
-			//TextView namnesyn = (TextView) findViewById(R.id.textView1);
-			// namnesyn.setText(getString(R.string.greeting)+", "+namn);
 			startActivity(intent);
 		}
+		// Finish the current activity so that you cannot go back to it later.
 		this.finish();
 	}
 

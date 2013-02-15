@@ -13,6 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
         <activity
             android:name="no.ntnu.stud.fallprevention.LaunchActivity"
             android:label="@string/app_name" 
@@ -22,22 +23,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name="no.ntnu.stud.fallprevention.WriteName"
-            android:label="@string/title_activity_write_name" >
+            android:label="@string/title_activity_write_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
         <activity
             android:name="no.ntnu.stud.fallprevention.MainScreen"
-            android:label="@string/title_activity_mainscreen" >
+            android:label="@string/title_activity_mainscreen"
+			android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
         <activity
             android:name="no.ntnu.stud.fallprevention.EventList"
-            android:label="@string/title_activity_eventlist" >
+            android:label="@string/title_activity_eventlist"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
         <activity
             android:name="no.ntnu.stud.fallprevention.EventDetail"
-            android:label="@string/title_activity_eventdetail" >
+            android:label="@string/title_activity_eventdetail"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
     </application>
 
 </manifest>
