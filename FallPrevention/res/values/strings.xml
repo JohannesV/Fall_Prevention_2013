@@ -11,4 +11,7 @@
     <string name="title_activity_eventlist">Hendingsforlop</string>
     <string name="title_activity_eventdetail">Hendingsdetalj</string>
     <string name="greeting">Hei</string>
+    <string name="keep">Behald han</string>
+    <string name="delete">Slett han</string>
+    <string name="do_with_event">Kva vil du gjera med denne beskjeden?</string>
 </resources>

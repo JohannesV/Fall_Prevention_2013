@@ -16,7 +16,7 @@ public class EventDetail extends Activity {
 		Intent motherIntent = getIntent();
 		String message = motherIntent
 				.getStringExtra("no.ntnu.stud.fallprevention.MESSAGE");
-		TextView btw = (TextView) findViewById(R.id.textView1);
+		TextView btw = (TextView) findViewById(R.id.headlineTextView);
 		btw.setText(message);
 	}
 
