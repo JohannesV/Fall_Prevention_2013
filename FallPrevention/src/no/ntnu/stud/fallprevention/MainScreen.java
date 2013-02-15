@@ -14,12 +14,12 @@ public class MainScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mainscreen);
 
-		// Hent ut infoen som kom med intenten
+		// Extract the information contained in the intent that created this activity
 		Intent motherIntent = getIntent();
 		String name = motherIntent
 				.getStringExtra("no.ntnu.stud.fallprevention.MESSAGE");
 		name = getString(R.string.greeting) + ", " + name + "!";
-		// Vis namnet på skjermen
+		// Show name on screen
 		TextView namnesyn = (TextView) findViewById(R.id.textView1);
 		namnesyn.setText(name);
 	}
@@ -27,7 +27,7 @@ public class MainScreen extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_hovudskjerm, menu);
+		getMenuInflater().inflate(R.menu.activity_mainscreen, menu);
 		return true;
 	}
 

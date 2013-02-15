@@ -37,11 +37,11 @@ public final class R {
         public static final int events=0x7f030005;
     }
     public static final class menu {
-        public static final int activity_hendingsdetalj=0x7f060000;
-        public static final int activity_hendingsforlop=0x7f060001;
-        public static final int activity_hovudskjerm=0x7f060002;
-        public static final int activity_launch=0x7f060003;
-        public static final int activity_skriv_namn=0x7f060004;
+        public static final int activity_eventdetail=0x7f060000;
+        public static final int activity_eventlist=0x7f060001;
+        public static final int activity_launch=0x7f060002;
+        public static final int activity_mainscreen=0x7f060003;
+        public static final int activity_write_name=0x7f060004;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

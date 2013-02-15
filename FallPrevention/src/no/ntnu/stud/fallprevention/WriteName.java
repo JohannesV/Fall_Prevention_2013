@@ -20,24 +20,24 @@ public class WriteName extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_skriv_namn, menu);
+		getMenuInflater().inflate(R.menu.activity_write_name, menu);
 		return true;
 	}
 	
-	/** Blir fyrt av knappen. Skift til hovudskjerm **/
+	/** Method is fired by button click. Takes the user to the main screen **/
 	public void fireName(View view) {
 		Intent intent = new Intent(this, MainScreen.class);
-		// Hent ut info frå teksten
+		// Extract information from text field
 		EditText eText = (EditText) findViewById(R.id.editText1);
 		String name = eText.getText().toString();
-		// Legg inn teksten i intenten
+		// Add the name as extra information to the intent 
 		intent.putExtra("no.ntnu.stud.fallprevention.MESSAGE", name);
-		// Lagre namn i prefrences-fila
+		// Store the name in the phone, using the shared prefrences file
 		SharedPreferences sp = getSharedPreferences("no.ntnu.stud.fallprevention.PREFILE", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = sp.edit();
 		editor.putString("name",name);
 		editor.commit();
-		// Fyr neste aktivitet
+		// Start next activity
 		startActivity(intent);
 		//Makes sure this activity goes away and cannot be accessed with back-button
 		this.finish();
