@@ -27,25 +27,25 @@
         <activity
             android:name="no.ntnu.stud.fallprevention.WriteName"
             android:label="@string/title_activity_write_name"
-            android:theme="@android:style/Theme.NoTitleBar" >
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         
         <activity
             android:name="no.ntnu.stud.fallprevention.MainScreen"
             android:label="@string/title_activity_mainscreen"
-			android:theme="@android:style/Theme.NoTitleBar" >
+			android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         
         <activity
             android:name="no.ntnu.stud.fallprevention.EventList"
             android:label="@string/title_activity_eventlist"
-            android:theme="@android:style/Theme.NoTitleBar" >
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         
         <activity
             android:name="no.ntnu.stud.fallprevention.EventDetail"
             android:label="@string/title_activity_eventdetail"
-            android:theme="@android:style/Theme.NoTitleBar" >
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         
     </application>
