@@ -1,5 +1,7 @@
 package no.ntnu.stud.fallprevention;
 
+import java.util.List;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +13,9 @@ import android.widget.TextView;
 public class ListDrawAdapter extends ArrayAdapter<String> {
 
 	Context context;
-	String[] values;
+	List<String> values;
 
-	public ListDrawAdapter(Context context, String[] values) {
+	public ListDrawAdapter(Context context, List<String> values) {
 		super(context, R.layout.events, values);
 		this.context = context;
 		this.values = values;
@@ -27,10 +29,10 @@ public class ListDrawAdapter extends ArrayAdapter<String> {
 		View rowView = inflater.inflate(R.layout.events, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
-		textView.setText(values[position]);
+		textView.setText(values.get(position));
 
 		// Change icon based on name
-		String s = values[position];
+		String s = values.get(position);
 
 		if (s.equals("Legen din er fornøgd :)")) {
 			imageView.setImageResource(R.drawable.halo);

@@ -1,13 +1,14 @@
 package no.ntnu.stud.fallprevention;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
 
 public class EventDetail extends Activity {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -16,8 +17,8 @@ public class EventDetail extends Activity {
 		Intent motherIntent = getIntent();
 		String message = motherIntent
 				.getStringExtra("no.ntnu.stud.fallprevention.MESSAGE");
-		TextView btw = (TextView) findViewById(R.id.headlineTextView);
-		btw.setText(message);
+		TextView textView = (TextView) findViewById(R.id.headlineTextView);
+		textView.setText(message);
 	}
 
 	@Override
@@ -26,5 +27,14 @@ public class EventDetail extends Activity {
 		getMenuInflater().inflate(R.menu.activity_eventdetail, menu);
 		return true;
 	}
-
+	
+	public void fireDeleteButton(View view) {
+		Intent intent = new Intent(this, EventList.class);
+		startActivity(intent);
+	}
+	
+	public void fireKeepButton(View view) {
+		Intent intent = new Intent(this, EventList.class);
+		startActivity(intent);
+	}
 }

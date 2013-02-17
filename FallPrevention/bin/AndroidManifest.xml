@@ -40,7 +40,8 @@
         <activity
             android:name="no.ntnu.stud.fallprevention.EventList"
             android:label="@string/title_activity_eventlist"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:launchMode="singleTask" >
         </activity>
         
         <activity

@@ -1,5 +1,8 @@
 package no.ntnu.stud.fallprevention;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,14 +12,26 @@ import android.widget.ListView;
 
 public class EventList extends ListActivity {
 
-	String[] strings = new String[] { "Du har gjort som du skulle!",
-			"Hugs å gjera øvingane dine!", "Legen din er fornøgd :)",
-			"Dette går bra!", "Skjerp deg!" };
+	List<String> strings = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		strings.add("Du har gjort som du skulle!");
+		strings.add("Hugs å gjera øvingane dine!");
+		strings.add("Legen din er fornøgd :)");
+		strings.add("Dette går bra!");
+		strings.add("Skjerp deg!");
+		strings.add("Du er ein latsabb :(");
+		strings.add("Fortsett som det her framover");
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		// Redraw the list every time the activity is resumed, in order to 
+		// ensure that the list is always up-to-date.
 		setListAdapter(new ListDrawAdapter(this, strings));
 	}
 
@@ -29,7 +44,7 @@ public class EventList extends ListActivity {
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		String selectedString = strings[position];
+		String selectedString = strings.get(position);
 		Intent intent = new Intent(this, EventDetail.class);
 		intent.putExtra("no.ntnu.stud.fallprevention.MESSAGE", selectedString);
 		startActivity(intent);
