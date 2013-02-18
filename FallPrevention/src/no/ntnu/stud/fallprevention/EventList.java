@@ -44,9 +44,8 @@ public class EventList extends ListActivity {
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		String selectedString = strings.get(position);
 		Intent intent = new Intent(this, EventDetail.class);
-		intent.putExtra("no.ntnu.stud.fallprevention.MESSAGE", selectedString);
+		intent.putExtra("no.ntnu.stud.fallprevention.ID", 0);
 		startActivity(intent);
 	}
 

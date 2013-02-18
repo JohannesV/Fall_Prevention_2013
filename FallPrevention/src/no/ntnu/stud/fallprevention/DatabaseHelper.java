@@ -1,0 +1,60 @@
+package no.ntnu.stud.fallprevention;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+/**
+ * Database helper is an object that builds and maintains the database. Or
+ * something like that. I think.
+ * 
+ * @author elias
+ *
+ */
+
+public class DatabaseHelper extends SQLiteOpenHelper {
+
+	public static final int DATABASE_VERSION = 1;
+	public static final String DATABASE_NAME = "FallPrevention.db";
+	
+	private static final String COMMA_SEP = ", ";
+	private static final String START_PAR = " (";
+	private static final String END_PAR = ") ";
+	
+	public DatabaseHelper(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+	}
+	
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		final String CREATE_TABLE_1 = 
+				"CREATE TABLE " + DatabaseContract.EventType.TABLE_NAME + START_PAR +
+				DatabaseContract.EventType.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
+				DatabaseContract.EventType.COLUMN_NAME_TITLE + COMMA_SEP +
+				DatabaseContract.EventType.COLUMN_NAME_DESCRIPTION + END_PAR;
+		final String CREATE_TABLE_2 = 
+				"CREATE TABLE " + DatabaseContract.Event.TABLE_NAME + START_PAR +
+				DatabaseContract.Event.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
+				DatabaseContract.Event.COLUMN_NAME_TYPEID + END_PAR;
+		final String FILL_INFO_1 = 
+				"INSERT INTO EventType (TypeID, Description, Headline) VALUES (0, \'You should really keep working out and not be a lazy bastard!\', \'You are lazy!\')";
+		final String FILL_INFO_2 = 
+				"INSERT INTO Event (ID, TypeID) VALUES (0, 0)";
+		
+		db.execSQL(CREATE_TABLE_1);
+		db.execSQL(CREATE_TABLE_2);
+		db.execSQL(FILL_INFO_1);
+		db.execSQL(FILL_INFO_2);
+	}
+	
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		// TODO: Should be implemented
+	}
+	
+	@Override
+	public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		// TODO: May be implemented
+	}
+
+}
