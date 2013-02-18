@@ -17,9 +17,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final int DATABASE_VERSION = 4;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
-	private static final String COMMA_SEP = ", ";
-	private static final String START_PAR = " (";
-	private static final String END_PAR = ") ";
+	public static final String COMMA_SEP = ", ";
+	public static final String START_PAR = " (";
+	public static final String END_PAR = ") ";
 	
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -60,14 +60,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// Clears the database on an upgrade, and reset it
-		db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.Event.TABLE_NAME);
-		db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.EventType.TABLE_NAME);
+		db.execSQL("DROP TABLE *");
 		onCreate(db);
 	}
 	
 	@Override
 	public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO: May be implemented
+		// Does the same as if the database has been upgraded.
+		onUpgrade(db, oldVersion, newVersion);
 	}
 
 }

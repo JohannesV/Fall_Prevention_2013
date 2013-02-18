@@ -47,11 +47,18 @@ public class EventDetail extends Activity {
 	}
 	
 	public void fireDeleteButton(View view) {
+		// First, delete this event from the database
+		DatabaseHelper dbh = new DatabaseHelper(this);
+		SQLiteDatabase db = dbh.getWritableDatabase();
+		db.delete(DatabaseContract.Event.TABLE_NAME, DatabaseContract.Event.COLUMN_NAME_ID + " = ?", new String[] {String.valueOf(eventId)});
+		db.close();
+		// Then go back to EventList screen
 		Intent intent = new Intent(this, EventList.class);
 		startActivity(intent);
 	}
 	
 	public void fireKeepButton(View view) {
+		// Go back to EventList screen
 		Intent intent = new Intent(this, EventList.class);
 		startActivity(intent);
 	}
