@@ -19,6 +19,7 @@ public abstract class DatabaseContract {
 		public static final String COLUMN_NAME_ID = "TypeID";
 		public static final String COLUMN_NAME_DESCRIPTION = "Description";
 		public static final String COLUMN_NAME_TITLE = "Headline";
+		public static final String COLUMN_NAME_ICON = "Icon";
 	}
 	
 	public static abstract class Event implements BaseColumns {

@@ -5,6 +5,8 @@ import java.util.List;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -12,19 +14,11 @@ import android.widget.ListView;
 
 public class EventList extends ListActivity {
 
-	List<String> strings = new ArrayList<String>();
+	List<String> strings;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		strings.add("Du har gjort som du skulle!");
-		strings.add("Hugs å gjera øvingane dine!");
-		strings.add("Legen din er fornøgd :)");
-		strings.add("Dette går bra!");
-		strings.add("Skjerp deg!");
-		strings.add("Du er ein latsabb :(");
-		strings.add("Fortsett som det her framover");
 	}
 	
 	@Override
@@ -32,6 +26,17 @@ public class EventList extends ListActivity {
 		super.onResume();
 		// Redraw the list every time the activity is resumed, in order to 
 		// ensure that the list is always up-to-date.
+		strings = new ArrayList<String>();
+		
+		DatabaseHelper dbh = new DatabaseHelper(this);
+		SQLiteDatabase db = dbh.getReadableDatabase();
+		
+		Cursor c = db.rawQuery("SELECT Headline, Icon FROM Event INNER JOIN EventType ON Event.TypeID=EventType.TypeID", null);
+		c.moveToFirst();
+		do {
+			strings.add("Haha");
+		} while(c.moveToNext());
+		
 		setListAdapter(new ListDrawAdapter(this, strings));
 	}
 
