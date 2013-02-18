@@ -28,6 +28,7 @@ public final class R {
         public static final int layout=0x7f070003;
         public static final int logo=0x7f07000c;
         public static final int mainTextView=0x7f070001;
+        public static final int menu_related=0x7f070010;
         public static final int menu_settings=0x7f07000e;
         public static final int menu_statistics=0x7f07000f;
         public static final int mylist=0x7f070006;
@@ -40,35 +41,46 @@ public final class R {
         public static final int activity_eventlist=0x7f030001;
         public static final int activity_launch=0x7f030002;
         public static final int activity_mainscreen=0x7f030003;
-        public static final int activity_write_name=0x7f030004;
-        public static final int eventlist_entry=0x7f030005;
+        public static final int activity_related=0x7f030004;
+        public static final int activity_settings=0x7f030005;
+        public static final int activity_statistics=0x7f030006;
+        public static final int activity_write_name=0x7f030007;
+        public static final int eventlist_entry=0x7f030008;
     }
     public static final class menu {
         public static final int activity_eventdetail=0x7f060000;
         public static final int activity_eventlist=0x7f060001;
         public static final int activity_launch=0x7f060002;
         public static final int activity_mainscreen=0x7f060003;
-        public static final int activity_write_name=0x7f060004;
+        public static final int activity_related=0x7f060004;
+        public static final int activity_settings=0x7f060005;
+        public static final int activity_statistics=0x7f060006;
+        public static final int activity_write_name=0x7f060007;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
-        public static final int button=0x7f040007;
-        public static final int delete=0x7f04000d;
-        public static final int do_with_event=0x7f04000e;
-        public static final int greeting=0x7f04000b;
-        public static final int hi=0x7f040004;
-        public static final int keep=0x7f04000c;
-        public static final int lorem_long=0x7f040010;
-        public static final int lorem_short=0x7f04000f;
+        public static final int button=0x7f040008;
+        public static final int delete=0x7f04000e;
+        public static final int do_with_event=0x7f04000f;
+        public static final int greeting=0x7f04000c;
+        public static final int hello_world=0x7f040013;
+        public static final int hi=0x7f040005;
+        public static final int keep=0x7f04000d;
+        public static final int lorem_long=0x7f040011;
+        public static final int lorem_short=0x7f040010;
+        public static final int menu_related=0x7f040003;
         public static final int menu_settings=0x7f040001;
         public static final int menu_statistics=0x7f040002;
-        public static final int no_events=0x7f040011;
-        public static final int title_activity_eventdetail=0x7f04000a;
-        public static final int title_activity_eventlist=0x7f040009;
-        public static final int title_activity_mainscreen=0x7f040008;
-        public static final int title_activity_write_name=0x7f040003;
-        public static final int write_name=0x7f040006;
-        public static final int your_name_query=0x7f040005;
+        public static final int no_events=0x7f040012;
+        public static final int title_activity_eventdetail=0x7f04000b;
+        public static final int title_activity_eventlist=0x7f04000a;
+        public static final int title_activity_mainscreen=0x7f040009;
+        public static final int title_activity_related=0x7f040016;
+        public static final int title_activity_settings=0x7f040015;
+        public static final int title_activity_statistics=0x7f040014;
+        public static final int title_activity_write_name=0x7f040004;
+        public static final int write_name=0x7f040007;
+        public static final int your_name_query=0x7f040006;
     }
     public static final class style {
         /** 

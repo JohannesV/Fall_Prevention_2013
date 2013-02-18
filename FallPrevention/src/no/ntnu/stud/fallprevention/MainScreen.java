@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainScreen extends Activity {
 
@@ -34,12 +35,19 @@ public class MainScreen extends Activity {
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent intent;
 		switch(item.getItemId()){
-		case R.id.menu_statistics:
-			//TODO: start the statistics activity
+		case R.id.menu_statistics:		
+			intent = new Intent(this, Statistics.class);
+			startActivity(intent);
 			break;
 		case R.id.menu_settings:
-			//TODO: start the setting activity, if we get one
+			intent = new Intent(this, Settings.class);
+			startActivity(intent);
+			break;
+		case R.id.menu_related:
+			intent = new Intent(this, Related.class);
+			startActivity(intent);
 			break;
 		}
 		return false;

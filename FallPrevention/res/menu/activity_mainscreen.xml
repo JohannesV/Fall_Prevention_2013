@@ -9,4 +9,9 @@
     <item
         android:id="@+id/menu_statistics"
         android:title="@string/menu_statistics"/>
-        </menu>
+    
+    <item 
+        android:id="@+id/menu_related"
+        android:title="@string/menu_related"/>
+    
+</menu>
