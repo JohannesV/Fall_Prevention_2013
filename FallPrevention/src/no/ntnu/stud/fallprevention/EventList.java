@@ -14,7 +14,7 @@ import android.widget.ListView;
 
 public class EventList extends ListActivity {
 
-	List<String> strings;
+	List<Event> events;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,18 +26,26 @@ public class EventList extends ListActivity {
 		super.onResume();
 		// Redraw the list every time the activity is resumed, in order to 
 		// ensure that the list is always up-to-date.
-		strings = new ArrayList<String>();
+		events = new ArrayList<Event>();
 		
 		DatabaseHelper dbh = new DatabaseHelper(this);
 		SQLiteDatabase db = dbh.getReadableDatabase();
+
+		Cursor c = db.rawQuery("SELECT Headline, ID, Icon FROM Event INNER JOIN EventType ON Event.TypeID=EventType.TypeID", null);
 		
-		Cursor c = db.rawQuery("SELECT Headline, Icon FROM Event INNER JOIN EventType ON Event.TypeID=EventType.TypeID", null);
+		// Iterate over the data fetched
 		c.moveToFirst();
 		do {
-			strings.add("Haha");
+			Event e = new Event( c.getString(0), Integer.parseInt(c.getString(1)), c.getString(2) );
+			events.add(e);
 		} while(c.moveToNext());
 		
-		setListAdapter(new ListDrawAdapter(this, strings));
+		// Close database connection
+		c.close();
+		db.close();
+		
+		// Display the information
+		setListAdapter(new ListDrawAdapter(this, events));
 	}
 
 	@Override
@@ -50,7 +58,7 @@ public class EventList extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Intent intent = new Intent(this, EventDetail.class);
-		intent.putExtra("no.ntnu.stud.fallprevention.ID", 0);
+		intent.putExtra("no.ntnu.stud.fallprevention.ID", events.get(position).getId());
 		startActivity(intent);
 	}
 

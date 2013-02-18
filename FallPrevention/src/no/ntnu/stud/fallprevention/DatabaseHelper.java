@@ -14,7 +14,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 2;
+	public static final int DATABASE_VERSION = 4;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	private static final String COMMA_SEP = ", ";
@@ -38,14 +38,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				DatabaseContract.Event.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
 				DatabaseContract.Event.COLUMN_NAME_TYPEID + END_PAR;
 		final String FILL_INFO_1 = 
-				"INSERT INTO EventType (TypeID, Description, Headline) VALUES (0, \'You should really keep working out and not be a lazy bastard!\', \'You are lazy!\')";
+				"INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (0, \'You should really keep working out and not be a lazy bastard!\', \'You are lazy!\', \'halo\')";
 		final String FILL_INFO_2 = 
+				"INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (1, \'You are really cool, beacause you spend a lot of time clicking through our program!\', \'You are awesome!\', \'sleep\')";
+		final String FILL_INFO_3 = 
 				"INSERT INTO Event (ID, TypeID) VALUES (0, 0)";
+		final String FILL_INFO_4 = 
+				"INSERT INTO Event (ID, TypeID) VALUES (1, 1)";
+		final String FILL_INFO_5 = 
+				"INSERT INTO Event (ID, TypeID) VALUES (2, 1)";
 		
 		db.execSQL(CREATE_TABLE_1);
 		db.execSQL(CREATE_TABLE_2);
 		db.execSQL(FILL_INFO_1);
 		db.execSQL(FILL_INFO_2);
+		db.execSQL(FILL_INFO_3);
+		db.execSQL(FILL_INFO_4);
+		db.execSQL(FILL_INFO_5);
 	}
 	
 	@Override

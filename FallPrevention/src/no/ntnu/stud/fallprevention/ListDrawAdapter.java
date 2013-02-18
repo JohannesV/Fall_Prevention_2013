@@ -1,5 +1,6 @@
 package no.ntnu.stud.fallprevention;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
@@ -13,12 +14,21 @@ import android.widget.TextView;
 public class ListDrawAdapter extends ArrayAdapter<String> {
 
 	Context context;
-	List<String> values;
+	List<Event> events;
 
-	public ListDrawAdapter(Context context, List<String> values) {
-		super(context, R.layout.events, values);
+	private static List<String> eventToStringList(List<Event> events) {
+		List<String> strings = new ArrayList<String>();
+		for (Event e : events) {
+			strings.add(e.getTitle());
+		}
+		return strings;
+	}
+
+	public ListDrawAdapter(Context context, List<Event> events) {
+		super(context, R.layout.events, eventToStringList(events));
+		
 		this.context = context;
-		this.values = values;
+		this.events = events;
 	}
 
 	@Override
@@ -29,14 +39,14 @@ public class ListDrawAdapter extends ArrayAdapter<String> {
 		View rowView = inflater.inflate(R.layout.events, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
-		textView.setText(values.get(position));
+		textView.setText(events.get(position).getTitle());
 
 		// Change icon based on name
-		String s = values.get(position);
+		String s = events.get(position).getIcon();
 
-		if (s.equals("Legen din er fornøgd :)")) {
+		if (s.equals("halo")) {
 			imageView.setImageResource(R.drawable.halo);
-		} else if (s.equals("Skjerp deg!")) {
+		} else if (s.equals("sleep")) {
 			imageView.setImageResource(R.drawable.sleep);
 		} else {
 			imageView.setImageResource(R.drawable.smiley_icon);
