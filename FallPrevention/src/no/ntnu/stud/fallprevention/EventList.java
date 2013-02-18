@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 public class EventList extends ListActivity {
@@ -32,8 +31,15 @@ public class EventList extends ListActivity {
 		
 		DatabaseHelper dbh = new DatabaseHelper(this);
 		SQLiteDatabase db = dbh.getReadableDatabase();
-
-		Cursor c = db.rawQuery("SELECT Headline, ID as _id, Icon FROM Event INNER JOIN EventType ON Event.TypeID=EventType.TypeID", null);
+		
+		Cursor c = db.rawQuery("SELECT " + 
+				DatabaseContract.EventType.COLUMN_NAME_TITLE + ", " +
+				DatabaseContract.Event.COLUMN_NAME_ID + ", " +
+				DatabaseContract.EventType.COLUMN_NAME_ICON + 
+				" FROM " + DatabaseContract.Event.TABLE_NAME + " INNER JOIN " +
+				DatabaseContract.EventType.TABLE_NAME + " ON " + 
+				DatabaseContract.Event.TABLE_NAME + "." + DatabaseContract.Event.COLUMN_NAME_TYPEID + "=" + 
+				DatabaseContract.EventType.TABLE_NAME + "." + DatabaseContract.EventType.COLUMN_NAME_ID, null);
 
 		// Iterate over the data fetched
 		for (int i = 0; i < c.getCount(); i++) {

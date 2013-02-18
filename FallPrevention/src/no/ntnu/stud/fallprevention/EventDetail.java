@@ -27,7 +27,14 @@ public class EventDetail extends Activity {
 		DatabaseHelper dbh = new DatabaseHelper(this);
 		SQLiteDatabase db = dbh.getReadableDatabase();
 		
-		Cursor c = db.rawQuery("SELECT Description, Headline FROM Event INNER JOIN EventType ON Event.TypeID=EventType.TypeID WHERE ID=" + eventId, null);
+		Cursor c = db.rawQuery("SELECT " + DatabaseContract.EventType.COLUMN_NAME_DESCRIPTION + ", " +
+				DatabaseContract.EventType.COLUMN_NAME_TITLE + " FROM " +
+				DatabaseContract.Event.TABLE_NAME + " INNER JOIN " +
+				DatabaseContract.EventType.TABLE_NAME + " ON " +
+				DatabaseContract.Event.TABLE_NAME + "." + DatabaseContract.Event.COLUMN_NAME_TYPEID +
+				"=" + DatabaseContract.EventType.TABLE_NAME + "." + DatabaseContract.EventType.COLUMN_NAME_ID +
+				" WHERE ID=" + eventId, null);
+		
 		// Read from DB answer
 		c.moveToFirst();
 		String headline = c.getString(1);
