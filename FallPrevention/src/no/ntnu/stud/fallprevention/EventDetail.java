@@ -32,6 +32,8 @@ public class EventDetail extends Activity {
 		c.moveToFirst();
 		String headline = c.getString(1);
 		String description = c.getString(0);
+		c.close();
+		db.close();
 		// Fill in information
 		TextView textView = (TextView) findViewById(R.id.headlineTextView);
 		textView.setText(headline);

@@ -14,7 +14,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 4;
+	public static final int DATABASE_VERSION = 2;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA_SEP = ", ";
@@ -60,7 +60,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// Clears the database on an upgrade, and reset it
-		db.execSQL("DROP TABLE *");
+		db.execSQL("DROP TABLE " + DatabaseContract.EventType.TABLE_NAME);
+		db.execSQL("DROP TABLE " + DatabaseContract.Event.TABLE_NAME);
 		onCreate(db);
 	}
 	

@@ -15,7 +15,7 @@ public abstract class DatabaseContract {
 	
 	public static abstract class EventType implements BaseColumns {
 		public static final String TABLE_NAME = "EventType";
-		public static final String COLUMN_NAME_ID = "TypeID";
+		public static final String COLUMN_NAME_ID = "TypeID"; 
 		public static final String COLUMN_NAME_DESCRIPTION = "Description";
 		public static final String COLUMN_NAME_TITLE = "Headline";
 		public static final String COLUMN_NAME_ICON = "Icon";
