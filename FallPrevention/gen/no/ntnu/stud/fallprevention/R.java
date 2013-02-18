@@ -58,10 +58,11 @@ public final class R {
         public static final int greeting=0x7f04000b;
         public static final int hi=0x7f040004;
         public static final int keep=0x7f04000c;
-        public static final int lorem=0x7f04000f;
-        public static final int lorem2=0x7f040010;
+        public static final int lorem_long=0x7f040010;
+        public static final int lorem_short=0x7f04000f;
         public static final int menu_settings=0x7f040001;
         public static final int menu_statistics=0x7f040002;
+        public static final int no_events=0x7f040011;
         public static final int title_activity_eventdetail=0x7f04000a;
         public static final int title_activity_eventlist=0x7f040009;
         public static final int title_activity_mainscreen=0x7f040008;

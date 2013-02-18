@@ -15,6 +15,7 @@
     <string name="keep">Behald han</string>
     <string name="delete">Slett han</string>
     <string name="do_with_event">Kva vil du gjera med denne beskjeden?</string>
-    <string name="lorem">Lorem ipse dolet</string>
-    <string name="lorem2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
+    <string name="lorem_short">Lorem ipse dolet</string>
+    <string name="lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
+    <string name="no_events">Du har ingen beskjedar!</string>
 </resources>

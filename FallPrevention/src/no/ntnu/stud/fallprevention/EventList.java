@@ -48,6 +48,9 @@ public class EventList extends ListActivity {
 		
 		// Display the information
 		setListAdapter(new ListDrawAdapter(this, events));
+		
+		// Display a message if there are no events in the queue
+		Toast.makeText(this, getString(R.string.no_events), Toast.LENGTH_LONG).show();
 	}
 
 	@Override

@@ -9,7 +9,7 @@
         android:id="@+id/headlineTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lorem"
+        android:text="@string/lorem_short"
         android:paddingBottom="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="@string/lorem2"
+        android:text="@string/lorem_long"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
