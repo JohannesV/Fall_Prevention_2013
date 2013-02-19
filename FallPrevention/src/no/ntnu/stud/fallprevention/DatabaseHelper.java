@@ -1,6 +1,10 @@
 package no.ntnu.stud.fallprevention;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -14,12 +18,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 2;
+	public static final int DATABASE_VERSION = 3;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
-	public static final String COMMA_SEP = ", ";
+	public static final String COMMA = ", ";
 	public static final String START_PAR = " (";
 	public static final String END_PAR = ") ";
+	public static final String DOT = ".";
+	public static final String EQUAL = "=";
 	
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -30,8 +36,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		final String CREATE_TABLE_1 = 
 				"CREATE TABLE " + DatabaseContract.EventType.TABLE_NAME + START_PAR +
 				DatabaseContract.EventType.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
-				DatabaseContract.EventType.COLUMN_NAME_TITLE + COMMA_SEP +
-				DatabaseContract.EventType.COLUMN_NAME_DESCRIPTION + COMMA_SEP +
+				DatabaseContract.EventType.COLUMN_NAME_TITLE + COMMA +
+				DatabaseContract.EventType.COLUMN_NAME_DESCRIPTION + COMMA +
 				DatabaseContract.EventType.COLUMN_NAME_ICON + END_PAR;
 		final String CREATE_TABLE_2 = 
 				"CREATE TABLE " + DatabaseContract.Event.TABLE_NAME + START_PAR +
@@ -71,4 +77,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		onUpgrade(db, oldVersion, newVersion);
 	}
 
+	/**
+	 * Fetches a list of (Event.ID, EventType.Description, EventType.Icon)
+	 * tuples from the database.   
+	 * 
+	 * @return 
+	 */
+	public List<Event> dbGetEventList() {
+		List<Event> events = new ArrayList<Event>();
+		SQLiteDatabase db = getReadableDatabase();
+		
+		Cursor c = db.rawQuery("SELECT " + 
+				DatabaseContract.EventType.COLUMN_NAME_TITLE + COMMA +
+				DatabaseContract.Event.COLUMN_NAME_ID + COMMA +
+				DatabaseContract.EventType.COLUMN_NAME_ICON + 
+				" FROM " + DatabaseContract.Event.TABLE_NAME + " INNER JOIN " +
+				DatabaseContract.EventType.TABLE_NAME + " ON " + 
+				DatabaseContract.Event.TABLE_NAME + DOT + DatabaseContract.Event.COLUMN_NAME_TYPEID + EQUAL + 
+				DatabaseContract.EventType.TABLE_NAME + DOT + DatabaseContract.EventType.COLUMN_NAME_ID, null);
+
+		// Iterate over the data fetched
+		for (int i = 0; i < c.getCount(); i++) {
+			c.moveToPosition(i);
+			Event e = new Event( c.getString(0), Integer.parseInt(c.getString(1)), c.getString(2) );
+			events.add(e);
+		}
+		
+		// Close database connection
+		c.close();
+		db.close();
+		
+		return events;
+	}
 }

@@ -1,12 +1,8 @@
 package no.ntnu.stud.fallprevention;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import android.app.ListActivity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -25,32 +21,7 @@ public class EventList extends ListActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		// Redraw the list every time the activity is resumed, in order to 
-		// ensure that the list is always up-to-date.
-		events = new ArrayList<Event>();
-		
-		DatabaseHelper dbh = new DatabaseHelper(this);
-		SQLiteDatabase db = dbh.getReadableDatabase();
-		
-		Cursor c = db.rawQuery("SELECT " + 
-				DatabaseContract.EventType.COLUMN_NAME_TITLE + ", " +
-				DatabaseContract.Event.COLUMN_NAME_ID + ", " +
-				DatabaseContract.EventType.COLUMN_NAME_ICON + 
-				" FROM " + DatabaseContract.Event.TABLE_NAME + " INNER JOIN " +
-				DatabaseContract.EventType.TABLE_NAME + " ON " + 
-				DatabaseContract.Event.TABLE_NAME + "." + DatabaseContract.Event.COLUMN_NAME_TYPEID + "=" + 
-				DatabaseContract.EventType.TABLE_NAME + "." + DatabaseContract.EventType.COLUMN_NAME_ID, null);
-
-		// Iterate over the data fetched
-		for (int i = 0; i < c.getCount(); i++) {
-			c.moveToPosition(i);
-			Event e = new Event( c.getString(0), Integer.parseInt(c.getString(1)), c.getString(2) );
-			events.add(e);
-		}
-		
-		// Close database connection
-		c.close();
-		db.close();
+		events = new DatabaseHelper(this).dbGetEventList();
 		
 		// Display the information
 		setListAdapter(new ListDrawAdapter(this, events));
