@@ -1,9 +1,9 @@
 package no.ntnu.stud.fallprevention;
 
+import java.util.Map;
+
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -23,29 +23,14 @@ public class EventDetail extends Activity {
 		eventId = motherIntent
 				.getIntExtra("no.ntnu.stud.fallprevention.ID", -1);
 		
-		// Fetch description and headline from database based on eventType
-		DatabaseHelper dbh = new DatabaseHelper(this);
-		SQLiteDatabase db = dbh.getReadableDatabase();
+		// Fetch description and headline from database
+		Map<String, String> eventInformation = new DatabaseHelper(this).dbGetEventInfo(eventId);
 		
-		Cursor c = db.rawQuery("SELECT " + DatabaseContract.EventType.COLUMN_NAME_DESCRIPTION + ", " +
-				DatabaseContract.EventType.COLUMN_NAME_TITLE + " FROM " +
-				DatabaseContract.Event.TABLE_NAME + " INNER JOIN " +
-				DatabaseContract.EventType.TABLE_NAME + " ON " +
-				DatabaseContract.Event.TABLE_NAME + "." + DatabaseContract.Event.COLUMN_NAME_TYPEID +
-				"=" + DatabaseContract.EventType.TABLE_NAME + "." + DatabaseContract.EventType.COLUMN_NAME_ID +
-				" WHERE ID=" + eventId, null);
-		
-		// Read from DB answer
-		c.moveToFirst();
-		String headline = c.getString(1);
-		String description = c.getString(0);
-		c.close();
-		db.close();
 		// Fill in information
 		TextView textView = (TextView) findViewById(R.id.headlineTextView);
-		textView.setText(headline);
+		textView.setText(eventInformation.get(DatabaseContract.EventType.COLUMN_NAME_TITLE));
 		TextView textView2 = (TextView) findViewById(R.id.mainTextView);
-		textView2.setText(description);
+		textView2.setText(eventInformation.get(DatabaseContract.EventType.COLUMN_NAME_DESCRIPTION));
 	}
 
 	@Override
@@ -56,11 +41,8 @@ public class EventDetail extends Activity {
 	}
 	
 	public void fireDeleteButton(View view) {
-		// First, delete this event from the database
-		DatabaseHelper dbh = new DatabaseHelper(this);
-		SQLiteDatabase db = dbh.getWritableDatabase();
-		db.delete(DatabaseContract.Event.TABLE_NAME, DatabaseContract.Event.COLUMN_NAME_ID + " = ?", new String[] {String.valueOf(eventId)});
-		db.close();
+		// Delete event from database
+		new DatabaseHelper(this).dbDeleteEvent(eventId);
 		// Then go back to EventList screen
 		Intent intent = new Intent(this, EventList.class);
 		startActivity(intent);

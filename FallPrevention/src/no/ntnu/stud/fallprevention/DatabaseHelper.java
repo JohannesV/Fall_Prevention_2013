@@ -1,16 +1,19 @@
 package no.ntnu.stud.fallprevention;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Database helper is an object that builds and maintains the database. Or
- * something like that. I think.
+ * Database helper is an object that builds and maintains the database. It also
+ * works as an interface to the database.
  * 
  * @author elias
  *
@@ -33,6 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+		// Fill the database with some random entries, and of course build the tables
 		final String CREATE_TABLE_1 = 
 				"CREATE TABLE " + DatabaseContract.EventType.TABLE_NAME + START_PAR +
 				DatabaseContract.EventType.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
@@ -108,5 +112,48 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.close();
 		
 		return events;
+	}
+	
+	/**
+	 * Deletes the event with the given ID from the database.
+	 * 
+	 * @return True if an event was deleted, false if no event with the given id exists or an error occured.
+	 */
+	public boolean dbDeleteEvent(int id) {
+		int rowsAffected = 0;
+		try {
+			SQLiteDatabase db = getWritableDatabase();
+			rowsAffected = db.delete(DatabaseContract.Event.TABLE_NAME, DatabaseContract.Event.COLUMN_NAME_ID + " = ?", new String[] {String.valueOf(id)});
+			db.close();
+		} catch (SQLiteException e) {
+			return false;
+		}
+		return (rowsAffected > 0);
+	}
+	
+	public Map<String, String> dbGetEventInfo(int id) {
+		Map<String, String> stringMap = new HashMap<String, String>();
+		
+		SQLiteDatabase db = getReadableDatabase();
+		
+		Cursor c = db.rawQuery("SELECT " + DatabaseContract.EventType.COLUMN_NAME_DESCRIPTION + ", " +
+				DatabaseContract.EventType.COLUMN_NAME_TITLE + " FROM " +
+				DatabaseContract.Event.TABLE_NAME + " INNER JOIN " +
+				DatabaseContract.EventType.TABLE_NAME + " ON " +
+				DatabaseContract.Event.TABLE_NAME + "." + DatabaseContract.Event.COLUMN_NAME_TYPEID +
+				"=" + DatabaseContract.EventType.TABLE_NAME + "." + DatabaseContract.EventType.COLUMN_NAME_ID +
+				" WHERE ID=" + id, null);
+		
+		// Assumes there is only one reply from the database, as ID is primary key of events.
+		c.moveToFirst();
+		// Put all the columns into the map, so as to transfer all the information found by the search
+		for (int i = 0; i<c.getColumnCount(); i++) {
+			stringMap.put(c.getColumnName(i), c.getString(i));
+		}
+		
+		c.close();
+		db.close();
+		
+		return stringMap;
 	}
 }
