@@ -131,6 +131,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return (rowsAffected > 0);
 	}
 	
+	/**
+	 * Fetches information about a single event from the database. 
+	 * 
+	 * @param ID of the event in the database
+	 * 
+	 * @return A map where the column names are keys
+	 */
 	public Map<String, String> dbGetEventInfo(int id) {
 		Map<String, String> stringMap = new HashMap<String, String>();
 		
@@ -146,6 +153,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		// Assumes there is only one reply from the database, as ID is primary key of events.
 		c.moveToFirst();
+		
 		// Put all the columns into the map, so as to transfer all the information found by the search
 		for (int i = 0; i<c.getColumnCount(); i++) {
 			stringMap.put(c.getColumnName(i), c.getString(i));
