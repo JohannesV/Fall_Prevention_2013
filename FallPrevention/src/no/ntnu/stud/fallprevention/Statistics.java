@@ -36,6 +36,7 @@ public class Statistics extends Activity implements SensorEventListener {
 	@Override 
 	protected void onResume() {
 		super.onResume();
+		// This line fucks up
 		sm.registerListener(this, sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
