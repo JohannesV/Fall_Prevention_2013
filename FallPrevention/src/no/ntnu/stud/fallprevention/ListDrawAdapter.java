@@ -41,7 +41,7 @@ public class ListDrawAdapter extends ArrayAdapter<String> {
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
 		textView.setText(events.get(position).getTitle());
 
-		// Change icon based on name
+		// Set the correct icon
 		String s = events.get(position).getIcon();
 
 		if (s.equals("halo")) {
