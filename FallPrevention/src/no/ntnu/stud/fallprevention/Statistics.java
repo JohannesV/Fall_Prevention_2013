@@ -49,5 +49,6 @@ public class Statistics extends Activity implements SensorEventListener {
 	public void onSensorChanged(SensorEvent event) {
 		Toast.makeText(this, event.toString(), Toast.LENGTH_SHORT).show();
 	}
+	
 
 }

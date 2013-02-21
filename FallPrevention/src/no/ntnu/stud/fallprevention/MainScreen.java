@@ -1,7 +1,9 @@
 package no.ntnu.stud.fallprevention;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +16,14 @@ public class MainScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mainscreen);
-
+		
+		if(Build.VERSION.SDK_INT>Build.VERSION_CODES.GINGERBREAD_MR1){
+		//This hides the title and icon from the action-bar (menu-bar)
+		ActionBar ab = getActionBar();
+		ab.setDisplayShowTitleEnabled(false);
+		ab.setDisplayShowHomeEnabled(false);
+		}
+		
 		// Extract the information contained in the intent that created this
 		// activity
 		Intent motherIntent = getIntent();
@@ -35,8 +44,8 @@ public class MainScreen extends Activity {
 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent;
-		switch(item.getItemId()){
-		case R.id.menu_statistics:		
+		switch (item.getItemId()) {
+		case R.id.menu_statistics:
 			intent = new Intent(this, Statistics.class);
 			startActivity(intent);
 			break;

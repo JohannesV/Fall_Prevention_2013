@@ -17,12 +17,12 @@ public class WriteName extends Activity {
 		setContentView(R.layout.activity_write_name);
 	}
 
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_write_name, menu);
 		return true;
-	}
+	}*/
 	
 	/** Method is fired by button click. Takes the user to the main screen **/
 	public void fireName(View view) {

@@ -3,15 +3,17 @@
     <item
         android:id="@+id/menu_settings"
         android:orderInCategory="100"
-        android:showAsAction="never"
+       
         android:title="@string/menu_settings"/>
 
     <item
         android:id="@+id/menu_statistics"
+      
         android:title="@string/menu_statistics"/>
     
     <item 
         android:id="@+id/menu_related"
+         
         android:title="@string/menu_related"/>
     
 </menu>
