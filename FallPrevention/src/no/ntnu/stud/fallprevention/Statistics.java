@@ -36,8 +36,7 @@ public class Statistics extends Activity implements SensorEventListener {
 	@Override 
 	protected void onResume() {
 		super.onResume();
-		// This line fucks up
-		sm.registerListener(this, sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+		sm.registerListener(this, sm.getDefaultSensor(Sensor.TYPE_GYROSCOPE), SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
 	@Override
@@ -47,6 +46,8 @@ public class Statistics extends Activity implements SensorEventListener {
 
 	@Override
 	public void onSensorChanged(SensorEvent event) {
+		float NS2S = 1.0f / 1000000000.0f;
+		
 		Toast.makeText(this, event.toString(), Toast.LENGTH_SHORT).show();
 	}
 	
