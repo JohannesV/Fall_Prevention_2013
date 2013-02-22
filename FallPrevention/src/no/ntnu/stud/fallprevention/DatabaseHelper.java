@@ -164,4 +164,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		return stringMap;
 	}
+	
+	/**
+	 * Checks if there are any events to read
+	 * 
+	 * @returns True if there are any events in the database
+	 */
+	public boolean dbHaveEvents() {
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor c = db.rawQuery("SELECT * FROM " + DatabaseContract.Event.TABLE_NAME, null);
+		
+		boolean haveEvents = (c.getCount() > 0);
+		
+		c.close();
+		db.close();
+		
+		return haveEvents;
+	}
 }
