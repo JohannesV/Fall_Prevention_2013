@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainScreen extends Activity {
 
@@ -31,8 +32,18 @@ public class MainScreen extends Activity {
 				.getStringExtra("no.ntnu.stud.fallprevention.MESSAGE");
 		name = getString(R.string.greeting) + ", " + name + "!";
 		// Show name on screen
-		TextView namnesyn = (TextView) findViewById(R.id.textView1);
-		namnesyn.setText(name);
+		TextView txtGreetingName = (TextView) findViewById(R.id.textView1);
+		txtGreetingName.setText(name);
+		TextView txtSubGreeting = (TextView) findViewById(R.id.mainScreenSubText);
+		DatabaseHelper dbHelper = new DatabaseHelper(this);
+		if(dbHelper.dbHaveEvents()){
+			String message = getString(R.string.main_got_new_events);
+			txtSubGreeting.setText(message);
+		}
+		else{
+			txtSubGreeting.setVisibility(View.GONE);
+		}
+		
 	}
 
 	@Override
@@ -40,6 +51,19 @@ public class MainScreen extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_mainscreen, menu);
 		return true;
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();TextView txtSubGreeting = (TextView) findViewById(R.id.mainScreenSubText);
+		DatabaseHelper dbHelper = new DatabaseHelper(this);
+		if(dbHelper.dbHaveEvents()){
+			String message = getString(R.string.main_got_new_events);
+			txtSubGreeting.setText(message);
+		}
+		else{
+			txtSubGreeting.setVisibility(View.GONE);
+		}
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {

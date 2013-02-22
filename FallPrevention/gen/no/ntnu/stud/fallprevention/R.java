@@ -18,23 +18,24 @@ public final class R {
         public static final int smiley_icon=0x7f020004;
     }
     public static final class id {
-        public static final int button1=0x7f07000b;
+        public static final int button1=0x7f07000c;
         public static final int deleteButton=0x7f070005;
-        public static final int editText1=0x7f070009;
+        public static final int editText1=0x7f07000a;
         public static final int headlineTextView=0x7f070000;
         public static final int imageButton1=0x7f070008;
         public static final int keepButton=0x7f070004;
-        public static final int label=0x7f07000d;
+        public static final int label=0x7f07000e;
         public static final int layout=0x7f070003;
-        public static final int logo=0x7f07000c;
+        public static final int logo=0x7f07000d;
+        public static final int mainScreenSubText=0x7f070009;
         public static final int mainTextView=0x7f070001;
-        public static final int menu_related=0x7f070010;
-        public static final int menu_settings=0x7f07000e;
-        public static final int menu_statistics=0x7f07000f;
+        public static final int menu_related=0x7f070011;
+        public static final int menu_settings=0x7f07000f;
+        public static final int menu_statistics=0x7f070010;
         public static final int mylist=0x7f070006;
         public static final int questionTextView=0x7f070002;
         public static final int textView1=0x7f070007;
-        public static final int textView2=0x7f07000a;
+        public static final int textView2=0x7f07000b;
     }
     public static final class layout {
         public static final int activity_eventdetail=0x7f030000;
@@ -68,6 +69,7 @@ public final class R {
         public static final int keep=0x7f04000d;
         public static final int lorem_long=0x7f040011;
         public static final int lorem_short=0x7f040010;
+        public static final int main_got_new_events=0x7f040017;
         public static final int menu_related=0x7f040003;
         public static final int menu_settings=0x7f040001;
         public static final int menu_statistics=0x7f040002;
