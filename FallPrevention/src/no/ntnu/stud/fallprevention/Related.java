@@ -1,8 +1,7 @@
 package no.ntnu.stud.fallprevention;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
+import android.os.Bundle;
 
 public class Related extends Activity {
 
