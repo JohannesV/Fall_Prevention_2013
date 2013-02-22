@@ -3,20 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Hovudskjerm" >
+    tools:context=".MainScreen" >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/lorem_short" />
 
     <ImageButton
         android:id="@+id/imageButton1"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:layout_weight="0.56"
-        android:src="@drawable/smiley"
-        android:onClick="fyrHending" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/smiley"
+        android:onClick="fireEvent" />
 
 </LinearLayout>

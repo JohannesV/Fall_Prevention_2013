@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
 
 public class LaunchActivity extends Activity {
 
@@ -14,26 +13,30 @@ public class LaunchActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_launch);
 		
-		// Open SharedPrefrences-fila, og finn ut om namn allereie er lagra i mobilen
-		SharedPreferences sp = getSharedPreferences("com.example.mockonthetable.PREFILE", Context.MODE_PRIVATE);
-		String namn = sp.getString("namn", "NONAME");
 		
-		// Anten gå rett til hovudmeny, eller be brukar skrive inn namn
-		if (namn.equals("NONAME")) {
-			Intent intent = new Intent(this, SkrivNamn.class);
+		// Open the SharedPrefrences-file, check whether a username is already stored in the phone
+		SharedPreferences sp = getSharedPreferences("no.ntnu.stud.fallprevention.PREFILE", Context.MODE_PRIVATE);
+		String name = sp.getString("name", "NONAME");
+		
+		// Either go the main screen, or go to write name screen
+		if (name.equals("NONAME")) {
+			Intent intent = new Intent(this, WriteName.class);
 			startActivity(intent);
 		} else {
-			Intent intent = new Intent(this, Hovudskjerm.class);
-			intent.putExtra("com.example.mockonthetable.MESSAGE", namn);
+			
+			Intent intent = new Intent(this, MainScreen.class);
+			intent.putExtra("no.ntnu.stud.fallprevention.MESSAGE", name);
 			startActivity(intent);
 		}
+		// Finish the current activity so that you cannot go back to it later.
+		this.finish();
 	}
 
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_launch, menu);
 		return true;
-	}
+	}*/
 
 }
