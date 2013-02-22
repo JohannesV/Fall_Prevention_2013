@@ -7,7 +7,7 @@
     <string name="menu_related">Related people</string>
     <string name="title_activity_write_name">WriteName</string>
     <string name="hi">Hello!</string>
-    <string name="your_name_query">What is your name?</string>
+    <string name="your_name_query">Wie ist Ihr Name?</string>
     <string name="write_name">Name</string>
     <string name="button">Click here</string>
     <string name="title_activity_mainscreen">Mainscreen</string>
