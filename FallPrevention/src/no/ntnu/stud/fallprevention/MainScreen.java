@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainScreen extends Activity {
 
@@ -17,14 +16,32 @@ public class MainScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mainscreen);
-		
-		if(Build.VERSION.SDK_INT>Build.VERSION_CODES.GINGERBREAD_MR1){
-		//This hides the title and icon from the action-bar (menu-bar)
-		ActionBar ab = getActionBar();
-		ab.setDisplayShowTitleEnabled(false);
-		ab.setDisplayShowHomeEnabled(false);
+
+		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
+			// This hides the title and icon from the action-bar (menu-bar)
+			//ActionBar ab = getActionBar();
+			//ab.setDisplayShowTitleEnabled(false);
+			//ab.setDisplayShowHomeEnabled(false);
 		}
-		
+
+		updateVisible();
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_mainscreen, menu);
+		return true;
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		updateVisible();
+	}
+
+	private void updateVisible() {
 		// Extract the information contained in the intent that created this
 		// activity
 		Intent motherIntent = getIntent();
@@ -36,32 +53,10 @@ public class MainScreen extends Activity {
 		txtGreetingName.setText(name);
 		TextView txtSubGreeting = (TextView) findViewById(R.id.mainScreenSubText);
 		DatabaseHelper dbHelper = new DatabaseHelper(this);
-		if(dbHelper.dbHaveEvents()){
+		if (dbHelper.dbHaveEvents()) {
 			String message = getString(R.string.main_got_new_events);
 			txtSubGreeting.setText(message);
-		}
-		else{
-			txtSubGreeting.setVisibility(View.GONE);
-		}
-		
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_mainscreen, menu);
-		return true;
-	}
-	
-	@Override
-	protected void onResume() {
-		super.onResume();TextView txtSubGreeting = (TextView) findViewById(R.id.mainScreenSubText);
-		DatabaseHelper dbHelper = new DatabaseHelper(this);
-		if(dbHelper.dbHaveEvents()){
-			String message = getString(R.string.main_got_new_events);
-			txtSubGreeting.setText(message);
-		}
-		else{
+		} else {
 			txtSubGreeting.setVisibility(View.GONE);
 		}
 	}

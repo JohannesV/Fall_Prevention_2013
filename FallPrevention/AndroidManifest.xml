@@ -12,11 +12,10 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
         <activity
             android:name="no.ntnu.stud.fallprevention.LaunchActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoDisplay" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,39 +24,32 @@
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.WriteName"
-            android:label="@string/title_activity_write_name"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            android:label="@string/title_activity_write_name" >
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.MainScreen"
-            android:label="@string/title_activity_mainscreen">
-<!--             android:theme="@android:style/Theme.Light.NoTitleBar"  -->
+            android:label="@string/title_activity_mainscreen" >
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.EventList"
             android:label="@string/title_activity_eventlist"
-            android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            android:launchMode="singleTask" >
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.EventDetail"
-            android:label="@string/title_activity_eventdetail"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            android:label="@string/title_activity_eventdetail" >
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.Statistics"
-            android:label="@string/title_activity_statistics"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            android:label="@string/title_activity_statistics" >
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.Settings"
-            android:label="@string/title_activity_settings"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            android:label="@string/title_activity_settings" >
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.Related"
-            android:label="@string/title_activity_related"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            android:label="@string/title_activity_related">
         </activity>
     </application>
 

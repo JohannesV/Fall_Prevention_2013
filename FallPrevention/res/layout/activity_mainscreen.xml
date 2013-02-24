@@ -1,8 +1,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".MainScreen">    
+    
 	<LinearLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
@@ -25,13 +26,13 @@
 			android:background="#ccc" />
 	    
 	    <ImageButton
-	        android:id="@+id/imageButton1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
+	        android:id="@+id/mainScreenSmileyImage"
+	        android:layout_width="200dp"
+	        android:layout_height="200dp"
 	        android:layout_gravity="center_horizontal"
-	        android:background="@drawable/smiley"
-	        android:onClick="fireEvent"
-	        android:layout_marginTop="10sp" />
+	        android:layout_marginTop="10sp"
+	        android:background="@drawable/very_good_job"
+	        android:onClick="fireEvent" />
 	    
 	    <TextView
 	        android:id="@+id/mainScreenSubText"

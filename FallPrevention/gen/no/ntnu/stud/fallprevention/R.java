@@ -11,22 +11,27 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int halo=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int sleep=0x7f020002;
-        public static final int smiley=0x7f020003;
-        public static final int smiley_icon=0x7f020004;
+        public static final int bad_job=0x7f020000;
+        public static final int good_job=0x7f020001;
+        public static final int halo=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int not_so_ok_job=0x7f020004;
+        public static final int ok_job=0x7f020005;
+        public static final int sleep=0x7f020006;
+        public static final int smiley=0x7f020007;
+        public static final int smiley_icon=0x7f020008;
+        public static final int very_good_job=0x7f020009;
     }
     public static final class id {
         public static final int button1=0x7f07000c;
         public static final int deleteButton=0x7f070005;
         public static final int editText1=0x7f07000a;
         public static final int headlineTextView=0x7f070000;
-        public static final int imageButton1=0x7f070008;
         public static final int keepButton=0x7f070004;
         public static final int label=0x7f07000e;
         public static final int layout=0x7f070003;
         public static final int logo=0x7f07000d;
+        public static final int mainScreenSmileyImage=0x7f070008;
         public static final int mainScreenSubText=0x7f070009;
         public static final int mainTextView=0x7f070001;
         public static final int menu_related=0x7f070011;
