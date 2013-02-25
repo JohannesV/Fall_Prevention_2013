@@ -7,7 +7,6 @@
         <com.androidplot.xy.XYPlot
             android:id="@+id/mySimpleXYPlot"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            title="Plot"/> 
+            android:layout_height="fill_parent" /> 
     
 </RelativeLayout>

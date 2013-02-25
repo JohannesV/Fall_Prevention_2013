@@ -1,6 +1,5 @@
 package no.ntnu.stud.fallprevention;
 
-import java.util.Arrays;
 import java.util.List;
 
 import android.app.Activity;
@@ -12,17 +11,18 @@ import com.androidplot.series.XYSeries;
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.SimpleXYSeries;
 import com.androidplot.xy.XYPlot;
+import com.androidplot.xy.XYStepMode;
 
 public class Statistics extends Activity {
 	
-	private XYPlot mySimpleXyPlot;
+	private XYPlot riskHistoryPlot;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_statistics);
 		
-		mySimpleXyPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
+		riskHistoryPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
 		
 		// Get risk history values from the database 
 		List<Double> riskHistory = new DatabaseHelper(this).dbGetRiskHistory();
@@ -40,14 +40,13 @@ public class Statistics extends Activity {
                 null);                                  // fill color (none)
         
         // add a new series' to the xyplot:
-        mySimpleXyPlot.addSeries(riskSeries, riskSeriesFormat);
+        riskHistoryPlot.addSeries(riskSeries, riskSeriesFormat);
         
-        // reduce the number of range labels
-        mySimpleXyPlot.setTicksPerRangeLabel(1);
-        
-        // by default, AndroidPlot displays developer guides to aid in laying out your plot.
-        // To get rid of them call disableAllMarkup():
-        mySimpleXyPlot.disableAllMarkup(); 
+        // Make stuff look better
+        riskHistoryPlot.setRangeLabel("");
+        riskHistoryPlot.setDomainLabel("");
+        riskHistoryPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1.0);
+        riskHistoryPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1.0);
 	}
 
 	@Override
