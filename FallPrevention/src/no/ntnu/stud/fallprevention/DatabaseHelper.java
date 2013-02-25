@@ -190,4 +190,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public int dbGetStatus() {
 		return 4;
 	}
+	
+	public List<Double> dbGetRiskHistory() {
+		List<Double> riskHistory = new ArrayList<Double>();
+		riskHistory.add(1.0);
+		riskHistory.add(3.0);
+		riskHistory.add(7.0);
+		riskHistory.add(6.0);
+		riskHistory.add(9.0);
+		riskHistory.add(4.0);
+		return riskHistory;
+	}
 }
