@@ -181,4 +181,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		return haveEvents;
 	}
+	
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
+	public int dbGetStatus() {
+		return 4;
+	}
 }

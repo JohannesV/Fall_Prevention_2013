@@ -31,7 +31,7 @@
 	        android:layout_height="200dp"
 	        android:layout_gravity="center_horizontal"
 	        android:layout_marginTop="10sp"
-	        android:background="@drawable/very_good_job"
+	        android:background="@drawable/ok_job"
 	        android:onClick="fireEvent" />
 	    
 	    <TextView
