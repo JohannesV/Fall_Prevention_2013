@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -187,8 +188,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 * 
 	 * @return
 	 */
-	public int dbGetStatus() {
-		return 4;
+	public RiskStatus dbGetStatus() {
+		return RiskStatus.VERY_GOOD_JOB;
 	}
 	
 	public List<Double> dbGetRiskHistory() {

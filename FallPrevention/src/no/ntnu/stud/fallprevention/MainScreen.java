@@ -15,12 +15,6 @@ import android.widget.TextView;
 
 public class MainScreen extends Activity {
 
-	public final int BAD_JOB = 0;
-	public final int NOT_SO_OK_JOB = 1;
-	public final int OK_JOB = 2;
-	public final int GOOD_JOB = 3;
-	public final int VERY_GOOD_JOB = 4;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,20 +31,20 @@ public class MainScreen extends Activity {
 
 		// Change image depending on information from the database
 		Drawable drawable;
-		int status = new DatabaseHelper(this).dbGetStatus();
-		if (status == BAD_JOB) {
+		RiskStatus status = new DatabaseHelper(this).dbGetStatus();
+		if (status == RiskStatus.BAD_JOB) {
 			drawable = getResources().getDrawable(R.drawable.bad_job);
 		}
-		else if (status == NOT_SO_OK_JOB) {
+		else if (status == RiskStatus.NOT_SO_OK_JOB) {
 			drawable = getResources().getDrawable(R.drawable.not_so_ok_job);
 		}
-		else if (status == OK_JOB) {
+		else if (status == RiskStatus.OK_JOB) {
 			drawable = getResources().getDrawable(R.drawable.ok_job);
 		}
-		else if (status == GOOD_JOB) {
+		else if (status == RiskStatus.GOOD_JOB) {
 			drawable = getResources().getDrawable(R.drawable.good_job);
 		}
-		else if (status == VERY_GOOD_JOB) {
+		else if (status == RiskStatus.VERY_GOOD_JOB) {
 			drawable = getResources().getDrawable(R.drawable.very_good_job);
 		}
 		else {
