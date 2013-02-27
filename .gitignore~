@@ -2,13 +2,8 @@ bin/**
 gen/**
 
 *.apk
-*.ap_
-
-*.dex
 
 *.class
 
 .classpath
 .project
-
-local.properties
