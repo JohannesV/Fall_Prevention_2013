@@ -24,7 +24,7 @@ public class EventList extends ListActivity {
 		events = new DatabaseHelper(this).dbGetEventList();
 		
 		// Display the information
-		setListAdapter(new ListDrawAdapter(this, events));
+		setListAdapter(new EventListAdapter(this, events));
 		
 		// Display a message if there are no events in the queue
 		if (events.isEmpty()) {
