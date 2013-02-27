@@ -51,17 +51,6 @@
         android:inputType="phone"
         android:maxLength="8" />
 
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/phoneNumber"
-        android:checkMark="?android:attr/listChoiceIndicatorMultiple">
-
-	
-    </ListView>
-
     <Button
         android:id="@+id/OK"
         android:layout_width="wrap_content"
@@ -70,5 +59,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:text="Button" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/OK"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/phoneNumber" >
+    </ScrollView>
 
 </RelativeLayout>
