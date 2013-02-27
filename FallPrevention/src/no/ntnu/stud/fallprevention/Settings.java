@@ -1,14 +1,15 @@
 package no.ntnu.stud.fallprevention;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
+
 import android.view.View;
 import android.widget.Button;
-=======
+
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
->>>>>>> d8fece3c7805304f43f3d4c53b13dcc1741668c4
+
 
 public class Settings extends Activity {
 
@@ -17,16 +18,17 @@ public class Settings extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
 	}
-<<<<<<< HEAD
-	// testChang55
-	public void selfDestruct(View v){
-		Intent intent = new Intent(this, WriteName.class);
+
+	public void openNameScreen(View v){
+		/*Intent intent = new Intent(this, WriteName.class);
+		startActivity(intent);*/
+		//Does not close down the earlier activities
+		Intent intent = new Intent(getApplicationContext(), WriteName.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(intent);
+		this.finish();
 	}
 
-	
-=======
->>>>>>> d8fece3c7805304f43f3d4c53b13dcc1741668c4
 
 	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

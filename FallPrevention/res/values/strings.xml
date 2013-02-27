@@ -32,5 +32,6 @@
         <item >1 day</item>
         <item >7 days</item>
     </string-array>
+        <string name="new_name_button">New Name</string>
 
 </resources>
