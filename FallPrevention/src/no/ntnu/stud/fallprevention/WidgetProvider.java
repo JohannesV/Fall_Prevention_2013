@@ -35,14 +35,27 @@ public class WidgetProvider extends AppWidgetProvider {
 			// Problem
 			drawable = null;
 		}
+		
 		Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-		Drawable d = new BitmapDrawable(context.getResources(), Bitmap.createScaledBitmap(bitmap, 200, 200, true));
+		bitmap = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
+		
+		// get the handle on your widget
+		 RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
+		 // replace the image
+		 views.setBitmap(R.id.smileyButton, "setImageBitmap", bitmap);
+		 appWidgetManager.updateAppWidget(appWidgetIds, views);
+		 
+		 /* update your widget */
+/*		 ComponentName thisWidget = new ComponentName(this, YourWidget.class);
+		 AppWidgetManager manager = AppWidgetManager.getInstance(this);
+		 manager.updateAppWidget(thisWidget, updateViews);
+		
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);	
 		ImageButton imageButton = (ImageButton) views.findViewById(R.id.mainScreenSmileyImage);
 		imageButton.setBackgroundDrawable(d);
 		
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);	
 		views.setTextViewText(R.id.update, Integer.toString(counter));
-        appWidgetManager.updateAppWidget(appWidgetIds, views);
+        appWidgetManager.updateAppWidget(appWidgetIds, views);*/
 	}
 } 
