@@ -202,4 +202,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		riskHistory.add(4.0);
 		return riskHistory;
 	}
+	
+	public List<Contact> dbGetContactList() {
+		return new ArrayList<Contact>();
+	}
 }
