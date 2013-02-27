@@ -16,7 +16,7 @@ public class Settings extends Activity {
 		final Button button = (Button) findViewById(R.id.nameButton);
 		
 	}
-	// testChange
+	// testChang55
 	void selfDestruct(){
 		Intent intent = new Intent(this, WriteName.class);
 		startActivity(intent);
