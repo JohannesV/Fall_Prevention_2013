@@ -52,13 +52,13 @@ public final class R {
         public static final int phoneNumber=0x7f090003;
         public static final int questionTextView=0x7f090009;
         public static final int scrollView1=0x7f090005;
+        public static final int smileyButton=0x7f09001c;
         public static final int spinner1=0x7f090017;
         public static final int surName=0x7f090002;
         public static final int textView1=0x7f090000;
         public static final int textView2=0x7f090015;
         public static final int titleText=0x7f090010;
         public static final int toggleButton1=0x7f090006;
-        public static final int update=0x7f09001c;
     }
     public static final class layout {
         public static final int activity_contact_person=0x7f030000;

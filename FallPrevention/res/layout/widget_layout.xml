@@ -6,15 +6,10 @@
     android:layout_margin="8dip"
     android:background="@drawable/widget_background" >
 
-    <TextView
-        android:id="@+id/update"
-        style="@android:style/TextAppearance.Medium"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_margin="4dip"
-        android:text="@string/lorem_short"
-        android:onClick="fireClick" >
-    </TextView>
+    <ImageButton
+        android:id="@+id/smileyButton"
+        
+        android:layout_height="wrap_content"
+        android:src="@drawable/good_job" />
+
 </LinearLayout> 
