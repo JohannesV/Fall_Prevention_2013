@@ -26,34 +26,33 @@ public final class R {
     public static final class id {
         public static final int Firstname=0x7f080011;
         public static final int OK=0x7f080005;
-        public static final int Surname=0x7f080010;
-        public static final int button1=0x7f080017;
+        public static final int Surname=0x7f080012;
+        public static final int button1=0x7f080014;
         public static final int deleteButton=0x7f08000b;
-        public static final int editText1=0x7f080015;
-        public static final int editText2=0x7f080012;
+        public static final int editText1=0x7f080016;
         public static final int firstName=0x7f080001;
         public static final int headlineTextView=0x7f080006;
         public static final int keepButton=0x7f08000a;
-        public static final int label=0x7f080019;
-        public static final int lagreKnapp=0x7f080013;
+        public static final int label=0x7f080018;
+        public static final int lagreKnapp=0x7f080010;
         public static final int layout=0x7f080009;
         public static final int listView1=0x7f080004;
-        public static final int logo=0x7f080018;
+        public static final int logo=0x7f080017;
         public static final int mainScreenSmileyImage=0x7f08000d;
         public static final int mainScreenSubText=0x7f08000e;
         public static final int mainTextView=0x7f080007;
-        public static final int menu_related=0x7f08001d;
-        public static final int menu_settings=0x7f08001b;
-        public static final int menu_statistics=0x7f08001c;
-        public static final int mySimpleXYPlot=0x7f080014;
+        public static final int menu_related=0x7f08001c;
+        public static final int menu_settings=0x7f08001a;
+        public static final int menu_statistics=0x7f08001b;
+        public static final int mySimpleXYPlot=0x7f080015;
         public static final int mylist=0x7f08000c;
         public static final int phoneNumber=0x7f080003;
         public static final int questionTextView=0x7f080008;
         public static final int surName=0x7f080002;
         public static final int textView1=0x7f080000;
-        public static final int textView2=0x7f080016;
+        public static final int textView2=0x7f080013;
         public static final int titleText=0x7f08000f;
-        public static final int update=0x7f08001a;
+        public static final int update=0x7f080019;
     }
     public static final class layout {
         public static final int activity_contact_person=0x7f030000;

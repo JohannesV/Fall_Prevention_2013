@@ -27,4 +27,18 @@ public abstract class DatabaseContract {
 		public static final String COLUMN_NAME_TYPEID = "TypeID";
 		public static final String COLUMN_NAME_TIMESTAMP = "Time";
 	}
+	
+	public static abstract class Contact implements BaseColumns {
+		public static final String TABLE_NAME = "Contact";
+		public static final String COLUMN_NAME_NAME = "Name";
+		public static final String COLUMN_NAME_ID = "PersonID";
+		public static final String COLUMN_NAME_PHONE = "PhoneNumber";
+	}
+	
+	public static abstract class AlarmSetting implements BaseColumns {
+		public static final String TABLE_NAME = "AlarmSetting";
+		public static final String COLUMN_NAME_ID = "AlarmID";
+		public static final String COLUMN_NAME_EVENTID = "EventID";
+		public static final String COLUMN_NAME_TYPE = "AlarmType";
+	}
 }

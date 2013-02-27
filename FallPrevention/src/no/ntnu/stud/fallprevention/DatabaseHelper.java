@@ -22,7 +22,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 3;
+	public static final int DATABASE_VERSION = 4;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA = ", ";
@@ -48,6 +48,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				"CREATE TABLE " + DatabaseContract.Event.TABLE_NAME + START_PAR +
 				DatabaseContract.Event.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
 				DatabaseContract.Event.COLUMN_NAME_TYPEID + END_PAR;
+		final String CREATE_TABLE_3 = 
+				"CREATE TABLE " + DatabaseContract.Contact.TABLE_NAME + START_PAR +
+				DatabaseContract.Contact.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
+				DatabaseContract.Contact.COLUMN_NAME_NAME + COMMA +
+				DatabaseContract.Contact.COLUMN_NAME_PHONE + END_PAR;
+		final String CREATE_TABLE_4 = 
+				"CREATE TABLE " + DatabaseContract.AlarmSetting.TABLE_NAME + START_PAR +
+				DatabaseContract.AlarmSetting.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
+				DatabaseContract.AlarmSetting.COLUMN_NAME_EVENTID + COMMA +
+				DatabaseContract.AlarmSetting.COLUMN_NAME_TYPE + END_PAR;
 		final String FILL_INFO_1 = 
 				"INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (0, \'You should really keep working out and not be a lazy bastard!\', \'You are lazy!\', \'halo\')";
 		final String FILL_INFO_2 = 
@@ -61,6 +71,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		db.execSQL(CREATE_TABLE_1);
 		db.execSQL(CREATE_TABLE_2);
+		db.execSQL(CREATE_TABLE_3);
+		db.execSQL(CREATE_TABLE_4);
 		db.execSQL(FILL_INFO_1);
 		db.execSQL(FILL_INFO_2);
 		db.execSQL(FILL_INFO_3);
