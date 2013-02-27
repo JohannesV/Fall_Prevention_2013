@@ -47,13 +47,13 @@ public final class R {
         public static final int menu_related=0x7f09001f;
         public static final int menu_settings=0x7f09001d;
         public static final int menu_statistics=0x7f09001e;
-        public static final int mySimpleXYPlot=0x7f090018;
+        public static final int mySimpleXYPlot=0x7f090017;
         public static final int mylist=0x7f09000d;
         public static final int phoneNumber=0x7f090003;
         public static final int questionTextView=0x7f090009;
         public static final int scrollView1=0x7f090005;
         public static final int smileyButton=0x7f09001c;
-        public static final int spinner1=0x7f090017;
+        public static final int spinner1=0x7f090018;
         public static final int surName=0x7f090002;
         public static final int textView1=0x7f090000;
         public static final int textView2=0x7f090015;
@@ -100,6 +100,7 @@ public final class R {
         public static final int menu_related=0x7f050003;
         public static final int menu_settings=0x7f050001;
         public static final int menu_statistics=0x7f050002;
+        public static final int new_name_button=0x7f050018;
         public static final int no_events=0x7f050012;
         public static final int title_activity_eventdetail=0x7f05000b;
         public static final int title_activity_eventlist=0x7f05000a;
