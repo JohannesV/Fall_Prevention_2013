@@ -37,10 +37,10 @@ public class ContactPerson extends ListActivity {
 			Toast.makeText(this, getString(R.string.no_events), Toast.LENGTH_LONG).show();
 		}
 	}
-	public void ContactPerson(String firstName, String surName, int phoneNumber) {
-		this.firstName = firstName;
-		this.surname = surName;
-		this.phoneNumbers = phoneNumber;
+	public void ContactPerson(Contact contact) {
+		this.firstName = contact.getFirstName();
+		this.surname = contact.getSurName();
+		this.phoneNumbers = contact.getPhoneNumber();
 		
 	}
 
