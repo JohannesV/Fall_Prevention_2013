@@ -2,6 +2,8 @@ package no.ntnu.stud.fallprevention;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class Settings extends Activity {
 

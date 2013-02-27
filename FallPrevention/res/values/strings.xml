@@ -14,8 +14,8 @@
     <string name="title_activity_eventlist">Eventlist</string>
     <string name="title_activity_eventdetail">EventDetail</string>
     <string name="greeting">Hello</string>
-    <string name="keep">Keep it</string>
-    <string name="delete">Remove it</string>
+    <string name="delete">Remove it</string><string name="keep">Keep it</string>
+    
     <string name="do_with_event">What do you want to do with this message?</string>
     <string name="lorem_short">Lorem ipse dolet</string>
     <string name="lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
@@ -25,5 +25,12 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_related">Related</string>
     <string name="main_got_new_events">You got new events. Click the smiley to see them.</string>
+    <string-array name="time_period_array">
+        <item >1 hour</item>
+        <item >4 hours</item>
+        <item >8 hours</item>
+        <item >1 day</item>
+        <item >7 days</item>
+    </string-array>
 
 </resources>
