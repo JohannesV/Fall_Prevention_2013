@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="no.ntnu.stud.fallprevention"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:installLocation="internalOnly" >
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Default" >
+        <activity
+            android:name="no.ntnu.stud.fallprevention.LaunchActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="no.ntnu.stud.fallprevention.WriteName"
+            android:label="@string/title_activity_write_name" >
+        </activity>
+        <activity
+            android:name="no.ntnu.stud.fallprevention.MainScreen"
+            android:label="@string/title_activity_mainscreen" >
+        </activity>
+        <activity
+            android:name="no.ntnu.stud.fallprevention.EventList"
+            android:label="@string/title_activity_eventlist"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="no.ntnu.stud.fallprevention.EventDetail"
+            android:label="@string/title_activity_eventdetail" >
+        </activity>
+        <activity
+            android:name="no.ntnu.stud.fallprevention.Statistics"
+            android:label="@string/title_activity_statistics" >
+        </activity>
+        <activity
+            android:name="no.ntnu.stud.fallprevention.Settings"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="no.ntnu.stud.fallprevention.Related"
+            android:label="@string/title_activity_related">
+        </activity>
+        <receiver android:name="WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/awidget_provider"/>
+        </receiver>	        
+    </application>
+</manifest>
