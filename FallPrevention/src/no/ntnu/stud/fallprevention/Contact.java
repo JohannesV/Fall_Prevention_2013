@@ -8,6 +8,11 @@ public class Contact {
 	public Contact (){
 		
 	}
+	public Contact(String firstname, String surName, int phoneNumber) {
+		this.firstName = firstname;
+		this.surName = surName;
+		this.phoneNumber = phoneNumber;
+	}
 	public void setFirstName(String firstName){
 		this.firstName = firstName;
 	}

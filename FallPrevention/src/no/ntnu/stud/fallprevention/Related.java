@@ -1,21 +1,20 @@
 package no.ntnu.stud.fallprevention;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 
 public class Related extends Activity {
-
+	List<Contact> contactPersons;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_related);
+		//set inn getContactsfrom Database
+		contactPersons.add(new Contact("Tore", "Hansen", 42341515));
 	}
 
-	/*@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_related, menu);
-		return true;
-	}*/
+
 
 }
