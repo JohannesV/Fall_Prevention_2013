@@ -6,12 +6,8 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.androidplot.series.XYSeries;
 import com.androidplot.xy.LineAndPointFormatter;
@@ -19,7 +15,7 @@ import com.androidplot.xy.SimpleXYSeries;
 import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYStepMode;
 
-public class Statistics extends Activity implements OnItemSelectedListener {
+public class Statistics extends Activity {
 	
 	private XYPlot riskHistoryPlot;
 	
@@ -38,28 +34,12 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		spinner.setAdapter(adapter);
-		spinner.setOnItemSelectedListener(this);
 		
 		riskHistoryPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
 		
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_statistics, menu);
-		return true;
-	}
-
-	@Override
-	public void onItemSelected(AdapterView<?> parent, View view, int pos,
-			long id) {
-		Toast.makeText(this, "ID: " + pos, Toast.LENGTH_SHORT).show();
 		// Get risk history values from the database 
-		List<Double> riskHistory = new DatabaseHelper(this).dbGetRiskHistory(pos+10);
+		List<Double> riskHistory = new DatabaseHelper(this).dbGetRiskHistory();
 		        
-		riskHistoryPlot.clear();
-		
         // Turn the above arrays into XYSeries':
         XYSeries riskSeries = new SimpleXYSeries(
                 riskHistory,
@@ -83,7 +63,10 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	}
 
 	@Override
-	public void onNothingSelected(AdapterView<?> parent) {
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_statistics, menu);
+		return true;
 	}
 
 }

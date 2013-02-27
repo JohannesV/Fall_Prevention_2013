@@ -22,7 +22,7 @@ public class Settings extends Activity {
 		startActivity(intent);
 	}
 
-	//NExtTestChange
+	
 
 	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
