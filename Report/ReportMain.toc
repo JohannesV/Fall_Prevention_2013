@@ -2,6 +2,23 @@
 \contentsline {chapter}{\numberline {2}Requirements}{3}
 \contentsline {section}{\numberline {2.1}Initial requirements}{3}
 \contentsline {section}{\numberline {2.2}Understanding the requirements}{3}
+<<<<<<< HEAD
+\contentsline {chapter}{\numberline {3}Alternative solutions}{5}
+\contentsline {chapter}{\numberline {4}Project Management}{6}
+\contentsline {section}{\numberline {4.1}Development process}{6}
+\contentsline {section}{\numberline {4.2}Team Roles and Organization}{6}
+\contentsline {chapter}{\numberline {5}Development Environment}{8}
+\contentsline {section}{\numberline {5.1}Code-sharing}{8}
+\contentsline {section}{\numberline {5.2}IDE}{8}
+\contentsline {section}{\numberline {5.3}Prototyping}{9}
+\contentsline {chapter}{\numberline {6}Implementation}{10}
+\contentsline {section}{\numberline {6.1}Plans}{10}
+\contentsline {section}{\numberline {6.2}Architecture}{10}
+\contentsline {subsection}{\numberline {6.2.1}}{11}
+\contentsline {chapter}{\numberline {A}Appendix}{12}
+\contentsline {section}{\numberline {A.1}Mockups}{12}
+\contentsline {section}{\numberline {A.2}Reports}{13}
+=======
 \contentsline {chapter}{\numberline {3}Project Management}{5}
 \contentsline {section}{\numberline {3.1}Development process}{5}
 \contentsline {section}{\numberline {3.2}Team Roles and Organization}{5}
@@ -12,3 +29,4 @@
 \contentsline {chapter}{\numberline {5}Implementation}{9}
 \contentsline {section}{\numberline {5.1}Plans}{9}
 \contentsline {section}{\numberline {5.2}Results}{9}
+>>>>>>> 3df7106e49e80e13184c59f32b7f4cf3dbce3e50
