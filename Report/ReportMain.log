@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.27)  27 FEB 2013 14:20
+=======
 This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.27)  20 FEB 2013 13:34
+>>>>>>> 3df7106e49e80e13184c59f32b7f4cf3dbce3e50
 entering extended mode
  %&-line parsing enabled.
 **ReportMain.tex
@@ -291,6 +295,20 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 ) (./ReportMain.aux)
 \openout1 = `ReportMain.aux'.
 
+<<<<<<< HEAD
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+=======
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
@@ -303,6 +321,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
+>>>>>>> 3df7106e49e80e13184c59f32b7f4cf3dbce3e50
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -316,15 +335,32 @@ LaTeX Font Info:    ... okay on input line 10.
 \MPscratchDim=\dimen108
 \MPnumerator=\count93
 \everyMPtoPDFconversion=\toks20
+<<<<<<< HEAD
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+=======
 ) (./ReportMain.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+>>>>>>> 3df7106e49e80e13184c59f32b7f4cf3dbce3e50
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+<<<<<<< HEAD
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ReportMain.toc)
+\tf@toc=\write3
+\openout3 = `ReportMain.toc'.
+
+ (./IntroductionChapter.tex
+[1
+
+]
+=======
 ))
 \tf@toc=\write3
 \openout3 = `ReportMain.toc'.
@@ -334,6 +370,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+>>>>>>> 3df7106e49e80e13184c59f32b7f4cf3dbce3e50
 Chapter 1.
 ) (./RequirementsChapter.tex [2
 
@@ -348,27 +385,82 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
  [3
 
 ])
+<<<<<<< HEAD
+(./AltSolutionsChapter.tex [4]
+Chapter 3.
+) (./ProjectManagementChapter.tex [5
+=======
 (./ProjectManagementChapter.tex [4]
 Chapter 3.
 [5
+>>>>>>> 3df7106e49e80e13184c59f32b7f4cf3dbce3e50
 
 ]) (./DevelopmentEnviromentChapter.tex [6]
 Chapter 4.
+<<<<<<< HEAD
+[6
+
+]) (./DevelopmentEnviromentChapter.tex [7]
+Chapter 5.
+=======
+>>>>>>> 3df7106e49e80e13184c59f32b7f4cf3dbce3e50
 
 Overfull \hbox (34.85837pt too wide) in paragraph at lines 4--6
 \OT1/cmr/m/n/12 The repos-i-tory that was to be used for the project was called
  "Fall[]Prevention[]2013".
  []
 
+<<<<<<< HEAD
+) (./ImplementationChapter.tex [8
+
+] [9]
+Chapter 6.
+=======
 ) (./ImplementationChapter.tex [7
 
 ] [8]
 Chapter 5.
+>>>>>>> 3df7106e49e80e13184c59f32b7f4cf3dbce3e50
 
 Underfull \hbox (badness 2343) in paragraph at lines 16--17
 \OT1/cmr/m/n/12 for the pro-to-type, re-search-ing
  []
 
+<<<<<<< HEAD
+) (./AppendixPt1.tex [10
+
+] [11]
+Appendix A.
+<Res/mockupV2.png, id=47, 803.0pt x 1136.245pt>
+File: Res/mockupV2.png Graphic file (type png)
+ <use Res/mockupV2.png>
+Overfull \hbox (2.0pt too wide) in paragraph at lines 12--13
+[][] 
+ []
+
+[12
+
+]) [13 <./Res/mockupV2.png (PNG copy)>] (./ReportMain.aux) ) 
+Here is how much of TeX's memory you used:
+ 1570 strings out of 495061
+ 18730 string characters out of 1182621
+ 66126 words of memory out of 3000000
+ 4723 multiletter control sequences out of 15000+50000
+ 13823 words of font info for 54 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 25i,8n,22p,662b,240s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ReportMain.pdf (14 pages, 167339 bytes).
+PDF statistics:
+ 84 PDF objects out of 1000 (max. 8388607)
+=======
 <Res/mockupV2.png, id=33, 803.0pt x 1136.245pt>
 File: Res/mockupV2.png Graphic file (type png)
  <use Res/mockupV2.png>
@@ -396,6 +488,7 @@ usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 Output written on ReportMain.pdf (10 pages, 145864 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
+>>>>>>> 3df7106e49e80e13184c59f32b7f4cf3dbce3e50
  0 named destinations out of 1000 (max. 500000)
  12 words of extra memory for PDF output out of 10000 (max. 10000000)
 
