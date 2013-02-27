@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Random;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -22,7 +22,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 4;
+	public static final int DATABASE_VERSION = 6;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA = ", ";
@@ -68,6 +68,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				"INSERT INTO Event (ID, TypeID) VALUES (1, 1)";
 		final String FILL_INFO_5 = 
 				"INSERT INTO Event (ID, TypeID) VALUES (2, 1)";
+		final String FILL_INFO_6 = 
+				"INSERT INTO Contact (PersonID, Name, PhoneNumber) VALUES (0, 'Dat-danny Pham', 47823094)";
+		final String FILL_INFO_7 = 
+				"INSERT INTO Contact (PersonID, Name, PhoneNumber) VALUES (1, 'Fyllip', 2356094)";
 		
 		db.execSQL(CREATE_TABLE_1);
 		db.execSQL(CREATE_TABLE_2);
@@ -78,6 +82,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(FILL_INFO_3);
 		db.execSQL(FILL_INFO_4);
 		db.execSQL(FILL_INFO_5);
+		db.execSQL(FILL_INFO_6);
+		db.execSQL(FILL_INFO_7);
 	}
 	
 	@Override
@@ -204,14 +210,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return RiskStatus.VERY_GOOD_JOB;
 	}
 	
-	public List<Double> dbGetRiskHistory() {
+	public List<Double> dbGetRiskHistory(int length) {
 		List<Double> riskHistory = new ArrayList<Double>();
-		riskHistory.add(1.0);
-		riskHistory.add(3.0);
-		riskHistory.add(7.0);
-		riskHistory.add(6.0);
-		riskHistory.add(9.0);
-		riskHistory.add(4.0);
+		Random r = new Random();
+		for (int i = 0; i < length; i++) {
+			riskHistory.add(r.nextDouble()*10);
+		}
 		return riskHistory;
 	}
 	

@@ -1,10 +1,14 @@
 package no.ntnu.stud.fallprevention;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.view.View;
 import android.widget.Button;
+=======
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+>>>>>>> d8fece3c7805304f43f3d4c53b13dcc1741668c4
 
 public class Settings extends Activity {
 
@@ -12,9 +16,8 @@ public class Settings extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
-		final Button button = (Button) findViewById(R.id.nameButton);
-		
 	}
+<<<<<<< HEAD
 	// testChang55
 	public void selfDestruct(View v){
 		Intent intent = new Intent(this, WriteName.class);
@@ -22,6 +25,8 @@ public class Settings extends Activity {
 	}
 
 	
+=======
+>>>>>>> d8fece3c7805304f43f3d4c53b13dcc1741668c4
 
 	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
