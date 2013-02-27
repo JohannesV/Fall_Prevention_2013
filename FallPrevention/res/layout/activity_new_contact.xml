@@ -16,39 +16,6 @@
         android:ems="10"
         android:text="Legg til en ny kontakt" />
 
-    <EditText
-        android:id="@+id/phoneNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Surname"
-        android:ems="10"
-        android:hint="Telefon"
-        android:inputType="phone" />
-
-    <EditText
-        android:id="@+id/Surname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Firstname"
-        android:ems="10"
-        android:hint="Etternavn"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/phoneNumber"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Skriv kontakt tekst"
-        android:inputType="textMultiLine" />
-
     <Button
         android:id="@+id/lagreKnapp"
         android:layout_width="wrap_content"
@@ -62,10 +29,61 @@
         android:id="@+id/Firstname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/lagreKnapp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/titleText"
         android:ems="10"
         android:hint="Fornavn"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Firstname"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="Telefon"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/Surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/phoneNumber"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="Etternavn"
         android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Surname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Ny kontakt" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/titleText" >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/titleText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Fra kontaktliste" />
 
 </RelativeLayout>
