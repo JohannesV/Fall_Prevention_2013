@@ -8,6 +8,8 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -40,10 +42,18 @@ public class ContactPerson extends ListActivity {
 		}
 	}
 	public void ContactPerson(Contact contact) {
+		EditText eText1 = (EditText) findViewById(R.id.firstName);
+		EditText eText2 = (EditText) findViewById(R.id.surName);
+		EditText eText3 = (EditText) findViewById(R.id.phoneNumber);
 		this.firstName = contact.getFirstName();
+		
 		this.surname = contact.getSurName();
+		
 		this.phoneNumbers = contact.getPhoneNumber();
 		
+		eText1.setText(firstName);
+		eText2.setText(surname);
+		eText3.setText(phoneNumbers);
 	}
 
 }
