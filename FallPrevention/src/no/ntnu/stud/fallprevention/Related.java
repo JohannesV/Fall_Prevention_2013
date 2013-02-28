@@ -19,14 +19,15 @@ public class Related extends Activity {
 		setContentView(R.layout.activity_related);
 		//set inn getContactsfrom Database
 		contacts.add(new Contact("Tore", "Hansen", 42341515));
-		ListView listView = (ListView) findViewById(R.id.listView1);
+		final ListView listView = (ListView) findViewById(R.id.listView1);
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {  
 			
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View arg1,
 							int arg2, long arg3) {
 						// TODO Auto-generated method stub
-						fireEvent();
+						Contact c = (Contact) listView.getItemAtPosition(arg2);
+						fireEvent(c);
 					}  
 			      }); 
 		ArrayList<String> listItems = new ArrayList<String>();
@@ -39,9 +40,13 @@ public class Related extends Activity {
 		
 		
 	}
-	protected void fireEvent() {
+	protected void fireEvent(Contact c) {
 		// TODO Auto-generated method stub
+		
 		Intent intent = new Intent(this, ContactPerson.class);
+		
+		intent.putExtra("Contact", c);
+		
 		startActivity(intent);
 	}
 	public void fireNewPerson(View view){
