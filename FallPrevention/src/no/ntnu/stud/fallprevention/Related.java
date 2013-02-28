@@ -44,7 +44,10 @@ public class Related extends Activity {
 		Intent intent = new Intent(this, ContactPerson.class);
 		startActivity(intent);
 	}
-
+	public void fireNewPerson(View view){
+		Intent intent = new Intent(this, NewContact.class);
+		startActivity(intent);
+	}
 
 
 }
