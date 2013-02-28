@@ -55,5 +55,10 @@ public class ContactPerson extends ListActivity {
 		eText2.setText(surname);
 		eText3.setText(phoneNumbers);
 	}
+	public void FireBack (View view){
+		Intent intent = new Intent(this, Related.class);
+		startActivity(intent);
+		
+	}
 
 }

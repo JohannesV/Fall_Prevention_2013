@@ -58,7 +58,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="OK" />
+        android:text="OK" 
+        android:onClick="FireBack"/>
 
     <ScrollView
         android:id="@+id/scrollView1"
