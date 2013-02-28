@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -45,7 +46,7 @@ public class Related extends Activity {
 		
 		Intent intent = new Intent(this, ContactPerson.class);
 		
-		intent.putExtra("Contact", c);
+		intent.putExtra("Contact", (Parcelable)c);
 		
 		startActivity(intent);
 	}
