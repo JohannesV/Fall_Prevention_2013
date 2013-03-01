@@ -19,20 +19,10 @@ public class WidgetProvider extends AppWidgetProvider {
 	private int counter = 0;
 	
 	@Override
-	public void onReceive(Context context, Intent intent)
-	{
-	    // Chain up to the super class so the onEnabled, etc callbacks get dispatched
-	    super.onReceive(context, intent);
-	    // Handle a different Intent
-	    Log.d(TAG, "onReceive()" + intent.getAction());
-
-	}
-	
-	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		counter++;
-		Drawable drawable;
 		RiskStatus status = new DatabaseHelper(context).dbGetStatus();
+		Drawable drawable;
 		//if (status == RiskStatus.BAD_JOB) {
 		if (counter == 1) {
 			drawable = context.getResources().getDrawable(R.drawable.bad_job);
@@ -69,6 +59,7 @@ public class WidgetProvider extends AppWidgetProvider {
 		 PendingIntent pendIntent = PendingIntent.getActivity(context, 0, intent, 0);
 		 views.setOnClickPendingIntent(R.id.smileyButton, pendIntent);
 		 
-		 appWidgetManager.updateAppWidget(appWidgetIds, views);		 		
+		 ComponentName name = new ComponentName(context, this.getClass());
+		 appWidgetManager.updateAppWidget(name, views);
 	}
 } 

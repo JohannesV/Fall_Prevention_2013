@@ -27,37 +27,36 @@ public final class R {
         public static final int widget_background=0x7f02000a;
     }
     public static final class id {
-        public static final int Firstname=0x7f090010;
         public static final int OK=0x7f090004;
-        public static final int Surname=0x7f090011;
-        public static final int button1=0x7f090014;
+        public static final int button1=0x7f090011;
+        public static final int contactName=0x7f090016;
         public static final int deleteButton=0x7f09000a;
-        public static final int editText1=0x7f090017;
+        public static final int editText1=0x7f090014;
         public static final int firstName=0x7f090001;
         public static final int headlineTextView=0x7f090005;
         public static final int keepButton=0x7f090009;
-        public static final int label=0x7f09001a;
+        public static final int label=0x7f090019;
         public static final int lagreKnapp=0x7f09000f;
         public static final int layout=0x7f090008;
-        public static final int listView1=0x7f090012;
-        public static final int logo=0x7f090019;
+        public static final int listView1=0x7f090010;
+        public static final int logo=0x7f090018;
         public static final int mainScreenSmileyImage=0x7f09000c;
         public static final int mainScreenSubText=0x7f09000d;
         public static final int mainTextView=0x7f090006;
-        public static final int menu_related=0x7f09001e;
-        public static final int menu_settings=0x7f09001c;
-        public static final int menu_statistics=0x7f09001d;
-        public static final int mySimpleXYPlot=0x7f090015;
+        public static final int menu_related=0x7f09001d;
+        public static final int menu_settings=0x7f09001b;
+        public static final int menu_statistics=0x7f09001c;
+        public static final int mySimpleXYPlot=0x7f090012;
         public static final int mylist=0x7f09000b;
         public static final int phoneNumber=0x7f090003;
         public static final int questionTextView=0x7f090007;
-        public static final int smileyButton=0x7f09001b;
-        public static final int spinner1=0x7f090016;
+        public static final int smileyButton=0x7f09001a;
+        public static final int spinner1=0x7f090013;
         public static final int surName=0x7f090002;
         public static final int textView1=0x7f090000;
-        public static final int textView2=0x7f090013;
+        public static final int textView2=0x7f090015;
         public static final int titleText=0x7f09000e;
-        public static final int toggleButton1=0x7f090018;
+        public static final int toggleButton1=0x7f090017;
     }
     public static final class layout {
         public static final int activity_contact_person=0x7f030000;
@@ -70,9 +69,10 @@ public final class R {
         public static final int activity_settings=0x7f030007;
         public static final int activity_statistics=0x7f030008;
         public static final int activity_write_name=0x7f030009;
-        public static final int entry_danger_event=0x7f03000a;
-        public static final int entry_eventlist=0x7f03000b;
-        public static final int widget_layout=0x7f03000c;
+        public static final int entry_contact=0x7f03000a;
+        public static final int entry_danger_event=0x7f03000b;
+        public static final int entry_eventlist=0x7f03000c;
+        public static final int widget_layout=0x7f03000d;
     }
     public static final class menu {
         public static final int activity_eventdetail=0x7f080000;
@@ -100,6 +100,7 @@ public final class R {
         public static final int menu_related=0x7f050003;
         public static final int menu_settings=0x7f050001;
         public static final int menu_statistics=0x7f050002;
+        public static final int new_contact_activity=0x7f05001a;
         public static final int new_name_button=0x7f050018;
         public static final int no_events=0x7f050012;
         public static final int title_activity_eventdetail=0x7f05000b;
