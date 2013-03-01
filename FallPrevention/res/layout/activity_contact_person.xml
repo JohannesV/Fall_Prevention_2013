@@ -62,7 +62,7 @@
         android:onClick="FireBack"/>
 
     <ListView
-        android:id="@+id/list"
+        android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/OK"

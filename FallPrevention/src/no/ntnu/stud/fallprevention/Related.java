@@ -6,27 +6,27 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Related extends Activity {
-	ArrayList<Contact> contacts = new ArrayList<Contact>();
+	
+	List<Contact> contacts = new ArrayList<Contact>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_related);
 		//set inn getContactsfrom Database
-		contacts.add(new Contact("Tore", "Hansen", 42341515));
+		contacts = new DatabaseHelper(this).dbGetContactList();
 		final ListView listView = (ListView) findViewById(R.id.listView1);
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {  
 			
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View arg1,
 							int position, long arg3) {
-						// TODO Auto-generated method stub
 						String c = (String) listView.getItemAtPosition(position);
 						fireEvent(c);
 					}  

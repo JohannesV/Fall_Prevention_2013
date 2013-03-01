@@ -22,7 +22,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 6;
+	public static final int DATABASE_VERSION = 9;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA = ", ";
@@ -51,7 +51,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		final String CREATE_TABLE_3 = 
 				"CREATE TABLE " + DatabaseContract.Contact.TABLE_NAME + START_PAR +
 				DatabaseContract.Contact.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
-				DatabaseContract.Contact.COLUMN_NAME_NAME + COMMA +
+				DatabaseContract.Contact.COLUMN_NAME_FIRST_NAME + COMMA +
+				DatabaseContract.Contact.COLUMN_NAME_SURNAME + COMMA +
 				DatabaseContract.Contact.COLUMN_NAME_PHONE + END_PAR;
 		final String CREATE_TABLE_4 = 
 				"CREATE TABLE " + DatabaseContract.AlarmSetting.TABLE_NAME + START_PAR +
@@ -69,9 +70,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		final String FILL_INFO_5 = 
 				"INSERT INTO Event (ID, TypeID) VALUES (2, 1)";
 		final String FILL_INFO_6 = 
-				"INSERT INTO Contact (PersonID, Name, PhoneNumber) VALUES (0, 'Dat-danny Pham', 47823094)";
+				"INSERT INTO Contact (PersonID, Firstname, Surname, PhoneNumber) VALUES (0, 'Dat-danny', 'Pham', 47823094)";
 		final String FILL_INFO_7 = 
-				"INSERT INTO Contact (PersonID, Name, PhoneNumber) VALUES (1, 'Fyllip', 2356094)";
+				"INSERT INTO Contact (PersonID, Firstname, Surname, PhoneNumber) VALUES (1, 'Fyllip', 'Larzzon', 2356094)";
 		
 		db.execSQL(CREATE_TABLE_1);
 		db.execSQL(CREATE_TABLE_2);
@@ -91,6 +92,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		// Clears the database on an upgrade, and reset it
 		db.execSQL("DROP TABLE " + DatabaseContract.EventType.TABLE_NAME);
 		db.execSQL("DROP TABLE " + DatabaseContract.Event.TABLE_NAME);
+		db.execSQL("DROP TABLE " + DatabaseContract.Contact.TABLE_NAME);
+		db.execSQL("DROP TABLE " + DatabaseContract.AlarmSetting.TABLE_NAME);
 		onCreate(db);
 	}
 	
@@ -220,6 +223,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 	
 	public List<Contact> dbGetContactList() {
-		return new ArrayList<Contact>();
+		List<Contact> contacts = new ArrayList<Contact>();
+		
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("SELECT " + DatabaseContract.Contact.COLUMN_NAME_ID + COMMA +
+				DatabaseContract.Contact.COLUMN_NAME_FIRST_NAME + COMMA + 
+				DatabaseContract.Contact.COLUMN_NAME_SURNAME + COMMA +
+				DatabaseContract.Contact.COLUMN_NAME_PHONE + " FROM " + 
+				DatabaseContract.Contact.TABLE_NAME, null);
+		
+		for (int i = 0; i<cursor.getCount(); i++) {
+			cursor.moveToPosition(i);
+			Contact contact = new Contact();
+			contact.setFirstName(cursor.getString(1));
+			contact.setSurName(cursor.getString(2));
+			contact.setPhoneNumber(Integer.parseInt(cursor.getString(3)));
+			contacts.add(contact);
+		}
+		
+		cursor.close();
+		db.close();
+		
+		return contacts;
 	}
 }

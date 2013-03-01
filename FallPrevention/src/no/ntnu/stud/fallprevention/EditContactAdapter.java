@@ -14,21 +14,21 @@ import android.widget.ToggleButton;
 public class EditContactAdapter extends ArrayAdapter<String> {
 
 	Context context;
-	List<Event> events;
+	List<Contact> contacts;
 
-	private static List<String> eventToStringList(List<Event> events) {
+	private static List<String> contactToStringList(List<Contact> contacts) {
 		List<String> strings = new ArrayList<String>();
-		for (Event e : events) {
-			strings.add(e.getTitle());
+		for (Contact c : contacts) {
+			strings.add(c.toString());
 		}
 		return strings;
 	}
 
-	public EditContactAdapter(Context context, List<Event> events) {
-		super(context, R.layout.activity_danger_events, eventToStringList(events));
+	public EditContactAdapter(Context context, List<Contact> contacts) {
+		super(context, R.layout.activity_danger_events, contactToStringList(contacts));
 		
 		this.context = context;
-		this.events = events;
+		this.contacts = contacts;
 	} 
 
 	@Override
@@ -39,7 +39,7 @@ public class EditContactAdapter extends ArrayAdapter<String> {
 		View rowView = inflater.inflate(R.layout.activity_danger_events, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.textView1);
 		//ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
-		textView.setText(events.get(position).getTitle());
+		textView.setText(contacts.get(position).toString());
 		ToggleButton toggleButton = (ToggleButton) rowView.findViewById(R.id.toggleButton1);
 		toggleButton.setSelected(false);
 

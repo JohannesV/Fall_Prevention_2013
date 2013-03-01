@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class ContactPerson extends ListActivity {
 	int phoneNumbers;
 	String firstName, surname; 
-	List<Event> events;
+	List<Contact> contact;
 	ListView listView;
 
 	
@@ -27,16 +27,11 @@ public class ContactPerson extends ListActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		events = new DatabaseHelper(this).dbGetEventList();
+		contact = new DatabaseHelper(this).dbGetContactList();
 		
 		// Display the information
-		listView = (ListView) findViewById(R.id.list);
-		this.setListAdapter(new EditContactAdapter(this, events));
-		
-		// Display a message if there are no events in the queue
-		if (events.isEmpty()) {
-			Toast.makeText(this, getString(R.string.no_events), Toast.LENGTH_LONG).show();
-		}
+		listView = (ListView) findViewById(android.R.id.list);
+		this.setListAdapter(new EditContactAdapter(this, contact));
 	}
 	public void ContactPerson(Contact contact) {
 		EditText eText1 = (EditText) findViewById(R.id.firstName);
