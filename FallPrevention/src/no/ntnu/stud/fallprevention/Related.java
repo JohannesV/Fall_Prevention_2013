@@ -25,9 +25,9 @@ public class Related extends Activity {
 			
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View arg1,
-							int arg2, long arg3) {
+							int position, long arg3) {
 						// TODO Auto-generated method stub
-						Contact c = (Contact) listView.getItemAtPosition(arg2);
+						String c = (String) listView.getItemAtPosition(position);
 						fireEvent(c);
 					}  
 			      }); 
@@ -41,12 +41,10 @@ public class Related extends Activity {
 		
 		
 	}
-	protected void fireEvent(Contact c) {
-		// TODO Auto-generated method stub
-		
+	protected void fireEvent(String c) {
 		Intent intent = new Intent(this, ContactPerson.class);
 		
-		intent.putExtra("Contact", (Parcelable)c);
+		intent.putExtra("Contact", c);
 		
 		startActivity(intent);
 	}

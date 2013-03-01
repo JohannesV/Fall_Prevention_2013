@@ -51,6 +51,10 @@
             android:name="no.ntnu.stud.fallprevention.Related"
             android:label="@string/title_activity_related">
         </activity>
+        <activity
+            android:name="no.ntnu.stud.fallprevention.ContactPerson"
+            android:label="@string/contact_person_activity">
+        </activity>
         <receiver android:name="WidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>

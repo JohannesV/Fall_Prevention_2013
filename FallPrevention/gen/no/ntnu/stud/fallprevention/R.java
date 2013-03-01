@@ -39,6 +39,7 @@ public final class R {
         public static final int label=0x7f09001b;
         public static final int lagreKnapp=0x7f090011;
         public static final int layout=0x7f09000a;
+        public static final int list=0x7f090005;
         public static final int listView1=0x7f090014;
         public static final int logo=0x7f09001a;
         public static final int mainScreenSmileyImage=0x7f09000e;
@@ -51,7 +52,6 @@ public final class R {
         public static final int mylist=0x7f09000d;
         public static final int phoneNumber=0x7f090003;
         public static final int questionTextView=0x7f090009;
-        public static final int scrollView1=0x7f090005;
         public static final int smileyButton=0x7f09001c;
         public static final int spinner1=0x7f090018;
         public static final int surName=0x7f090002;
@@ -88,6 +88,7 @@ public final class R {
     public static final class string {
         public static final int app_name=0x7f050000;
         public static final int button=0x7f050008;
+        public static final int contact_person_activity=0x7f050019;
         public static final int delete=0x7f05000d;
         public static final int do_with_event=0x7f05000f;
         public static final int greeting=0x7f05000c;

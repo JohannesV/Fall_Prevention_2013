@@ -1,25 +1,44 @@
 package no.ntnu.stud.fallprevention;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.widget.ImageButton;
+import android.util.Log;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 public class WidgetProvider extends AppWidgetProvider {
+	
+	private final String TAG = "WIDGET_PROVIDER";
 	private int counter = 0;
 	
 	@Override
+	public void onReceive(Context context, Intent intent)
+	{
+	    // Chain up to the super class so the onEnabled, etc callbacks get dispatched
+	    super.onReceive(context, intent);
+	    // Handle a different Intent
+	    Log.d(TAG, "onReceive()" + intent.getAction());
+
+	}
+	
+	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+		counter++;
 		Drawable drawable;
 		RiskStatus status = new DatabaseHelper(context).dbGetStatus();
-		if (status == RiskStatus.BAD_JOB) {
+		//if (status == RiskStatus.BAD_JOB) {
+		if (counter == 1) {
 			drawable = context.getResources().getDrawable(R.drawable.bad_job);
 		}
-		else if (status == RiskStatus.NOT_SO_OK_JOB) {
+		else if (counter == 2) {
+		//else if (status == RiskStatus.NOT_SO_OK_JOB) {
 			drawable = context.getResources().getDrawable(R.drawable.not_so_ok_job);
 		}
 		else if (status == RiskStatus.OK_JOB) {
@@ -45,17 +64,11 @@ public class WidgetProvider extends AppWidgetProvider {
 		 views.setBitmap(R.id.smileyButton, "setImageBitmap", bitmap);
 		 appWidgetManager.updateAppWidget(appWidgetIds, views);
 		 
-		 /* update your widget */
-/*		 ComponentName thisWidget = new ComponentName(this, YourWidget.class);
-		 AppWidgetManager manager = AppWidgetManager.getInstance(this);
-		 manager.updateAppWidget(thisWidget, updateViews);
-		
-		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);	
-		ImageButton imageButton = (ImageButton) views.findViewById(R.id.mainScreenSmileyImage);
-		imageButton.setBackgroundDrawable(d);
-		
-		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);	
-		views.setTextViewText(R.id.update, Integer.toString(counter));
-        appWidgetManager.updateAppWidget(appWidgetIds, views);*/
+		 // ADD A LISTENER
+		 Intent intent = new Intent(context, EventList.class);
+		 PendingIntent pendIntent = PendingIntent.getActivity(context, 0, intent, 0);
+		 views.setOnClickPendingIntent(R.id.smileyButton, pendIntent);
+		 
+		 appWidgetManager.updateAppWidget(appWidgetIds, views);		 		
 	}
 } 
