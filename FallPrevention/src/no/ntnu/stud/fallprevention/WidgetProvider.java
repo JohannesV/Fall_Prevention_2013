@@ -37,7 +37,7 @@ public class WidgetProvider extends AppWidgetProvider {
 		if (counter == 1) {
 			drawable = context.getResources().getDrawable(R.drawable.bad_job);
 		}
-		else if (counter == 2) {
+		else if (counter > 1) {
 		//else if (status == RiskStatus.NOT_SO_OK_JOB) {
 			drawable = context.getResources().getDrawable(R.drawable.not_so_ok_job);
 		}
