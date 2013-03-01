@@ -5,8 +5,13 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 public class NewContact extends Activity {
 
@@ -21,6 +26,15 @@ public class NewContact extends Activity {
 		contactList = (ListView) findViewById(android.R.id.list);
 		
 		// TODO: Add event listeners
+		contactList.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+					int position, long arg3) {
+				Toast.makeText(NewContact.this, "Click: " + position, Toast.LENGTH_SHORT).show();
+				return false;
+			}
+		});
 		
 		populateContactList();
 	}
