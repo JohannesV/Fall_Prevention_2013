@@ -30,8 +30,7 @@ public abstract class DatabaseContract {
 	
 	public static abstract class Contact implements BaseColumns {
 		public static final String TABLE_NAME = "Contact";
-		public static final String COLUMN_NAME_FIRST_NAME = "Firstname";
-		public static final String COLUMN_NAME_SURNAME = "Surname";
+		public static final String COLUMN_NAME_NAME = "Name";
 		public static final String COLUMN_NAME_ID = "PersonID";
 		public static final String COLUMN_NAME_PHONE = "PhoneNumber";
 	}

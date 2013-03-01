@@ -2,38 +2,39 @@ package no.ntnu.stud.fallprevention;
 
 public class Contact {
 	
-	String firstName, surName;
+	String name, id;
 	int phoneNumber = 0;
 	
 	public Contact (){
-		
-	}
-	public Contact(String firstname, String surName, int phoneNumber) {
-		this.firstName = firstname;
-		this.surName = surName;
-		this.phoneNumber = phoneNumber;
-	}
-	public void setFirstName(String firstName){
-		this.firstName = firstName;
-	}
-	public void setSurName(String surName) {
-		this.surName = surName;
-		
-	}
-	public void setPhoneNumber (int phoneNumber){
-		this.phoneNumber = phoneNumber;
-	}
-	public String getFirstName (){
-		return this.firstName;
-	}
-	public String getSurName (){
-		return this.surName;
-	}
-	public int getPhoneNumber (){
-		return this.phoneNumber;
-	}
-	public String toString(){
-		return firstName+" "+surName;
 	}
 	
+	public Contact(String name, String id) {
+		this.name = name;
+		this.id = id;
+	}
+	
+	public Contact(String name, int phoneNumber) {
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getId() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}	
 }

@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class ContactPerson extends ListActivity {
 	int phoneNumbers;
-	String firstName, surname; 
+	String name; 
 	List<String> alarms;
 	ListView listView;
 
@@ -34,18 +34,15 @@ public class ContactPerson extends ListActivity {
 		this.setListAdapter(new EditContactAdapter(this, alarms));
 	}
 	public void ContactPerson(Contact contact) {
-		EditText eText1 = (EditText) findViewById(R.id.firstName);
-		EditText eText2 = (EditText) findViewById(R.id.surName);
-		EditText eText3 = (EditText) findViewById(R.id.phoneNumber);
-		this.firstName = contact.getFirstName();
+		EditText eText1 = (EditText) findViewById(R.id.name);
+		EditText eText2 = (EditText) findViewById(R.id.phoneNumber);
 		
-		this.surname = contact.getSurName();
+		this.name = contact.getName();
 		
 		this.phoneNumbers = contact.getPhoneNumber();
 		
-		eText1.setText(firstName);
-		eText2.setText(surname);
-		eText3.setText(phoneNumbers);
+		eText1.setText(name);
+		eText2.setText(phoneNumbers);
 	}
 	public void FireBack (View view){
 		Intent intent = new Intent(this, Related.class);
