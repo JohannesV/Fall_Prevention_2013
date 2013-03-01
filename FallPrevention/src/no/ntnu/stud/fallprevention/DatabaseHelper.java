@@ -22,7 +22,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 9;
+	public static final int DATABASE_VERSION = 10;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA = ", ";
@@ -55,10 +55,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				DatabaseContract.Contact.COLUMN_NAME_SURNAME + COMMA +
 				DatabaseContract.Contact.COLUMN_NAME_PHONE + END_PAR;
 		final String CREATE_TABLE_4 = 
-				"CREATE TABLE " + DatabaseContract.AlarmSetting.TABLE_NAME + START_PAR +
-				DatabaseContract.AlarmSetting.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
-				DatabaseContract.AlarmSetting.COLUMN_NAME_EVENTID + COMMA +
-				DatabaseContract.AlarmSetting.COLUMN_NAME_TYPE + END_PAR;
+				"CREATE TABLE " + DatabaseContract.AlarmTypes.TABLE_NAME + START_PAR +
+				DatabaseContract.AlarmTypes.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
+				DatabaseContract.AlarmTypes.COLUMN_NAME_DESCRIPTION + END_PAR;
 		final String FILL_INFO_1 = 
 				"INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (0, \'You should really keep working out and not be a lazy bastard!\', \'You are lazy!\', \'halo\')";
 		final String FILL_INFO_2 = 
@@ -73,6 +72,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				"INSERT INTO Contact (PersonID, Firstname, Surname, PhoneNumber) VALUES (0, 'Dat-danny', 'Pham', 47823094)";
 		final String FILL_INFO_7 = 
 				"INSERT INTO Contact (PersonID, Firstname, Surname, PhoneNumber) VALUES (1, 'Fyllip', 'Larzzon', 2356094)";
+		final String FILL_INFO_8 =
+				"INSERT INTO AlarmTypes (AlarmID, Description) VALUES (0, 'SMS if risk is high')";
+		final String FILL_INFO_9 =
+				"INSERT INTO AlarmTypes (AlarmID, Description) VALUES (1, 'SMS if sudden spike')";
+		final String FILL_INFO_10 =
+				"INSERT INTO AlarmTypes (AlarmID, Description) VALUES (2, 'SMS if gradual improvement')";
+		final String FILL_INFO_11 =
+				"INSERT INTO AlarmTypes (AlarmID, Description) VALUES (3, 'SMS if fall')";
 		
 		db.execSQL(CREATE_TABLE_1);
 		db.execSQL(CREATE_TABLE_2);
@@ -85,6 +92,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(FILL_INFO_5);
 		db.execSQL(FILL_INFO_6);
 		db.execSQL(FILL_INFO_7);
+		db.execSQL(FILL_INFO_8);
+		db.execSQL(FILL_INFO_9);
+		db.execSQL(FILL_INFO_10);
+		db.execSQL(FILL_INFO_11);
 	}
 	
 	@Override
@@ -93,7 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("DROP TABLE " + DatabaseContract.EventType.TABLE_NAME);
 		db.execSQL("DROP TABLE " + DatabaseContract.Event.TABLE_NAME);
 		db.execSQL("DROP TABLE " + DatabaseContract.Contact.TABLE_NAME);
-		db.execSQL("DROP TABLE " + DatabaseContract.AlarmSetting.TABLE_NAME);
+		db.execSQL("DROP TABLE " + DatabaseContract.AlarmTypes.TABLE_NAME);
 		onCreate(db);
 	}
 	
@@ -245,5 +256,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.close();
 		
 		return contacts;
+	}
+	
+	public List<String> dbGetAlarmTypes() {
+		List<String> alarm = new ArrayList<String>();
+		
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("SELECT " + DatabaseContract.AlarmTypes.COLUMN_NAME_DESCRIPTION + 
+				" FROM " + DatabaseContract.AlarmTypes.TABLE_NAME, null);
+		
+		for (int i = 0; i<cursor.getCount(); i++) {
+			cursor.moveToPosition(i);
+			alarm.add(cursor.getString(0));
+		}
+		
+		cursor.close();
+		db.close();
+		
+		return alarm;
 	}
 }

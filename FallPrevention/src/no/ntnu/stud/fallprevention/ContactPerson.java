@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class ContactPerson extends ListActivity {
 	int phoneNumbers;
 	String firstName, surname; 
-	List<Contact> contact;
+	List<String> alarms;
 	ListView listView;
 
 	
@@ -27,11 +27,11 @@ public class ContactPerson extends ListActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		contact = new DatabaseHelper(this).dbGetContactList();
+		alarms = new DatabaseHelper(this).dbGetAlarmTypes();
 		
 		// Display the information
 		listView = (ListView) findViewById(android.R.id.list);
-		this.setListAdapter(new EditContactAdapter(this, contact));
+		this.setListAdapter(new EditContactAdapter(this, alarms));
 	}
 	public void ContactPerson(Contact contact) {
 		EditText eText1 = (EditText) findViewById(R.id.firstName);

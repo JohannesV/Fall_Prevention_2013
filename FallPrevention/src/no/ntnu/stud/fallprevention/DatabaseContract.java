@@ -36,10 +36,9 @@ public abstract class DatabaseContract {
 		public static final String COLUMN_NAME_PHONE = "PhoneNumber";
 	}
 	
-	public static abstract class AlarmSetting implements BaseColumns {
-		public static final String TABLE_NAME = "AlarmSetting";
+	public static abstract class AlarmTypes implements BaseColumns {
+		public static final String TABLE_NAME = "AlarmTypes";
 		public static final String COLUMN_NAME_ID = "AlarmID";
-		public static final String COLUMN_NAME_EVENTID = "EventID";
-		public static final String COLUMN_NAME_TYPE = "AlarmType";
+		public static final String COLUMN_NAME_DESCRIPTION = "Description";
 	}
 }
