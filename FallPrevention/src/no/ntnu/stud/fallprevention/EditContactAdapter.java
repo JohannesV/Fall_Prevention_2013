@@ -25,7 +25,7 @@ public class EditContactAdapter extends ArrayAdapter<String> {
 	}
 
 	public EditContactAdapter(Context context, List<Contact> contacts) {
-		super(context, R.layout.activity_danger_events, contactToStringList(contacts));
+		super(context, R.layout.entry_danger_event, contactToStringList(contacts));
 		
 		this.context = context;
 		this.contacts = contacts;
@@ -36,7 +36,7 @@ public class EditContactAdapter extends ArrayAdapter<String> {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		View rowView = inflater.inflate(R.layout.activity_danger_events, parent, false);
+		View rowView = inflater.inflate(R.layout.entry_danger_event, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.textView1);
 		//ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
 		textView.setText(contacts.get(position).toString());

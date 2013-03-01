@@ -25,7 +25,7 @@ public class ListDrawAdapter extends ArrayAdapter<String> {
 	}
 
 	public ListDrawAdapter(Context context, List<Event> events) {
-		super(context, R.layout.eventlist_entry, eventToStringList(events));
+		super(context, R.layout.entry_eventlist, eventToStringList(events));
 		
 		this.context = context;
 		this.events = events;
@@ -36,7 +36,7 @@ public class ListDrawAdapter extends ArrayAdapter<String> {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		View rowView = inflater.inflate(R.layout.eventlist_entry, parent, false);
+		View rowView = inflater.inflate(R.layout.entry_eventlist, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
 		textView.setText(events.get(position).getTitle());
