@@ -6,11 +6,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
+import android.content.CursorLoader;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
+import android.provider.ContactsContract;
 
 /**
  * Database helper is an object that builds and maintains the database. It also
@@ -22,7 +27,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 10;
+	public static final int DATABASE_VERSION = 11;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA = ", ";
@@ -31,8 +36,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final String DOT = ".";
 	public static final String EQUAL = "=";
 	
+	private Context context;
+	
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+		this.context = context;
 	}
 	
 	@Override
@@ -51,8 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		final String CREATE_TABLE_3 = 
 				"CREATE TABLE " + DatabaseContract.Contact.TABLE_NAME + START_PAR +
 				DatabaseContract.Contact.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
-				DatabaseContract.Contact.COLUMN_NAME_FIRST_NAME + COMMA +
-				DatabaseContract.Contact.COLUMN_NAME_SURNAME + COMMA +
+				DatabaseContract.Contact.COLUMN_NAME_NAME + COMMA +
 				DatabaseContract.Contact.COLUMN_NAME_PHONE + END_PAR;
 		final String CREATE_TABLE_4 = 
 				"CREATE TABLE " + DatabaseContract.AlarmTypes.TABLE_NAME + START_PAR +
@@ -69,9 +76,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		final String FILL_INFO_5 = 
 				"INSERT INTO Event (ID, TypeID) VALUES (2, 1)";
 		final String FILL_INFO_6 = 
-				"INSERT INTO Contact (PersonID, Firstname, Surname, PhoneNumber) VALUES (0, 'Dat-danny', 'Pham', 47823094)";
+				"INSERT INTO Contact (PersonID, Name, PhoneNumber) VALUES (0, 'Dat-danny Pham', 47823094)";
 		final String FILL_INFO_7 = 
-				"INSERT INTO Contact (PersonID, Firstname, Surname, PhoneNumber) VALUES (1, 'Fyllip', 'Larzzon', 2356094)";
+				"INSERT INTO Contact (PersonID, Name, PhoneNumber) VALUES (1, 'Fyllip Larzzon', 2356094)";
 		final String FILL_INFO_8 =
 				"INSERT INTO AlarmTypes (AlarmID, Description) VALUES (0, 'SMS if risk is high')";
 		final String FILL_INFO_9 =
@@ -238,17 +245,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		SQLiteDatabase db = getReadableDatabase();
 		Cursor cursor = db.rawQuery("SELECT " + DatabaseContract.Contact.COLUMN_NAME_ID + COMMA +
-				DatabaseContract.Contact.COLUMN_NAME_FIRST_NAME + COMMA + 
-				DatabaseContract.Contact.COLUMN_NAME_SURNAME + COMMA +
+				DatabaseContract.Contact.COLUMN_NAME_NAME + COMMA +
 				DatabaseContract.Contact.COLUMN_NAME_PHONE + " FROM " + 
 				DatabaseContract.Contact.TABLE_NAME, null);
 		
 		for (int i = 0; i<cursor.getCount(); i++) {
 			cursor.moveToPosition(i);
 			Contact contact = new Contact();
-			contact.setFirstName(cursor.getString(1));
-			contact.setSurName(cursor.getString(2));
-			contact.setPhoneNumber(Integer.parseInt(cursor.getString(3)));
+			contact.setName(cursor.getString(1));
+			try {
+				contact.setPhoneNumber(Integer.parseInt(cursor.getString(2)));
+			} catch (NumberFormatException nfe) {
+				contact.setPhoneNumber(-1);
+			}
 			contacts.add(contact);
 		}
 		
@@ -274,5 +283,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.close();
 		
 		return alarm;
+	}
+	
+	public boolean dbAddContact(String id) {
+		// First get additional information based on id
+		SQLiteDatabase db = getReadableDatabase();
+		
+		Uri uri = ContactsContract.Contacts.CONTENT_URI;
+		String[] projection = new String[] {
+				ContactsContract.Contacts.DISPLAY_NAME
+		};
+		String selection = ContactsContract.Contacts._ID + " = " + id;
+		String[] selectionArgs = null;
+		
+		Cursor cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, null);
+		
+		// Extract information from the query
+		cursor.moveToFirst();
+		String name = cursor.getString(0);
+		//String phonenumer = cursor.getString(1);
+		
+		// Close everything
+		cursor.close();
+		db.close();
+		
+		// Then store information to database
+		db = getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put(DatabaseContract.Contact.COLUMN_NAME_NAME, name);
+		//values.put(DatabaseContract.Contact.COLUMN_NAME_telefonnummer, phonenumer);
+		
+		long newRowId = db.insert(DatabaseContract.Contact.TABLE_NAME, null, values);
+		db.close();
+		
+		return (newRowId >= 0);
 	}
 }

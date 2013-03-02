@@ -33,7 +33,7 @@ public class Related extends Activity {
 			      }); 
 		ArrayList<String> listItems = new ArrayList<String>();
 		for (Contact c : contacts) {
-			listItems.add(c.toString());
+			listItems.add(c.getName());
 		}
 		final ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, listItems);
 		listView.setAdapter( adapter );
