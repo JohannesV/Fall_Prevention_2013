@@ -1,17 +1,23 @@
-\contentsline {chapter}{\numberline {1}Introduction}{2}
-\contentsline {chapter}{\numberline {2}Requirements}{3}
-\contentsline {section}{\numberline {2.1}Initial requirements}{3}
-\contentsline {section}{\numberline {2.2}Understanding the requirements}{3}
-\contentsline {chapter}{\numberline {3}Project Management}{5}
-\contentsline {section}{\numberline {3.1}Development process}{5}
-\contentsline {section}{\numberline {3.2}Team Roles and Organization}{5}
-\contentsline {chapter}{\numberline {4}Development Environment}{7}
-\contentsline {section}{\numberline {4.1}Code-sharing}{7}
-\contentsline {section}{\numberline {4.2}IDE}{7}
-\contentsline {section}{\numberline {4.3}Prototyping}{8}
-\contentsline {chapter}{\numberline {5}Implementation}{9}
-\contentsline {section}{\numberline {5.1}Plans}{9}
-\contentsline {section}{\numberline {5.2}Architecture}{9}
-\contentsline {chapter}{\numberline {A}Appendix}{10}
-\contentsline {section}{\numberline {A.1}Mockups}{10}
-\contentsline {section}{\numberline {A.2}Reports}{11}
+\contentsline {chapter}{\numberline {1}Introduction}{3}
+\contentsline {chapter}{\numberline {2}Requirements}{4}
+\contentsline {section}{\numberline {2.1}Initial requirements}{4}
+\contentsline {section}{\numberline {2.2}Understanding the requirements}{4}
+\contentsline {chapter}{\numberline {3}Alternative solutions}{6}
+\contentsline {section}{\numberline {3.1}Edmondo}{6}
+\contentsline {section}{\numberline {3.2}Pedometer}{6}
+\contentsline {section}{\numberline {3.3}GPS Status}{6}
+\contentsline {chapter}{\numberline {4}Project Management}{7}
+\contentsline {section}{\numberline {4.1}Terms}{7}
+\contentsline {section}{\numberline {4.2}Development process}{7}
+\contentsline {section}{\numberline {4.3}Team Roles and Organization}{8}
+\contentsline {section}{\numberline {4.4}Management Tools}{8}
+\contentsline {chapter}{\numberline {5}Development Environment}{9}
+\contentsline {section}{\numberline {5.1}LaTex}{9}
+\contentsline {section}{\numberline {5.2}Github}{9}
+\contentsline {section}{\numberline {5.3}Eclipse with Android Development Tools Plugin}{9}
+\contentsline {chapter}{\numberline {6}Implementation}{11}
+\contentsline {section}{\numberline {6.1}Plans}{11}
+\contentsline {section}{\numberline {6.2}Architecture}{11}
+\contentsline {chapter}{\numberline {A}Appendix}{12}
+\contentsline {section}{\numberline {A.1}Mockups}{12}
+\contentsline {section}{\numberline {A.2}Reports}{13}
