@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.12)  3 MAR 2013 10:19
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.12)  3 MAR 2013 12:21
 entering extended mode
 **ReportMain.tex
 (C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
@@ -435,16 +435,18 @@ Overfull \hbox (2.0pt too wide) in paragraph at lines 12--13
 [12
 
 ]
-Underfull \hbox (badness 6859) in paragraph at lines 27--28
+Underfull \hbox (badness 6859) in paragraph at lines 28--29
 []|\OT1/cmr/m/n/12 Developing a mock-up ap-pli-ca-tion
+ []
+
+
+Underfull \hbox (badness 6445) in paragraph at lines 32--33
+\OT1/cmr/m/n/12 the pro-to-type (set-tings, statis-tics,
  []
 
 ) [13 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/mocku
 pV2.png>] [14]
 (C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  1776 strings out of 494049
@@ -459,7 +461,7 @@ Here is how much of TeX's memory you used:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ReportMain.pdf (15 pages, 139137 bytes).
+Output written on ReportMain.pdf (15 pages, 139321 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
