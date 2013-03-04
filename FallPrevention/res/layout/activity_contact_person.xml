@@ -4,13 +4,13 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/head_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="Kontaktperson"
+        android:text="@+string/contact_person"
         android:textSize="30sp" />
 
     <EditText
@@ -18,42 +18,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/head_line"
         android:ems="10"
-        android:hint="Namn"
+        android:hint="@+string/name"
         android:inputType="textPersonName"
         android:maxLength="40"
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/phoneNumber"
+        android:id="@+id/phone_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/firstName"
+        android:layout_below="@+id/name"
         android:ems="10"
-        android:hint="Telefonnummer"
+        android:hint="@+string/phone_number"
         android:inputType="phone"
         android:maxLength="8" />
 
     <Button
-        android:id="@+id/OK"
+        android:id="@+id/store_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="OK" 
+        android:text="@+string/store_info" 
         android:onClick="FireBack"/>
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/OK"
+        android:layout_above="@+id/store_button"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/phoneNumber" >
+        android:layout_below="@+id/phone_number" >
+
     </ListView>
 
 </RelativeLayout>

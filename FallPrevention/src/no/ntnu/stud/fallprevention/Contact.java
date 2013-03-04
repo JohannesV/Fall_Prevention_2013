@@ -2,24 +2,24 @@ package no.ntnu.stud.fallprevention;
 
 public class Contact {
 	
-	String name, id;
+	String name;
 	int phoneNumber = 0;
+	int id;
 	
 	public Contact (){
 	}
 	
-	public Contact(String name, String id) {
+	public Contact(String name, int id) {
 		this.name = name;
 		this.id = id;
 	}
-	
-	public Contact(String name, int phoneNumber) {
-		this.name = name;
-		this.phoneNumber = phoneNumber;
-	}
 
-	public String getId() {
+	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getName() {

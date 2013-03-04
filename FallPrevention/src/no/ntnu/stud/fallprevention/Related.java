@@ -27,8 +27,7 @@ public class Related extends Activity {
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View arg1,
 							int position, long arg3) {
-						String c = (String) listView.getItemAtPosition(position);
-						fireEvent(c);
+						fireEvent(position);
 					}  
 			      }); 
 		ArrayList<String> listItems = new ArrayList<String>();
@@ -37,15 +36,11 @@ public class Related extends Activity {
 		}
 		final ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, listItems);
 		listView.setAdapter( adapter );
-		
-		
-		
 	}
-	protected void fireEvent(String c) {
+	
+	protected void fireEvent(int position) {
 		Intent intent = new Intent(this, ContactPerson.class);
-		
-		intent.putExtra("Contact", c);
-		
+		intent.putExtra("no.ntnu.stud.fallprevention.CONTACT_ID_MESSAGE", contacts.get(position).getId());
 		startActivity(intent);
 	}
 	public void fireNewPerson(View view){

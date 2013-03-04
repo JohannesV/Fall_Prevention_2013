@@ -43,8 +43,8 @@ public class NewContact extends Activity {
 	}
 
 	public void fireLongClick(int position) {
-		String _id = contacts.get(position).getId();
-		String contactName = new DatabaseHelper(this).dbAddContact(_id);
+		int _id = contacts.get(position).getId();
+		String contactName = new DatabaseHelper(this).dbAddContact(Integer.toString(_id));
 		String prefix = getResources().getString(R.string.contact_added);
 		Toast.makeText(NewContact.this, prefix + " " + contactName, Toast.LENGTH_SHORT).show();
 	}
@@ -63,7 +63,7 @@ public class NewContact extends Activity {
         for (int i = 0; i<cursor.getCount(); i++) {
         	cursor.moveToPosition(i);
         	String name = cursor.getString(1);
-        	String id = cursor.getString(0);
+        	int id = cursor.getInt(0);
         	contacts.add(new Contact(name, id));
         }
         

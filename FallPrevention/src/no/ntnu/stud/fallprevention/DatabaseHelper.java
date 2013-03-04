@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 11;
+	public static final int DATABASE_VERSION = 13;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA = ", ";
@@ -253,6 +253,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		for (int i = 0; i<cursor.getCount(); i++) {
 			cursor.moveToPosition(i);
 			Contact contact = new Contact();
+			contact.setId(cursor.getInt(0));
 			contact.setName(cursor.getString(1));
 			try {
 				contact.setPhoneNumber(Integer.parseInt(cursor.getString(2)));
@@ -325,7 +326,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		long newRowId = db.insert(DatabaseContract.Contact.TABLE_NAME, null, values);
 		db.close();
+	
+		// Return the name of the contact if sucessful, null if contact not saved
+		return (newRowId > -1) ? name : null;
+	}
+	
+	public Contact dbGetContact(int id) {
+		SQLiteDatabase db = getReadableDatabase();
+		String table = DatabaseContract.Contact.TABLE_NAME;
+		String[] projection = new String[] { 
+			DatabaseContract.Contact.COLUMN_NAME_NAME,
+			DatabaseContract.Contact.COLUMN_NAME_PHONE
+		};
+		String selection = DatabaseContract.Contact.COLUMN_NAME_ID + " = " + id;
+		String[] selectionArgs = null;
+		String orderBy = null;
+		Cursor cursor = db.query(table, projection, selection, selectionArgs, null, null, orderBy);
+		cursor.moveToFirst();
+		Contact contact = new Contact();
+		contact.setId(id);
+		contact.setName(cursor.getString(0));
+		contact.setPhoneNumber(Integer.parseInt(cursor.getString(1)));
+		cursor.close();
+		db.close();
+		return contact;
+	}
+	
+	public boolean dbUpdateContact(Contact contact) {
+		SQLiteDatabase db = getReadableDatabase();
 		
-		return name;
+		ContentValues values = new ContentValues();
+		values.put(DatabaseContract.Contact.COLUMN_NAME_NAME, contact.getName());
+		values.put(DatabaseContract.Contact.COLUMN_NAME_PHONE, contact.getPhoneNumber());
+		
+		String selection = DatabaseContract.Contact.COLUMN_NAME_ID + " = " + contact.getId();
+		String[] selectionArgs = null;
+
+		boolean updated = (db.update(DatabaseContract.Contact.TABLE_NAME, values, selection, selectionArgs) > 0);
+		db.close();
+		
+		return updated;
 	}
 }

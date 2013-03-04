@@ -11,19 +11,23 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class ContactPerson extends ListActivity {
-	int phoneNumbers;
-	String name; 
+	
+	Contact contact;
 	List<String> alarms;
 	ListView listView;
-
+	EditText editName, editNumber;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact_person);
+		// Fetch detailed info about the contact
 		Intent i = getIntent();
-		Contact contact = (Contact) i.getParcelableExtra("Contact");
+		int id = i.getIntExtra("no.ntnu.stud.fallprevention.CONTACT_ID_MESSAGE", -1);
+		contact = new DatabaseHelper(this).dbGetContact(id);
+		fillFields();
 	}
+
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -33,21 +37,21 @@ public class ContactPerson extends ListActivity {
 		listView = (ListView) findViewById(android.R.id.list);
 		this.setListAdapter(new EditContactAdapter(this, alarms));
 	}
-	public void ContactPerson(Contact contact) {
-		EditText eText1 = (EditText) findViewById(R.id.name);
-		EditText eText2 = (EditText) findViewById(R.id.phoneNumber);
+	
+	public void fillFields() {
+		editName = (EditText) findViewById(R.id.name);
+		editNumber = (EditText) findViewById(R.id.phone_number);
 		
-		this.name = contact.getName();
-		
-		this.phoneNumbers = contact.getPhoneNumber();
-		
-		eText1.setText(name);
-		eText2.setText(phoneNumbers);
+		editName.setText(contact.getName());
+		editNumber.setText(Integer.toString(contact.getPhoneNumber()));
 	}
+	
 	public void FireBack (View view){
+		contact.setName(editName.getText().toString());
+		contact.setPhoneNumber(Integer.parseInt(editNumber.getText().toString()));
+		new DatabaseHelper(this).dbUpdateContact(contact);
 		Intent intent = new Intent(this, Related.class);
 		startActivity(intent);
-		
 	}
 
 }

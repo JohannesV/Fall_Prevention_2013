@@ -1,13 +1,13 @@
 package no.ntnu.stud.fallprevention;
 
 import java.util.List;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
-import android.widget.ToggleButton;
+import android.widget.CheckBox;
 
 public class EditContactAdapter extends ArrayAdapter<String> {
 
@@ -27,14 +27,10 @@ public class EditContactAdapter extends ArrayAdapter<String> {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		View rowView = inflater.inflate(R.layout.entry_danger_event, parent, false);
-		TextView textView = (TextView) rowView.findViewById(R.id.textView1);
-		//ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
-		textView.setText(alarms.get(position));
-		ToggleButton toggleButton = (ToggleButton) rowView.findViewById(R.id.toggleButton1);
-		toggleButton.setSelected(false);
-
-
-
+		
+		CheckBox checkBox = (CheckBox) rowView.findViewById(R.id.checkBox);
+		checkBox.setText(alarms.get(position));
+		
 		return rowView;
 	}
 }
