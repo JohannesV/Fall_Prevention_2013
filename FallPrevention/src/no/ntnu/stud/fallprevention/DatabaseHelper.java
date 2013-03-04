@@ -16,6 +16,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.provider.ContactsContract;
+import android.widget.Toast;
 
 /**
  * Database helper is an object that builds and maintains the database. It also
@@ -284,38 +285,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		return alarm;
 	}
-	
-	public boolean dbAddContact(String id) {
-		// First get additional information based on id
-		SQLiteDatabase db = getReadableDatabase();
-		
+	/**
+	 * 
+	 * @param id
+	 * @return The contact's name
+	 */
+	public String dbAddContact(String id) {		
+		// Look up the name in the contacts table
 		Uri uri = ContactsContract.Contacts.CONTENT_URI;
 		String[] projection = new String[] {
 				ContactsContract.Contacts.DISPLAY_NAME
 		};
 		String selection = ContactsContract.Contacts._ID + " = " + id;
 		String[] selectionArgs = null;
+		String orderBy = null;
 		
-		Cursor cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, null);
+		Cursor cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, orderBy);
 		
-		// Extract information from the query
 		cursor.moveToFirst();
 		String name = cursor.getString(0);
-		//String phonenumer = cursor.getString(1);
-		
-		// Close everything
 		cursor.close();
-		db.close();
+		
+		// Now make another query to get the phone number of the contact
+		uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
+		projection = null;
+		selection = ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?";
+		selectionArgs = new String[]{ id };
+		cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, orderBy);
+		
+		cursor.moveToFirst();
+		String pNumber = cursor.getString(0);
+		cursor.close();
 		
 		// Then store information to database
-		db = getWritableDatabase();
+		SQLiteDatabase db = getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put(DatabaseContract.Contact.COLUMN_NAME_NAME, name);
-		//values.put(DatabaseContract.Contact.COLUMN_NAME_telefonnummer, phonenumer);
+		values.put(DatabaseContract.Contact.COLUMN_NAME_PHONE, pNumber);
 		
 		long newRowId = db.insert(DatabaseContract.Contact.TABLE_NAME, null, values);
 		db.close();
 		
-		return (newRowId >= 0);
+		return name;
 	}
 }

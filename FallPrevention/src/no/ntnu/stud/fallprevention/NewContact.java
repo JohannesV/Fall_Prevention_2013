@@ -43,9 +43,10 @@ public class NewContact extends Activity {
 	}
 
 	public void fireLongClick(int position) {
-		Toast.makeText(NewContact.this, "Click: " + position, Toast.LENGTH_SHORT).show();
 		String _id = contacts.get(position).getId();
-		new DatabaseHelper(this).dbAddContact(_id);
+		String contactName = new DatabaseHelper(this).dbAddContact(_id);
+		String prefix = getResources().getString(R.string.contact_added);
+		Toast.makeText(NewContact.this, prefix + " " + contactName, Toast.LENGTH_SHORT).show();
 	}
 	
 	public void populateContactList() {

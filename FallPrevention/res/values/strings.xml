@@ -14,8 +14,9 @@
     <string name="title_activity_eventlist">Eventlist</string>
     <string name="title_activity_eventdetail">EventDetail</string>
     <string name="greeting">Hello</string>
-    <string name="delete">Remove it</string><string name="keep">Keep it</string>
-    
+    <string name="delete">Remove it</string>
+    <string name="keep">Keep it</string>
+    <string name="contact_added">Added contact</string>
     <string name="do_with_event">What do you want to do with this message?</string>
     <string name="lorem_short">Lorem ipse dolet</string>
     <string name="lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
