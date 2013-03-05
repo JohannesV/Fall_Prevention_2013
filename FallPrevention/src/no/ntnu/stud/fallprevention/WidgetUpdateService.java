@@ -88,15 +88,16 @@ public class WidgetUpdateService extends Service {
 				
 				views.setBitmap(R.id.smileyButton, "setImageBitmap", bitmap);
 				 				 
-				 appWidgetManager.updateAppWidget(widgetId, views);
+				 //appWidgetManager.updateAppWidget(widgetId, views);
 				 
-				 // ADD A LISTENER: TODO: Check if this works with the chagnes
+				 // Add onClickListener
 				 Intent clickIntent = new Intent(context, EventList.class);
 				 PendingIntent pendIntent = PendingIntent.getActivity(context, 0, clickIntent, 0);
 				 views.setOnClickPendingIntent(R.id.smileyButton, pendIntent);
 				 
-				 ComponentName name = new ComponentName(context, this.getClass());
-				 appWidgetManager.updateAppWidget(name, views);
+				// ComponentName name = new ComponentName(context, this.getClass());
+				// appWidgetManager.updateAppWidget(name, views);
+				 appWidgetManager.updateAppWidget(widgetId, views);
 		    }			
 		}
 		
