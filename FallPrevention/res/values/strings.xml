@@ -43,5 +43,7 @@
         <string name="contact_people">Contact persons</string>
         <string name="add_contact">Add contact</string>
         <string name="create_new_contact">Create new contact</string>
+        <string name="face_display">A face that displays your status</string>
+        <string name="widget_got_new_events">Click here!</string>
 
 </resources>

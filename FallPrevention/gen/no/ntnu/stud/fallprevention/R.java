@@ -24,7 +24,8 @@ public final class R {
         public static final int smiley=0x7f020007;
         public static final int smiley_icon=0x7f020008;
         public static final int very_good_job=0x7f020009;
-        public static final int widget_background=0x7f02000a;
+        public static final int widget_background_no_messages=0x7f02000a;
+        public static final int widget_background_w_messages=0x7f02000b;
     }
     public static final class id {
         public static final int button1=0x7f090011;
@@ -72,7 +73,8 @@ public final class R {
         public static final int entry_contact=0x7f03000a;
         public static final int entry_danger_event=0x7f03000b;
         public static final int entry_eventlist=0x7f03000c;
-        public static final int widget_layout=0x7f03000d;
+        public static final int widget_layout_no_messages=0x7f03000d;
+        public static final int widget_layout_w_messages=0x7f03000e;
     }
     public static final class menu {
         public static final int activity_eventdetail=0x7f080000;
@@ -95,6 +97,7 @@ public final class R {
         public static final int create_new_contact=0x7f050022;
         public static final int delete=0x7f05000d;
         public static final int do_with_event=0x7f050010;
+        public static final int face_display=0x7f050023;
         public static final int greeting=0x7f05000c;
         public static final int hello_world=0x7f050014;
         public static final int hi=0x7f050005;
@@ -118,6 +121,7 @@ public final class R {
         public static final int title_activity_settings=0x7f050016;
         public static final int title_activity_statistics=0x7f050015;
         public static final int title_activity_write_name=0x7f050004;
+        public static final int widget_got_new_events=0x7f050024;
         public static final int write_name=0x7f050007;
         public static final int your_name_query=0x7f050006;
     }
