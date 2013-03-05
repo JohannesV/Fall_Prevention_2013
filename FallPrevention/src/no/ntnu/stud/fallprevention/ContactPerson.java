@@ -43,12 +43,12 @@ public class ContactPerson extends ListActivity {
 		editNumber = (EditText) findViewById(R.id.phone_number);
 		
 		editName.setText(contact.getName());
-		editNumber.setText(Integer.toString(contact.getPhoneNumber()));
+		editNumber.setText(contact.getPhoneNumber());
 	}
 	
 	public void FireBack (View view){
 		contact.setName(editName.getText().toString());
-		contact.setPhoneNumber(Integer.parseInt(editNumber.getText().toString()));
+		contact.setPhoneNumber(editNumber.getText().toString());
 		new DatabaseHelper(this).dbUpdateContact(contact);
 		Intent intent = new Intent(this, Related.class);
 		startActivity(intent);

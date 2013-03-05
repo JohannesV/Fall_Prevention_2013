@@ -34,7 +34,7 @@
         android:ems="10"
         android:hint="@+string/phone_number"
         android:inputType="phone"
-        android:maxLength="8" />
+        android:maxLength="11" />
 
     <Button
         android:id="@+id/store_button"

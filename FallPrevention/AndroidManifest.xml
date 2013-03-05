@@ -66,6 +66,7 @@
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/awidget_provider"/>
-        </receiver>	        
+        </receiver>
+        <service android:name="no.ntnu.stud.fallprevention.WidgetUpdateService"></service>	        
     </application>
 </manifest>

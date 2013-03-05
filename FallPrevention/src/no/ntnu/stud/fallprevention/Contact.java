@@ -2,8 +2,7 @@ package no.ntnu.stud.fallprevention;
 
 public class Contact {
 	
-	String name;
-	int phoneNumber = 0;
+	String name, phoneNumber;
 	int id;
 	
 	public Contact (){
@@ -30,11 +29,11 @@ public class Contact {
 		this.name = name;
 	}
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}	
 }

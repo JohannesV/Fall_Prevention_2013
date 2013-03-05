@@ -6,17 +6,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.CursorLoader;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.provider.ContactsContract;
-import android.widget.Toast;
 
 /**
  * Database helper is an object that builds and maintains the database. It also
@@ -28,7 +25,7 @@ import android.widget.Toast;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 13;
+	public static final int DATABASE_VERSION = 14;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA = ", ";
@@ -229,7 +226,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 * @return
 	 */
 	public RiskStatus dbGetStatus() {
-		return RiskStatus.VERY_GOOD_JOB;
+		double random = new Random().nextDouble();
+		RiskStatus returner = RiskStatus.VERY_GOOD_JOB;
+		if (random < 0.20) {
+			returner = RiskStatus.BAD_JOB;
+		}
+		else if (random < 0.4) {
+			returner = RiskStatus.NOT_SO_OK_JOB;
+		}
+		else if (random < 0.6) {
+			returner = RiskStatus.OK_JOB;
+		}
+		else if (random < 0.8) {
+			returner = RiskStatus.GOOD_JOB;
+		}
+		return returner;
 	}
 	
 	public List<Double> dbGetRiskHistory(int length) {
@@ -256,9 +267,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			contact.setId(cursor.getInt(0));
 			contact.setName(cursor.getString(1));
 			try {
-				contact.setPhoneNumber(Integer.parseInt(cursor.getString(2)));
+				contact.setPhoneNumber(cursor.getString(2));
 			} catch (NumberFormatException nfe) {
-				contact.setPhoneNumber(-1);
+				contact.setPhoneNumber("");
 			}
 			contacts.add(contact);
 		}
@@ -309,7 +320,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		// Now make another query to get the phone number of the contact
 		uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
-		projection = null;
+		projection = new String[] { ContactsContract.CommonDataKinds.Phone.NUMBER };
 		selection = ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?";
 		selectionArgs = new String[]{ id };
 		cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, orderBy);
@@ -346,7 +357,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		Contact contact = new Contact();
 		contact.setId(id);
 		contact.setName(cursor.getString(0));
-		contact.setPhoneNumber(Integer.parseInt(cursor.getString(1)));
+		contact.setPhoneNumber(cursor.getString(1));
 		cursor.close();
 		db.close();
 		return contact;

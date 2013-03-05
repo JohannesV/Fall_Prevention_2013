@@ -85,11 +85,14 @@ public final class R {
         public static final int activity_write_name=0x7f080007;
     }
     public static final class string {
+        public static final int add_contact=0x7f050021;
         public static final int app_name=0x7f050000;
         public static final int button=0x7f050008;
         public static final int contact_added=0x7f05000f;
+        public static final int contact_people=0x7f050020;
         public static final int contact_person=0x7f05001c;
         public static final int contact_person_activity=0x7f05001a;
+        public static final int create_new_contact=0x7f050022;
         public static final int delete=0x7f05000d;
         public static final int do_with_event=0x7f050010;
         public static final int greeting=0x7f05000c;

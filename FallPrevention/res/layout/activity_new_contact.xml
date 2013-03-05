@@ -13,7 +13,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="Legg til en ny kontakt"
+        android:text="@string/add_contact"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
@@ -23,7 +23,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="Lagre" />
+        android:text="@string/create_new_contact" />
 
     <ListView
         android:id="@android:id/list"
