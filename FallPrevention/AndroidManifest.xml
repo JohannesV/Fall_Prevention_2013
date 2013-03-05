@@ -51,7 +51,8 @@
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.Related"
-            android:label="@string/title_activity_related">
+            android:label="@string/title_activity_related"
+            android:launchMode="singleTask">
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.ContactPerson"

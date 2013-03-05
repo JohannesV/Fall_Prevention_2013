@@ -31,13 +31,6 @@ public class EventDetail extends Activity {
 		TextView textView2 = (TextView) findViewById(R.id.mainTextView);
 		textView2.setText(eventInformation.get(DatabaseContract.EventType.COLUMN_NAME_DESCRIPTION));
 	}
-
-/*	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_eventdetail, menu);
-		return true;
-	}*/
 	
 	public void fireDeleteButton(View view) {
 		// Delete event from database
