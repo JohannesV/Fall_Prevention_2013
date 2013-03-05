@@ -19,6 +19,11 @@ public class Related extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_related);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
 		//set inn getContactsfrom Database
 		contacts = new DatabaseHelper(this).dbGetContactList();
 		final ListView listView = (ListView) findViewById(R.id.listView1);
@@ -35,7 +40,7 @@ public class Related extends Activity {
 			listItems.add(c.getName());
 		}
 		final ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, listItems);
-		listView.setAdapter( adapter );
+		listView.setAdapter( adapter );	
 	}
 	
 	protected void fireEvent(int position) {

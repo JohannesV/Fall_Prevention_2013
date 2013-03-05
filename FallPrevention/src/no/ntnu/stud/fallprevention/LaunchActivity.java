@@ -31,12 +31,4 @@ public class LaunchActivity extends Activity {
 		// Finish the current activity so that you cannot go back to it later.
 		this.finish();
 	}
-
-	/*@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_launch, menu);
-		return true;
-	}*/
-
 }
