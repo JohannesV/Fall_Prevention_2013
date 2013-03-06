@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallservice;
+package no.ntnu.stud.fallprovider;
 
 import android.provider.BaseColumns;
 

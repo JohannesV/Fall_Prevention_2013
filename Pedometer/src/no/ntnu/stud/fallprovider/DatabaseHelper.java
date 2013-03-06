@@ -1,11 +1,14 @@
-package no.ntnu.stud.fallservice;
+package no.ntnu.stud.fallprovider;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 /**
  * Database helper is an object that builds and maintains the database. It also
  * works as an interface to the database.
@@ -15,6 +18,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+	private static final String TAG = "no.ntnu.stud.fallprovider.DatabaseHelper";
 
 	public static final int DATABASE_VERSION = 1;
 	public static final String DATABASE_NAME = "FallService.db";
@@ -31,7 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		// Fill the database with some random entries, and of course build the tables
+		// Fill the database with some random entries, and of course build thetables
 		final String CREATE_TABLE_1 = 
 				"CREATE TABLE " + DatabaseContract.Movement.TABLE_NAME + START_PAR +
 				DatabaseContract.Movement.COLUMN_NAME_ID + " integer primary key autoincrement," +
@@ -86,5 +90,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.close();
 		
 		return movements;
+	}
+
+	public void addStep() {
+		SQLiteDatabase db = getReadableDatabase();
+		ContentValues values = new ContentValues();
+		values.put(DatabaseContract.Movement.COLUMN_NAME_TIMESTAMP, "datetime('now')");
+		long result = db.insert(DatabaseContract.Movement.TABLE_NAME, null, values);
+		
+		Log.e(TAG, "Added to database: " + result);
+		
+		db.close();
 	}
 }
