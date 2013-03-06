@@ -12,8 +12,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.net.Uri;
 import android.provider.ContactsContract;
+import android.net.Uri;
 
 /**
  * Database helper is an object that builds and maintains the database. It also
