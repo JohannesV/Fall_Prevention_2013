@@ -1,9 +1,11 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}
-\contentsline {subsection}{\numberline {1.0.1}Group introduction}{3}
-\contentsline {subsection}{\numberline {1.0.2}Customer introduction}{3}
+\contentsline {section}{\numberline {1.1}Group introduction}{3}
+\contentsline {section}{\numberline {1.2}Customer introduction}{4}
 \contentsline {chapter}{\numberline {2}Requirements}{5}
 \contentsline {section}{\numberline {2.1}Initial requirements}{5}
 \contentsline {section}{\numberline {2.2}Understanding the requirements}{5}
+\contentsline {section}{\numberline {2.3}Functional requirements}{6}
+\contentsline {section}{\numberline {2.4}Nonfunctional requirements}{6}
 \contentsline {chapter}{\numberline {3}Alternative solutions}{7}
 \contentsline {section}{\numberline {3.1}Edmondo}{7}
 \contentsline {section}{\numberline {3.2}Pedometer}{7}
@@ -12,16 +14,16 @@
 \contentsline {section}{\numberline {4.1}Terms}{8}
 \contentsline {section}{\numberline {4.2}Development process}{8}
 \contentsline {section}{\numberline {4.3}Team Roles and Organization}{9}
-\contentsline {section}{\numberline {4.4}Management Tools}{9}
-\contentsline {chapter}{\numberline {5}Development Environment}{10}
-\contentsline {section}{\numberline {5.1}LaTex}{10}
-\contentsline {section}{\numberline {5.2}Github}{10}
-\contentsline {section}{\numberline {5.3}Eclipse with Android Development Tools Plugin}{10}
-\contentsline {section}{\numberline {5.4}}{11}
-\contentsline {chapter}{\numberline {6}Implementation}{12}
-\contentsline {section}{\numberline {6.1}Plans}{12}
-\contentsline {section}{\numberline {6.2}Architecture}{12}
-\contentsline {chapter}{\numberline {A}Appendix}{13}
-\contentsline {section}{\numberline {A.1}Mockups}{13}
-\contentsline {section}{\numberline {A.2}Reports}{14}
-\contentsline {subsection}{\numberline {A.2.1}Meeting summaries}{14}
+\contentsline {section}{\numberline {4.4}Comparison}{9}
+\contentsline {section}{\numberline {4.5}Management Tools}{9}
+\contentsline {chapter}{\numberline {5}Development Environment}{11}
+\contentsline {section}{\numberline {5.1}LaTex}{11}
+\contentsline {section}{\numberline {5.2}Github}{11}
+\contentsline {section}{\numberline {5.3}Eclipse with Android Development Tools Plugin}{11}
+\contentsline {chapter}{\numberline {6}Implementation}{13}
+\contentsline {section}{\numberline {6.1}Plans}{13}
+\contentsline {section}{\numberline {6.2}Architecture}{13}
+\contentsline {chapter}{\numberline {A}Appendix}{14}
+\contentsline {section}{\numberline {A.1}Mockups}{14}
+\contentsline {section}{\numberline {A.2}Reports}{15}
+\contentsline {subsection}{\numberline {A.2.1}Meeting summaries}{15}
