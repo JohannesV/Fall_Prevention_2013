@@ -92,10 +92,7 @@ public class Settings extends Activity {
 	//////////
 	//Clear History
 	//////////
-	public void setLevel(View P){
-		Intent intent = new Intent(this, SetLevel.class);
-		startActivity(intent);
-	}
+	
 	
 	
 	/*@Override
