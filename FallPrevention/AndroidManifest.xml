@@ -59,6 +59,10 @@
             android:label="@string/contact_person_activity">
         </activity>
         <activity 
+            android:name="no.ntnu.stud.fallprevention.CreateContact"
+            android:label="@string/title_activity_create_contact"> 
+        </activity>
+        <activity 
             android:name="no.ntnu.stud.fallprevention.NewContact"
             android:label="@string/new_contact_activity" >
         </activity>

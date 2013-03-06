@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,7 +16,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 public class NewContact extends Activity {
@@ -117,4 +117,8 @@ public class NewContact extends Activity {
 		}
 	}
 
+	public void createContact(View view) {
+		Intent intent = new Intent(this, CreateContact.class);
+		startActivity(intent);
+	}
 }

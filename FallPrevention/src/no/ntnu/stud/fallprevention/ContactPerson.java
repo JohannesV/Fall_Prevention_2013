@@ -46,7 +46,7 @@ public class ContactPerson extends ListActivity {
 		editNumber.setText(contact.getPhoneNumber());
 	}
 	
-	public void FireBack (View view){
+	public void fireStore (View view){
 		contact.setName(editName.getText().toString());
 		contact.setPhoneNumber(editNumber.getText().toString());
 		new DatabaseHelper(this).dbUpdateContact(contact);

@@ -56,5 +56,6 @@
     <string name="preferences_data_cleared">Cleared history!</string>
     <string name="preferences_clear_history_title">Clear History</string>
     <string name="preferences_clear_history_summary">Click here to clear history</string>
+    <string name="title_activity_create_contact">Create Contact</string>
 
 </resources>

@@ -13,7 +13,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/create_new_contact" />
+        android:text="@string/create_new_contact"
+        android:onClick="createContact" />
 
     <ListView
         android:id="@android:id/list"
@@ -21,7 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/lagreKnapp"
         android:layout_alignParentLeft="true" >
-
     </ListView>
 
 </RelativeLayout>
