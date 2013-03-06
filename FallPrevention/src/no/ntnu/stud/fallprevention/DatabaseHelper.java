@@ -101,8 +101,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(FILL_INFO_9);
 		db.execSQL(FILL_INFO_10);
 		db.execSQL(FILL_INFO_11);
-		
-		db.close();
 	}
 	
 	@Override
