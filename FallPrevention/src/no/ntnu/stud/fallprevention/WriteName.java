@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 
@@ -22,10 +23,8 @@ public class WriteName extends Activity {
 		// Extract information from text field
 		EditText eText = (EditText) findViewById(R.id.editText1);
 		String name = eText.getText().toString();
-		// Add the name as extra information to the intent 
-		intent.putExtra("no.ntnu.stud.fallprevention.MESSAGE", name);
 		// Store the name in the phone, using the shared prefrences file
-		SharedPreferences sp = getSharedPreferences("no.ntnu.stud.fallprevention.PREFILE", Context.MODE_PRIVATE);
+		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
 		SharedPreferences.Editor editor = sp.edit();
 		editor.putString("name",name);
 		editor.commit();

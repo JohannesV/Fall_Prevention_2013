@@ -25,7 +25,7 @@ import android.net.Uri;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 16;
+	public static final int DATABASE_VERSION = 21;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA = ", ";
@@ -101,11 +101,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(FILL_INFO_9);
 		db.execSQL(FILL_INFO_10);
 		db.execSQL(FILL_INFO_11);
+		
+		db.close();
 	}
 	
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// Clears the database on an upgrade, and reset it
+		reset(db);
 		db.execSQL("DROP TABLE " + DatabaseContract.EventType.TABLE_NAME);
 		db.execSQL("DROP TABLE " + DatabaseContract.Event.TABLE_NAME);
 		db.execSQL("DROP TABLE " + DatabaseContract.Contact.TABLE_NAME);
@@ -377,5 +380,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.close();
 		
 		return updated;
+	}
+	
+	public void dbClearAllData() {
+		SQLiteDatabase db = getWritableDatabase();
+		reset(db);
+	}
+	
+	public void reset(SQLiteDatabase db) {
+		db.execSQL("DROP TABLE " + DatabaseContract.EventType.TABLE_NAME);
+		db.execSQL("DROP TABLE " + DatabaseContract.Event.TABLE_NAME);
+		db.execSQL("DROP TABLE " + DatabaseContract.Contact.TABLE_NAME);
+		db.execSQL("DROP TABLE " + DatabaseContract.AlarmTypes.TABLE_NAME);
+		onCreate(db);
 	}
 }

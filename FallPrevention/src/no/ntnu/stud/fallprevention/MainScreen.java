@@ -1,12 +1,15 @@
 package no.ntnu.stud.fallprevention;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,10 +24,6 @@ public class MainScreen extends Activity {
 		setContentView(R.layout.activity_mainscreen);
 
 		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
-			// This hides the title and icon from the action-bar (menu-bar)
-			//ActionBar ab = getActionBar();
-			//ab.setDisplayShowTitleEnabled(false);
-			//ab.setDisplayShowHomeEnabled(false);
 		}
 
 		updateVisible();
@@ -71,15 +70,14 @@ public class MainScreen extends Activity {
 	}
 
 	private void updateVisible() {
-		// Extract the information contained in the intent that created this
-		// activity
-		Intent motherIntent = getIntent();
-		String name = motherIntent
-				.getStringExtra("no.ntnu.stud.fallprevention.MESSAGE");
-		name = getString(R.string.greeting) + ", " + name + "!";
-		// Show name on screen
+		// Find name from shared prefences file
+		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+		String name =sp.getString("name", "");
+		String displayString = getString(R.string.greeting) + ", " + name + "!";
 		TextView txtGreetingName = (TextView) findViewById(R.id.textView1);
-		txtGreetingName.setText(name);
+		txtGreetingName.setText(displayString);
+		
+		// Display a message if there are new messages
 		TextView txtSubGreeting = (TextView) findViewById(R.id.mainScreenSubText);
 		DatabaseHelper dbHelper = new DatabaseHelper(this);
 		if (dbHelper.dbHaveEvents()) {
