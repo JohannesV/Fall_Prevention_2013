@@ -44,7 +44,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:text="@+string/store_info" 
-        android:onClick="FireBack"/>
+        android:onClick="fireStore"/>
 
     <ListView
         android:id="@android:id/list"
