@@ -100,7 +100,6 @@ public class StepDetector implements SensorEventListener
                                 for (StepListener stepListener : mStepListeners) {
                                     stepListener.onStep();
                                 }
-                                new DatabaseHelper(mContext).addStep();
                                 mLastMatch = extType;
                             }
                             else {
