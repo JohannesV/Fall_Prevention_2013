@@ -68,6 +68,7 @@ public class StepService extends Service {
     private SpeedNotifier mSpeedNotifier;
     private CaloriesNotifier mCaloriesNotifier;
     private SpeakingTimer mSpeakingTimer;
+    private MovementNotifier mMovementNotifier;
     
     private PowerManager.WakeLock wakeLock;
     private NotificationManager mNM;
@@ -117,7 +118,10 @@ public class StepService extends Service {
         // code be called whenever the phone enters standby mode.
         IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
         registerReceiver(mReceiver, filter);
-
+        
+        mMovementNotifier = new MovementNotifier(mPedometerSettings, mUtils, getApplicationContext());
+        mStepDetector.addStepListener(mMovementNotifier);
+        
         mStepDisplayer = new StepDisplayer(mPedometerSettings, mUtils);
         mStepDisplayer.setSteps(mSteps = mState.getInt("steps", 0));
         mStepDisplayer.addListener(mStepListener);

@@ -16,8 +16,9 @@ public abstract class DatabaseContract {
 	public static abstract class Movement implements BaseColumns {
 		public static final String TABLE_NAME = "Movement";
 		public static final String COLUMN_NAME_ID = "ID"; 
-		public static final String COLUMN_NAME_TIMESPAN = "Timespan"; 
 		public static final String COLUMN_NAME_STEPS = "Steps";
 		public static final String COLUMN_NAME_DISTANCE = "Distance";
+		public static final String COLUMN_NAME_TIMESTART = "TimeStart";
+		public static final String COLUMN_NAME_TIMEEND = "TimeEnd"; 
 	}
 }

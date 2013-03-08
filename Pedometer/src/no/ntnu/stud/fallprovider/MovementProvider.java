@@ -162,8 +162,8 @@ public class MovementProvider extends android.content.ContentProvider {
 
 	private void checkColumns(String[] projection) {
 		String[] available = { DatabaseContract.Movement.COLUMN_NAME_ID,
-				DatabaseContract.Movement.COLUMN_NAME_TIMESTAMP, DatabaseContract.Movement.COLUMN_NAME_X,
-				DatabaseContract.Movement.COLUMN_NAME_Y, DatabaseContract.Movement.COLUMN_NAME_Z };
+				DatabaseContract.Movement.COLUMN_NAME_STEPS, DatabaseContract.Movement.COLUMN_NAME_DISTANCE,
+				DatabaseContract.Movement.COLUMN_NAME_TIMESTART, DatabaseContract.Movement.COLUMN_NAME_TIMEEND };
 		if (projection != null) {
 			HashSet<String> requestedColumns = new HashSet<String>(
 					Arrays.asList(projection));
