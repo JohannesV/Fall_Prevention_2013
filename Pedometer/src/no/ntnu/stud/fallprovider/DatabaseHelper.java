@@ -22,7 +22,7 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String TAG = "no.ntnu.stud.fallprovider.DatabaseHelper";
 
-	public static final int DATABASE_VERSION = 3;
+	public static final int DATABASE_VERSION = 4;
 	public static final String DATABASE_NAME = "FallService.db";
 
 	public static final String COMMA = ", ";
@@ -46,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+ DatabaseContract.Movement.COLUMN_NAME_STEPS + " integer,"
 				+ DatabaseContract.Movement.COLUMN_NAME_DISTANCE + " real,"
 				+ DatabaseContract.Movement.COLUMN_NAME_TIMESTART + " date,"
-				+ DatabaseContract.Movement.COLUMN_NAME_TIMEEND + " date,"
+				+ DatabaseContract.Movement.COLUMN_NAME_TIMEEND + " date"
 				+ END_PAR;
 		db.execSQL(CREATE_TABLE_1);
 	}

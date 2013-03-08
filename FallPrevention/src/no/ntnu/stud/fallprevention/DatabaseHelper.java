@@ -249,13 +249,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 	
 	public List<Double> dbGetRiskHistory(int length) {
-		
 		List<Double> riskHistory = new ArrayList<Double>();
 		Log.w("DBH", "Finding URI!");
 		Uri uri = Uri.parse("content://no.ntnu.stud.fallprovider");
 		Log.w("DBH", "URI found. Opening CPC!");
 		ContentProviderClient movementProvider = context.getContentResolver().acquireContentProviderClient(uri);
 		Log.w("DBH", "CPC found!");
+		uri = Uri.parse("content://no.ntnu.stud.fallservice/data/10");
 		String[] projection = new String[] {
 				"Steps"
 		};
@@ -265,7 +265,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		Log.w("DBH", "Trying to query!");
 		try {
 			Cursor cursor = movementProvider.query(uri, projection, selection, selectionArgs, sortOrder);
-			Log.w("DBH", "Queried!!");
+			Log.w("DBH", "Queried!!, found " + cursor.getColumnCount() + " events!");
 			for (int i = 0; i < cursor.getCount(); i++) {
 				cursor.moveToPosition(i);
 				riskHistory.add(Double.parseDouble(cursor.getString(0)));
