@@ -1,14 +1,21 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.27)  6 MAR 2013 14:41
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  8 MAR 2013 12:51
 entering extended mode
- %&-line parsing enabled.
 **ReportMain.tex
-(./ReportMain.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
-(/usr/share/texmf-texlive/tex/latex/base/report.cls
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size12.clo
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,19 +31,19 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/share/texmf-texlive/tex/latex/base/utf8.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texmf-texlive/tex/latex/base/t1enc.dfu
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -186,7 +193,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/share/texmf-texlive/tex/latex/base/ot1enc.dfu
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -217,7 +224,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texmf-texlive/tex/latex/base/omsenc.dfu
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -241,7 +248,7 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -249,98 +256,162 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2009/06/22 v3.00
 )
-(/usr/share/texmf-texlive/tex/latex/setspace/setspace.sty
-Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
-
-Package: `setspace' 6.7 <2000/12/01>
-) (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
 \Gread@gobject=\count88
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen105
 \extrarowheight=\dimen106
 \NC@list=\toks18
 \extratabsurround=\skip43
 \backup@length=\skip44
-) (./ReportMain.aux)
-\openout1 = `ReportMain.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-
-(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count89
-\scratchdimen=\dimen107
-\scratchbox=\box26
-\nofMPsegments=\count90
-\nofMParguments=\count91
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count92
-\MPscratchDim=\dimen108
-\MPnumerator=\count93
-\everyMPtoPDFconversion=\toks20
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+Package: pdfpages 2012/08/31 v0.4t Insert pages of external PDF documents (AM)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count89
+\calc@Bcount=\count90
+\calc@Adimen=\dimen107
+\calc@Bdimen=\dimen108
+\calc@Askip=\skip45
+\calc@Bskip=\skip46
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count91
+\calc@Cskip=\skip47
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
+File: pppdftex.def 2012/08/31 v0.4t Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box26
+\AM@toc@title=\toks19
+\c@AM@survey=\count92
+\AM@templatesizebox=\box27
+)
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count93
+\scratchdimen=\dimen109
+\scratchbox=\box28
+\nofMPsegments=\count94
+\nofMParguments=\count95
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count96
+\MPscratchDim=\dimen110
+\MPnumerator=\count97
+\makeMPintoPDFobject=\count98
+\everyMPtoPDFconversion=\toks21
+)
+\AtBeginShipoutBox=\box29
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ReportMain.toc [1
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.toc
+[1
 
 ])
 \tf@toc=\write3
-\openout3 = `ReportMain.toc'.
 
- (./IntroductionChapter.tex [2]
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\IntroductionCha
+pter.tex [2]
 Chapter 1.
-) (./RequirementsChapter.tex [3
+)
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\RequirementsCha
+pter.tex [3
 
 ] [4]
 Chapter 2.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
@@ -352,27 +423,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
 [5
 
-]) (./AltSolutionsChapter.tex [6]
+])
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\AltSolutionsCha
+pter.tex [6]
 Chapter 3.
-) (./ProjectManagementChapter.tex [7
+)
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ProjectManageme
+ntChapter.tex [7
 
 ]
 Chapter 4.
 [8
 
-] [9]) (./DevelopmentEnviromentChapter.tex [10]
+] [9])
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\DevelopmentEnvi
+romentChapter.tex [10]
 Chapter 5.
 [11
 
-]) (./ImplementationChapter.tex [12]
+])
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ImplementationC
+hapter.tex [12]
 Chapter 6.
-) (./AppendixPt1.tex [13
+)
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\AppendixPt1.tex
+[13
 
 ]
 Appendix A.
 <Res/mockupV2.png, id=51, 803.0pt x 1136.245pt>
 File: Res/mockupV2.png Graphic file (type png)
  <use Res/mockupV2.png>
+Package pdftex.def Info: Res/mockupV2.png used on input line 12.
+(pdftex.def)             Requested size: 390.0pt x 296.48961pt.
+
 Overfull \hbox (2.0pt too wide) in paragraph at lines 12--13
 [][] 
  []
@@ -389,24 +473,89 @@ Underfull \hbox (badness 6445) in paragraph at lines 32--33
 \OT1/cmr/m/n/12 the pro-to-type (set-tings, statis-tics,
  []
 
-) [15 <./Res/mockupV2.png (PNG copy)>] [16] (./ReportMain.aux) ) 
+
+Underfull \hbox (badness 7203) in paragraph at lines 34--35
+[]|\OT1/cmr/m/n/12 Creating content-provider, cre-at-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+\OT1/cmr/m/n/12 pre-sen-ta-tion, fin-ish-ing sec-ondary
+ []
+
+[15 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/mockupV
+2.png>] [16] <Res/StatusReportWeek9.pdf, id=66, page=1, 614.295pt x 794.97pt>
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
+.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [17 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ReportWeek9.pdf>]
+<Res/StatusReportWeek9.pdf, id=81, page=2, 614.295pt x 794.97pt>
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 45
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 45
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 45
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [18 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ReportWeek9.pdf>])
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
+ ) 
 Here is how much of TeX's memory you used:
- 1566 strings out of 495061
- 18690 string characters out of 1182621
- 67131 words of memory out of 3000000
- 4721 multiletter control sequences out of 15000+50000
- 13178 words of font info for 51 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 25i,9n,22p,662b,240s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt
-12.pfb>
-Output written on ReportMain.pdf (17 pages, 147717 bytes).
+ 3047 strings out of 493921
+ 41954 string characters out of 3144868
+ 97609 words of memory out of 3000000
+ 6280 multiletter control sequences out of 15000+200000
+ 12871 words of font info for 50 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 41i,18n,43p,663b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ReportMain.pdf (19 pages, 214481 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 12 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 32 words of extra memory for PDF output out of 10000 (max. 10000000)
 

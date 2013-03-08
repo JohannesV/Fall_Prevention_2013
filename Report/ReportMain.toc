@@ -26,4 +26,4 @@
 \contentsline {chapter}{\numberline {A}Appendix}{14}
 \contentsline {section}{\numberline {A.1}Mockups}{14}
 \contentsline {section}{\numberline {A.2}Reports}{15}
-\contentsline {subsection}{\numberline {A.2.1}Meeting summaries}{15}
+\contentsline {section}{\numberline {A.3}Meeting summaries}{16}
