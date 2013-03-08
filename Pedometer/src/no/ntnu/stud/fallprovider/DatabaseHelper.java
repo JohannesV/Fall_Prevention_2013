@@ -22,7 +22,7 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String TAG = "no.ntnu.stud.fallprovider.DatabaseHelper";
 
-	public static final int DATABASE_VERSION = 4;
+	public static final int DATABASE_VERSION = 5;
 	public static final String DATABASE_NAME = "FallService.db";
 
 	public static final String COMMA = ", ";
@@ -97,6 +97,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 	
 	public void AddMovement (int steps, double distance, Date timeStart, Date timeEnd){
+		Log.w(TAG, "added movement " + steps);
+		SQLiteDatabase db = getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put(DatabaseContract.Movement.COLUMN_NAME_STEPS, steps);
+		values.put(DatabaseContract.Movement.COLUMN_NAME_DISTANCE, distance);
+		values.put(DatabaseContract.Movement.COLUMN_NAME_TIMEEND, timeEnd.toString());
+		values.put(DatabaseContract.Movement.COLUMN_NAME_TIMESTART, timeStart.toString());
 		
+		long row = db.insert(DatabaseContract.Movement.TABLE_NAME, null, values);
+		Log.w(TAG, "into row " + row);
+		db.close();
 	}
 }

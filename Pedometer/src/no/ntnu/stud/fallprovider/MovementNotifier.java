@@ -14,7 +14,7 @@ public class MovementNotifier implements StepListener {
 	private PedometerSettings mSettings;
 	private Utils mUtils;
 	private Context mContext;
-	public static int MIN_TIME_SPAN =  60;
+	public static int MIN_TIME_SPAN =  6;
 	
 	public MovementNotifier(PedometerSettings settings, Utils utils, Context context) {
         mUtils = utils;
@@ -54,6 +54,6 @@ public class MovementNotifier implements StepListener {
     }
     
     private boolean timeSpanLessThan(int timespan){
-    	return getUnixTimeStamp(now()) - getUnixTimeStamp(mTimeStart) > timespan;
+    	return getUnixTimeStamp(now()) - getUnixTimeStamp(mTimeStart) < timespan;
     }
 }

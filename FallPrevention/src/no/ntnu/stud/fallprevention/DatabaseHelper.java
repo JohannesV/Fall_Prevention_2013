@@ -265,10 +265,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		Log.w("DBH", "Trying to query!");
 		try {
 			Cursor cursor = movementProvider.query(uri, projection, selection, selectionArgs, sortOrder);
-			Log.w("DBH", "Queried!!, found " + cursor.getColumnCount() + " events!");
+			Log.w("DBH", "Queried!!, found " + cursor.getCount() + " events!");
 			for (int i = 0; i < cursor.getCount(); i++) {
 				cursor.moveToPosition(i);
-				riskHistory.add(Double.parseDouble(cursor.getString(0)));
+				double steps = Double.parseDouble(cursor.getString(0));
+				Log.w("DBH", "Event " + i + " contained " + steps + " steps!");
+				riskHistory.add(steps);
 			}
 			Log.w("DBH", "Found all the stories!");
 		} catch (RemoteException e) {
