@@ -28,7 +28,9 @@
         <service android:name="no.ntnu.stud.fallprovider.StepService"/>
 		<provider
 		       android:authorities="no.ntnu.stud.fallprovider"
-		       android:name=".MovementProvider" >
+		       android:name=".MovementProvider"
+		       android:readPermission="android.permission.permRead"
+		       android:exported="true" >
 		</provider> 
     </application>
 
