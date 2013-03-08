@@ -29,7 +29,7 @@ import android.net.Uri;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public static final int DATABASE_VERSION = 21;
+	public static final int DATABASE_VERSION = 22;
 	public static final String DATABASE_NAME = "FallPrevention.db";
 	
 	public static final String COMMA = ", ";
@@ -250,19 +250,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	public List<Double> dbGetRiskHistory(int length) {
 		List<Double> riskHistory = new ArrayList<Double>();
-		Log.w("DBH", "Finding URI!");
 		Uri uri = Uri.parse("content://no.ntnu.stud.fallprovider");
-		Log.w("DBH", "URI found. Opening CPC!");
 		ContentProviderClient movementProvider = context.getContentResolver().acquireContentProviderClient(uri);
-		Log.w("DBH", "CPC found!");
-		uri = Uri.parse("content://no.ntnu.stud.fallservice/data/10");
+		uri = Uri.parse("content://no.ntnu.stud.fallservice/data/");
 		String[] projection = new String[] {
 				"Steps"
 		};
 		String selection = null;
 		String[] selectionArgs = null;
 		String sortOrder = "ID desc";
-		Log.w("DBH", "Trying to query!");
 		try {
 			Cursor cursor = movementProvider.query(uri, projection, selection, selectionArgs, sortOrder);
 			Log.w("DBH", "Queried!!, found " + cursor.getCount() + " events!");

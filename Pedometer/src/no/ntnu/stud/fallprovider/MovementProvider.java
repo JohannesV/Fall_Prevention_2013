@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 
 public class MovementProvider extends android.content.ContentProvider {
 	// database
@@ -71,9 +72,12 @@ public class MovementProvider extends android.content.ContentProvider {
 				throw new IllegalArgumentException("Unknown URI: " + uri);
 		}
 
-		SQLiteDatabase db = database.getWritableDatabase();
+		SQLiteDatabase db = database.getReadableDatabase();
+		Log.w("MoveProv", "Projection: " + projection.toString());
+		Log.w("MoveProv", "Selection: " + selection);
 		Cursor cursor = queryBuilder.query(db, projection, selection,
 				selectionArgs, null, null, sortOrder);
+		Log.w("MoveProv", "We got " + cursor.getCount() + " results!");
 		// Make sure that potential listeners are getting notified
 		cursor.setNotificationUri(getContext().getContentResolver(), uri);
 

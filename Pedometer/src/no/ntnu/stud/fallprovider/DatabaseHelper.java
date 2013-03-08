@@ -22,7 +22,7 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String TAG = "no.ntnu.stud.fallprovider.DatabaseHelper";
 
-	public static final int DATABASE_VERSION = 5;
+	public static final int DATABASE_VERSION = 6;
 	public static final String DATABASE_NAME = "FallService.db";
 
 	public static final String COMMA = ", ";
