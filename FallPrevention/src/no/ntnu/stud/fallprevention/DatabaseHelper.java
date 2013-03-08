@@ -6,14 +6,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import android.content.ContentProviderClient;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.RemoteException;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.net.Uri;
+
 
 /**
  * Database helper is an object that builds and maintains the database. It also
@@ -245,11 +249,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 	
 	public List<Double> dbGetRiskHistory(int length) {
+		
 		List<Double> riskHistory = new ArrayList<Double>();
-		Random r = new Random();
-		for (int i = 0; i < length; i++) {
-			riskHistory.add(r.nextDouble()*10);
+		Log.w("DBH", "Finding URI!");
+		Uri uri = Uri.parse("content://no.ntnu.stud.fallprovider");
+		Log.w("DBH", "URI found. Opening CPC!");
+		ContentProviderClient movementProvider = context.getContentResolver().acquireContentProviderClient(uri);
+		Log.w("DBH", "CPC found!");
+		String[] projection = new String[] {
+				"Steps"
+		};
+		String selection = null;
+		String[] selectionArgs = null;
+		String sortOrder = "ID desc";
+		Log.w("DBH", "Trying to query!");
+		try {
+			Cursor cursor = movementProvider.query(uri, projection, selection, selectionArgs, sortOrder);
+			Log.w("DBH", "Queried!!");
+			for (int i = 0; i < cursor.getCount(); i++) {
+				cursor.moveToPosition(i);
+				riskHistory.add(Double.parseDouble(cursor.getString(0)));
+			}
+			Log.w("DBH", "Found all the stories!");
+		} catch (RemoteException e) {
+			Log.w("DBH", "Remote Exception!");
+			e.printStackTrace();
 		}
+		Log.w("DBH", "Returning!");
 		return riskHistory;
 	}
 	

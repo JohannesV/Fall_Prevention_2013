@@ -14,7 +14,7 @@ public class MovementNotifier implements StepListener {
 	private PedometerSettings mSettings;
 	private Utils mUtils;
 	private Context mContext;
-	public static int TEN_MINUTES =  600;
+	public static int MIN_TIME_SPAN =  60;
 	
 	public MovementNotifier(PedometerSettings settings, Utils utils, Context context) {
         mUtils = utils;
@@ -24,7 +24,7 @@ public class MovementNotifier implements StepListener {
     }
 	
 	public void onStep() {
-    	if(timeSpanLessThan(TEN_MINUTES)){
+    	if(timeSpanLessThan(MIN_TIME_SPAN)){
     		mSteps++;
     		mDistance = mSteps * mSettings.getStepLength();
     	}
