@@ -8,13 +8,22 @@
             android:id="@+id/mySimpleXYPlot"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_below="@+id/spinner1" />
+            android:layout_below="@+id/linear_layout" />
 
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true" />
+            android:orientation="horizontal" >
+
+	        <Spinner
+    	        android:id="@+id/time_span_spinner"
+        	    android:layout_width="wrap_content"
+            	android:layout_height="wrap_content" />
+       		<Spinner
+            	android:id="@+id/data_type_spinner"
+            	android:layout_width="wrap_content"
+           		android:layout_height="wrap_content" />
+        </LinearLayout>
     
 </RelativeLayout>

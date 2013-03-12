@@ -22,6 +22,8 @@ import com.androidplot.xy.XYStepMode;
 public class Statistics extends Activity implements OnItemSelectedListener {
 	
 	private XYPlot riskHistoryPlot;
+	private Spinner timeSpan, dataType;
+	private int counter = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,31 +31,36 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 		
 		setContentView(R.layout.activity_statistics);
 		
-		Spinner spinner = (Spinner) findViewById(R.id.spinner1);
-		
+		// Fill the time span spinner with some info
+		timeSpan = (Spinner) findViewById(R.id.time_span_spinner);
 		// Create an ArrayAdapter using the string array and a default spinner layout
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+		ArrayAdapter<CharSequence> timeAdapter = ArrayAdapter.createFromResource(this,
 		        R.array.time_period_array, android.R.layout.simple_spinner_item);
 		// Specify the layout to use when the list of choices appears
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		timeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
-		spinner.setAdapter(adapter);
-		spinner.setOnItemSelectedListener(this);
+		timeSpan.setAdapter(timeAdapter);
+		timeSpan.setOnItemSelectedListener(this);
 		
+		// Do the same for the other spinner
+		dataType = (Spinner) findViewById(R.id.data_type_spinner);
+		// Create an ArrayAdapter using the string array and a default spinner layout
+		ArrayAdapter<CharSequence> dataAdapter = ArrayAdapter.createFromResource(this,
+		        R.array.data_type_array, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		dataType.setAdapter(dataAdapter);
+		dataType.setOnItemSelectedListener(this);
 		riskHistoryPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
 		
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_statistics, menu);
-		return true;
-	}
-
-	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
+		Toast.makeText(this, String.valueOf(pos), Toast.LENGTH_SHORT).show();
+		
 		// Get risk history values from the database 
 		List<Double> riskHistory = new DatabaseHelper(this).dbGetRiskHistory(pos+10);
 		        
@@ -79,6 +86,8 @@ public class Statistics extends Activity implements OnItemSelectedListener {
         riskHistoryPlot.setDomainLabel("");
         riskHistoryPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1.0);
         riskHistoryPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1.0);
+        
+        riskHistoryPlot.redraw();
 	}
 
 	@Override

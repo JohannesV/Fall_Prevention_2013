@@ -60,5 +60,8 @@
     <string name="delete_info">Delete contact</string>
     <string name="contact_person_delete_dialogue_1">Are you sure that you want to remove</string>
     <string name="contact_person_delete_dialogue_2">from your contact list?</string>
+    <string-array name="data_type_array">
+        <item >Steps per minute</item>
+    </string-array>
 
 </resources>

@@ -13,10 +13,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.os.RemoteException;
 import android.provider.ContactsContract;
-import android.util.Log;
-import android.net.Uri;
 
 
 /**
@@ -261,7 +260,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		String sortOrder = "ID desc";
 		try {
 			Cursor cursor = movementProvider.query(uri, projection, selection, selectionArgs, sortOrder);
-			for (int i = 0; i < cursor.getCount(); i++) {
+			for (int i = cursor.getCount() - length; i < cursor.getCount(); i++) {
+				if (i < 0) {i=0;}
 				cursor.moveToPosition(i);
 				double steps = Double.parseDouble(cursor.getString(0));
 				riskHistory.add(steps);
@@ -361,6 +361,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		// Return the name of the contact if sucessful, null if contact not saved
 		return (newRowId > -1) ? name : null;
 	}
+
+	public void dbAddContact(Contact contact) {
+		SQLiteDatabase db = getReadableDatabase();
+		
+		ContentValues values = new ContentValues();
+		values.put(DatabaseContract.Contact.COLUMN_NAME_NAME, contact.getName());
+		values.put(DatabaseContract.Contact.COLUMN_NAME_PHONE, contact.getPhoneNumber());
+
+		db.insert(DatabaseContract.Contact.TABLE_NAME, null, values);
+		db.close();
+	}
 	
 	public Contact dbGetContact(int id) {
 		SQLiteDatabase db = getReadableDatabase();
@@ -410,6 +421,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		String whereClause = DatabaseContract.Contact.COLUMN_NAME_ID + " = " + contact.getId();
 		String[] whereArgs = null;
 		db.delete(table, whereClause, whereArgs);
+		db.close();
 	}
 	
 	public void reset(SQLiteDatabase db) {
