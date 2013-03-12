@@ -73,11 +73,8 @@ public class MovementProvider extends android.content.ContentProvider {
 		}
 
 		SQLiteDatabase db = database.getReadableDatabase();
-		Log.w("MoveProv", "Projection: " + projection.toString());
-		Log.w("MoveProv", "Selection: " + selection);
 		Cursor cursor = queryBuilder.query(db, projection, selection,
 				selectionArgs, null, null, sortOrder);
-		Log.w("MoveProv", "We got " + cursor.getCount() + " results!");
 		// Make sure that potential listeners are getting notified
 		cursor.setNotificationUri(getContext().getContentResolver(), uri);
 

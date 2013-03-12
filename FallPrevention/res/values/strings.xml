@@ -57,5 +57,8 @@
     <string name="preferences_clear_history_title">Clear History</string>
     <string name="preferences_clear_history_summary">Click here to clear history</string>
     <string name="title_activity_create_contact">Create Contact</string>
+    <string name="delete_info">Delete contact</string>
+    <string name="contact_person_delete_dialogue_1">Are you sure that you want to remove</string>
+    <string name="contact_person_delete_dialogue_2">from your contact list?</string>
 
 </resources>

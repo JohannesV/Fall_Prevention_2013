@@ -261,19 +261,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		String sortOrder = "ID desc";
 		try {
 			Cursor cursor = movementProvider.query(uri, projection, selection, selectionArgs, sortOrder);
-			Log.w("DBH", "Queried!!, found " + cursor.getCount() + " events!");
 			for (int i = 0; i < cursor.getCount(); i++) {
 				cursor.moveToPosition(i);
 				double steps = Double.parseDouble(cursor.getString(0));
-				Log.w("DBH", "Event " + i + " contained " + steps + " steps!");
 				riskHistory.add(steps);
 			}
-			Log.w("DBH", "Found all the stories!");
 		} catch (RemoteException e) {
-			Log.w("DBH", "Remote Exception!");
 			e.printStackTrace();
 		}
-		Log.w("DBH", "Returning!");
 		return riskHistory;
 	}
 	
@@ -407,6 +402,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public void dbClearAllData() {
 		SQLiteDatabase db = getWritableDatabase();
 		reset(db);
+	}
+	
+	public void dbDeleteContact(Contact contact) {
+		SQLiteDatabase db = getWritableDatabase();
+		String table = DatabaseContract.Contact.TABLE_NAME;
+		String whereClause = DatabaseContract.Contact.COLUMN_NAME_ID + " = " + contact.getId();
+		String[] whereArgs = null;
+		db.delete(table, whereClause, whereArgs);
 	}
 	
 	public void reset(SQLiteDatabase db) {

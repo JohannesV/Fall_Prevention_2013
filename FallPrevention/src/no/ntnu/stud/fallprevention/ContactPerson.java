@@ -2,7 +2,9 @@ package no.ntnu.stud.fallprevention;
 
 import java.util.List;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -46,12 +48,45 @@ public class ContactPerson extends ListActivity {
 		editNumber.setText(contact.getPhoneNumber());
 	}
 	
-	public void fireStore (View view){
+	public void fireDelete(View view){
+		// Ask for confirmation
+		AlertDialog.Builder alert_box = new AlertDialog.Builder(this);
+		String message = getResources().getString(
+				R.string.contact_person_delete_dialogue_1)
+				+ " "
+				+ editName.getText().toString()
+				+ " "
+				+ getResources().getString(
+						R.string.contact_person_delete_dialogue_2);
+		alert_box.setMessage(message);
+		alert_box.setPositiveButton(R.string.GENERAL_positive,
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// Delete contatct from database
+						new DatabaseHelper(getApplicationContext()).dbDeleteContact(contact);
+						// Return to the contact list screen
+						Intent intent = new Intent(getApplicationContext(), Related.class);
+						startActivity(intent);
+					}
+				});
+		alert_box.setNegativeButton(R.string.GENERAL_negative,
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// To nothing
+					}
+				});
+		alert_box.show();
+	}
+
+	public void fireStore(View view) {
+		// Update the database
 		contact.setName(editName.getText().toString());
 		contact.setPhoneNumber(editNumber.getText().toString());
 		new DatabaseHelper(this).dbUpdateContact(contact);
+		// Return to the contact list screen
 		Intent intent = new Intent(this, Related.class);
 		startActivity(intent);
 	}
-
 }
