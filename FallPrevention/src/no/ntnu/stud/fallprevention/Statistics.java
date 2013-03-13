@@ -5,7 +5,6 @@ import java.util.List;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -23,7 +22,6 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	
 	private XYPlot riskHistoryPlot;
 	private Spinner timeSpan, dataType;
-	private int counter = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

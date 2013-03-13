@@ -3,6 +3,7 @@ package no.ntnu.stud.fallprovider;
 import java.util.Arrays;
 import java.util.HashSet;
 
+import android.content.ContentProvider;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.UriMatcher;
@@ -158,6 +159,7 @@ public class MovementProvider extends android.content.ContentProvider {
 			throw new IllegalArgumentException("Unknown URI: " + uri);
 		}
 		getContext().getContentResolver().notifyChange(uri, null);
+		
 		return rowsUpdated;
 	}
 

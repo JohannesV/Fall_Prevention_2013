@@ -283,9 +283,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		for (int i = 0; i<cursor.getCount(); i++) {
 			cursor.moveToPosition(i);
-			Contact contact = new Contact();
-			contact.setId(cursor.getInt(0));
-			contact.setName(cursor.getString(1));
+			Contact contact = new Contact(cursor.getString(1), cursor.getInt(0));
 			try {
 				contact.setPhoneNumber(cursor.getString(2));
 			} catch (NumberFormatException nfe) {
@@ -385,9 +383,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		String orderBy = null;
 		Cursor cursor = db.query(table, projection, selection, selectionArgs, null, null, orderBy);
 		cursor.moveToFirst();
-		Contact contact = new Contact();
-		contact.setId(id);
-		contact.setName(cursor.getString(0));
+		Contact contact = new Contact(cursor.getString(0), id);
 		contact.setPhoneNumber(cursor.getString(1));
 		cursor.close();
 		db.close();
