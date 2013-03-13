@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5sp"
         android:layout_marginTop="10sp"
-        android:contentDescription="@string/face_display"
+        android:contentDescription="@string/messages_face_display"
         android:src="@drawable/good_job" />
     
 </LinearLayout> 

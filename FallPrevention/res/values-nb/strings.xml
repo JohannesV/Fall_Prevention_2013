@@ -23,9 +23,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_statistics">Statistikk</string>
     <string name="title_activity_settings">Innstillinger</string>
-    <string name="title_activity_related">Related</string>
+    <string name="title_activity_related">Pårørende</string>
     <string name="contact_person_store_info">Lagre</string>
 	<string name="contact_person_delete_info">Slett Kontakt</string>
 	<string name="new_contact_create_new_contact">Opprett ny kontakt</string>
+	<string name="messages_face_display">Et fjes som tilsvarer din status</string>
 	<string name="related_add_contact">Legg til kontakt</string>
 </resources>
