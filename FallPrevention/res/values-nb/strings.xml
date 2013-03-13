@@ -7,15 +7,16 @@
     <string name="menu_related">Pårørande</string>
     <string name="title_activity_write_name">SkrivNamn</string>
     <string name="general_hi">Hei!</string>
-    <string name="your_name_query">Hva heter du?</string>
+    <string name="write_name_your_name_query">Hva heter du?</string>
     <string name="write_name_write_name">Navn</string>
-   	<string name="generalbutton">Klikk her</string>
+   	<string name="general_button">Klikk her</string>
     <string name="title_activity_mainscreen">Hovedskjerm</string>
     <string name="title_activity_eventlist">Hendelsesforløp</string>
     <string name="title_activity_eventdetail">Hendingsdetaljer</string>
     <string name="greeting">Hei</string>
    	<string name="eventdetail_keep">Behold det</string>
     <string name="eventdetail_delete">Slett det</string>
+   	<string name="contact_added">Added contact</string>
     <string name="eventdetail_do_with_event">Hva ønsker du å gjøre med denne meldingen</string>
     <string name="general_lorem_short">Lorem ipse dolet</string>
     <string name="general_lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
@@ -24,9 +25,41 @@
     <string name="title_activity_statistics">Statistikk</string>
     <string name="title_activity_settings">Innstillinger</string>
     <string name="title_activity_related">Pårørende</string>
+    <string name="main_got_new_events">Du har nye Hendelser. Trykk på smileansiktet for å se dem.</string>
+    <string-array name="time_period_array">
+        <item >1 time</item>
+        <item >4 timer</item>
+        <item >8 timer</item>
+        <item >1 dag</item>
+        <item >7 dager</item>
+    </string-array>
+    <string name="new_name_button">Nytt navn</string>
+    <string name="contact_person_activity">Kontakt person</string>
+    <string name="new_contact_activity">Opprett ny kontakt</string>
+    <string name="contact_person">Kontakt person</string>
+    <string name="name">Navn</string>
+    <string name="phone_number">Telefonnummer</string>
     <string name="contact_person_store_info">Lagre</string>
-	<string name="contact_person_delete_info">Slett Kontakt</string>
-	<string name="new_contact_create_new_contact">Opprett ny kontakt</string>
+    <string name="contact_people">Kontakt Personer</string>
+    <string name="related_add_contact">Legg til kontakt</string>
 	<string name="messages_face_display">Et fjes som tilsvarer din status</string>
-	<string name="related_add_contact">Legg til kontakt</string>
+	<string name="widget_got_new_events">Klikk her!</string>
+	<string name="add_contact_confirm_dialogue_text_1">Vil du legge </string><string name="GENERAL_positive">Yes</string>
+    <string name="GENERAL_negative">Nei</string>
+    <string name="add_contact_confirm_dialogue_text_2">til kontakter?</string>
+    <string name="set_name">Legg til navn</string>
+    <string name="preferences_program_settings">Program instillinger</string>
+    <string name="preferences_name_title">Endre navn</string>
+    <string name="preferences_name_summary">Klikk her for å endre ditt navn</string>
+    <string name="preferences_clear_history_warning">Er du sikker på at du vil slette alle data fra programmet?</string>
+    <string name="preferences_data_cleared">Historie slettet!</string>
+    <string name="preferences_clear_history_title">Slett historie</string>
+    <string name="preferences_clear_history_summary">Klikk her for å slette historie</string>
+    <string name="title_activity_create_contact">Opprett kontakt</string>
+    <string name="contact_person_delete_info">Slett kontakt</string>
+    <string name="contact_person_delete_dialogue_1">Er du sikker på at du vil fjerne</string>
+    <string name="contact_person_delete_dialogue_2">fra kontaktlisten?</string>
+    <string-array name="data_type_array">
+        <item >Skritt per minutt</item>
+    </string-array>
 </resources>
