@@ -19,7 +19,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/add_contact" 
+        android:text="@string/related_add_contact" 
         android:onClick="fireNewPerson" />
    
 </RelativeLayout>

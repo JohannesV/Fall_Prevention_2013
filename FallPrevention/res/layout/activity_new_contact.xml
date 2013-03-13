@@ -13,7 +13,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/create_new_contact"
+        android:text="@string/new_contact_create_new_contact"
         android:onClick="createContact" />
 
     <ListView
