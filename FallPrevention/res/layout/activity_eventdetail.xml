@@ -9,7 +9,7 @@
         android:id="@+id/headlineTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lorem_short"
+        android:text="@string/general_lorem_short"
         android:paddingBottom="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="@string/lorem_long"
+        android:text="@string/general_lorem_long"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
-        android:text="@string/do_with_event"
+        android:text="@string/eventdetail_do_with_event"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <LinearLayout
@@ -38,14 +38,14 @@
             android:id="@+id/keepButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/keep"
+            android:text="@string/eventdetail_keep"
             android:onClick="fireKeepButton" />
 
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/delete"
+            android:text="@string/eventdetail_delete"
             android:onClick="fireDeleteButton" />
 
     </LinearLayout>

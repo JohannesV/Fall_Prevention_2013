@@ -14,15 +14,16 @@
     <string name="title_activity_eventlist">Hendingsforlop</string>
     <string name="title_activity_eventdetail">Hendingsdetalj</string>
     <string name="greeting">Hei</string>
-    <string name="keep">Behald han</string>
-    <string name="delete">Slett han</string>
-    <string name="do_with_event">Kva vil du gjera med denne beskjeden?</string>
-    <string name="lorem_short">Lorem ipse dolet</string>
-    <string name="lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
+   <string name="eventdetail_keep">Keep it</string>
+    <string name="eventdetail_delete">Slett han</string>
+    <string name="eventdetail_do_with_event">What do you want to do with this message?</string>
+    <string name="general_lorem_short">Lorem ipse dolet</string>
+    <string name="general_lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
     <string name="no_events">Du har ingen beskjedar!</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_statistics">Statistics</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_related">Related</string>
-
+    <string name="contact_person_store_info">Lagre</string>
+	<string name="contact_person_delete_info">Slett Kontakt</string>
 </resources>

@@ -14,12 +14,12 @@
     <string name="title_activity_eventlist">Eventlist</string>
     <string name="title_activity_eventdetail">EventDetail</string>
     <string name="greeting">Hello</string>
-    <string name="delete">Remove it</string>
-    <string name="keep">Keep it</string>
+    <string name="eventdetail_delete">Remove it</string>
+    <string name="eventdetail_keep">Keep it</string>
     <string name="contact_added">Added contact</string>
-    <string name="do_with_event">What do you want to do with this message?</string>
-    <string name="lorem_short">Lorem ipse dolet</string>
-    <string name="lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
+    <string name="eventdetail_do_with_event">What do you want to do with this message?</string>
+    <string name="general_lorem_short">Lorem ipse dolet</string>
+    <string name="general_lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
     <string name="no_events">You have no messages!</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_statistics">Statistics</string>
@@ -39,7 +39,7 @@
     <string name="contact_person">Contact person</string>
     <string name="name">Name</string>
     <string name="phone_number">Phone number</string>
-    <string name="store_info">Save</string>
+    <string name="contact_person_store_info">Save</string>
     <string name="contact_people">Contact persons</string>
     <string name="add_contact">Add contact</string>
     <string name="create_new_contact">Create new contact</string>
@@ -57,7 +57,7 @@
     <string name="preferences_clear_history_title">Clear History</string>
     <string name="preferences_clear_history_summary">Click here to clear history</string>
     <string name="title_activity_create_contact">Create Contact</string>
-    <string name="delete_info">Delete contact</string>
+    <string name="contact_person_delete_info">Delete contact</string>
     <string name="contact_person_delete_dialogue_1">Are you sure that you want to remove</string>
     <string name="contact_person_delete_dialogue_2">from your contact list?</string>
     <string-array name="data_type_array">
