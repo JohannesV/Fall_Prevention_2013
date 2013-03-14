@@ -96,5 +96,8 @@
     <string name="incorrect_step_length">Incorrect step length format! Go to the Settings to change it!</string>
 
     <string name="quit">Quit</string>
-
+    <string name="service_gpsenabled">GPS started</string>
+    <string name="service_gpsdisabled">GPS stopped</string>
+    <string name="service_datadisabled">Data location stopped</string>
+    <string name="service_dataenabled">Data location started</string>
 </resources>

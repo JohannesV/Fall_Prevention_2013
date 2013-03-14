@@ -26,12 +26,13 @@ public class MovementNotifier implements StepListener {
 	public void onStep() {
     	if(timeSpanLessThan(MIN_TIME_SPAN)){
     		mSteps++;
-    		mDistance = mSteps * mSettings.getStepLength();
     	}
     	else{
+    		mDistance = DistanceNotifier.mDistance;
     		new DatabaseHelper(mContext).AddMovement(mSteps, mDistance, mTimeStart, now());
     		mSteps = 0;
     		mDistance = 0;
+    		DistanceNotifier.mDistance = 0;
     		mTimeStart = now();
     	}
     }

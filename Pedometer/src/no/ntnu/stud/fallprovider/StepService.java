@@ -31,6 +31,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.location.LocationManager;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.PowerManager;
@@ -59,6 +60,7 @@ public class StepService extends Service {
     private SharedPreferences.Editor mStateEditor;
     private Utils mUtils;
     private SensorManager mSensorManager;
+	private LocationManager mLocationManager;
     private Sensor mSensor;
     private StepDetector mStepDetector;
     // private StepBuzzer mStepBuzzer; // used for debugging
@@ -75,7 +77,7 @@ public class StepService extends Service {
 
     private int mSteps;
     private int mPace;
-    private float mDistance;
+    private static float mDistance;
     private float mSpeed;
     private float mCalories;
     
@@ -112,6 +114,7 @@ public class StepService extends Service {
         // Start detecting
         mStepDetector = new StepDetector(getApplicationContext());
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         registerDetector();
 
         // Register our receiver for the ACTION_SCREEN_OFF action. This will make our receiver
@@ -132,9 +135,9 @@ public class StepService extends Service {
         mPaceNotifier.addListener(mPaceListener);
         mStepDetector.addStepListener(mPaceNotifier);
 
-        mDistanceNotifier = new DistanceNotifier(mDistanceListener, mPedometerSettings, mUtils);
+        mDistanceNotifier = new DistanceNotifier(mDistanceListener, mPedometerSettings, mUtils, getApplicationContext());
         mDistanceNotifier.setDistance(mDistance = mState.getFloat("distance", 0));
-        mStepDetector.addStepListener(mDistanceNotifier);
+        //mStepDetector.addStepListener(mDistanceNotifier);
         
         mSpeedNotifier    = new SpeedNotifier(mSpeedListener,    mPedometerSettings, mUtils);
         mSpeedNotifier.setSpeed(mSpeed = mState.getFloat("speed", 0));
@@ -147,7 +150,7 @@ public class StepService extends Service {
         mSpeakingTimer = new SpeakingTimer(mPedometerSettings, mUtils);
         mSpeakingTimer.addListener(mStepDisplayer);
         mSpeakingTimer.addListener(mPaceNotifier);
-        mSpeakingTimer.addListener(mDistanceNotifier);
+        //mSpeakingTimer.addListener(mDistanceNotifier);
         mSpeakingTimer.addListener(mSpeedNotifier);
         mSpeakingTimer.addListener(mCaloriesNotifier);
         mStepDetector.addStepListener(mSpeakingTimer);
@@ -333,6 +336,8 @@ public class StepService extends Service {
             }
         }
     };
+    
+    
     /**
      * Forwards speed values from SpeedNotifier to the activity. 
      */
