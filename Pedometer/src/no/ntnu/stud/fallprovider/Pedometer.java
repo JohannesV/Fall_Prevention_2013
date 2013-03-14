@@ -190,9 +190,9 @@ public class Pedometer extends Activity {
     @Override
     protected void onPause() {
         Log.i(TAG, "[ACTIVITY] onPause");
-        if (mIsRunning) {
-            unbindStepService();
-        }
+//        if (mIsRunning) {
+//            unbindStepService();
+//        }
         if (mQuitting) {
             mPedometerSettings.saveServiceRunningWithNullTimestamp(mIsRunning);
         }
