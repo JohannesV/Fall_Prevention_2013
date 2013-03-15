@@ -57,8 +57,6 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
-		Toast.makeText(this, String.valueOf(pos), Toast.LENGTH_SHORT).show();
-		
 		// Get risk history values from the database 
 		List<Double> riskHistory = new DatabaseHelper(this).dbGetRiskHistory(pos+10);
 		        
