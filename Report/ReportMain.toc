@@ -7,26 +7,26 @@
 \contentsline {subsection}{\numberline {2.2.1}Functional requirements}{6}
 \contentsline {subsection}{\numberline {2.2.2}Nonfunctional requirements}{6}
 \contentsline {section}{\numberline {2.3}Understanding the requirements}{6}
-\contentsline {chapter}{\numberline {3}Project Management}{8}
-\contentsline {section}{\numberline {3.1}Terms}{8}
-\contentsline {section}{\numberline {3.2}Development process}{9}
-\contentsline {section}{\numberline {3.3}Team Roles and Organization}{9}
-\contentsline {section}{\numberline {3.4}Comparison}{10}
-\contentsline {section}{\numberline {3.5}Management Tools}{10}
-\contentsline {chapter}{\numberline {4}Development Environment}{11}
-\contentsline {section}{\numberline {4.1}LaTeX}{11}
-\contentsline {section}{\numberline {4.2}Github}{11}
-\contentsline {section}{\numberline {4.3}Trello}{12}
-\contentsline {section}{\numberline {4.4}Eclipse with Android Development Tools Plugin}{12}
-\contentsline {chapter}{\numberline {5}Implementation}{13}
-\contentsline {section}{\numberline {5.1}Plans}{13}
-\contentsline {section}{\numberline {5.2}Work Breakdown Structure}{13}
-\contentsline {section}{\numberline {5.3}Architecture of the App}{13}
-\contentsline {section}{\numberline {5.4}Architecture of the Content Provider}{14}
-\contentsline {section}{\numberline {5.5}Class description and diagram}{15}
-\contentsline {chapter}{\numberline {A}Appendix}{17}
-\contentsline {section}{\numberline {A.1}Mockups}{17}
-\contentsline {section}{\numberline {A.2}Reports}{18}
-\contentsline {section}{\numberline {A.3}Meeting summaries}{19}
-\contentsline {section}{\numberline {A.4}Alternate Solutions}{24}
-\contentsline {section}{\numberline {A.5}Research Reports}{27}
+\contentsline {section}{\numberline {2.4}Testing}{7}
+\contentsline {chapter}{\numberline {3}Project Management}{9}
+\contentsline {section}{\numberline {3.1}Terms}{9}
+\contentsline {section}{\numberline {3.2}Development process}{10}
+\contentsline {section}{\numberline {3.3}Team Roles and Organization}{10}
+\contentsline {section}{\numberline {3.4}Comparison}{11}
+\contentsline {section}{\numberline {3.5}Management Tools}{11}
+\contentsline {chapter}{\numberline {4}Development Environment}{12}
+\contentsline {section}{\numberline {4.1}LaTeX}{12}
+\contentsline {section}{\numberline {4.2}Github}{12}
+\contentsline {section}{\numberline {4.3}Eclipse with Android Development Tools Plugin}{12}
+\contentsline {chapter}{\numberline {5}Implementation}{14}
+\contentsline {section}{\numberline {5.1}Plans}{14}
+\contentsline {section}{\numberline {5.2}Work Breakdown Structure}{14}
+\contentsline {section}{\numberline {5.3}Architecture of the App}{14}
+\contentsline {section}{\numberline {5.4}Architecture of the Content Provider}{16}
+\contentsline {section}{\numberline {5.5}Class description and diagram}{18}
+\contentsline {chapter}{\numberline {A}Appendix}{20}
+\contentsline {section}{\numberline {A.1}Mockups}{20}
+\contentsline {section}{\numberline {A.2}Reports}{21}
+\contentsline {section}{\numberline {A.3}Meeting summaries}{22}
+\contentsline {section}{\numberline {A.4}Alternate Solutions}{27}
+\contentsline {section}{\numberline {A.5}Research Reports}{30}

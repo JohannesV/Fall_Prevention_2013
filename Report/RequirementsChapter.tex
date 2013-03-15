@@ -50,3 +50,44 @@ The meetings served their purpose, and filled in a lot of holes that was missing
 \item The team at SINTEF got a wide range of experts to help the group with health-specific features, e.g. making the algorithms to recognize movements.
 \item The customer expected weekly meetings with the whole group present, and that goals had been achieved before each meeting. At each meeting a new goal until was set.
 \end{itemize}
+
+\section{Testing}
+The tests were done by the black-box principle of testing, meaning that all they consider is input and output, with no attention given to the inner workings of the methods. Because of the team following an agile development method, it was possible to create and test test-cases in short order. The test-cases was therefore written with results included.
+The tests are corresponding screens for the tests are as follows:
+\begin{description}
+\item[Name Entry] is associated with tests 1.x, both when program is started the first time, and when name-change is initiated from settings
+\item[Event Details Screen] is associated with tests 2.x
+\item[Statistics Screen] is associated with tests 3.x
+\item[Clear history] can be initiated from settings, 4.x
+\item[Related people Screen] had tests 5.x 
+\end{description}
+
+\begin{figure}[h]
+\label{tab:testList}
+\caption{List of tests for the application}
+\begin{tabular}{|p{\textwidth /4}||p{\textwidth /4}|p{\textwidth /4}|p{\textwidth /4}|}
+\hline
+Test number & Input value& Actual Result& Expected Result \\
+\hline
+\hline 
+1.1 & Any valid name & Hello: + name & Hello: + name \\ 
+\hline 
+1.2 & Empty name-box & Hello: &Hello:  \\ 
+\hline 
+2.1 & Remove event button clicked & Event removed & Event removed \\ 
+\hline 
+2.2 & Keep event button clicked & Event is kept & Event is kept \\ 
+\hline 
+3.1 & Timeslot set to 10 min or less & Data from correct timeslot displayed & Data from correct timeslot displayed \\ 
+%\hline 
+%3.2 & • & • & • \\ 
+\hline 
+4.1 & Clear History Button Clicked & History Cleared & History Cleared \\ 
+\hline 
+5.1 & Add existing contact button clicked & Contact shows up on appropriate screen  & Contact shows up on appropriate screen \\ 
+\hline 
+5.2 & Create New Contact function used & New Contact shows up on appropriate screen & New Contact shows up on appropriate screen \\ 
+\hline 
+
+\end{tabular} 
+\end{figure}

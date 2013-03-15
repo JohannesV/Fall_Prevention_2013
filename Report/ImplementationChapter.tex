@@ -6,17 +6,29 @@ Nearing the end of every sprint, the customer and group agreed upon the content 
 \section{Work Breakdown Structure}
 With a development methodology that stresses short term goals, it is only possible to plan WBS for the current period. After the customer has specified the goal for the following week, we immediately sat down and defined the WBS for the given period. This was, a WBS was developed incrementally by adjoining the new WBS to the previous.
 \begin{figure}[p]
-\caption{The current WBS}
+
 \setlength\fboxsep{0pt}
-\setlength\fboxrule{1pt}
-\fbox{
-\includegraphics[scale=\textwidth]{Res/WBS-15-3-13}
+\setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{%
+ \fbox{
+\includegraphics[width=1.45\textwidth , angle=270]{Res/WBS15313.png}
 }
+}
+\caption{The current WBS}
 \end{figure}
 \section{Architecture of the App}
 The application is made in a way that is common for all android applications. This means that user iterface is described in xml layout files that is called in java code. Strings and resources is placed in a separate folder and file, to be accessed by the code as needed. This is to separate content and layout in the UI. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily.
 
-As is common in android applications, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the appliaction are activity classes. These classes simply define the behaviour of their GUI screen.
+As is common in android applications, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the appliaction are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the gui can be seen
+\begin{figure}
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{
+\fbox{
+\includegraphics[width=1.2\textwidth, angle = 270]{Res/FlowChartGUI.png}
+}
+}
+\caption{Flow chart describing the Graphical User Interface}
+\label{fig:FlowchartGUI}
+\end{figure}
 
 Classes that are not activities can be roughly divided into 4 types: Data structure classes, auxilliary classes, connectivity classes, widget classes. Data structure classes simply define a useful data structure in the program. The data structure classes in the app are Event, ContactPerson and RiskStatus. Auxilliary classes help the activities perform their tasks. Most common among these are the adapters that define how elements should be shown in a list view. Connectivity classes are responsible for communicating with the database and content providers. There are two connectivity classes: DatabaseHelper, which does all the work, and DatabaseContract, which specifies the table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one. Finally, there are the widget classes. WidgetProvider creates the widget and gives it a GUI. WidgetUpdateService is started by the WidgetProvider and takes care of updating the widget when changes happen in the content provider.
 
@@ -32,12 +44,13 @@ The content provider runs as a service, and as such, it runs in the background, 
 The class structure of the Applications changes often, and the most recent description is placed here. 
 \begin{figure}[p]
 \label{fig:ClassDiagram}
-\caption{A class diagram of the current application}
+
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{1pt}
 \fbox{
-\includegraphics[width=1.2\textwidth, angle = 90]{Res/ClassDiagram}
+\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagram}
 }
+\caption{A class diagram of the current application}
 \end{figure}
 
 
