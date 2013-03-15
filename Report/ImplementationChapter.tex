@@ -14,10 +14,12 @@ As is common in android applications, classes that inherit from the class Activi
 Classes that are not activities can be roughly divided into 4 types: Data structure classes, auxilliary classes, connectivity classes, widget classes. Data structure classes simply define a useful data structure in the program. The data structure classes in the app are Event, ContactPerson and RiskStatus. Auxilliary classes help the activities perform their tasks. Most common among these are the adapters that define how elements should be shown in a list view. Connectivity classes are responsible for communicating with the database and content providers. There are two connectivity classes: DatabaseHelper, which does all the work, and DatabaseContract, which specifies the table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one. Finally, there are the widget classes. WidgetProvider creates the widget and gives it a GUI. WidgetUpdateService is started by the WidgetProvider and takes care of updating the widget when changes happen in the content provider.
 
 \section{Architecture of the Content Provider}
-The content provider is built around an open source pedometer, and is therefore a fullfletched application in itself, but the independent GUI and other unneccessary parts of the content provider will be phased out when using it for debugging is no longer required. The architecture is therefore currently more complicated than it will be in the final application.
+In android, Content Providers provide an interface to structured data of some sort. Access to for instance the list of contacts in the phone, or the phone's calendar is managed through standard content providers. Content Providers provide methods for inserting, updating and deleting relevant data. A major part of the assigment was to implement a Content Provider that gives developers access to structured movement data.
+
+Our content provider is built around an open source pedometer, and is therefore a fullfletched application in itself, but the independent GUI and other unneccessary parts of the content provider will be phased out when using it for debugging is no longer required. The architecture is therefore currently more complicated than it will be in the final application.
 
 The content provider runs as a service, and as such, it runs in the background, even when the user leaves the GUI. The pedometer part of the application sends a notification everytime it detects a step. The MovementNotifier class works as a listener, and its onStep method is called when the user makes a step. The onStep method of MovementNotifier then calls MovementProvider, which is a content provider class, that stores the information into the content providers database.
-
+rom a content provider.
 \end{description}
 
 
