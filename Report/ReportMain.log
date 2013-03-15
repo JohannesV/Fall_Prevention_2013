@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  8 MAR 2013 12:51
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  15 MAR 2013 19:57
 entering extended mode
 **ReportMain.tex
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
@@ -416,42 +416,57 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
+ [5
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
+]
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
-[5
-
-])
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\AltSolutionsCha
-pter.tex [6]
-Chapter 3.
-)
+[6])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ProjectManageme
-ntChapter.tex [7
-
-]
-Chapter 4.
+ntChapter.tex [7]
+Chapter 3.
 [8
 
 ] [9])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\DevelopmentEnvi
 romentChapter.tex [10]
-Chapter 5.
+Chapter 4.
 [11
 
 ])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ImplementationC
 hapter.tex [12]
-Chapter 6.
-)
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\AppendixPt1.tex
+Chapter 5.
+
+! LaTeX Error: File `Res/WBS-15-3-13' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 }
+      
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [13
 
-]
+] [14] <Res/ClassDiagram.png, id=54, 1289.81876pt x 767.86874pt>
+File: Res/ClassDiagram.png Graphic file (type png)
+
+<use Res/ClassDiagram.png>
+Package pdftex.def Info: Res/ClassDiagram.png used on input line 40.
+(pdftex.def)             Requested size: 467.99881pt x 278.61185pt.
+)
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\AppendixPt1.tex
+[15] [16 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Cl
+assDiagram.png (PNG copy)>]
 Appendix A.
-<Res/mockupV2.png, id=51, 803.0pt x 1136.245pt>
+<Res/mockupV2.png, id=61, 803.0pt x 1136.245pt>
 File: Res/mockupV2.png Graphic file (type png)
  <use Res/mockupV2.png>
 Package pdftex.def Info: Res/mockupV2.png used on input line 12.
@@ -461,7 +476,7 @@ Overfull \hbox (2.0pt too wide) in paragraph at lines 12--13
 [][] 
  []
 
-[14
+[17
 
 ]
 Underfull \hbox (badness 6859) in paragraph at lines 28--29
@@ -483,8 +498,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 \OT1/cmr/m/n/12 pre-sen-ta-tion, fin-ish-ing sec-ondary
  []
 
-[15 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/mockupV
-2.png>] [16] <Res/StatusReportWeek9.pdf, id=66, page=1, 614.295pt x 794.97pt>
+[18 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/mockupV
+2.png>] [19] <Res/StatusReportWeek9.pdf, id=77, page=1, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
@@ -515,9 +530,9 @@ File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [17 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ [20 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
 ReportWeek9.pdf>]
-<Res/StatusReportWeek9.pdf, id=81, page=2, 614.295pt x 794.97pt>
+<Res/StatusReportWeek9.pdf, id=92, page=2, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 2>
@@ -536,26 +551,230 @@ File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [18 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
-ReportWeek9.pdf>])
+ [21 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ReportWeek9.pdf>]
+<Res/StatusReportWeek11.pdf, id=98, page=1, 614.295pt x 794.97pt>
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 1>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [22 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ReportWeek11.pdf>]
+<Res/StatusReportWeek11.pdf, id=113, page=2, 614.295pt x 794.97pt>
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 4
+7.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 4
+7.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 4
+7.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [23 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ReportWeek11.pdf>] [24]
+<Res/AlternativeAppsReport.pdf, id=123, page=1, 597.23125pt x 844.15375pt>
+File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
+
+<use Res/AlternativeAppsReport.pdf, page 1>
+Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page1 used on input lin
+e 51.
+(pdftex.def)             Requested size: 597.22978pt x 844.15169pt.
+File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
+
+<use Res/AlternativeAppsReport.pdf, page 1>
+Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page1 used on input lin
+e 51.
+(pdftex.def)             Requested size: 597.73099pt x 844.86012pt.
+File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
+
+<use Res/AlternativeAppsReport.pdf, page 1>
+Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page1 used on input lin
+e 51.
+(pdftex.def)             Requested size: 597.73099pt x 844.86012pt.
+File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
+
+<use Res/AlternativeAppsReport.pdf, page 1>
+Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page1 used on input lin
+e 51.
+(pdftex.def)             Requested size: 597.73099pt x 844.86012pt.
+File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
+
+<use Res/AlternativeAppsReport.pdf, page 1>
+Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page1 used on input lin
+e 51.
+(pdftex.def)             Requested size: 597.73099pt x 844.86012pt.
+ [25 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Altern
+ativeAppsReport.pdf>]
+<Res/AlternativeAppsReport.pdf, id=138, page=2, 597.23125pt x 844.15375pt>
+File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
+
+<use Res/AlternativeAppsReport.pdf, page 2>
+Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page2 used on input lin
+e 51.
+(pdftex.def)             Requested size: 597.73099pt x 844.86012pt.
+File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
+
+<use Res/AlternativeAppsReport.pdf, page 2>
+Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page2 used on input lin
+e 51.
+(pdftex.def)             Requested size: 597.73099pt x 844.86012pt.
+File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
+
+<use Res/AlternativeAppsReport.pdf, page 2>
+Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page2 used on input lin
+e 51.
+(pdftex.def)             Requested size: 597.73099pt x 844.86012pt.
+ [26 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Altern
+ativeAppsReport.pdf>] [27]
+<Res/FallingCausesConsequences.pdf, id=147, page=1, 614.295pt x 794.97pt>
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 1>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page1 used on input
+ line 56.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 1>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page1 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 1>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page1 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 1>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page1 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 1>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page1 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [28 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
+gCausesConsequences.pdf>]
+<Res/FallingCausesConsequences.pdf, id=167, page=2, 614.295pt x 794.97pt>
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 2>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page2 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 2>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page2 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 2>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page2 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [29 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
+gCausesConsequences.pdf>]
+<Res/FallingCausesConsequences.pdf, id=171, page=3, 614.295pt x 794.97pt>
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 3>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page3 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 3>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page3 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 3>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page3 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [30 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
+gCausesConsequences.pdf>]
+<Res/FallingCausesConsequences.pdf, id=176, page=4, 614.295pt x 794.97pt>
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 4>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page4 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 4>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page4 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
+
+<use Res/FallingCausesConsequences.pdf, page 4>
+Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page4 used on input
+ line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [31 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
+gCausesConsequences.pdf>])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
  ) 
 Here is how much of TeX's memory you used:
- 3047 strings out of 493921
- 41954 string characters out of 3144868
- 97609 words of memory out of 3000000
- 6280 multiletter control sequences out of 15000+200000
- 12871 words of font info for 50 fonts, out of 3000000 for 9000
+ 3094 strings out of 493921
+ 43112 string characters out of 3144868
+ 97616 words of memory out of 3000000
+ 6314 multiletter control sequences out of 15000+200000
+ 13178 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 41i,18n,43p,663b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,18n,43p,1097b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ReportMain.pdf (19 pages, 214481 bytes).
+Output written on ReportMain.pdf (32 pages, 518613 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
+ 197 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 32 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

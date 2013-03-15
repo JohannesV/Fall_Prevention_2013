@@ -5,7 +5,14 @@ Nearing the end of every sprint, the customer and group agreed upon the content 
 
 \section{Work Breakdown Structure}
 With a development methodology that stresses short term goals, it is only possible to plan WBS for the current period. After the customer has specified the goal for the following week, we immediately sat down and defined the WBS for the given period. This was, a WBS was developed incrementally by adjoining the new WBS to the previous.
-
+\begin{figure}[p]
+\caption{The current WBS}
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}
+\fbox{
+\includegraphics[scale=\textwidth]{Res/WBS-15-3-13}
+}
+\end{figure}
 \section{Architecture of the App}
 The application is made in a way that is common for all android applications. This means that user iterface is described in xml layout files that is called in java code. Strings and resources is placed in a separate folder and file, to be accessed by the code as needed. This is to separate content and layout in the UI. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily.
 
@@ -19,10 +26,19 @@ In android, Content Providers provide an interface to structured data of some so
 Our content provider is built around an open source pedometer, and is therefore a fullfletched application in itself, but the independent GUI and other unneccessary parts of the content provider will be phased out when using it for debugging is no longer required. The architecture is therefore currently more complicated than it will be in the final application.
 
 The content provider runs as a service, and as such, it runs in the background, even when the user leaves the GUI. The pedometer part of the application sends a notification everytime it detects a step. The MovementNotifier class works as a listener, and its onStep method is called when the user makes a step. The onStep method of MovementNotifier then calls MovementProvider, which is a content provider class, that stores the information into the content providers database.
-rom a content provider.
-\end{description}
 
+\section{Class description and diagram}
 
+The class structure of the Applications changes often, and the most recent description is placed here. 
+\begin{figure}[p]
+\label{fig:ClassDiagram}
+\caption{A class diagram of the current application}
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}
+\fbox{
+\includegraphics[width=1.2\textwidth, angle = 90]{Res/ClassDiagram}
+}
+\end{figure}
 
 
 
