@@ -45,7 +45,8 @@
     <string name="new_contact_create_new_contact">Create new contact</string>
     <string name="messages_face_display">A face that displays your status</string>
     <string name="widget_got_new_events">Click here!</string>
-    <string name="add_contact_confirm_dialogue_text_1">Do you want to add</string><string name="GENERAL_positive">Yes</string>
+    <string name="add_contact_confirm_dialogue_text_1">Do you want to add</string>
+    <string name="GENERAL_positive">Yes</string>
     <string name="GENERAL_negative">No</string>
     <string name="add_contact_confirm_dialogue_text_2">as a contact?</string>
     <string name="set_name">Set name</string>

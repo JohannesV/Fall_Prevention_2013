@@ -14,10 +14,10 @@
     <string name="title_activity_eventlist">Hendelsesforløp</string>
     <string name="title_activity_eventdetail">Hendingsdetaljer</string>
     <string name="greeting">Hei</string>
-   	<string name="eventdetail_keep">Behold det</string>
-    <string name="eventdetail_delete">Slett det</string>
+   	<string name="eventdetail_keep">Behold den</string>
+    <string name="eventdetail_delete">Slett den</string>
    	<string name="contact_added">Added contact</string>
-    <string name="eventdetail_do_with_event">Hva ønsker du å gjøre med denne meldingen</string>
+    <string name="eventdetail_do_with_event">Hva ønsker du å gjøre med denne meldingen?</string>
     <string name="general_lorem_short">Lorem ipse dolet</string>
     <string name="general_lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat dui quam, quis varius lacus. Phasellus non tristique sapien. Vestibulum hendrerit, sapien non euismod venenatis, tortor purus pulvinar lacus, a pharetra turpis leo ac nibh. Nulla eu eros sed lorem imperdiet sollicitudin.</string>
     <string name="no_events">Du har ingen beskjedar!</string>
@@ -42,9 +42,11 @@
     <string name="contact_person_store_info">Lagre</string>
     <string name="contact_people">Kontakt Personer</string>
     <string name="related_add_contact">Legg til kontakt</string>
+    <string name="new_contact_create_new_contact">Legg til ny kontakt</string>
 	<string name="messages_face_display">Et fjes som tilsvarer din status</string>
 	<string name="widget_got_new_events">Klikk her!</string>
-	<string name="add_contact_confirm_dialogue_text_1">Vil du legge </string><string name="GENERAL_positive">Yes</string>
+	<string name="add_contact_confirm_dialogue_text_1">Vil du legge </string>
+	<string name="GENERAL_positive">Ja</string>
     <string name="GENERAL_negative">Nei</string>
     <string name="add_contact_confirm_dialogue_text_2">til kontakter?</string>
     <string name="set_name">Legg til navn</string>
