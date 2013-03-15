@@ -70,8 +70,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+ DatabaseContract.AlarmTypes.COLUMN_NAME_ID
 				+ " INTEGER PRIMARY KEY,"
 				+ DatabaseContract.AlarmTypes.COLUMN_NAME_DESCRIPTION + END_PAR;
-		final String FILL_INFO_1 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (0, \'You should really keep working out and not be a lazy bastard!\', \'You are lazy!\', \'halo\')";
-		final String FILL_INFO_2 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (1, \'You are really cool, beacause you spend a lot of time clicking through our program!\', \'You are awesome!\', \'sleep\')";
+		final String FILL_INFO_1 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (0, '10:23-10:44 hadde du abnormalt bråe bevegelser. Hva gjorde du da?', 'Brå bevegelser', \'halo\')";
+		final String FILL_INFO_2 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (1, 'Vi har registert lite bevegelse det siste døgnet. Vi anbefaler deg å røre litt mer på deg.', 'Lite bevegelse', \'sleep\')";
 		final String FILL_INFO_3 = "INSERT INTO Event (ID, TypeID) VALUES (0, 0)";
 		final String FILL_INFO_4 = "INSERT INTO Event (ID, TypeID) VALUES (1, 1)";
 		final String FILL_INFO_5 = "INSERT INTO Event (ID, TypeID) VALUES (2, 1)";
@@ -81,7 +81,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		final String FILL_INFO_9 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (1, 'SMS if sudden spike')";
 		final String FILL_INFO_10 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (2, 'SMS if gradual improvement')";
 		final String FILL_INFO_11 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (3, 'SMS if fall')";
-
 		db.execSQL(CREATE_TABLE_1);
 		db.execSQL(CREATE_TABLE_2);
 		db.execSQL(CREATE_TABLE_3);
