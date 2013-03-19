@@ -4,7 +4,8 @@
 Nearing the end of every sprint, the customer and group agreed upon the content of the following sprint. This list has been placed in Figure \ref{tab:sprintList}, and provided a short summary of what was accomplished in a particular time-frame. 
 
 \section{Work Breakdown Structure}
-With a development methodology that stresses short term goals, it is only possible to plan WBS for the current period. After the customer has specified the goal for the following week, we immediately sat down and defined the WBS for the given period. This was, a WBS was developed incrementally by adjoining the new WBS to the previous.
+With a development methodology that stresses short term goals, it is only possible to plan WBS for the current period. After the customer has specified the goal for the following week, we immediately sat down and defined the WBS for the given period. This was, a WBS was developed incrementally by adjoining the new WBS to the previous. The WBS was made in graphical form, as can be seen in Figure \ref{fig:WBS}.
+
 \begin{figure}[p]
 
 \setlength\fboxsep{0pt}
@@ -13,12 +14,13 @@ With a development methodology that stresses short term goals, it is only possib
 \includegraphics[width=1.45\textwidth , angle=270]{Res/WBS15313.png}
 }
 }
+\label{fig:WBS}
 \caption{The current WBS}
 \end{figure}
 \section{Architecture of the App}
-The application is made in a way that is common for all android applications. This means that user iterface is described in xml layout files that is called in java code. Strings and resources is placed in a separate folder and file, to be accessed by the code as needed. This is to separate content and layout in the UI. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily.
+The application is made in a way that is common for all android applications. This means that user interface is described in xml layout files that is called in java code. Strings and resources is placed in a separate folder and file, to be accessed by the code as needed. This is to separate content and layout in the UI. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily.
 
-As is common in android applications, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the appliaction are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the gui can be seen
+As is common in android applications, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behavior of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:FlowchartGUI}
 \begin{figure}
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{
@@ -30,18 +32,18 @@ As is common in android applications, classes that inherit from the class Activi
 \label{fig:FlowchartGUI}
 \end{figure}
 
-Classes that are not activities can be roughly divided into 4 types: Data structure classes, auxilliary classes, connectivity classes, widget classes. Data structure classes simply define a useful data structure in the program. The data structure classes in the app are Event, ContactPerson and RiskStatus. Auxilliary classes help the activities perform their tasks. Most common among these are the adapters that define how elements should be shown in a list view. Connectivity classes are responsible for communicating with the database and content providers. There are two connectivity classes: DatabaseHelper, which does all the work, and DatabaseContract, which specifies the table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one. Finally, there are the widget classes. WidgetProvider creates the widget and gives it a GUI. WidgetUpdateService is started by the WidgetProvider and takes care of updating the widget when changes happen in the content provider.
+Classes that are not activities can be roughly divided into 4 types: Data structure classes, auxiliary classes, connectivity classes, widget classes. Data structure classes simply define a useful data structure in the program. The data structure classes in the app are Event, ContactPerson and RiskStatus. Auxiliary classes help the activities perform their tasks. Most common among these are the adapters that define how elements should be shown in a list view. Connectivity classes are responsible for communicating with the database and content providers. There are two connectivity classes: DatabaseHelper, which does all the work, and DatabaseContract, which specifies the table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one. Finally, there are the widget classes. WidgetProvider creates the widget and gives it a GUI. WidgetUpdateService is started by the WidgetProvider and takes care of updating the widget when changes happen in the content provider.
 
 \section{Architecture of the Content Provider}
-In android, Content Providers provide an interface to structured data of some sort. Access to for instance the list of contacts in the phone, or the phone's calendar is managed through standard content providers. Content Providers provide methods for inserting, updating and deleting relevant data. A major part of the assigment was to implement a Content Provider that gives developers access to structured movement data.
+In android, Content Providers provide an interface to structured data of some sort. Access to for instance the list of contacts in the phone, or the phone's calendar is managed through standard content providers. Content Providers provide methods for inserting, updating and deleting relevant data. A major part of the assignment was to implement a Content Provider that gives developers access to structured movement data.
 
-Our content provider is built around an open source pedometer, and is therefore a fullfletched application in itself, but the independent GUI and other unneccessary parts of the content provider will be phased out when using it for debugging is no longer required. The architecture is therefore currently more complicated than it will be in the final application.
+Our content provider is built around an open source pedometer, and is therefore a fully-fletched application in itself, but the independent GUI and other unnecessary parts of the content provider will be phased out when using it for debugging is no longer required. The architecture is therefore currently more complicated than it will be in the final application.
 
-The content provider runs as a service, and as such, it runs in the background, even when the user leaves the GUI. The pedometer part of the application sends a notification everytime it detects a step. The MovementNotifier class works as a listener, and its onStep method is called when the user makes a step. The onStep method of MovementNotifier then calls MovementProvider, which is a content provider class, that stores the information into the content providers database.
+The content provider runs as a service, and as such, it runs in the background, even when the user leaves the GUI. The pedometer part of the application sends a notification every time it detects a step. The MovementNotifier class works as a listener, and its onStep method is called when the user makes a step. The onStep method of MovementNotifier then calls MovementProvider, which is a content provider class, that stores the information into the content providers database.
 
 \section{Class description and diagram}
 
-The class structure of the Applications changes often, and the most recent description is placed here. 
+The class structure of the Applications changed regularly, and the most recent description is in Figure \ref{fig:ClassDiagram}. Older diagrams and descriptions was placed in the appendix. 
 \begin{figure}[p]
 \label{fig:ClassDiagram}
 

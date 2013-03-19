@@ -17,7 +17,7 @@
 \contentsline {chapter}{\numberline {4}Development Environment}{12}
 \contentsline {section}{\numberline {4.1}LaTeX}{12}
 \contentsline {section}{\numberline {4.2}Github}{12}
-\contentsline {section}{\numberline {4.3}Eclipse with Android Development Tools Plugin}{12}
+\contentsline {section}{\numberline {4.3}Eclipse with Android Development Tools Plugin}{13}
 \contentsline {chapter}{\numberline {5}Implementation}{14}
 \contentsline {section}{\numberline {5.1}Plans}{14}
 \contentsline {section}{\numberline {5.2}Work Breakdown Structure}{14}
