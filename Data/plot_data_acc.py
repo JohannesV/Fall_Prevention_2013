@@ -17,8 +17,8 @@ with open('a_y.txt') as file:
 		line = line.strip()
 		a_y_data.append(line)
 
-plt.plot(a_z_data)
-plt.plot(a_x_data)
-plt.plot(a_y_data)
+plt.plot(a_z_data, 'g-')
+plt.plot(a_x_data, 'r-')
+plt.plot(a_y_data, 'b-')
 plt.ylabel('Data')
 plt.show()
