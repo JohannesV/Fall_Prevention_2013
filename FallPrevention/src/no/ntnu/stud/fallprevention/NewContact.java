@@ -1,7 +1,5 @@
 package no.ntnu.stud.fallprevention;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,6 +16,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ * Manages functions on contacts(creating, getting, setting, firing events)
+ * @author Tayfun
+ *
+ */
 public class NewContact extends Activity {
 
 	ListView contactList;
@@ -43,7 +50,10 @@ public class NewContact extends Activity {
 
 		populateContactList();
 	}
-
+    /**
+     * Reactive functions on Click: alertbox, message, dialog
+     * @param position  position for detection the position to display
+     */
 	public void fireClick(int position) {
 		final int _id = contacts.get(position).getId();
 		AlertDialog.Builder alert_box = new AlertDialog.Builder(this);
@@ -78,7 +88,9 @@ public class NewContact extends Activity {
 				});
 		alert_box.show();
 	}
-
+	/**
+	 * Makes a structured contact list
+	 */
 	public void populateContactList() {
 		getContacts();
 

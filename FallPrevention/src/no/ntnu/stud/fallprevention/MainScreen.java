@@ -16,6 +16,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+
+/**
+ * Creates activity: mainscreen, creates option menu,
+ * makes updates visible, fires event and shows the item menu bar. 
+ * @author Tayfun
+ *
+ */
 public class MainScreen extends Activity {
 
 	@Override

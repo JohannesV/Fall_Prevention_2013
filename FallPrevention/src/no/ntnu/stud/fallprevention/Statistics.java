@@ -1,6 +1,6 @@
 package no.ntnu.stud.fallprevention;
 
-import java.util.List;
+
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -18,15 +18,26 @@ import com.androidplot.xy.SimpleXYSeries;
 import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYStepMode;
 
+import java.util.List;
+
+/**
+ * Shows the statistic screen
+ * @author Tayfun
+ *
+ */
 public class Statistics extends Activity implements OnItemSelectedListener {
 	
 	private XYPlot riskHistoryPlot;
 	private Spinner timeSpan, dataType;
 	
+	/**
+	 * Prepares the screen for the program
+	 * and sets the activity for the statistics
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.activity_statistics);
 		
 		// Fill the time span spinner with some info
@@ -53,7 +64,9 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 		riskHistoryPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
 		
 	}
-
+	/**
+	 * Puts the statistic computation
+	 */
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {

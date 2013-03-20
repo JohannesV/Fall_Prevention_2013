@@ -11,6 +11,7 @@ import android.sax.StartElementListener;
 import android.util.AttributeSet;
 import android.widget.Toast;
 
+
 public class ClearHistory extends Preference {
 
 	Context context;

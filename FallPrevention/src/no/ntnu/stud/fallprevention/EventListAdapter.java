@@ -1,7 +1,5 @@
 package no.ntnu.stud.fallprevention;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,11 +9,23 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *  Adapter for the class EventList. Gets the view of the list.
+ * @author Tayfun
+ *
+ */
 public class EventListAdapter extends ArrayAdapter<String> {
 
 	Context context;
 	List<Event> events;
-
+	/**
+	 * 
+	 * @param events: List for accessing the events
+	 * @return the new version of the list.
+	 */
 	private static List<String> eventToStringList(List<Event> events) {
 		List<String> strings = new ArrayList<String>();
 		for (Event e : events) {

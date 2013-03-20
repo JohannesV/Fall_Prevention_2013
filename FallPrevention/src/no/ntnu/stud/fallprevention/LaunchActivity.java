@@ -7,6 +7,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
+
+/**
+ * Creates activity on launch. Checks if a username is already in use.
+ * @author Tayfun
+ *
+ */
 public class LaunchActivity extends Activity {
 
 	@Override
