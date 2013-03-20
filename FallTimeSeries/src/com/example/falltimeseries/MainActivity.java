@@ -26,8 +26,8 @@ public class MainActivity extends Activity implements SensorEventListener {
 	private SensorManager mSensorManager;
 	private Sensor mAccSensor;
 	private TextView mTextViewAccelerationX, mTextViewAccelerationY, mTextViewAccelerationZ;
-	private List<Object> mAccelerationX, mAccelerationY, mAccelerationZ;
-	private List<Object> mOutputCSV;
+//	private List<Object> mAccelerationX, mAccelerationY, mAccelerationZ;
+	private List<String> mOutputCSV;
 	private Date mPeriodStart;
 	
 	@Override
@@ -40,10 +40,10 @@ public class MainActivity extends Activity implements SensorEventListener {
 		mTextViewAccelerationY = (TextView)findViewById(R.id.textViewAccelerationY);
 		mTextViewAccelerationZ = (TextView)findViewById(R.id.textViewAccelerationZ);
 		// Initialize lists
-		mAccelerationX = new ArrayList<Object>();
-		mAccelerationY = new ArrayList<Object>();
-		mAccelerationZ = new ArrayList<Object>();
-		mOutputCSV = new ArrayList<Object>();
+//		mAccelerationX = new ArrayList<Object>();
+//		mAccelerationY = new ArrayList<Object>();
+//		mAccelerationZ = new ArrayList<Object>();
+		mOutputCSV = new ArrayList<String>();
 		
 		// Register sensor for orientation events
 		mSensorManager = (SensorManager)getApplicationContext().getSystemService(Context.SENSOR_SERVICE);
@@ -70,9 +70,9 @@ public class MainActivity extends Activity implements SensorEventListener {
 	}
 
 	public void storeData(View view) {
-		storeToSD("a_x.txt", mAccelerationX);
-		storeToSD("a_y.txt", mAccelerationY);
-		storeToSD("a_z.txt", mAccelerationZ);
+//		storeToSD("a_x.txt", mAccelerationX);
+//		storeToSD("a_y.txt", mAccelerationY);
+//		storeToSD("a_z.txt", mAccelerationZ);
 		storeToSD("csvdata.txt", mOutputCSV);
 		cleanUp();
 	}
@@ -85,32 +85,32 @@ public class MainActivity extends Activity implements SensorEventListener {
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-			if(mPeriodStart == null){
-				mPeriodStart = new Date();
-				mOutputCSV.add("#TIMESTAMP#" + (mPeriodStart.getTime()));
-			}
-			else if(((new Date()).getTime() - mPeriodStart.getTime()) > 1000){
-				mPeriodStart = new Date();
-				mOutputCSV.add("#TIMESTAMP#" + (mPeriodStart.getTime()));
-			}
-			mAccelerationX.add(event.values[0]);
-			mAccelerationY.add(event.values[1]);
-			mAccelerationZ.add(event.values[2]);
+//			if(mPeriodStart == null){
+//				mPeriodStart = new Date();
+//				mOutputCSV.add("#TIMESTAMP#" + (mPeriodStart.getTime()));
+//			}
+//			else if(((new Date()).getTime() - mPeriodStart.getTime()) > 1000){
+//				mPeriodStart = new Date();
+//				mOutputCSV.add("#TIMESTAMP#" + (mPeriodStart.getTime()));
+//			}
+//			mAccelerationX.add(event.values[0]);
+//			mAccelerationY.add(event.values[1]);
+//			mAccelerationZ.add(event.values[2]);
 			mTextViewAccelerationX.setText("X: " + String.valueOf(event.values[0]));
 			mTextViewAccelerationY.setText("Y: " + String.valueOf(event.values[1]));
 			mTextViewAccelerationZ.setText("Z: " + String.valueOf(event.values[2]));
 			DecimalFormat df = new DecimalFormat("#.##");
-			mOutputCSV.add(df.format(event.values[0]) + ";" + df.format(event.values[1]) + ";" + df.format(event.values[2]));
+			mOutputCSV.add(df.format(event.values[0]) + ";" + df.format(event.values[1]) + ";" + df.format(event.values[2]) + ";" + String.valueOf((new Date()).getTime()));
 		}
 	}
 	
-	private void storeToSD(String filename, List<Object> values) {
+	private void storeToSD(String filename, List<String> values) {
 		File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 		File file = new File(path, filename);
 		try {
 			OutputStream os = new FileOutputStream(file);
-			for (Object f : values) {
-				os.write((String.valueOf(f)+"\n").getBytes());
+			for (String f : values) {
+				os.write((f+"\n").getBytes());
 			}
 		} catch(IOException e) {
 			Log.w("ExternalStorage", "Error writing " + file, e);
