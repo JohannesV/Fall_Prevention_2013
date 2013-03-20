@@ -24,13 +24,11 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements SensorEventListener {
 
 	private SensorManager mSensorManager;
-	private Sensor mOriSensor, mAccSensor;
-//	private TextView t_o_x, t_o_y, t_o_z;
-	private TextView t_a_x, t_a_y, t_a_z;
-//	private List<Float> o_x, o_y, o_z;
-	private List<Object> a_x, a_y, a_z;
-	private List<Object> csv;
-	private Date start;
+	private Sensor mAccSensor;
+	private TextView mTextViewAccelerationX, mTextViewAccelerationY, mTextViewAccelerationZ;
+	private List<Object> mAccelerationX, mAccelerationY, mAccelerationZ;
+	private List<Object> mOutputCSV;
+	private Date mPeriodStart;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,41 +36,31 @@ public class MainActivity extends Activity implements SensorEventListener {
 		setContentView(R.layout.activity_main);
 
 		// Get handlers for GUI text
-//		t_o_x = (TextView)findViewById(R.id.textView1);
-//		t_o_y = (TextView)findViewById(R.id.textView2);
-//		t_o_z = (TextView)findViewById(R.id.textView3);
-		t_a_x = (TextView)findViewById(R.id.textView5);
-		t_a_y = (TextView)findViewById(R.id.textView6);
-		t_a_z = (TextView)findViewById(R.id.textView7);
+		mTextViewAccelerationX = (TextView)findViewById(R.id.textViewAccelerationX);
+		mTextViewAccelerationY = (TextView)findViewById(R.id.textViewAccelerationY);
+		mTextViewAccelerationZ = (TextView)findViewById(R.id.textViewAccelerationZ);
 		// Initialize lists
-//		o_x = new ArrayList<Float>();
-//		o_y = new ArrayList<Float>();
-//		o_z = new ArrayList<Float>();
-		a_x = new ArrayList<Object>();
-		a_y = new ArrayList<Object>();
-		a_z = new ArrayList<Object>();
-		csv = new ArrayList<Object>();
+		mAccelerationX = new ArrayList<Object>();
+		mAccelerationY = new ArrayList<Object>();
+		mAccelerationZ = new ArrayList<Object>();
+		mOutputCSV = new ArrayList<Object>();
 		
 		// Register sensor for orientation events
 		mSensorManager = (SensorManager)getApplicationContext().getSystemService(Context.SENSOR_SERVICE);
-		for (Sensor s : mSensorManager.getSensorList(Sensor.TYPE_ALL)) {
-			if (s.getType() == Sensor.TYPE_ORIENTATION) {
-				mOriSensor = s;
-			}
-			else if (s.getType() == Sensor.TYPE_ACCELEROMETER) {
-				mAccSensor = s;
+		for (Sensor sensor : mSensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER)) {
+			if (sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+				mAccSensor = sensor;
 			}
 		}
 		
-//		Log.w("Ori", mOriSensor.toString());
 		Log.w("Acc", mAccSensor.toString());
+		
 		// Check that we found a sensor object
-		if (mOriSensor == null ||  mAccSensor == null) {
-			System.out.println("Did not find all sensors!");
+		if (mAccSensor == null) {
+			System.out.println("Did not find sensor!");
 			cleanUp();
 		}
 		
-//		mSensorManager.registerListener(this, mOriSensor, SensorManager.SENSOR_DELAY_UI);
 		mSensorManager.registerListener(this, mAccSensor, SensorManager.SENSOR_DELAY_GAME);
 	}
 
@@ -82,43 +70,37 @@ public class MainActivity extends Activity implements SensorEventListener {
 	}
 
 	public void storeData(View view) {
-//		storeToSD("o_x.txt", o_x);
-//		storeToSD("o_y.txt", o_y);
-//		storeToSD("o_z.txt", o_z);
-		storeToSD("a_x.txt", a_x);
-		storeToSD("a_y.txt", a_y);
-		storeToSD("a_z.txt", a_z);
-		storeToSD("csvdata.txt", csv);
+		storeToSD("a_x.txt", mAccelerationX);
+		storeToSD("a_y.txt", mAccelerationY);
+		storeToSD("a_z.txt", mAccelerationZ);
+		storeToSD("csvdata.txt", mOutputCSV);
 		cleanUp();
 	}
 	
 	@Override
 	public void onAccuracyChanged(Sensor arg0, int arg1) {
 		// We don't really care about this
-		
 	}
 
 	@Override
-	public void onSensorChanged(SensorEvent se) {
-		if (se.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-			if(start == null){
-				start = new Date();
-				csv.add("#START#" + (start.getTime() / 1000));
+	public void onSensorChanged(SensorEvent event) {
+		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+			if(mPeriodStart == null){
+				mPeriodStart = new Date();
+				mOutputCSV.add("#TIMESTAMP#" + (mPeriodStart.getTime()));
 			}
-			else if(((new Date()).getTime() - start.getTime()) > 10000){
-				csv.add("#END#" + ((new Date()).getTime() / 1000));
-				start = new Date();
-				csv.add("#START#" + (start.getTime() / 1000));
+			else if(((new Date()).getTime() - mPeriodStart.getTime()) > 1000){
+				mPeriodStart = new Date();
+				mOutputCSV.add("#TIMESTAMP#" + (mPeriodStart.getTime()));
 			}
-			a_x.add(se.values[0]);
-			a_y.add(se.values[1]);
-			a_z.add(se.values[2]);
-			t_a_x.setText(String.valueOf(se.values[0]));
-			t_a_y.setText(String.valueOf(se.values[1]));
-			t_a_z.setText(String.valueOf(se.values[2]));
+			mAccelerationX.add(event.values[0]);
+			mAccelerationY.add(event.values[1]);
+			mAccelerationZ.add(event.values[2]);
+			mTextViewAccelerationX.setText("X: " + String.valueOf(event.values[0]));
+			mTextViewAccelerationY.setText("Y: " + String.valueOf(event.values[1]));
+			mTextViewAccelerationZ.setText("Z: " + String.valueOf(event.values[2]));
 			DecimalFormat df = new DecimalFormat("#.##");
-			//df.setRoundingMode(java.math.RoundingMode.HALF_UP); //requires min api 9...
-			csv.add(df.format(se.values[0]) + ";" + df.format(se.values[1]) + ";" + df.format(se.values[2]));
+			mOutputCSV.add(df.format(event.values[0]) + ";" + df.format(event.values[1]) + ";" + df.format(event.values[2]));
 		}
 	}
 	
