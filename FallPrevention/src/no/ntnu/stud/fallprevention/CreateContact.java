@@ -8,13 +8,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
-
+/**
+ * Activity class which makes the content in CreateContact available
+ * The main purpose of this class is to create a new contact.
+ * @author Dot
+ *
+ */
 public class CreateContact extends ListActivity {
 	
 	EditText editName, editPhone;
 	List<String> alarms;
 	ListView listView;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,7 +38,11 @@ public class CreateContact extends ListActivity {
 		this.setListAdapter(new EditContactAdapter(this, alarms));
 	}
 	
-	
+	/**
+	 * fireStore will Store the information from the textfields; editName and editPhone.
+	 * And send you back to the related activity.
+	 * @param view
+	 */
 	public void fireStore(View view) {
 		// Store in the database
 		Contact contact = new Contact();

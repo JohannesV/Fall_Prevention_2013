@@ -31,7 +31,11 @@ public class EventDetail extends Activity {
 		TextView textView2 = (TextView) findViewById(R.id.mainTextView);
 		textView2.setText(eventInformation.get(DatabaseContract.EventType.COLUMN_NAME_DESCRIPTION));
 	}
-	
+	/**
+	 * Fires an event to delete the event you are currently viewing
+	 * Sends you back to Eventlist afterwards.
+	 * @param view
+	 */
 	public void fireDeleteButton(View view) {
 		// Delete event from database
 		new DatabaseHelper(this).dbDeleteEvent(eventId);
@@ -39,7 +43,11 @@ public class EventDetail extends Activity {
 		Intent intent = new Intent(this, EventList.class);
 		startActivity(intent);
 	}
-	
+	/**
+	 * Doesn't do anything to the Event
+	 * Sends you back to the EventList
+	 * @param view
+	 */
 	public void fireKeepButton(View view) {
 		// Go back to EventList screen
 		Intent intent = new Intent(this, EventList.class);

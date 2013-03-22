@@ -43,6 +43,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		this.context = context;
 	}
 
+	/**
+	 * Builds a table which is used to store the information
+	 * @param
+	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// Fill the database with some random entries, and of course build the
@@ -97,7 +101,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(FILL_INFO_10);
 		db.execSQL(FILL_INFO_11);
 	}
-
+	/**
+	 * Upgrades the database version and clear its content.
+	 * @param: db
+	 * @param: oldVersion
+	 * @param: newVersion
+	 */
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// Clears the database on an upgrade, and reset it
@@ -124,7 +133,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 		onCreate(db);
 	}
-
+	/**
+	 * Downgrade the database version and clear its content.
+	 * @param: db
+	 * @param: oldVersion
+	 * @param: newVersion
+	 */
 	@Override
 	public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// Does the same as if the database has been upgraded.
@@ -135,7 +149,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 * Fetches a list of (Event.ID, EventType.Description, EventType.Icon)
 	 * tuples from the database.
 	 * 
-	 * @return
+	 * @return events
 	 */
 	public List<Event> dbGetEventList() {
 		List<Event> events = new ArrayList<Event>();
