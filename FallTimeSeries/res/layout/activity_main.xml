@@ -43,8 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:onClick="storeData"
-        android:text="Store data!" />
+        android:onClick="cleanUp"
+        android:text="Stop!" />
 
     <TextView
         android:id="@+id/textViewSteps"
