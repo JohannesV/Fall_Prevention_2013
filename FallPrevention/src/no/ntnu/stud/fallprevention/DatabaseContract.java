@@ -8,7 +8,6 @@ import android.provider.BaseColumns;
  * common way to ensure consistent name usage throughout the application.
  * 
  * @author elias
- *
  */
 
 public abstract class DatabaseContract {
