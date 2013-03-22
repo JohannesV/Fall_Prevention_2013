@@ -8,7 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-
+/**
+ * This adapter is used to set the layout for a list in ContactPerson
+ * @author Dot
+ *
+ */
 public class EditContactAdapter extends ArrayAdapter<String> {
 
 	Context context;
@@ -20,7 +24,13 @@ public class EditContactAdapter extends ArrayAdapter<String> {
 		this.context = context;
 		this.alarms = alarms;
 	} 
-
+	/**
+	 * Define the layout of the List in ContactPerson
+	 * @param: int position
+	 * @param: View convertView
+	 * @param: ViewGroup parent
+	 * @return: View rowView
+	 */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context

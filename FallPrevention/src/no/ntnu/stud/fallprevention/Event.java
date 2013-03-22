@@ -1,7 +1,7 @@
 package no.ntnu.stud.fallprevention;
 
 /**
- * Struct used to contain information about event to display in the EventList.
+ * Object used to contain information about event to display in the EventList.
  * 
  * @author elias
  *
