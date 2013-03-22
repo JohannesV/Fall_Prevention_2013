@@ -1,6 +1,6 @@
 import math, numpy, time
 
-def find_peaks(time_series=[], window=4, std_threshold=1.0):
+def find_peaks(time_series=[], window=10, std_threshold=0.8):
 
 	peak_function_values = [0]
 	peaks = []
@@ -17,6 +17,7 @@ def find_peaks(time_series=[], window=4, std_threshold=1.0):
  	mean = numpy.mean(positives)
 	std = numpy.std(positives)
 
+#	return peak_function_values, mean+(std*std_threshold)
 	# Remove statistically insignificant peaks
 	for i in xrange(len(peak_function_values)):
 		v = peak_function_values[i]
@@ -88,7 +89,6 @@ def prw(i, peak_func):
 		return prefix*suffix
 	else:
 		return 1.0
-
 
 def gauss_kernel(x):
 	return (1.0/math.sqrt(2.0*math.pi)) * math.exp((-1.0/2.0)*(x**2))
