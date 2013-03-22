@@ -12,6 +12,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+/**
+ * Activity class which makes the content in ContactPerson available
+ * The main purpose of this class is to edit a contact.
+ * @author Dot
+ *
+ */
+
 public class ContactPerson extends ListActivity {
 	
 	Contact contact;
@@ -19,6 +26,12 @@ public class ContactPerson extends ListActivity {
 	ListView listView;
 	EditText editName, editNumber;
 	
+	
+	/**
+	 * Adds information when the ContactPerson Activity is created
+	 * Requires ContactID to get the information. 
+	 * @param: savedInstanceState
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,7 +42,10 @@ public class ContactPerson extends ListActivity {
 		contact = new DatabaseHelper(this).dbGetContact(id);
 		fillFields();
 	}
-
+	/**
+	 * Adds more information when updated
+	 * Will update when you click on the content
+	 */
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -39,7 +55,9 @@ public class ContactPerson extends ListActivity {
 		listView = (ListView) findViewById(android.R.id.list);
 		this.setListAdapter(new EditContactAdapter(this, alarms));
 	}
-	
+	/**
+	 * Add related information to the Fields with the given ID
+	 */
 	public void fillFields() {
 		editName = (EditText) findViewById(R.id.name);
 		editNumber = (EditText) findViewById(R.id.phone_number);
@@ -47,7 +65,10 @@ public class ContactPerson extends ListActivity {
 		editName.setText(contact.getName());
 		editNumber.setText(contact.getPhoneNumber());
 	}
-	
+	/**
+	 * Will fire an event which deletes an Contact form the list in ContactPerson
+	 * @param view
+	 */
 	public void fireDelete(View view){
 		// Ask for confirmation
 		AlertDialog.Builder alert_box = new AlertDialog.Builder(this);
@@ -79,7 +100,10 @@ public class ContactPerson extends ListActivity {
 				});
 		alert_box.show();
 	}
-
+	/**
+	 * Fire an event to Store data(Name,PhoneNumber) about the Contact we are currently viewing.
+	 * @param view
+	 */
 	public void fireStore(View view) {
 		// Update the database
 		contact.setName(editName.getText().toString());

@@ -11,27 +11,47 @@ import android.sax.StartElementListener;
 import android.util.AttributeSet;
 import android.widget.Toast;
 
-
+/**
+ * This class will Clear your personal data from the app.
+ * This includes Name, Settings and Data stored by the program.
+ * @author Dot
+ *
+ */
 public class ClearHistory extends Preference {
 
 	Context context;
-	
+	/**
+	 * This method creates an Object of ClearHistory 
+	 * @param context
+	 */
 	public ClearHistory(Context context) {
 		super(context);
 		this.context = context;
 	}
-
+	/**
+	 * This method creates an Object of ClearHistory 
+	 * @param context
+	 * @param attr
+	 */
 	public ClearHistory(Context context, AttributeSet attr) {
 		super(context, attr);
 		this.context = context;
 	}
-
+	/**
+	 * This method creates an object of ClearHistory
+	 * @param context
+	 * @param attr
+	 * @param defStyle
+	 */
 	public ClearHistory(Context context, AttributeSet attr,
 			int defStyle) {
 		super(context, attr, defStyle);
 		this.context = context;
 	}
-
+	/**
+	 * Deletes all local data from the database
+	 * TODO: Delete name and settings
+	 */
 	@Override
 	protected void onClick() {
 		AlertDialog.Builder alert_box = new AlertDialog.Builder(context);
