@@ -13,4 +13,13 @@
         android:text="Start!"
         android:onClick="startMain" />
 
+        <Button
+            android:id="@+id/btnStopData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btnStoreData"
+            android:onClick="stopMain"
+            android:text="Stop!" />
+
 </RelativeLayout>

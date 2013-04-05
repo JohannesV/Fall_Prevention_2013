@@ -18,7 +18,15 @@ public class LaunchActivity extends Activity {
 //		Intent intent = new Intent(this, MainActivity.class);
 //		startActivity(intent);
 		Intent intent = new Intent(this, TestService.class);
+		intent.putExtra("stop", false);
 		Log.v("Launch", "StartMain");
+		startService(intent);
+	}
+	
+	public void stopMain(View view) {
+		Intent intent = new Intent(this, TestService.class);
+		Log.v("Launch", "StopMain");
+		intent.putExtra("stop", true);
 		startService(intent);
 	}
 	
