@@ -15,10 +15,14 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity
+        <service
             android:name="com.example.falltimeseries.MainActivity"
             android:label="@string/app_name" >
-        </activity>
+        </service>      
+        <service
+            android:name="com.example.falltimeseries.TestService"
+            android:label="@string/app_name" >
+        </service>
         <activity
             android:name="com.example.falltimeseries.LaunchActivity"
             android:label="@string/title_activity_launch" >

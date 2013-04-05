@@ -3,7 +3,7 @@ package com.example.falltimeseries;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetectSteps implements Runnable {
+public class DetectStepsThread implements Runnable {
 
 	public static final int SMOOTHING_WINDOW = 5;
 	public static final int WINDOW_SIZE = 10;
@@ -16,7 +16,7 @@ public class DetectSteps implements Runnable {
 	private MainActivity activity; 
 	private double mMean, mStd;
 	
-	public DetectSteps(List<Float> mVectorLengths, List<Long> mTimeStamps, MainActivity activity) {
+	public DetectStepsThread(List<Float> mVectorLengths, List<Long> mTimeStamps, MainActivity activity) {
 		this.mVectorLengths = mVectorLengths;
 		this.mTimeStamps = mTimeStamps;
 		this.activity = activity;
@@ -26,7 +26,7 @@ public class DetectSteps implements Runnable {
 	public void run() {
 		List<Float> smoothedData = smooth(mVectorLengths, SMOOTHING_WINDOW);
 		List<Float> peakStrengths = calculatePeakStrengths(smoothedData);
-		// TODO: Do over a longer interval
+		// TODO: Calibration
 		if (!activity.meanStdSet) {
 			calculateMeanAndStd(peakStrengths);
 		} else {
