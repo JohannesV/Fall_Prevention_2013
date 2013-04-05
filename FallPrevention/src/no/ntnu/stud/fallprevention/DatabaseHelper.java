@@ -1,5 +1,6 @@
 package no.ntnu.stud.fallprevention;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -261,9 +262,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
+	 * Randomly generates state of risk
 	 * 
-	 * 
-	 * @return
+	 * @return RiskStatus 
+	 * @see RiskStatus
 	 */
 	public RiskStatus dbGetStatus() {
 		double random = new Random().nextDouble();
@@ -278,6 +280,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			returner = RiskStatus.GOOD_JOB;
 		}
 		return returner;
+	}
+	/**
+	 * 
+	 * @param is of start and stop of the period to be looked at
+	 * @return 
+	 */
+	public RiskStatus dbGetStatus(Timestamp start,Timestamp stop){
+		
+		return null;
+		
 	}
 
 	public List<Double> dbGetRiskHistory(int length) {
