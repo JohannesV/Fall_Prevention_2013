@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Valens Content Provider</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="main_explanatory_text">This is the content provider for all the application in the Valens family. This application only holds the data for all the other applications. If you want to access or modify these data you can read how to on our web page example.com. The only thing you can do in this application is to clear all data realated to it with the big red button below, which is not recommended if you don\'t know what you are doing!</string>
+    <string name="delete_button_text">Delete data (not recommended)</string>
+
+</resources>
