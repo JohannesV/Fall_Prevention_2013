@@ -281,16 +281,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 		return returner;
 	}
-	/**
-	 * 
-	 * @param is of start and stop of the period to be looked at
-	 * @return 
-	 */
-	public RiskStatus dbGetStatus(Timestamp start,Timestamp stop){
-		
-		return null;
-		
-	}
+
 
 	public List<Double> dbGetRiskHistory(int length) {
 		List<Double> riskHistory = new ArrayList<Double>();
