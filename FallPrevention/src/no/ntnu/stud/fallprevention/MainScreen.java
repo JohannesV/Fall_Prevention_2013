@@ -15,16 +15,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 /**
- * Creates activity: mainscreen, creates option menu,
- * makes updates visible, fires event and shows the item menu bar. 
+ * Creates activity: mainscreen, creates option menu, makes updates visible,
+ * fires event and shows the item menu bar.
+ * 
  * @author Tayfun
- *
+ * 
  */
 public class MainScreen extends Activity {
-
+	RiskStatus status;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,28 +38,30 @@ public class MainScreen extends Activity {
 
 		// Change image depending on information from the database
 		Drawable drawable;
-		RiskStatus status = new DatabaseHelper(this).dbGetStatus();
+		if(status==null){
+			status=RiskStatus.OK_JOB;
+		}
+		status = new ContentProviderHelper(getApplicationContext()).cpGetStatus(status);
 		if (status == RiskStatus.BAD_JOB) {
 			drawable = getResources().getDrawable(R.drawable.bad_job);
-		}
-		else if (status == RiskStatus.NOT_SO_OK_JOB) {
+		} else if (status == RiskStatus.NOT_SO_OK_JOB) {
 			drawable = getResources().getDrawable(R.drawable.not_so_ok_job);
-		}
-		else if (status == RiskStatus.OK_JOB) {
+		} else if (status == RiskStatus.OK_JOB) {
 			drawable = getResources().getDrawable(R.drawable.ok_job);
-		}
-		else if (status == RiskStatus.GOOD_JOB) {
+		} else if (status == RiskStatus.GOOD_JOB) {
 			drawable = getResources().getDrawable(R.drawable.good_job);
-		}
-		else if (status == RiskStatus.VERY_GOOD_JOB) {
+		} else if (status == RiskStatus.VERY_GOOD_JOB) {
 			drawable = getResources().getDrawable(R.drawable.very_good_job);
-		}
-		else {
+		} else {
 			// Problem
 			drawable = null;
 		}
+//		ContentProviderHelper cph= new ContentProviderHelper(getApplicationContext());
+//		cph.refreshTimestamp();
+		
 		Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-		Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 200, 200, true));
+		Drawable d = new BitmapDrawable(getResources(),
+				Bitmap.createScaledBitmap(bitmap, 200, 200, true));
 		ImageButton imageButton = (ImageButton) findViewById(R.id.mainScreenSmileyImage);
 		imageButton.setBackgroundDrawable(d);
 	}
@@ -78,12 +81,13 @@ public class MainScreen extends Activity {
 
 	private void updateVisible() {
 		// Find name from shared prefences file
-		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-		String name =sp.getString("name", "");
+		SharedPreferences sp = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		String name = sp.getString("name", "");
 		String displayString = getString(R.string.greeting) + ", " + name + "!";
 		TextView txtGreetingName = (TextView) findViewById(R.id.textView1);
 		txtGreetingName.setText(displayString);
-		
+
 		// Display a message if there are new messages
 		TextView txtSubGreeting = (TextView) findViewById(R.id.mainScreenSubText);
 		DatabaseHelper dbHelper = new DatabaseHelper(this);
