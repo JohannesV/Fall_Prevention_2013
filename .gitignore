@@ -13,7 +13,7 @@ gen/**
 *.war
 *.ear
 
-.classpath
-.project
+#.classpath
+#.project
 
 local.properties
