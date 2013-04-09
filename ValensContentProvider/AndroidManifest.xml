@@ -15,7 +15,10 @@
         android:theme="@style/AppTheme" >
         <provider
 	       android:authorities="ntnu.stud.valens.contentprovider"
-	       android:name=".ValensDataProvider" >
+	       android:name=".ValensDataProvider"
+	       android:enabled="true"
+	       android:grantUriPermissions="true"
+	       android:readPermission="android.permission.permRead" >
 		</provider> 
         <activity
             android:name="ntnu.stud.valens.contentprovider.Main"

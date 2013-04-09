@@ -8,6 +8,8 @@ public class CPValensDB extends SQLiteOpenHelper{
 	private static final String DATABASE_NAME="valens.db";
 	private static final int DATABASE_VERSION=1;
 	
+	
+	
 	public CPValensDB(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		// TODO Auto-generated constructor stub
