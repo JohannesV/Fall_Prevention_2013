@@ -71,7 +71,7 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
 		// Get risk history values from the database 
-		List<Double> riskHistory = new DatabaseHelper(this).dbGetRiskHistory(pos+10);
+		List<Double> riskHistory = new ContentProviderHelper(getApplicationContext()).cpGetRiskHistory(pos+10);
 		        
 		riskHistoryPlot.clear();
 		

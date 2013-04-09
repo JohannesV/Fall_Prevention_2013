@@ -114,26 +114,30 @@ public class ContentProviderHelper {
 				Toast.LENGTH_LONG).show();
 		return returner;
 	}
-	List <Double> cpGetRiskHistory(int length){
-		List<Double> returner=new ArrayList<Double>();
-		Uri uri = Uri.parse("content://no.ntnu.stud.fallprovider");
+
+	List<Double> cpGetRiskHistory(int length) {
+		List<Double> returner = new ArrayList<Double>();
+		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
 		ContentProviderClient movementProvider = context.getContentResolver()
 				.acquireContentProviderClient(uri);
-		uri = Uri.parse("content://no.ntnu.stud.fallservice/data/");
-		String[] projection = new String[] { "Steps" };
+		uri = Uri
+				.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
+		String[] projection = new String[] { "timestamp" };
 		String selection = null;
 		String[] selectionArgs = null;
 		String sortOrder = "ID desc";
 		try {
 			Cursor cursor = movementProvider.query(uri, projection, selection,
 					selectionArgs, sortOrder);
-			for (int i = cursor.getCount() - length; i < cursor.getCount(); i++) {
-				if (i < 0) {
-					i = 0;
+			if (!cursor.isNull(0)) {
+				for (int i = cursor.getCount() - length; i < cursor.getCount(); i++) {
+					if (i < 0) {
+						i = 0;
+					}
+					cursor.moveToPosition(i);
+					// double steps = Double.parseDouble(cursor.getString(0));
+					// returner.add(steps);
 				}
-				cursor.moveToPosition(i);
-				double steps = Double.parseDouble(cursor.getString(0));
-				riskHistory.add(steps);
 			}
 		} catch (RemoteException e) {
 			e.printStackTrace();
