@@ -1,11 +1,17 @@
 package no.ntnu.stud.fallprevention;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import android.content.ContentProviderClient;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.RemoteException;
 import android.widget.Toast;
 
 public class ContentProviderHelper {
@@ -84,20 +90,19 @@ public class ContentProviderHelper {
 
 		double dayOne = getLastDayStepCount(getHoursBack(24), getHoursBack(0));
 		double dayTwo = getLastDayStepCount(getHoursBack(48), getHoursBack(24));
-		// TODO: Does not use correct math and or logic
 		if (dayOne < dayTwo) {
-			if (dayOne * 100 / dayTwo < 15) {
+			if (dayOne * 100 / dayTwo > 85) {
 				returner = RiskStatus.OK_JOB;
-			} else if (dayOne * 100 / dayTwo < 50) {
+			} else if (dayOne * 100 / dayTwo > 50) {
 				returner = RiskStatus.NOT_SO_OK_JOB;
 			} else {
 				returner = RiskStatus.BAD_JOB;
 			}
 
 		} else if (dayOne > dayTwo) {
-			if (dayTwo * 100 / dayOne < 15) {
+			if (dayTwo * 100 / dayOne > 85) {
 				returner = RiskStatus.OK_JOB;
-			} else if (dayTwo * 100 / dayOne < 50) {
+			} else if (dayTwo * 100 / dayOne > 50) {
 				returner = RiskStatus.GOOD_JOB;
 			} else {
 				returner = RiskStatus.VERY_GOOD_JOB;
@@ -107,6 +112,32 @@ public class ContentProviderHelper {
 		Toast.makeText(context,
 				String.valueOf(dayOne) + "\n" + String.valueOf(dayTwo),
 				Toast.LENGTH_LONG).show();
+		return returner;
+	}
+	List <Double> cpGetRiskHistory(int length){
+		List<Double> returner=new ArrayList<Double>();
+		Uri uri = Uri.parse("content://no.ntnu.stud.fallprovider");
+		ContentProviderClient movementProvider = context.getContentResolver()
+				.acquireContentProviderClient(uri);
+		uri = Uri.parse("content://no.ntnu.stud.fallservice/data/");
+		String[] projection = new String[] { "Steps" };
+		String selection = null;
+		String[] selectionArgs = null;
+		String sortOrder = "ID desc";
+		try {
+			Cursor cursor = movementProvider.query(uri, projection, selection,
+					selectionArgs, sortOrder);
+			for (int i = cursor.getCount() - length; i < cursor.getCount(); i++) {
+				if (i < 0) {
+					i = 0;
+				}
+				cursor.moveToPosition(i);
+				double steps = Double.parseDouble(cursor.getString(0));
+				riskHistory.add(steps);
+			}
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 		return returner;
 	}
 }
