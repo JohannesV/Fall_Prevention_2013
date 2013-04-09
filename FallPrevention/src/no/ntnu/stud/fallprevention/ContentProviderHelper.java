@@ -15,6 +15,7 @@ import android.os.RemoteException;
 import android.widget.Toast;
 
 public class ContentProviderHelper {
+	private static final int GOOD_STEPS_NUMBER = 3000;
 	static Timestamp sNow;
 	static Timestamp sOneDayAgo;
 	static Timestamp sTwoDaysAgo;
@@ -32,21 +33,38 @@ public class ContentProviderHelper {
 	}
 
 	/**
-	 * Returns number of steps done the last 24 hours
+	 * Returns number of steps done the in the period between start and stop
 	 * 
 	 * @return
 	 */
-	public int getLastDayStepCount(Timestamp start, Timestamp stop) {
+	public int getStepCount(Timestamp start, Timestamp stop) {
 		// TODO: make use of strings from ValensDataProvider and call a query
 		// with the correct arguments
 
 		ContentResolver cr = context.getContentResolver();
 		// cr.query(uri, projection, selection, selectionArgs, sortOrder)
 		int returner;
+		double mStepCount=0;
 		double random = new Random().nextDouble();
 		// Toast.makeText(context, String.valueOf((int) random * 1000),
 		// Toast.LENGTH_LONG).show();
-		return (int) (random * 1000);
+		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
+		ContentProviderClient movementProvider = context.getContentResolver()
+				.acquireContentProviderClient(uri);
+		uri = Uri
+				.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
+		String[] projection = new String[] { "COUNT(timestamp)" };
+		String selection = "WHERE timestamp > "+start+" AND timestamp < "+stop;
+		String[] selectionArgs = null;
+		String sortOrder = null;
+		try {
+			Cursor cursor = movementProvider.query(uri, projection, selection,
+					selectionArgs, sortOrder);
+			mStepCount = cursor.getDouble(0);
+		}catch(Exception e){
+				mStepCount=1.0;	
+		}
+		return (int) mStepCount;
 	}
 
 	void refreshTimestamp() {
@@ -59,6 +77,7 @@ public class ContentProviderHelper {
 	}
 
 	Timestamp getHoursBack(int hours) {
+
 		return new Timestamp(System.currentTimeMillis()
 				- TimeUnit.MILLISECONDS.convert(hours, TimeUnit.HOURS));
 	}
@@ -85,37 +104,57 @@ public class ContentProviderHelper {
 		return (Integer) null;
 	}
 
+	/**
+	 * returns a Riskstatus depending on amounts of steps taken
+	 * 
+	 * @param prevStatus
+	 * @return
+	 */
 	public RiskStatus cpGetStatus(RiskStatus prevStatus) {
 		RiskStatus returner = RiskStatus.OK_JOB;
 
-		double dayOne = getLastDayStepCount(getHoursBack(24), getHoursBack(0));
-		double dayTwo = getLastDayStepCount(getHoursBack(48), getHoursBack(24));
-		if (dayOne < dayTwo) {
-			if (dayOne * 100 / dayTwo > 85) {
-				returner = RiskStatus.OK_JOB;
-			} else if (dayOne * 100 / dayTwo > 50) {
-				returner = RiskStatus.NOT_SO_OK_JOB;
-			} else {
-				returner = RiskStatus.BAD_JOB;
-			}
+		double dayOne = getStepCount(getHoursBack(24), getHoursBack(0));
+		double dayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
 
-		} else if (dayOne > dayTwo) {
-			if (dayTwo * 100 / dayOne > 85) {
-				returner = RiskStatus.OK_JOB;
-			} else if (dayTwo * 100 / dayOne > 50) {
-				returner = RiskStatus.GOOD_JOB;
-			} else {
-				returner = RiskStatus.VERY_GOOD_JOB;
-			}
+		if (dayOne > GOOD_STEPS_NUMBER) {
+			returner = RiskStatus.VERY_GOOD_JOB;
+		} else {
+			if (dayOne < dayTwo) {
+				if (dayOne * 100 / dayTwo > 85) {
+					returner = RiskStatus.OK_JOB;
+				} else if (dayOne * 100 / dayTwo > 50) {
+					returner = RiskStatus.NOT_SO_OK_JOB;
+				} else {
+					returner = RiskStatus.BAD_JOB;
+				}
 
+			} else if (dayOne > dayTwo) {
+				if (dayTwo * 100 / dayOne > 85) {
+					returner = RiskStatus.OK_JOB;
+				} else if (dayTwo * 100 / dayOne > 50) {
+					returner = RiskStatus.GOOD_JOB;
+				} else {
+					returner = RiskStatus.VERY_GOOD_JOB;
+				}
+
+			}
 		}
-		Toast.makeText(context,
-				String.valueOf(dayOne) + "\n" + String.valueOf(dayTwo),
-				Toast.LENGTH_LONG).show();
+//		Toast.makeText(context,
+//				String.valueOf(dayOne) + "\n" + String.valueOf(dayTwo),
+//				Toast.LENGTH_LONG).show();
 		return returner;
 	}
 
+	/**
+	 * returns a list containing information for the statistics class to display
+	 * Information is gotten from the content provider
+	 * 
+	 * @param length
+	 * @return
+	 */
+
 	List<Double> cpGetRiskHistory(int length) {
+		// TODO: Does not work properly, not sure where the problem is
 		List<Double> returner = new ArrayList<Double>();
 		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
 		ContentProviderClient movementProvider = context.getContentResolver()
@@ -123,7 +162,7 @@ public class ContentProviderHelper {
 		uri = Uri
 				.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
 		String[] projection = new String[] { "timestamp" };
-		String selection = null;
+		String selection = "";
 		String[] selectionArgs = null;
 		String sortOrder = "ID desc";
 		try {
