@@ -3,6 +3,10 @@ package com.example.falltimeseries;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.ContentValues;
+import android.net.Uri;
+import android.util.Log;
+
 public class DetectStepsThread implements Runnable {
 
 	public static final int SMOOTHING_WINDOW = 5;
@@ -13,10 +17,10 @@ public class DetectStepsThread implements Runnable {
 	
 	private List<Float> mVectorLengths;
 	private List<Long> mTimeStamps;
-	private MainActivity activity; 
+	private StepMainService activity; 
 	private double mMean, mStd;
 	
-	public DetectStepsThread(List<Float> mVectorLengths, List<Long> mTimeStamps, MainActivity activity) {
+	public DetectStepsThread(List<Float> mVectorLengths, List<Long> mTimeStamps, StepMainService activity) {
 		this.mVectorLengths = mVectorLengths;
 		this.mTimeStamps = mTimeStamps;
 		this.activity = activity;
@@ -35,14 +39,14 @@ public class DetectStepsThread implements Runnable {
 		}
 		List<Integer> peakIndices = findPossiblePeaks(peakStrengths);
 		peakIndices = removeClosePeaks(peakIndices, peakStrengths);
-		storeSteps(peakIndices);
+		storeSteps(peakIndices);		
 	}
 
 	private void storeSteps(List<Integer> peakIndices) {
 		for (Integer peak : peakIndices) {
-			activity.mSteps.add(mTimeStamps.get(peak));
+			pushToContentProvider(mTimeStamps.get(peak));
 		}
-		activity.update();
+//		activity.update();
 	}
 
 	private List<Integer> removeClosePeaks(List<Integer> peaks, List<Float> peakStrengths) {
@@ -140,5 +144,20 @@ public class DetectStepsThread implements Runnable {
 		return smoothed;
 	}
 
-	
+
+	/*
+	 * Connect to CP and shit
+	 * 
+	 * TODO: use values from CP, not statics
+	 */
+	public void pushToContentProvider(Long step) {
+		Log.v("Detect:","PUSH!!!!");
+		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
+		// Define the row to insert
+		ContentValues rowToInsert = new ContentValues();
+		rowToInsert.put(uri+"/raw_steps/timestamp/", step);
+		rowToInsert.put(uri+"/raw_steps/source/", activity.tag);
+		// Insert row, hoping that everything works as expected.
+		activity.getContentResolver().insert(uri,rowToInsert);
+	}
 }
