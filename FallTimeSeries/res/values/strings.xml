@@ -6,5 +6,8 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_launch">LaunchActivity</string>
     <string name="notification_message">Step detection</string>
+    <string name="service_title">Motion Detector</string>
+    <string name="service_description">Monitoring your movements, watching your health.</string>
+    <string name="service_start">Motion Detector started!</string>
 
 </resources>
