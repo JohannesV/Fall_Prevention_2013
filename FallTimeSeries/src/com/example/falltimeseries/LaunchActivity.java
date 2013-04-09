@@ -17,14 +17,14 @@ public class LaunchActivity extends Activity {
 	public void startMain(View view) {
 //		Intent intent = new Intent(this, MainActivity.class);
 //		startActivity(intent);
-		Intent intent = new Intent(this, TestService.class);
+		Intent intent = new Intent(this, StepMainService.class);
 		intent.putExtra("stop", false);
 		Log.v("Launch", "StartMain");
 		startService(intent);
 	}
 	
 	public void stopMain(View view) {
-		Intent intent = new Intent(this, TestService.class);
+		Intent intent = new Intent(this, StepMainService.class);
 		Log.v("Launch", "StopMain");
 		intent.putExtra("stop", true);
 		startService(intent);
