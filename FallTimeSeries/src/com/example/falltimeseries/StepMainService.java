@@ -17,33 +17,37 @@ import android.os.IBinder;
 import android.util.Log;
 
 /**
- * A service that runs in the background, fetching sensor data from the accelerometer.
- * It calculates vector lengths of the sensor vector, and use this data to detect steps.
+ * A service that runs in the background, fetching sensor data from the
+ * accelerometer. It calculates vector lengths of the sensor vector, and use
+ * this data to detect steps.
  * 
- * When sufficient data has been collected to generate steps, it starts a new DetectStepsThread
- * to calculate steps asynchronously (so as to avoid losing input from the sensors). Having started
- * a new thread, it clears the data locally, so the local storage keeps a constant max size. 
+ * When sufficient data has been collected to generate steps, it starts a new
+ * DetectStepsThread to calculate steps asynchronously (so as to avoid losing
+ * input from the sensors). Having started a new thread, it clears the data
+ * locally, so the local storage keeps a constant max size.
  * 
  * @author Elias Aamot
- *
+ * 
  */
 public class StepMainService extends Service implements SensorEventListener {
-	
+	private StepsManager mStepsManager;
 	private SensorManager mSensorManager;
 	private Sensor mAccSensor;
 	private List<Float> mVectorLengths;
-	public List<Long> mTimeStamps, mSteps;
+	public List<Long> mTimeStamps;
 	public double mMean, mStd;
 	public boolean meanStdSet = false;
 
 	/**
-	 * Method called by the startService() in the launch activity. Do no call this method 
-	 * directly! Create an intent and call startService(intent) instead.
-	 *
-	 * This method has two functions: It can either start or stop the service. Which of these
-	 * action it performs, depends on the value of the "stop" extra than can be put into the
-	 * intent. If the "stop" extra is given the value "true", this method stops the service.
-	 * Otherwise, it starts the service. 
+	 * Method called by the startService() in the launch activity. Do no call
+	 * this method directly! Create an intent and call startService(intent)
+	 * instead.
+	 * 
+	 * This method has two functions: It can either start or stop the service.
+	 * Which of these action it performs, depends on the value of the "stop"
+	 * extra than can be put into the intent. If the "stop" extra is given the
+	 * value "true", this method stops the service. Otherwise, it starts the
+	 * service.
 	 * 
 	 * @param - All handled by the startService(intent) method.
 	 */
@@ -51,8 +55,8 @@ public class StepMainService extends Service implements SensorEventListener {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		// If the service was called with a start parameter, we should start it
 		if (!intent.getBooleanExtra("stop", false)) {
-			
-			//  Initialize the service
+
+			// Initialize the service
 			Intent intento = new Intent(this, LaunchActivity.class);
 			intento.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
 					| Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -60,10 +64,13 @@ public class StepMainService extends Service implements SensorEventListener {
 					intento, 0);
 
 			Notification notice = new Notification(R.drawable.ic_launcher,
-					getResources().getString(R.string.service_start), System.currentTimeMillis());
+					getResources().getString(R.string.service_start),
+					System.currentTimeMillis());
 
-			notice.setLatestEventInfo(this, getResources().getString(R.string.service_title), 
-					getResources().getString(R.string.service_description),	pendIntent);
+			notice.setLatestEventInfo(this,
+					getResources().getString(R.string.service_title),
+					getResources().getString(R.string.service_description),
+					pendIntent);
 
 			notice.flags |= Notification.FLAG_NO_CLEAR;
 			startForeground(Values.MY_ID, notice);
@@ -71,7 +78,7 @@ public class StepMainService extends Service implements SensorEventListener {
 			// Initialize lists
 			mVectorLengths = new ArrayList<Float>();
 			mTimeStamps = new ArrayList<Long>();
-			mSteps = new ArrayList<Long>();
+			mStepsManager = new StepsManager(this);
 
 			// Register sensor for orientation events
 			mSensorManager = (SensorManager) getApplicationContext()
@@ -85,8 +92,9 @@ public class StepMainService extends Service implements SensorEventListener {
 
 			// Check that we found a sensor object
 			if (mAccSensor == null) {
-				// 	We cannot continue if the required sensor is not found
-				throw new Resources.NotFoundException("Accelerometer not found!");
+				// We cannot continue if the required sensor is not found
+				throw new Resources.NotFoundException(
+						"Accelerometer not found!");
 			}
 
 			mSensorManager.registerListener(this, mAccSensor,
@@ -95,7 +103,8 @@ public class StepMainService extends Service implements SensorEventListener {
 			// Finally, start service
 			return Service.START_NOT_STICKY;
 		} else {
-			// If the service was called with a "stop" option, we should stop it.
+			// If the service was called with a "stop" option, we should stop
+			// it.
 			stopForeground(true);
 			mSensorManager.unregisterListener(this);
 			return Service.START_NOT_STICKY;
@@ -103,13 +112,15 @@ public class StepMainService extends Service implements SensorEventListener {
 	}
 
 	/**
-	 * Called by the system when new sensor data is provided. Stores the time stamp as well as the
-	 * vector lengths of the sensor vector at the given point.
+	 * Called by the system when new sensor data is provided. Stores the time
+	 * stamp as well as the vector lengths of the sensor vector at the given
+	 * point.
 	 * 
-	 * If there is enough data stored, it starts a thread to detect peaks, and flushed the locally
-	 * stored data to prevent it from becoming too much.
+	 * If there is enough data stored, it starts a thread to detect peaks, and
+	 * flushed the locally stored data to prevent it from becoming too much.
 	 * 
-	 * @param The SensorEvent that occured. 
+	 * @param event
+	 *            - the SensorEvent that occured.
 	 */
 	@Override
 	public void onSensorChanged(SensorEvent event) {
@@ -128,9 +139,9 @@ public class StepMainService extends Service implements SensorEventListener {
 	/**
 	 * Clears all the local data, except for the last 2*WINDOW_SIZE elements.
 	 * These elements are retained, because the first WINDOW_SIZE elements are
-	 * required for smoothing in the next set of data, and the second WINDOW_SIZE
-	 * elements of the last data was used only for smoothing the old data, and has
-	 * not yet had it's steps detected. 
+	 * required for smoothing in the next set of data, and the second
+	 * WINDOW_SIZE elements of the last data was used only for smoothing the old
+	 * data, and has not yet had it's steps detected.
 	 */
 	private void discardData() {
 		List<Long> newTimeStamps = new ArrayList<Long>();
@@ -147,8 +158,9 @@ public class StepMainService extends Service implements SensorEventListener {
 	/**
 	 * Calculated the euclidian length of a vector
 	 * 
-	 * @param Any list of numbers, where each number will be interpreted as vector length in a 
-	 * single direction.
+	 * @param vector
+	 *            any list of numbers, where each number will be interpreted as
+	 *            vector length in a single direction.
 	 * 
 	 * @return The euclidian length
 	 */
@@ -156,7 +168,12 @@ public class StepMainService extends Service implements SensorEventListener {
 		float sum = ((vector[0] * vector[0]) + (vector[1] * vector[1]) + (vector[2] * vector[2]));
 		return (float) Math.sqrt((double) sum);
 	}
-	
+
+	// Ordinary getter
+	public StepsManager getStepsManager() {
+		return mStepsManager;
+	}
+
 	// We don't need any binders, so we don't use this method.
 	@Override
 	public IBinder onBind(Intent arg0) {
