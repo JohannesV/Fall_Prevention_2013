@@ -124,8 +124,10 @@ public class ContentProviderHelper {
 		// Toast.LENGTH_LONG).show();
 		
 		returner = returner.getStatus(getRiskStepValue());
+		
 		return returner;
 	}
+	
 /**
  * returns a code for the appropriate riskstatus, given steps registered in the last days
  * @return
@@ -160,6 +162,9 @@ public class ContentProviderHelper {
 		}
 		return returner;
 
+	}
+	public void cpGetEventList(){
+		//TODO: Rename and write to database in database helper
 	}
 
 	/**
