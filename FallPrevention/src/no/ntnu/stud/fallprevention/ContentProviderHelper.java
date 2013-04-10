@@ -173,35 +173,38 @@ public class ContentProviderHelper {
 	List<Double> cpGetRiskHistory(int length) {
 		// TODO: Does not work properly, not sure where the problem is
 		List<Double> returner = new ArrayList<Double>();
-		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
-		ContentProviderClient movementProvider = context.getContentResolver()
-				.acquireContentProviderClient(uri);
-		uri = Uri
-				.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
-		String[] projection = new String[] { "timestamp" };
-		String selection = "";
-		String[] selectionArgs = null;
-		String sortOrder = "ID desc";
-		try {
-			Cursor cursor = movementProvider.query(uri, projection, selection,
-					selectionArgs, sortOrder);
-			if (!cursor.isNull(0)) {
-				for (int i = cursor.getCount() - length; i < cursor.getCount(); i++) {
-					if (i < 0) {
-						i = 0;
-					}
-					cursor.moveToPosition(i);
-					// double steps = Double.parseDouble(cursor.getString(0));
-					// returner.add(steps);
-				}
-			}
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		} catch(NullPointerException e){
-			e.printStackTrace();
-		} catch(SQLException e){
-			e.printStackTrace();
+		for (int i=0;i<length;i++){
+			returner.add((double) Math.round((Math.random()*5)));
 		}
+//		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
+//		ContentProviderClient movementProvider = context.getContentResolver()
+//				.acquireContentProviderClient(uri);
+//		uri = Uri
+//				.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
+//		String[] projection = new String[] { "timestamp" };
+//		String selection = "";
+//		String[] selectionArgs = null;
+//		String sortOrder = "ID desc";
+//		try {
+//			Cursor cursor = movementProvider.query(uri, projection, selection,
+//					selectionArgs, sortOrder);
+//			if (!cursor.isNull(0)) {
+//				for (int i = cursor.getCount() - length; i < cursor.getCount(); i++) {
+//					if (i < 0) {
+//						i = 0;
+//					}
+//					cursor.moveToPosition(i);
+//					// double steps = Double.parseDouble(cursor.getString(0));
+//					// returner.add(steps);
+//				}
+//			}
+//		} catch (RemoteException e) {
+//			e.printStackTrace();
+//		} catch(NullPointerException e){
+//			e.printStackTrace();
+//		} catch(SQLException e){
+//			e.printStackTrace();
+//		}
 		return returner;
 	}
 
