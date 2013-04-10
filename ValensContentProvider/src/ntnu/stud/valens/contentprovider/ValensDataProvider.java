@@ -43,25 +43,28 @@ public class ValensDataProvider extends ContentProvider {
 		// TODO Auto-generated method stub
 		switch (URI_MATCHER.match(uri)) {
 		case RAW_STEPS:
-			long timestamp = db.insert(DBSchema.RawSteps.TABLE_NAME, null, values);
-			if(timestamp>0){
+			long timestamp = db.insert(DBSchema.RawSteps.TABLE_NAME, null,
+					values);
+			if (timestamp > 0) {
 				Uri itemUri = ContentUris.withAppendedId(uri, timestamp);
 				getContext().getContentResolver().notifyChange(itemUri, null);
 				return itemUri;
 			}
-			throw new SQLException("Problem while inserting into " + DBSchema.RawSteps.TABLE_NAME + ", uri: " + uri);
+			throw new SQLException("Problem while inserting into "
+					+ DBSchema.RawSteps.TABLE_NAME + ", uri: " + uri);
 		default:
-			throw new IllegalArgumentException("Unsupported URI for insertion: " + uri);
+			throw new IllegalArgumentException(
+					"Unsupported URI for insertion: " + uri);
 		}
 	}
 
 	@Override
 	public boolean onCreate() {
 		this.db = new CPValensDB(this.getContext()).getWritableDatabase();
-		if(this.db == null){
+		if (this.db == null) {
 			return false;
 		}
-		if (this.db.isReadOnly()){
+		if (this.db.isReadOnly()) {
 			this.db.close();
 			this.db = null;
 			return false;
@@ -75,26 +78,54 @@ public class ValensDataProvider extends ContentProvider {
 		Cursor cursor = null;
 		switch (URI_MATCHER.match(uri)) {
 		case STEPS:
-			if(TextUtils.isEmpty(sortOrder)){
+			if (TextUtils.isEmpty(sortOrder)) {
 				sortOrder = "ASC";
 			}
-			break;
+			String querySteps = "";
+			if (selectionArgs.length == Steps.PROJECTION_ALL.length) {
+				querySteps = "select timestamp from " + DBSchema.RawSteps.TABLE_NAME
+						+ " where " + DBSchema.RawSteps.COLUMN_NAME_SOURCE
+						+ "=(select max("
+						+ DBSchema.RawSteps.COLUMN_NAME_SOURCE + ") from "
+						+ DBSchema.RawSteps.TABLE_NAME + ") and "
+						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP + ">"
+						+ selectionArgs[0] + " and "
+						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP + "<"
+						+ selectionArgs[1] + " order by "
+						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP
+						+ " sortOrder";
+			} else {
+				querySteps = "select timestamp from " + DBSchema.RawSteps.TABLE_NAME
+						+ " where " + DBSchema.RawSteps.COLUMN_NAME_SOURCE
+						+ "=(select max("
+						+ DBSchema.RawSteps.COLUMN_NAME_SOURCE + ") from "
+						+ DBSchema.RawSteps.TABLE_NAME + ")" + " order by "
+						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP
+						+ " sortOrder";
+			}
+			cursor = this.db.rawQuery(querySteps, selectionArgs);
+			cursor.setNotificationUri(getContext().getContentResolver(), uri);
+			return cursor;
 		case TESTS:
-			if(TextUtils.isEmpty(sortOrder)){
+			if (TextUtils.isEmpty(sortOrder)) {
 				sortOrder = Tests.SORT_ORDER_DEFAULT;
 			}
-			String sql = "select a." +  DBSchema.Tests.COLUMN_NAME_TIMESTAMP + ", a." + DBSchema.Tests.COLUMN_NAME_SCORE
-					+ ", b." + DBSchema.TestTypes.COLUMN_NAME_NAME + ", b." + DBSchema.TestTypes.COLUMN_NAME_DESCRIPTION
-					+ ", b." + DBSchema.TestTypes.COLUMN_NAME_SCORE_DESCRIPTION
-					+ "from " + DBSchema.Tests.TABLE_NAME + " a, " + DBSchema.TestTypes.TABLE_NAME 
-					+ " b where a." + DBSchema.Tests.COLUMN_NAME_TYPE_CODE_KEY + "=b." + DBSchema.TestTypes.COLUMN_NAME_CODE_KEY 
-					+ " order by timestamp desc";
-			cursor = this.db.rawQuery(sql, selectionArgs);
+			String queryTest = "select a." + DBSchema.Tests.COLUMN_NAME_TIMESTAMP
+					+ ", a." + DBSchema.Tests.COLUMN_NAME_SCORE + ", b."
+					+ DBSchema.TestTypes.COLUMN_NAME_NAME + ", b."
+					+ DBSchema.TestTypes.COLUMN_NAME_DESCRIPTION + ", b."
+					+ DBSchema.TestTypes.COLUMN_NAME_SCORE_DESCRIPTION
+					+ "from " + DBSchema.Tests.TABLE_NAME + " a, "
+					+ DBSchema.TestTypes.TABLE_NAME + " b where a."
+					+ DBSchema.Tests.COLUMN_NAME_TYPE_CODE_KEY + "=b."
+					+ DBSchema.TestTypes.COLUMN_NAME_CODE_KEY + " order by "
+					+ Tests.SORT_ORDER_DEFAULT;
+			cursor = this.db.rawQuery(queryTest, selectionArgs);
+			cursor.setNotificationUri(getContext().getContentResolver(), uri);
 			break;
 		default:
 			break;
 		}
-		cursor.setNotificationUri(getContext().getContentResolver(), uri);
 		return cursor;
 	}
 
@@ -129,10 +160,12 @@ public class ValensDataProvider extends ContentProvider {
 	public static interface Steps extends BaseColumns {
 		public static final Uri CONTENT_URI = ValensDataProvider.STEPS_CONTENT_URI;
 		public static final String TIMESTAMP = "timestamp";
+		public static final String TIMESTAMP_START = "timestamp";
+		public static final String TIMESTAMP_END = "timestamp";
 		public static final String CONTENT_PATH = "steps";
 		public static final String CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE
 				+ "/vnd.valens.steps";
-		public static final String[] PROJECTION_ALL = { TIMESTAMP };
+		public static final String[] PROJECTION_ALL = { TIMESTAMP_START, TIMESTAMP_END };
 		public static final String SORT_ORDER_DEFAULT = TIMESTAMP + " DESC";
 	}
 
@@ -181,10 +214,9 @@ public class ValensDataProvider extends ContentProvider {
 		public static final String CONTENT_PATH = "tests";
 		public static final String CONTENT_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE
 				+ "/vnd.valens.gait";
-		public static final String[] PROJECTION_ALL = { TIMESTAMP,
-			SCORE, NAME, DESCRIPTION, SCORE_DESCRIPTION };
-		public static final String SORT_ORDER_DEFAULT = TIMESTAMP
-				+ " DESC";
+		public static final String[] PROJECTION_ALL = { TIMESTAMP, SCORE, NAME,
+				DESCRIPTION, SCORE_DESCRIPTION };
+		public static final String SORT_ORDER_DEFAULT = TIMESTAMP + " DESC";
 	}
 
 	// prepare the UriMatcher

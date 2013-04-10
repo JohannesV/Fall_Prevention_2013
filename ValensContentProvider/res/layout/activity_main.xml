@@ -15,15 +15,15 @@
         android:text="@string/main_explanatory_text" />
 
     <Button
-        android:id="@+id/button1"
-        android:layout_marginTop="10dp"
+        android:id="@+id/btnDeleteDB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignRight="@+id/textView1"
         android:layout_below="@+id/textView1"
+        android:layout_marginTop="10dp"
         android:background="@color/warning_background_red"
-        android:textColor="@color/warning_foreground_red"
-        android:text="@string/delete_button_text" />
+        android:text="@string/delete_button_text"
+        android:textColor="@color/warning_foreground_red" />
 
 </RelativeLayout>
