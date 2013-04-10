@@ -28,11 +28,11 @@ import android.util.Log;
  *
  */
 public class StepMainService extends Service implements SensorEventListener {
-	
+	private StepsManager mStepsManager;
 	private SensorManager mSensorManager;
 	private Sensor mAccSensor;
 	private List<Float> mVectorLengths;
-	public List<Long> mTimeStamps, mSteps;
+	public List<Long> mTimeStamps;
 	public double mMean, mStd;
 	public boolean meanStdSet = false;
 
@@ -71,7 +71,7 @@ public class StepMainService extends Service implements SensorEventListener {
 			// Initialize lists
 			mVectorLengths = new ArrayList<Float>();
 			mTimeStamps = new ArrayList<Long>();
-			mSteps = new ArrayList<Long>();
+			mStepsManager = new StepsManager(this);
 
 			// Register sensor for orientation events
 			mSensorManager = (SensorManager) getApplicationContext()
@@ -155,6 +155,11 @@ public class StepMainService extends Service implements SensorEventListener {
 	private float calculateVectorLength(float[] vector) {
 		float sum = ((vector[0] * vector[0]) + (vector[1] * vector[1]) + (vector[2] * vector[2]));
 		return (float) Math.sqrt((double) sum);
+	}
+	
+	// Ordinary getter
+	public StepsManager getStepsManager() {
+		return mStepsManager;
 	}
 	
 	// We don't need any binders, so we don't use this method.

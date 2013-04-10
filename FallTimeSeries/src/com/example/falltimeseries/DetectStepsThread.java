@@ -5,7 +5,6 @@ import java.util.List;
 
 import android.content.ContentValues;
 import android.net.Uri;
-import android.util.Log;
 
 /**
  * A separate thread called by StepMainService to calculate the step time stamps based on a time 
@@ -16,6 +15,7 @@ import android.util.Log;
  *
  */
 public class DetectStepsThread implements Runnable {	
+	
 	private List<Float> mVectorLengths;
 	private List<Long> mTimeStamps;
 	private StepMainService activity; 
@@ -57,19 +57,21 @@ public class DetectStepsThread implements Runnable {
 		}
 		List<Integer> peakIndices = findPossiblePeaks(peakStrengths);
 		peakIndices = removeClosePeaks(peakIndices, peakStrengths);
-		// Store the steps in the Content Provider
 		storeSteps(peakIndices);		
 	}
 
 	/**
-	 * Stores the steps that have been found into the content provider.
+	 * Stores the steps that have been found into the StepsManager, which subsequently 
+	 * will store them in the CP, discard them or retain them until more steps are pushed.
 	 * 
 	 * @param peakIndices - A list of which indices in the timeStamps list that correspond to peaks
 	 */
 	private void storeSteps(List<Integer> peakIndices) {
-		for (Integer peak : peakIndices) {
-			pushToContentProvider(mTimeStamps.get(peak));
+		List<Long> steps = new ArrayList<Long>();
+		for (Integer i : peakIndices) {
+			steps.add(mTimeStamps.get(i));
 		}
+		activity.getStepsManager().addSteps(steps);
 	}
 
 	/**
@@ -190,7 +192,6 @@ public class DetectStepsThread implements Runnable {
 		return peakStrengths;
 	}
 
-	// TODO: Has room for efficiency improvement
 	/**
 	 * Smooths the time series data, using a floating window smoothing
 	 * 
@@ -212,21 +213,5 @@ public class DetectStepsThread implements Runnable {
 		}
 		
 		return smoothed;
-	}
-
-
-	/**
-	 * Connects to the content provider to store the time stamp of a single step.
-	 * 
-	 * @param Step - The time stamp of the single step.
-	 */
-	public void pushToContentProvider(Long step) {
-		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
-		// Define the row to insert
-		ContentValues rowToInsert = new ContentValues();
-		rowToInsert.put(uri+"/raw_steps/timestamp/", step);
-		rowToInsert.put(uri+"/raw_steps/source/", Values.TAG);
-		// Insert row, hoping that everything works as expected.
-		activity.getContentResolver().insert(uri,rowToInsert);
 	}
 }
