@@ -124,6 +124,7 @@ public class ValensDataProvider extends ContentProvider {
 			cursor.setNotificationUri(getContext().getContentResolver(), uri);
 			break;
 		default:
+			cursor=this.db.query(uri.getLastPathSegment(), projection, selection, selectionArgs, null, null, null);
 			break;
 		}
 		return cursor;
