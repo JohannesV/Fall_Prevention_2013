@@ -12,6 +12,9 @@ public class Values {
 	// Label values, used only for identifying the service.
 	public final static int MY_ID = 13377331;
 	public static final String TAG = "no.ntnu.stud.valens.stepcounter";
+	
+	// Values used for calibration
+	public static final int CAL_TIME = 10000;
 
 	// Values that control the behaviour of the Step Detection Algorithm.
 	// Modifying these values can improve the performance of the step

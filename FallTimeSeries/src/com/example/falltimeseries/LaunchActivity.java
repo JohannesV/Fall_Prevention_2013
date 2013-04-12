@@ -7,11 +7,11 @@ import android.util.Log;
 import android.view.View;
 
 /**
- * The Launch activity for the service app. Started when the app is run, 
- * provides a basic interface for starting and stopping the service. 
+ * The Launch activity for the service app. Started when the app is run,
+ * provides a basic interface for starting and stopping the service.
  * 
  * @author Elias Aamot
- *
+ * 
  */
 public class LaunchActivity extends Activity {
 
@@ -22,29 +22,41 @@ public class LaunchActivity extends Activity {
 	}
 
 	/**
-	 * Called when the "start"-button is pressed. Makes an intent, 
-	 * and starts the service wit parameter "stop" = false, so that
-	 * the service knows that it should start, not stop.
+	 * Called when the "start"-button is pressed. Makes an intent, and starts
+	 * the service wit parameter "stop" = false, so that the service knows that
+	 * it should start, not stop.
 	 * 
-	 * @param View - Provided by the code that calls onClick-events
+	 * @param View
+	 *            - Provided by the code that calls onClick-events
 	 */
 	public void startMain(View view) {
 		Intent intent = new Intent(this, StepMainService.class);
 		intent.putExtra("stop", false);
 		startService(intent);
 	}
-	
+
 	/**
-	 * Called when the "stop"-button is pressed. Builds an intent
-	 * to send the message "stop" = true to the service. The intent
-	 * then calls the onStartCommand()-method of the StepMainService
+	 * Called when the "stop"-button is pressed. Builds an intent to send the
+	 * message "stop" = true to the service. The intent then calls the
+	 * onStartCommand()-method of the StepMainService
 	 * 
-	 * @param View - Provided by the code that calls onClick-events
+	 * @param View
+	 *            - Provided by the code that calls onClick-events
 	 */
 	public void stopMain(View view) {
 		Intent intent = new Intent(this, StepMainService.class);
 		intent.putExtra("stop", true);
 		startService(intent);
 	}
-	
+
+	/**
+	 * Called when the "calibrate"-button is pressed. Starts the calibrate activity.
+	 * 
+	 * @param View
+	 *            - Provided by the code that calls onClick-events
+	 */
+	public void calibrate(View view) {
+		Intent intent = new Intent(this, CalibrationActivity.class);
+		startActivity(intent);
+	}
 }

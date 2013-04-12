@@ -6,7 +6,7 @@ import android.media.MediaPlayer;
 import android.view.SoundEffectConstants;
 
 public class Callibration {
-	public static final int CAL_TIME = 30000;
+//	private static final int CAL_TIME = 30000;
 	public static final int WAIT_TIME = 10000;
 	
 	public void callibrate(final Context context){

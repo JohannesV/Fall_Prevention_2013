@@ -118,9 +118,20 @@ public class StepsManager {
 				.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
 		// Define the row to insert
 		ContentValues rowToInsert = new ContentValues();
-		rowToInsert.put(uri + "/raw_steps/timestamp/", step);
-		rowToInsert.put(uri + "/raw_steps/source/", Values.TAG);
+		rowToInsert.put(uri + "timestamp/", step);
+		rowToInsert.put(uri + "source/", Values.TAG);
 		// Insert row, hoping that everything works as expected.
 		activity.getContentResolver().insert(uri, rowToInsert);
+	}
+
+	/**
+	 * To be called when closing the service, in order to store the final steps
+	 * that have been recorded, but not yet stored in the CP.
+	 */
+	public void finalStore() {
+		// First, try to look for step groups as you normally do
+		addSteps(new ArrayList<Long>());
+		// Then treat the final steps as a single group, and handle it
+		handleStepsGroup(mSteps);
 	}
 }

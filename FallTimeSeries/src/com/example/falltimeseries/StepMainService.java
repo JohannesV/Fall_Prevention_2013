@@ -14,7 +14,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.IBinder;
-import android.util.Log;
 
 /**
  * A service that runs in the background, fetching sensor data from the
@@ -107,6 +106,7 @@ public class StepMainService extends Service implements SensorEventListener {
 			// it.
 			stopForeground(true);
 			mSensorManager.unregisterListener(this);
+			mStepsManager.finalStore();
 			return Service.START_NOT_STICKY;
 		}
 	}
