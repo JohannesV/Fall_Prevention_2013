@@ -8,12 +8,15 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 /**
  * A service that runs in the background, fetching sensor data from the
@@ -35,7 +38,6 @@ public class StepMainService extends Service implements SensorEventListener {
 	private List<Float> mVectorLengths;
 	public List<Long> mTimeStamps;
 	public double mMean, mStd;
-	public boolean meanStdSet = false;
 
 	/**
 	 * Method called by the startService() in the launch activity. Do no call
@@ -78,7 +80,17 @@ public class StepMainService extends Service implements SensorEventListener {
 			mVectorLengths = new ArrayList<Float>();
 			mTimeStamps = new ArrayList<Long>();
 			mStepsManager = new StepsManager(this);
-
+			
+			// Fetch mean and std from prefrences file
+			SharedPreferences sp = PreferenceManager
+					.getDefaultSharedPreferences(this);
+			mMean = sp.getFloat("mean", -1f);
+			mStd = sp.getFloat("std", -1f);
+			if (mMean == -1f || mStd == -1f) {
+				Toast.makeText(this, "Mean and STD not set. Calibrate first!", Toast.LENGTH_SHORT).show();
+				return Service.START_NOT_STICKY;
+			}
+			
 			// Register sensor for orientation events
 			mSensorManager = (SensorManager) getApplicationContext()
 					.getSystemService(Context.SENSOR_SERVICE);
@@ -104,9 +116,9 @@ public class StepMainService extends Service implements SensorEventListener {
 		} else {
 			// If the service was called with a "stop" option, we should stop
 			// it.
-			stopForeground(true);
 			mSensorManager.unregisterListener(this);
 			mStepsManager.finalStore();
+			stopForeground(true);
 			return Service.START_NOT_STICKY;
 		}
 	}
@@ -125,7 +137,7 @@ public class StepMainService extends Service implements SensorEventListener {
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 		Long timeStamp = System.currentTimeMillis();
-		mVectorLengths.add(calculateVectorLength(event.values));
+		mVectorLengths.add(Methods.calculateVectorLength(event.values));
 		mTimeStamps.add(timeStamp);
 		// See if there is enough data to launch a calculation
 		if (mVectorLengths.size() >= Values.COMMIT_DATA_THRESHOLD) {
@@ -155,23 +167,19 @@ public class StepMainService extends Service implements SensorEventListener {
 		mVectorLengths = newVectorLengths;
 	}
 
-	/**
-	 * Calculated the euclidian length of a vector
-	 * 
-	 * @param vector
-	 *            any list of numbers, where each number will be interpreted as
-	 *            vector length in a single direction.
-	 * 
-	 * @return The euclidian length
-	 */
-	private float calculateVectorLength(float[] vector) {
-		float sum = ((vector[0] * vector[0]) + (vector[1] * vector[1]) + (vector[2] * vector[2]));
-		return (float) Math.sqrt((double) sum);
-	}
-
 	// Ordinary getter
 	public StepsManager getStepsManager() {
 		return mStepsManager;
+	}
+
+	// Ordinary setter
+	public void setMean(double mean) {
+		mMean = mean;
+	}
+
+	// Ordinary setter
+	public void setStd(double std) {
+		mStd = std;
 	}
 
 	// We don't need any binders, so we don't use this method.
@@ -184,4 +192,5 @@ public class StepMainService extends Service implements SensorEventListener {
 	@Override
 	public void onAccuracyChanged(Sensor arg0, int arg1) {
 	}
+
 }

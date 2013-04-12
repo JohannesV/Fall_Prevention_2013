@@ -9,20 +9,7 @@
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
-  <uses-policies>
-    <limit-password />
-    <watch-login />
-    <reset-password />
-    <force-lock />
-    <wipe-data />
-    <expire-password />
-    <encrypted-storage />
-    <disable-camera />
-  </uses-policies>
-</device-admin>
-
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
