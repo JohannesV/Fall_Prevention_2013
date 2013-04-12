@@ -10,6 +10,7 @@ import android.content.ContentProviderClient;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.net.Uri;
 import android.os.RemoteException;
@@ -50,12 +51,12 @@ public class ContentProviderHelper {
 
 		uri = Uri.parse("content://ntnu.stud.valens.contentprovider/raw_steps");
 		// sets the projection part of the query
-		String[] projection = new String[] { "count(timestamp) AS count" };
+		String[] projection = new String[] { "count(timestamp) as count" };
 		// sets the selection part of the query
-		String selection = "timestamp > " + start.getTime() + " AND timestamp < "
-				+ stop.getTime();
+		String selection =null;/* "timestamp > " + start.getTime() + " AND timestamp < "
+				+ stop.getTime();*/
 		// not used, therefore null
-		String[] selectionArgs = null;
+		String[] selectionArgs = null;//{String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
 		// no need for sorting
 		String sortOrder = null;
 
@@ -69,7 +70,7 @@ public class ContentProviderHelper {
 			cursor.moveToFirst();
 			Log.v(TAG, "Steps counted: " + String.valueOf(cursor.getString(0)));
 			mStepCount = cursor.getDouble(0);
-			Toast.makeText(context,String.valueOf(mStepCount), Toast.LENGTH_SHORT)
+			Toast.makeText(context,DatabaseUtils.dumpCurrentRowToString(cursor), Toast.LENGTH_SHORT)
 					.show();
 			Log.v(TAG, "Query done without errors!");
 

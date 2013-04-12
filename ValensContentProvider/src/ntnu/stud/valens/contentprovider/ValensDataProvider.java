@@ -11,9 +11,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.provider.BaseColumns;
 import android.text.TextUtils;
+import android.util.Log;
 
 public class ValensDataProvider extends ContentProvider {
 
+	private static final String TAG = "ValensDataProvider";
 	// the underlying database
 	private SQLiteDatabase db = null;
 
@@ -76,33 +78,39 @@ public class ValensDataProvider extends ContentProvider {
 	public Cursor query(Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
 		Cursor cursor = null;
+
+		Log.v(TAG, String.valueOf(URI_MATCHER.match(uri)));
 		switch (URI_MATCHER.match(uri)) {
 		case STEPS:
+			Log.v(TAG, "Looking at steps");
 			if (TextUtils.isEmpty(sortOrder)) {
 				sortOrder = "ASC";
 			}
 			String querySteps = "";
-			if (selectionArgs.length == Steps.PROJECTION_ALL.length) {
-				querySteps = "select timestamp from " + DBSchema.RawSteps.TABLE_NAME
-						+ " where " + DBSchema.RawSteps.COLUMN_NAME_SOURCE
+			if (selectionArgs == null) {
+				
+				querySteps = "select count("+DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP+") as count from "
+						+ DBSchema.RawSteps.TABLE_NAME;
+				/*
+				 * + " where " + DBSchema.RawSteps.COLUMN_NAME_SOURCE +
+				 * "=(select max(" + DBSchema.RawSteps.COLUMN_NAME_SOURCE +
+				 * ") from " + DBSchema.RawSteps.TABLE_NAME + ")" + " order by "
+				 * + DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP + " " + sortOrder;
+				 */
+			} else if (selectionArgs.length == Steps.PROJECTION_ALL.length) {
+				querySteps = "select timestamp from "
+						+ DBSchema.RawSteps.TABLE_NAME + " where "
+						+ DBSchema.RawSteps.COLUMN_NAME_SOURCE
 						+ "=(select max("
 						+ DBSchema.RawSteps.COLUMN_NAME_SOURCE + ") from "
 						+ DBSchema.RawSteps.TABLE_NAME + ") and "
-						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP + ">"
-						+ selectionArgs[0] + " and "
-						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP + "<"
-						+ selectionArgs[1] + " order by "
-						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP
-						+ " " + sortOrder;
-			} else {
-				querySteps = "select timestamp from " + DBSchema.RawSteps.TABLE_NAME
-						+ " where " + DBSchema.RawSteps.COLUMN_NAME_SOURCE
-						+ "=(select max("
-						+ DBSchema.RawSteps.COLUMN_NAME_SOURCE + ") from "
-						+ DBSchema.RawSteps.TABLE_NAME + ")" + " order by "
-						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP
-						+ " " + sortOrder;
+						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP + ">" + " ? "
+						+ " and " + DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP
+						+ "<" + " ? " + " order by "
+						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP + " "
+						+ sortOrder;
 			}
+				Log.v(TAG, querySteps);
 			cursor = this.db.rawQuery(querySteps, selectionArgs);
 			cursor.setNotificationUri(getContext().getContentResolver(), uri);
 			return cursor;
@@ -110,8 +118,9 @@ public class ValensDataProvider extends ContentProvider {
 			if (TextUtils.isEmpty(sortOrder)) {
 				sortOrder = Tests.SORT_ORDER_DEFAULT;
 			}
-			String queryTest = "select a." + DBSchema.Tests.COLUMN_NAME_TIMESTAMP
-					+ ", a." + DBSchema.Tests.COLUMN_NAME_SCORE + ", b."
+			String queryTest = "select a."
+					+ DBSchema.Tests.COLUMN_NAME_TIMESTAMP + ", a."
+					+ DBSchema.Tests.COLUMN_NAME_SCORE + ", b."
 					+ DBSchema.TestTypes.COLUMN_NAME_NAME + ", b."
 					+ DBSchema.TestTypes.COLUMN_NAME_DESCRIPTION + ", b."
 					+ DBSchema.TestTypes.COLUMN_NAME_SCORE_DESCRIPTION
@@ -124,7 +133,8 @@ public class ValensDataProvider extends ContentProvider {
 			cursor.setNotificationUri(getContext().getContentResolver(), uri);
 			break;
 		default:
-			cursor=this.db.query(uri.getLastPathSegment(), projection, selection, selectionArgs, null, null, null);
+			cursor = this.db.query(uri.getLastPathSegment(), projection,
+					selection, selectionArgs, null, null, null);
 			break;
 		}
 		return cursor;
@@ -158,7 +168,8 @@ public class ValensDataProvider extends ContentProvider {
 		public static final String CONTENT_PATH = "steps";
 		public static final String CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE
 				+ "/vnd.valens.steps";
-		public static final String[] PROJECTION_ALL = { TIMESTAMP_START, TIMESTAMP_END };
+		public static final String[] PROJECTION_ALL = { TIMESTAMP_START,
+				TIMESTAMP_END };
 		public static final String SORT_ORDER_DEFAULT = TIMESTAMP + " DESC";
 	}
 
@@ -166,7 +177,7 @@ public class ValensDataProvider extends ContentProvider {
 	 * Column and content type definitions for the Steps.
 	 */
 	public static interface RawSteps extends BaseColumns {
-		public static final Uri CONTENT_URI = ValensDataProvider.STEPS_CONTENT_URI;
+		public static final Uri CONTENT_URI = ValensDataProvider.RAW_STEPS_CONTENT_URI;
 		public static final String TIMESTAMP = "timestamp";
 		public static final String SOURCE = "source";
 		public static final String CONTENT_PATH = "raw_steps";
@@ -180,12 +191,12 @@ public class ValensDataProvider extends ContentProvider {
 	 * Column and content type definitions for the Steps.
 	 */
 	public static interface Gait extends BaseColumns {
-		public static final Uri CONTENT_URI = ValensDataProvider.STEPS_CONTENT_URI;
+		public static final Uri CONTENT_URI = ValensDataProvider.GAIT_CONTENT_URI;
 		public static final String INTERVAL_AVG = "interval_avg";
 		public static final String VARIABILITY = "variability";
 		public static final String START_TIMESPAN = "start_timespan";
 		public static final String END_TIMESPAN = "end_timespan";
-		public static final String CONTENT_PATH = "steps";
+		public static final String CONTENT_PATH = "gait";
 		public static final String CONTENT_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE
 				+ "/vnd.valens.gait";
 		public static final String[] PROJECTION_ALL = { INTERVAL_AVG,
@@ -217,11 +228,11 @@ public class ValensDataProvider extends ContentProvider {
 	private static final int GAIT = 2;
 	private static final int RAW_STEPS = 3;
 	private static final int TESTS = 4;
-	private static final UriMatcher URI_MATCHER;
+	private static final UriMatcher URI_MATCHER = new UriMatcher(
+			UriMatcher.NO_MATCH);
 
 	// prepare the UriMatcher
 	static {
-		URI_MATCHER = new UriMatcher(UriMatcher.NO_MATCH);
 		URI_MATCHER.addURI(AUTHORITY, Steps.CONTENT_PATH, STEPS);
 		URI_MATCHER.addURI(AUTHORITY, Gait.CONTENT_PATH, GAIT);
 		URI_MATCHER.addURI(AUTHORITY, RawSteps.CONTENT_PATH, RAW_STEPS);
