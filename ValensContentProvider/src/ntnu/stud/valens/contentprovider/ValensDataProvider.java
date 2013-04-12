@@ -93,7 +93,7 @@ public class ValensDataProvider extends ContentProvider {
 						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP + "<"
 						+ selectionArgs[1] + " order by "
 						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP
-						+ " sortOrder";
+						+ " " + sortOrder;
 			} else {
 				querySteps = "select timestamp from " + DBSchema.RawSteps.TABLE_NAME
 						+ " where " + DBSchema.RawSteps.COLUMN_NAME_SOURCE
@@ -101,7 +101,7 @@ public class ValensDataProvider extends ContentProvider {
 						+ DBSchema.RawSteps.COLUMN_NAME_SOURCE + ") from "
 						+ DBSchema.RawSteps.TABLE_NAME + ")" + " order by "
 						+ DBSchema.RawSteps.COLUMN_NAME_TIMESTAMP
-						+ " sortOrder";
+						+ " " + sortOrder;
 			}
 			cursor = this.db.rawQuery(querySteps, selectionArgs);
 			cursor.setNotificationUri(getContext().getContentResolver(), uri);
