@@ -147,14 +147,6 @@ public class ValensDataProvider extends ContentProvider {
 	public static final Uri TESTS_CONTENT_URI = Uri.parse("content://"
 			+ AUTHORITY + "/" + Tests.CONTENT_PATH);
 
-	// helper constants for use with the UriMatcher
-	private static final int STEPS = 1;
-	private static final int GAIT = 2;
-	private static final int RAW_STEPS = 3;
-	private static final int TESTS = 4;
-	private static final UriMatcher URI_MATCHER = new UriMatcher(
-			UriMatcher.NO_MATCH);
-
 	/**
 	 * Column and content type definitions for the Steps.
 	 */
@@ -220,8 +212,16 @@ public class ValensDataProvider extends ContentProvider {
 		public static final String SORT_ORDER_DEFAULT = TIMESTAMP + " DESC";
 	}
 
+	// helper constants for use with the UriMatcher
+	private static final int STEPS = 1;
+	private static final int GAIT = 2;
+	private static final int RAW_STEPS = 3;
+	private static final int TESTS = 4;
+	private static final UriMatcher URI_MATCHER;
+
 	// prepare the UriMatcher
 	static {
+		URI_MATCHER = new UriMatcher(UriMatcher.NO_MATCH);
 		URI_MATCHER.addURI(AUTHORITY, Steps.CONTENT_PATH, STEPS);
 		URI_MATCHER.addURI(AUTHORITY, Gait.CONTENT_PATH, GAIT);
 		URI_MATCHER.addURI(AUTHORITY, RawSteps.CONTENT_PATH, RAW_STEPS);
