@@ -70,8 +70,7 @@ public class ContentProviderHelper {
 			cursor.moveToFirst();
 			Log.v(TAG, "Steps counted: " + String.valueOf(cursor.getString(0)));
 			mStepCount = cursor.getDouble(0);
-			Toast.makeText(context,DatabaseUtils.dumpCurrentRowToString(cursor), Toast.LENGTH_SHORT)
-					.show();
+			Log.v(TAG, String.valueOf(mStepCount));
 			Log.v(TAG, "Query done without errors!");
 
 		} catch (SQLException e) {

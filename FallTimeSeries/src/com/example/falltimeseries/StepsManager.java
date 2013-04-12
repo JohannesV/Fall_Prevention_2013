@@ -118,8 +118,9 @@ public class StepsManager {
 				.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
 		// Define the row to insert
 		ContentValues rowToInsert = new ContentValues();
-		rowToInsert.put(uri + "timestamp/", step);
-		rowToInsert.put(uri + "source/", Values.TAG);
+		rowToInsert.put( "timestamp",step);
+		
+		rowToInsert.put( "source", Values.TAG);
 		// Insert row, hoping that everything works as expected.
 		activity.getContentResolver().insert(uri, rowToInsert);
 	}

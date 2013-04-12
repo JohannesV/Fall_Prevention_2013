@@ -43,13 +43,16 @@ public class ValensDataProvider extends ContentProvider {
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
 		// TODO Auto-generated method stub
+		Log.v(TAG,"Trying to insert!");
 		switch (URI_MATCHER.match(uri)) {
 		case RAW_STEPS:
+			Log.v(TAG, "Inserting into raw_steps with content:"+values.toString());
 			long timestamp = db.insert(DBSchema.RawSteps.TABLE_NAME, null,
 					values);
 			if (timestamp > 0) {
 				Uri itemUri = ContentUris.withAppendedId(uri, timestamp);
 				getContext().getContentResolver().notifyChange(itemUri, null);
+				Log.v(TAG,"Inserted into row:"+itemUri.toString());
 				return itemUri;
 			}
 			throw new SQLException("Problem while inserting into "
