@@ -11,12 +11,14 @@ import android.content.ContentProviderClient;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.provider.ContactsContract;
+import android.util.Log;
 
 /**
  * Database helper is an object that builds and maintains the database. It also
@@ -46,6 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	/**
 	 * Builds a table which is used to store the information
+	 * 
 	 * @param
 	 */
 	@Override
@@ -102,8 +105,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(FILL_INFO_10);
 		db.execSQL(FILL_INFO_11);
 	}
+
 	/**
 	 * Upgrades the database version and clear its content.
+	 * 
 	 * @param: db
 	 * @param: oldVersion
 	 * @param: newVersion
@@ -134,8 +139,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 		onCreate(db);
 	}
+
 	/**
 	 * Downgrade the database version and clear its content.
+	 * 
 	 * @param: db
 	 * @param: oldVersion
 	 * @param: newVersion
@@ -168,9 +175,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+ DatabaseContract.EventType.COLUMN_NAME_ID, null);
 
 		// Iterate over the data fetched
+		c.moveToFirst();
+		//Log.v("DatabaseHelper", DatabaseUtils.dumpCursorToString(c));
 		for (int i = 0; i < c.getCount(); i++) {
 			c.moveToPosition(i);
-			Event e = new Event(c.getString(0),
+			Event e = new Event(getLocalEventTitle(c.getString(0)),
 					Integer.parseInt(c.getString(1)), c.getString(2));
 			events.add(e);
 		}
@@ -180,6 +189,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.close();
 
 		return events;
+	}
+
+	/**
+	 * an help for localizing messages from the database although getting the
+	 * database to contain codes instead might also be nice
+	 * 
+	 * @param origTitle
+	 * @return
+	 */
+	public String getLocalEventTitle(String origTitle) {
+		String mReturner = "";
+		if (origTitle.equalsIgnoreCase("brå bevegelser")) {
+			mReturner = context.getString(R.string.event_list_goodJob_title);
+		} else if (origTitle.equalsIgnoreCase("lite bevegelse")){
+			mReturner=context.getString(R.string.event_list_badJob_title);
+		}
+		else{
+			mReturner = origTitle;
+		}
+		return mReturner;
+	}
+	/**
+	 * a method for localizing the event description
+	 * @param origDesc
+	 * @return
+	 */
+	public String getLocalEventDescription(String origDesc){
+		String mReturner="";
+		if(origDesc.matches(".*abnormalt.*")){
+			mReturner=context.getString(R.string.event_list_goodJob_desc);
+		}
+		else if(origDesc.matches(".*lite.*")){
+			mReturner=context.getString(R.string.event_list_badJob_desc);
+		}else{
+			mReturner=origDesc;
+		}
+		return mReturner;
 	}
 
 	/**
@@ -233,8 +279,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 		// Put all the columns into the map, so as to transfer all the
 		// information found by the search
+		Log.v("DatabaseHelper", DatabaseUtils.dumpCursorToString(c));
 		for (int i = 0; i < c.getColumnCount(); i++) {
-			stringMap.put(c.getColumnName(i), c.getString(i));
+			if(c.getColumnName(i).equalsIgnoreCase("description")){
+				stringMap.put(c.getColumnName(i), getLocalEventDescription(c.getString(i)));
+			}else{
+			stringMap.put(c.getColumnName(i), getLocalEventTitle(c.getString(i)));
+			}
 		}
 
 		c.close();
@@ -264,7 +315,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	/**
 	 * Randomly generates state of risk
 	 * 
-	 * @return RiskStatus 
+	 * @return RiskStatus
 	 * @see RiskStatus
 	 */
 	public RiskStatus dbGetStatus() {
@@ -281,7 +332,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 		return returner;
 	}
-
 
 	public List<Double> dbGetRiskHistory(int length) {
 		List<Double> riskHistory = new ArrayList<Double>();

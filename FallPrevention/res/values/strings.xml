@@ -26,13 +26,15 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_related">Related</string>
     <string name="main_got_new_events">You got new events. Click the smiley to see them.</string>
+
     <string-array name="time_period_array">
-        <item >1 hour</item>
-        <item >4 hours</item>
-        <item >8 hours</item>
-        <item >1 day</item>
-        <item >7 days</item>
+        <item>1 hour</item>
+        <item>4 hours</item>
+        <item>8 hours</item>
+        <item>1 day</item>
+        <item>7 days</item>
     </string-array>
+
     <string name="new_name_button">New Name</string>
     <string name="contact_person_activity">Contact person</string>
     <string name="new_contact_activity">Add new contact</string>
@@ -61,8 +63,14 @@
     <string name="contact_person_delete_info">Delete contact</string>
     <string name="contact_person_delete_dialogue_1">Are you sure that you want to remove</string>
     <string name="contact_person_delete_dialogue_2">from your contact list?</string>
+
     <string-array name="data_type_array">
-        <item >Steps per minute</item>
+        <item>Steps per minute</item>
     </string-array>
+
+    <string name="event_list_goodJob_title">You have done well!</string>
+    <string name="event_list_badJob_title">You need to move more!</string>
+    <string name="event_list_goodJob_desc">You have moved a lot recently, good job!</string>
+    <string name="event_list_badJob_desc">You haven\'t moved enough recently, try harder!</string>
 
 </resources>
