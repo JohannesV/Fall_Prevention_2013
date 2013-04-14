@@ -80,13 +80,13 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 			long id) {
 		// Get risk history values from the database
 		List<Double> riskHistory = new ContentProviderHelper(
-				getApplicationContext()).cpGetRiskHistory(pos + 10);
+				getApplicationContext()).cpGetRiskHistory(pos + 10,4);
 
 		riskHistoryPlot.clear();
 
 		// Turn the above arrays into XYSeries':
 		XYSeries riskSeries = new SimpleXYSeries(riskHistory,
-				SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use
+				SimpleXYSeries.ArrayFormat.XY_VALS_INTERLEAVED, // Y_VALS_ONLY means use
 														// the element index as
 														// the x value
 				"Risk History"); // Set the display title of the series
@@ -94,24 +94,24 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 		// Create a formatter to use for drawing a series using
 		// LineAndPointRenderer:
 		LineAndPointFormatter riskSeriesFormat = new LineAndPointFormatter(
-				Color.MAGENTA, // line color
+				Color.GREEN, // line color
 				Color.BLACK, // point color
-				Color.TRANSPARENT); // fill color (nothing)
+				null); // fill color (nothing)
 
-		//Add fill paint
-//		Paint bgPaint = new Paint();
-//		bgPaint.setColor(Color.WHITE);
-		// riskSeriesFormat.setFillPaint(bgPaint);
-		// riskSeriesFormat.setFillDirection(FillDirection.TOP);
-		// riskHistoryPlot.addSeries(riskSeries, riskSeriesFormat);
-		// riskSeriesFormat.setFillDirection(FillDirection.BOTTOM);
+//		Add fill paint
+		Paint bgPaint = new Paint();
+		bgPaint.setColor(Color.WHITE);
+		 riskSeriesFormat.setFillPaint(bgPaint);
+		 riskSeriesFormat.setFillDirection(FillDirection.BOTTOM);
+		 riskHistoryPlot.addSeries(riskSeries, riskSeriesFormat);
+		 
 		// Make stuff look better
 		
 		// add a new series' to the xyplot:
-		riskHistoryPlot.setRangeLabel("");
-		riskHistoryPlot.setDomainLabel("");
-		riskHistoryPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1.0);
-		riskHistoryPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1.0);
+		riskHistoryPlot.setRangeLabel("Steps");
+		riskHistoryPlot.setDomainLabel("Time");
+		riskHistoryPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 10);
+		riskHistoryPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 10);
 
 		riskHistoryPlot.redraw();
 

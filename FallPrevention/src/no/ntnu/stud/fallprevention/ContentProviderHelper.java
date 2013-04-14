@@ -53,10 +53,11 @@ public class ContentProviderHelper {
 		// sets the projection part of the query
 		String[] projection = new String[] { "count(timestamp) as count" };
 		// sets the selection part of the query
-		String selection =null;/* "timestamp > " + start.getTime() + " AND timestamp < "
-				+ stop.getTime();*/
+		String selection =  "timestamp > " + start.getTime() +
+							 " AND timestamp < " + stop.getTime();
+								 
 		// not used, therefore null
-		String[] selectionArgs = null;//{String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
+		String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
 		// no need for sorting
 		String sortOrder = null;
 
@@ -197,42 +198,17 @@ public class ContentProviderHelper {
 	 * @return
 	 */
 
-	List<Double> cpGetRiskHistory(int length) {
+	List<Double> cpGetRiskHistory(int length,int interval) {
 		// TODO: Does not work properly, not sure where the problem is
 		List<Double> returner = new ArrayList<Double>();
-		for (int i = 0; i < length; i++) {
-			returner.add((double) Math.round((Math.random() * 5)));
+		// for (int i = 0; i < length; i++) {
+		// returner.add((double) Math.round((Math.random() * 5)));
+		// }
+		for (int i =length;i>= 0;i--){
+			returner.add((double) (-i*interval));
+			returner.add((double) getStepCount(getHoursBack((i+1)*interval), getHoursBack(i*interval)));
+			
 		}
-		// Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
-		// ContentProviderClient movementProvider = context.getContentResolver()
-		// .acquireContentProviderClient(uri);
-		// uri = Uri
-		// .parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
-		// String[] projection = new String[] { "timestamp" };
-		// String selection = "";
-		// String[] selectionArgs = null;
-		// String sortOrder = "ID desc";
-		// try {
-		// Cursor cursor = movementProvider.query(uri, projection, selection,
-		// selectionArgs, sortOrder);
-		// if (!cursor.isNull(0)) {
-		// for (int i = cursor.getCount() - length; i < cursor.getCount(); i++)
-		// {
-		// if (i < 0) {
-		// i = 0;
-		// }
-		// cursor.moveToPosition(i);
-		// // double steps = Double.parseDouble(cursor.getString(0));
-		// // returner.add(steps);
-		// }
-		// }
-		// } catch (RemoteException e) {
-		// e.printStackTrace();
-		// } catch(NullPointerException e){
-		// e.printStackTrace();
-		// } catch(SQLException e){
-		// e.printStackTrace();
-		// }
 		return returner;
 	}
 
