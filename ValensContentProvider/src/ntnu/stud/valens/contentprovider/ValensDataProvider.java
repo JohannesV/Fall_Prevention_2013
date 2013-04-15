@@ -178,7 +178,7 @@ public class ValensDataProvider extends ContentProvider {
 
 	/**
 	 * Column and content type definitions for the Steps.
-	 */
+	 */	
 	public static interface RawSteps extends BaseColumns {
 		public static final Uri CONTENT_URI = ValensDataProvider.RAW_STEPS_CONTENT_URI;
 		public static final String TIMESTAMP = "timestamp";

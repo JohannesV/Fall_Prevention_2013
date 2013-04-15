@@ -56,9 +56,18 @@ Classes that are not activities can be roughly divided into 4 types: Data struct
 \section{Architecture of the Content Provider}
 In android, Content Providers provide an interface to structured data of some sort. Access to for instance the list of contacts in the phone, or the phone's calendar is managed through standard content providers. Content Providers provide methods for inserting, updating and deleting relevant data. A major part of the assignment was to implement a Content Provider that gives developers access to structured movement data.
 
-Our content provider is built around an open source pedometer, and is therefore a fully-fletched application in itself, but the independent GUI and other unnecessary parts of the content provider will be phased out when using it for debugging is no longer required. The architecture is therefore currently more complicated than it will be in the final application.
+The Content Provider component is conceptually very simple, and consists of four classes:
+\begin{description}
+\item[CPValensDB]
+a subclass of SQLiteOpenHelper, the standard android class for handling database communication. Specifies the procedure for creating the database, as well as upgrading and downgrading the database version. In the current implementation, upgrading and downgrading the database version clears all the data and tables, and creates the database according the details specified in the new database version. In the current version, creating the database consists of creating the tables given in the data model, without feeding any data into the database.
+\item[DBSchema]
+defines the database model and provides string values for the names of the tables and fields. Employing a database schema to demonstrate the structure of the database is standard in android applications.
+\item[ValensDataProvider]
+a subclass of ContentProvider, which is the standard android class for implementing content providers. This is the core of the content provider, and describes how queries to the content provider are handled.
+\item[Main]
+provdides the content provider with a basic GUI.
+\end{description}
 
-The content provider runs as a service, and as such, it runs in the background, even when the user leaves the GUI. The pedometer part of the application sends a notification every time it detects a step. The MovementNotifier class works as a listener, and its onStep method is called when the user makes a step. The onStep method of MovementNotifier then calls MovementProvider, which is a content provider class, that stores the information into the content providers database.
 
 \section{Class description and diagram}
 
@@ -77,8 +86,3 @@ The class structure of the Applications changed regularly, and the most recent d
 \section{Architecture of the Valens Step Detector}
 
 Despite being a relatively simple application in terms of lines of code and GUI screens, the architecture of Valens Step Detector has a certain complexity.
-
-
-
-
-

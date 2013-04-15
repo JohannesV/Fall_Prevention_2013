@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="28cm" height="22cm" viewBox="78 34 553 429" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="369.325" y="36" width="156.35" height="56"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="369.325" y="36" width="156.35" height="56"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="447.5" y="67.9">
+      <tspan x="447.5" y="67.9">Valens Health Helper</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="358.225" y="227" width="175.55" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="358.225" y="227" width="175.55" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="446" y="249.9">
+      <tspan x="446" y="249.9">Valens Content Provider</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M 562 261.333 C 575.6,252.833 582.4,250 596,250 C 609.6,250 616.4,252.833 630,261.333 L 630,306.667 C 616.4,315.167 609.6,318 596,318 C 582.4,318 575.6,315.167 562,306.667 L 562,261.333z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 562 261.333 C 575.6,252.833 582.4,250 596,250 C 609.6,250 616.4,252.833 630,261.333 L 630,306.667 C 616.4,315.167 609.6,318 596,318 C 582.4,318 575.6,315.167 562,306.667 L 562,261.333"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 562 261.333 C 575.6,269.833 582.4,272.667 596,272.667 C 609.6,272.667 616.4,269.833 630,261.333"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="596" y="293.667">
+      <tspan x="596" y="293.667">DB</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="79.725" y="230" width="166.55" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="79.725" y="230" width="166.55" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="163" y="252.9">
+      <tspan x="163" y="252.9">Valens Content Feeder</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="368.55" y="410" width="156.9" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="368.55" y="410" width="156.9" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="447" y="432.9">
+      <tspan x="447" y="432.9">Valens Step Detector</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 472.27,265.99 A 159.65,159.65 0 0 0 556.548,289.272"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="548.968,294.609 558.783,289.254 548.61,284.616 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 562.487,259.856 A 159.65,159.65 0 0 0 538.994,249.529"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="547.923,247.038 536.882,248.797 544.914,256.575 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="446.898" y1="410.414" x2="446.126" y2="269.058"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="451.168,276.795 446.114,266.822 441.168,276.849 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="446.165" y1="225.994" x2="447.224" y2="97.4649"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="452.16,105.27 447.243,95.2289 442.16,105.187 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 357.253,229.692 A 510.613,510.613 0 0 0 251.703,230.777"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="258.795,224.846 249.481,231.031 260.018,234.771 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 247.27,264.87 A 510.613,510.613 0 0 0 352.782,264.719"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="345.638,270.587 355.006,264.485 344.503,260.651 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="104.775" y="398" width="215.45" height="64"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x="104.775" y="398" width="215.45" height="64"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="212.5" y="433.9">
+      <tspan x="212.5" y="433.9">(Other potential data sources)</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="254.372" y1="397.005" x2="417.105" y2="268.769"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="414.102,277.502 418.861,267.385 407.912,269.648 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="87.3" y="57" width="242.4" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x="87.3" y="57" width="242.4" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="208.5" y="79.9">
+      <tspan x="208.5" y="79.9">(Other potential user-applications)</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 4; stroke: #000000" x1="418.11" y1="226.037" x2="240.027" y2="98.5664"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="249.25,99.0196 238.208,97.2649 243.43,107.151 "/>
+  </g>
+</svg>
