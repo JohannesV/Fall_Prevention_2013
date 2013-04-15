@@ -8,25 +8,39 @@
 \contentsline {subsection}{\numberline {2.2.2}Nonfunctional requirements}{6}
 \contentsline {section}{\numberline {2.3}Understanding the requirements}{6}
 \contentsline {section}{\numberline {2.4}Testing}{7}
-\contentsline {chapter}{\numberline {3}Project Management}{9}
-\contentsline {section}{\numberline {3.1}Terms}{9}
-\contentsline {section}{\numberline {3.2}Development process}{10}
-\contentsline {section}{\numberline {3.3}Team Roles and Organization}{10}
-\contentsline {section}{\numberline {3.4}Comparison}{11}
-\contentsline {section}{\numberline {3.5}Management Tools}{11}
-\contentsline {chapter}{\numberline {4}Development Environment}{12}
-\contentsline {section}{\numberline {4.1}LaTeX}{12}
-\contentsline {section}{\numberline {4.2}Github}{12}
-\contentsline {section}{\numberline {4.3}Eclipse with Android Development Tools Plugin}{13}
-\contentsline {chapter}{\numberline {5}Implementation}{14}
-\contentsline {section}{\numberline {5.1}Plans}{14}
-\contentsline {section}{\numberline {5.2}Work Breakdown Structure}{14}
-\contentsline {section}{\numberline {5.3}Architecture of the App}{14}
-\contentsline {section}{\numberline {5.4}Architecture of the Content Provider}{16}
-\contentsline {section}{\numberline {5.5}Class description and diagram}{18}
-\contentsline {chapter}{\numberline {A}Appendix}{20}
-\contentsline {section}{\numberline {A.1}Mockups}{20}
-\contentsline {section}{\numberline {A.2}Reports}{21}
-\contentsline {section}{\numberline {A.3}Meeting summaries}{22}
-\contentsline {section}{\numberline {A.4}Alternate Solutions}{27}
-\contentsline {section}{\numberline {A.5}Research Reports}{30}
+\contentsline {chapter}{\numberline {3}Testing}{9}
+\contentsline {chapter}{\numberline {4}Project Management}{10}
+\contentsline {section}{\numberline {4.1}Terms}{10}
+\contentsline {section}{\numberline {4.2}Development process}{11}
+\contentsline {section}{\numberline {4.3}Team Roles and Organization}{11}
+\contentsline {section}{\numberline {4.4}Comparison}{12}
+\contentsline {section}{\numberline {4.5}Management Tools}{12}
+\contentsline {chapter}{\numberline {5}Development Environment}{13}
+\contentsline {section}{\numberline {5.1}LaTeX}{13}
+\contentsline {section}{\numberline {5.2}Github}{13}
+\contentsline {section}{\numberline {5.3}Eclipse with Android Development Tools Plugin}{14}
+\contentsline {chapter}{\numberline {6}Implementation}{15}
+\contentsline {section}{\numberline {6.1}Plans}{15}
+\contentsline {section}{\numberline {6.2}Work Breakdown Structure}{15}
+\contentsline {section}{\numberline {6.3}Overall Architecture}{15}
+\contentsline {section}{\numberline {6.4}Architecture of the App}{17}
+\contentsline {section}{\numberline {6.5}Architecture of the Content Provider}{19}
+\contentsline {section}{\numberline {6.6}Class description and diagram}{21}
+\contentsline {section}{\numberline {6.7}Architecture of the Valens Step Detector}{21}
+\contentsline {chapter}{\numberline {7}Research and Alternate Solutions}{23}
+\contentsline {section}{\numberline {7.1}Research reports}{23}
+\contentsline {subsection}{\numberline {7.1.1}Falling: Causes, Consequences and how to avoid it}{23}
+\contentsline {subsubsection}{Avoiding falls}{25}
+\contentsline {subsubsection}{Physiological aspects}{26}
+\contentsline {section}{\numberline {7.2}Alternate solutions}{28}
+\contentsline {subsection}{\numberline {7.2.1}Endomondo Sports Tracker}{28}
+\contentsline {subsection}{\numberline {7.2.2}GPS Status}{28}
+\contentsline {subsection}{\numberline {7.2.3}Pedometer}{29}
+\contentsline {subsection}{\numberline {7.2.4}GPS Tracker}{29}
+\contentsline {section}{\numberline {7.3}Bibliography}{29}
+\contentsline {chapter}{\numberline {A}Appendix}{31}
+\contentsline {section}{\numberline {A.1}Mockups}{31}
+\contentsline {section}{\numberline {A.2}Reports}{32}
+\contentsline {section}{\numberline {A.3}Meeting summaries}{33}
+\contentsline {section}{\numberline {A.4}Alternate Solutions}{38}
+\contentsline {section}{\numberline {A.5}Research Reports}{41}
