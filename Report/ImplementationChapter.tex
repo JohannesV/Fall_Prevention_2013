@@ -17,6 +17,25 @@ With a development methodology that stresses short term goals, it is only possib
 \label{fig:WBS}
 \caption{The current WBS}
 \end{figure}
+
+\section{Overall Architecture}
+The product has been implement as a system of independent component applications where each component performs a well-defined task. The motivation behind the domular architecture is two-fold: Primarily, it was desirable that the underlying model for movement and fall risk be independent of the proof-of-concept application, in order to facilite development of possible future applications employing the model. Secondly, the standards of Android application development state that a Content Provider should in itself solely provide a interface to the data. This implies that the sensor model, as well as any derivation of secondary data, should be performed in components independent of the Content Provider. [ADD INFO ABOUT INDEPENDENCE SENSOR MODEL / CP AS WELL AS INDEPENDENCE CP / GUI?]
+
+The system that has been designed according to these principles therefore consists of five components: The content provider emph{Valens Content Provider}, the proof-of-concept application emph{Valens Health Helper}, the sensor model emph{Valens Step Detector} and a service of deriving secondary data emph{Valens Content Feeder}. Each of these components fulfills a well-defined role in the total application system: The content provider provides an interface to the data model. The sensor model listens to the sensor data, and feeds the content provider with the timestamps of any detected steps. The Content Feeder listens continually to changes to the data in the content provider. When the data changes, it uses the new data to calculate secondary data, such as gait speed and variability. Finally, the proof-of-concept application demonstrates one simple way in which the data provided by the content provider can be used as a part of a health-promoting app.
+
+\begin{figure}[p]
+
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{%
+ \fbox{
+\includegraphics[width=1.45\textwidth , angle=270]{Res/OverallArchitecture.png}
+}
+}
+\label{fig:Architecture}
+\caption{The over-all system architecture}
+\end{figure}
+
+
 \section{Architecture of the App}
 The application is made in a way that is common for all android applications. This means that user interface is described in xml layout files that is called in java code. Strings and resources is placed in a separate folder and file, to be accessed by the code as needed. This is to separate content and layout in the UI. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily.
 
@@ -55,9 +74,9 @@ The class structure of the Applications changed regularly, and the most recent d
 \caption{A class diagram of the current application}
 \end{figure}
 
+\section{Architecture of the Valens Step Detector}
 
-
- 
+Despite being a relatively simple application in terms of lines of code and GUI screens, the architecture of Valens Step Detector has a certain complexity.
 
 
 
