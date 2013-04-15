@@ -1,18 +1,18 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  19 MAR 2013 12:09
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.12)  15 APR 2013 13:28
 entering extended mode
 **ReportMain.tex
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
@@ -260,9 +260,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: amssymb 2009/06/22 v3.00
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
-Package: setspace 2011/12/19 v6.7a set line spacing
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
@@ -284,10 +285,10 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
 ))
@@ -303,7 +304,7 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \backup@length=\skip44
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
-Package: pdfpages 2012/08/31 v0.4t Insert pages of external PDF documents (AM)
+Package: pdfpages 2011/03/10 v0.4n Insert pages of external PDF documents (AM)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
@@ -325,7 +326,7 @@ LaTeX Info: Redefining \addtolength on input line 77.
 Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
@@ -349,14 +350,14 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
-File: pppdftex.def 2012/08/31 v0.4t Pdfpages driver for pdfTeX (AM)
+File: pppdftex.def 2011/03/10 v0.4n Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box26
 \AM@toc@title=\toks19
 \c@AM@survey=\count92
 \AM@templatesizebox=\box27
 )
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
@@ -380,7 +381,6 @@ LaTeX Font Info:    ... okay on input line 31.
 \MPscratchCnt=\count96
 \MPscratchDim=\dimen110
 \MPnumerator=\count97
-\makeMPintoPDFobject=\count98
 \everyMPtoPDFconversion=\toks21
 )
 \AtBeginShipoutBox=\box29
@@ -395,17 +395,17 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.toc
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.toc
 [1
 
 ])
 \tf@toc=\write3
 
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\IntroductionCha
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\IntroductionCha
 pter.tex [2]
 Chapter 1.
 )
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\RequirementsCha
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\RequirementsCha
 pter.tex [3
 
 ] [4]
@@ -462,19 +462,19 @@ Overfull \hbox (52.39996pt too wide) in paragraph at lines 68--93
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ProjectManageme
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ProjectManageme
 ntChapter.tex [7] [8]
 Chapter 3.
 [9
 
 ] [10])
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\DevelopmentEnvi
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\DevelopmentEnvi
 romentChapter.tex [11]
 Chapter 4.
 [12
 
 ])
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ImplementationC
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ImplementationC
 hapter.tex [13]
 Chapter 5.
 <Res/WBS15313.png, id=51, 3130.094pt x 1194.864pt>
@@ -488,14 +488,14 @@ LaTeX Warning: Float too large for page by 3.33212pt on input line 19.
 
 [14
 
-] [15 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/WBS15
+] [15 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/WBS15
 313.png>] <Res/FlowChartGUI.png, id=60, 618.05907pt x 279.29344pt>
 File: Res/FlowChartGUI.png Graphic file (type png)
 
 <use Res/FlowChartGUI.png>
 Package pdftex.def Info: Res/FlowChartGUI.png used on input line 30.
 (pdftex.def)             Requested size: 467.99881pt x 211.4896pt.
- [16] [17 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/F
+ [16] [17 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/F
 lowChartGUI.png>]
 <Res/ClassDiagram.png, id=68, 1289.81876pt x 767.86874pt>
 File: Res/ClassDiagram.png Graphic file (type png)
@@ -504,8 +504,8 @@ File: Res/ClassDiagram.png Graphic file (type png)
 Package pdftex.def Info: Res/ClassDiagram.png used on input line 54.
 (pdftex.def)             Requested size: 467.99881pt x 278.61185pt.
 )
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\AppendixPt1.tex
-[18] [19 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Cl
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\AppendixPt1.tex
+[18] [19 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Cl
 assDiagram.png (PNG copy)>]
 Appendix A.
 <Res/mockupV2.png, id=76, 803.0pt x 1136.245pt>
@@ -540,7 +540,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 \OT1/cmr/m/n/12 pre-sen-ta-tion, fin-ish-ing sec-ondary
  []
 
-[21 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/mockupV
+[21 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/mockupV
 2.png>] [22] <Res/StatusReportWeek9.pdf, id=91, page=1, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
@@ -572,7 +572,7 @@ File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [23 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ [23 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
 ReportWeek9.pdf>]
 <Res/StatusReportWeek9.pdf, id=106, page=2, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
@@ -593,7 +593,7 @@ File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [24 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ [24 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
 ReportWeek9.pdf>]
 <Res/StatusReportWeek11.pdf, id=113, page=1, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
@@ -626,7 +626,7 @@ File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
 7.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [25 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ [25 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
 ReportWeek11.pdf>]
 <Res/StatusReportWeek11.pdf, id=128, page=2, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
@@ -647,7 +647,7 @@ File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 4
 7.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [26 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ [26 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
 ReportWeek11.pdf>] [27]
 <Res/AlternativeAppsReport.pdf, id=137, page=1, 597.23125pt x 844.15375pt>
 File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
@@ -680,7 +680,7 @@ File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page1 used on input lin
 e 51.
 (pdftex.def)             Requested size: 597.73099pt x 844.86012pt.
- [28 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Altern
+ [28 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Altern
 ativeAppsReport.pdf>]
 <Res/AlternativeAppsReport.pdf, id=152, page=2, 597.23125pt x 844.15375pt>
 File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
@@ -701,7 +701,7 @@ File: Res/AlternativeAppsReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/AlternativeAppsReport.pdf, page2 used on input lin
 e 51.
 (pdftex.def)             Requested size: 597.73099pt x 844.86012pt.
- [29 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Altern
+ [29 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Altern
 ativeAppsReport.pdf>] [30]
 <Res/FallingCausesConsequences.pdf, id=162, page=1, 614.295pt x 794.97pt>
 File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
@@ -734,7 +734,7 @@ File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page1 used on input
  line 56.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [31 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
+ [31 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
 gCausesConsequences.pdf>]
 <Res/FallingCausesConsequences.pdf, id=182, page=2, 614.295pt x 794.97pt>
 File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
@@ -755,7 +755,7 @@ File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page2 used on input
  line 56.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [32 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
+ [32 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
 gCausesConsequences.pdf>]
 <Res/FallingCausesConsequences.pdf, id=186, page=3, 614.295pt x 794.97pt>
 File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
@@ -776,7 +776,7 @@ File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page3 used on input
  line 56.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [33 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
+ [33 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
 gCausesConsequences.pdf>]
 <Res/FallingCausesConsequences.pdf, id=190, page=4, 614.295pt x 794.97pt>
 File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
@@ -797,24 +797,24 @@ File: Res/FallingCausesConsequences.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page4 used on input
  line 56.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [34 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
+ [34 <C:/Users/johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
 gCausesConsequences.pdf>])
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
+(C:\Users\johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
  ) 
 Here is how much of TeX's memory you used:
- 3095 strings out of 493921
- 43302 string characters out of 3144868
- 102648 words of memory out of 3000000
- 6325 multiletter control sequences out of 15000+200000
+ 3070 strings out of 494049
+ 42790 string characters out of 3146056
+ 103827 words of memory out of 3000000
+ 6295 multiletter control sequences out of 15000+200000
  13178 words of font info for 51 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 41i,18n,43p,1095b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 715 hyphenation exceptions out of 8191
+ 42i,18n,44p,1095b,403s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ReportMain.pdf (35 pages, 697708 bytes).
+Output written on ReportMain.pdf (35 pages, 697872 bytes).
 PDF statistics:
  211 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
