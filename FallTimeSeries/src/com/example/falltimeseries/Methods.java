@@ -53,21 +53,21 @@ public class Methods {
 		// Don't look at the first and last WINDOW_SIZE number of elements,
 		// because peak values depend on the WINDOW_SIZE number of elements
 		// in each direction.
-		for (int i = Values.WINDOW_SIZE; i < (data.size() - Values.WINDOW_SIZE); i++) {
+		for (int i = Values.PEAK_STRENGTH_WINDOW; i < (data.size() - Values.PEAK_STRENGTH_WINDOW); i++) {
 			float peakPointValue = data.get(i);
 			float prePeakStrength = 0.0f;
 			float postPeakStrength = 0.0f;
 
 			// Calculate pre- and post-peak strengths simultaneously
-			for (int j = 1; j < (Values.WINDOW_SIZE + 1); j++) {
+			for (int j = 1; j < (Values.PEAK_STRENGTH_WINDOW + 1); j++) {
 				prePeakStrength += (peakPointValue - data.get(i - j));
 				postPeakStrength += (peakPointValue - data.get(i + j));
 			}
 
 			// Normalize and take the average of peak strength in both
 			// directions
-			prePeakStrength = (prePeakStrength / Values.WINDOW_SIZE);
-			postPeakStrength = (postPeakStrength / Values.WINDOW_SIZE);
+			prePeakStrength = (prePeakStrength / Values.PEAK_STRENGTH_WINDOW);
+			postPeakStrength = (postPeakStrength / Values.PEAK_STRENGTH_WINDOW);
 			float peakStrength = (prePeakStrength + postPeakStrength) / 2;
 
 			peakStrengths.add(peakStrength);
@@ -122,7 +122,7 @@ public class Methods {
 		int i = 0;
 		while (i < peaks.size() - 1) {
 			// If too subsequent peaks are too close ...
-			if (peaks.get(i + 1) - peaks.get(i) <= Values.WINDOW_SIZE) {
+			if (peaks.get(i + 1) - peaks.get(i) <= Values.PEAK_STRENGTH_WINDOW) {
 				// ... remove the least significant
 				if (peakStrengths.get(peaks.get(i + 1)) > peakStrengths
 						.get(peaks.get(i))) {

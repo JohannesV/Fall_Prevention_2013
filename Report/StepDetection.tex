@@ -31,8 +31,12 @@ Detecting steps based on a time series of acceleration vector lengths reduces to
 
 Subsequently the program runs the main peak detection algorithm, which consists of the following steps:
 \begin{description}
+
 \item[Calculate peak strength] \hfill \\
-Every data point in the time series has its \emph{peak strength} calculated. Informally, the peak strength of a data point is a measurement of how much that point is worthy of being considered a peak. A wide range of functions can map the raw vector lengths into a peak strength graph, but an additional desideratum of the peak strength function is that the output values should be normalized around 0, where only . The peak strength for a point $x_i$ is calculated as $\frac{\frac{(x_{i} - x_{i-1} + x_{i} - x_{i-1} + \ldots + x_{i} - x_{i-k})}{k} + \frac{(x_{i} - x_{i+1} + x_{i} - x_{i+1} + \ldots + x_{i} - x_{i+k})}{k}}{2}$, where k is a constant referred to as the \emph{peak strength window}.
+Every data point in the time series has its \emph{peak strength} calculated. Informally, the peak strength of a data point is a measurement of how much that point is worthy of being considered a peak. A wide range of functions can map the raw vector lengths into a peak strength graph, but an additional desideratum of the peak strength function is that the output values should be normalized around 0, where only actual potential peaks are given sub-zero values. The peak strength for a point $x_i$ is calculated as $\frac{\frac{(x_{i} - x_{i-1} + x_{i} - x_{i-1} + \ldots + x_{i} - x_{i-k})}{k} + \frac{(x_{i} - x_{i+1} + x_{i} - x_{i+1} + \ldots + x_{i} - x_{i+k})}{k}}{2}$, where k is a constant referred to as the \emph{peak strength window}.
+
+\item[]
+
 \end{description}
 
 SKRIV OM KORLEIS EIN FINN VERDIANE SOM WINDOW\_SIZE etc. 

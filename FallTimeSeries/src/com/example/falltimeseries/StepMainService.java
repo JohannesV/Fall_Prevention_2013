@@ -158,7 +158,7 @@ public class StepMainService extends Service implements SensorEventListener {
 	private void discardData() {
 		List<Long> newTimeStamps = new ArrayList<Long>();
 		List<Float> newVectorLengths = new ArrayList<Float>();
-		for (int i = mTimeStamps.size() - (Values.WINDOW_SIZE * 2); i < mTimeStamps
+		for (int i = mTimeStamps.size() - (Values.PEAK_STRENGTH_WINDOW * 2); i < mTimeStamps
 				.size(); i++) {
 			newTimeStamps.add(mTimeStamps.get(i));
 			newVectorLengths.add(mVectorLengths.get(i));
