@@ -1,22 +1,5 @@
 \chapter{Implementation}
-\section{Plans}
 
-Nearing the end of every sprint, the customer and group agreed upon the content of the following sprint. This list has been placed in Figure \ref{tab:sprintList}, and provided a short summary of what was accomplished in a particular time-frame. 
-
-\section{Work Breakdown Structure}
-With a development methodology that stresses short term goals, it is only possible to plan WBS for the current period. After the customer has specified the goal for the following week, we immediately sat down and defined the WBS for the given period. This was, a WBS was developed incrementally by adjoining the new WBS to the previous. The WBS was made in graphical form, as can be seen in Figure \ref{fig:WBS}.
-
-\begin{figure}[p]
-
-\setlength\fboxsep{0pt}
-\setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{%
- \fbox{
-\includegraphics[width=1.45\textwidth , angle=270]{Res/WBS15313.png}
-}
-}
-\label{fig:WBS}
-\caption{The current WBS}
-\end{figure}
 
 \section{Overall Architecture}
 The product has been implement as a system of independent component applications where each component performs a well-defined task. The motivation behind the domular architecture is two-fold: Primarily, it was desirable that the underlying model for movement and fall risk be independent of the proof-of-concept application, in order to facilite development of possible future applications employing the model. Secondly, the standards of Android application development state that a Content Provider should in itself solely provide a interface to the data. This implies that the sensor model, as well as any derivation of secondary data, should be performed in components independent of the Content Provider. [ADD INFO ABOUT INDEPENDENCE SENSOR MODEL / CP AS WELL AS INDEPENDENCE CP / GUI?]
