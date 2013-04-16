@@ -3,40 +3,38 @@
 \section{Development Process}
 As the group had little experience in sensor use and signal processing, a series of experiments were conducted to better understand which sensors provide useful information for step detection, and which patterns predicate steps. To this end, a simple app was developed to observe sensor input and store the raw data as a file, which then could be transferred to a computer. A set of python scripts were written to plot  the data time series. Using python, the group experimented with different step detection algorithms, and a prototype was developed. Finally, the algorithm was implemented in the Valens Step Detector app, modified to work with live data.
 
-\section{The Algorithm}
-The current section will explain the algorithm used for step detection, formulated as an off-line algorithm. The following section will explain what changes was made to make the algorithm work for live data streams.
-
-Experiments showed that the accelerometer consistently gave the most predicative feedback patterns for step detection\footnote{None of the android phones available to the group at the time had a working gyroscope. It is suspected that a gyroscope can replace or supplement the accelerometer for more precise step detection, but this should tested empirically.}. Furthermore, it was found that the total acceleration was a better predicator of steps than acceleration along any of the single axes individually. To exploit this, a pre-processing step calculates the a vector length in euclidian space of the raw acceleration vector.
-
-Detecting steps based on a time series of accelation vector lengths reduces to peak detection in the time series graph. The step detection algorithm is therefore essentially a generic algorithm for peak detection in noisy data. The noise in the data originates from noise in the sensor readings. To cope with the noise, the data is first smoothed using a moving average\footnote{That is, every datapoint has its value set to the average of itself and the x neighbours before and after it, where x is called the \emph{window size} of the smoothing.}.
-
-Subsequently the program runs the main peak detection algorithm, which consists of the following steps:
-\begin{description}
-\item[Calculate peak strength] \hfill \\
-Every data point in the time series has its \emph{peak strength} calculated. The peak strength for a point $x_{i}$ is calculated as $\frac{(x_{i} - x_{i-1} + x_{i} - x_{i-1} + \ldots + x_{i} - x_{i-k})}{k}$
-\end{description}
-
-SKRIV OM KORLEIS EIN FINN VERDIANE SOM WINDOW\_SIZE etc. 
-a\chapter{Step Detection Algorithm}
-
-\section{Development Process}
-As the group had little experience in sensor use and signal processing, a series of experiments were conducted to better understand which sensors provide useful information for step detection, and which patterns predicate steps. To this end, a simple app was developed to observe sensor input and store the raw data as a file, which then could be transferred to a computer. A set of python scripts were written to plot  the data time series. Using python, the group experimented with different step detection algorithms, and a prototype was developed. Finally, the algorithm was implemented in the Valens Step Detector app, modified to work with live data.
-
-\section{The Algorithm}
+\section{Core Algorithm}
 The current section will explain the algorithm used for step detection, formulated as an off-line algorithm. The following section will explain what changes was made to make the algorithm work for live data streams.
 
 Experiments showed that the accelerometer consistently gave the most predicative feedback patterns for step detection\footnote{None of the android phones available to the group at the time had a working gyroscope. It is suspected that a gyroscope can replace or supplement the accelerometer for more precise step detection, but this should tested empirically.}. Furthermore, it was found that the total acceleration was a better predicator of steps than acceleration along any of the single axes individually. To exploit this, a pre-processing step calculates the a vector length in euclidean space of the raw acceleration vector.
 
-Detecting steps based on a time series of acceleration vector lengths reduces to peak detection in the time series graph. The step detection algorithm is therefore essentially a generic algorithm for peak detection in noisy data. The noise in the data originates from noise in the sensor readings. To cope with the noise, the data is first smoothed using a moving average\footnote{That is, every data point has its value set to the average of itself and the x neighbours before and after it, where x is called the \emph{window size} of the smoothing.}.
+Detecting steps based on a time series of acceleration vector lengths reduces to peak detection in the time series graph. The step detection algorithm is therefore essentially a generic algorithm for peak detection in noisy data. The noise in the data originates from noise in the sensor readings. To cope with the noise, the data is first smoothed using a moving average\footnote{That is, every data point has its value set to the average of itself and the k neighbours before and after it, where k is a constant referred to as the \emph{window size} of the smoothing.}. A larger value of k gives a smoother curve, but a too large value of k may flatten the graph too much.
 
 Subsequently the program runs the main peak detection algorithm, which consists of the following steps:
 \begin{description}
 
 \item[Calculate peak strength] \hfill \\
-Every data point in the time series has its \emph{peak strength} calculated. Informally, the peak strength of a data point is a measurement of how much that point is worthy of being considered a peak. A wide range of functions can map the raw vector lengths into a peak strength graph, but an additional desideratum of the peak strength function is that the output values should be normalized around 0, where only actual potential peaks are given sub-zero values. The peak strength for a point $x_i$ is calculated as $\frac{\frac{(x_{i} - x_{i-1} + x_{i} - x_{i-1} + \ldots + x_{i} - x_{i-k})}{k} + \frac{(x_{i} - x_{i+1} + x_{i} - x_{i+1} + \ldots + x_{i} - x_{i+k})}{k}}{2}$, where k is a constant referred to as the \emph{peak strength window}.
+Every data point in the time series has its \emph{peak strength} calculated. Informally, the peak strength of a data point is a measurement of how much that point is worthy of being considered a peak. A wide range of functions can map the raw vector lengths into a peak strength graph, but an additional desideratum of the peak strength function is that the output values should be normalized around 0. With the peak strength function used in the current implementation the peak strength of the point $x_i$ is calculated as $$\frac{\frac{(x_{i} - x_{i-1} + x_{i} - x_{i-1} + \ldots + x_{i} - x_{i-k})}{k} + \frac{(x_{i} - x_{i+1} + x_{i} - x_{i+1} + \ldots + x_{i} - x_{i+k})}{k}}{2},$$ where k is a constant referred to as the \emph{peak strength window}. 
 
-\item[]
+\item mean and standard deviation] \hfill \\
+The mean, $\mu$, and standard deviation, $\sigma$, of all positive peak strength values are calculated. Sub-zero values are discarded.
+
+\item[Search for potential peaks] \hfill \\
+Every data point in the peak strength series is classified as either a potential peak or discarded. A data point i is classified as a potential peak if its peak strength value $x_i$ is positive and fulfils the following inequality: $x_i - \mu > k * \sigma$, where k is a constant, referred to as the \emph{std threshold}. The larger the value of k, the fewer data points are classified as peaks. This step thus functions as a high-pass filter, where the cut-off threshold is defined dynamically by $\mu$ and k.
+
+\item[Remove close peaks] \hfill \\
+If two data points that have been classified as potential peaks are very close to each other, it is likely that they both belong to the same peak in the actual data. To avoid peaks in the data from being classified multiple times, this step runs through the list of potential peaks, and for every pair of potential peaks it removes the least strong peak if they are closer than some constant k. In the current implementation, k is set to the same value as the peak strength window, following the approach taken in \cite{SimplePeakDetect}.
 
 \end{description}
 
-SKRIV OM KORLEIS EIN FINN VERDIANE SOM WINDOW\_SIZE etc. 
+The data points that remain after the application of the algorithm are counted as steps.
+
+\section{Application of the algorithm to live data}
+The algorithm as stated above works on an off-line time series of data, and adapting it to work with live data requires some non-trivial decisions to be made, most of which will be explained and elaborated upon in this section. 
+
+While it is possible to change the algorithm to run completely on-line, classifying every new vector length data point as either a step or not, thus reporting steps exactly as the happen, this approach is problematic. Firstly, as no data exists past the newest data point, only the previous data points can be used for smoothing and peak strength calculation. This can potentially reduce the precision of smoothing and peak strength calculation significantly. Therefore, a semi-live approach has been taken, in which a fixed number of data points are collected before step detection is performed. The collected data is then discarded, and the process start over again. However, some care needs to be taken to ensure that all the data is used, and no data points are used multiple times. The first and last $k$ (the smoothing window) data points cannot be used for step detection, because there is not sufficient data to smooth them properly. Likewise, the first and last $n$ (peak strength window) data points cannot have their peak strength calculated properly, and are not used for step detection. Because of this, the last $2n + 2k$ data points are retained when the collected data is discarded, as the last $n+k$ data points have only been used for smoothing and peak strength calculation, not for step detection, and the $n+k$ data points before that - which have already been used for step detection - are required for smoothing and peak strength calculation in the next batch of data.
+
+Another issue when working with live data is how to calculate $\mu$ and $\sigma$. First of all, calculation of $\sigma$ requires the entire data series, but retaining the entire series of raw data in main memory is infeasible. Also, in a real life application long periods of inactivity will reduce $\mu$ to unnaturally low levels, potentially creating false positives during step detection. A better solution is to base calculation $\mu$ and $\sigma$ on actual movement data, so the values are adjusted to the relevant movement characteristics of the person. Based on these motivations, the app first requires the user to calibrate it by walking for 30 seconds. Values $\mu$ and $\sigma$ are thus calculated once based on the time series generated during calibration. 
+
+\section{Constant values}
+The constants used by the algorithm play a significant role, and finding good values for these constants is crucial for the performance of the algorithm. However, there it is impossible to know a priori which values give the desired result, but it should be noted that some of the constants (particularly the window size constants) are related to the frequency at which sensor data is generated\footnote{That is, the faster the sensor data is generated, the wider the windows can be without increasing the risk for mixing information between separate peaks.}. Because of this, most constant values have been found by empirical studies during the prototyping step, so there might exist room for improvement, but thorough empirical studies or machine learning techniques may be required to uncover better values for the constants.
