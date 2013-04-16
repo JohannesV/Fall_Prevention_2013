@@ -72,6 +72,7 @@ public class ContactPerson extends ListActivity {
 	public void fireDelete(View view){
 		// Ask for confirmation
 		AlertDialog.Builder alert_box = new AlertDialog.Builder(this);
+		
 		String message = getResources().getString(
 				R.string.contact_person_delete_dialogue_1)
 				+ " "
@@ -79,7 +80,9 @@ public class ContactPerson extends ListActivity {
 				+ " "
 				+ getResources().getString(
 						R.string.contact_person_delete_dialogue_2);
+		
 		alert_box.setMessage(message);
+		
 		alert_box.setPositiveButton(R.string.GENERAL_positive,
 				new DialogInterface.OnClickListener() {
 					@Override
@@ -91,6 +94,7 @@ public class ContactPerson extends ListActivity {
 						startActivity(intent);
 					}
 				});
+		
 		alert_box.setNegativeButton(R.string.GENERAL_negative,
 				new DialogInterface.OnClickListener() {
 					@Override

@@ -63,13 +63,14 @@ public class ClearHistory extends Preference {
 				// Clear database data
 				new DatabaseHelper(context).dbClearAllData();
 				// Restart the program and show a message
-				Toast.makeText(context, context.getResources().getString(R.string.preferences_data_cleared), Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, context.getResources().getString(R.string.preferences_data_cleared), 
+						Toast.LENGTH_SHORT).show();
 			}
 		});
 		alert_box.setNegativeButton(R.string.GENERAL_negative, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				// Pass
+				// Do nothing.
 			}
 		});
 		alert_box.show();
