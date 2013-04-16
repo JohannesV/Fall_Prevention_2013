@@ -1,5 +1,5 @@
 \chapter{Requirements}
-The requirements for the different parts of the project was about the requirements for the application, the underlying model and content provider, and the documentation for the model and content provider. 
+The requirements for the different parts of the project were about the requirements for the application, the underlying model and content provider, and the documentation for the model and content provider. 
 
 \section{Final requirements}
 Several meetings with the customer and health experts led the initial requirements to be out of date and a little vague which led to new and updated requirements.
@@ -36,9 +36,9 @@ Several meetings with the customer and health experts led the initial requiremen
 
 The requirements were specified after several meetings with the customer. The understanding the group had of the requirements before meeting the customer was not sufficient to create a set of requirements. The requirements were also subject to change as the project progressed. \\
 
-The meetings served their purpose, and filled in a lot of holes that was missing from the preliminary description:
+The meetings served their purpose, and filled in a lot of holes that were missing from the preliminary description:
 \begin{itemize}
-\item The development process in question uses a iterative approach. This essentially means that the requirements expands as the time goes, and to define the requirements from the beginning is impossible. This decision was made in collaboration with the customer.
+\item The development process in question \footnote{See Chapter \ref{def:devProcess} for a description of the development process} uses a iterative approach. This essentially means that the requirements expands as the time goes, and to define the requirements from the beginning is impossible. This decision was made in collaboration with the customer.
 \item The team at SINTEF got a wide range of experts to help the group with health-specific features, e.g. making the algorithms to recognize movements.
 \item The customer expected weekly meetings with the whole group present, and that goals had been achieved before each meeting. At each meeting a new goal was set.
 \end{itemize}
@@ -51,6 +51,16 @@ According to the project description, the following should be developed:
 \item An Android content provider that stores and makes available the data in this model through an Application Programming Interface(API).
 \item An example application that can visualize this data.
 \end{itemize}
+\section{License}
+The results of the project was intended to be released under the Apache 2.0 license. It is an open source license, which can be found  at the following web site: \url{http://www.apache.org/licenses/LICENSE-2.0.html}\\
+Highlights of what can, cannot and must be done under the license is described here:\\
+\textbf{Must}
+\begin{itemize}
+\item include copyright
+\item include the license
+\item state what changes has been made
+\end{itemize}
+The specific terms can be found at the mentioned address, and has also been included in the appendix, along with LICENSE and NOTICE files.
 
 \section{Testing}
 The tests were done by the black-box principle of testing, meaning that all the tests consider is, with no attention given to the inner workings of the methods. Because of the team following an agile development method, it was possible to create and test test-cases in short order. The test-cases were therefore written with results included.
