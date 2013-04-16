@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  16 APR 2013 12:41
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  16 APR 2013 13:19
 entering extended mode
 **ReportMain.tex
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
@@ -559,6 +559,13 @@ Chapter 5.
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ImplementationC
 hapter.tex [14]
 Chapter 6.
+
+LaTeX Warning: Reference `tab:sprintList' on page 15 undefined on input line 4.
+
+
+
+LaTeX Warning: Reference `fig:WBS' on page 15 undefined on input line 7.
+
 <Res/WBS15313.png, id=54, 3130.094pt x 1194.864pt>
 File: Res/WBS15313.png Graphic file (type png)
  <use Res/WBS15313.png>
@@ -581,6 +588,10 @@ Package pdftex.def Info: Res/OverallArchitecture.png used on input line 33.
 
 LaTeX Warning: Float too large for page by 3.33212pt on input line 36.
 
+
+LaTeX Warning: Reference `fig:FlowchartGUI' on page 17 undefined on input line 
+42.
+
 <Res/FlowChartGUI.png, id=64, 618.05907pt x 279.29344pt>
 File: Res/FlowChartGUI.png Graphic file (type png)
 
@@ -590,6 +601,10 @@ Package pdftex.def Info: Res/FlowChartGUI.png used on input line 49.
  [17] [18 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/O
 verallArchitecture.png>] [19] [20 <C:/Users/Johannes/Documents/GitHub/Fall_Prev
 ention_2013/Report/Res/FlowChartGUI.png>]
+
+LaTeX Warning: Reference `fig:ClassDiagram' on page 21 undefined on input line 
+74.
+
 <Res/ClassDiagram.png, id=80, 1289.81876pt x 767.86874pt>
 File: Res/ClassDiagram.png Graphic file (type png)
 
@@ -601,20 +616,50 @@ Package pdftex.def Info: Res/ClassDiagram.png used on input line 82.
 .tex [21] [22 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/R
 es/ClassDiagram.png (PNG copy)>]
 Chapter 7.
+
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\FallingReport.t
+ex
+
+LaTeX Warning: Citation `fallsRubenstein' on page 23 undefined on input line 9.
+
+
 [23
 
 ] [24]
-Overfull \hbox (1.10562pt too wide) in paragraph at lines 65--66
+Overfull \hbox (1.10562pt too wide) in paragraph at lines 62--63
 []\OT1/cmr/m/n/12 Remove loose items that can make you trip (books, pa-pers, cl
 othes,
  []
 
-[25] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 126--131
+[25]
+
+LaTeX Warning: Citation `LMTassessPrev' on page 26 undefined on input line 82.
+
+[26]
+
+LaTeX Warning: Citation `LMTassessPrev' on page 27 undefined on input line 115.
+
+
+
+LaTeX Warning: Citation `LMTassessPrev' on page 27 undefined on input line 116.
+
+
+
+LaTeX Warning: Citation `LLKgaitPatterns' on page 27 undefined on input line 11
+8.
+
+
+LaTeX Warning: Citation `fallsRubenstein' on page 27 undefined on input line 12
+0.
+
+)
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\InterviewSummar
+y.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--7
 
  []
 
-[28] [29] [30] [31])
+[27] [28]) [29] [30] [31])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\StepDetection.t
 ex [32
 
@@ -918,11 +963,17 @@ Package pdftex.def Info: Res/FallingCausesConsequences.pdf, page4 used on input
  [49 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Fallin
 gCausesConsequences.pdf>])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 4172 strings out of 493921
- 59006 string characters out of 3144868
- 123401 words of memory out of 3000000
+ 4178 strings out of 493921
+ 59361 string characters out of 3144868
+ 123313 words of memory out of 3000000
  7365 multiletter control sequences out of 15000+200000
  14516 words of font info for 56 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -943,7 +994,7 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
 nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ReportMain.pdf (50 pages, 855023 bytes).
+Output written on ReportMain.pdf (50 pages, 855168 bytes).
 PDF statistics:
  307 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
