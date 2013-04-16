@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.16)  16 APR 2013 14:15
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.16)  16 APR 2013 14:36
 entering extended mode
 **ReportMain.tex
 (C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
@@ -541,273 +541,27 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ) (C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\TestingChapter.tex
 [7] [8]
 Chapter 3.
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\Testdata.tex))
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\ProjectManagementCha
-pter.tex [9
 
-]
-Chapter 4.
-[10
+! LaTeX Error: File `Testdata.tex' not found.
 
-] [11] [12] <Res/WBS15313.png, id=51, 3130.094pt x 1194.864pt>
-File: Res/WBS15313.png Graphic file (type png)
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
 
-<use Res/WBS15313.png>
-Package pdftex.def Info: Res/WBS15313.png used on input line 50.
-(pdftex.def)             Requested size: 565.49881pt x 215.86845pt.
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.2 \input{Testdata}
+                    
+*** (cannot \read from terminal in nonstop modes)
 
-
-LaTeX Warning: Float too large for page by 3.33212pt on input line 53.
-
-)
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\DevelopmentEnviromen
-tChapter.tex [13] [14 <C:/Users/Dot/Documents/GitHub/Fall_Prevention_2013/Repor
-t/Res/WBS15313.png>]
-Chapter 5.
-[15
-
-])
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\ImplementationChapte
-r.tex [16]
-Chapter 6.
-[17
-
-] <Res/OverallArchitecture.png, id=69, 796.576pt x 626.34pt>
-File: Res/OverallArchitecture.png Graphic file (type png)
-
-<use Res/OverallArchitecture.png>
-Package pdftex.def Info: Res/OverallArchitecture.png used on input line 18.
-(pdftex.def)             Requested size: 565.49881pt x 444.64716pt.
-
-
-LaTeX Warning: Float too large for page by 3.33212pt on input line 21.
-
-<Res/FlowChartGUI.png, id=70, 618.05907pt x 279.29344pt>
-File: Res/FlowChartGUI.png Graphic file (type png)
-
-<use Res/FlowChartGUI.png>
-Package pdftex.def Info: Res/FlowChartGUI.png used on input line 34.
-(pdftex.def)             Requested size: 467.99881pt x 211.4896pt.
- [18] [19 <C:/Users/Dot/Documents/GitHub/Fall_Prevention_2013/Report/Res/Overal
-lArchitecture.png>] [20 <C:/Users/Dot/Documents/GitHub/Fall_Prevention_2013/Rep
-ort/Res/FlowChartGUI.png>] [21]
-<Res/ClassDiagram.png, id=86, 1289.81876pt x 767.86874pt>
-File: Res/ClassDiagram.png Graphic file (type png)
-
-<use Res/ClassDiagram.png>
-Package pdftex.def Info: Res/ClassDiagram.png used on input line 67.
-(pdftex.def)             Requested size: 467.99881pt x 278.61185pt.
-)
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\ResearchChapter.tex
-[22] [23 <C:/Users/Dot/Documents/GitHub/Fall_Prevention_2013/Report/Res/ClassDi
-agram.png (PNG copy)>]
-Chapter 7.
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\FallingReport.tex
-[24
-
-] [25]
-Overfull \hbox (1.10562pt too wide) in paragraph at lines 62--63
-[]\OT1/cmr/m/n/12 Remove loose items that can make you trip (books, pa-pers, cl
-othes,
- []
-
-[26] [27])
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\InterviewSummary.tex
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--7
-
- []
-
-[28] [29]) [30] [31])
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\StepDetection.tex
-[32]
-Chapter 8.
-[33
-
-] [34]
-Chapter 9.
-[35
-
-])
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\AppendixPt1.tex
-[36]
-Appendix A.
-<Res/mockupV2.png, id=143, 803.0pt x 1136.245pt>
-File: Res/mockupV2.png Graphic file (type png)
- <use Res/mockupV2.png>
-Package pdftex.def Info: Res/mockupV2.png used on input line 12.
-(pdftex.def)             Requested size: 390.0pt x 296.48961pt.
-
-Overfull \hbox (2.0pt too wide) in paragraph at lines 12--13
-[][] 
- []
-
-[37
-
-]
-Underfull \hbox (badness 6859) in paragraph at lines 28--29
-[]|\OT1/cmr/m/n/12 Developing a mock-up ap-pli-ca-tion
- []
-
-
-Underfull \hbox (badness 6445) in paragraph at lines 32--33
-\OT1/cmr/m/n/12 the pro-to-type (set-tings, statis-tics,
- []
-
-
-Underfull \hbox (badness 7203) in paragraph at lines 34--35
-[]|\OT1/cmr/m/n/12 Creating content-provider, cre-at-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-\OT1/cmr/m/n/12 pre-sen-ta-tion, fin-ish-ing sec-ondary
- []
-
-[38 <C:/Users/Dot/Documents/GitHub/Fall_Prevention_2013/Report/Res/mockupV2.png
->] [39] <Res/StatusReportWeek9.pdf, id=158, page=1, 614.295pt x 794.97pt>
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 48
-.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 48
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 48
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 48
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 48
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [40 <C:/Users/Dot/Documents/GitHub/Fall_Prevention_2013/Report/Res/StatusRepor
-tWeek9.pdf>]
-<Res/StatusReportWeek9.pdf, id=173, page=2, 614.295pt x 794.97pt>
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 48
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 48
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 48
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [41 <C:/Users/Dot/Documents/GitHub/Fall_Prevention_2013/Report/Res/StatusRepor
-tWeek9.pdf>]
-<Res/StatusReportWeek11.pdf, id=179, page=1, 614.295pt x 794.97pt>
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 5
-0.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 5
-0.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 5
-0.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 5
-0.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 5
-0.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [42 <C:/Users/Dot/Documents/GitHub/Fall_Prevention_2013/Report/Res/StatusRepor
-tWeek11.pdf>]
-<Res/StatusReportWeek11.pdf, id=195, page=2, 614.295pt x 794.97pt>
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 5
-0.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 5
-0.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 5
-0.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [43 <C:/Users/Dot/Documents/GitHub/Fall_Prevention_2013/Report/Res/StatusRepor
-tWeek11.pdf>])
-(C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\Bibliography.tex)
-[44
-
-] (C:\Users\Dot\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ 
 Here is how much of TeX's memory you used:
- 4169 strings out of 493921
- 58767 string characters out of 3144882
+ 4083 strings out of 493921
+ 55700 string characters out of 3144882
  123441 words of memory out of 3000000
- 7352 multiletter control sequences out of 15000+200000
- 14516 words of font info for 56 fonts, out of 3000000 for 9000
+ 7310 multiletter control sequences out of 15000+200000
+ 13178 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 41i,18n,43p,1095b,422s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ReportMain.pdf (45 pages, 677316 bytes).
-PDF statistics:
- 254 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 72 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 37i,10n,39p,413b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
