@@ -32,15 +32,19 @@
 \contentsline {subsection}{\numberline {7.1.1}Falling: Causes, Consequences and how to avoid it}{23}
 \contentsline {subsubsection}{Avoiding falls}{25}
 \contentsline {subsubsection}{Physiological aspects}{26}
-\contentsline {section}{\numberline {7.2}Alternate solutions}{28}
-\contentsline {subsection}{\numberline {7.2.1}Endomondo Sports Tracker}{28}
-\contentsline {subsection}{\numberline {7.2.2}GPS Status}{28}
-\contentsline {subsection}{\numberline {7.2.3}Pedometer}{29}
-\contentsline {subsection}{\numberline {7.2.4}GPS Tracker}{29}
-\contentsline {section}{\numberline {7.3}Bibliography}{29}
-\contentsline {chapter}{\numberline {A}Appendix}{31}
-\contentsline {section}{\numberline {A.1}Mockups}{31}
-\contentsline {section}{\numberline {A.2}Reports}{32}
-\contentsline {section}{\numberline {A.3}Meeting summaries}{33}
-\contentsline {section}{\numberline {A.4}Alternate Solutions}{38}
-\contentsline {section}{\numberline {A.5}Research Reports}{41}
+\contentsline {subsection}{\numberline {7.1.2}Summary of interview with medical professionals}{28}
+\contentsline {section}{\numberline {7.2}Alternate solutions}{29}
+\contentsline {subsection}{\numberline {7.2.1}Endomondo Sports Tracker}{30}
+\contentsline {subsection}{\numberline {7.2.2}GPS Status}{30}
+\contentsline {subsection}{\numberline {7.2.3}Pedometer}{30}
+\contentsline {subsection}{\numberline {7.2.4}GPS Tracker}{31}
+\contentsline {section}{\numberline {7.3}Bibliography}{31}
+\contentsline {chapter}{\numberline {8}Step Detection Algorithm}{33}
+\contentsline {section}{\numberline {8.1}Development Process}{33}
+\contentsline {section}{\numberline {8.2}The Algorithm}{33}
+\contentsline {chapter}{\numberline {A}Appendix}{35}
+\contentsline {section}{\numberline {A.1}Mockups}{35}
+\contentsline {section}{\numberline {A.2}Reports}{36}
+\contentsline {section}{\numberline {A.3}Meeting summaries}{37}
+\contentsline {section}{\numberline {A.4}Alternate Solutions}{42}
+\contentsline {section}{\numberline {A.5}Research Reports}{45}
