@@ -8,6 +8,21 @@
 \usepackage{array}
 \usepackage{pdfpages}
 \usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{nameref}
+
+\makeatletter
+\let\orgdescriptionlabel\descriptionlabel
+\renewcommand*{\descriptionlabel}[1]{%
+  \let\orglabel\label
+  \let\label\@gobble
+  \phantomsection
+  \edef\@currentlabel{#1}%
+  %\edef\@currentlabelname{#1}%
+  \let\label\orglabel
+  \orgdescriptionlabel{#1}%
+}
+\makeatother
 
 \title{Group 08 FallPrevention}
 \author{
