@@ -1,9 +1,9 @@
 \chapter{Research and Alternate Solutions}
 The group had to do research on real-world problems and solutions to similar problems. The reports produced by the group will be reproduced in this chapter.
 \section{Research reports}
-This report collected information from several sources on the subject of falls among the elderly. Particular focus is given to risks and avoiddance strategies.
+The reports in this section represent research and information-gathering done by the group when it was thought necessary.
 \subsection{Falling: Causes, Consequences and how to avoid it}
-
+This report collected information from several sources on the subject of falls among the elderly. Particular focus is given to risks and avoidance strategies.
 \subsubsection*{Risk factors}
 
 There are several risk factors associated with falling. Typical risk factors are:
@@ -121,12 +121,54 @@ There exists an array of tests that can measure the performance on these aspects
 Walking behaviour seems to be generally associated with falling. Lord et al. \cite{LLKgaitPatterns} shows that there is a negative correlation between falling and steps per minute, stride length and stride velocity. A positive correlation was shown between falling and stance duration and stance percentage. However, these physiological traits are all associated with old age, and old age is associated with falling, so the relation might be quite indirect.
 
 “In old age, the ‘strategy’ for maintaining balance after a slip shifts from the rapid correcting ‘hip strategy’ (fall avoidance through weight shifts at the hip) to the ‘step strategy’ (fall avoidance via a rapid step) to total loss of ability to correct in time to prevent a fall” \cite{fallsRubenstein}.
+
+\subsection{Summary of interview with medical professionals}
+This is a summary of the information gathered by a meeting with two medical professionals and the customer.
+\textbf{Present:} All group members, Babak Farshchian, Jorunn L. Helbostad, Beatrice Vereijken 
+\textbf{Time:} 14.15-15.37
+\textbf{Place:} St.Olavs Hospital
+The plan was to have a short presentation, a short GUI demonstration, and then discuss and interview with the interviewees. \\
+\subsubsection*{Feedback on Interface and Presentation of the program}
+\begin{itemize}
+\item Immediate and summarized feedback was desired, as it would be more helpful than feedback later.
+\item A focus on falling is not a selling point, try health or lifestyle instead
+\item Menu is not obvious to people without android experience
+\item Interface seems too complex for target groups
+\item Text might be too small
+\item Graph needs more contrast 
+
+\end{itemize}
+
+\textbf{Feedback on program functionality}
+\begin{itemize}
+\item Feedback should be tailored to particular groups
+\item Self-testing can be useful for reducing risk and keeping awareness,
+\item Small tests to measure reaction time, for example reaction to light or sound
+\item Researchers could also be interested in data gathering
+\item Measuring transitions between sitting/lying and standing up
+\item Compare behavior on a weekly basis will give an overview of whether things are good or not
+\end{itemize}
+
+\textbf{Feedback on medicinal stuff}
+\begin{itemize}
+\item Preventing inactivity over time is useful to reduce risk
+\item People with stability problems increase risk when moving much
+\item Variable gait pattern is useful for predicting risk
+\item Step time is more robust (and hopefully easy to measure)
+\item A common exercise is to take a step forwards, sideways, backwards, sideways (measuring a box)
+\item People in risk group are those who cut out walking, taking the bus, want help from others around the house
+\item Irregularity in speed and length is important to look for
+\item Appropriate movement amount for gender and age group is usually known
+\item Time needed to turn in place
+\end{itemize}
+
+
 \section{Alternate solutions}
 There were several other open source programs and commercial programs used to solve related problems. In some cases the team could import and make use of the open source programs, and in others the team could be inspired by design and well-made interfaces and functions. Here is that report, as written:
 
 \subsection{Endomondo Sports Tracker}
 This application is used to track routes, times and progress in training and activities. It uses GPS (and accelerometer) to find position on maps and track the location. Very easy to use, and automatically syncs up to endomondo.com. Has an inspiring design and sync-functionality.
-The main part of endomondo is the inspirational part to get people to move; you can compare yourself to others, e.g. friends, and you have a really easy way to see what an excercise is worth in amount of calories and amount of burgers burned by an exercise.
+The main part of Endomondo is the inspirational part to get people to move; you can compare yourself to others, e.g. friends, and you have a really easy way to see what an exercise is worth in amount of calories and amount of burgers burned by an exercise.
 
 A lot of aspects from this app can be used to design our own app in terms of labeling and representation of data.
 
@@ -136,16 +178,16 @@ This application is used to view detailed status about the GPS system on the pho
 The app succeeds to use the sensors very heavily.
 
 \subsection{Pedometer}\footnote{application can be found at https://code.google.com/p/pedometer/} 
-An open source app that has a GPLv3 license that is compatible with our Apache 2.0 license. The app uses the same sensors that we should focus on and opens up the oppotunity for us to take advantage of it and skip leaps in the “how to do this on Android”-process. We can freely use code from this software that already works.
+An open source app that has a GPLv3 license that is compatible with our Apache 2.0 license. The app uses the same sensors that we should focus on and opens up the opportunity for us to take advantage of it and skip leaps in the “how to do this on Android”-process. We can freely use code from this software that already works.
 
 From this we can use very much.
 \textbf{How does the step detection algorithm work?}
-Basically, it aggregates the sensor values, finds the maximum and minimum, and if the difference is bigger than a value (which depends on the sensitivity setting) then it counts it as a step. There’s is some additional optimization, which I arrived to through experimentation.
+Basically, it aggregates the sensor values, finds the maximum and minimum, and if the difference is bigger than a value (which depends on the sensitivity setting) then it counts it as a step. There's is some additional optimization, which I arrived to through experimentation.
 
 \subsection{GPS Tracker}\footnote{application can be found at: https://code.google.com/p/open-gpstracker}
 This program adds the capability to store and review where you and your Android device have been. Basically you press record at the start of your trip and your phone stores the route you take. This route is drawn real-time on the Maps functionality of Android or in the background with an idle device. The route is stored on your phone for review and further use. The applications tracks location by GPS, hence the name. An accurate description of the program type would be a GPS logger.
 
-It cointains the ability to log location, something that could be useful for our application. Since it is open source and has a compatible license (GNU v3), we can use large part of it.
+It contains the ability to log location, something that could be useful for our application. Since it is open source and has a compatible license (GNU v3), we can use large part of it.
 
 \section{Bibliography}
 \begin{thebibliography}{99}
