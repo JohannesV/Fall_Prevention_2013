@@ -49,7 +49,7 @@ public class DetectStepsThread implements Runnable {
 		List<Float> peakStrengths = Methods.calculatePeakStrengths(smoothedData);
 		List<Integer> peakIndices = Methods.findPossiblePeaks(peakStrengths, mMean, mStd);
 		peakIndices = Methods.removeClosePeaks(peakIndices, peakStrengths);
-		storeSteps(peakIndices);		
+		storeSteps(peakIndices);
 	}
 
 	/**
