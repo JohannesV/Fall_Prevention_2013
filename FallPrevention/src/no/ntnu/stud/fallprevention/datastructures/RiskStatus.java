@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.datastructures;
 
 /**
  * Names the risk states

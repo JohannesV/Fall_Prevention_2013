@@ -1,7 +1,15 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.activity;
 
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.R.drawable;
+import no.ntnu.stud.fallprevention.R.id;
+import no.ntnu.stud.fallprevention.R.layout;
+import no.ntnu.stud.fallprevention.R.menu;
+import no.ntnu.stud.fallprevention.R.string;
+import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
+import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
+import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -15,7 +23,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Creates activity: mainscreen, creates option menu, makes updates visible,

@@ -1,6 +1,12 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.activity;
 
 import java.util.Map;
+
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.R.id;
+import no.ntnu.stud.fallprevention.R.layout;
+import no.ntnu.stud.fallprevention.connectivity.DatabaseContract;
+import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
 
 import android.app.Activity;
 import android.content.Intent;

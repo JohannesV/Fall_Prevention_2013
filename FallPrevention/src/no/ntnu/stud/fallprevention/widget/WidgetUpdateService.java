@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.widget;
 
 
 
@@ -16,6 +16,14 @@ import android.widget.RemoteViews;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.R.drawable;
+import no.ntnu.stud.fallprevention.R.id;
+import no.ntnu.stud.fallprevention.R.layout;
+import no.ntnu.stud.fallprevention.activity.EventList;
+import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
+import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
 /**
  * This class update the widget in a frenquency of 50 sec.
  * @author Tayfun

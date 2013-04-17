@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.connectivity;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import no.ntnu.stud.fallprevention.auxiliary.Constants;
+import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
+
+import android.annotation.SuppressLint;
 import android.content.ContentProviderClient;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -24,6 +28,7 @@ import android.widget.Toast;
  * @author Johannes, Dat-Danny
  * 
  */
+@SuppressLint("NewApi")
 public class ContentProviderHelper {
 
 	Context context;
@@ -101,7 +106,7 @@ public class ContentProviderHelper {
 	 * @return
 	 */
 
-	Timestamp getHoursBack(int hours) {
+	public Timestamp getHoursBack(int hours) {
 
 		return new Timestamp(System.currentTimeMillis()
 				- TimeUnit.MILLISECONDS.convert(hours, TimeUnit.HOURS));
@@ -154,7 +159,7 @@ public class ContentProviderHelper {
 	 * 
 	 * @return
 	 */
-	int getRiskStepValue() {
+	public int getRiskStepValue() {
 		Log.v(TAG, "Getting value");
 		double dayOne = getStepCount(getHoursBack(24), getHoursBack(0));
 		double dayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
@@ -197,8 +202,7 @@ public class ContentProviderHelper {
 	 * @param length
 	 * @return
 	 */
-
-	List<Double> cpGetRiskHistory(int length,int interval) {
+	public List<Double> cpGetRiskHistory(int length,int interval) {
 		// TODO: Does not work properly, not sure where the problem is
 		List<Double> returner = new ArrayList<Double>();
 		// for (int i = 0; i < length; i++) {

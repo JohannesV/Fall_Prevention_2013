@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.activity;
 
 
 import android.app.Activity;
@@ -11,6 +11,12 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.R.id;
+import no.ntnu.stud.fallprevention.R.layout;
+import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
+import no.ntnu.stud.fallprevention.datastructures.Contact;
 
 
 /**

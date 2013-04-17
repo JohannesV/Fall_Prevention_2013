@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.widget;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;

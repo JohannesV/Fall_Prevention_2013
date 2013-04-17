@@ -1,5 +1,7 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.activity;
 
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.R.xml;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 /**

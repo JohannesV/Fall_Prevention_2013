@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.datastructures;
 
 /**
  * Object used to contain information about event to display in the EventList.

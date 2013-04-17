@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.connectivity;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -6,6 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.R.string;
+import no.ntnu.stud.fallprevention.connectivity.DatabaseContract.AlarmTypes;
+import no.ntnu.stud.fallprevention.connectivity.DatabaseContract.EventType;
+import no.ntnu.stud.fallprevention.datastructures.Contact;
+import no.ntnu.stud.fallprevention.datastructures.Event;
+import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
 
 import android.content.ContentProviderClient;
 import android.content.ContentValues;

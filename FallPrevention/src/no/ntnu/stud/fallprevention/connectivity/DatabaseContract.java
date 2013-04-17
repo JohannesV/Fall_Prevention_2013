@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.connectivity;
 
 import android.provider.BaseColumns;
 

@@ -70,7 +70,7 @@
             android:name="no.ntnu.stud.fallprevention.NewContact"
             android:label="@string/new_contact_activity" >
         </activity>
-        <receiver android:name="WidgetProvider">
+        <receiver android:name="no.ntnu.stud.fallprevention.WidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>

@@ -1,5 +1,7 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.activity;
 
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.R.layout;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

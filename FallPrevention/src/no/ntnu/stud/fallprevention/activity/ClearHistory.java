@@ -1,5 +1,8 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.activity;
 
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.R.string;
+import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;

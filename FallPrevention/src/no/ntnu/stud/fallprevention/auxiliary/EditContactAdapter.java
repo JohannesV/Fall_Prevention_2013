@@ -1,6 +1,10 @@
-package no.ntnu.stud.fallprevention;
+package no.ntnu.stud.fallprevention.auxiliary;
 
 import java.util.List;
+
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.R.id;
+import no.ntnu.stud.fallprevention.R.layout;
 
 import android.content.Context;
 import android.view.LayoutInflater;
