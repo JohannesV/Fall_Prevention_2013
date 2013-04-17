@@ -1,7 +1,10 @@
-package com.example.falltimeseries;
+package com.example.falltimeseries.calibration;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.falltimeseries.Methods;
+import com.example.falltimeseries.Values;
 
 import android.content.Context;
 import android.hardware.Sensor;

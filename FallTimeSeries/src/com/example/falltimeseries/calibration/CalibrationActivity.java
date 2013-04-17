@@ -1,6 +1,12 @@
-package com.example.falltimeseries;
+package com.example.falltimeseries.calibration;
 
 import java.util.Timer;
+
+import com.example.falltimeseries.LaunchActivity;
+import com.example.falltimeseries.R;
+import com.example.falltimeseries.Values;
+import com.example.falltimeseries.R.layout;
+import com.example.falltimeseries.R.raw;
 
 import android.app.Activity;
 import android.content.Intent;
