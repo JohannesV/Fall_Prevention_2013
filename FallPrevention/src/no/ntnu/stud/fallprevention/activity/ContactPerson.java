@@ -6,9 +6,9 @@ import no.ntnu.stud.fallprevention.R;
 import no.ntnu.stud.fallprevention.R.id;
 import no.ntnu.stud.fallprevention.R.layout;
 import no.ntnu.stud.fallprevention.R.string;
-import no.ntnu.stud.fallprevention.auxiliary.EditContactAdapter;
 import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
 import no.ntnu.stud.fallprevention.datastructures.Contact;
+import no.ntnu.stud.fallprevention.listadapters.EditContactAdapter;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;

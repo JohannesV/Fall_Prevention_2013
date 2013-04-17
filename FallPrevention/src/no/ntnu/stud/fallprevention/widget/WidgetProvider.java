@@ -5,9 +5,6 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.database.ContentObserver;
-import android.net.Uri;
-import android.os.Handler;
 
 /**
  * This class calls the the method onUpdate to update the widgets

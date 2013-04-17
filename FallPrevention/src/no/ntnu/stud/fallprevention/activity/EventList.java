@@ -4,9 +4,9 @@ import java.util.List;
 
 import no.ntnu.stud.fallprevention.R;
 import no.ntnu.stud.fallprevention.R.string;
-import no.ntnu.stud.fallprevention.auxiliary.EventListAdapter;
 import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
 import no.ntnu.stud.fallprevention.datastructures.Event;
+import no.ntnu.stud.fallprevention.listadapters.EventListAdapter;
 
 import android.app.ListActivity;
 import android.content.Intent;

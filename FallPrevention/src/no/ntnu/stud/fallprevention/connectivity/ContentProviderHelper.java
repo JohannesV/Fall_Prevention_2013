@@ -3,23 +3,18 @@ package no.ntnu.stud.fallprevention.connectivity;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import no.ntnu.stud.fallprevention.Constants;
 import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
-
 import android.annotation.SuppressLint;
 import android.content.ContentProviderClient;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.util.Log;
-import android.widget.Toast;
 
 /**
  * Retrives data from the contentprovider, interprets them, and passes them on
