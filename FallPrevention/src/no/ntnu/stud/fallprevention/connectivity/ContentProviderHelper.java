@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import no.ntnu.stud.fallprevention.auxiliary.Constants;
+import no.ntnu.stud.fallprevention.Constants;
 import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
 
 import android.annotation.SuppressLint;

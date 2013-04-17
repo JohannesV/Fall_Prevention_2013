@@ -1,4 +1,4 @@
-package no.ntnu.stud.fallprevention.auxiliary;
+package no.ntnu.stud.fallprevention;
 
 /**
  * Contains constants used elsewhere in the application
