@@ -37,6 +37,28 @@
 \contentsline {subsection}{\numberline {7.0.1}Falling: Causes, Consequences and how to avoid it}{28}{subsection.7.0.1}
 \contentsline {subsubsection}{Avoiding falls}{30}{section*.40}
 \contentsline {subsubsection}{Physiological aspects}{31}{section*.41}
+\contentsline {subsection}{\numberline {4.5.1}Supervisor}{15}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}Comparison}{15}{section.4.6}
+\contentsline {section}{\numberline {4.7}Management Tools}{15}{section.4.7}
+\contentsline {section}{\numberline {4.8}Work Breakdown Structure}{15}{section.4.8}
+\contentsline {chapter}{\numberline {5}Development Environment}{18}{chapter.5}
+\contentsline {section}{\numberline {5.1}LaTeX}{18}{section.5.1}
+\contentsline {section}{\numberline {5.2}Github}{18}{section.5.2}
+\contentsline {section}{\numberline {5.3}Eclipse with Android Development Tools Plugin}{19}{section.5.3}
+\contentsline {chapter}{\numberline {6}Implementation}{20}{chapter.6}
+\contentsline {section}{\numberline {6.1}Overall Architecture}{20}{section.6.1}
+\contentsline {section}{\numberline {6.2}Architecture of the App}{21}{section.6.2}
+\contentsline {section}{\numberline {6.3}Architecture of the Content Provider}{24}{section.6.3}
+\contentsline {section}{\numberline {6.4}Class description and diagram}{25}{section.6.4}
+\contentsline {section}{\numberline {6.5}Architecture of the Valens Step Detector}{25}{section.6.5}
+\contentsline {section}{\numberline {6.6}Research reports}{27}{section.6.6}
+\contentsline {chapter}{\numberline {7}Research and Alternate Solutions}{28}{chapter.7}
+\contentsline {subsection}{\numberline {7.0.1}Falling: Causes, Consequences and how to avoid it}{28}{subsection.7.0.1}
+\contentsline {subsubsection}{Avoiding falls}{30}{section*.30}
+\contentsline {subsubsection}{Physiological aspects}{31}{section*.31}
+\contentsline {subsubsection}{Avoiding falls}{30}{section*.30}
+\contentsline {subsubsection}{Physiological aspects}{31}{section*.31}
+>>>>>>> 94b988d72bcdad53704d035248237d9873f81bee
 \contentsline {subsection}{\numberline {7.0.2}Summary of interview with medical professionals}{33}{subsection.7.0.2}
 \contentsline {section}{\numberline {7.1}Alternate solutions}{34}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Endomondo Sports Tracker}{35}{subsection.7.1.1}
@@ -47,7 +69,11 @@
 \contentsline {section}{\numberline {8.1}Development Process}{37}{section.8.1}
 \contentsline {section}{\numberline {8.2}Core Algorithm}{37}{section.8.2}
 \contentsline {section}{\numberline {8.3}Application of the algorithm to live data}{39}{section.8.3}
+<<<<<<< HEAD
 \contentsline {section}{\numberline {8.4}Constant values}{41}{section.8.4}
+=======
+\contentsline {section}{\numberline {8.4}Constant values}{40}{section.8.4}
+>>>>>>> 94b988d72bcdad53704d035248237d9873f81bee
 \contentsline {chapter}{\numberline {A}Appendix}{42}{appendix.A}
 \contentsline {section}{\numberline {A.1}Mockups}{42}{section.A.1}
 \contentsline {section}{\numberline {A.2}Reports}{43}{section.A.2}
