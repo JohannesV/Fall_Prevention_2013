@@ -32,7 +32,7 @@ import android.widget.Toast;
  * 
  */
 public class StepMainService extends Service implements SensorEventListener {
-	private StepsManager mStepsManager;
+//	private StepsManager mStepsManager;
 	private SensorManager mSensorManager;
 	private Sensor mAccSensor;
 	private List<Float> mVectorLengths;
@@ -79,7 +79,6 @@ public class StepMainService extends Service implements SensorEventListener {
 			// Initialize lists
 			mVectorLengths = new ArrayList<Float>();
 			mTimeStamps = new ArrayList<Long>();
-			mStepsManager = new StepsManager(this);
 			
 			// Fetch mean and std from prefrences file
 			SharedPreferences sp = PreferenceManager
@@ -117,7 +116,6 @@ public class StepMainService extends Service implements SensorEventListener {
 			// If the service was called with a "stop" option, we should stop
 			// it.
 			mSensorManager.unregisterListener(this);
-			mStepsManager.finalStore();
 			stopForeground(true);
 			return Service.START_NOT_STICKY;
 		}
@@ -165,11 +163,6 @@ public class StepMainService extends Service implements SensorEventListener {
 		}
 		mTimeStamps = newTimeStamps;
 		mVectorLengths = newVectorLengths;
-	}
-
-	// Ordinary getter
-	public StepsManager getStepsManager() {
-		return mStepsManager;
 	}
 
 	// Ordinary setter

@@ -1,8 +1,6 @@
 package com.example.falltimeseries;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import android.content.ContentValues;
 import android.net.Uri;
 
@@ -53,16 +51,32 @@ public class DetectStepsThread implements Runnable {
 	}
 
 	/**
-	 * Stores the steps that have been found into the StepsManager, which subsequently 
-	 * will store them in the CP, discard them or retain them until more steps are pushed.
+	 * Stores the steps that have been found into the content provider
 	 * 
 	 * @param peakIndices - A list of which indices in the timeStamps list that correspond to peaks
 	 */
 	private void storeSteps(List<Integer> peakIndices) {
-		List<Long> steps = new ArrayList<Long>();
 		for (Integer i : peakIndices) {
-			steps.add(mTimeStamps.get(i));
+			pushToContentProvider(mTimeStamps.get(i));
 		}
-		activity.getStepsManager().addSteps(steps);
+	}
+	
+	/**
+	 * Connects to the content provider to store the time stamp of a single
+	 * step.
+	 * 
+	 * @param Step
+	 *            - The time stamp of the single step.
+	 */
+	public void pushToContentProvider(Long step) {
+		Uri uri = Uri
+				.parse("content://ntnu.stud.valens.contentprovider/raw_steps/");
+		// Define the row to insert
+		ContentValues rowToInsert = new ContentValues();
+		rowToInsert.put( "timestamp",step);
+		
+		rowToInsert.put( "source", Values.TAG);
+		// Insert row, hoping that everything works as expected.
+		activity.getContentResolver().insert(uri, rowToInsert);
 	}
 }

@@ -40,12 +40,11 @@
 \BOOKMARK [2][-]{subsection.7.1.4}{GPS Tracker}{section.7.1}% 40
 \BOOKMARK [0][-]{chapter.8}{Step Detection Algorithm}{}% 41
 \BOOKMARK [1][-]{section.8.1}{Development Process}{chapter.8}% 42
-\BOOKMARK [1][-]{section.8.2}{The Algorithm}{chapter.8}% 43
-\BOOKMARK [0][-]{chapter.9}{Step Detection Algorithm}{}% 44
-\BOOKMARK [1][-]{section.9.1}{Development Process}{chapter.9}% 45
-\BOOKMARK [1][-]{section.9.2}{The Algorithm}{chapter.9}% 46
-\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 47
-\BOOKMARK [1][-]{section.A.1}{Mockups}{appendix.A}% 48
-\BOOKMARK [1][-]{section.A.2}{Reports}{appendix.A}% 49
-\BOOKMARK [1][-]{section.A.3}{Apache license and notice}{appendix.A}% 50
-\BOOKMARK [1][-]{section.A.4}{Meeting summaries}{appendix.A}% 51
+\BOOKMARK [1][-]{section.8.2}{Core Algorithm}{chapter.8}% 43
+\BOOKMARK [1][-]{section.8.3}{Application of the algorithm to live data}{chapter.8}% 44
+\BOOKMARK [1][-]{section.8.4}{Constant values}{chapter.8}% 45
+\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 46
+\BOOKMARK [1][-]{section.A.1}{Mockups}{appendix.A}% 47
+\BOOKMARK [1][-]{section.A.2}{Reports}{appendix.A}% 48
+\BOOKMARK [1][-]{section.A.3}{Apache license and notice}{appendix.A}% 49
+\BOOKMARK [1][-]{section.A.4}{Meeting summaries}{appendix.A}% 50
