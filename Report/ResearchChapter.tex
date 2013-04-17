@@ -1,37 +1,16 @@
-\section{Research reports}
-The reports in this section represent research and information-gathering done by the group when it was thought necessary.
 \chapter{Research and Alternate Solutions}
-The group had to do research on real-world problems and solutions to similar problems. The reports produced by the group will be reproduced in this chapter.
+A significant part of the planning phase for the project consisted of research. Two areas which required research were identified:
+\begin{description}
+\item[Domain knowledge:] No member of the group had any familiarity with the application domain, neither with the specific domain (fall studies) nor any of the related domains (like healthcare, medicine or sport science). A basic understanding of the domain is critical for communication with the expert group, as well as for the ability to develop and assess solutions independently of the expert group.
+\item[Related software:] Related applications function as sources of inspiration, proofs of what is feasible to implement or even as aids during programming. Open source software can be partially or entirely incorporated into the code. Knowledge of related software can thus increase development efficiency.  
+\end{description}
+For each of the two areas of research, one member of the group was assigned to research and compile a concise report, so that the rest of the group could efficiently attain the required knowledge.   
+
+The two reports will be reproduced in the following sections.
+
 \input{FallingReport}
 
+\input{AlternateSolutions}
+
 \input{InterviewSummary}
-
-
-
-\section{Alternate solutions}
-There were several other open source programs and commercial programs used to solve related problems. In some cases the team could import and make use of the open source programs, and in others the team could be inspired by design and well-made interfaces and functions. Here is that report, as written:
-
-\subsection{Endomondo Sports Tracker}
-This application is used to track routes, times and progress in training and activities. It uses GPS (and accelerometer) to find position on maps and track the location. Very easy to use, and automatically syncs up to endomondo.com. Has an inspiring design and sync-functionality.
-The main part of Endomondo is the inspirational part to get people to move; you can compare yourself to others, e.g. friends, and you have a really easy way to see what an exercise is worth in amount of calories and amount of burgers burned by an exercise.
-
-A lot of aspects from this app can be used to design our own app in terms of labeling and representation of data.
-
-\subsection{GPS Status}
-This application is used to view detailed status about the GPS system on the phone. Has a very advanced interface with lots of numbers to show information, but for a rookie user the data rarely translates into information.
-
-The app succeeds to use the sensors very heavily.
-
-\subsection{Pedometer}\footnote{application can be found at \url{https://code.google.com/p/pedometer/}} 
-An open source app that has a GPLv3 license that is compatible with our Apache 2.0 license. The app uses the same sensors that we should focus on and opens up the opportunity for us to take advantage of it and skip leaps in the “how to do this on Android”-process. We can freely use code from this software that already works.
-
-From this we can use very much.
-\textbf{How does the step detection algorithm work?}
-Basically, it aggregates the sensor values, finds the maximum and minimum, and if the difference is bigger than a value (which depends on the sensitivity setting) then it counts it as a step. There's is some additional optimization, which I arrived to through experimentation.
-
-\subsection{GPS Tracker}\footnote{application can be found at: \url{https://code.google.com/p/open-gpstracker}}
-This program adds the capability to store and review where you and your Android device have been. Basically you press record at the start of your trip and your phone stores the route you take. This route is drawn real-time on the Maps functionality of Android or in the background with an idle device. The route is stored on your phone for review and further use. The applications tracks location by GPS, hence the name. An accurate description of the program type would be a GPS logger.
-
-It contains the ability to log location, something that could be useful for our application. Since it is open source and has a compatible license (GNU v3), we can use large part of it.
-
 

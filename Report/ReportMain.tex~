@@ -1,29 +1,13 @@
 \documentclass[12pt,a4paper]{report}
 
 \usepackage[utf8]{inputenc}
+\usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{setspace} 
 \usepackage{graphicx}
 \usepackage{array}
 \usepackage{pdfpages}
-\usepackage{mathtools}
-\usepackage{hyperref}
-\usepackage{nameref}
-
-%this is to make the \ref and \label command work at any text
-\makeatletter
-\let\orgdescriptionlabel\descriptionlabel
-\renewcommand*{\descriptionlabel}[1]{%
-  \let\orglabel\label
-  \let\label\@gobble
-  \phantomsection
-  \edef\@currentlabel{#1}%
-  %\edef\@currentlabelname{#1}%
-  \let\label\orglabel
-  \orgdescriptionlabel{#1}%
-}
-\makeatother
 
 \title{Group 08 FallPrevention}
 \author{
@@ -58,10 +42,7 @@
 \input{DevelopmentEnviromentChapter}
 \input{ImplementationChapter}
 \input{ResearchChapter}
-\input{StepDetection}
-\input{Bibliography}
 \input{AppendixPt1}
-
 
 
 \end{document}
