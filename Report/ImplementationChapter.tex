@@ -4,7 +4,7 @@
 \section{Overall Architecture}
 The product has been implement as a system of independent component applications where each component performs a well-defined task. The motivation behind the modular architecture is two-fold: Primarily, it was desirable that the underlying model for movement and fall risk be independent of the proof-of-concept application, in order to facilitate development of possible future applications employing the model. Likewise, it is desirable to enforce independence between the content provider and the sensor model. Secondly, the standards of Android application development state that a Content Provider should in itself solely provide a interface to the data. This implies that the sensor model, as well as any derivation of secondary data, should be performed in components independent of the Content Provider.
 
-The system that has been designed according to these principles therefore consists of five components: The content provider emph{Valens Content Provider}, the proof-of-concept application emph{Valens Health Helper}, the sensor model emph{Valens Step Detector} and a service of deriving secondary data emph{Valens Content Feeder}. Each of these components fulfils a well-defined role in the total application system: The content provider provides an interface to the data model. The sensor model listens to the sensor data, and feeds the content provider with the timestamps of any detected steps. The Content Feeder listens continually to changes to the data in the content provider. When the data changes, it uses the new data to calculate secondary data, such as gait speed and variability. Finally, the proof-of-concept application demonstrates one simple way in which the data provided by the content provider can be used as a part of a health-promoting app.
+The system that has been designed according to these principles therefore consists of five components: The content provider \emph{Valens Content Provider}, the proof-of-concept application \emph{Valens Health Helper}, the sensor model \emph{Valens Step Detector} and a service of deriving secondary data \emph{Valens Content Feeder}. Each of these components fulfils a well-defined role in the total application system: The content provider provides an interface to the data model. The sensor model listens to the sensor data, and feeds the content provider with the timestamps of any detected steps. The Content Feeder listens continually to changes to the data in the content provider. When the data changes, it uses the new data to calculate secondary data, such as gait speed and variability. Finally, the proof-of-concept application demonstrates one simple way in which the data provided by the content provider can be used as a part of a health-promoting app.
 
 \begin{figure}[p]
 
@@ -44,9 +44,9 @@ define the activities employed in running the app. In Android, an \emph{Activity
 \item[Connectivity classes]
 provide an interface for communication with the database and content providers. There are three connectivity classes:
 \begin{description}
-\item[ContentProviderHelper] handles communication with the content provider.
-\item[DatabaseHelper] handles communication with the database.
-\item[DatabaseContract] defines the strings used for table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one, as it avoids problem with misspelling table and column names.
+\item[ContentProviderHelper] handles communication with the content provider. In particular, it contains several methods that sends queries to the Content Provider, interprets the data, and returns useful values to the GUI activities.
+\item[DatabaseHelper] handles communication with the database. The database contains information necessary for the demo application to function, in particular events, messages and contact information.
+\item[DatabaseContract] defines the strings used for table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one, as it avoids problems with misspelling table and column names.
 \end{description}
 
 \item[Data structure classes]
