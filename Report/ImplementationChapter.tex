@@ -61,7 +61,7 @@ define the functionality of the widget. There are two widget classes:
 \item[WidgetProvider] creates the widget and provides it with a GUI. Is called by the Android OS when the user creates the widget.
 \item[WidgetUpdateService] takes care of updating the widget a regular intervals, by looking for new information in the content provider. Handles regular check with the help of an internal TimerTask class, Updater.
 \end{description}
-
+\end{description}
 \section{Architecture of the Content Provider}
 In android, Content Providers provide an interface to structured data of some sort. Access to for instance the list of contacts in the phone, or the phone's calendar is managed through standard content providers. Content Providers provide methods for inserting, updating and deleting relevant data. A major part of the assignment was to implement a Content Provider that gives developers access to structured movement data.
 
