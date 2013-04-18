@@ -1,9 +1,9 @@
-\chapter{Step Detection Algorithm}
+\section{Step Detection Algorithm}
 
-\section{Development Process}
+\subsection{Development Process}
 As the group had little experience in sensor use and signal processing, a series of experiments were conducted to better understand which sensors provide useful information for step detection, and which patterns predicate steps. To this end, a simple app was developed to observe sensor input and store the raw data as a file, which then could be transferred to a computer. A set of python scripts were written to plot  the data time series. Using python, the group experimented with different step detection algorithms, and a prototype was developed. Finally, the algorithm was implemented in the Valens Step Detector app, modified to work with live data.
 
-\section{Core Algorithm}
+\subsection{Core Algorithm}
 The current section will explain the algorithm used for step detection, formulated as an off-line algorithm. The following section will explain what changes was made to make the algorithm work for live data streams.
 
 Experiments showed that the accelerometer consistently gave the most predicative feedback patterns for step detection\footnote{None of the android phones available to the group at the time had a working gyroscope. It is suspected that a gyroscope can replace or supplement the accelerometer for more precise step detection, but this should tested empirically.}. Furthermore, it was found that the total acceleration was a better predicator of steps than acceleration along any of the single axes individually. To exploit this, a pre-processing step calculates the a vector length in euclidean space of the raw acceleration vector.
@@ -29,12 +29,12 @@ If two data points that have been classified as potential peaks are very close t
 
 The data points that remain after the application of the algorithm are counted as steps.
 
-\section{Application of the algorithm to live data}
+\subsection{Application of the algorithm to live data}
 The algorithm as stated above works on an off-line time series of data, and adapting it to work with live data requires some non-trivial decisions to be made, most of which will be explained and elaborated upon in this section. 
 
 While it is possible to change the algorithm to run completely on-line, classifying every new vector length data point as either a step or not, thus reporting steps exactly as the happen, this approach is problematic. Firstly, as no data exists past the newest data point, only the previous data points can be used for smoothing and peak strength calculation. This can potentially reduce the precision of smoothing and peak strength calculation significantly. Therefore, a semi-live approach has been taken, in which a fixed number of data points are collected before step detection is performed. The collected data is then discarded, and the process start over again. However, some care needs to be taken to ensure that all the data is used, and no data points are used multiple times. The first and last $k$ (the smoothing window) data points cannot be used for step detection, because there is not sufficient data to smooth them properly. Likewise, the first and last $n$ (peak strength window) data points cannot have their peak strength calculated properly, and are not used for step detection. Because of this, the last $2n + 2k$ data points are retained when the collected data is discarded, as the last $n+k$ data points have only been used for smoothing and peak strength calculation, not for step detection, and the $n+k$ data points before that - which have already been used for step detection - are required for smoothing and peak strength calculation in the next batch of data.
 
 Another issue when working with live data is how to calculate $\mu$ and $\sigma$. First of all, calculation of $\sigma$ requires the entire data series, but retaining the entire series of raw data in main memory is infeasible. Also, in a real life application long periods of inactivity will reduce $\mu$ to unnaturally low levels, potentially creating false positives during step detection. A better solution is to base calculation $\mu$ and $\sigma$ on actual movement data, so the values are adjusted to the relevant movement characteristics of the person. Based on these motivations, the app first requires the user to calibrate it by walking for 30 seconds. Values $\mu$ and $\sigma$ are thus calculated once based on the time series generated during calibration. 
 
-\section{Constant values}
+\subsection{Constant values}
 The constants used by the algorithm play a significant role, and finding good values for these constants is crucial for the performance of the algorithm. However, there it is impossible to know a priori which values give the desired result, but it should be noted that some of the constants (particularly the window size constants) are related to the frequency at which sensor data is generated\footnote{That is, the faster the sensor data is generated, the wider the windows can be without increasing the risk for mixing information between separate peaks.}. Because of this, most constant values have been found by empirical studies during the prototyping step, so there might exist room for improvement, but thorough empirical studies or machine learning techniques may be required to uncover better values for the constants.
