@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  18 APR 2013 13:20
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  18 APR 2013 15:18
 entering extended mode
 **ReportMain.tex
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
@@ -557,20 +557,20 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 \c@section@level=\count116
 )
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count117
@@ -586,19 +586,19 @@ LaTeX Font Info:    ... okay on input line 47.
 \everyMPtoPDFconversion=\toks26
 )
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 47.
-LaTeX Info: Redefining \ref on input line 47.
-LaTeX Info: Redefining \pageref on input line 47.
-LaTeX Info: Redefining \nameref on input line 47.
+Package hyperref Info: Link coloring OFF on input line 48.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
 
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.out)
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.out)
 \@outlinefile=\write3
-LaTeX Font Info:    Try loading font information for U+msa on input line 50.
+LaTeX Font Info:    Try loading font information for U+msa on input line 51.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 50.
+LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -610,7 +610,7 @@ dfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ...mberline {4.6}Comparison}{15}{section.4.6}
+l.24 ...}{\numberline {4.7}Plans}{17}{section.4.7}
                                                    [1
 
 ] [2])
@@ -688,26 +688,22 @@ ntChapter.tex [11
 Chapter 4.
 [12
 
-] [13] [14] [15] <Res/WBS15313.png, id=389, 3130.094pt x 1194.864pt>
+] <Res/WBS15313.png, id=376, 3130.094pt x 1194.864pt>
 File: Res/WBS15313.png Graphic file (type png)
 
 <use Res/WBS15313.png>
-Package pdftex.def Info: Res/WBS15313.png used on input line 63.
+Package pdftex.def Info: Res/WBS15313.png used on input line 35.
 (pdftex.def)             Requested size: 565.49881pt x 215.86845pt.
-
-
-LaTeX Warning: Float too large for page by 3.33212pt on input line 66.
-
-)
+ [13] [14 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/W
+BS15313.png>] [15] [16] [17])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\DevelopmentEnvi
-romentChapter.tex [16] [17 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_
-2013/Report/Res/WBS15313.png>]
+romentChapter.tex [18]
 Chapter 5.
-[18
+[19
 
 ])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ImplementationC
-hapter.tex [19]
+hapter.tex [20]
 Chapter 6.
 
 Overfull \hbox (5.47093pt too wide) in paragraph at lines 7--8
@@ -721,361 +717,357 @@ Overfull \hbox (0.2496pt too wide) in paragraph at lines 7--8
 ec-ondary data \OT1/cmr/m/it/12 Valens Con-tent Feeder\OT1/cmr/m/n/12 .
  []
 
-[20
+[21
 
-] <Res/OverallArchitecture.png, id=415, 796.576pt x 626.34pt>
+] <Res/OverallArchitecture.png, id=429, 796.576pt x 626.34pt>
 File: Res/OverallArchitecture.png Graphic file (type png)
 
 <use Res/OverallArchitecture.png>
 Package pdftex.def Info: Res/OverallArchitecture.png used on input line 16.
 (pdftex.def)             Requested size: 565.49881pt x 444.64716pt.
 
-<Res/GUIFlowchart.png, id=418, 1673.25125pt x 1766.6pt>
+<Res/GUIFlowchart.png, id=432, 1673.25125pt x 1766.6pt>
 File: Res/GUIFlowchart.png Graphic file (type png)
 
 <use Res/GUIFlowchart.png>
-Package pdftex.def Info: Res/GUIFlowchart.png used on input line 32.
+Package pdftex.def Info: Res/GUIFlowchart.png used on input line 33.
 (pdftex.def)             Requested size: 467.99881pt x 494.10551pt.
- [21] [22 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/O
-verallArchitecture.png>] [23 <C:/Users/Johannes/Documents/GitHub/Fall_Preventio
+ [22] [23 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/O
+verallArchitecture.png>] [24 <C:/Users/Johannes/Documents/GitHub/Fall_Preventio
 n_2013/Report/Res/GUIFlowchart.png>]
-<Res/mockupV2.png, id=435, 803.0pt x 1136.245pt>
+<Res/mockupV2.png, id=450, 803.0pt x 1136.245pt>
 File: Res/mockupV2.png Graphic file (type png)
  <use Res/mockupV2.png>
-Package pdftex.def Info: Res/mockupV2.png used on input line 41.
+Package pdftex.def Info: Res/mockupV2.png used on input line 42.
 (pdftex.def)             Requested size: 390.0pt x 296.48961pt.
 
-Overfull \hbox (2.0pt too wide) in paragraph at lines 41--42
+Overfull \hbox (2.0pt too wide) in paragraph at lines 42--43
 [][] 
  []
 
 
-Overfull \hbox (22.94696pt too wide) in paragraph at lines 54--55
+Overfull \hbox (22.94696pt too wide) in paragraph at lines 55--56
 []\OT1/cmr/m/n/12 provide an in-ter-face for com-mu-ni-ca-tion with the databas
 e
  []
 
-[24 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/mockupV
-2.png>] [25] <Res/ClassDiagram.png, id=461, 1289.81876pt x 767.86874pt>
+[25 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/mockupV
+2.png>] [26] <Res/ClassDiagram.png, id=475, 1289.81876pt x 767.86874pt>
 File: Res/ClassDiagram.png Graphic file (type png)
 
 <use Res/ClassDiagram.png>
-Package pdftex.def Info: Res/ClassDiagram.png used on input line 100.
+Package pdftex.def Info: Res/ClassDiagram.png used on input line 103.
 (pdftex.def)             Requested size: 467.99881pt x 278.61185pt.
- [26] [27 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/C
-lassDiagram.png (PNG copy)>] [28]
+ [27] [28 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/C
+lassDiagram.png (PNG copy)>] [29]
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\StepDetection.t
-ex [29] [30]
+ex [30] [31]
 
-LaTeX Warning: Citation `SimplePeakDetect' on page 31 undefined on input line 2
+LaTeX Warning: Citation `SimplePeakDetect' on page 32 undefined on input line 2
 6.
 
-[31]) [32])
+[32]) [33])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ResearchChapter
-.tex [33]
+.tex [34]
 Chapter 7.
 
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\FallingReport.t
-ex [34
+ex [35
 
-] [35] [36]
+] [36] [37]
 Overfull \hbox (1.10562pt too wide) in paragraph at lines 62--63
 []\OT1/cmr/m/n/12 Remove loose items that can make you trip (books, pa-pers, cl
 othes,
  []
 
-[37] [38])
+[38] [39])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\AlternateSoluti
-ons.tex [39] [40])
+ons.tex [40] [41])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\InterviewSummar
 y.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--7
 
  []
 
-[41]))
+[42]))
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\Bibliography.te
-x [42])
+x [43])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\AppendixPt1.tex
-[43
+[44
 
 ]
 Appendix A.
-<Res/WBS08313.png, id=604, 2219.492pt x 910.602pt>
+<Res/WBS08313.png, id=618, 2219.492pt x 910.602pt>
 File: Res/WBS08313.png Graphic file (type png)
  <use Res/WBS08313.png>
 Package pdftex.def Info: Res/WBS08313.png used on input line 15.
 (pdftex.def)             Requested size: 565.49881pt x 232.01286pt.
 
-<Res/WBS01313.png, id=605, 1679.073pt x 796.576pt>
+<Res/WBS01313.png, id=619, 1679.073pt x 796.576pt>
 File: Res/WBS01313.png Graphic file (type png)
  <use Res/WBS01313.png>
-Package pdftex.def Info: Res/WBS01313.png used on input line 27.
+Package pdftex.def Info: Res/WBS01313.png used on input line 28.
 (pdftex.def)             Requested size: 565.49881pt x 268.27975pt.
 
-
-LaTeX Warning: Float too large for page by 3.33212pt on input line 30.
-
-
-Underfull \hbox (badness 6859) in paragraph at lines 42--43
+Underfull \hbox (badness 6859) in paragraph at lines 44--45
 []|\OT1/cmr/m/n/12 Developing a mock-up ap-pli-ca-tion
  []
 
 
-Underfull \hbox (badness 6445) in paragraph at lines 46--47
+Underfull \hbox (badness 6445) in paragraph at lines 48--49
 \OT1/cmr/m/n/12 the pro-to-type (set-tings, statis-tics,
  []
 
 
-Underfull \hbox (badness 7203) in paragraph at lines 48--49
+Underfull \hbox (badness 7203) in paragraph at lines 50--51
 []|\OT1/cmr/m/n/12 Creating content-provider, cre-at-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
 \OT1/cmr/m/n/12 pre-sen-ta-tion, fin-ish-ing sec-ondary
  []
 
 
-Underfull \hbox (badness 3557) in paragraph at lines 60--61
+Underfull \hbox (badness 3557) in paragraph at lines 62--63
 []|\OT1/cmr/m/n/12 Creating own content-provider and
  []
 
 
-Underfull \hbox (badness 4819) in paragraph at lines 60--61
+Underfull \hbox (badness 4819) in paragraph at lines 62--63
 \OT1/cmr/m/n/12 step-detector, in-te-grat-ing all three
  []
 
 
-Underfull \hbox (badness 3291) in paragraph at lines 62--63
+Underfull \hbox (badness 3291) in paragraph at lines 64--65
 []|\OT1/cmr/m/n/12 Fixing doc-u-men-ta-tion ac-cord-ing to
  []
 
-[44
+[45
 
-] [45 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/WBS08
-313.png>] [46 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/R
-es/WBS01313.png>] [47] [48]
-<Res/Apache2license.pdf, id=633, page=1, 614.295pt x 794.97pt>
+] [46 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/WBS08
+313.png>] [47 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/R
+es/WBS01313.png>] [48] [49]
+<Res/Apache2license.pdf, id=647, page=1, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 72.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
  <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 72.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 72.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
  <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 72.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 72.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [49 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Apache
-2license.pdf>]
-<Res/Apache2license.pdf, id=649, page=2, 614.295pt x 794.97pt>
-File: Res/Apache2license.pdf Graphic file (type pdf)
-
-<use Res/Apache2license.pdf, page 2>
-Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 72.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/Apache2license.pdf Graphic file (type pdf)
- <use Res/Apache2license.pdf, page 2>
-Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 72.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/Apache2license.pdf Graphic file (type pdf)
-
-<use Res/Apache2license.pdf, page 2>
-Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 72.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [50 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Apache
 2license.pdf>]
-<Res/Apache2license.pdf, id=654, page=3, 614.295pt x 794.97pt>
+<Res/Apache2license.pdf, id=663, page=2, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
-<use Res/Apache2license.pdf, page 3>
-Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 72.
+<use Res/Apache2license.pdf, page 2>
+Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
- <use Res/Apache2license.pdf, page 3>
-Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 72.
+ <use Res/Apache2license.pdf, page 2>
+Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
-<use Res/Apache2license.pdf, page 3>
-Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 72.
+<use Res/Apache2license.pdf, page 2>
+Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [51 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Apache
 2license.pdf>]
-<Res/Apache2license.pdf, id=659, page=4, 614.295pt x 794.97pt>
+<Res/Apache2license.pdf, id=668, page=3, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
-<use Res/Apache2license.pdf, page 4>
-Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 72.
+<use Res/Apache2license.pdf, page 3>
+Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
- <use Res/Apache2license.pdf, page 4>
-Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 72.
+ <use Res/Apache2license.pdf, page 3>
+Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
-<use Res/Apache2license.pdf, page 4>
-Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 72.
+<use Res/Apache2license.pdf, page 3>
+Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [52 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Apache
 2license.pdf>]
-<Res/Apache2license.pdf, id=664, page=5, 614.295pt x 794.97pt>
+<Res/Apache2license.pdf, id=673, page=4, 614.295pt x 794.97pt>
+File: Res/Apache2license.pdf Graphic file (type pdf)
+
+<use Res/Apache2license.pdf, page 4>
+Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 74.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/Apache2license.pdf Graphic file (type pdf)
+ <use Res/Apache2license.pdf, page 4>
+Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 74.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/Apache2license.pdf Graphic file (type pdf)
+
+<use Res/Apache2license.pdf, page 4>
+Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 74.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [53 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Apache
+2license.pdf>]
+<Res/Apache2license.pdf, id=678, page=5, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 5>
-Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 72.
+Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
  <use Res/Apache2license.pdf, page 5>
-Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 72.
+Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 5>
-Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 72.
+Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [53 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Apache
-2license.pdf>] [54]
-<Res/StatusReportWeek9.pdf, id=676, page=1, 614.295pt x 794.97pt>
+ [54 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Apache
+2license.pdf>] [55]
+<Res/StatusReportWeek9.pdf, id=690, page=1, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 77
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
 .
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 77
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 77
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 77
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 77
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [55 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
-ReportWeek9.pdf>]
-<Res/StatusReportWeek9.pdf, id=692, page=2, 614.295pt x 794.97pt>
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 77
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 77
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 77
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [56 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
 ReportWeek9.pdf>]
-<Res/StatusReportWeek11.pdf, id=699, page=1, 614.295pt x 794.97pt>
+<Res/StatusReportWeek9.pdf, id=706, page=2, 614.295pt x 794.97pt>
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [57 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ReportWeek9.pdf>]
+<Res/StatusReportWeek11.pdf, id=713, page=1, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 7
-9.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
+1.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 7
-9.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
+1.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 7
-9.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
+1.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 7
-9.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
+1.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 7
-9.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [57 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
-ReportWeek11.pdf>]
-<Res/StatusReportWeek11.pdf, id=715, page=2, 614.295pt x 794.97pt>
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 7
-9.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 7
-9.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 7
-9.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
+1.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [58 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
+ReportWeek11.pdf>]
+<Res/StatusReportWeek11.pdf, id=729, page=2, 614.295pt x 794.97pt>
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 8
+1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 8
+1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek11.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 8
+1.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [59 <C:/Users/Johannes/Documents/GitHub/Fall_Prevention_2013/Report/Res/Status
 ReportWeek11.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 67.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 67.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 68.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 68.
 
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 67.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 67.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 68.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 68.
 Package rerunfilecheck Info: File `ReportMain.out' has not changed.
-(rerunfilecheck)             Checksum: 83AAD7A742F0BF06ECBE425C8DBA21CD;3861.
+(rerunfilecheck)             Checksum: B218582287C9ED18057CAE934984D6EB;4007.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 67.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 68.
  ) 
 Here is how much of TeX's memory you used:
- 8113 strings out of 493921
- 119205 string characters out of 3144868
- 206375 words of memory out of 3000000
- 11055 multiletter control sequences out of 15000+200000
+ 8118 strings out of 493921
+ 119270 string characters out of 3144868
+ 206410 words of memory out of 3000000
+ 11057 multiletter control sequences out of 15000+200000
  14853 words of font info for 58 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  42i,18n,43p,1561b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1097,9 +1089,9 @@ s/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ReportMain.pdf (59 pages, 1086103 bytes).
+Output written on ReportMain.pdf (60 pages, 1089311 bytes).
 PDF statistics:
- 819 PDF objects out of 1000 (max. 8388607)
- 188 named destinations out of 1000 (max. 500000)
- 573 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 833 PDF objects out of 1000 (max. 8388607)
+ 191 named destinations out of 1000 (max. 500000)
+ 589 words of extra memory for PDF output out of 10000 (max. 10000000)
 
