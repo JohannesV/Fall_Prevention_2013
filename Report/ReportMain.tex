@@ -30,8 +30,12 @@
 }
 \makeatother
 
+\newcommand*{\TitleFont}{%
+	\usefont{\encodingdefault}{\rmdefault}{b}{n}%
+	\fontsize{26}{26}%
+	\selectfont}
 
-\title{Valens - An Android application system to detect fall risk among the elderly}
+\title{\TitleFont Valens - An Android application system to detect fall risk among the elderly}
 \author{
   Vassdal, Johannes Willumsen\\
   \texttt{johannes.vassdal@gmail.com}
@@ -56,13 +60,12 @@
 
 \input{IntroductionChapter}
 \input{RequirementsChapter}
-%\input{AltSolutionsChapter}
-\input{TestingChapter}
+\input{ResearchChapter}
 
 \input{ProjectManagementChapter}
 \input{DevelopmentEnviromentChapter}
 \input{ImplementationChapter}
-\input{ResearchChapter}
+\input{TestingChapter}
 
 \input{Bibliography}
 \input{AppendixPt1}
