@@ -2,7 +2,6 @@
 This report collected information from several sources on the subject of falls among the elderly. Particular focus is given to risks and avoidance strategies.
 
 \subsection{Risk factors}
-
 There are several factors that predicate risk of falling. Typical risk factors are:
 \begin{itemize}
 \item 
@@ -34,14 +33,14 @@ There are several factors that predicate risk of falling. Typical risk factors a
 \end{itemize}
 \end{itemize}
 
-A fall is normally caused by the interaction of two or more of these risk factors. Home or environmental risk factors are involved in less than half of all falls. What this means is that more than half of all falls happen without the influence of environmental factors. The second and third most common single causes of falling are gait/balance disorders and dizziness/vertigo, followed by drop attacks, sudden falls without loss of consciousness or dizziness.
-	Many older adults are unaware of their risk factors, and therefore unable to take preventive actions. Even older adults with a history of falling have been given little education about the potential risk factors. Risk assessment, even self-administered, can be very beneficial, especially when the results are discussed with a healthcare provider.
-	It has been showed that many of the biological risk factors can be reduced by effectively. Specifically strength, gait and balance has been shown to be improvable in a number of studies.
-60 \% of falls happen in or around the house. While this sounds like a lot, older adults spend a lot of time at home, so one would expect this number to be higher.
+A fall is normally caused by the interaction of two or more of these risk factors, but home or environmental risk factors cause only 30-50\% of all falls\cite{cdcComProg,fallsRubenstein}. What this means is that more than half of all falls happen without any influence of environmental factors. Also, in most of these cases where external factors play a role, the fall is in reality caused by an interaction between these and physiological aspects. The second and third most common single causes of falling are gait/balance disorders and dizziness/vertigo, followed by \emph{drop attacks}, which are sudden falls without loss of consciousness or dizziness\cite{fallsRubenstein}. As the project task is to develop a model for physical movement, it might be necessary to down-prioritize identifying risk for dizziness/vertigo and drop attacks, as well as ignore and external factors, in order to focus of purely physiological aspects, such as gait or balance.
 
-\subsection{falls}
+Many older adults are unaware of their risk factors, and therefore unable to take preventive actions. Even older adults with a history of falling have normally been given little education about the potential risk factors. Any sort of risk assessment, is therefore be very beneficial, especially when the results are discussed with a healthcare provider\cite{cdcComProg}. This fact illustrates the usefulness of planned app. 
 
-One can easily reduce the risk of falling greatly by taking certain measures. A list of measures normally recommended by the authorities is given below:
+It has been showed that many of the biological risk factors can be reduced by effectively. Specifically strength, gait and balance has been shown to be improvable by simple exercise regimes - even for frail patients - in a number of studies\cite{cdcComProg, WHO, LMTassessPrev}. A potential focus area for the app can therefore be encouraging exercise and healthy lifestyles.
+
+\subsection{Advice for prevention}
+The individual can easily reduce the risk of falling greatly by taking certain measures. A list of measures normally recommended for older people in the target group by the authorities is given below\cite{cdcPreventFalls}:
 
 \begin{itemize}
 \item Begin a regular exercise program.
@@ -64,18 +63,9 @@ One can easily reduce the risk of falling greatly by taking certain measures. A 
 \item Make your home brighter.
 \item Repair broken or uneven steps and handrails in the staircase.
 \item Avoid using the staircase more than necessary, for instance by installing a light switch at the top as well as the bottom of the stairs. 
-\end{itemize}
-\item Miscellaneous:
-\begin{itemize}
 \item Wear shoes, even inside. Avoid walking barefoot or wearing slippers.
-\item Get up slowly after you sit or lie down.
-\item Keep yourself updated on your own medical conditions.
-\item Learn how to properly use your walking aids.
-\item Keep a healthy diet, drink enough water. Dehydration and malnutrition weaken your reflexes and attention.
 \end{itemize}
 \end{itemize}
-
-Medical personnel are recommended by researchers to prevent falling by treating medical conditions that cause falls, as well as reducing the risk factors in the individual. When a fall happens, medical personnel is advised to spend time inquiring the details related to the accident in order to understand the causes of falling for the individual, and then try to counteract these risks.
 
 \subsection{Physiological aspects}
 
@@ -112,9 +102,8 @@ Peripheral sensation
 \end{itemize}
 
 
-There exists an array of tests that can measure the performance on these aspects. Lord et al. \cite{LMTassessPrev} provides one possible set of tests. Some of these are likely possible to implement as a part of our application, but none of them are based on hip movement.
-	The test developed by Lord et al. \cite{LMTassessPrev} was used to classify older adults into fallers or non-fallers, and has an accuracy of 75 - 80 \% in different experiments. If a test which disregards hip movement patterns performs well, it indicates that hip movement is only a minor factor in detecting fall risk.
+There exists an array of tests that can measure the performance on these aspects. Lord et al. \cite{LMTassessPrev} provides one possible set of tests. Some of these are possible to implement in an app, but none of them are based on hip movement.
 
-Walking behaviour seems to be generally associated with falling. Lord et al. \cite{LLKgaitPatterns} shows that there is a negative correlation between falling and steps per minute, stride length and stride velocity. A positive correlation was shown between falling and stance duration and stance percentage. However, these physiological traits are all associated with old age, and old age is associated with falling, so the relation might be quite indirect.
+The test developed by Lord et al. \cite{LMTassessPrev} was used to classify older adults into fallers or non-fallers, and has an accuracy of $75-80\%$ in different experiments. If a test which disregards hip movement patterns performs well, there may be reasons to believe that hip movement is only a minor factor in detecting fall risk. However, 
 
-“In old age, the ‘strategy’ for maintaining balance after a slip shifts from the rapid correcting ‘hip strategy’ (fall avoidance through weight shifts at the hip) to the ‘step strategy’ (fall avoidance via a rapid step) to total loss of ability to correct in time to prevent a fall” \cite{fallsRubenstein}.
+Walking behaviour seems to be generally associated with falling. Lord et al. \cite{LLKgaitPatterns} shows that there is a negative correlation between falling and steps per minute, stride length and stride velocity. A positive correlation was shown between falling and stance duration and stance percentage. However, these physiological traits are all associated with old age, and old age is associated with falling, so the relation might be quite indirect. On the other hand, stride and stance as physiological aspects that can be measured with relative ease using a mobile phone.
