@@ -1,57 +1,54 @@
 \chapter{Requirements}
 The requirements for the different parts of the project were about the requirements for the application, the underlying model and content provider, and the documentation for the model and content provider. 
 
-\section{Final requirements}
-Several meetings with the customer and health experts led the initial requirements to be out of date and a little vague which led to new and updated requirements.
+\section{General requirements}
+The requirements presented by the customer at the beginning of the project can be summarized as follows:
+
+\begin{itemize}
+\item A model for fall risk assessment based on sensors in Android phones should be developed.
+\item The model should be accessible through a Content Provider.
+\item The model should be accompanied by a proof-of-concept demo application.
+\item The product should be available as open source through the Apache 2.0 license, explained below.
+\item Development should follow an incremental approach.
+\end{itemize}
+
+\section{Elaborating on the requirements}
+The initial requirements were too vague to base an implementation on, so the group worked on specifying the requirements further, in cooperation with the customer and later the health experts. The list of more precise requirement is presented below:
 
 \subsection{Functional requirements}
 \begin{itemize}
-\item An Android content provider that stores and makes the data available for other applications through an API. The content provider shall has the ability to show requested data apropiatly without any loss of information and in the way how the user wishes
+\item A standard Android content provider should provide an interface to the generated risk data. The data model should contain enough details to be able give at least a basic predication of fall risk. The data model should include:
 \begin{itemize}
-\item Measure gait speed: The application shall be able to detect the speed of the users gait so that this information can used as a element in the whole detection process. Thus the costumer required in order to detect the main parameter for falling.
-\item Measure gait variability: The application shall be able to detect the variability of the users gait. That will be one of the main part for understanding its fall behaviour and the reasons of his falling down. Thus the costumer required in order to detect the main parameter for falling.
-\item Measure steps: The ability to counting the steps in order to use their amount as a parameter for the walk/fall statistic.
-\item Filter out noise in terms of bad and unnatural movements.
+\item Gait speed - One of two major predicators of fall risk
+\item Gait variability - The other major predicators of fall risk
+\item Step count - A general measurement of health and activity level.
 \end{itemize}
-\item An example application that can visualize this data and represent them in a pedagogical manner.
+\item An example application should the developed. The demo application should:
 \begin{itemize}
-\item Ability to do self-tests: This functionality shall give a feedback for the user. Thus the costumer required in order to include the user in the health process.
-\begin{itemize}
-\item Reaction speed: This application shall give the time of the users reaction to include it in the detection.
-\item Stand up sit down capability
-\item Balance tests: This part of the application is to understand the balance of the user to include it in the detection.
-\end{itemize}
-\end{itemize}
-\item Documentation on the content provider that makes it usable by other groups in the future
+\item Appear as a health assistant, not as an application for fall risk assessment, as the elderly are reluctant to admit they have a risk for falling, and would not use such an application.
+\item Provide useful information for people without a computational background. This way the health people can assess the usefulness of the model without having to learn the computational details.
+\end{itemize}	
 \end{itemize}	
 
 \subsection{Nonfunctional requirements}
 \begin{itemize}
-\item 80\% of the elderly should manage to use the app within 10 minutes of education given that they have some prior knowledge of smartphones.
-\item Midly visually impaired should be able to use the application.
-\item Color blind should be able to use the application. These shall fulfilled for the reason that the application shall fulfill the requirement of easy-usability.
+\item Development should be done in short iterations, and results should be presentable at each weekly customer meeting.
+\item The demo application should be easy to use, even for elderly people unfamiliar with electronic equipment.
+\item The application system should be modular and well-documented, so that it is easy to implement new applications based on the content provider, as well as connect new data sources to the content provider.
 \end{itemize}	
 
 
 \section{Understanding the requirements}
 
-The requirements were specified after several meetings with the customer. The understanding the group had of the requirements before meeting the customer was not sufficient to create a set of requirements. The requirements were also subject to change as the project progressed. \\
+The requirements were specified after several meetings with the customer. The understanding the group had of the requirements before meeting the customer was not sufficient to create a rigorous set of requirements. Also, the requirements presented at the beginning of the project were vague, and needed more elaboration as the project progressed. \\
 
-The meetings served their purpose, and filled in a lot of holes that were missing from the preliminary description:
+The meetings with the customer served their purpose, and filled in a lot of holes that were missing from the preliminary description for the following reasons:
 \begin{itemize}
-\item The development process in question \footnote{See Chapter \ref{def:devProcess} for a description of the development process} uses a iterative approach. This essentially means that the requirements expands as the time goes, and to define the requirements from the beginning is impossible. This decision was made in collaboration with the customer.
-\item The team at SINTEF got a wide range of experts to help the group with health-specific features, e.g. making the algorithms to recognize movements.
-\item The customer expected weekly meetings with the whole group present, and that goals had been achieved before each meeting. At each meeting a new goal was set.
+\item In the beginning the development process used an incremental approach. This essentially means that the requirements expands as the time goes, and to define the requirements from the beginning was therefore impossible.
+\item Some of the requirements needed domain knowledge to be completely specified, and thus could not be set before the meeting with the health experts.
+\item The customer expected weekly meetings with the whole group present, and that goals had been achieved before each meeting. At each meeting a new goal was set. Later, however, the development process changed, and longer term goals and requirements could be formulated. 
 \end{itemize}
 
-\section{Initial requirements}
-
-According to the project description, the following should be developed:
-\begin{itemize}
-\item A model of physical movements based on common movement sensors found in Android smart phones.
-\item An Android content provider that stores and makes available the data in this model through an Application Programming Interface(API).
-\item An example application that can visualize this data. Thus for making the result visible and transparent.
-\end{itemize}
 \section{License}
 The results of the project was intended to be released under the Apache 2.0 license. It is an open source license, which can be found  at the following web site: \url{http://www.apache.org/licenses/LICENSE-2.0.html}\\
 Highlights of what can, cannot and must be done under the license is described here:\\
