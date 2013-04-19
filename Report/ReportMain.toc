@@ -5,22 +5,9 @@
 \contentsline {section}{\numberline {2.1}Final requirements}{6}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Functional requirements}{6}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Nonfunctional requirements}{7}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Understanding the requirements}{7}{section.2.2}
+\contentsline {section}{\numberline {2.2}Understanding the requirements}{8}{section.2.2}
 \contentsline {section}{\numberline {2.3}Initial requirements}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}License}{8}{section.2.4}
-\contentsline {section}{\numberline {2.5}Testing}{9}{section.2.5}
-\contentsline {chapter}{\numberline {3}Testing}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Levels, methods and types}{11}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Levels}{11}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Methods}{12}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Types}{13}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Plans and process}{13}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Unit testing}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Integration testing}{14}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}System testing (preliminary)}{15}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Acceptance testing}{15}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Testdata}{15}{section.3.3}
-\contentsline {section}{\numberline {3.4}Table for displaying tests}{16}{section.3.4}
+\contentsline {section}{\numberline {2.4}License}{9}{section.2.4}
 \contentsline {chapter}{\numberline {3}Testing}{10}{chapter.3}
 \contentsline {section}{\numberline {3.1}Levels, methods and types}{10}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Levels}{10}{subsection.3.1.1}
@@ -33,57 +20,11 @@
 \contentsline {subsection}{\numberline {3.2.4}Acceptance testing}{14}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}Tests used under development}{14}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}GUI Tests}{15}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.3}Tests used under development}{14}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}GUI Tests}{15}{subsection.3.3.1}
->>>>>>> 0d386e498cb889d8613920b8adec50011cffe88b
 \contentsline {chapter}{\numberline {4}Project Management}{17}{chapter.4}
 \contentsline {section}{\numberline {4.1}Terms}{17}{section.4.1}
 \contentsline {section}{\numberline {4.2}Management Tools}{18}{section.4.2}
 \contentsline {section}{\numberline {4.3}Work Breakdown Structure}{18}{section.4.3}
 \contentsline {section}{\numberline {4.4}Development process}{18}{section.4.4}
-<<<<<<< HEAD
-\contentsline {section}{\numberline {4.5}Software development}{20}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Agile software development}{20}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Iterative approach}{20}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Extreme programming}{21}{subsection.4.5.3}
-\contentsline {section}{\numberline {4.6}Group development method}{21}{section.4.6}
-\contentsline {section}{\numberline {4.7}Plans}{22}{section.4.7}
-\contentsline {section}{\numberline {4.8}Team Roles and Organization}{22}{section.4.8}
-\contentsline {subsection}{\numberline {4.8.1}The group}{22}{subsection.4.8.1}
-\contentsline {subsection}{\numberline {4.8.2}Supervisor}{22}{subsection.4.8.2}
-\contentsline {section}{\numberline {4.9}Comparison}{23}{section.4.9}
-\contentsline {chapter}{\numberline {5}Development Environment}{24}{chapter.5}
-\contentsline {section}{\numberline {5.1}LaTeX}{24}{section.5.1}
-\contentsline {section}{\numberline {5.2}Github}{24}{section.5.2}
-\contentsline {section}{\numberline {5.3}Eclipse with Android Development Tools Plugin}{25}{section.5.3}
-\contentsline {chapter}{\numberline {6}Implementation}{26}{chapter.6}
-\contentsline {section}{\numberline {6.1}Overall Architecture}{26}{section.6.1}
-\contentsline {section}{\numberline {6.2}Architecture of Valens Health Helper}{27}{section.6.2}
-\contentsline {section}{\numberline {6.3}Architecture of the Content Provider}{32}{section.6.3}
-\contentsline {section}{\numberline {6.4}Class description and diagram}{32}{section.6.4}
-\contentsline {section}{\numberline {6.5}Architecture of the Valens Step Detector}{33}{section.6.5}
-\contentsline {section}{\numberline {6.6}Step Detection Algorithm}{35}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Development Process}{35}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}Core Algorithm}{35}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3}Application of the algorithm to live data}{37}{subsection.6.6.3}
-\contentsline {subsection}{\numberline {6.6.4}Constant values}{38}{subsection.6.6.4}
-\contentsline {chapter}{\numberline {7}Research and Alternate Solutions}{40}{chapter.7}
-\contentsline {section}{\numberline {7.1}Falling: Causes, Consequences and how to avoid it}{41}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Risk factors}{41}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Advice for prevention}{42}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Physiological aspects}{44}{subsection.7.1.3}
-\contentsline {section}{\numberline {7.2}Related Applications}{45}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Endomondo Sports Tracker}{45}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}GPS Status}{46}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Pedometer\let \reserved@d =[\def \par }{46}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}GPS Tracker\let \reserved@d =[\def \par }{46}{subsection.7.2.4}
-\contentsline {section}{\numberline {7.3}Lessons learned}{47}{section.7.3}
-\contentsline {chapter}{\numberline {A}Appendix}{49}{appendix.A}
-\contentsline {section}{\numberline {A.1}Previous WBS}{49}{section.A.1}
-\contentsline {section}{\numberline {A.2}Reports}{49}{section.A.2}
-\contentsline {section}{\numberline {A.3}Apache license and notice}{54}{section.A.3}
-\contentsline {section}{\numberline {A.4}Meeting summaries}{60}{section.A.4}
-=======
 \contentsline {subsection}{\numberline {4.4.1}How Tasks are assigned}{20}{subsection.4.4.1}
 \contentsline {section}{\numberline {4.5}Software development}{20}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Agile software development}{20}{subsection.4.5.1}
@@ -129,6 +70,5 @@
 \contentsline {chapter}{\numberline {A}Appendix}{53}{appendix.A}
 \contentsline {section}{\numberline {A.1}Previous WBS}{53}{section.A.1}
 \contentsline {section}{\numberline {A.2}Reports}{53}{section.A.2}
-\contentsline {section}{\numberline {A.3}Apache license and notice}{57}{section.A.3}
-\contentsline {section}{\numberline {A.4}Meeting summaries}{63}{section.A.4}
->>>>>>> 0d386e498cb889d8613920b8adec50011cffe88b
+\contentsline {section}{\numberline {A.3}Apache license and notice}{63}{section.A.3}
+\contentsline {section}{\numberline {A.4}Meeting summaries}{69}{section.A.4}
