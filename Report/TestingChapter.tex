@@ -1,3 +1,45 @@
 \chapter{Testing}
+This chapter only touch the surface of general software testing, while focusing on methods, types and levels used in this project.
+\section{Levels, methods and types}
+Software testing is broken down into several levels, methods and types.
+\subsection{Levels}
+Software testing has four levels that corresponds to how far into the software development process the team has come. The first three test levels refers to the development process and the last level refers to completion, or after development.
+\begin{enumerate}
+\item Unit testing is the first level where all individual components, such as functions, are tested. Often these tests are done by inputting sample data and validating output.
+\item Integration testing is the next steps which takes groups of individual components to verify that they work together or to reveal faults in the integration.
+\item System testing is the last step of test in the development process where the complete system or software is tested to evaluate it's match to it's requirements.
+\item Acceptance testing is the last and highest level of testing where the system or software is tested to verify that it is acceptable for delivery. The test itself is usually Black Box Tests (see page \pageref{def:blackboxtesting}) to see if the customer will receive the desired and expected results.
+\end{enumerate}
+\subsection{Methods}
+The approach to software testing are called methods or techniques. Primarily there are two methods when testing software; black box testing, and white box testing.
+\begin{itemize}
+\item \label{def:blackboxtesting} Black Box Testing is named so because the internals of the software or system is not visible to the tester, like inside a dark black box. The tests are usually functional tests to reveal interface problems, functionality flaws, performance troubles, behaviour errors and incorrect or missing functions. This test method is usually done by independent testers with no programming or implementation knowledge. Mainly these test method is applicable at a higher level of testing; System testing and Acceptance testing.
+\item White Box Testing is a test method where the internals of a software or system is known to the tester, who usually is a programmer. Programming and implementation knowledge is required in this method since this method studies the code and goes way beyond the interface visible to the end user. The method is mainly applicable in lower levels of testing like Unit testing and Integration testing, but it is mostly used in Unit testing. The overall advantage of this test method is that testing can be started on in an earlier stage to make sure every bit of program produces correct output given an input and gives the opportunity to quickly correct problems.
+\end{itemize}
+\subsection{Types}
+Only some of the test types are mentioned in this chapter, though there are many different testing types not used in this process and therefore not covered.
+\begin{itemize}
+\item Smoke Testing, only tests major functions of a software or system to decide if it further testing should proceed. If the Smoke Tests fail, no further testing is necessary due to deeper testing will fail. A kind of Smoke Test could be to check if the software compiles and starts up. Smoke Tests should under no circumstance replace Functional or Regression Testing.
+\item Functional Testing, verifies if the software or system to have met its requirements or specifications. In functional testing, Black Box Testing is performed where the tester has no aspect of what is going on internally. See above explanation about Black Box Testing for more. When performing Functional Testing a set of inputs and expected outputs are matched up to one another, where they do not match the test fails. When performing this type of testing it is easy to miss logical errors due to the fact that the tester do not know what is going on underneath the code.
+\item Regression Testing, essentially re-tests previously verified tests to ensure that bug fixes, enhancements or optimization has not affected the system or software after a given change in code. The test type can be performed on any level, but is mostly relevant on the System Testing level when the bug fixing, optimization and enhancements are done. Many companies choose to automate these tests to save time and money when software or systems has changed.
+\end{itemize}
+\section{Plans and process}
+During the first period of development with the incremental process, test plans were not laid out due to the details of the process with no known end-results which would have added a lot of extra work redesigning testing plans after every customer meeting. After switching to agile development process testing got a lot more focus as described below.
+\subsection{Unit testing}
+Due to the, at first, incremental development process, unit testing was done on-the-fly to make sure that every methods worked as they should. When a code change in a specific method was done, the unit was again tested to verify new outputs. To make a test plan when developing incremental seemed unnecessary since the requirements changed and methods was created and removed all the time.
+
+When the process was changed to the agile development process, unit testing became more important to verify the output of each method during development, though the documentation and test were added after finishing a method. A unit test was never sufficiently documented before the initialization of method development. Please refer to tables x - x.
+\subsection{Integration testing}
+The integration of this project is divided into two levels; method- and system integration. Due to the fact that this project essentially consist of three standalone application every application was tested for themselves and then finally together.
+
+The first integration testing was every application for themselves. This was done by just trying to run the application and checking the outcome after every run and was mostly done by the developer themselves. The reason to choose this kind of approach to this form of testing was the fact that an integration test plan takes time to write and every application was very compact with few functions. There are of course negative sides of this kind of approach that includes lack of useful documentation, overlooking non-obvious failures and not knowing exactly how the final application should work. The alternative was to have a test plan worked out beforehand to follow and to explain all of this, but due to the lack of knowledge about testing and incremental processes this was neglected due to the reasons stated above.
+
+The second part of integration testing was the system as a whole while developing. This was also done by just trying to run the applications and checking that the data flow between the applications worked. In this stage a form of Smoke Testing were used by checking if the data storage increased (data being saved to the phone) and by checking the output in the GUI app (statistics screen showing data).
+\subsection{System testing (preliminary)}
+The second to last testing level were done almost parallel to the second part of the integration testing to verify that everything was working together and that it met requirements. Differing to the previous level of testing this part had tests laid out beforehand.
+
+The System Testing is although done a little bit after the main developing, where it was just testing all parts of visible software (Black Box Testing). All the faults, bugs and defects noted here were noted according to the tests laid out and fixed by a developer before further testing.
+\subsection{Acceptance testing}
+The last level was before handing over the final application to the customer, but testing in a production environment. The same tests were performed as in the System Testing level and bugs, faults and defects were again noted to be fixed before rolling out a new version for testing. After no tests failed the application were considered stable and delivered to the customer.
 \input{Testdata}
 \input{TestTable}
