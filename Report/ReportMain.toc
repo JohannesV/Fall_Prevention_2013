@@ -52,7 +52,7 @@
 \contentsline {subsection}{\numberline {7.2.2}GPS Status}{41}{subsection.7.2.2}
 \contentsline {subsection}{\numberline {7.2.3}Pedometer\let \reserved@d =[\def \par }{41}{subsection.7.2.3}
 \contentsline {subsection}{\numberline {7.2.4}GPS Tracker\let \reserved@d =[\def \par }{41}{subsection.7.2.4}
-\contentsline {section}{\numberline {7.3}Remarks on research}{42}{section.7.3}
+\contentsline {section}{\numberline {7.3}Lessons learned}{42}{section.7.3}
 \contentsline {chapter}{\numberline {A}Appendix}{44}{appendix.A}
 \contentsline {section}{\numberline {A.1}Previous WBS}{44}{section.A.1}
 \contentsline {section}{\numberline {A.2}Reports}{44}{section.A.2}
