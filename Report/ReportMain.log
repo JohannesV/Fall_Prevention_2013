@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.4.16)  19 APR 2013 13:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.4.16)  19 APR 2013 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -332,6 +332,13 @@ Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+\everycr=\toks19
+\minrowclearance=\skip48
+)
+\rownum=\count92
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -346,8 +353,8 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 File: pppdftex.def 2012/04/03 v0.4s Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box26
-\AM@toc@title=\toks19
-\c@AM@survey=\count92
+\AM@toc@title=\toks20
+\c@AM@survey=\count93
 \AM@templatesizebox=\box27
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
@@ -358,7 +365,7 @@ Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip48
+\@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -366,7 +373,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks20
+\@emptytoks=\toks21
 \ex@=\dimen109
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -376,13 +383,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count93
+\inf@bad=\count94
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count94
-\leftroot@=\count95
+\uproot@=\count95
+\leftroot@=\count96
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count96
-\DOTSCASE@=\count97
+\classnum@=\count97
+\DOTSCASE@=\count98
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
@@ -391,32 +398,32 @@ LaTeX Info: Redefining \cdots on input line 467.
 \big@size=\dimen111
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count98
-\c@MaxMatrixCols=\count99
+\macc@depth=\count99
+\c@MaxMatrixCols=\count100
 \dotsspace@=\muskip10
-\c@parentequation=\count100
-\dspbrk@lvl=\count101
-\tag@help=\toks21
-\row@=\count102
-\column@=\count103
-\maxfields@=\count104
-\andhelp@=\toks22
+\c@parentequation=\count101
+\dspbrk@lvl=\count102
+\tag@help=\toks22
+\row@=\count103
+\column@=\count104
+\maxfields@=\count105
+\andhelp@=\toks23
 \eqnshift@=\dimen112
 \alignsep@=\dimen113
 \tagshift@=\dimen114
 \tagwidth@=\dimen115
 \totwidth@=\dimen116
 \lineht@=\dimen117
-\@envbody=\toks23
-\multlinegap=\skip49
-\multlinetaggap=\skip50
-\mathdisplay@stack=\toks24
+\@envbody=\toks24
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-\g_MT_multlinerow_int=\count105
+\g_MT_multlinerow_int=\count106
 \l_MT_multwidth_dim=\dimen118
-\origjot=\skip51
+\origjot=\skip52
 \l_MT_shortvdotswithinadjustabove_dim=\dimen119
 \l_MT_shortvdotswithinadjustbelow_dim=\dimen120
 \l_MT_above_intertext_dim=\dimen121
@@ -478,15 +485,15 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen125
-\Hy@linkcounter=\count106
-\Hy@pagecounter=\count107
+\Hy@linkcounter=\count107
+\Hy@pagecounter=\count108
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count108
+\Hy@SavedSpaceFactor=\count109
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -498,14 +505,14 @@ Package hyperref Info: Plain pages OFF on input line 4077.
 Package hyperref Info: Backreferencing OFF on input line 4082.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4300.
-\c@Hy@tempcnt=\count109
+\c@Hy@tempcnt=\count110
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4653.
-\Fld@menulength=\count110
+\Fld@menulength=\count111
 \Field@Width=\dimen126
 \Fld@charsize=\dimen127
 Package hyperref Info: Hyper figures OFF on input line 5773.
@@ -517,24 +524,24 @@ Package hyperref Info: Link coloring with OCG OFF on input line 5798.
 Package hyperref Info: PDF/A mode OFF on input line 5803.
 LaTeX Info: Redefining \ref on input line 5843.
 LaTeX Info: Redefining \pageref on input line 5847.
-\Hy@abspage=\count111
-\c@Item=\count112
-\c@Hfootnote=\count113
+\Hy@abspage=\count112
+\c@Item=\count113
+\c@Hfootnote=\count114
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
-\Fld@listcount=\count114
-\c@bookmark@seq@number=\count115
+\Fld@listcount=\count115
+\c@bookmark@seq@number=\count116
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip52
+\Hy@SectionHShift=\skip53
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -542,57 +549,70 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count116
+\c@section@level=\count117
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+\TX@col@width=\dimen128
+\TX@old@table=\dimen129
+\TX@old@col=\dimen130
+\TX@target=\dimen131
+\TX@delta=\dimen132
+\TX@cols=\count118
+\TX@ftn=\toks26
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
 
-! LaTeX Error: Option clash for package xcolor.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 
-     
-The package xcolor has already been loaded with options:
-  []
-There has now been an attempt to load it with options
-  [table]
-Adding the global options:
-  ,table
-to your \documentclass declaration may fix this.
-Try typing  <return>  to proceed.
-
-(./ReportMain.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
+\captionmargin=\dimen133
+\captionmargin@=\dimen134
+\captionwidth=\dimen135
+\caption@indent=\dimen136
+\caption@parindent=\dimen137
+\caption@hangindent=\dimen138
+)
+\c@ContinuedFloat=\count119
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count120
+\c@subtable=\count121
+)
+(./ReportMain.aux (./Sprints.aux))
 \openout1 = `ReportMain.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen128
+\scratchcounter=\count122
+\scratchdimen=\dimen139
 \scratchbox=\box30
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen129
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks26
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen140
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
+\everyMPtoPDFconversion=\toks28
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -609,10 +629,10 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 49.
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
+Package hyperref Info: Link coloring OFF on input line 51.
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
 
 (./ReportMain.out)
 Runaway argument?
@@ -620,7 +640,7 @@ Runaway argument?
 ! File ended while scanning use of \@@BOOKMARK.
 <inserted text> 
                 \par 
-l.49 \begin{document}
+l.51 \begin{document}
                      
 I suspect you have forgotten a `}', causing me
 to read past where you wanted me to stop.
@@ -633,7 +653,7 @@ Runaway argument?
 ! File ended while scanning use of \@@BOOKMARK.
 <inserted text> 
                 \par 
-l.49 \begin{document}
+l.51 \begin{document}
                      
 I suspect you have forgotten a `}', causing me
 to read past where you wanted me to stop.
@@ -643,11 +663,13 @@ you'd better type `E' or `X' now and fix your file.
 \@outlinefile=\write3
 \openout3 = `ReportMain.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 52.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 54.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 52.
+LaTeX Font Info:    Try loading font information for U+msb on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -658,24 +680,24 @@ rning (ext4): destination with the same identifier (name{page.1}) has been alre
 ady used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ...Group development method}{16}{section.4.6}
+l.24 ...line {4}Project Management}{17}{chapter.4}
                                                    [1
 
-]
+] [2]
 Runaway argument?
 {\numberline {7.2.3}Pedometer\let \reserved@d =[\def 
 ! Paragraph ended before \contentsline was complete.
 <to be read again> 
                    \par 
-l.53 ....2.3}Pedometer\let \reserved@d =[\def \par
-                                                   }{41}{subsection.7.2.3}
+l.62 ....2.3}Pedometer\let \reserved@d =[\def \par
+                                                   }{46}{subsection.7.2.3}
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 ! Extra }, or forgotten \endgroup.
-l.53 ....3}Pedometer\let \reserved@d =[\def \par }
-                                                  {41}{subsection.7.2.3}
+l.62 ....3}Pedometer\let \reserved@d =[\def \par }
+                                                  {46}{subsection.7.2.3}
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -687,22 +709,22 @@ Runaway argument?
 ! Paragraph ended before \contentsline was complete.
 <to be read again> 
                    \par 
-l.54 ....4}GPS Tracker\let \reserved@d =[\def \par
-                                                   }{41}{subsection.7.2.4}
+l.63 ....4}GPS Tracker\let \reserved@d =[\def \par
+                                                   }{46}{subsection.7.2.4}
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 ! Extra }, or forgotten \endgroup.
-l.54 ...}GPS Tracker\let \reserved@d =[\def \par }
-                                                  {41}{subsection.7.2.4}
+l.63 ...}GPS Tracker\let \reserved@d =[\def \par }
+                                                  {46}{subsection.7.2.4}
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[2])
+)
 \tf@toc=\write4
 \openout4 = `ReportMain.toc'.
 
@@ -725,7 +747,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
-[7] [8]
+[7] [8] [9]
 Underfull \hbox (badness 10000) in paragraph at lines 110--110
 \OT1/cmr/m/n/12 on ap-pro-pri-ate
  []
@@ -760,29 +782,35 @@ Overfull \hbox (52.39996pt too wide) in paragraph at lines 91--116
 [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./TestingChapter.tex [9] [10]
+) (./TestingChapter.tex [10]
 Chapter 3.
-(./Testdata.tex) (./TestTable.tex)) (./ProjectManagementChapter.tex [11
+[11
 
-]
+] [12] [13] [14] (./Testdata.tex) (./TestTable.tex [15]
+Overfull \hbox (77.24728pt too wide) in paragraph at lines 3--25
+[] [] 
+ []
+
+)) (./ProjectManagementChapter.tex [16]
 Chapter 4.
-[12
+[17
 
-] <Res/WBS15313.png, id=356, 3130.094pt x 1194.864pt>
+] <Res/WBS15313.png, id=426, 3130.094pt x 1194.864pt>
 File: Res/WBS15313.png Graphic file (type png)
 
 <use Res/WBS15313.png>
 Package pdftex.def Info: Res/WBS15313.png used on input line 35.
 (pdftex.def)             Requested size: 565.49881pt x 215.86845pt.
- [13] [14 <./Res/WBS15313.png>] [15] [16] [17])
-(./DevelopmentEnviromentChapter.tex [18]
-Chapter 5.
-[19
+ [18] [19 <./Res/WBS15313.png>] [20] [21]
 
-]) (./ImplementationChapter.tex [20]
+LaTeX Warning: Reference `tab:sprintList' on page 22 undefined on input line 67
+.
+
+[22]) (./DevelopmentEnviromentChapter.tex [23]
+Chapter 5.
+[24
+
+]) (./ImplementationChapter.tex [25]
 Chapter 6.
 
 Overfull \hbox (5.47093pt too wide) in paragraph at lines 7--8
@@ -796,23 +824,23 @@ Overfull \hbox (0.2496pt too wide) in paragraph at lines 7--8
 ec-ondary data \OT1/cmr/m/it/12 Valens Con-tent Feeder\OT1/cmr/m/n/12 .
  []
 
-[21
+[26
 
-] <Res/OverallArchitecture.png, id=409, 796.576pt x 626.34pt>
+] <Res/OverallArchitecture.png, id=479, 796.576pt x 626.34pt>
 File: Res/OverallArchitecture.png Graphic file (type png)
 
 <use Res/OverallArchitecture.png>
 Package pdftex.def Info: Res/OverallArchitecture.png used on input line 16.
 (pdftex.def)             Requested size: 565.49881pt x 444.64716pt.
 
-<Res/GUIFlowchart.png, id=412, 1673.25125pt x 1766.6pt>
+<Res/GUIFlowchart.png, id=482, 1673.25125pt x 1766.6pt>
 File: Res/GUIFlowchart.png Graphic file (type png)
 
 <use Res/GUIFlowchart.png>
 Package pdftex.def Info: Res/GUIFlowchart.png used on input line 33.
 (pdftex.def)             Requested size: 467.99881pt x 494.10551pt.
- [22] [23 <./Res/OverallArchitecture.png>] [24 <./Res/GUIFlowchart.png>] <Res/m
-ockupV2.png, id=431, 803.0pt x 1136.245pt>
+ [27] [28 <./Res/OverallArchitecture.png>] [29 <./Res/GUIFlowchart.png>] <Res/m
+ockupV2.png, id=499, 803.0pt x 1136.245pt>
 File: Res/mockupV2.png Graphic file (type png)
 
 <use Res/mockupV2.png>
@@ -829,35 +857,35 @@ Overfull \hbox (22.94696pt too wide) in paragraph at lines 55--56
 e
  []
 
-[25 <./Res/mockupV2.png>] [26]
-<Res/ClassDiagram.png, id=456, 1289.81876pt x 767.86874pt>
+[30 <./Res/mockupV2.png>] [31]
+<Res/ClassDiagram.png, id=525, 1289.81876pt x 767.86874pt>
 File: Res/ClassDiagram.png Graphic file (type png)
 
 <use Res/ClassDiagram.png>
 Package pdftex.def Info: Res/ClassDiagram.png used on input line 103.
 (pdftex.def)             Requested size: 467.99881pt x 278.61185pt.
- [27] [28 <./Res/ClassDiagram.png (PNG copy)>]
-[29] (./StepDetection.tex [30] [31]
+ [32] [33] [34 <./Res/ClassDiagram.png (PNG copy)>]
+(./StepDetection.tex [35] [36]
 
-LaTeX Warning: Citation `SimplePeakDetect' on page 32 undefined on input line 2
+LaTeX Warning: Citation `SimplePeakDetect' on page 37 undefined on input line 2
 6.
 
-[32]) [33]) (./ResearchChapter.tex [34]
+[37]) [38]) (./ResearchChapter.tex [39]
 Chapter 7.
-(./FallingReport.tex [35
+(./FallingReport.tex [40
 
-] [36]
+] [41]
 
-LaTeX Warning: Citation `cdcPreventFalls' on page 37 undefined on input line 43
+LaTeX Warning: Citation `cdcPreventFalls' on page 42 undefined on input line 43
 .
 
-[37]
+[42]
 Overfull \hbox (1.10562pt too wide) in paragraph at lines 61--62
 []\OT1/cmr/m/n/12 Remove loose items that can make you trip (books, pa-pers, cl
 othes,
  []
 
-[38] [39]) (./AlternateSolutions.tex [40]
+[43] [44]) (./AlternateSolutions.tex [45]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\@ifnextchar' on input line 16.
@@ -1266,280 +1294,339 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-[41])) (./Bibliography.tex [42]) (./AppendixPt1.tex [43
+[46])) (./Bibliography.tex [47]) (./AppendixPt1.tex [48
 
 ]
 Appendix A.
-<Res/WBS08313.png, id=606, 2219.492pt x 910.602pt>
+<Res/WBS08313.png, id=676, 2219.492pt x 910.602pt>
 File: Res/WBS08313.png Graphic file (type png)
  <use Res/WBS08313.png>
 Package pdftex.def Info: Res/WBS08313.png used on input line 15.
 (pdftex.def)             Requested size: 565.49881pt x 232.01286pt.
 
-<Res/WBS01313.png, id=607, 1679.073pt x 796.576pt>
+<Res/WBS01313.png, id=677, 1679.073pt x 796.576pt>
 File: Res/WBS01313.png Graphic file (type png)
  <use Res/WBS01313.png>
 Package pdftex.def Info: Res/WBS01313.png used on input line 28.
 (pdftex.def)             Requested size: 565.49881pt x 268.27975pt.
 
-Underfull \hbox (badness 6859) in paragraph at lines 44--45
-[]|\OT1/cmr/m/n/12 Developing a mock-up ap-pli-ca-tion
- []
+[49
 
+] [50 <./Res/WBS08313.png>] [51 <./Res/WBS01313.png>]
+\openout2 = `Sprints.aux'.
 
-Underfull \hbox (badness 6445) in paragraph at lines 48--49
-\OT1/cmr/m/n/12 the pro-to-type (set-tings, statis-tics,
- []
+ (./Sprints.tex
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.4 \item[Sprint 1: 01.02.13 - 08.02.13] \hline
+                                                \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.6 \item[Sprint 2: 08.02.13 - 15.02.13] \hline
+                                                \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
-Underfull \hbox (badness 7203) in paragraph at lines 50--51
-[]|\OT1/cmr/m/n/12 Creating content-provider, cre-at-ing
- []
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.8 \item[Sprint 3: 15.02.13 - 22.02.13] \hline
+                                                \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.10 \item[Sprint 4: 22.02.13 - 01.03.13] \hline
+                                                 \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-\OT1/cmr/m/n/12 pre-sen-ta-tion, fin-ish-ing sec-ondary
- []
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.12 \item[Sprint 5: 01.03.13 - 08.03.13] \hline
+                                                 \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.14 \item[Sprint 6: 08.03.13 - 15.03.13] \hline
+                                                 \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
-Underfull \hbox (badness 3557) in paragraph at lines 62--63
-[]|\OT1/cmr/m/n/12 Creating own content-provider and
- []
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.16 \item[Sprint 7: 16.03.13 - 22.03.13] \hline
+                                                 \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.18 ...ster holidays: 23.03.13 - 02.04.13] \hline
+                                                   \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
-Underfull \hbox (badness 4819) in paragraph at lines 62--63
-\OT1/cmr/m/n/12 step-detector, in-te-grat-ing all three
- []
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.20 \item[Sprint 9: 03.04.13 - 5.04.13] \hline
+                                                \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
+[52
 
-Underfull \hbox (badness 3291) in paragraph at lines 64--65
-[]|\OT1/cmr/m/n/12 Fixing doc-u-men-ta-tion ac-cord-ing to
- []
+]
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.22 \item[Sprint 10: 6.04.13 - 12.04.13] \hline
+                                                 \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
-[44
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.24 \item[Sprint 11: 13.04.13 - 19.04.13] \hline
+                                                  \hfill \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
-] [45 <./Res/WBS08313.png>] [46 <./Res/WBS01313.png>] [47] [48]
-<Res/Apache2license.pdf, id=635, page=1, 614.295pt x 794.97pt>
+) [53] [54
+
+] <Res/Apache2license.pdf, id=720, page=1, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
  <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
  <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 1>
-Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [49 <./Res/Apache2license.pdf>]
-<Res/Apache2license.pdf, id=651, page=2, 614.295pt x 794.97pt>
+ [55 <./Res/Apache2license.pdf>]
+<Res/Apache2license.pdf, id=736, page=2, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 2>
-Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
  <use Res/Apache2license.pdf, page 2>
-Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 2>
-Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [50 <./Res/Apache2license.pdf>]
-<Res/Apache2license.pdf, id=656, page=3, 614.295pt x 794.97pt>
+ [56 <./Res/Apache2license.pdf>]
+<Res/Apache2license.pdf, id=741, page=3, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 3>
-Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
  <use Res/Apache2license.pdf, page 3>
-Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 3>
-Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [51 <./Res/Apache2license.pdf>]
-<Res/Apache2license.pdf, id=662, page=4, 614.295pt x 794.97pt>
+ [57 <./Res/Apache2license.pdf>]
+<Res/Apache2license.pdf, id=746, page=4, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 4>
-Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
  <use Res/Apache2license.pdf, page 4>
-Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 4>
-Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [52 <./Res/Apache2license.pdf>]
-<Res/Apache2license.pdf, id=667, page=5, 614.295pt x 794.97pt>
+ [58 <./Res/Apache2license.pdf>]
+<Res/Apache2license.pdf, id=751, page=5, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 5>
-Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
  <use Res/Apache2license.pdf, page 5>
-Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 5>
-Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 74.
+Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 40.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [53 <./Res/Apache2license.pdf>] [54]
-<Res/StatusReportWeek9.pdf, id=679, page=1, 614.295pt x 794.97pt>
+ [59 <./Res/Apache2license.pdf>] [60]
+<Res/StatusReportWeek9.pdf, id=763, page=1, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
 .
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [55 <./Res/StatusReportWeek9.pdf>]
-<Res/StatusReportWeek9.pdf, id=695, page=2, 614.295pt x 794.97pt>
+ [61 <./Res/StatusReportWeek9.pdf>]
+<Res/StatusReportWeek9.pdf, id=779, page=2, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 45
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [56 <./Res/StatusReportWeek9.pdf>]
-<Res/StatusReportWeek11.pdf, id=702, page=1, 614.295pt x 794.97pt>
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 45
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [62 <./Res/StatusReportWeek9.pdf>]
+<Res/StatusReportWeek11.pdf, id=786, page=1, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
-1.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
-1.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
-1.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
-1.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
-1.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 4
+7.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [57 <./Res/StatusReportWeek11.pdf>]
-<Res/StatusReportWeek11.pdf, id=718, page=2, 614.295pt x 794.97pt>
+ [63 <./Res/StatusReportWeek11.pdf>]
+<Res/StatusReportWeek11.pdf, id=803, page=2, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 8
-1.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek11.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 8
-1.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 4
+7.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 8
-1.
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 4
+7.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [58 <./Res/StatusReportWeek11.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 69.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 69.
+File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
-(./ReportMain.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 69.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 69.
+<use Res/StatusReportWeek11.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 4
+7.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [64 <./Res/StatusReportWeek11.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 71.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 71.
 
+(./ReportMain.aux (./Sprints.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 71.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 71.
+Package rerunfilecheck Info: File `ReportMain.out' has not changed.
+(rerunfilecheck)             Checksum: 15D73AE112C4894AA56B3CA83B3C07EC;4775.
 
-Package rerunfilecheck Warning: File `ReportMain.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `ReportMain.out':
-(rerunfilecheck)             Before: CE856DD89EF6E9A39890E8001E20BC7E;4147
-(rerunfilecheck)             After:  B129465DD4DFF26DD7DAEDD90A81F0A1;4143.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 69.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 71.
  ) 
 Here is how much of TeX's memory you used:
- 8094 strings out of 495059
- 115941 string characters out of 3182030
- 208973 words of memory out of 3000000
- 10916 multiletter control sequences out of 15000+200000
+ 9256 strings out of 495059
+ 136254 string characters out of 3182030
+ 231882 words of memory out of 3000000
+ 12026 multiletter control sequences out of 15000+200000
  14853 words of font info for 58 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 43i,18n,46p,1560b,501s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,18n,46p,1560b,460s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -1557,10 +1644,10 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ReportMain.pdf (59 pages, 1029866 bytes).
+Output written on ReportMain.pdf (65 pages, 1042090 bytes).
 PDF statistics:
- 824 PDF objects out of 1000 (max. 8388607)
- 698 compressed objects within 7 object streams
- 191 named destinations out of 1000 (max. 500000)
- 533 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 917 PDF objects out of 1000 (max. 8388607)
+ 784 compressed objects within 8 object streams
+ 220 named destinations out of 1000 (max. 500000)
+ 605 words of extra memory for PDF output out of 10000 (max. 10000000)
 
