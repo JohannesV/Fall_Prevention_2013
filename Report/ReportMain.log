@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.4.16)  19 APR 2013 11:53
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.4.16)  19 APR 2013 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,7 +616,7 @@ LaTeX Info: Redefining \nameref on input line 49.
 
 (./ReportMain.out)
 Runaway argument?
-{Pedometerapplication can be found at ` `\045\BOOKMARK [2][-]{subsect\ETC.
+{PedometerApplication can be found at ` `\045\BOOKMARK [2][-]{subsect\ETC.
 ! File ended while scanning use of \@@BOOKMARK.
 <inserted text> 
                 \par 
@@ -629,7 +629,7 @@ you'd better type `E' or `X' now and fix your file.
 
 (./ReportMain.out)
 Runaway argument?
-{Pedometerapplication can be found at ` `\045\BOOKMARK [2][-]{subsect\ETC.
+{PedometerApplication can be found at ` `\045\BOOKMARK [2][-]{subsect\ETC.
 ! File ended while scanning use of \@@BOOKMARK.
 <inserted text> 
                 \par 
@@ -1266,22 +1266,17 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-[41]) (./InterviewSummary.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--7
-
- []
-
-[42])) (./Bibliography.tex [43]) (./AppendixPt1.tex [44
+[41])) (./Bibliography.tex [42]) (./AppendixPt1.tex [43
 
 ]
 Appendix A.
-<Res/WBS08313.png, id=611, 2219.492pt x 910.602pt>
+<Res/WBS08313.png, id=607, 2219.492pt x 910.602pt>
 File: Res/WBS08313.png Graphic file (type png)
  <use Res/WBS08313.png>
 Package pdftex.def Info: Res/WBS08313.png used on input line 15.
 (pdftex.def)             Requested size: 565.49881pt x 232.01286pt.
 
-<Res/WBS01313.png, id=612, 1679.073pt x 796.576pt>
+<Res/WBS01313.png, id=608, 1679.073pt x 796.576pt>
 File: Res/WBS01313.png Graphic file (type png)
  <use Res/WBS01313.png>
 Package pdftex.def Info: Res/WBS01313.png used on input line 28.
@@ -1321,10 +1316,10 @@ Underfull \hbox (badness 3291) in paragraph at lines 64--65
 []|\OT1/cmr/m/n/12 Fixing doc-u-men-ta-tion ac-cord-ing to
  []
 
-[45
+[44
 
-] [46 <./Res/WBS08313.png>] [47 <./Res/WBS01313.png>] [48] [49]
-<Res/Apache2license.pdf, id=640, page=1, 614.295pt x 794.97pt>
+] [45 <./Res/WBS08313.png>] [46 <./Res/WBS01313.png>] [47] [48]
+<Res/Apache2license.pdf, id=636, page=1, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 1>
@@ -1348,8 +1343,8 @@ File: Res/Apache2license.pdf Graphic file (type pdf)
 <use Res/Apache2license.pdf, page 1>
 Package pdftex.def Info: Res/Apache2license.pdf, page1 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [50 <./Res/Apache2license.pdf>]
-<Res/Apache2license.pdf, id=656, page=2, 614.295pt x 794.97pt>
+ [49 <./Res/Apache2license.pdf>]
+<Res/Apache2license.pdf, id=652, page=2, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 2>
@@ -1364,8 +1359,8 @@ File: Res/Apache2license.pdf Graphic file (type pdf)
 <use Res/Apache2license.pdf, page 2>
 Package pdftex.def Info: Res/Apache2license.pdf, page2 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [51 <./Res/Apache2license.pdf>]
-<Res/Apache2license.pdf, id=662, page=3, 614.295pt x 794.97pt>
+ [50 <./Res/Apache2license.pdf>]
+<Res/Apache2license.pdf, id=657, page=3, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 3>
@@ -1380,8 +1375,8 @@ File: Res/Apache2license.pdf Graphic file (type pdf)
 <use Res/Apache2license.pdf, page 3>
 Package pdftex.def Info: Res/Apache2license.pdf, page3 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [52 <./Res/Apache2license.pdf>]
-<Res/Apache2license.pdf, id=667, page=4, 614.295pt x 794.97pt>
+ [51 <./Res/Apache2license.pdf>]
+<Res/Apache2license.pdf, id=663, page=4, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 4>
@@ -1396,8 +1391,8 @@ File: Res/Apache2license.pdf Graphic file (type pdf)
 <use Res/Apache2license.pdf, page 4>
 Package pdftex.def Info: Res/Apache2license.pdf, page4 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [53 <./Res/Apache2license.pdf>]
-<Res/Apache2license.pdf, id=672, page=5, 614.295pt x 794.97pt>
+ [52 <./Res/Apache2license.pdf>]
+<Res/Apache2license.pdf, id=668, page=5, 614.295pt x 794.97pt>
 File: Res/Apache2license.pdf Graphic file (type pdf)
 
 <use Res/Apache2license.pdf, page 5>
@@ -1412,8 +1407,8 @@ File: Res/Apache2license.pdf Graphic file (type pdf)
 <use Res/Apache2license.pdf, page 5>
 Package pdftex.def Info: Res/Apache2license.pdf, page5 used on input line 74.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [54 <./Res/Apache2license.pdf>] [55]
-<Res/StatusReportWeek9.pdf, id=684, page=1, 614.295pt x 794.97pt>
+ [53 <./Res/Apache2license.pdf>] [54]
+<Res/StatusReportWeek9.pdf, id=680, page=1, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
@@ -1442,30 +1437,30 @@ File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek9.pdf, page 1>
 Package pdftex.def Info: Res/StatusReportWeek9.pdf, page1 used on input line 79
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [55 <./Res/StatusReportWeek9.pdf>]
+<Res/StatusReportWeek9.pdf, id=696, page=2, 614.295pt x 794.97pt>
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
+.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
+
+<use Res/StatusReportWeek9.pdf, page 2>
+Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
 .
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [56 <./Res/StatusReportWeek9.pdf>]
-<Res/StatusReportWeek9.pdf, id=700, page=2, 614.295pt x 794.97pt>
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Res/StatusReportWeek9.pdf Graphic file (type pdf)
-
-<use Res/StatusReportWeek9.pdf, page 2>
-Package pdftex.def Info: Res/StatusReportWeek9.pdf, page2 used on input line 79
-.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [57 <./Res/StatusReportWeek9.pdf>]
-<Res/StatusReportWeek11.pdf, id=707, page=1, 614.295pt x 794.97pt>
+<Res/StatusReportWeek11.pdf, id=703, page=1, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 1>
@@ -1496,8 +1491,8 @@ File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/StatusReportWeek11.pdf, page1 used on input line 8
 1.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [58 <./Res/StatusReportWeek11.pdf>]
-<Res/StatusReportWeek11.pdf, id=723, page=2, 614.295pt x 794.97pt>
+ [57 <./Res/StatusReportWeek11.pdf>]
+<Res/StatusReportWeek11.pdf, id=719, page=2, 614.295pt x 794.97pt>
 File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 
 <use Res/StatusReportWeek11.pdf, page 2>
@@ -1516,7 +1511,7 @@ File: Res/StatusReportWeek11.pdf Graphic file (type pdf)
 Package pdftex.def Info: Res/StatusReportWeek11.pdf, page2 used on input line 8
 1.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [59 <./Res/StatusReportWeek11.pdf>])
+ [58 <./Res/StatusReportWeek11.pdf>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 69.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 69.
 
@@ -1530,42 +1525,48 @@ Package rerunfilecheck Warning: File `ReportMain.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `ReportMain.out':
-(rerunfilecheck)             Before: 162C7FF7A6078FBDEDF3CAED808C0437;4182
-(rerunfilecheck)             After:  D9417E5CFAA2FEE48A9BBC534898B654;4182.
+(rerunfilecheck)             Before: D9417E5CFAA2FEE48A9BBC534898B654;4182
+(rerunfilecheck)             After:  CE856DD89EF6E9A39890E8001E20BC7E;4147.
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 69.
  ) 
 Here is how much of TeX's memory you used:
- 8099 strings out of 495059
- 116022 string characters out of 3182030
+ 8095 strings out of 495059
+ 115957 string characters out of 3182030
  208973 words of memory out of 3000000
  10916 multiletter control sequences out of 15000+200000
  14853 words of font info for 58 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  43i,18n,46p,1560b,501s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ReportMain.pdf (60 pages, 1031230 bytes).
+pdfTeX warning (dest): name{subsection.7.2.5} has been referenced but does no
+t exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ReportMain.pdf (59 pages, 1028704 bytes).
 PDF statistics:
- 831 PDF objects out of 1000 (max. 8388607)
- 703 compressed objects within 8 object streams
- 193 named destinations out of 1000 (max. 500000)
+ 825 PDF objects out of 1000 (max. 8388607)
+ 699 compressed objects within 7 object streams
+ 192 named destinations out of 1000 (max. 500000)
  533 words of extra memory for PDF output out of 10000 (max. 10000000)
 

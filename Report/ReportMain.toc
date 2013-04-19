@@ -52,9 +52,9 @@
 \contentsline {subsection}{\numberline {7.2.2}GPS Status}{41}{subsection.7.2.2}
 \contentsline {subsection}{\numberline {7.2.3}Pedometer\let \reserved@d =[\def \par }{41}{subsection.7.2.3}
 \contentsline {subsection}{\numberline {7.2.4}GPS Tracker\let \reserved@d =[\def \par }{41}{subsection.7.2.4}
-\contentsline {subsection}{\numberline {7.2.5}Summary of interview with medical professionals}{42}{subsection.7.2.5}
-\contentsline {chapter}{\numberline {A}Appendix}{45}{appendix.A}
-\contentsline {section}{\numberline {A.1}Previous WBS}{45}{section.A.1}
-\contentsline {section}{\numberline {A.2}Reports}{45}{section.A.2}
-\contentsline {section}{\numberline {A.3}Apache license and notice}{49}{section.A.3}
-\contentsline {section}{\numberline {A.4}Meeting summaries}{55}{section.A.4}
+\contentsline {section}{\numberline {7.3}Remarks on research}{42}{section.7.3}
+\contentsline {chapter}{\numberline {A}Appendix}{44}{appendix.A}
+\contentsline {section}{\numberline {A.1}Previous WBS}{44}{section.A.1}
+\contentsline {section}{\numberline {A.2}Reports}{44}{section.A.2}
+\contentsline {section}{\numberline {A.3}Apache license and notice}{48}{section.A.3}
+\contentsline {section}{\numberline {A.4}Meeting summaries}{54}{section.A.4}
