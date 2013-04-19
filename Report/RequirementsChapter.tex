@@ -6,11 +6,11 @@ Several meetings with the customer and health experts led the initial requiremen
 
 \subsection{Functional requirements}
 \begin{itemize}
-\item An Android content provider that stores and makes the data available for other applications through an API.
+\item An Android content provider that stores and makes the data available for other applications through an API. The content provider shall has the ability to show requested data apropiatly without any loss of information and in the way how the user wishes
 \begin{itemize}
-\item Measure gait speed.
-\item Measure gait variability.
-\item Measure steps.
+\item Measure gait speed: The application shall be able to detect the speed of the users gait so that this information can used as a element in the whole detection process.
+\item Measure gait variability: The application shall be able to detect the variability of the users gait. That will be one of the main part for understanding its fallbehaviour and the reasons of his falling down.
+\item Measure steps: The ability to counting the steps in order to use their amount as a parameter for the walk/fall statistic.
 \item Filter out noise in terms of bad and unnatural movements.
 \end{itemize}
 \item An example application that can visualize this data and represent them in a pedagogical manner.

@@ -56,7 +56,7 @@ provide an interface for communication with the database and content providers. 
 \begin{description}
 \item[ContentProviderHelper] handles communication with the content provider. In particular, it contains several methods that sends queries to the Content Provider, interprets the data, and returns useful values to the GUI activities.
 \item[DatabaseHelper] handles communication with the database. The database contains information necessary for the demo application to function, in particular events, messages and contact information.
-\item[DatabaseContract] defines the strings used for table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one, as it avoids problems with misspelling table and column names.
+\item[DatabaseContract] defines the strings used for table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one. A database contract functions as a "contract" the define the legal interaction between the database and the application, by stating the legal table and column names.
 \end{description}
 
 \item[Data structure classes]
