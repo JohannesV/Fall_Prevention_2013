@@ -28,18 +28,18 @@ During the first period of development with the incremental process, test plans 
 \subsection{Unit testing}
 Due to the, at first, incremental development process, unit testing was done on-the-fly to make sure that every methods worked as they should. When a code change in a specific method was done, the unit was again tested to verify new outputs. To make a test plan when developing incremental seemed unnecessary since the requirements changed and methods was created and removed all the time.
 
-When the process was changed to the agile development process, unit testing became more important to verify the output of each method during development, though the documentation and test were added after finishing a method. A unit test was never sufficiently documented before the initialization of method development. Please refer to tables x - x.
+When the process was changed to the agile development process, unit testing became more important to verify the output of each method during development, though the documentation and test were added after finishing a method. A unit test was never sufficiently documented before the initialization of method development. Please refer to Section \ref{tab:TestsStart}.
 \subsection{Integration testing}
 The integration of this project is divided into two levels; method- and system integration. Due to the fact that this project essentially consist of three standalone application every application was tested for themselves and then finally together.
 
 The first integration testing was every application for themselves. This was done by just trying to run the application and checking the outcome after every run and was mostly done by the developer themselves. The reason to choose this kind of approach to this form of testing was the fact that an integration test plan takes time to write and every application was very compact with few functions. There are of course negative sides of this kind of approach that includes lack of useful documentation, overlooking non-obvious failures and not knowing exactly how the final application should work. The alternative was to have a test plan worked out beforehand to follow and to explain all of this, but due to the lack of knowledge about testing and incremental processes this was neglected due to the reasons stated above.
 
 The second part of integration testing was the system as a whole while developing. This was also done by just trying to run the applications and checking that the data flow between the applications worked. In this stage a form of Smoke Testing were used by checking if the data storage increased (data being saved to the phone) and by checking the output in the GUI app (statistics screen showing data).
-\subsection{System testing (preliminary)}
+\subsection{System testing (preliminary)} %TODO Finish chapter, remove preliminary in subsection title.
 The second to last testing level were done almost parallel to the second part of the integration testing to verify that everything was working together and that it met requirements. Differing to the previous level of testing this part had tests laid out beforehand.
 
 The System Testing is although done a little bit after the main developing, where it was just testing all parts of visible software (Black Box Testing). All the faults, bugs and defects noted here were noted according to the tests laid out and fixed by a developer before further testing.
 \subsection{Acceptance testing}
 The last level was before handing over the final application to the customer, but testing in a production environment. The same tests were performed as in the System Testing level and bugs, faults and defects were again noted to be fixed before rolling out a new version for testing. After no tests failed the application were considered stable and delivered to the customer.
-\input{Testdata}
+
 \input{TestTable}

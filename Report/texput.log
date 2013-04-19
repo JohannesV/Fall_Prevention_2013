@@ -2,6 +2,11 @@ This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdf
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  19 APR 2013 11:51
+entering extended mode
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  19 APR 2013 11:51
+entering extended mode
+>>>>>>> 0d386e498cb889d8613920b8adec50011cffe88b
 **ReportMain.tex
 
 ! Emergency stop.
@@ -11,11 +16,20 @@ entering extended mode
 
  
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  3 strings out of 495059
  111 string characters out of 3182030
  45057 words of memory out of 3000000
  3288 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
+=======
+ 2 strings out of 493921
+ 20 string characters out of 3144868
+ 49031 words of memory out of 3000000
+ 3400 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+>>>>>>> 0d386e498cb889d8613920b8adec50011cffe88b
  0i,0n,0p,1b,6s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!
