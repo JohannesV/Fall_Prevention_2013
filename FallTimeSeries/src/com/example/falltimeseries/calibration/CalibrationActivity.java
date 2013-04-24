@@ -2,12 +2,6 @@ package com.example.falltimeseries.calibration;
 
 import java.util.Timer;
 
-import com.example.falltimeseries.LaunchActivity;
-import com.example.falltimeseries.R;
-import com.example.falltimeseries.Values;
-import com.example.falltimeseries.R.layout;
-import com.example.falltimeseries.R.raw;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +10,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.falltimeseries.LaunchActivity;
+import com.example.falltimeseries.R;
+import com.example.falltimeseries.Values;
 
 public class CalibrationActivity extends Activity {
 

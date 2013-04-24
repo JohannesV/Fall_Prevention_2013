@@ -7,6 +7,7 @@ import java.util.List;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.util.Log;
 
 /**
  * A service that derives new data from data that already exists in the content
@@ -21,6 +22,25 @@ public class ManipulationService extends Service {
 	public static final long GROUP_GAP_THRESHOLD = 10000;
 	public static final long GROUP_SIZE_THRESHOLD = 10000;
 
+	/**
+	 * Method called by the startService() in the launch activity. Do no call
+	 * this method directly! Create an intent and call startService(intent)
+	 * instead.
+	 * 
+	 * This method has two functions: It can either start or stop the service.
+	 * Which of these action it performs, depends on the value of the "stop"
+	 * extra than can be put into the intent. If the "stop" extra is given the
+	 * value "true", this method stops the service. Otherwise, it starts the
+	 * service.
+	 * 
+	 * @param - All handled by the startService(intent) method.
+	 */
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		Log.v("ManipulationService", "OnStartCommand");
+		return Service.START_NOT_STICKY;
+	}
+	
 	/**
 	 * The calculation method handles the computation of gait parameters and
 	 * finds the true steps. Fetches the data for the last 24 hours from the
