@@ -92,6 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		final String FILL_INFO_9 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (1, 'SMS if sudden spike')";
 		final String FILL_INFO_10 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (2, 'SMS if gradual improvement')";
 		final String FILL_INFO_11 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (3, 'SMS if fall')";
+		final String FILL_INFO_12 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (1, 'Event_3', 'Event_3', \'sleep\')";
 		db.execSQL(CREATE_TABLE_1);
 		db.execSQL(CREATE_TABLE_2);
 		db.execSQL(CREATE_TABLE_3);
@@ -179,7 +180,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 		// Iterate over the data fetched
 		c.moveToFirst();
-		//Log.v("DatabaseHelper", DatabaseUtils.dumpCursorToString(c));
+		// Log.v("DatabaseHelper", DatabaseUtils.dumpCursorToString(c));
 		for (int i = 0; i < c.getCount(); i++) {
 			c.moveToPosition(i);
 			Event e = new Event(getLocalEventTitle(c.getString(0)),
@@ -205,30 +206,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		String mReturner = "";
 		if (origTitle.equalsIgnoreCase("brå bevegelser")) {
 			mReturner = context.getString(R.string.event_list_goodJob_title);
-		} else if (origTitle.equalsIgnoreCase("lite bevegelse")){
-			mReturner=context.getString(R.string.event_list_badJob_title);
-		}
-		else{
+		} else if (origTitle.equalsIgnoreCase("lite bevegelse")) {
+			mReturner = context.getString(R.string.event_list_badJob_title);
+		} else if (origTitle.equalsIgnoreCase("event_3")) {
+			mReturner = context.getString(R.string.event_list_noChange_title);
+		} else {
 			mReturner = origTitle;
 		}
 		return mReturner;
 	}
+
 	/**
 	 * a method for localizing the event description
+	 * 
 	 * @param origDesc
 	 * @return
 	 */
-	public String getLocalEventDescription(String origDesc){
-		String mReturner="";
-		if(origDesc.matches(".*abnormalt.*")){
-			mReturner=context.getString(R.string.event_list_goodJob_desc);
-		}
-		else if(origDesc.matches(".*lite.*")){
-			mReturner=context.getString(R.string.event_list_badJob_desc);
-		}else{
-			mReturner=origDesc;
+	public String getLocalEventDescription(String origDesc) {
+		String mReturner = "";
+		if (origDesc.matches(".*abnormalt.*")) {
+			mReturner = context.getString(R.string.event_list_goodJob_desc);
+		} else if (origDesc.matches(".*lite.*")) {
+			mReturner = context.getString(R.string.event_list_badJob_desc);
+		} else if (origDesc.equalsIgnoreCase("event_3")) {
+			mReturner = context.getString(R.string.event_list_noChange_desc);
+		} else {
+			mReturner = origDesc;
 		}
 		return mReturner;
+	}
+	
+	/**
+	 * adds one event of the appropriate type to the list of events
+	 * @return
+	 */
+	
+	public boolean dbAddEvent(int eventType){
+		SQLiteDatabase db= getWritableDatabase();
+		ContentValues values= new ContentValues();
+		values.put(DatabaseContract.Event.COLUMN_NAME_TYPEID, eventType);
+		db.insert("Event", null, values);
+		return true;
 	}
 
 	/**
@@ -284,10 +302,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		// information found by the search
 		Log.v("DatabaseHelper", DatabaseUtils.dumpCursorToString(c));
 		for (int i = 0; i < c.getColumnCount(); i++) {
-			if(c.getColumnName(i).equalsIgnoreCase("description")){
-				stringMap.put(c.getColumnName(i), getLocalEventDescription(c.getString(i)));
-			}else{
-			stringMap.put(c.getColumnName(i), getLocalEventTitle(c.getString(i)));
+			if (c.getColumnName(i).equalsIgnoreCase("description")) {
+				stringMap.put(c.getColumnName(i),
+						getLocalEventDescription(c.getString(i)));
+			} else {
+				stringMap.put(c.getColumnName(i),
+						getLocalEventTitle(c.getString(i)));
 			}
 		}
 
