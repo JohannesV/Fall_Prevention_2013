@@ -1,5 +1,8 @@
 package no.ntnu.stud.fallprevention.activity;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import no.ntnu.stud.fallprevention.R;
 import no.ntnu.stud.fallprevention.R.drawable;
 import no.ntnu.stud.fallprevention.R.id;
@@ -18,6 +21,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.format.DateUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -83,6 +87,25 @@ public class MainScreen extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		
+		new Thread(){
+			Timer autoUpdate;
+			@Override
+			public void run(){
+			   autoUpdate = new Timer();
+			   autoUpdate.schedule(new TimerTask() {
+			      @Override
+			      public void run() {
+			           runOnUiThread(new Runnable() {
+			              public void run() {
+			                  // TODO
+			            	  new ContentProviderHelper(getApplicationContext()).pushNotification(status.getCode());
+			              }
+			           });
+			      }
+			    },0,DateUtils.HOUR_IN_MILLIS);//updates each hour
+			 }
+			 }.start();
 		updateVisible();
 	}
 
