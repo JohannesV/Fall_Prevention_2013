@@ -74,7 +74,6 @@ public class DetectStepsThread implements Runnable {
 		// Define the row to insert
 		ContentValues rowToInsert = new ContentValues();
 		rowToInsert.put( "timestamp",step);
-		
 		rowToInsert.put( "source", Values.TAG);
 		// Insert row, hoping that everything works as expected.
 		activity.getContentResolver().insert(uri, rowToInsert);

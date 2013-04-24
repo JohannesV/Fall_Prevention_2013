@@ -9,7 +9,8 @@
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -37,6 +38,16 @@
             android:name="com.example.falltimeseries.CalibrationActivity"
             android:label="@string/title_activity_calibration" >
         </activity>
+
+        <receiver
+            android:name=".StepMainServiceStarter"
+            android:enabled="true"
+            android:exported="false"
+            android:label="StepDetector" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
