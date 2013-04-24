@@ -22,16 +22,17 @@ public class ManipulationService extends Service {
 		// Find the true steps steps. I.e. the steps from the source with the
 		// most steps.
 		List<Long> bestSource = new ArrayList<Long>();
-		for (List<Long> stepList : rawSteps){
-			if(stepList.size() > bestSource.size()){
+		for (List<Long> stepList : rawSteps) {
+			if (stepList.size() > bestSource.size()) {
 				bestSource = stepList;
 			}
 		}
 		// Store the true steps into the content provider
 		cph.storeTrueSteps(bestSource);
-		// Find the mean and std for the period
-		// double[] meanAndStd = findStepIntervals(steps);
-
+		// Find the gait parameters for the true steps of the period and store
+		// them in the content provider
+		double[] gaitParameters = findStepIntervals(bestSource);
+		cph.storeGaitParameters(gaitParameters);
 	}
 
 	private double[] findStepIntervals(List<Long> steps) {
