@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class CPValensDB extends SQLiteOpenHelper{
 	private static final String DATABASE_NAME="valens.db";
-	private static final int DATABASE_VERSION=1;
+	private static final int DATABASE_VERSION=2;
 
 	public static final String COMMA = ", ";
 	public static final String START_PAR = " (";
