@@ -8,12 +8,26 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+/**
+ * A service that derives new data from data that already exists in the content
+ * provider. In particular, it derives true steps based on the most reliable
+ * step detector, and calculates gait parameters (speed and variability).
+ * 
+ * @author Elias
+ * 
+ */
 public class ManipulationService extends Service {
 
 	public static final long GROUP_GAP_THRESHOLD = 10000;
 	public static final long GROUP_SIZE_THRESHOLD = 10000;
 
-	public void calculate() {
+	/**
+	 * The calculation method handles the computation of gait parameters and
+	 * finds the true steps. Fetches the data for the last 24 hours from the
+	 * content provider. After calculation, it stores the information back into
+	 * the proper tables in the content provider.
+	 */
+	private void calculate() {
 		ContentProviderHelper cph = new ContentProviderHelper(this);
 		// Get the raw steps for the last 24hours.
 		Timestamp now = ContentProviderHelper.getHoursBack(0);
@@ -31,11 +45,19 @@ public class ManipulationService extends Service {
 		cph.storeTrueSteps(bestSource);
 		// Find the gait parameters for the true steps of the period and store
 		// them in the content provider
-		double[] gaitParameters = findStepIntervals(bestSource);
-		cph.storeGaitParameters(gaitParameters);
+		double[] gaitParameters = findGaitParameters(bestSource);
+		cph.storeGaitParameters(gaitParameters, bestSource);
 	}
 
-	private double[] findStepIntervals(List<Long> steps) {
+	/** 
+	 * Finds the gait parameters based on a list of steps. 
+	 * 
+	 * @param steps
+	 * 		- The list of steps that gait parametes should be calculated from.
+	 * @return 
+	 * 		- An array of doubles containing two elements, the first being the gait speed, the second being the gait variability.
+	 */
+	private double[] findGaitParameters(List<Long> steps) {
 		// Stores intervals and the current step group temporarily
 		List<Long> tempIntervals = new ArrayList<Long>();
 		List<Long> tempGroup = new ArrayList<Long>();
@@ -110,7 +132,7 @@ public class ManipulationService extends Service {
 	 *            - a list of numbers
 	 * @return the mean
 	 */
-	public static double calculateMean(List<Long> values) {
+	private static double calculateMean(List<Long> values) {
 		double mean = 0.0f;
 		for (Long f : values) {
 			mean += f;
@@ -127,7 +149,7 @@ public class ManipulationService extends Service {
 	 *            - the mean for the same list of numbers
 	 * @return the standard deviation
 	 */
-	public static double calculateStd(List<Long> values, double mean) {
+	private static double calculateStd(List<Long> values, double mean) {
 		double std = 0.0f;
 		for (Long f : values) {
 			std += (f - mean) * (f - mean);
