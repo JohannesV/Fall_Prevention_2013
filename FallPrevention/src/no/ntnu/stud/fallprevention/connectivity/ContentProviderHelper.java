@@ -26,7 +26,7 @@ import android.util.Log;
 @SuppressLint("NewApi")
 public class ContentProviderHelper {
 
-	private Context context;
+	Context context;
 	private final static String TAG = "ContentProviderHelper";
 
 	public ContentProviderHelper(Context context) {
@@ -43,12 +43,12 @@ public class ContentProviderHelper {
 
 		Log.v(TAG, "Getting step count");
 		double mStepCount = 0;
-		// Find the content provider using a unique resource identifier (URI)
+		// Setting variables for the query
+		// sets the unique resource identifier for the data
 		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
 		ContentProviderClient stepsProvider = context.getContentResolver()
 				.acquireContentProviderClient(uri);
 
-		// Setting variables for the query
 		uri = Uri.parse("content://ntnu.stud.valens.contentprovider/raw_steps");
 		// sets the projection part of the query
 		String[] projection = new String[] { "count(timestamp) as count" };
@@ -79,13 +79,16 @@ public class ContentProviderHelper {
 			e.printStackTrace();
 		} catch (RemoteException e) {
 			// Remote binding problems
-			Log.v(TAG, e.toString());
+
 			e.printStackTrace();
 		} catch (NullPointerException e) {
 			// Nullpointer problems
+
 			Log.v(TAG, e.toString());
 			e.printStackTrace();
 		}
+		// Toast.makeText(context, String.valueOf(mStepCount),
+		// Toast.LENGTH_LONG).show();
 		return (int) mStepCount;
 	}
 
@@ -114,16 +117,6 @@ public class ContentProviderHelper {
 		return (Integer) null;
 	}
 
-	/**
-	 * gait variability for particular time period
-	 * 
-	 * @param start
-	 * @param stop
-	 * @return
-	 */
-	public int getGaitVariability(Timestamp start, Timestamp stop) {
-		return (Integer) null;
-	}
 
 	/**
 	 * returns a Riskstatus depending on amounts of steps taken
@@ -143,6 +136,56 @@ public class ContentProviderHelper {
 
 		return returner;
 	}
+	public double getGaitVariability(Timestamp start, Timestamp stop){
+		double returner=-1;
+		// Setting variables for the query
+				// sets the unique resource identifier for the data
+				Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
+				ContentProviderClient stepsProvider = context.getContentResolver()
+						.acquireContentProviderClient(uri);
+
+				uri = Uri.parse("content://ntnu.stud.valens.contentprovider/gaits");
+				// sets the projection part of the query
+				String[] projection = new String[] { "gaitVariability" };
+				// sets the selection part of the query
+				//TODO fix query according to specifications
+				String selection =  "start > " + start.getTime() +
+									 " AND stop < " + stop.getTime();
+										 
+				// not used, therefore null
+				String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
+				// no need for sorting
+				String sortOrder = null;
+
+				// uses variables to construct query
+				Log.v(TAG, "Attempting query");
+				try {
+					// Everything in order
+					Cursor cursor = stepsProvider.query(uri, projection, selection,
+							selectionArgs, sortOrder);
+					cursor.moveToFirst();
+					Log.v(TAG, "Variability: " + String.valueOf(cursor.getString(0)));
+					returner = cursor.getDouble(0);
+					Log.v(TAG, String.valueOf(returner));
+					Log.v(TAG, "Query done without errors!");
+
+				} catch (SQLException e) {
+					// SQL problems
+					Log.v(TAG, e.toString());
+					e.printStackTrace();
+				} catch (RemoteException e) {
+					// Remote binding problems
+
+					e.printStackTrace();
+				} catch (NullPointerException e) {
+					// Nullpointer problems
+
+					Log.v(TAG, e.toString());
+					e.printStackTrace();
+				}
+		
+		return returner;
+	}
 
 	/**
 	 * returns a code for the appropriate riskstatus, given steps registered in
@@ -155,13 +198,13 @@ public class ContentProviderHelper {
 		double dayOne = getStepCount(getHoursBack(24), getHoursBack(0));
 		double dayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
 		int returner = 3;
-		DatabaseHelper dbh= new DatabaseHelper(context);
+		
 		if (dayOne > Constants.GOOD_STEPS_NUMBER) {
 			returner = RiskStatus.VERY_GOOD_JOB.getCode();
 		} else {
 			if (dayOne < dayTwo) {
 				if (dayOne * 100 / dayTwo > Constants.SMALL_CHANGE_THRESHOLD) {
-					dbh.dbAddEvent(0);
+					
 					returner = RiskStatus.OK_JOB.getCode();
 				} else if (dayOne * 100 / dayTwo > Constants.LARGE_CHANGE_THRESHOLD) {
 					returner = RiskStatus.NOT_SO_OK_JOB.getCode();
@@ -180,8 +223,20 @@ public class ContentProviderHelper {
 
 			}
 		}
+		pushNotification(returner);
 		return returner;
 
+	}
+
+	private void pushNotification(int returner) {
+		DatabaseHelper dbh= new DatabaseHelper(context);
+		if(returner==RiskStatus.OK_JOB.getCode()){
+			dbh.dbAddEvent(2);
+		}else if(returner==RiskStatus.BAD_JOB.getCode()){
+			dbh.dbAddEvent(1);
+		}else if(returner==RiskStatus.VERY_GOOD_JOB.getCode()){
+			dbh.dbAddEvent(0);
+		}
 	}
 
 	public void cpGetEventList() {
