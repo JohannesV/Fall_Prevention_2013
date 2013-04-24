@@ -45,7 +45,11 @@ public class ManipulationService extends Service {
 		cph.storeTrueSteps(bestSource);
 		// Find the gait parameters for the true steps of the period and store
 		// them in the content provider
+<<<<<<< HEAD
 		double[] gaitParameters = findGaitParameters(bestSource);
+=======
+		double[] gaitParameters = findStepIntervals(bestSource);
+>>>>>>> b154ec0c27e3572e5f3ba9dc12173873157a8bcb
 		cph.storeGaitParameters(gaitParameters, bestSource);
 	}
 
