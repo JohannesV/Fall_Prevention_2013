@@ -158,11 +158,13 @@ public class ContentProviderHelper {
 		double dayOne = getStepCount(getHoursBack(24), getHoursBack(0));
 		double dayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
 		int returner = 3;
+		DatabaseHelper dbh= new DatabaseHelper(context);
 		if (dayOne > Constants.GOOD_STEPS_NUMBER) {
 			returner = RiskStatus.VERY_GOOD_JOB.getCode();
 		} else {
 			if (dayOne < dayTwo) {
 				if (dayOne * 100 / dayTwo > Constants.SMALL_CHANGE_THRESHOLD) {
+					dbh.dbAddEvent(0);
 					returner = RiskStatus.OK_JOB.getCode();
 				} else if (dayOne * 100 / dayTwo > Constants.LARGE_CHANGE_THRESHOLD) {
 					returner = RiskStatus.NOT_SO_OK_JOB.getCode();
