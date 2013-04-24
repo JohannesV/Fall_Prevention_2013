@@ -228,7 +228,7 @@ public class ContentProviderHelper {
 
 	}
 
-	private void pushNotification(int returner) {
+	private synchronized void pushNotification(int returner) {
 		DatabaseHelper dbh= new DatabaseHelper(context);
 		if(returner==RiskStatus.OK_JOB.getCode()){
 			dbh.dbAddEvent(2);

@@ -81,19 +81,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+ DatabaseContract.AlarmTypes.COLUMN_NAME_ID
 				+ " INTEGER PRIMARY KEY,"
 				+ DatabaseContract.AlarmTypes.COLUMN_NAME_DESCRIPTION + END_PAR;
-		final String FILL_INFO_1 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (0, '10:23-10:44 hadde du abnormalt bråe bevegelser. Hva gjorde du da?', 'Brå bevegelser', \'halo\')";
-		final String FILL_INFO_2 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (1, 'Vi har registert lite bevegelse det siste døgnet. Vi anbefaler deg å røre litt mer på deg.', 'Lite bevegelse', \'sleep\')";
+		final String FILL_INFO_1 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (0, 'Event_1', 'Event_1', \'halo\')";
+		final String FILL_INFO_2 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (1, 'Event_2.', 'Event_2', \'sleep\')";
 		final String FILL_INFO_3 = "INSERT INTO Event (ID, TypeID) VALUES (0, 0)";
 		final String FILL_INFO_4 = "INSERT INTO Event (ID, TypeID) VALUES (1, 1)";
 		final String FILL_INFO_5 = "INSERT INTO Event (ID, TypeID) VALUES (2, 1)";
-		final String FILL_INFO_6 = "INSERT INTO Contact (PersonID, Name, PhoneNumber) VALUES (0, 'Dat-danny Pham', 47823094)";
+		final String FILL_INFO_6 = "INSERT INTO Contact (PersonID, Name, PhoneNumber) VALUES (0, 'Dat-Danny Pham', 47823094)";
 		final String FILL_INFO_7 = "INSERT INTO Contact (PersonID, Name, PhoneNumber) VALUES (1, 'Fyllip Larzzon', 2356094)";
 		final String FILL_INFO_8 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (0, 'SMS if risk is high')";
 		final String FILL_INFO_9 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (1, 'SMS if sudden spike')";
 		final String FILL_INFO_10 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (2, 'SMS if gradual improvement')";
 		final String FILL_INFO_11 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (3, 'SMS if fall')";
 		final String FILL_INFO_12 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (2, 'Event_3', 'Event_3', \'sleep\')";
-		
+		final String FILL_INFO_13 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (3,'Event_4','Event_4',\'halo\')";
 		db.execSQL(CREATE_TABLE_1);
 		db.execSQL(CREATE_TABLE_2);
 		db.execSQL(CREATE_TABLE_3);
@@ -205,9 +205,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 */
 	public String getLocalEventTitle(String origTitle) {
 		String mReturner = "";
-		if (origTitle.equalsIgnoreCase("brå bevegelser")) {
+		if (origTitle.equalsIgnoreCase("event_1")) {
 			mReturner = context.getString(R.string.event_list_goodJob_title);
-		} else if (origTitle.equalsIgnoreCase("lite bevegelse")) {
+		} else if (origTitle.equalsIgnoreCase("event_2")) {
 			mReturner = context.getString(R.string.event_list_badJob_title);
 		} else if (origTitle.equalsIgnoreCase("event_3")) {
 			mReturner = context.getString(R.string.event_list_noChange_title);
@@ -225,9 +225,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 */
 	public String getLocalEventDescription(String origDesc) {
 		String mReturner = "";
-		if (origDesc.matches(".*abnormalt.*")) {
+		if (origDesc.equalsIgnoreCase("event_1")) {
 			mReturner = context.getString(R.string.event_list_goodJob_desc);
-		} else if (origDesc.matches(".*lite.*")) {
+		} else if (origDesc.equalsIgnoreCase("event_2")) {
 			mReturner = context.getString(R.string.event_list_badJob_desc);
 		} else if (origDesc.equalsIgnoreCase("event_3")) {
 			mReturner = context.getString(R.string.event_list_noChange_desc);
