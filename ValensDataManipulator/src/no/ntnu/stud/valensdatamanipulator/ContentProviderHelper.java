@@ -2,11 +2,12 @@ package no.ntnu.stud.valensdatamanipulator;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import android.annotation.SuppressLint;
 import android.content.ContentProviderClient;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
@@ -96,6 +97,48 @@ public class ContentProviderHelper {
 
 		return new Timestamp(System.currentTimeMillis()
 				- TimeUnit.MILLISECONDS.convert(hours, TimeUnit.HOURS));
+	}
+
+	/**
+	 * 
+	 * @param steps
+	 */
+	public void storeTrueSteps(List<Long> steps) {
+		Uri uri = Uri
+				.parse("content://ntnu.stud.valens.contentprovider/steps/");
+		
+		for(Long step : steps){
+			// Define the row to insert
+			ContentValues rowToInsert = new ContentValues();
+			rowToInsert.put( "timestamp", step);
+			// Insert row, hoping that everything works as expected.
+			context.getContentResolver().insert(uri, rowToInsert);
+		}
+	}
+
+	/**
+	 * 
+	 * @param gaitParameters
+	 */
+	public void storeGaitParameters(double[] gaitParameters, List<Long> steps) {
+		Uri uri = Uri
+				.parse("content://ntnu.stud.valens.contentprovider/gaits/");
+		double gaitSpeed = gaitParameters[0];
+		double gaitVariability = gaitParameters[1];
+		
+		Collections.sort(steps);
+		long start = steps.get(0);
+		long stop = steps.get(steps.size() - 1);
+		
+		
+		// Define the row to insert
+		ContentValues rowToInsert = new ContentValues();
+		rowToInsert.put("speed", gaitSpeed);
+		rowToInsert.put("variability", gaitVariability);
+		rowToInsert.put("start", start);
+		rowToInsert.put("stop", stop);
+		// Insert row, hoping that everything works as expected.
+		context.getContentResolver().insert(uri, rowToInsert);
 	}
 
 }
