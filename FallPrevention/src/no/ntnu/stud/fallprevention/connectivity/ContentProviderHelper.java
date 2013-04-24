@@ -65,7 +65,6 @@ public class ContentProviderHelper {
 		Log.v(TAG, "Attempting query");
 		try {
 			// Everything in order
-			// TODO: does not return numbers wanted yet
 			Cursor cursor = stepsProvider.query(uri, projection, selection,
 					selectionArgs, sortOrder);
 			cursor.moveToFirst();
@@ -198,12 +197,13 @@ public class ContentProviderHelper {
 	 * @return
 	 */
 	public List<Double> cpGetRiskHistory(int length,int interval) {
-		// TODO: Does not work properly, not sure where the problem is
+
 		List<Double> returner = new ArrayList<Double>();
 		// for (int i = 0; i < length; i++) {
 		// returner.add((double) Math.round((Math.random() * 5)));
 		// }
 		for (int i =length;i>= 0;i--){
+			//the list is supposed to be read in an interleaved format, meaning x and y values alternating
 			returner.add((double) (-i*interval));
 			returner.add((double) getStepCount(getHoursBack((i+1)*interval), getHoursBack(i*interval)));
 			
