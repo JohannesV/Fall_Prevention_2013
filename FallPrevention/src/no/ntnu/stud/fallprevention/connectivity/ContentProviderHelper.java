@@ -26,7 +26,7 @@ import android.util.Log;
 @SuppressLint("NewApi")
 public class ContentProviderHelper {
 
-	Context context;
+	private Context context;
 	private final static String TAG = "ContentProviderHelper";
 
 	public ContentProviderHelper(Context context) {
@@ -43,12 +43,12 @@ public class ContentProviderHelper {
 
 		Log.v(TAG, "Getting step count");
 		double mStepCount = 0;
-		// Setting variables for the query
-		// sets the unique resource identifier for the data
+		// Find the content provider using a unique resource identifier (URI)
 		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
 		ContentProviderClient stepsProvider = context.getContentResolver()
 				.acquireContentProviderClient(uri);
 
+		// Setting variables for the query
 		uri = Uri.parse("content://ntnu.stud.valens.contentprovider/raw_steps");
 		// sets the projection part of the query
 		String[] projection = new String[] { "count(timestamp) as count" };
@@ -65,7 +65,6 @@ public class ContentProviderHelper {
 		Log.v(TAG, "Attempting query");
 		try {
 			// Everything in order
-			// TODO: does not return numbers wanted yet
 			Cursor cursor = stepsProvider.query(uri, projection, selection,
 					selectionArgs, sortOrder);
 			cursor.moveToFirst();
@@ -80,16 +79,13 @@ public class ContentProviderHelper {
 			e.printStackTrace();
 		} catch (RemoteException e) {
 			// Remote binding problems
-
+			Log.v(TAG, e.toString());
 			e.printStackTrace();
 		} catch (NullPointerException e) {
 			// Nullpointer problems
-
 			Log.v(TAG, e.toString());
 			e.printStackTrace();
 		}
-		// Toast.makeText(context, String.valueOf(mStepCount),
-		// Toast.LENGTH_LONG).show();
 		return (int) mStepCount;
 	}
 
