@@ -39,9 +39,21 @@ public class CPValensDB extends SQLiteOpenHelper{
 				+ DBSchema.TestTypes.COLUMN_NAME_DESCRIPTION + COMMA
 				+ DBSchema.TestTypes.COLUMN_NAME_NAME + COMMA 
 				+ DBSchema.TestTypes.COLUMN_NAME_SCORE_DESCRIPTION + END_PAR;
+		final String CREATE_TABLE_STEPS = "CREATE TABLE "
+				+ DBSchema.Steps.TABLE_NAME + START_PAR
+				+ DBSchema.Steps.COLUMN_NAME_TIMESTAMP
+				+ " INTEGER PRIMARY KEY " + END_PAR;
+		final String CREATE_TABLE_GAITS = "CREATE TABLE "
+				+ DBSchema.Gaits.TABLE_NAME + START_PAR
+				+ DBSchema.Gaits.COLUMN_NAME_SPEED + COMMA
+				+ DBSchema.Gaits.COLUMN_NAME_VARIABILITY + COMMA
+				+ DBSchema.Gaits.COLUMN_NAME_START + COMMA 
+				+ DBSchema.Gaits.COLUMN_NAME_STOP + END_PAR;
 		db.execSQL(CREATE_TABLE_RAW_STEPS);
 		db.execSQL(CREATE_TABLE_TEST_TYPES);
 		db.execSQL(CREATE_TABLE_TESTS);
+		db.execSQL(CREATE_TABLE_STEPS);
+		db.execSQL(CREATE_TABLE_GAITS);
 	}
 
 	@Override
