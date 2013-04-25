@@ -37,6 +37,7 @@ import android.widget.TextView;
  */
 public class MainScreen extends Activity {
 	RiskStatus status;
+	Thread notificationThread;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

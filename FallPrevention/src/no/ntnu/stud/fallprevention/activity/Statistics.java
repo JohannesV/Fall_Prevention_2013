@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -18,6 +19,7 @@ import com.androidplot.xy.SimpleXYSeries;
 import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYStepMode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import no.ntnu.stud.fallprevention.R;
@@ -73,6 +75,7 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		dataType.setAdapter(dataAdapter);
+
 		dataType.setOnItemSelectedListener(this);
 		riskHistoryPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
 
@@ -85,17 +88,41 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
 		// Get risk history values from the database
-		//TODO: make sure time back and interval for cpGetRiskHistory corresponds to spinner box
-		List<Double> riskHistory = new ContentProviderHelper(
-				getApplicationContext()).cpGetRiskHistory(6*(pos+1),2*(pos+1));
+		// TODO: make sure time back and interval for cpGetRiskHistory
+		// corresponds to spinner box
+		List<Double> statisticsData = new ArrayList<Double>();
+
+		// Makes sure to keep the proper timeframe
+		if (parent.getId() == R.id.data_type_spinner) {
+			Log.v("Statistics screen",
+					"Was Data Type Spinner: "
+							+ (parent.getId() == R.id.data_type_spinner));
+			pos = timeSpan.getSelectedItemPosition();
+
+		} else {
+			Log.v("Statistics screen",
+					"Was Data Type Spinner: "
+							+ (parent.getId() == R.id.data_type_spinner));
+		}
+		// Calls method appropriate to option selected
+		if (dataType.getSelectedItem().toString()
+				.equalsIgnoreCase("Steps per minute")) {
+			statisticsData = new ContentProviderHelper(getApplicationContext())
+					.cpGetSpeedHistory(6 * (pos + 1), 2 * (pos + 1));
+		} else if (dataType.getSelectedItem().toString()
+				.equalsIgnoreCase("Steps total")) {
+			statisticsData = new ContentProviderHelper(getApplicationContext())
+					.cpGetStepsHistory(6 * (pos + 1), 2 * (pos + 1));
+		}
 
 		riskHistoryPlot.clear();
 
 		// Turn the above arrays into XYSeries':
-		XYSeries riskSeries = new SimpleXYSeries(riskHistory,
-				SimpleXYSeries.ArrayFormat.XY_VALS_INTERLEAVED, // Y_VALS_ONLY means use
-														// the element index as
-														// the x value
+		XYSeries riskSeries = new SimpleXYSeries(statisticsData,
+				SimpleXYSeries.ArrayFormat.XY_VALS_INTERLEAVED, // Y_VALS_ONLY
+																// means use
+				// the element index as
+				// the x value
 				"Risk History"); // Set the display title of the series
 
 		// Create a formatter to use for drawing a series using
@@ -105,20 +132,20 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 				Color.BLACK, // point color
 				null); // fill color (nothing)
 
-//		Add fill paint
+		// Add fill paint
 		Paint bgPaint = new Paint();
 		bgPaint.setColor(Color.WHITE);
-		 riskSeriesFormat.setFillPaint(bgPaint);
-		 riskSeriesFormat.setFillDirection(FillDirection.BOTTOM);
-		 riskHistoryPlot.addSeries(riskSeries, riskSeriesFormat);
-		 
+		riskSeriesFormat.setFillPaint(bgPaint);
+		riskSeriesFormat.setFillDirection(FillDirection.BOTTOM);
+		riskHistoryPlot.addSeries(riskSeries, riskSeriesFormat);
+
 		// Make stuff look better
-		
+
 		// add a new series' to the xyplot:
-		riskHistoryPlot.setRangeLabel("Steps");
-		riskHistoryPlot.setDomainLabel("Time");
-		riskHistoryPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 10);
-		riskHistoryPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 10);
+		riskHistoryPlot.setRangeLabel("Steps");//Y title 
+		riskHistoryPlot.setDomainLabel("Time");//X title
+		riskHistoryPlot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 50);//Y increment
+		riskHistoryPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 10);//X increment
 
 		riskHistoryPlot.redraw();
 

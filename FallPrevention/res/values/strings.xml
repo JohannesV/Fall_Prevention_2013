@@ -66,6 +66,7 @@
 
     <string-array name="data_type_array">
         <item>Steps per minute</item>
+        <item >Steps total</item>
     </string-array>
 
     <string name="event_list_goodJob_title">You have done well!</string>
