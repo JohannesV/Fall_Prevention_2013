@@ -7,6 +7,12 @@
     android:layout_margin="8dip"
     android:background="@drawable/widget_background_no_messages" >
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notifcation_number" />
+
     <ImageView
         android:id="@+id/smileyButton"
         android:layout_width="wrap_content"
