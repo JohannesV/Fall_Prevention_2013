@@ -9,13 +9,15 @@
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.permRead" />
+
+    <permission android:name="android.permission.permRead" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <receiver
             android:name=".ManipulationStarter"
             android:enabled="true"
