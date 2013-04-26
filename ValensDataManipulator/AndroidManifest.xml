@@ -16,14 +16,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
-        <service
-            android:name=".ManipulationService"
-            android:label="ManipulationService"
-            android:icon="@drawable/ic_launcher" >
-        </service>
-        
         <receiver
-            android:name=".ManipulationServiceStarter"
+            android:name=".ManipulationStarter"
             android:enabled="true"
             android:exported="false"
             android:label="ManipulationServiceStarter" >

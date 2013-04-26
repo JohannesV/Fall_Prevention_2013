@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Service;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
@@ -17,30 +19,25 @@ import android.util.Log;
  * @author Elias
  * 
  */
-public class ManipulationService extends Service {
-
+public class ManipulatorHelper extends BroadcastReceiver {
+	private static final String APP_TAG = "com.hascode.android";
+	private Context m_context;
+	
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		// TODO Auto-generated method stub
+		Log.d(APP_TAG, "SchedulerEventReceiver.onReceive() called");
+		m_context = context;
+		calculate();
+	}
+	
+	public void doCalculations(){
+		calculate();
+	}
+	
 	public static final long GROUP_GAP_THRESHOLD = 10000;
 	public static final long GROUP_SIZE_THRESHOLD = 10000;
 
-	/**
-	 * Method called by the startService() in the launch activity. Do no call
-	 * this method directly! Create an intent and call startService(intent)
-	 * instead.
-	 * 
-	 * This method has two functions: It can either start or stop the service.
-	 * Which of these action it performs, depends on the value of the "stop"
-	 * extra than can be put into the intent. If the "stop" extra is given the
-	 * value "true", this method stops the service. Otherwise, it starts the
-	 * service.
-	 * 
-	 * @param - All handled by the startService(intent) method.
-	 */
-	@Override
-	public int onStartCommand(Intent intent, int flags, int startId) {
-		Log.v("ManipulationService", "OnStartCommand");
-		return Service.START_NOT_STICKY;
-	}
-	
 	/**
 	 * The calculation method handles the computation of gait parameters and
 	 * finds the true steps. Fetches the data for the last 24 hours from the
@@ -48,7 +45,7 @@ public class ManipulationService extends Service {
 	 * the proper tables in the content provider.
 	 */
 	private void calculate() {
-		ContentProviderHelper cph = new ContentProviderHelper(this);
+		ContentProviderHelper cph = new ContentProviderHelper(m_context);
 		// Get the raw steps for the last 24hours.
 		Timestamp now = ContentProviderHelper.getHoursBack(0);
 		Timestamp yesterday = ContentProviderHelper.getHoursBack(24);
@@ -139,12 +136,6 @@ public class ManipulationService extends Service {
 		return new double[] { mean, std };
 	}
 
-	// We do not use any binders, so we just leave this method empty.
-	@Override
-	public IBinder onBind(Intent arg0) {
-		return null;
-	}
-
 	/**
 	 * Calculates the mean of a list of values.
 	 * 
@@ -177,4 +168,5 @@ public class ManipulationService extends Service {
 		std = std / values.size();
 		return Math.sqrt(std);
 	}
+
 }
