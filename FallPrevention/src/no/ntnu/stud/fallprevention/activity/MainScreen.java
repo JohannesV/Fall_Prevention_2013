@@ -1,8 +1,11 @@
 package no.ntnu.stud.fallprevention.activity;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import no.ntnu.stud.fallprevention.NotificationBroadcastReciever;
 import no.ntnu.stud.fallprevention.R;
 import no.ntnu.stud.fallprevention.R.drawable;
 import no.ntnu.stud.fallprevention.R.id;
@@ -12,7 +15,10 @@ import no.ntnu.stud.fallprevention.R.string;
 import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
 import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
 import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -22,6 +28,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.format.DateUtils;
+import android.text.format.Time;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,6 +46,7 @@ import android.widget.TextView;
 public class MainScreen extends Activity {
 	RiskStatus status;
 	Thread notificationThread;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,14 +55,26 @@ public class MainScreen extends Activity {
 		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
 		}
 
+		// Intent alarmIntent = new Intent(getBaseContext(),
+		// NotificationBroadcastReciever.class);
+		// PendingIntent pendingIntent = PendingIntent.getBroadcast(
+		// getBaseContext(), 0, alarmIntent,
+		// PendingIntent.FLAG_UPDATE_CURRENT);
+		// AlarmManager alarmManager = (AlarmManager) getBaseContext()
+		// .getSystemService(getBaseContext().ALARM_SERVICE);
+		// alarmManager.set(AlarmManager.RTC, Calendar.getInstance()
+		// .getTimeInMillis(), pendingIntent);
+
 		updateVisible();
 
 		// Change image depending on information from the database
 		Drawable drawable;
-		if(status==null){
-			status=RiskStatus.OK_JOB;
+		if (status == null) {
+			status = RiskStatus.OK_JOB;
 		}
-		status = new ContentProviderHelper(getApplicationContext()).cpGetStatus(status);
+
+		status = new ContentProviderHelper(getApplicationContext())
+				.cpGetStatus(status);
 		if (status == RiskStatus.BAD_JOB) {
 			drawable = getResources().getDrawable(R.drawable.bad_job);
 		} else if (status == RiskStatus.NOT_SO_OK_JOB) {
@@ -68,9 +89,11 @@ public class MainScreen extends Activity {
 			// Problem
 			drawable = null;
 		}
-//		ContentProviderHelper cph= new ContentProviderHelper(getApplicationContext());
-//		cph.refreshTimestamp();
-		
+		shouldPush();
+		// ContentProviderHelper cph= new
+		// ContentProviderHelper(getApplicationContext());
+		// cph.refreshTimestamp();
+
 		Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
 		Drawable d = new BitmapDrawable(getResources(),
 				Bitmap.createScaledBitmap(bitmap, 200, 200, true));
@@ -88,25 +111,7 @@ public class MainScreen extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		
-		new Thread(){
-			Timer autoUpdate;
-			@Override
-			public void run(){
-			   autoUpdate = new Timer();
-			   autoUpdate.schedule(new TimerTask() {
-			      @Override
-			      public void run() {
-			           runOnUiThread(new Runnable() {
-			              public void run() {
-			                  // TODO
-			            	  new ContentProviderHelper(getApplicationContext()).pushNotification(status.getCode());
-			              }
-			           });
-			      }
-			    },0,DateUtils.HOUR_IN_MILLIS);//updates each hour
-			 }
-			 }.start();
+		shouldPush();
 		updateVisible();
 	}
 
@@ -147,6 +152,34 @@ public class MainScreen extends Activity {
 			break;
 		}
 		return false;
+	}
+
+	@SuppressLint("NewApi")
+	private void shouldPush() {
+		long current = System.currentTimeMillis();
+		Timestamp now = new Timestamp(current);
+		Log.v("Main Screen", "Checking for pushing");
+		Timestamp last;
+		SharedPreferences sp = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		last = new Timestamp(sp.getLong("lastPushed", 0l));
+		Log.v("Main Screen", String.valueOf(last.getTime()));
+		if (DateUtils.HOUR_IN_MILLIS < (now.getTime() - last.getTime())) {
+			Log.v("Main Screen", "Minute passed, notification pushed: "
+					+ (status == null));
+			new ContentProviderHelper(this).pushNotification(status.getCode());
+			SharedPreferences.Editor editor = sp.edit();
+			// Displays the edited name
+			editor.putLong("lastPushed", current);
+			editor.commit();
+		} else if(last.getTime()==0l){
+			Log.v("Main Screen", "Time not smaller");
+			SharedPreferences.Editor editor = sp.edit();
+			// Displays the edited name
+			editor.putLong("lastPushed", current);
+			editor.commit();
+		}
+
 	}
 
 	public void fireEvent(View view) {

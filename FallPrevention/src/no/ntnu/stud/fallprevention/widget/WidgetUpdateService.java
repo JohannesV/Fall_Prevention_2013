@@ -7,6 +7,7 @@ import java.util.TimerTask;
 
 import no.ntnu.stud.fallprevention.R;
 import no.ntnu.stud.fallprevention.activity.EventList;
+import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
 import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
 import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
 import android.app.PendingIntent;
@@ -88,7 +89,7 @@ public class WidgetUpdateService extends Service {
 				 }
 		    	
 				 // Update face based on state
-		    	RiskStatus status = new DatabaseHelper(context).dbGetStatus();
+		    	RiskStatus status = new ContentProviderHelper(context).cpGetStatus(null);
 				Drawable drawable;
 				if (status == RiskStatus.BAD_JOB) {
 					drawable = context.getResources().getDrawable(R.drawable.bad_job);
