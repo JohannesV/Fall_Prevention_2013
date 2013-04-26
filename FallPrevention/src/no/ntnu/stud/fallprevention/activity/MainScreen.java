@@ -164,7 +164,7 @@ public class MainScreen extends Activity {
 				.getDefaultSharedPreferences(this);
 		last = new Timestamp(sp.getLong("lastPushed", 0l));
 		Log.v("Main Screen", String.valueOf(last.getTime()));
-		if (DateUtils.HOUR_IN_MILLIS < (now.getTime() - last.getTime())) {
+		if (DateUtils.MINUTE_IN_MILLIS < (now.getTime() - last.getTime())) {
 			Log.v("Main Screen", "Minute passed, notification pushed: "
 					+ (status == null));
 			new ContentProviderHelper(this).pushNotification(status.getCode());

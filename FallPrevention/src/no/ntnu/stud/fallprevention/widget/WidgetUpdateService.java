@@ -20,14 +20,15 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.IBinder;
+import android.util.Log;
 import android.widget.RemoteViews;
 /**
- * This class update the widget in a frenquency of 50 sec.
- * @author Tayfun
+ * This class update the widget in a frenquency of 5 sec.
+ * @author Elias
  */
 
 public class WidgetUpdateService extends Service {
-	
+	private final static String TAG="Widget Update";
    	private final int WIDGET_UPDATE_FREQUENCY = 5000;
 	
 	@Override
@@ -56,7 +57,7 @@ public class WidgetUpdateService extends Service {
 	}
     /**
      * 
-     * @author Tayfun
+     * @author Elias
      *
      */
 	private class Updater extends TimerTask {
@@ -74,6 +75,7 @@ public class WidgetUpdateService extends Service {
 		 * Executes the update options. Updates background for new messages and updates faces.
 		 */
 		public void run() {
+			Log.v(TAG, "Updating widget screen");
 		    ComponentName thisWidget = new ComponentName(getApplicationContext(), WidgetProvider.class);
 		    // Field of all widgets to update them iterativly
 		    int[] allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
@@ -82,9 +84,11 @@ public class WidgetUpdateService extends Service {
 		    	RemoteViews views;
 		    	// Change background if there are new messages
 				if (new DatabaseHelper(context).dbHaveEvents()) {
+					Log.v(TAG, "Notifications found");
 					 views = new RemoteViews(context.getPackageName(), R.layout.widget_layout_w_messages);
 				 }
 				 else {
+					 Log.v(TAG, "Notifications not found");
 					 views = new RemoteViews(context.getPackageName(), R.layout.widget_layout_no_messages);
 				 }
 		    	

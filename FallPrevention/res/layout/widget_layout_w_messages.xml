@@ -7,6 +7,14 @@
     android:background="@drawable/widget_background_w_messages"
     android:orientation="vertical" >
 
+    <TextView
+        android:id="@+id/widgetNotificationNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/notifcation_number" />
+
     <ImageView
         android:id="@+id/smileyButton"
         android:layout_width="wrap_content"
