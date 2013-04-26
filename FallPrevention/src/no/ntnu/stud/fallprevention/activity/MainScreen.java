@@ -172,7 +172,7 @@ public class MainScreen extends Activity {
 			// Displays the edited name
 			editor.putLong("lastPushed", current);
 			editor.commit();
-		} else {
+		} else if(last.getTime()==0l){
 			Log.v("Main Screen", "Time not smaller");
 			SharedPreferences.Editor editor = sp.edit();
 			// Displays the edited name
