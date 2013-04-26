@@ -78,6 +78,16 @@ public class CPValensDB extends SQLiteOpenHelper{
 		} catch (SQLiteException e) {
 			// Do nothing...
 		}
+		try {
+			db.execSQL("DROP TABLE " + DBSchema.Gaits.TABLE_NAME);
+		} catch (SQLiteException e) {
+			// Do nothing...
+		}
+		try {
+			db.execSQL("DROP TABLE " + DBSchema.Steps.TABLE_NAME);
+		} catch (SQLiteException e) {
+			// Do nothing...
+		}
 		onCreate(db);
 	}
 
