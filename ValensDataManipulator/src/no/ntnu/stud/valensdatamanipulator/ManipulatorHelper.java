@@ -31,7 +31,8 @@ public class ManipulatorHelper extends BroadcastReceiver {
 		calculate();
 	}
 	
-	public void doCalculations(){
+	public void doCalculations(Context context){
+		m_context = context;
 		calculate();
 	}
 	

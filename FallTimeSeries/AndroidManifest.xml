@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.falltimeseries.CalibrationActivity"
+            android:name="com.example.falltimeseries.calibration.CalibrationActivity"
             android:label="@string/title_activity_calibration" >
         </activity>
 
