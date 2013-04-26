@@ -76,7 +76,7 @@
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/awidget_provider"/>
         </receiver>
-        <service android:name="no.ntnu.stud.fallprevention.WidgetUpdateService"></service>	
+        <service android:name="no.ntnu.stud.fallprevention.widget.WidgetUpdateService"></service>	
         <receiver android:name=".service.NotificationBroadcastReceiver" android:process=":remote" />        
     </application>
 </manifest>

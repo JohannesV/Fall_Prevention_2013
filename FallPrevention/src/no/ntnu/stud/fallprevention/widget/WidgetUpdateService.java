@@ -21,7 +21,6 @@ import android.os.IBinder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 
@@ -38,19 +37,19 @@ public class WidgetUpdateService extends Service {
 	@Override
 	/**
 	 * Updates the actual application context with the current application
-	 * @param
+	 * @param Standard parameters that are provided by android.
 	 * @return The current version of the method with current parameters.
 	 */
-	// TODO: Information to @param. Could not found.
 	public int onStartCommand(Intent intent, int flags, int startId) {
-
+		Log.v(TAG, "Started");
 		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this
 				.getApplicationContext());
 		Context context = this.getApplicationContext();
 		Timer timer = new Timer();
+		Log.v(TAG, "To scheduale");
 		timer.schedule(new Updater(appWidgetManager, context),
 				WIDGET_UPDATE_FREQUENCY, WIDGET_UPDATE_FREQUENCY);
-
+		Log.v(TAG, "After scheduale");
 		return super.onStartCommand(intent, flags, startId);
 	}
 

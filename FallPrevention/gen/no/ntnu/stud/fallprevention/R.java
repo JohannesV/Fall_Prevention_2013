@@ -48,9 +48,9 @@ public final class R {
         public static final int mainScreenSmileyImage=0x7f09000e;
         public static final int mainScreenSubText=0x7f09000f;
         public static final int mainTextView=0x7f090007;
-        public static final int menu_related=0x7f090020;
-        public static final int menu_settings=0x7f09001e;
-        public static final int menu_statistics=0x7f09001f;
+        public static final int menu_related=0x7f090021;
+        public static final int menu_settings=0x7f09001f;
+        public static final int menu_statistics=0x7f090020;
         public static final int mySimpleXYPlot=0x7f090016;
         public static final int mylist=0x7f09000c;
         public static final int name=0x7f090001;
@@ -62,6 +62,7 @@ public final class R {
         public static final int textView1=0x7f09000d;
         public static final int textView2=0x7f090015;
         public static final int time_span_spinner=0x7f090017;
+        public static final int widgetNotificationNumber=0x7f09001e;
     }
     public static final class layout {
         public static final int activity_contact_person=0x7f030000;
@@ -99,7 +100,7 @@ public final class R {
         public static final int add_contact_confirm_dialogue_text_1=0x7f050025;
         public static final int add_contact_confirm_dialogue_text_2=0x7f050028;
         public static final int app_name=0x7f050000;
-        public static final int button=0x7f05003e;
+        public static final int button=0x7f05003f;
         public static final int contact_added=0x7f05000f;
         public static final int contact_people=0x7f050020;
         public static final int contact_person=0x7f05001c;
@@ -108,8 +109,8 @@ public final class R {
         public static final int contact_person_delete_dialogue_2=0x7f050034;
         public static final int contact_person_delete_info=0x7f050032;
         public static final int contact_person_store_info=0x7f05001f;
-        public static final int delete=0x7f050040;
-        public static final int do_with_event=0x7f050041;
+        public static final int delete=0x7f050041;
+        public static final int do_with_event=0x7f050042;
         public static final int event_list_badJob_desc=0x7f050039;
         public static final int event_list_badJob_title=0x7f050036;
         public static final int event_list_goodJob_desc=0x7f050038;
@@ -125,10 +126,10 @@ public final class R {
         public static final int general_lorem_short=0x7f050011;
         public static final int greeting=0x7f05000c;
         public static final int hello_world=0x7f050014;
-        public static final int hi=0x7f05003b;
-        public static final int keep=0x7f05003f;
-        public static final int lorem_long=0x7f050043;
-        public static final int lorem_short=0x7f050042;
+        public static final int hi=0x7f05003c;
+        public static final int keep=0x7f050040;
+        public static final int lorem_long=0x7f050044;
+        public static final int lorem_short=0x7f050043;
         public static final int main_got_new_events=0x7f050018;
         public static final int menu_related=0x7f050003;
         public static final int menu_settings=0x7f050001;
@@ -139,6 +140,7 @@ public final class R {
         public static final int new_contact_create_new_contact=0x7f050022;
         public static final int new_name_button=0x7f050019;
         public static final int no_events=0x7f050013;
+        public static final int notifcation_number=0x7f05003b;
         public static final int phone_number=0x7f05001e;
         public static final int preferences_clear_history_summary=0x7f050030;
         public static final int preferences_clear_history_title=0x7f05002f;
@@ -158,10 +160,10 @@ public final class R {
         public static final int title_activity_statistics=0x7f050015;
         public static final int title_activity_write_name=0x7f050004;
         public static final int widget_got_new_events=0x7f050024;
-        public static final int write_name=0x7f05003d;
+        public static final int write_name=0x7f05003e;
         public static final int write_name_write_name=0x7f050007;
         public static final int write_name_your_name_query=0x7f050006;
-        public static final int your_name_query=0x7f05003c;
+        public static final int your_name_query=0x7f05003d;
     }
     public static final class style {
         /** 

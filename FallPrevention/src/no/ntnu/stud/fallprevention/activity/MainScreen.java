@@ -1,24 +1,13 @@
 package no.ntnu.stud.fallprevention.activity;
 
 import java.sql.Timestamp;
-import java.util.Calendar;
-import java.util.Timer;
-import java.util.TimerTask;
 
-import no.ntnu.stud.fallprevention.NotificationBroadcastReciever;
 import no.ntnu.stud.fallprevention.R;
-import no.ntnu.stud.fallprevention.R.drawable;
-import no.ntnu.stud.fallprevention.R.id;
-import no.ntnu.stud.fallprevention.R.layout;
-import no.ntnu.stud.fallprevention.R.menu;
-import no.ntnu.stud.fallprevention.R.string;
 import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
 import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
 import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -28,7 +17,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.format.DateUtils;
-import android.text.format.Time;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
