@@ -6,7 +6,6 @@ import java.util.Date;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +17,7 @@ public class ManipulationStarter extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
+		Log.v(TAG, "OnRecieve");
 		// Check that the right type of intent started this
 		if ("android.intent.action.BOOT_COMPLETED".equals(intent.getAction())) {
 			
@@ -35,10 +35,13 @@ public class ManipulationStarter extends BroadcastReceiver {
 			/* Get Last Update Time from Preferences */
 	        SharedPreferences prefs = context.getSharedPreferences(TAG, Context.MODE_PRIVATE);
 	        long lastUpdateTime =  prefs.getLong("lastUpdateTime", 0);
-	        
-	        /* Should Activity Check for Updates Now? */
-	        if ((lastUpdateTime + (24 * 60 * 60 * 1000)) < System.currentTimeMillis() && new Date().getHours() >= 4) {
 
+	        Log.v(TAG, "LastUpdate: " + new Date(lastUpdateTime).toString());
+	        Log.v(TAG, "Current: " + new Date(System.currentTimeMillis()).toString());
+        	Log.v(TAG, "The time is: " + Calendar.HOUR_OF_DAY);
+	        /* Should Activity Check for Updates Now? */
+	        if ((lastUpdateTime + (24 * 60 * 60 * 1000)) < System.currentTimeMillis() && Calendar.HOUR_OF_DAY >= 4) {
+	        	Log.v(TAG, "It's the right time!");
 	            /* Save current timestamp for next Check*/
 	            lastUpdateTime = System.currentTimeMillis();            
 	            SharedPreferences.Editor editor = prefs.edit();
@@ -46,7 +49,10 @@ public class ManipulationStarter extends BroadcastReceiver {
 	            editor.commit();        
 
 	            /* Start Update */            
-	            new ManipulatorHelper().doCalculations();
+	            new ManipulatorHelper().doCalculations(context);
+	        }
+	        else {
+	        	Log.v(TAG, "It's the wrong time!");
 	        }
 		} else {
 			Log.e(TAG, "Received unexpected intent " + intent.toString());
