@@ -117,4 +117,15 @@
         android:layout_alignLeft="@+id/txtTests"
         android:text="0" />
 
+    <Button
+        android:id="@+id/btnDoCalculations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView04"
+        android:layout_alignRight="@+id/btnDeleteDB"
+        android:layout_below="@+id/TextView04"
+        android:background="@color/warning_background_red"
+        android:text="Do calculations (not recommended)"
+        android:textColor="@color/warning_foreground_red" />
+
 </RelativeLayout>

@@ -126,19 +126,21 @@ public class ContentProviderHelper {
 		double gaitSpeed = gaitParameters[0];
 		double gaitVariability = gaitParameters[1];
 		
-		Collections.sort(steps);
-		long start = steps.get(0);
-		long stop = steps.get(steps.size() - 1);
-		
-		
-		// Define the row to insert
-		ContentValues rowToInsert = new ContentValues();
-		rowToInsert.put("speed", gaitSpeed);
-		rowToInsert.put("variability", gaitVariability);
-		rowToInsert.put("start", start);
-		rowToInsert.put("stop", stop);
-		// Insert row, hoping that everything works as expected.
-		context.getContentResolver().insert(uri, rowToInsert);
+		if (steps.size() > 0){
+			Collections.sort(steps);
+			long start = steps.get(0);
+			long stop = steps.get(steps.size() - 1);
+			
+			
+			// Define the row to insert
+			ContentValues rowToInsert = new ContentValues();
+			rowToInsert.put("speed", gaitSpeed);
+			rowToInsert.put("variability", gaitVariability);
+			rowToInsert.put("start", start);
+			rowToInsert.put("stop", stop);
+			// Insert row, hoping that everything works as expected.
+			context.getContentResolver().insert(uri, rowToInsert);
+		}
 	}
 
 }

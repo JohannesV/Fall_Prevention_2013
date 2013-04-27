@@ -121,7 +121,7 @@ public class ManipulatorHelper extends BroadcastReceiver {
 
 		// Finally, choose to either store the final group, or discard it,
 		// depending on size
-		if (tempGroup.get(tempGroup.size() - 1) - tempGroup.get(0) > GROUP_SIZE_THRESHOLD) {
+		if (tempGroup.size() > 0 && tempGroup.get(tempGroup.size() - 1) - tempGroup.get(0) > GROUP_SIZE_THRESHOLD) {
 			for (int j = 1; j < tempGroup.size(); j++) {
 				tempIntervals.add(tempGroup.get(j) - tempGroup.get(j - 1));
 			}
