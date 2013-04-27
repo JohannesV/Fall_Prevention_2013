@@ -1,4 +1,4 @@
-package no.ntnu.stud.valensdatamanipulator;
+package ntnu.stud.valens.contentprovider.calculations;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import android.util.Log;
  * 
  */
 public class ManipulatorHelper extends BroadcastReceiver {
-	private static final String APP_TAG = "com.hascode.android";
+	private static final String APP_TAG = "ntnu.stud.valens.contentprovider";
 	private Context m_context;
 	
 	@Override

@@ -1,4 +1,4 @@
-package no.ntnu.stud.valensdatamanipulator;
+package ntnu.stud.valens.contentprovider.calculations;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package no.ntnu.stud.valensdatamanipulator;
+package ntnu.stud.valens.contentprovider.calculations;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -13,7 +13,7 @@ import android.util.Log;
 
 public class ManipulationStarter extends BroadcastReceiver {
 
-	public static final String TAG = "no.ntnu.stud.valensdatamanipulator";
+	public static final String TAG = "ntnu.stud.valens.contentprovider";
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -39,6 +39,7 @@ public class ManipulationStarter extends BroadcastReceiver {
 	        Log.v(TAG, "LastUpdate: " + new Date(lastUpdateTime).toString());
 	        Log.v(TAG, "Current: " + new Date(System.currentTimeMillis()).toString());
         	Log.v(TAG, "The time is: " + Calendar.HOUR_OF_DAY);
+        	
 	        /* Should Activity Check for Updates Now? */
 	        if ((lastUpdateTime + (24 * 60 * 60 * 1000)) < System.currentTimeMillis() && Calendar.HOUR_OF_DAY >= 4) {
 	        	Log.v(TAG, "It's the right time!");
