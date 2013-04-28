@@ -130,10 +130,11 @@ public class WidgetUpdateService extends Service {
 				//tries to set the xxx in the string to number of notifications
 				int i = new DatabaseHelper(context).dbGetEventList().size();
 				LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-				View layout = layoutInflater.inflate(R.layout.widget_layout_w_messages, null);
+				View layout = layoutInflater.inflate(R.layout.widget_layout_no_messages, null);
 				TextView textView = (TextView) layout
 						.findViewById(R.id.textView1);
-				textView.setText(textView.getText().toString().replaceAll("xxx", String.valueOf(i)));
+				String mTemp=textView.getText().toString().replaceAll("[0-9]+", String.valueOf(i));
+				textView.setText(mTemp);
 
 				Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
 				bitmap = Bitmap.createScaledBitmap(bitmap, 100, 100, true);

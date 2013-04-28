@@ -76,6 +76,6 @@
     <string name="event_list_badJob_desc">You haven\'t moved enough recently, try harder!</string>
     <string name="event_list_noChange_desc">You have moved neither more or less lately</string>
     
-    <string name="notifcation_number">You have xxx notifications!</string>
+    <string name="notifcation_number">You have 0 notifications!</string>
 
 </resources>
