@@ -4,38 +4,30 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.IBinder;
 import android.util.Log;
 
 /**
- * A service that derives new data from data that already exists in the content
- * provider. In particular, it derives true steps based on the most reliable
- * step detector, and calculates gait parameters (speed and variability).
+ * This class handles most of the work in deriving new data from data that
+ * already exists in the content provider. In particular, it derives true steps
+ * based on the most reliable step detector, and calculates gait parameters
+ * (speed and variability).
  * 
  * @author Elias
  * 
  */
 public class ManipulatorHelper extends BroadcastReceiver {
+
 	private static final String APP_TAG = "ntnu.stud.valens.contentprovider";
-	private Context m_context;
-	
+
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		// TODO Auto-generated method stub
 		Log.d(APP_TAG, "SchedulerEventReceiver.onReceive() called");
-		m_context = context;
-		calculate();
+		calculate(context);
 	}
-	
-	public void doCalculations(Context context){
-		m_context = context;
-		calculate();
-	}
-	
+
 	public static final long GROUP_GAP_THRESHOLD = 10000;
 	public static final long GROUP_SIZE_THRESHOLD = 10000;
 
@@ -44,9 +36,18 @@ public class ManipulatorHelper extends BroadcastReceiver {
 	 * finds the true steps. Fetches the data for the last 24 hours from the
 	 * content provider. After calculation, it stores the information back into
 	 * the proper tables in the content provider.
+	 * 
+	 * This functions first finds groups of steps, and only if the step group is
+	 * longer than a certain threshold it uses it to calculate gait speed and
+	 * variability.
+	 * 
+	 * @param context
+	 *            - Any context object. Required for the ContentProviderHelper,
+	 *            because Android for some reason requires a context to be able
+	 *            to get access to content providers.
 	 */
-	private void calculate() {
-		ContentProviderHelper cph = new ContentProviderHelper(m_context);
+	public void calculate(Context context) {
+		ContentProviderHelper cph = new ContentProviderHelper(context);
 		// Get the raw steps for the last 24hours.
 		Timestamp now = ContentProviderHelper.getHoursBack(0);
 		Timestamp yesterday = ContentProviderHelper.getHoursBack(24);
@@ -67,13 +68,14 @@ public class ManipulatorHelper extends BroadcastReceiver {
 		cph.storeGaitParameters(gaitParameters, bestSource);
 	}
 
-	/** 
-	 * Finds the gait parameters based on a list of steps. 
+	/**
+	 * Finds the gait parameters based on a list of steps, i.e. a step group.
 	 * 
 	 * @param steps
-	 * 		- The list of steps that gait parametes should be calculated from.
-	 * @return 
-	 * 		- An array of doubles containing two elements, the first being the gait speed, the second being the gait variability.
+	 *            - The list of steps that gait parameters should be calculated
+	 *            from.
+	 * @return - An array of doubles containing two elements, the first being
+	 *         the gait speed, the second being the gait variability.
 	 */
 	private double[] findGaitParameters(List<Long> steps) {
 		// Stores intervals and the current step group temporarily
@@ -121,7 +123,8 @@ public class ManipulatorHelper extends BroadcastReceiver {
 
 		// Finally, choose to either store the final group, or discard it,
 		// depending on size
-		if (tempGroup.size() > 0 && tempGroup.get(tempGroup.size() - 1) - tempGroup.get(0) > GROUP_SIZE_THRESHOLD) {
+		if (tempGroup.size() > 0
+				&& tempGroup.get(tempGroup.size() - 1) - tempGroup.get(0) > GROUP_SIZE_THRESHOLD) {
 			for (int j = 1; j < tempGroup.size(); j++) {
 				tempIntervals.add(tempGroup.get(j) - tempGroup.get(j - 1));
 			}

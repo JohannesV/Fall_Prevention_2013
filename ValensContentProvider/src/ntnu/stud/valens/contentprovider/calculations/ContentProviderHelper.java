@@ -14,9 +14,9 @@ import android.net.Uri;
 import android.os.RemoteException;
 
 /**
- * Class that provides an interface to the content provider.
+ * Class that provides an interface to the content provider for the calculation subapp.
  * 
- * @author Elias Aamot
+ * @author Elias
  * 
  */
 @SuppressLint("NewApi")
