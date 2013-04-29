@@ -106,15 +106,8 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 		}
 		// Calls method appropriate to option selected
 	
-		if(timeSpan.isSelected()){
-		
-			statisticsData =  dataType.equals("Steps per minute")? new ContentProviderHelper(getApplicationContext())
-			.cpGetSpeedHistory(6 * (Integer.decode(timeSpan.getSelectedItem().toString()) + 1), 2 * (pos + 1)):
-				new ContentProviderHelper(getApplicationContext())
-			.cpGetSpeedHistory(6 * (Integer.decode(timeSpan.getSelectedItem().toString()) + 1), 2 * (pos + 1));
-			
-		}
-		if (dataType.getSelectedItem().toString()
+	
+		 if (dataType.getSelectedItem().toString()
 				.equalsIgnoreCase("Steps per minute")) {
 			statisticsData = new ContentProviderHelper(getApplicationContext())
 					.cpGetSpeedHistory(6 * (pos + 1), 2 * (pos + 1));
@@ -122,6 +115,21 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 				.equalsIgnoreCase("Steps total")) {
 			statisticsData = new ContentProviderHelper(getApplicationContext())
 					.cpGetStepsHistory(6 * (pos + 1), 2 * (pos + 1));
+		} else if(timeSpan.isSelected()){
+			int daysBack =0;
+			switch (timeSpan.getSelectedItemPosition()){
+			case 1: daysBack = 1;
+			case 2: daysBack = 2;
+			case 3: daysBack = 4;
+			case 4: daysBack = 7;
+			case 5: daysBack = 14;
+			break;
+			}
+			statisticsData =  dataType.equals("Steps per minute")? new ContentProviderHelper(getApplicationContext())
+			.cpGetSpeedHistory(1440*daysBack, 2 * (pos + 1)):
+				new ContentProviderHelper(getApplicationContext())
+			.cpGetSpeedHistory(1440*daysBack, 2 * (pos + 1));
+			
 		}
 
 		riskHistoryPlot.clear();
