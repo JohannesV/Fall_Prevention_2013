@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
  * Using a database contract to store all the table and column names is a
  * common way to ensure consistent name usage throughout the application.
  * 
- * @author elias
+ * @author Elias
  */
 
 public abstract class DatabaseContract {

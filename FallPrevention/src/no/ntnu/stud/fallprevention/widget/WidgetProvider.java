@@ -77,16 +77,13 @@ public class WidgetProvider extends AppWidgetProvider {
 		}
 		
 		String mTemp=textView.getText().toString().replaceAll("[0-9]+", String.valueOf(i));
-		
+	
+		// Redisplay image
         views.setTextViewText(R.id.textView1, mTemp);
-        
         Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-
 		final float scale = context.getResources().getDisplayMetrics().density;
 		int p = (int) (110 * scale + 0.5f);
-
 		Bitmap b2 = Bitmap.createScaledBitmap(bitmap, p, p, true);
-		
 		views.setBitmap(R.id.smileyButton, "setImageBitmap", b2);
         
         // Add onClick listener
@@ -94,6 +91,7 @@ public class WidgetProvider extends AppWidgetProvider {
 		PendingIntent pendIntent = PendingIntent.getActivity(context,
 				0, clickIntent, 0);
 		views.setOnClickPendingIntent(R.id.smileyButton, pendIntent);
+		
 		// Display changes
         appWidgetManager.updateAppWidget(appWidgetIds, views);
 	}
