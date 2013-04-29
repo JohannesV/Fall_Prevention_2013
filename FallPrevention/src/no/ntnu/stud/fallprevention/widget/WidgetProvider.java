@@ -17,7 +17,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * This is the AppWidgetProvider, the class that handles creation of widgets in
@@ -28,7 +27,6 @@ import android.widget.Toast;
  */
 public class WidgetProvider extends AppWidgetProvider {
 
-	private int counter;
 
 	/**
 	 * Updates the widgets through their widgets Ids
@@ -43,7 +41,6 @@ public class WidgetProvider extends AppWidgetProvider {
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
-		counter = (int) (Math.random() * 100);
 		// Display text
 		
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout_no_messages);
@@ -76,20 +73,22 @@ public class WidgetProvider extends AppWidgetProvider {
 		} else {
 			// Problem. This should never happen
 			throw new RuntimeException(
-					"Error thrown at WidgetUpdateService.java:71");
+					"Error thrown at WidgetProvider.java:76");
 		}
 		
 		String mTemp=textView.getText().toString().replaceAll("[0-9]+", String.valueOf(i));
 		
-//        Toast.makeText(context,  mTemp, Toast.LENGTH_LONG)
-//				.show();
         views.setTextViewText(R.id.textView1, mTemp);
         
         Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-		bitmap = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
-		//bitmap=Bitmap.createBitmap(bitmap);
+//		bitmap = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
+//		Bitmap b = decodeScaledFile(f);
+		final float scale = context.getResources().getDisplayMetrics().density;
+		int p = (int) (110 * scale + 0.5f);
 
-		views.setBitmap(R.id.smileyButton, "setImageBitmap", bitmap);
+		Bitmap b2 = Bitmap.createScaledBitmap(bitmap, p, p, true);
+		
+		views.setBitmap(R.id.smileyButton, "setImageBitmap", b2);
         
         // Add onClick listener
 		Intent clickIntent = new Intent(context, EventList.class);
