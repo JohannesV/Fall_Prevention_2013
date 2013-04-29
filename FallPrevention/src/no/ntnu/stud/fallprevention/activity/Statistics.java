@@ -128,7 +128,7 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 			statisticsData =  dataType.equals("Steps per minute")? new ContentProviderHelper(getApplicationContext())
 			.cpGetSpeedHistory(1440*daysBack, 2 * (pos + 1)):
 				new ContentProviderHelper(getApplicationContext())
-			.cpGetSpeedHistory(1440*daysBack, 2 * (pos + 1));
+			.cpGetStepsHistory(1440*daysBack, 2 * (pos + 1));
 			
 		}
 

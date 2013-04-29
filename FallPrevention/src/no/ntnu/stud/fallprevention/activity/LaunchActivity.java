@@ -11,9 +11,9 @@ import android.preference.PreferenceManager;
 
 
 /**
- * Creates activity on launch. Checks if a username is already in use.
- * @author Tayfun
- *
+ * Creates activity on launch. Checks if you have a username, If none was found you will be sent to the WriteName screen.
+ * Will send you to the mainScreen otherwise
+ * 
  */
 public class LaunchActivity extends Activity {
 

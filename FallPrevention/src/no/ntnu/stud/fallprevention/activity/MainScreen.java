@@ -28,8 +28,6 @@ import android.widget.TextView;
  * Creates activity: mainscreen, creates option menu, makes updates visible,
  * fires event and shows the item menu bar.
  * 
- * @author Tayfun
- * 
  */
 public class MainScreen extends Activity {
 	RiskStatus status;
@@ -88,7 +86,9 @@ public class MainScreen extends Activity {
 		ImageButton imageButton = (ImageButton) findViewById(R.id.mainScreenSmileyImage);
 		imageButton.setBackgroundDrawable(d);
 	}
-
+/** 
+ * This is just an OnCreate method for displaying the Menu when you choose to activate it
+ */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -102,7 +102,10 @@ public class MainScreen extends Activity {
 		shouldPush();
 		updateVisible();
 	}
-
+/**
+ * Updates the mainscreen when a new notification is available, will also tell when you dont have any new notifications.
+ * Gets the predefined name if the user if there were any. 
+ */
 	private void updateVisible() {
 		// Find name from shared prefences file
 		SharedPreferences sp = PreferenceManager
@@ -113,6 +116,7 @@ public class MainScreen extends Activity {
 		txtGreetingName.setText(displayString);
 
 		// Display a message if there are new messages
+		//TODO: DOes not update the  screen when we removed all the notifications, not tested further so need more testing to verify the source of the problem 
 		TextView txtSubGreeting = (TextView) findViewById(R.id.mainScreenSubText);
 		DatabaseHelper dbHelper = new DatabaseHelper(this);
 		if (dbHelper.dbHaveEvents()) {
@@ -122,7 +126,9 @@ public class MainScreen extends Activity {
 			txtSubGreeting.setVisibility(View.GONE);
 		}
 	}
-
+/**
+ * this is basically a listener for the menu buttons 
+ */
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent;
 		switch (item.getItemId()) {
@@ -141,7 +147,9 @@ public class MainScreen extends Activity {
 		}
 		return false;
 	}
-
+/**
+ * Checks if it is a good idea to push in new notifications to the database.
+ */
 	@SuppressLint("NewApi")
 	private void shouldPush() {
 		long current = System.currentTimeMillis();
@@ -169,7 +177,10 @@ public class MainScreen extends Activity {
 		}
 
 	}
-
+/**
+ * A listener for a button that sends you to the Eventlist screen
+ * @param view
+ */
 	public void fireEvent(View view) {
 		Intent intent = new Intent(this, EventList.class);
 		startActivity(intent);

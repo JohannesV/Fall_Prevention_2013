@@ -21,7 +21,6 @@ import no.ntnu.stud.fallprevention.datastructures.Contact;
 
 /**
  * Manages(storing, creating) related people
- * @author Tayfun
  *
  */
 public class Related extends Activity {
@@ -30,8 +29,7 @@ public class Related extends Activity {
 	
 	@Override
 	/**
-	 * Prepares the screen for the program
-	 * and sets the activity for related.
+	 * Creates the viewable contents on the screen
 	 */
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,6 +39,7 @@ public class Related extends Activity {
 	@Override
 	/**
 	 * Continues the contact management
+	 * Added listeners and adds Contact-related contents 
 	 */
 	protected void onResume() {
 		super.onResume();
@@ -65,8 +64,9 @@ public class Related extends Activity {
 		listView.setAdapter( adapter );	
 	}
 	/**
-	 * Starts event on the contacts position and Id 
-	 * @param position for detection the position to display
+	 * Sends you to the ContactPerson screen with an extra info about an ID message.
+	 *  
+	 * @param position
 	 */
 	protected void fireEvent(int position) {
 		Intent intent = new Intent(this, ContactPerson.class);
@@ -74,7 +74,7 @@ public class Related extends Activity {
 		startActivity(intent);
 	}
 	/**
-	 * Creates new person
+	 * sends you to the newContact screen
 	 * @param view no function yet
 	 */
 	public void fireNewPerson(View view){
