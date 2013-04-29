@@ -37,7 +37,7 @@ public class ContentProviderHelper {
 	/**
 	 * Returns number of steps done the in the period between start and stop
 	 * 
-	 * @return
+	 * @return mStepCount
 	 */
 	public int getStepCount(Timestamp start, Timestamp stop) {
 

@@ -31,7 +31,6 @@ import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
 /**
  * Shows the statistic screen
  * 
- * @author Tayfun
  * 
  */
 public class Statistics extends Activity implements OnItemSelectedListener {
@@ -40,8 +39,8 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	private Spinner timeSpan, dataType;
 
 	/**
-	 * Prepares the screen for the program and sets the activity for the
-	 * statistics
+	 * Creates the viewable contents for the screen for later use
+	 * e.g spinners and XYCoordinate System.
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +81,7 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	}
 
 	/**
-	 * Puts the statistic computation
+	 * Inserts the content for XYStatistics model 
 	 */
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,

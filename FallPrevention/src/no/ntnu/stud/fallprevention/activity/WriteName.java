@@ -13,16 +13,14 @@ import android.view.View;
 import android.widget.EditText;
 
 /**
- * Class for editing the username and displaying it.
- * @author Tayfun
- *
+ * Class for editing the user name and displaying it.
+ * Usually used when entering the program for the first time,
  */
 public class WriteName extends Activity {
 
 	@Override
 	/**
-	 * Prepares the screen for the program
-	 * and sets the activity for writing names.
+	 * Creates the viewable contents on the screen 
 	 */
 	 protected void onCreate(Bundle savedInstanceState) {
 	   	  super.onCreate(savedInstanceState);
@@ -31,8 +29,8 @@ public class WriteName extends Activity {
 	
 
 	 /**
-	  * Method is fired by button click. Takes the user to the main screen.
-	  * @param view has no function
+	  * Method is fired by button click. Takes the user to the main screen. Updates the name
+	  * @param view 
 	  */
 	  public void fireName(View view) {
 	      // Declerates new instance of the class MainScreen

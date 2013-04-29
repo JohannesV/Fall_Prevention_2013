@@ -5,10 +5,7 @@ import no.ntnu.stud.fallprevention.R.xml;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 /**
- * Calls the methods onCreate to prepare the screen for the program
- * and sets the activity for setting.
- * @author Tayfun
- *
+ * Creates the viewable contents for Settings 
  */
 public class Settings extends PreferenceActivity {
     // Called when the activity is first created
