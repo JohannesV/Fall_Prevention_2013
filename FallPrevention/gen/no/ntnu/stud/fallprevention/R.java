@@ -48,9 +48,9 @@ public final class R {
         public static final int mainScreenSmileyImage=0x7f09000e;
         public static final int mainScreenSubText=0x7f09000f;
         public static final int mainTextView=0x7f090007;
-        public static final int menu_related=0x7f090021;
-        public static final int menu_settings=0x7f09001f;
-        public static final int menu_statistics=0x7f090020;
+        public static final int menu_related=0x7f090020;
+        public static final int menu_settings=0x7f09001e;
+        public static final int menu_statistics=0x7f09001f;
         public static final int mySimpleXYPlot=0x7f090016;
         public static final int mylist=0x7f09000c;
         public static final int name=0x7f090001;
@@ -62,7 +62,6 @@ public final class R {
         public static final int textView1=0x7f09000d;
         public static final int textView2=0x7f090015;
         public static final int time_span_spinner=0x7f090017;
-        public static final int widgetNotificationNumber=0x7f09001e;
     }
     public static final class layout {
         public static final int activity_contact_person=0x7f030000;
@@ -80,8 +79,7 @@ public final class R {
         public static final int entry_contact=0x7f03000c;
         public static final int entry_danger_event=0x7f03000d;
         public static final int entry_eventlist=0x7f03000e;
-        public static final int widget_layout_no_messages=0x7f03000f;
-        public static final int widget_layout_w_messages=0x7f030010;
+        public static final int widget_layout=0x7f03000f;
     }
     public static final class menu {
         public static final int activity_eventdetail=0x7f080000;

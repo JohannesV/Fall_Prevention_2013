@@ -43,11 +43,11 @@ public class WidgetProvider extends AppWidgetProvider {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
 		// Display text
 		
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout_no_messages);
+        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
         
         int i = new DatabaseHelper(context).dbGetEventList().size();
 		LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View layout = layoutInflater.inflate(R.layout.widget_layout_no_messages, null);
+		View layout = layoutInflater.inflate(R.layout.widget_layout, null);
 		TextView textView = (TextView) layout
 				.findViewById(R.id.textView1);
 		
@@ -81,8 +81,7 @@ public class WidgetProvider extends AppWidgetProvider {
         views.setTextViewText(R.id.textView1, mTemp);
         
         Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-//		bitmap = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
-//		Bitmap b = decodeScaledFile(f);
+
 		final float scale = context.getResources().getDisplayMetrics().density;
 		int p = (int) (110 * scale + 0.5f);
 
