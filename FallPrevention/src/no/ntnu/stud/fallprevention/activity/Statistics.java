@@ -90,7 +90,7 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 		// Get risk history values from the database
 		// TODO: make sure time back and interval for cpGetRiskHistory
 		// corresponds to spinner box
-		List<Double> statisticsData = new ArrayList<Double>();
+		List<Double> statisticsData = new ArrayList< Double>();
 
 		// Makes sure to keep the proper timeframe
 		if (parent.getId() == R.id.data_type_spinner) {
@@ -105,6 +105,15 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 							+ (parent.getId() == R.id.data_type_spinner));
 		}
 		// Calls method appropriate to option selected
+	
+		if(timeSpan.isSelected()){
+		
+			statisticsData =  dataType.equals("Steps per minute")? new ContentProviderHelper(getApplicationContext())
+			.cpGetSpeedHistory(6 * (Integer.decode(timeSpan.getSelectedItem().toString()) + 1), 2 * (pos + 1)):
+				new ContentProviderHelper(getApplicationContext())
+			.cpGetSpeedHistory(6 * (Integer.decode(timeSpan.getSelectedItem().toString()) + 1), 2 * (pos + 1));
+			
+		}
 		if (dataType.getSelectedItem().toString()
 				.equalsIgnoreCase("Steps per minute")) {
 			statisticsData = new ContentProviderHelper(getApplicationContext())
