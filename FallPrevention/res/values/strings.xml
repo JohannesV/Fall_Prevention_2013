@@ -28,11 +28,11 @@
     <string name="main_got_new_events">You got new events. Click the smiley to see them.</string>
 
     <string-array name="time_period_array">
-        <item>1 hour</item>
-        <item>4 hours</item>
-        <item>8 hours</item>
         <item>1 day</item>
-        <item>7 days</item>
+        <item>2 days</item>
+        <item>4 days</item>
+        <item>1 week</item>
+        <item>2 weeks</item>
     </string-array>
 
     <string name="new_name_button">New Name</string>
