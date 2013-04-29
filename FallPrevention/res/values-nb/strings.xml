@@ -62,6 +62,8 @@
     <string name="contact_person_delete_dialogue_1">Er du sikker på at du vil fjerne</string>
     <string name="contact_person_delete_dialogue_2">fra kontaktlisten?</string>
     <string-array name="data_type_array">
-        <item >Skritt per minutt</item>
+        <item >Skritt</item>
+        <item >Gait Speed</item>
+        <item >Gait Variability</item>
     </string-array>
 </resources>

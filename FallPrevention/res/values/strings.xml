@@ -65,8 +65,9 @@
     <string name="contact_person_delete_dialogue_2">from your contact list?</string>
 
     <string-array name="data_type_array">
-        <item>Steps per minute</item>
-        <item >Steps total</item>
+        <item >Steps</item>
+        <item >Gait Speed</item>
+        <item >Gait Variability</item>
     </string-array>
 
     <string name="event_list_goodJob_title">You have done well!</string>

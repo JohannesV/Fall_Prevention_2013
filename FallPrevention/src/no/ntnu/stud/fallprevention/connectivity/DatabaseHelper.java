@@ -4,13 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import no.ntnu.stud.fallprevention.R;
 import no.ntnu.stud.fallprevention.datastructures.Contact;
 import no.ntnu.stud.fallprevention.datastructures.Event;
-import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
-import android.content.ContentProviderClient;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -19,7 +16,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
-import android.os.RemoteException;
 import android.provider.ContactsContract;
 import android.util.Log;
 
@@ -27,7 +23,7 @@ import android.util.Log;
  * Database helper is an object that builds and maintains the database. It also
  * works as an interface to the database.
  * 
- * @author elias
+ * @author Elias, Johannes
  * 
  */
 
@@ -50,9 +46,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * Builds a table which is used to store the information
+	 * Builds a table which is used to store the information. Is called
+	 * automatically by the system when a DataBaseHelper object is created, but
+	 * no database exists.
 	 * 
-	 * @param
+	 * @param db
+	 *            - Provided by the system
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {
@@ -109,14 +108,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(FILL_INFO_9);
 		db.execSQL(FILL_INFO_10);
 		db.execSQL(FILL_INFO_11);
+		db.execSQL(FILL_INFO_12);
+		db.execSQL(FILL_INFO_13);
 	}
 
 	/**
-	 * Upgrades the database version and clear its content.
+	 * Upgrades the database version by clearing the content and building new
+	 * tables. Is called automatically by the system if one changes
+	 * DATABASE_VERSION.
 	 * 
-	 * @param: db
-	 * @param: oldVersion
-	 * @param: newVersion
+	 * @param: db - The database to upgrade
+	 * @param: oldVersion - The version number of the database before the
+	 *         upgrade
+	 * @param: newVersion - The version number of the database after the upgrade
 	 */
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -146,11 +150,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * Downgrade the database version and clear its content.
+	 * Downgrade the database version and clear its content. Called
+	 * automatically by the system if the DATABASE_VERSION constant is changed
+	 * to a lower number.
 	 * 
-	 * @param: db
-	 * @param: oldVersion
-	 * @param: newVersion
+	 * @param: db - The database to downgrade
+	 * @param: oldVersion - The version number of the database before the
+	 *         downgrade
+	 * @param: newVersion - The version number of the database after the
+	 *         downgrade
 	 */
 	@Override
 	public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -162,7 +170,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 * Fetches a list of (Event.ID, EventType.Description, EventType.Icon)
 	 * tuples from the database.
 	 * 
-	 * @return events
+	 * @return The list
 	 */
 	public List<Event> dbGetEventList() {
 		List<Event> events = new ArrayList<Event>();
@@ -181,7 +189,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 		// Iterate over the data fetched
 		c.moveToFirst();
-		// Log.v("DatabaseHelper", DatabaseUtils.dumpCursorToString(c));
 		for (int i = 0; i < c.getCount(); i++) {
 			c.moveToPosition(i);
 			Event e = new Event(getLocalEventTitle(c.getString(0)),
@@ -197,11 +204,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * an help for localizing messages from the database although getting the
-	 * database to contain codes instead might also be nice
+	 * A help for localizing messages from the database. Translates abstract
+	 * event title codes to strings found in the localized string.xml files.
 	 * 
 	 * @param origTitle
-	 * @return
+	 *            - The event title code found in the database.
+	 * @return The localized event title.
 	 */
 	public String getLocalEventTitle(String origTitle) {
 		String mReturner = "";
@@ -218,10 +226,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * a method for localizing the event description
+	 * A help for localizing messages from the database. Translates abstract
+	 * event description codes to strings found in the localized string.xml
+	 * files.
 	 * 
 	 * @param origDesc
-	 * @return
+	 *            - The event description code found in the database.
+	 * @return The localized event description.
 	 */
 	public String getLocalEventDescription(String origDesc) {
 		String mReturner = "";
@@ -238,24 +249,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * adds one event of the appropriate type to the list of events
-	 * 
-	 * @return
+	 * Stores a new event of the appropriate type to the database.
 	 */
-
-	public boolean dbAddEvent(int eventType) {
+	public void dbAddEvent(int eventType) {
 		SQLiteDatabase db = getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put(DatabaseContract.Event.COLUMN_NAME_TYPEID, eventType);
-		db.insert("Event", null, values);
-		return true;
+		db.insert(DatabaseContract.Event.TABLE_NAME, null, values);
 	}
 
 	/**
 	 * Deletes the event with the given ID from the database.
 	 * 
 	 * @return True if an event was deleted, false if no event with the given id
-	 *         exists or an error occured.
+	 *         exists or an error occurred.
 	 */
 	public boolean dbDeleteEvent(int id) {
 		int rowsAffected = 0;
@@ -274,8 +281,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	/**
 	 * Fetches information about a single event from the database.
 	 * 
-	 * @param ID
-	 *            of the event in the database
+	 * @param id
+	 *            - the id of the event in the database
 	 * 
 	 * @return A map where the column names are keys
 	 */
@@ -320,9 +327,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * Checks if there are any events to read
+	 * Checks if there are any events in the database.
 	 * 
-	 * @returns True if there are any events in the database
+	 * @returns A boolean stating whether there are any events in the database
 	 */
 	public boolean dbHaveEvents() {
 		SQLiteDatabase db = getReadableDatabase();
@@ -338,53 +345,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * Randomly generates state of risk
+	 * Gets a list of the contacts stored in the application.
 	 * 
-	 * @return RiskStatus
-	 * @see RiskStatus
+	 * @return A list of contact objects.
 	 */
-	public RiskStatus dbGetStatus() {
-		double random = new Random().nextDouble();
-		RiskStatus returner = RiskStatus.VERY_GOOD_JOB;
-		if (random < 0.20) {
-			returner = RiskStatus.BAD_JOB;
-		} else if (random < 0.4) {
-			returner = RiskStatus.NOT_SO_OK_JOB;
-		} else if (random < 0.6) {
-			returner = RiskStatus.OK_JOB;
-		} else if (random < 0.8) {
-			returner = RiskStatus.GOOD_JOB;
-		}
-		return returner;
-	}
-
-	public List<Double> dbGetRiskHistory(int length) {
-		List<Double> riskHistory = new ArrayList<Double>();
-		Uri uri = Uri.parse("content://no.ntnu.stud.fallprovider");
-		ContentProviderClient movementProvider = context.getContentResolver()
-				.acquireContentProviderClient(uri);
-		uri = Uri.parse("content://no.ntnu.stud.fallservice/data/");
-		String[] projection = new String[] { "Steps" };
-		String selection = null;
-		String[] selectionArgs = null;
-		String sortOrder = "ID desc";
-		try {
-			Cursor cursor = movementProvider.query(uri, projection, selection,
-					selectionArgs, sortOrder);
-			for (int i = cursor.getCount() - length; i < cursor.getCount(); i++) {
-				if (i < 0) {
-					i = 0;
-				}
-				cursor.moveToPosition(i);
-				double steps = Double.parseDouble(cursor.getString(0));
-				riskHistory.add(steps);
-			}
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return riskHistory;
-	}
-
 	public List<Contact> dbGetContactList() {
 		List<Contact> contacts = new ArrayList<Contact>();
 
@@ -412,6 +376,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return contacts;
 	}
 
+	/**
+	 * Gets the list of alarm types that are used in the application.
+	 * 
+	 * @return A list of the names of the alarm types that are used.
+	 */
 	public List<String> dbGetAlarmTypes() {
 		List<String> alarm = new ArrayList<String>();
 
@@ -432,9 +401,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
+	 * Add a contact to the application's local list of contacts from the
+	 * phone's global contact list.
 	 * 
 	 * @param id
-	 * @return The contact's name
+	 *            - the id of the contact in the phone's contact list.
+	 * @return The contact's name if successful, None otherwise.
 	 */
 	public String dbAddContact(String id) {
 		// Look up the name in the contacts table
@@ -478,6 +450,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return (newRowId > -1) ? name : null;
 	}
 
+	/**
+	 * Add a contact to the application's local list of contacts. Stores the
+	 * name and phone number of the contact.
+	 * 
+	 * @param contact
+	 *            - a contact object that contains the name and phone number.
+	 */
 	public void dbAddContact(Contact contact) {
 		SQLiteDatabase db = getReadableDatabase();
 
@@ -490,6 +469,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.close();
 	}
 
+	/**
+	 * Gets a contact from the local application database, found by id.
+	 * 
+	 * @param id
+	 *            - the id of the contact
+	 * @return a contact object containing the name, phone number and id of the
+	 *         contact.
+	 */
 	public Contact dbGetContact(int id) {
 		SQLiteDatabase db = getReadableDatabase();
 		String table = DatabaseContract.Contact.TABLE_NAME;
@@ -509,6 +496,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return contact;
 	}
 
+	/**
+	 * Synchronizes the information stored in the database with the contact
+	 * object.
+	 * 
+	 * @param contact
+	 *            - the contact object to synchronize to.
+	 * @return a boolean that is true if the update was successfull.
+	 */
 	public boolean dbUpdateContact(Contact contact) {
 		SQLiteDatabase db = getReadableDatabase();
 
@@ -528,11 +523,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return updated;
 	}
 
+	/**
+	 * Clear all data from the database.
+	 */
 	public void dbClearAllData() {
 		SQLiteDatabase db = getWritableDatabase();
 		reset(db);
 	}
 
+	/**
+	 * Deletes contact from the database, using the id stored in the contact
+	 * object.
+	 * 
+	 * @param contact
+	 *            - the object representing the contact that should be deleted.
+	 */
 	public void dbDeleteContact(Contact contact) {
 		SQLiteDatabase db = getWritableDatabase();
 		String table = DatabaseContract.Contact.TABLE_NAME;
@@ -543,6 +548,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.close();
 	}
 
+	/**
+	 * Resets the database - clears all the tables, and creates tables according
+	 * to the current specifiactions.
+	 * 
+	 * @param db
+	 *            - The database object to clear.
+	 */
 	public void reset(SQLiteDatabase db) {
 		try {
 			db.execSQL("DROP TABLE " + DatabaseContract.EventType.TABLE_NAME);
