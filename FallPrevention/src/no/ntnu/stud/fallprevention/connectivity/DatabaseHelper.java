@@ -256,6 +256,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		ContentValues values = new ContentValues();
 		values.put(DatabaseContract.Event.COLUMN_NAME_TYPEID, eventType);
 		db.insert(DatabaseContract.Event.TABLE_NAME, null, values);
+		db.close();
 	}
 
 	/**
