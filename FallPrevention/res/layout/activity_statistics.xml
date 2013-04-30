@@ -1,29 +1,30 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+        android:orientation="vertical"
     tools:context=".Statistics" >
+<LinearLayout
+        android:id="@+id/linear_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" ><Spinner
+        android:id="@+id/time_span_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-        <com.androidplot.xy.XYPlot
-            android:id="@+id/mySimpleXYPlot"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@+id/linear_layout" />
-
-        <LinearLayout
-            android:id="@+id/linear_layout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-	        <Spinner
-    	        android:id="@+id/time_span_spinner"
-        	    android:layout_width="wrap_content"
-            	android:layout_height="wrap_content" />
-       		<Spinner
-            	android:id="@+id/data_type_spinner"
-            	android:layout_width="wrap_content"
-           		android:layout_height="wrap_content" />
-        </LinearLayout>
+    <Spinner
+        android:id="@+id/data_type_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
     
-</RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+</LinearLayout>

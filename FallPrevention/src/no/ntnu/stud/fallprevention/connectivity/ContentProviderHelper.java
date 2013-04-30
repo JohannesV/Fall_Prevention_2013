@@ -2,6 +2,7 @@ package no.ntnu.stud.fallprevention.connectivity;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -325,6 +326,27 @@ public class ContentProviderHelper {
 					getHoursBack((i + 1) * interval),
 					getHoursBack(i * interval)));
 
+		}
+		return returner;
+	}
+
+	public List<Integer> cpGetStepsHistoryWeek() {
+
+		List<Integer> returner = new ArrayList<Integer>();
+
+		for (int i = 1; i <= 7; i++) {
+			// the list is supposed to be read in an interleaved format, meaning
+			// x and y values alternating
+			// returner.add((double) getStepCount(getHoursBack((24 * (i - 1)) -
+			// Calendar.HOUR_OF_DAY), getHoursBack((24 * i) -
+			// Calendar.HOUR_OF_DAY)));
+			Integer temp = getStepCount(getHoursBack((24 * (i))),
+					getHoursBack((24 * (i - 1))));
+			Log.v(TAG,
+					"getStepCount, start" + getHoursBack((24 * (i))).toString()
+							+ " end" + getHoursBack((24 * (i - 1))).toString()
+							+ " steps" + temp.toString());
+			returner.add(temp);
 		}
 		return returner;
 	}
