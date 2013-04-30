@@ -48,7 +48,6 @@ public final class R {
         public static final int mainScreenSmileyImage=0x7f09000e;
         public static final int mainScreenSubText=0x7f09000f;
         public static final int mainTextView=0x7f090007;
-        public static final int menu_related=0x7f090020;
         public static final int menu_settings=0x7f09001e;
         public static final int menu_statistics=0x7f09001f;
         public static final int mySimpleXYPlot=0x7f090016;

@@ -140,10 +140,10 @@ public class MainScreen extends Activity {
 			intent = new Intent(this, Settings.class);
 			startActivity(intent);
 			break;
-		case R.id.menu_related:
-			intent = new Intent(this, Related.class);
-			startActivity(intent);
-			break;
+//		case R.id.menu_related:
+//			intent = new Intent(this, Related.class);
+//			startActivity(intent);
+//			break; 
 		}
 		return false;
 	}
