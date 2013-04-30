@@ -252,6 +252,7 @@ public class ContentProviderHelper {
 	/**
 	 * returns a list containing information for the statistics class to display
 	 * Information is gotten from the content provider
+	 * and it is sorted with x value and y value interleaved with each other, starting with x
 	 * 
 	 * 
 	 * @param length
@@ -275,7 +276,18 @@ public class ContentProviderHelper {
 		}
 		return returner;
 	}
-
+	/**
+	 * returns a list containing information for the statistics class to display
+	 * Information is gotten from the content provider
+	 * and it is sorted with x value and y value interleaved with each other, starting with x
+	 * 
+	 * 
+	 * @param length
+	 *            is the time in number of intervals backwards
+	 * @param interval
+	 *            is the size for each interval, in number of hours
+	 * @return
+	 */
 	public List<Double> cpGetSpeedHistory(int length, int interval) {
 
 		List<Double> returner = new ArrayList<Double>();
@@ -294,7 +306,20 @@ public class ContentProviderHelper {
 		}
 		return returner;
 	}
-	public List<Double> cpGetVariabilityHistory(){
+	/**
+	 * returns a list containing information for the statistics class to display
+	 * Information is gotten from the content provider
+	 * and it is sorted with x value and y value interleaved with each other, starting with x
+	 * 
+	 * 
+	 * @param length
+	 *            is the time in number of intervals backwards
+	 * @param interval
+	 *            is the size for each interval, in number of hours
+	 * @return
+	 */
+	public List<Double> cpGetVariabilityHistory(int length,int interval){
+		//TODO: fill the returner list
 		List<Double> returner= new ArrayList<Double>();
 		
 		return returner;
