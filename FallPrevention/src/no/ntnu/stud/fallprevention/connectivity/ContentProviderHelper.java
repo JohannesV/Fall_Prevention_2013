@@ -124,6 +124,11 @@ public class ContentProviderHelper {
 
 		return returner;
 	}
+	public double getGaitVariability(Timestamp start,Timestamp stop){
+		double returner=-1;
+		
+		return returner;
+	}
 
 	public double getGaitSpeed(Timestamp start, Timestamp stop) {
 		double returner = -1;
@@ -287,6 +292,11 @@ public class ContentProviderHelper {
 							+ getGaitSpeed(getHoursBack((i + 1) * interval),
 									getHoursBack(i * interval)));
 		}
+		return returner;
+	}
+	public List<Double> cpGetVariabilityHistory(){
+		List<Double> returner= new ArrayList<Double>();
+		
 		return returner;
 	}
 
