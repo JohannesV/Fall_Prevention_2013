@@ -11,7 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 /**
  * This adapter is used to set the layout for a list in ContactPerson
- * @author Dot
+ * 
+ * @author Elias
  *
  */
 public class EditContactAdapter extends ArrayAdapter<String> {

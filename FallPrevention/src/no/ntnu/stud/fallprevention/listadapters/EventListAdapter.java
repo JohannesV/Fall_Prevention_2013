@@ -15,8 +15,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- *  Adapter for the class EventList. Gets the view of the list.
- * @author Tayfun
+ *  This adapter is used to set the layout for a list in EventList
+ *  
+ * @author Elias
  *
  */
 public class EventListAdapter extends ArrayAdapter<String> {
