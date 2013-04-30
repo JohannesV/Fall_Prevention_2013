@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FallTimeSeries</string>
+    <string name="title_activity_launch">LaunchActivity</string>
+    <string name="notification_message">Step detection</string>
+    <string name="service_title">Motion Detector</string>
+    <string name="service_description">Monitoring your movements, watching your health.</string>
+    <string name="service_start">Motion Detector started!</string>
+    <string name="title_activity_calibration">CalibrationActivity</string>
+    <string name="instructions">Press the button to lock the screen. \nWhen the screen is locked, put the phone in your pocket. \nAfter 10 seconds, the phone will make a beep. \nWhen you hear the beep, start walking as you normally do. \nKeep walking until you hear another beep. \nThe step detector will then be calibrated.</string>
+    <string name="lock_screen">Start Calibration</string>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Valens Content Provider</string>
+    <string name="main_explanatory_text">Dette er Content Provideren til alle programma i Valens-familien. Dette programmet holder bare på data for de andre programma. Hvis du vi sjå eller endre dataene, kan du lese hvordan på nettsida vår example.com. Det eneste du kan gjøre her, er å slette dataene ved å trykke på den røde knappen nedenfor, noe som ikke er anbefalt med mindre du veit hva du driver med!</string>
+    <string name="delete_button_text">Slett dataene (ikke anbefalt)</string>
+
+</resources>
