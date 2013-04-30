@@ -1,6 +1,10 @@
 package no.ntnu.stud.fallprevention.activity;
 
-
+import java.util.ArrayList;
+import java.util.List;
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
+import no.ntnu.stud.fallprevention.datastructures.Contact;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,18 +20,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import no.ntnu.stud.fallprevention.R;
-import no.ntnu.stud.fallprevention.R.layout;
-import no.ntnu.stud.fallprevention.R.string;
-import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
-import no.ntnu.stud.fallprevention.datastructures.Contact;
-
-
 /**
- * Manages functions on contacts(creating, getting, setting, firing events)
+ * Handles the screen for getting contacts from the phone contact list. 
+ * 
+ * @author Elias
  */
 public class NewContact extends Activity {
 
@@ -54,10 +50,13 @@ public class NewContact extends Activity {
 
 		populateContactList();
 	}
-    /**
-     * Reactive functions on Click: alertbox, message, dialog
-     * @param position  position for detection the position to display
-     */
+
+	/**
+	 * Handles click events
+	 * 
+	 * @param position
+	 *            position for detection the position to display
+	 */
 	public void fireClick(int position) {
 		final int _id = contacts.get(position).getId();
 		AlertDialog.Builder alert_box = new AlertDialog.Builder(this);
@@ -92,6 +91,7 @@ public class NewContact extends Activity {
 				});
 		alert_box.show();
 	}
+
 	/**
 	 * Makes a structured contact list
 	 */
@@ -107,9 +107,10 @@ public class NewContact extends Activity {
 				android.R.layout.simple_list_item_1, contactNames);
 		contactList.setAdapter(adapter);
 	}
-/**
- * It's a get method to get all the Contacts and displays it
- */
+
+	/**
+	 * Fetches the contacts from the phone database.
+	 */
 	public void getContacts() {
 		// Run query
 		Uri uri = ContactsContract.Contacts.CONTENT_URI;
@@ -134,10 +135,12 @@ public class NewContact extends Activity {
 			contacts.add(new Contact(name, id));
 		}
 	}
-/**
- * its a method for a button that sends you to the CreateContact screen
- * @param view
- */
+
+	/**
+	 * its a method for a button that sends you to the CreateContact screen
+	 * 
+	 * @param view
+	 */
 	public void createContact(View view) {
 		Intent intent = new Intent(this, CreateContact.class);
 		startActivity(intent);
