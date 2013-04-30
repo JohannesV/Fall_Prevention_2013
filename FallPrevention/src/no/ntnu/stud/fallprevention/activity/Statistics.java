@@ -96,7 +96,7 @@ public class Statistics extends Activity implements OnItemSelectedListener {
         if (mChart == null) {
             initChart("Test");
             addData();
-            mChart = ChartFactory.getCubeLineChartView(this, mDataset, mRenderer, 0.3f);
+            mChart = ChartFactory.getCubeLineChartView(this, mDataset, mRenderer, 0.1f);
             mChart.setBackgroundColor(Color.WHITE);
             layout.addView(mChart);
         } else {

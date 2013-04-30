@@ -2,7 +2,9 @@ package com.example.falltimeseries;
 
 import java.util.List;
 import android.content.ContentValues;
+import android.content.SharedPreferences;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 
 /**
  * A separate thread called by StepMainService to calculate the step time stamps based on a time 
@@ -30,6 +32,9 @@ public class DetectStepsThread implements Runnable {
 		this.mVectorLengths = mTimeSeries;
 		this.mTimeStamps = mTimeStamps;
 		this.activity = activity;
+		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
+		mMean = (double)sp.getFloat("mean", 0.5f);
+		mStd = (double)sp.getFloat("std", 1f);
 	}
 
 	/**
