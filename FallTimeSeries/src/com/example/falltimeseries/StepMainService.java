@@ -140,7 +140,7 @@ public class StepMainService extends Service implements SensorEventListener {
 		// See if there is enough data to launch a calculation
 		if (mVectorLengths.size() >= Values.COMMIT_DATA_THRESHOLD) {
 			DetectStepsThread ds = new DetectStepsThread(new ArrayList<Float>(
-					mVectorLengths), new ArrayList<Long>(mTimeStamps), this);
+					mVectorLengths), new ArrayList<Long>(mTimeStamps), this, mMean, mStd);
 			ds.run();
 			discardData();
 		}
