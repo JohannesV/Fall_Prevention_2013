@@ -9,7 +9,7 @@
             android:title="@string/preferences_name_title"
             android:summary="@string/preferences_name_summary" />
         
-        <no.ntnu.stud.fallprevention.ClearHistory
+        <no.ntnu.stud.fallprevention.activity.ClearHistory
             android:title="@string/preferences_clear_history_title"
             android:summary="@string/preferences_clear_history_summary" />
         
