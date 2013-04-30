@@ -124,60 +124,62 @@ public class ContentProviderHelper {
 
 		return returner;
 	}
-	public double getGaitVariability(Timestamp start,Timestamp stop){
-		double returner=-1;
-		
+
+	public double getGaitVariability(Timestamp start, Timestamp stop) {
+		double returner = -1;
+
 		// Setting variables for the query
-				// sets the unique resource identifier for the data
-				Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
-				ContentProviderClient stepsProvider = context.getContentResolver()
-						.acquireContentProviderClient(uri);
+		// sets the unique resource identifier for the data
+		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
+		ContentProviderClient stepsProvider = context.getContentResolver()
+				.acquireContentProviderClient(uri);
 
-				uri = Uri.parse("content://ntnu.stud.valens.contentprovider/gaits");
-				// sets the projection part of the query
-				String[] projection = new String[] { "variability" };
-				// sets the selection part of the query
-				String selection = "start > " + start.getTime() + " AND stop < "
-						+ stop.getTime();
+		uri = Uri.parse("content://ntnu.stud.valens.contentprovider/gaits");
+		// sets the projection part of the query
+		String[] projection = new String[] { "variability" };
+		// sets the selection part of the query
+		String selection = "start > " + start.getTime() + " AND stop < "
+				+ stop.getTime();
 
-				// not used, therefore null
-				String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
-				// no need for sorting
-				String sortOrder = null;
+		// not used, therefore null
+		String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
+		// no need for sorting
+		String sortOrder = null;
 
-				// uses variables to construct query
-				Log.v(TAG, "Attempting query");
-				try {
-					// Everything in order
-					Cursor cursor = stepsProvider.query(uri, projection, selection,
-							selectionArgs, sortOrder);
-					cursor.moveToFirst();
-					if (cursor.getCount() > 0 & cursor != null) {
-						Log.v(TAG, "Variability: " + String.valueOf(cursor.getString(0)));
-						returner = cursor.getDouble(0);
-						Log.v(TAG, String.valueOf(returner));
-						Log.v(TAG, "Query done without errors!");
-					} else {
-						Log.v(TAG, "Variability : Cursor empty");
-					}
+		// uses variables to construct query
+		Log.v(TAG, "Attempting query");
+		try {
+			// Everything in order
+			Cursor cursor = stepsProvider.query(uri, projection, selection,
+					selectionArgs, sortOrder);
+			cursor.moveToFirst();
+			if (cursor.getCount() > 0 & cursor != null) {
+				Log.v(TAG,
+						"Variability: " + String.valueOf(cursor.getString(0)));
+				returner = cursor.getDouble(0);
+				Log.v(TAG, String.valueOf(returner));
+				Log.v(TAG, "Query done without errors!");
+			} else {
+				Log.v(TAG, "Variability : Cursor empty");
+			}
 
-				} catch (SQLException e) {
-					// SQL problems
-					Log.v(TAG, e.toString());
-					e.printStackTrace();
-				} catch (RemoteException e) {
-					// Remote binding problems
+		} catch (SQLException e) {
+			// SQL problems
+			Log.v(TAG, e.toString());
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			// Remote binding problems
 
-					e.printStackTrace();
-				} catch (NullPointerException e) {
-					// Nullpointer problems
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			// Nullpointer problems
 
-					Log.v(TAG, e.toString());
-					e.printStackTrace();
-				} catch (Exception e) {
-					// f* tha code-police
-				}
-		
+			Log.v(TAG, e.toString());
+			e.printStackTrace();
+		} catch (Exception e) {
+			// f* tha code-police
+		}
+
 		return returner;
 	}
 
@@ -301,8 +303,8 @@ public class ContentProviderHelper {
 
 	/**
 	 * returns a list containing information for the statistics class to display
-	 * Information is gotten from the content provider
-	 * and it is sorted with x value and y value interleaved with each other, starting with x
+	 * Information is gotten from the content provider and it is sorted with x
+	 * value and y value interleaved with each other, starting with x
 	 * 
 	 * 
 	 * @param length
@@ -326,10 +328,11 @@ public class ContentProviderHelper {
 		}
 		return returner;
 	}
+
 	/**
 	 * returns a list containing information for the statistics class to display
-	 * Information is gotten from the content provider
-	 * and it is sorted with x value and y value interleaved with each other, starting with x
+	 * Information is gotten from the content provider and it is sorted with x
+	 * value and y value interleaved with each other, starting with x
 	 * 
 	 * 
 	 * @param length
@@ -344,9 +347,8 @@ public class ContentProviderHelper {
 		for (int i = length; i >= 0; i--) {
 			// the list is supposed to be read in an interleaved format, meaning
 			// x and y values alternating
-			returner.add((double) (-i ));
-			returner.add((double) getGaitSpeed(
-					getHoursBack((i + 1) *24),
+			returner.add((double) (-i));
+			returner.add((double) getGaitSpeed(getHoursBack((i + 1) * 24),
 					getHoursBack(i * 24)));
 			Log.v(TAG,
 					"Speed:"
@@ -355,21 +357,34 @@ public class ContentProviderHelper {
 		}
 		return returner;
 	}
+
 	/**
 	 * returns a list containing information for the statistics class to display
-	 * Information is gotten from the content provider
-	 * and it is sorted with x value and y value interleaved with each other, starting with x
+	 * Information is gotten from the content provider and it is sorted with x
+	 * value and y value interleaved with each other, starting with x
 	 * 
 	 * 
 	 * @param length
 	 *            is the time in number of days backwards
-	
+	 * 
 	 * @return
 	 */
-	public List<Double> cpGetVariabilityHistory(int length){
-		//TODO: fill the returner list
-		List<Double> returner= new ArrayList<Double>();
-		
+	public List<Double> cpGetVariabilityHistory(int length) {
+		// TODO: fill the returner list
+		List<Double> returner = new ArrayList<Double>();
+
+		for (int i = length; i >= 0; i--) {
+			// the list is supposed to be read in an interleaved format, meaning
+			// x and y values alternating
+			returner.add((double) (-i));
+			returner.add((double) getGaitSpeed(getHoursBack((i + 1) * 24),
+					getHoursBack(i * 24)));
+			Log.v(TAG,
+					"Variability:"
+							+ getGaitSpeed(getHoursBack((i + 1) * 24),
+									getHoursBack(i * 24)));
+		}
+
 		return returner;
 	}
 
