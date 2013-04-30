@@ -16,7 +16,6 @@ import android.widget.ListView;
  * Activity class which makes the content in CreateContact available
  * The main purpose of this class is to create a new contact.
  * 
- * @author Dot
  */
 public class CreateContact extends ListActivity {
 	

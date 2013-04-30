@@ -12,7 +12,6 @@ import android.widget.Toast;
 /**
  * This class will Clear your personal data from the app.
  * This includes Name, Settings and Data stored by the program.
- * @author Dot
  *
  */
 public class ClearHistory extends Preference {

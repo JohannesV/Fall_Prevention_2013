@@ -13,6 +13,11 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+/**
+ * Eventlist provides viewable Content for the Eventlist screen to the App. The contents is items such as Notifications/events
+ *
+ */
+
 public class EventList extends ListActivity {
 
 	List<Event> events;

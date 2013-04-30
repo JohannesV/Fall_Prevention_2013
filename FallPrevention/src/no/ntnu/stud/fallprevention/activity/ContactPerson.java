@@ -19,7 +19,6 @@ import android.widget.ListView;
  * Activity class which makes the content in ContactPerson available
  * The main purpose of this class is to edit a contact.
  * 
- * @author Dot
  */
 
 public class ContactPerson extends ListActivity {

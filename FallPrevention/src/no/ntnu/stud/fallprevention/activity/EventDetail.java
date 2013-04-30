@@ -11,6 +11,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * This class will provide more detailed information about the Notifications/events form the event list 
+ *
+ */
 public class EventDetail extends Activity {
 	
 	private int eventId; 
