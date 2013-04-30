@@ -1,131 +1,135 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Main" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".Main" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_explanatory_text" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_explanatory_text" />
 
-    <Button
-        android:id="@+id/btnDeleteDB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="10dp"
-        android:background="@color/warning_background_red"
-        android:text="@string/delete_button_text"
-        android:textColor="@color/warning_foreground_red" />
+        <Button
+            android:id="@+id/btnDeleteDB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_alignRight="@+id/textView1"
+            android:layout_below="@+id/textView1"
+            android:layout_marginTop="10dp"
+            android:background="@color/warning_background_red"
+            android:text="@string/delete_button_text"
+            android:textColor="@color/warning_foreground_red" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnDeleteDB"
-        android:layout_below="@+id/btnDeleteDB"
-        android:layout_marginTop="14dp"
-        android:text="Debug (rows in tables)"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btnDeleteDB"
+            android:layout_below="@+id/btnDeleteDB"
+            android:layout_marginTop="14dp"
+            android:text="Debug (rows in tables)"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:text="Raw_steps:" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_below="@+id/textView3"
+            android:text="Raw_steps:" />
 
-    <TextView
-        android:id="@+id/TextView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2"
-        android:text="Steps:" />
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:text="Steps:" />
 
-    <TextView
-        android:id="@+id/TextView03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView02"
-        android:layout_below="@+id/TextView02"
-        android:text="Gaits:" />
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView02"
+            android:layout_below="@+id/TextView02"
+            android:text="Gaits:" />
 
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView03"
-        android:layout_below="@+id/TextView03"
-        android:text="Tests:" />
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView03"
+            android:layout_below="@+id/TextView03"
+            android:text="Tests:" />
 
-    <TextView
-        android:id="@+id/TextView04"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TextView01"
-        android:text="Test_types:" />
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TextView01"
+            android:text="Test_types:" />
 
-    <TextView
-        android:id="@+id/txtRawSteps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/TextView02"
-        android:layout_marginLeft="33dp"
-        android:layout_toRightOf="@+id/TextView04"
-        android:text="0" />
+        <TextView
+            android:id="@+id/txtRawSteps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/TextView02"
+            android:layout_marginLeft="33dp"
+            android:layout_toRightOf="@+id/TextView04"
+            android:text="0" />
 
-    <TextView
-        android:id="@+id/txtTests"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/TextView04"
-        android:layout_alignLeft="@+id/txtGaits"
-        android:text="0" />
+        <TextView
+            android:id="@+id/txtTests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/TextView04"
+            android:layout_alignLeft="@+id/txtGaits"
+            android:text="0" />
 
-    <TextView
-        android:id="@+id/txtGaits"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/txtTests"
-        android:layout_alignLeft="@+id/txtSteps"
-        android:text="0" />
+        <TextView
+            android:id="@+id/txtGaits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtTests"
+            android:layout_alignLeft="@+id/txtSteps"
+            android:text="0" />
 
-    <TextView
-        android:id="@+id/txtSteps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/txtGaits"
-        android:layout_alignLeft="@+id/txtRawSteps"
-        android:text="0" />
+        <TextView
+            android:id="@+id/txtSteps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtGaits"
+            android:layout_alignLeft="@+id/txtRawSteps"
+            android:text="0" />
 
-    <TextView
-        android:id="@+id/txtTestTypes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView04"
-        android:layout_alignBottom="@+id/TextView04"
-        android:layout_alignLeft="@+id/txtTests"
-        android:text="0" />
+        <TextView
+            android:id="@+id/txtTestTypes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/TextView04"
+            android:layout_alignBottom="@+id/TextView04"
+            android:layout_alignLeft="@+id/txtTests"
+            android:text="0" />
 
-    <Button
-        android:id="@+id/btnDoCalculations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView04"
-        android:layout_alignRight="@+id/btnDeleteDB"
-        android:layout_below="@+id/TextView04"
-        android:background="@color/warning_background_red"
-        android:text="Do calculations (not recommended)"
-        android:textColor="@color/warning_foreground_red" />
+        <Button
+            android:id="@+id/btnDoCalculations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView04"
+            android:layout_alignRight="@+id/btnDeleteDB"
+            android:layout_below="@+id/TextView04"
+            android:background="@color/warning_background_red"
+            android:text="Do calculations (not recommended)"
+            android:textColor="@color/warning_foreground_red" />
+    </RelativeLayout>
 
-</RelativeLayout>
+</ScrollView>
