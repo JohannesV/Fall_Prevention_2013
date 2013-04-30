@@ -9,7 +9,7 @@ import android.net.Uri;
  * series of data. Performed in a separate thread to not interfere with the sensor input in 
  * StepMainService.
  * 
- * @author Elias Aamot
+ * @author Elias
  *
  */
 public class DetectStepsThread implements Runnable {	

@@ -8,7 +8,7 @@ import java.util.List;
  * A class that contain several of the static methods that are used during
  * calculation of steps.
  * 
- * @author Elias Aamot
+ * @author Elias
  * 
  */
 public class Methods {
