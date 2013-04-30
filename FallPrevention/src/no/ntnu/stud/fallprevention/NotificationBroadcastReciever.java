@@ -1,6 +1,5 @@
 package no.ntnu.stud.fallprevention;
 
-import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;

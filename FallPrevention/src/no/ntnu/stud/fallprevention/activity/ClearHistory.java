@@ -1,16 +1,11 @@
 package no.ntnu.stud.fallprevention.activity;
 
 import no.ntnu.stud.fallprevention.R;
-import no.ntnu.stud.fallprevention.R.string;
 import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.preference.Preference;
-import android.preference.PreferenceManager;
-import android.sax.StartElementListener;
 import android.util.AttributeSet;
 import android.widget.Toast;
 
