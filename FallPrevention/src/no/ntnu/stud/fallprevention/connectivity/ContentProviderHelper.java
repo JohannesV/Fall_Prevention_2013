@@ -53,9 +53,9 @@ public class ContentProviderHelper {
 		// sets the projection part of the query
 		String[] projection = new String[] { "count(timestamp) as count" };
 		// sets the selection part of the query
-		String selection =  "timestamp > " + start.getTime() +
-							 " AND timestamp < " + stop.getTime();
-								 
+		String selection = "timestamp > " + start.getTime()
+				+ " AND timestamp < " + stop.getTime();
+
 		// not used, therefore null
 		String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
 		// no need for sorting
@@ -106,9 +106,6 @@ public class ContentProviderHelper {
 				- TimeUnit.MILLISECONDS.convert(hours, TimeUnit.HOURS));
 	}
 
-
-
-
 	/**
 	 * returns a Riskstatus depending on amounts of steps taken
 	 * 
@@ -127,59 +124,72 @@ public class ContentProviderHelper {
 
 		return returner;
 	}
-	public double getGaitSpeed(Timestamp start, Timestamp stop){
+	public double getGaitVariability(Timestamp start,Timestamp stop){
 		double returner=-1;
+		
+		return returner;
+	}
+
+	public double getGaitSpeed(Timestamp start, Timestamp stop) {
+		double returner = -1;
 		// Setting variables for the query
-				// sets the unique resource identifier for the data
-//				Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
-//				ContentProviderClient stepsProvider = context.getContentResolver()
-//						.acquireContentProviderClient(uri);
-//
-//				uri = Uri.parse("content://ntnu.stud.valens.contentprovider/gaits");
-//				// sets the projection part of the query
-//				String[] projection = new String[] { "gaitVariability" };
-//				// sets the selection part of the query
-//				//TODO fix query according to specifications
-//				String selection =  "start > " + start.getTime() +
-//									 " AND stop < " + stop.getTime();
-//										 
-//				// not used, therefore null
-//				String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
-//				// no need for sorting
-//				String sortOrder = null;
-//
-//				// uses variables to construct query
-//				Log.v(TAG, "Attempting query");
-//				try {
-//					// Everything in order
-//					Cursor cursor = stepsProvider.query(uri, projection, selection,
-//							selectionArgs, sortOrder);
-//					cursor.moveToFirst();
-//					Log.v(TAG, "Variability: " + String.valueOf(cursor.getString(0)));
-//					returner = cursor.getDouble(0);
-//					Log.v(TAG, String.valueOf(returner));
-//					Log.v(TAG, "Query done without errors!");
-//
-//				} catch (SQLException e) {
-//					// SQL problems
-//					Log.v(TAG, e.toString());
-//					e.printStackTrace();
-//				} catch (RemoteException e) {
-//					// Remote binding problems
-//
-//					e.printStackTrace();
-//				} catch (NullPointerException e) {
-//					// Nullpointer problems
-//
-//					Log.v(TAG, e.toString());
-//					e.printStackTrace();
-//				}
-		long stepCount=getStepCount(start,stop);
-		 long deltatime=TimeUnit.MILLISECONDS.toMinutes(stop.getTime()-start.getTime());
-		 Log.v(TAG, "Step Count: "+stepCount);
-		 Log.v(TAG,"Delta time: "+deltatime);
-		 returner=((double)stepCount/(double)deltatime);
-		 Log.v(TAG, "Result: "+returner);
+		// sets the unique resource identifier for the data
+		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
+		ContentProviderClient stepsProvider = context.getContentResolver()
+				.acquireContentProviderClient(uri);
+
+		uri = Uri.parse("content://ntnu.stud.valens.contentprovider/gaits");
+		// sets the projection part of the query
+		String[] projection = new String[] { "speed" };
+		// sets the selection part of the query
+		// TODO fix query according to specifications
+		String selection = "start > " + start.getTime() + " AND stop < "
+				+ stop.getTime();
+
+		// not used, therefore null
+		String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
+		// no need for sorting
+		String sortOrder = null;
+
+		// uses variables to construct query
+		Log.v(TAG, "Attempting query");
+		try {
+			// Everything in order
+			Cursor cursor = stepsProvider.query(uri, projection, selection,
+					selectionArgs, sortOrder);
+			cursor.moveToFirst();
+			if (cursor.getCount() > 0 & cursor != null) {
+				Log.v(TAG, "Speed: " + String.valueOf(cursor.getString(0)));
+				returner = cursor.getDouble(0);
+				Log.v(TAG, String.valueOf(returner));
+				Log.v(TAG, "Query done without errors!");
+			} else {
+				Log.v(TAG, "Cursor empty");
+			}
+
+		} catch (SQLException e) {
+			// SQL problems
+			Log.v(TAG, e.toString());
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			// Remote binding problems
+
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			// Nullpointer problems
+
+			Log.v(TAG, e.toString());
+			e.printStackTrace();
+		} catch (Exception e) {
+			// f* tha code-police
+		}
+		// long stepCount=getStepCount(start,stop);
+		// long
+		// deltatime=TimeUnit.MILLISECONDS.toMinutes(stop.getTime()-start.getTime());
+		// Log.v(TAG, "Step Count: "+stepCount);
+		// Log.v(TAG,"Delta time: "+deltatime);
+		// returner=((double)stepCount/(double)deltatime);
+		// Log.v(TAG, "Result: "+returner);
 		return returner;
 	}
 
@@ -194,13 +204,13 @@ public class ContentProviderHelper {
 		double dayOne = getStepCount(getHoursBack(24), getHoursBack(0));
 		double dayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
 		int returner = 3;
-		
+
 		if (dayOne > Constants.GOOD_STEPS_NUMBER) {
 			returner = RiskStatus.VERY_GOOD_JOB.getCode();
 		} else {
 			if (dayOne < dayTwo) {
 				if (dayOne * 100 / dayTwo > Constants.SMALL_CHANGE_THRESHOLD) {
-					
+
 					returner = RiskStatus.OK_JOB.getCode();
 				} else if (dayOne * 100 / dayTwo > Constants.LARGE_CHANGE_THRESHOLD) {
 					returner = RiskStatus.NOT_SO_OK_JOB.getCode();
@@ -219,18 +229,18 @@ public class ContentProviderHelper {
 
 			}
 		}
-		//pushNotification(returner);
+		// pushNotification(returner);
 		return returner;
 
 	}
 
 	public synchronized void pushNotification(int returner) {
-		DatabaseHelper dbh= new DatabaseHelper(context);
-		if(returner==RiskStatus.OK_JOB.getCode()){
+		DatabaseHelper dbh = new DatabaseHelper(context);
+		if (returner == RiskStatus.OK_JOB.getCode()) {
 			dbh.dbAddEvent(2);
-		}else if(returner==RiskStatus.BAD_JOB.getCode()){
+		} else if (returner == RiskStatus.BAD_JOB.getCode()) {
 			dbh.dbAddEvent(1);
-		}else if(returner==RiskStatus.VERY_GOOD_JOB.getCode()){
+		} else if (returner == RiskStatus.VERY_GOOD_JOB.getCode()) {
 			dbh.dbAddEvent(0);
 		}
 	}
@@ -242,32 +252,76 @@ public class ContentProviderHelper {
 	/**
 	 * returns a list containing information for the statistics class to display
 	 * Information is gotten from the content provider
+	 * and it is sorted with x value and y value interleaved with each other, starting with x
+	 * 
 	 * 
 	 * @param length
+	 *            is the time in number of intervals backwards
+	 * @param interval
+	 *            is the size for each interval, in number of hours
 	 * @return
 	 */
-	public List<Double> cpGetStepsHistory(int length,int interval) {
+	public List<Double> cpGetStepsHistory(int length, int interval) {
 
 		List<Double> returner = new ArrayList<Double>();
 
-		for (int i =length;i>= 0;i--){
-			//the list is supposed to be read in an interleaved format, meaning x and y values alternating
-			returner.add((double) (-i*interval));
-			returner.add((double) getStepCount(getHoursBack((i+1)*interval), getHoursBack(i*interval)));
-			
+		for (int i = length; i >= 0; i--) {
+			// the list is supposed to be read in an interleaved format, meaning
+			// x and y values alternating
+			returner.add((double) (-i * interval));
+			returner.add((double) getStepCount(
+					getHoursBack((i + 1) * interval),
+					getHoursBack(i * interval)));
+
 		}
 		return returner;
 	}
-	public List<Double> cpGetSpeedHistory(int length,int interval) {
+	/**
+	 * returns a list containing information for the statistics class to display
+	 * Information is gotten from the content provider
+	 * and it is sorted with x value and y value interleaved with each other, starting with x
+	 * 
+	 * 
+	 * @param length
+	 *            is the time in number of intervals backwards
+	 * @param interval
+	 *            is the size for each interval, in number of hours
+	 * @return
+	 */
+	public List<Double> cpGetSpeedHistory(int length, int interval) {
 
 		List<Double> returner = new ArrayList<Double>();
 
-		for (int i =length;i>= 0;i--){
-			//the list is supposed to be read in an interleaved format, meaning x and y values alternating
-			returner.add((double) (-i*interval));
-			returner.add((double) getGaitSpeed(getHoursBack((i+1)*interval), getHoursBack(i*interval)));
-			Log.v(TAG, "Speed:" +getGaitSpeed(getHoursBack((i+1)*interval), getHoursBack(i*interval)));
+		for (int i = length; i >= 0; i--) {
+			// the list is supposed to be read in an interleaved format, meaning
+			// x and y values alternating
+			returner.add((double) (-i * interval));
+			returner.add((double) getGaitSpeed(
+					getHoursBack((i + 1) * interval),
+					getHoursBack(i * interval)));
+			Log.v(TAG,
+					"Speed:"
+							+ getGaitSpeed(getHoursBack((i + 1) * interval),
+									getHoursBack(i * interval)));
 		}
+		return returner;
+	}
+	/**
+	 * returns a list containing information for the statistics class to display
+	 * Information is gotten from the content provider
+	 * and it is sorted with x value and y value interleaved with each other, starting with x
+	 * 
+	 * 
+	 * @param length
+	 *            is the time in number of intervals backwards
+	 * @param interval
+	 *            is the size for each interval, in number of hours
+	 * @return
+	 */
+	public List<Double> cpGetVariabilityHistory(int length,int interval){
+		//TODO: fill the returner list
+		List<Double> returner= new ArrayList<Double>();
+		
 		return returner;
 	}
 
