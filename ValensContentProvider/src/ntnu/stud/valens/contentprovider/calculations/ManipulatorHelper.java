@@ -2,12 +2,14 @@ package ntnu.stud.valens.contentprovider.calculations;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.CalendarView;
 
 /**
  * This class handles most of the work in deriving new data from data that
@@ -49,8 +51,8 @@ public class ManipulatorHelper extends BroadcastReceiver {
 	public void calculate(Context context) {
 		ContentProviderHelper cph = new ContentProviderHelper(context);
 		// Get the raw steps for the last 24hours.
-		Timestamp now = ContentProviderHelper.getHoursBack(0);
-		Timestamp yesterday = ContentProviderHelper.getHoursBack(24);
+		Timestamp now = ContentProviderHelper.getHoursBack(Calendar.HOUR - 4);
+		Timestamp yesterday = ContentProviderHelper.getHoursBack(24 + Calendar.HOUR_OF_DAY - 4);
 		List<List<Long>> rawSteps = cph.getRawSteps(yesterday, now);
 		// Find the true steps steps. I.e. the steps from the source with the
 		// most steps.

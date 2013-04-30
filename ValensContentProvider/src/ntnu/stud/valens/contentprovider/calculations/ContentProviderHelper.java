@@ -12,6 +12,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.RemoteException;
+import android.util.Log;
 
 /**
  * Class that provides an interface to the content provider for the calculation subapp.
@@ -22,6 +23,8 @@ import android.os.RemoteException;
 @SuppressLint("NewApi")
 public class ContentProviderHelper {
 
+	private static final String TAG = "ntnu.stud.valens.contentprovider.calculations";
+	
 	private Context context;
 
 	public ContentProviderHelper(Context context) {
@@ -66,20 +69,26 @@ public class ContentProviderHelper {
 			cursor = stepsProvider.query(uri, projection, selection,
 					selectionArgs, sortOrder);
 			String prevSource = "";
-			cursor.moveToPosition(0);
-			prevSource = cursor.getString(1);
-			
-			for (int i = 0; i < cursor.getCount(); i++) {
-				cursor.moveToPosition(i);
-				if(!prevSource.equals(cursor.getString(1))){
-					sortedSteps.add(rawSteps);
-					prevSource = cursor.getString(1);
-					rawSteps.clear();
+			if(cursor.getCount() > 0){
+				cursor.moveToPosition(0);
+				prevSource = cursor.getString(1);
+				
+				for (int i = 0; i < cursor.getCount(); i++) {
+					cursor.moveToPosition(i);
+					if(!prevSource.equals(cursor.getString(1))){
+						sortedSteps.add(rawSteps);
+						prevSource = cursor.getString(1);
+						rawSteps.clear();
+					}
+					rawSteps.add(cursor.getLong(0));
 				}
-				rawSteps.add(cursor.getLong(0));
+			}
+			else {
+				Log.v(TAG, "No rows found in content provider. Exiting calculations.");
 			}
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
