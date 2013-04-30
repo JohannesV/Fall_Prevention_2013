@@ -28,7 +28,7 @@ import android.widget.Toast;
  * input from the sensors). Having started a new thread, it clears the data
  * locally, so the local storage keeps a constant max size.
  * 
- * @author Elias Aamot
+ * @author Elias
  * 
  */
 public class StepMainService extends Service implements SensorEventListener {

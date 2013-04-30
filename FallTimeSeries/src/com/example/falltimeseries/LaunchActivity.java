@@ -11,7 +11,7 @@ import android.view.View;
  * The Launch activity for the service app. Started when the app is run,
  * provides a basic interface for starting and stopping the service.
  * 
- * @author Elias Aamot
+ * @author Elias
  * 
  */
 public class LaunchActivity extends Activity {
