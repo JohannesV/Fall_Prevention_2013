@@ -13,8 +13,24 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * This is the method for the main activity that is the first and only screen for this application.
+ * Contains ability to reset the content provider and to force calculations of gaits.
+ * 
+ * @author fiLLLip
+ * @author Elias
+ *
+ */
 public class Main extends Activity {
 
+	/**
+	 * Called when the activity is first created. This is where you should do all of your 
+	 * normal static set up: create views, bind data to lists, etc. This method also 
+	 * provides you with a Bundle containing the activity's previously frozen state, 
+	 * if there was one.
+	 * 
+	 * @param savedInstance If the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Note: Otherwise it is null.
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -84,12 +100,21 @@ public class Main extends Activity {
 		updateDebugFields();
 	}
 
+	/**
+	 * Called when the activity will start interacting with the user. 
+	 * At this point your activity is at the top of the activity stack, 
+	 * with user input going to it.
+	 */
 	@Override
 	protected void onResume() {
 		super.onResume();
 		updateDebugFields();
 	}
 
+	/**
+	 * Loads new data and refreshes debug labels in the main 
+	 * activity with these new data.
+	 */
 	private void updateDebugFields() {
 		TextView rawSteps = (TextView) findViewById(R.id.txtRawSteps);
 		TextView steps = (TextView) findViewById(R.id.txtSteps);
