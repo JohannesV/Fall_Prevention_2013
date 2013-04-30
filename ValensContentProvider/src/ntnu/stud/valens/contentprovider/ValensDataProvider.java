@@ -13,17 +13,42 @@ import android.provider.BaseColumns;
 import android.text.TextUtils;
 import android.util.Log;
 
+/**
+ * 
+ * @author fiLLLip
+ * @author Elias
+ *
+ */
 public class ValensDataProvider extends ContentProvider {
 
+	/**
+	 * Constant defining the TAG for debugging
+	 */
 	private static final String TAG = "ValensDataProvider";
+	
 	// the underlying database
 	private SQLiteDatabase db = null;
 
+	/**
+	 * Does nothing at the moment, since delete is not valid from external apps.
+	 * Should handle requests to delete one or more rows given a selection.
+	 * 
+	 * @param uri The full URI to query, including a row ID (if a specific record is requested).
+	 * @param selection An optional restriction to apply to rows when deleting.
+	 */
 	@Override
 	public int delete(Uri uri, String selection, String[] selectionArgs) {
 		throw new IllegalArgumentException("Delete is not a valid operation!");
 	}
 
+	/**
+	 * Handles requests for the MIME type of the data at the given URI. 
+	 * The returned MIME type should start with vnd.android.cursor.item 
+	 * for a single record, or vnd.android.cursor.dir/ for multiple items. 
+	 * This method can be called from multiple threads
+	 * 
+	 * @param uri The URI to query.
+	 */
 	@Override
 	public String getType(Uri uri) {
 		switch (URI_MATCHER.match(uri)) {
@@ -40,6 +65,11 @@ public class ValensDataProvider extends ContentProvider {
 		}
 	}
 
+	/**
+	 * Handles requests to insert a new row.
+	 * @param uri The content:// URI of the insertion request.
+	 * @param values A set of column_name/value pairs to add to the database.
+	 */
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
 		// TODO Auto-generated method stub
@@ -63,6 +93,9 @@ public class ValensDataProvider extends ContentProvider {
 		}
 	}
 
+	/**
+	 *  Initializes the content provider on startup.
+	 */
 	@Override
 	public boolean onCreate() {
 		this.db = new CPValensDB(this.getContext()).getWritableDatabase();
@@ -77,6 +110,15 @@ public class ValensDataProvider extends ContentProvider {
 		return true;
 	}
 
+	/**
+	 * Handles query requests from clients.
+	 * 
+	 * @param uri The URI to query. This will be the full URI sent by the client; if the client is requesting a specific record, the URI will end in a record number that the implementation should parse and add to a WHERE or HAVING clause, specifying that _id value.
+	 * @param projection	The list of columns to put into the cursor. If null all columns are included.
+	 * @param selection	A selection criteria to apply when filtering rows. If null then all rows are included.
+	 * @param selectionArgs	You may include ?s in selection, which will be replaced by the values from selectionArgs, in order that they appear in the selection. The values will be bound as Strings.
+	 * @param sortOrder	How the rows in the cursor should be sorted. If null then the provider is free to define the sort order.
+	 */
 	@Override
 	public Cursor query(Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
@@ -110,6 +152,14 @@ public class ValensDataProvider extends ContentProvider {
 		return cursor;
 	}
 
+	/**
+	 * Does nothing at the moment, since update is not valid from external apps.
+	 * Should handle requests to delete one or more rows given a selection.
+	 * 
+	 * @param uri	The URI to query. This can potentially have a record ID if this is an update request for a specific record.
+	 * @param values	A Bundle mapping from column names to new column values (NULL is a valid value).
+	 * @param selection	An optional filter to match rows to update.
+	 */
 	@Override
 	public int update(Uri uri, ContentValues values, String selection,
 			String[] selectionArgs) {
