@@ -131,20 +131,20 @@ public class MainScreen extends Activity {
  */
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent;
-//		switch (item.getItemId()) {
-		/*case R.id.menu_statistics:*/
+		switch (item.getItemId()) {
+		case R.id.menu_statistics:
 			intent = new Intent(this, Statistics.class);
 			startActivity(intent);
-		/*	break;*/
-		/*case R.id.menu_settings:*/ 
+			break;
+		case R.id.menu_settings:
 			intent = new Intent(this, Settings.class);
 			startActivity(intent);
-		/*	break;
-		/*case R.id.menu_related:*/
+			break;
+		case R.id.menu_related:
 			intent = new Intent(this, Related.class);
 			startActivity(intent);
-		/*	break;
-		}*/
+			break;
+		}
 		return false;
 	}
 /**
