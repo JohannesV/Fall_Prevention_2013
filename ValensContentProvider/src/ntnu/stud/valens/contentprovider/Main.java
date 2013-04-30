@@ -1,5 +1,6 @@
 package ntnu.stud.valens.contentprovider;
 
+import ntnu.stud.valens.contentprovider.calculations.ManipulationStarter;
 import ntnu.stud.valens.contentprovider.calculations.ManipulatorHelper;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -19,6 +20,8 @@ public class Main extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		new ManipulationStarter().startManipulation(this);
+		
 		DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
