@@ -108,7 +108,7 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	
 		 if (pos==0) {
 			statisticsData = new ContentProviderHelper(getApplicationContext())
-					.cpGetSpeedHistory(6 * (pos + 1), 2 * (pos + 1));
+					.cpGetSpeedHistory(6 * (pos + 1));
 		} else if (pos==1) {
 			statisticsData = new ContentProviderHelper(getApplicationContext())
 					.cpGetStepsHistory(6 * (pos + 1), 2 * (pos + 1));
@@ -123,7 +123,7 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 			break;
 			}
 			statisticsData =  dataType.equals("Steps per minute")? new ContentProviderHelper(getApplicationContext())
-			.cpGetSpeedHistory(1440*daysBack, 2 * (pos + 1)):
+			.cpGetSpeedHistory(1440*daysBack):
 				new ContentProviderHelper(getApplicationContext())
 			.cpGetStepsHistory(1440*daysBack, 2 * (pos + 1));
 			

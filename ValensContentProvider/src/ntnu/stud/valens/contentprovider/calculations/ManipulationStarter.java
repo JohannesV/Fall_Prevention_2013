@@ -29,6 +29,11 @@ public class ManipulationStarter extends BroadcastReceiver {
 
 	}
 
+	/**
+	 * Starts manipulation of data in the content provider. Initializes the
+	 * calculations and sets a time it should be called every day.
+	 * @param context The context of the application
+	 */
 	public void startManipulation(Context context) {
 		// Set a daily "alarm" at 04:00 am
 		Calendar calendar = Calendar.getInstance();
