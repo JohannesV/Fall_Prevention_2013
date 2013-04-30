@@ -3,12 +3,9 @@ package no.ntnu.stud.fallprevention.activity;
 import java.util.List;
 
 import no.ntnu.stud.fallprevention.R;
-import no.ntnu.stud.fallprevention.R.id;
-import no.ntnu.stud.fallprevention.R.layout;
 import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
 import no.ntnu.stud.fallprevention.datastructures.Contact;
 import no.ntnu.stud.fallprevention.listadapters.EditContactAdapter;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,8 +15,8 @@ import android.widget.ListView;
 /**
  * Activity class which makes the content in CreateContact available
  * The main purpose of this class is to create a new contact.
+ * 
  * @author Dot
- *
  */
 public class CreateContact extends ListActivity {
 	
