@@ -121,7 +121,7 @@ public class ContentProviderHelper {
 		// String.valueOf(dayOne) + "\n" + String.valueOf(dayTwo),
 		// Toast.LENGTH_LONG).show();
 
-		returner = returner.getStatus(getRiskStepValue());
+		returner = returner.getStatus(getRiskValue());
 
 		return returner;
 	}
@@ -252,39 +252,109 @@ public class ContentProviderHelper {
 	 * 
 	 * @return
 	 */
-	public int getRiskStepValue() {
+	public int getRiskValue() {
 		Log.v(TAG, "Getting value");
-		double dayOne = getStepCount(getHoursBack(24), getHoursBack(0));
-		double dayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
+		//TODO: seperate the following variables into their own methods
+		double mStepsDayOne = getStepCount(getHoursBack(24), getHoursBack(0));
+		double mStepsDayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
 		int returner = 3;
-
-		if (dayOne > Constants.GOOD_STEPS_NUMBER) {
+		
+		double mStepCountScore = mStepCountScore(mStepsDayOne);
+		
+		double mStepCountComparisonScore = mStepCountComparisonScore(
+				mStepsDayOne, mStepsDayTwo);
+		
+		double mGaitSpeedScore = mGaitSpeedScore();
+		
+		double mVariabilityScore = mVariabilityScore();
+		
+		double mTotalRisk = mTotalRiskScore(mStepCountScore,
+				mStepCountComparisonScore, mGaitSpeedScore, mVariabilityScore);
+		
+		if(mTotalRisk<=20){
+			returner = RiskStatus.BAD_JOB.getCode();
+		}else if(mTotalRisk<=40){
+			returner = RiskStatus.NOT_SO_OK_JOB.getCode();
+		}else if(mTotalRisk<=60){
+			returner = RiskStatus.OK_JOB.getCode();
+		}else if(mTotalRisk<=80){
+			returner = RiskStatus.GOOD_JOB.getCode();
+		}else {
 			returner = RiskStatus.VERY_GOOD_JOB.getCode();
-		} else {
-			if (dayOne < dayTwo) {
-				if (dayOne * 100 / dayTwo > Constants.SMALL_CHANGE_THRESHOLD) {
-
-					returner = RiskStatus.OK_JOB.getCode();
-				} else if (dayOne * 100 / dayTwo > Constants.LARGE_CHANGE_THRESHOLD) {
-					returner = RiskStatus.NOT_SO_OK_JOB.getCode();
-				} else {
-					returner = RiskStatus.BAD_JOB.getCode();
-				}
-
-			} else if (dayOne > dayTwo) {
-				if (dayTwo * 100 / dayOne > Constants.SMALL_CHANGE_THRESHOLD) {
-					returner = RiskStatus.OK_JOB.getCode();
-				} else if (dayTwo * 100 / dayOne > Constants.LARGE_CHANGE_THRESHOLD) {
-					returner = RiskStatus.GOOD_JOB.getCode();
-				} else {
-					returner = RiskStatus.VERY_GOOD_JOB.getCode();
-				}
-
-			}
 		}
+
+//		if (dayOne > Constants.GOOD_STEPS_NUMBER) {
+//			returner = RiskStatus.VERY_GOOD_JOB.getCode();
+//		} else {
+//			if (dayOne < dayTwo) {
+//				if (dayOne * 100 / dayTwo > Constants.SMALL_CHANGE_THRESHOLD) {
+//
+//					returner = RiskStatus.OK_JOB.getCode();
+//				} else if (dayOne * 100 / dayTwo > Constants.LARGE_CHANGE_THRESHOLD) {
+//					returner = RiskStatus.NOT_SO_OK_JOB.getCode();
+//				} else {
+//					returner = RiskStatus.BAD_JOB.getCode();
+//				}
+//
+//			} else if (dayOne > dayTwo) {
+//				if (dayTwo * 100 / dayOne > Constants.SMALL_CHANGE_THRESHOLD) {
+//					returner = RiskStatus.OK_JOB.getCode();
+//				} else if (dayTwo * 100 / dayOne > Constants.LARGE_CHANGE_THRESHOLD) {
+//					returner = RiskStatus.GOOD_JOB.getCode();
+//				} else {
+//					returner = RiskStatus.VERY_GOOD_JOB.getCode();
+//				}
+//
+//			}
+//		}
 		// pushNotification(returner);
 		return returner;
 
+	}
+
+	private double mTotalRiskScore(double mStepCountScore,
+			double mStepCountComparisonScore, double mGaitSpeedScore,
+			double mVariabilityScore) {
+		double mTotalRisk=0.2*(mStepCountScore)+ 0.5*(mStepCountComparisonScore)+
+		0.2*(mGaitSpeedScore) + 0.1*(mVariabilityScore);
+		return mTotalRisk;
+	}
+
+	private double mVariabilityScore() {
+		double mVariabilityScore=100/(1+getGaitVariability(getHoursBack(24),getHoursBack(0)));
+		if(mVariabilityScore>=110){
+			mVariabilityScore=100;
+		}
+		return mVariabilityScore;
+	}
+
+	private double mGaitSpeedScore() {
+		double mSpeedDayOne=getGaitSpeed(getHoursBack(24),getHoursBack(0));
+		double mSpeedDayTwo=getGaitSpeed(getHoursBack(48),getHoursBack(24));
+		double mGaitSpeedScore= (mSpeedDayTwo+2)*100/(mSpeedDayOne+2);
+		
+		if(mGaitSpeedScore>=110){
+			mGaitSpeedScore=110;
+		}
+		return mGaitSpeedScore;
+	}
+
+	private double mStepCountComparisonScore(double mStepsDayOne,
+			double mStepsDayTwo) {
+		double mStepCountComparisonScore=((mStepsDayOne/mStepsDayTwo)-0.1)*100;
+		if(mStepCountComparisonScore>=110){
+			mStepCountComparisonScore=110;
+		}
+		return mStepCountComparisonScore;
+	}
+
+	private double mStepCountScore(double mStepsDayOne) {
+		double mStepCountScore=(mStepsDayOne*100)/Constants.GOOD_STEPS_NUMBER;
+		if(mStepCountScore>110){
+			mStepCountScore=110;
+		}
+		return mStepCountScore;
+		
 	}
 
 	public synchronized void pushNotification(int returner) {
@@ -392,7 +462,6 @@ public class ContentProviderHelper {
 	 * @return
 	 */
 	public List<Double> cpGetVariabilityHistory(int length) {
-		// TODO: fill the returner list
 		List<Double> returner = new ArrayList<Double>();
 
 		for (int i = length; i >= 0; i--) {
