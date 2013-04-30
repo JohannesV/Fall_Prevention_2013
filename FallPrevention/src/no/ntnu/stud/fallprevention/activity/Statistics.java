@@ -98,20 +98,18 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 							+ (parent.getId() == R.id.data_type_spinner));
 			pos = timeSpan.getSelectedItemPosition();
 
-		} else {
+		} else if(parent.getId() == R.id.time_span_spinner){
 			Log.v("Statistics screen",
-					"Was Data Type Spinner: "
-							+ (parent.getId() == R.id.data_type_spinner));
+					"Was Timespan Spinner: "
+							+ (parent.getId() == R.id.time_span_spinner));
 		}
 		// Calls method appropriate to option selected
 	
 	
-		 if (dataType.getSelectedItem().toString()
-				.equalsIgnoreCase("Steps per minute")) {
+		 if (pos==0) {
 			statisticsData = new ContentProviderHelper(getApplicationContext())
 					.cpGetSpeedHistory(6 * (pos + 1), 2 * (pos + 1));
-		} else if (dataType.getSelectedItem().toString()
-				.equalsIgnoreCase("Steps total")) {
+		} else if (pos==1) {
 			statisticsData = new ContentProviderHelper(getApplicationContext())
 					.cpGetStepsHistory(6 * (pos + 1), 2 * (pos + 1));
 		} else if(timeSpan.isSelected()){
