@@ -34,7 +34,7 @@ public class DetectStepsThread implements Runnable {
 		this.activity = activity;
 		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
 		mMean = (double)sp.getFloat("mean", 0.5f);
-		mStd = (double)sp.getFloat("std", 1f);
+		mStd = (double)sp.getFloat("std", 0.6f);
 	}
 
 	/**
