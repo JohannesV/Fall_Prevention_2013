@@ -3,7 +3,7 @@ package no.ntnu.stud.fallprevention.datastructures;
 /**
  * Names the risk states
  * 
- * @author Tayfun
+ * @author Filip, Johannes
  * 
  */
 public enum RiskStatus {

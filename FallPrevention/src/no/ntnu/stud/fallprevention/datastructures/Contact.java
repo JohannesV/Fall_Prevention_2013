@@ -3,7 +3,7 @@ package no.ntnu.stud.fallprevention.datastructures;
 /**
  * Defines a program internal contact.
  * 
- * @author FallpreventionGroup
+ * @author Elias
  *
  */
 public class Contact {
