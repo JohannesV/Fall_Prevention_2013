@@ -28,13 +28,12 @@ public class DetectStepsThread implements Runnable {
 	 * @param mTimeStamps - The time stamps associated with the time series of data
 	 * @param activity - The SetpMainService activity that called the thread
 	 */
-	public DetectStepsThread(List<Float> mTimeSeries, List<Long> mTimeStamps, StepMainService activity) {
+	public DetectStepsThread(List<Float> mTimeSeries, List<Long> mTimeStamps, StepMainService activity, double mean, double std) {
 		this.mVectorLengths = mTimeSeries;
 		this.mTimeStamps = mTimeStamps;
 		this.activity = activity;
-		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
-		mMean = (double)sp.getFloat("mean", 0.5f);
-		mStd = (double)sp.getFloat("std", 1f);
+		mMean = mean;
+		mStd = std;
 	}
 
 	/**
