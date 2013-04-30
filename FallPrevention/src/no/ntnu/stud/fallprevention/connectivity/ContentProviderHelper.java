@@ -254,7 +254,6 @@ public class ContentProviderHelper {
 	 */
 	public int getRiskValue() {
 		Log.v(TAG, "Getting value");
-		//TODO: seperate the following variables into their own methods
 		double mStepsDayOne = getStepCount(getHoursBack(24), getHoursBack(0));
 		double mStepsDayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
 		int returner = 3;
