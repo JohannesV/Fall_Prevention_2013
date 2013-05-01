@@ -127,7 +127,7 @@ public class ContentProviderHelper {
 	}
 
 	public double getGaitVariability(Timestamp start, Timestamp stop) {
-		double returner = -1;
+		double returner = 100;
 
 		// Setting variables for the query
 		// sets the unique resource identifier for the data
@@ -185,7 +185,7 @@ public class ContentProviderHelper {
 	}
 
 	public double getGaitSpeed(Timestamp start, Timestamp stop) {
-		double returner = -1;
+		double returner = 100;
 		// Setting variables for the query
 		// sets the unique resource identifier for the data
 		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
@@ -259,20 +259,20 @@ public class ContentProviderHelper {
 		Log.v(TAG, ""+mStepsDayOne);
 		int returner = 3;
 		
-		double mStepCountScore = mStepCountScore(mStepsDayOne);
+		double mStepCountScore = getStepCountScore(mStepsDayOne);
 		Log.v(TAG, "mStepCountScore: "+mStepCountScore);
 		
-		double mStepCountComparisonScore = mStepCountComparisonScore(
+		double mStepCountComparisonScore = getStepCountComparisonScore(
 				mStepsDayOne, mStepsDayTwo);
 		Log.v(TAG, "mStepCountComparisonScore:"+ mStepCountComparisonScore);
 		
-		double mGaitSpeedScore = mGaitSpeedScore();
+		double mGaitSpeedScore = getGaitSpeedScore();
 		Log.v(TAG,"mGaitSpeedScore: " + mGaitSpeedScore);
 		
-		double mVariabilityScore = mVariabilityScore();
+		double mVariabilityScore = getVariabilityScore();
 		Log.v(TAG, "mVariabilityScore: "+mVariabilityScore);
 		
-		double mTotalRisk = mTotalRiskScore(mStepCountScore,
+		double mTotalRisk = getTotalRiskScore(mStepCountScore,
 				mStepCountComparisonScore, mGaitSpeedScore, mVariabilityScore);
 		Log.v(TAG, "mTotalRisk: "+mTotalRisk);
 		
@@ -317,7 +317,7 @@ public class ContentProviderHelper {
 
 	}
 
-	private double mTotalRiskScore(double mStepCountScore,
+	private double getTotalRiskScore(double mStepCountScore,
 			double mStepCountComparisonScore, double mGaitSpeedScore,
 			double mVariabilityScore) {
 		double mTotalRisk=0.2*(mStepCountScore)+ 0.5*(mStepCountComparisonScore)+
@@ -325,32 +325,36 @@ public class ContentProviderHelper {
 		return mTotalRisk;
 	}
 
-	private double mVariabilityScore() {
-		double d = 1+getGaitVariability(getHoursBack(24),getHoursBack(0));
-		double mVariabilityScore=100/d;
+	private double getVariabilityScore() {
+		double d = getGaitVariability(getHoursBack(24),getHoursBack(0));
+		double mVariabilityScore=100/(d*10+1);
 		
 		Log.v(TAG, "Variability: " +d);
-		if(mVariabilityScore>=110){
+		if(d==100){
+			return 0;	
+		}else if(mVariabilityScore>=110){
 			mVariabilityScore=100;
 		}
 		return mVariabilityScore;
 	}
 
-	private double mGaitSpeedScore() {
+	private double getGaitSpeedScore() {
 		double mSpeedDayOne=getGaitSpeed(getHoursBack(24),getHoursBack(0));
 		double mSpeedDayTwo=getGaitSpeed(getHoursBack(48),getHoursBack(24));
 		
 		Log.v(TAG, "Speed:" +mSpeedDayOne+", "+mSpeedDayTwo);
 		
 		double mGaitSpeedScore= (mSpeedDayTwo+2)*100/(mSpeedDayOne+2);
-		
-		if(mGaitSpeedScore>=110){
+		if(mSpeedDayOne==100||mSpeedDayOne==100){
+			return 0;
+		}
+		else if(mGaitSpeedScore>=110){
 			mGaitSpeedScore=110;
 		}
 		return mGaitSpeedScore;
 	}
 
-	private double mStepCountComparisonScore(double mStepsDayOne,
+	private double getStepCountComparisonScore(double mStepsDayOne,
 			double mStepsDayTwo) {
 		double mStepCountComparisonScore=((mStepsDayOne/mStepsDayTwo)-0.1)*100;
 		if(mStepCountComparisonScore>=110){
@@ -359,7 +363,7 @@ public class ContentProviderHelper {
 		return mStepCountComparisonScore;
 	}
 
-	private double mStepCountScore(double mStepsDayOne) {
+	private double getStepCountScore(double mStepsDayOne) {
 		double mStepCountScore=(mStepsDayOne*100)/Constants.GOOD_STEPS_NUMBER;
 		if(mStepCountScore>110){
 			mStepCountScore=110;
