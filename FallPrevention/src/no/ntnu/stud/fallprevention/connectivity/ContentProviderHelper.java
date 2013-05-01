@@ -15,6 +15,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.net.Uri;
 import android.os.RemoteException;
+import android.text.format.DateUtils;
 import android.util.Log;
 
 /**
@@ -139,8 +140,8 @@ public class ContentProviderHelper {
 		// sets the projection part of the query
 		String[] projection = new String[] { "variability" };
 		// sets the selection part of the query
-		String selection = "start > " + start.getTime() + " AND stop < "
-				+ stop.getTime();
+		String selection = "start > " + (start.getTime()-DateUtils.HOUR_IN_MILLIS) + " AND stop < "
+				+ (stop.getTime()+DateUtils.HOUR_IN_MILLIS);
 
 		// not used, therefore null
 		String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
@@ -196,8 +197,8 @@ public class ContentProviderHelper {
 		// sets the projection part of the query
 		String[] projection = new String[] { "speed" };
 		// sets the selection part of the query
-		String selection = "start > " + start.getTime() + " AND stop < "
-				+ stop.getTime();
+		String selection = (start.getTime()-DateUtils.HOUR_IN_MILLIS) + " AND stop < "
+                + (stop.getTime()+DateUtils.HOUR_IN_MILLIS);
 
 		// not used, therefore null
 		String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
