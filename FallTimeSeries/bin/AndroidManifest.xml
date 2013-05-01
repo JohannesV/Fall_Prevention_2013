@@ -1,51 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ntnu.stud.valens.contentprovider"
+    package="com.example.falltimeseries"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
-    
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <provider
-	       android:authorities="ntnu.stud.valens.contentprovider"
-	       android:name=".ValensDataProvider"
-	       android:enabled="true"
-	       android:grantUriPermissions="true"
-	       android:readPermission="android.permission.permRead" >
-		</provider> 
-        <activity
-            android:name=".Main"
+        <service
+            android:name="com.example.falltimeseries.StepMainService"
             android:label="@string/app_name" >
+        </service>
+        <service
+            android:name="com.example.falltimeseries.TestService"
+            android:label="@string/app_name" >
+        </service>
+
+        <activity
+            android:name="com.example.falltimeseries.LaunchActivity"
+            android:label="@string/title_activity_launch" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.falltimeseries.calibration.CalibrationActivity"
+            android:label="@string/title_activity_calibration" >
+        </activity>
+
         <receiver
-            android:name="ntnu.stud.valens.contentprovider.calculations.ManipulationStarter"
+            android:name=".StepMainServiceStarter"
             android:enabled="true"
             android:exported="false"
-            android:label="ManipulationStarter" >
+            android:label="StepDetector" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-        </receiver>
-<<<<<<< HEAD
-        <receiver android:name="ntnu.stud.valens.contentprovider.calculations.AlarmManagerBroadcastReceiver">
-=======
-         <receiver android:name="ntnu.stud.valens.contentprovider.calculations.MainpulatorHelper">
->>>>>>> 0690d416383a5c478cd4c68addb0bfe347b830a4
         </receiver>
     </application>
 

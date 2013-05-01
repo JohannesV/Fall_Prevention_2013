@@ -1,8 +1,8 @@
 import datetime, time, random
 
-NEXT_STEP_PROB = 0.9
+NEXT_STEP_PROB = 0.75
 GROUP_TIME_GAP = 480 * 1000
-STEP_TIME_GAP = 8 * 1000
+STEP_TIME_GAP = 10 * 1000
 
 step_list = []
 
@@ -23,7 +23,7 @@ while current < end:
 	if group:
 		step_list.append(current)
 		# See if this is the end of a group
-		if random.random() > NEXT_STEP_PROB:
+		if random.random() < NEXT_STEP_PROB:
 			current += random.random() * STEP_TIME_GAP
 		# The group ends here
 		else:
