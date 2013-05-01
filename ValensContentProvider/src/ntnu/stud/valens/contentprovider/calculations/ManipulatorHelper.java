@@ -5,12 +5,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.util.Log;
-import android.widget.CalendarView;
 
 /**
  * This class handles most of the work in deriving new data from data that
@@ -187,4 +188,29 @@ public class ManipulatorHelper extends BroadcastReceiver {
 		return Math.sqrt(std);
 	}
 
+	
+	public void startAlarm(Context context) {
+		// Set a daily "alarm" at 04:00 am
+		Log.v(APP_TAG, "Starting alarm manager");
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.HOUR_OF_DAY, 11);
+		calendar.set(Calendar.MINUTE, 37);
+		calendar.set(Calendar.SECOND, 0);
+		//
+		AlarmManager am = (AlarmManager) context
+				.getSystemService(Context.ALARM_SERVICE);
+		Intent intent = new Intent(context, ManipulatorHelper.class);
+		PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
+		// After after 5 seconds
+		am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000 * 10, pi);
+		//
+		/*
+		 * PendingIntent pi = PendingIntent.getService(context, 0, new Intent(
+		 * context, ManipulatorHelper.class),
+		 * PendingIntent.FLAG_UPDATE_CURRENT); AlarmManager am = (AlarmManager)
+		 * context .getSystemService(Context.ALARM_SERVICE);
+		 * am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+		 * AlarmManager.INTERVAL_DAY, pi);
+		 */
+	}
 }

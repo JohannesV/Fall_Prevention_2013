@@ -41,6 +41,8 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+         <receiver android:name="ntnu.stud.valens.contentprovider.calculations.MainpulatorHelper">
+        </receiver>
     </application>
 
 </manifest>

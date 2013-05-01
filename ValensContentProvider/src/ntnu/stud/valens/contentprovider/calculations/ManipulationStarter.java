@@ -3,16 +3,12 @@ package ntnu.stud.valens.contentprovider.calculations;
 import java.util.Calendar;
 import java.util.Date;
 
-
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-
-import android.media.MediaPlayer;
 import android.util.Log;
 
 /**
@@ -28,31 +24,24 @@ public class ManipulationStarter extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Log.v(TAG, "OnRecieve");
-		startManipulation(context);
-
+		// Only start if this method is caled by BOOT_COMPLETED
+		if ("android.intent.action.BOOT_COMPLETED".equals(intent.getAction())) {
+			Log.v(TAG, "OnRecieve");
+			startManipulation(context);
+		}
 	}
 
 	/**
 	 * Starts manipulation of data in the content provider. Initializes the
 	 * calculations and sets a time it should be called every day.
-	 * @param context The context of the application
+	 * 
+	 * @param context
+	 *            The context of the application
 	 */
 	public void startManipulation(Context context) {
-		// Set a daily "alarm" at 04:00 am
-	    Log.v(TAG, "Starting alarm manager");
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.HOUR_OF_DAY, 11);
-		calendar.set(Calendar.MINUTE, 37);
-		calendar.set(Calendar.SECOND, 0);
-		PendingIntent pi = PendingIntent.getService(context, 0, new Intent(
-				context, ManipulatorHelper.class),
-				PendingIntent.FLAG_UPDATE_CURRENT);
-		AlarmManager am = (AlarmManager) context
-				.getSystemService(Context.ALARM_SERVICE);
-		am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-				AlarmManager.INTERVAL_DAY, pi);
-
+		Log.v(TAG, "StartMani");
+		new ManipulatorHelper().startAlarm(context);
+		Log.v(TAG, "AlarmStart finished");
 		// Check whether we should do a calculation immediately
 		/* Get Last Update Time from Preferences */
 		SharedPreferences prefs = context.getSharedPreferences(TAG,
@@ -75,7 +64,7 @@ public class ManipulationStarter extends BroadcastReceiver {
 			editor.commit();
 
 			/* Start Update */
-			
+
 			new ManipulatorHelper().calculate(context);
 		}
 	}
