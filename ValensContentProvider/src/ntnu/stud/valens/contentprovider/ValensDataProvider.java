@@ -74,23 +74,54 @@ public class ValensDataProvider extends ContentProvider {
 	public Uri insert(Uri uri, ContentValues values) {
 		// TODO Auto-generated method stub
 		Log.v(TAG,"Trying to insert!");
+		long insertedInRow;
 		switch (URI_MATCHER.match(uri)) {
 		case RAW_STEPS:
 			Log.v(TAG, "Inserting into raw_steps with content:"+values.toString());
-			long timestamp = db.insert(DBSchema.RawSteps.TABLE_NAME, null,
+			 insertedInRow = db.insert(DBSchema.RawSteps.TABLE_NAME, null,
 					values);
-			if (timestamp > 0) {
-				Uri itemUri = ContentUris.withAppendedId(uri, timestamp);
+			if (insertedInRow > 0) {
+				Uri itemUri = ContentUris.withAppendedId(uri, insertedInRow);
 				getContext().getContentResolver().notifyChange(itemUri, null);
 				Log.v(TAG,"Inserted into row:"+itemUri.toString());
 				return itemUri;
 			}
-			throw new SQLException("Problem while inserting into "
-					+ DBSchema.RawSteps.TABLE_NAME + ", uri: " + uri);
+			break;
+			//throw new SQLException("Problem while inserting into "
+				//	+ DBSchema.RawSteps.TABLE_NAME + ", uri: " + uri);
+			
+		case STEPS:
+		    Log.v(TAG, "Inserting into steps with content:"+values.toString());
+		    insertedInRow= db.insert(DBSchema.Steps.TABLE_NAME, null, values);
+		    if(insertedInRow>0){
+		        Uri itemUri=ContentUris.withAppendedId(uri, insertedInRow);
+		        getContext().getContentResolver().notifyChange(itemUri, null);
+		        Log.v(TAG, "Inserted into row:"+ itemUri.toString());
+		        return itemUri;
+		    }
+		    break;
+            
+		    
+		case GAIT:
+		    Log.v(TAG, "Inserting into gait with content:"+values.toString());
+		    insertedInRow=db.insert(DBSchema.Gaits.TABLE_NAME, null, values);
+	          if(insertedInRow>0){
+	                Uri itemUri=ContentUris.withAppendedId(uri, insertedInRow);
+	                getContext().getContentResolver().notifyChange(itemUri, null);
+	                Log.v(TAG, "Inserted into row:"+ itemUri.toString());
+	                return itemUri;
+	          }
+	          break;
+		
+			
+			
 		default:
+		
 			throw new IllegalArgumentException(
-					"Unsupported URI for insertion: " + uri);
+					"Unsupported URI for insertion: " + uri); 
+			
 		}
+		return null;
 	}
 
 	/**
