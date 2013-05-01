@@ -40,7 +40,7 @@ public class ManipulationStarter extends BroadcastReceiver {
 	 *            The context of the application
 	 */
 	public void startManipulation(Context context) {
-<<<<<<< HEAD
+
 		// Set a daily "alarm" at 04:00 am
 	    Log.v(TAG, "Starting alarm manager");
 	    alarm = new AlarmManagerBroadcastReceiver();
@@ -57,11 +57,11 @@ public class ManipulationStarter extends BroadcastReceiver {
 //		am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
 //				AlarmManager.INTERVAL_DAY, pi);
 
-=======
+
 		Log.v(TAG, "StartMani");
 		new ManipulatorHelper().startAlarm(context);
 		Log.v(TAG, "AlarmStart finished");
->>>>>>> 0690d416383a5c478cd4c68addb0bfe347b830a4
+
 		// Check whether we should do a calculation immediately
 		/* Get Last Update Time from Preferences */
 		SharedPreferences prefs = context.getSharedPreferences(TAG,

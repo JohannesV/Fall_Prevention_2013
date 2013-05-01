@@ -22,19 +22,10 @@ import android.util.Log;
  * @author Elias
  * 
  */
-public class ManipulatorHelper extends BroadcastReceiver {
+public class ManipulatorHelper {
 
 	private static final String APP_TAG = "ntnu.stud.valens.contentprovider";
 
-	@Override
-	public void onReceive(Context context, Intent intent) {
-	    
-		Log.d(APP_TAG, "SchedulerEventReceiver.onReceive() called");
-		MediaPlayer mMediaPlayer = MediaPlayer.create(context, ntnu.stud.valens.contentprovider.R.raw.beep);
-        mMediaPlayer.start();
-		
-		calculate(context);
-	}
 
 	public static final long GROUP_GAP_THRESHOLD = 10000;
 	public static final long GROUP_SIZE_THRESHOLD = 10000;
