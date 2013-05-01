@@ -25,7 +25,8 @@ import android.util.Log;
 public class ManipulationStarter extends BroadcastReceiver {
 
 	public static final String TAG = "ntnu.stud.valens.contentprovider";
-
+	private AlarmManagerBroadcastReceiver alarm ;
+	
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Log.v(TAG, "OnRecieve");
@@ -41,17 +42,19 @@ public class ManipulationStarter extends BroadcastReceiver {
 	public void startManipulation(Context context) {
 		// Set a daily "alarm" at 04:00 am
 	    Log.v(TAG, "Starting alarm manager");
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.HOUR_OF_DAY, 11);
-		calendar.set(Calendar.MINUTE, 37);
-		calendar.set(Calendar.SECOND, 0);
-		PendingIntent pi = PendingIntent.getService(context, 0, new Intent(
-				context, ManipulatorHelper.class),
-				PendingIntent.FLAG_UPDATE_CURRENT);
-		AlarmManager am = (AlarmManager) context
-				.getSystemService(Context.ALARM_SERVICE);
-		am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-				AlarmManager.INTERVAL_DAY, pi);
+	    alarm = new AlarmManagerBroadcastReceiver();
+	    alarm.SetAlarm(context);
+//		Calendar calendar = Calendar.getInstance();
+//		calendar.set(Calendar.HOUR_OF_DAY, 11);
+//		calendar.set(Calendar.MINUTE, 37);
+//		calendar.set(Calendar.SECOND, 0);
+//		PendingIntent pi = PendingIntent.getService(context, 0, new Intent(
+//				context, ManipulatorHelper.class),
+//				PendingIntent.FLAG_UPDATE_CURRENT);
+//		AlarmManager am = (AlarmManager) context
+//				.getSystemService(Context.ALARM_SERVICE);
+//		am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+//				AlarmManager.INTERVAL_DAY, pi);
 
 		// Check whether we should do a calculation immediately
 		/* Get Last Update Time from Preferences */

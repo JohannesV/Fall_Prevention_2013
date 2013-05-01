@@ -36,7 +36,7 @@ public class Main extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		new ManipulationStarter().startManipulation(this);
+		new ManipulationStarter().startManipulation(this.getApplicationContext());
 		
 		DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
 			@Override
