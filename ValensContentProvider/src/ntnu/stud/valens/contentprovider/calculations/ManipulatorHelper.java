@@ -8,6 +8,7 @@ import java.util.List;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.widget.CalendarView;
 
@@ -26,7 +27,11 @@ public class ManipulatorHelper extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
+	    
 		Log.d(APP_TAG, "SchedulerEventReceiver.onReceive() called");
+		MediaPlayer mMediaPlayer = MediaPlayer.create(context, ntnu.stud.valens.contentprovider.R.raw.beep);
+        mMediaPlayer.start();
+		
 		calculate(context);
 	}
 
@@ -54,19 +59,26 @@ public class ManipulatorHelper extends BroadcastReceiver {
 		Timestamp now = ContentProviderHelper.getHoursBack(Calendar.HOUR - 4);
 		Timestamp yesterday = ContentProviderHelper.getHoursBack(24 + Calendar.HOUR_OF_DAY - 4);
 		List<List<Long>> rawSteps = cph.getRawSteps(yesterday, now);
+		
 		// Find the true steps steps. I.e. the steps from the source with the
 		// most steps.
+		
+        Log.v(APP_TAG, "calculating now!");
 		List<Long> bestSource = new ArrayList<Long>();
 		for (List<Long> stepList : rawSteps) {
 			if (stepList.size() > bestSource.size()) {
+			    
 				bestSource = stepList;
 			}
 		}
+		Log.v(APP_TAG, "bestSource.size: "+bestSource.size());
 		// Store the true steps into the content provider
 		cph.storeTrueSteps(bestSource);
+		
 		// Find the gait parameters for the true steps of the period and store
 		// them in the content provider
 		double[] gaitParameters = findGaitParameters(bestSource);
+		Log.v(APP_TAG, "Gait parameter: "+gaitParameters[0]+", "+gaitParameters[1]);
 		cph.storeGaitParameters(gaitParameters, bestSource);
 	}
 

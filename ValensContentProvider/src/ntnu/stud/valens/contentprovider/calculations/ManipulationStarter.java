@@ -3,12 +3,16 @@ package ntnu.stud.valens.contentprovider.calculations;
 import java.util.Calendar;
 import java.util.Date;
 
+
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
+import android.media.MediaPlayer;
 import android.util.Log;
 
 /**
@@ -36,9 +40,10 @@ public class ManipulationStarter extends BroadcastReceiver {
 	 */
 	public void startManipulation(Context context) {
 		// Set a daily "alarm" at 04:00 am
+	    Log.v(TAG, "Starting alarm manager");
 		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.HOUR_OF_DAY, 4);
-		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.HOUR_OF_DAY, 11);
+		calendar.set(Calendar.MINUTE, 37);
 		calendar.set(Calendar.SECOND, 0);
 		PendingIntent pi = PendingIntent.getService(context, 0, new Intent(
 				context, ManipulatorHelper.class),
@@ -70,6 +75,7 @@ public class ManipulationStarter extends BroadcastReceiver {
 			editor.commit();
 
 			/* Start Update */
+			
 			new ManipulatorHelper().calculate(context);
 		}
 	}
