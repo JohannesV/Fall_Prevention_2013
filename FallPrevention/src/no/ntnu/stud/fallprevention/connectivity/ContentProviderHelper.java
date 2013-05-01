@@ -256,19 +256,25 @@ public class ContentProviderHelper {
 		Log.v(TAG, "Getting value");
 		double mStepsDayOne = getStepCount(getHoursBack(24), getHoursBack(0));
 		double mStepsDayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
+		Log.v(TAG, ""+mStepsDayOne);
 		int returner = 3;
 		
 		double mStepCountScore = mStepCountScore(mStepsDayOne);
+		Log.v(TAG, "mStepCountScore: "+mStepCountScore);
 		
 		double mStepCountComparisonScore = mStepCountComparisonScore(
 				mStepsDayOne, mStepsDayTwo);
+		Log.v(TAG, "mStepCountComparisonScore:"+ mStepCountComparisonScore);
 		
 		double mGaitSpeedScore = mGaitSpeedScore();
+		Log.v(TAG,"mGaitSpeedScore: " + mGaitSpeedScore);
 		
 		double mVariabilityScore = mVariabilityScore();
+		Log.v(TAG, "mVariabilityScore: "+mVariabilityScore);
 		
 		double mTotalRisk = mTotalRiskScore(mStepCountScore,
 				mStepCountComparisonScore, mGaitSpeedScore, mVariabilityScore);
+		Log.v(TAG, "mTotalRisk: "+mTotalRisk);
 		
 		if(mTotalRisk<=20){
 			returner = RiskStatus.BAD_JOB.getCode();
@@ -320,7 +326,10 @@ public class ContentProviderHelper {
 	}
 
 	private double mVariabilityScore() {
-		double mVariabilityScore=100/(1+getGaitVariability(getHoursBack(24),getHoursBack(0)));
+		double d = 1+getGaitVariability(getHoursBack(24),getHoursBack(0));
+		double mVariabilityScore=100/d;
+		
+		Log.v(TAG, "Variability: " +d);
 		if(mVariabilityScore>=110){
 			mVariabilityScore=100;
 		}
@@ -330,6 +339,9 @@ public class ContentProviderHelper {
 	private double mGaitSpeedScore() {
 		double mSpeedDayOne=getGaitSpeed(getHoursBack(24),getHoursBack(0));
 		double mSpeedDayTwo=getGaitSpeed(getHoursBack(48),getHoursBack(24));
+		
+		Log.v(TAG, "Speed:" +mSpeedDayOne+", "+mSpeedDayTwo);
+		
 		double mGaitSpeedScore= (mSpeedDayTwo+2)*100/(mSpeedDayOne+2);
 		
 		if(mGaitSpeedScore>=110){
