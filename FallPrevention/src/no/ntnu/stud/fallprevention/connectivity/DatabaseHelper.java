@@ -247,14 +247,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 		return mReturner;
 	}
-
+	
 	/**
 	 * Stores a new event of the appropriate type to the database.
 	 */
-	public void dbAddEvent(int eventType) {
+	public void dbAddEvent(int eventType, int param1, int param2) {
 		SQLiteDatabase db = getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put(DatabaseContract.Event.COLUMN_NAME_TYPEID, eventType);
+		values.put(DatabaseContract.Event.COLUMN_NAME_PARAMETER_1, param1);
+		values.put(DatabaseContract.Event.COLUMN_NAME_PARAMETER_2, param2);
 		db.insert(DatabaseContract.Event.TABLE_NAME, null, values);
 		db.close();
 	}

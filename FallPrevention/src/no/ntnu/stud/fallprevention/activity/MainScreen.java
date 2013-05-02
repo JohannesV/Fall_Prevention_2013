@@ -1,7 +1,9 @@
 package no.ntnu.stud.fallprevention.activity;
 
 import java.sql.Timestamp;
+import java.util.Calendar;
 
+import no.ntnu.stud.fallprevention.Constants;
 import no.ntnu.stud.fallprevention.R;
 import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
 import no.ntnu.stud.fallprevention.connectivity.DatabaseHelper;
@@ -143,36 +145,57 @@ public class MainScreen extends Activity {
 	}
 
 	/**
-	 * Checks if it is a good idea to push in new notifications to the database.
+	 * Checks if it is time to push the daily notification to the database.
 	 */
 	@SuppressLint("NewApi")
 	private void shouldPush() {
-		long current = System.currentTimeMillis();
-		Timestamp now = new Timestamp(current);
-		Log.v("Main Screen", "Checking for pushing");
-		Timestamp last;
+		Log.v("Main Screen", "Checking for push time");
+		// Fetch current time and time stored in file
+		Calendar current = Calendar.getInstance();
+		Calendar last = Calendar.getInstance();
+
 		SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(this);
-		last = new Timestamp(sp.getLong("lastPushed", 0l));
-		Log.v("Main Screen", String.valueOf(last.getTime()));
-		if (DateUtils.HOUR_IN_MILLIS < (now.getTime() - last.getTime())) {
-			Log.v("Main Screen", "Minute passed, notification pushed: "
-					+ (status == null));
-			new ContentProviderHelper(this).pushNotification(status.getCode());
+		Long lastTimestamp = sp.getLong("lastPushed", 0l);
+		last.setTimeInMillis(lastTimestamp);
+
+		if (DateUtils.DAY_IN_MILLIS < (current.getTimeInMillis() - last
+				.getTimeInMillis())) {
+			// More than a day has passed since the last message, so we'll make
+			// a new one. To do so, we need to know the step count yesterday and
+			// the day before that. So we first need to establish the
+			// time stamps to find step count between..
+			Calendar thisMorningC = Calendar.getInstance();
+			thisMorningC.set(Calendar.HOUR, 5);
+			thisMorningC.set(Calendar.SECOND, 0);
+			thisMorningC.set(Calendar.MINUTE, 0);
+			long thisMorning = thisMorningC.getTimeInMillis();
+			long yesterday = thisMorning - DateUtils.DAY_IN_MILLIS;
+			long dayBeforeYesterday = yesterday - DateUtils.DAY_IN_MILLIS;
+			Timestamp yesterdayTs = new Timestamp(yesterday);
+			Timestamp todayTs = new Timestamp(thisMorning);
+			Timestamp dayBeforeTs = new Timestamp(dayBeforeYesterday);
+			// Get step counts 
+			ContentProviderHelper cph = new ContentProviderHelper(getApplicationContext());
+			int yesterdaySteps = cph.getStepCount(yesterdayTs, todayTs);
+			int dayBeforeSteps = cph.getStepCount(dayBeforeTs, todayTs);
+			// Finally, generate a message to be stored in the local DB
+			DatabaseHelper dbh = new DatabaseHelper(getApplicationContext());
+			if ((double)yesterdaySteps / (double)dayBeforeSteps < Constants.BAD_STEP_CHANGE) {
+				dbh.dbAddEvent(1, yesterdaySteps, dayBeforeSteps);
+			} else if ((double)yesterdaySteps / (double)dayBeforeSteps > Constants.GOOD_STEP_CHANGE) {
+				dbh.dbAddEvent(0, yesterdaySteps, dayBeforeSteps);
+			} else {
+				dbh.dbAddEvent(2, yesterdaySteps, dayBeforeSteps);
+			}
+			// Record that the message that was created corresponds to the last
+			// 24 hours before 5 this morning.
 			SharedPreferences.Editor editor = sp.edit();
-			// Displays the edited name
-			editor.putLong("lastPushed", current);
-			editor.commit();
-		} else if (last.getTime() == 0l) {
-			Log.v("Main Screen", "Time not smaller");
-			SharedPreferences.Editor editor = sp.edit();
-			// Displays the edited name
-			editor.putLong("lastPushed", current);
+			editor.putLong("lastPushed", thisMorning);
 			editor.commit();
 		}
-
 	}
-
+	
 	/**
 	 * A listener for a button that sends you to the Eventlist screen
 	 * 
