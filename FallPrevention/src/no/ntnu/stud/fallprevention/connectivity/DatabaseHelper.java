@@ -81,7 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+ " INTEGER PRIMARY KEY,"
 				+ DatabaseContract.AlarmTypes.COLUMN_NAME_DESCRIPTION + END_PAR;
 		final String FILL_INFO_1 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (0, 'Event_1', 'Event_1', \'halo\')";
-		final String FILL_INFO_2 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (1, 'Event_2.', 'Event_2', \'sleep\')";
+		final String FILL_INFO_2 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (1, 'Event_2', 'Event_2', \'sleep\')";
 		final String FILL_INFO_3 = "INSERT INTO Event (ID, TypeID) VALUES (0, 0)";
 		final String FILL_INFO_4 = "INSERT INTO Event (ID, TypeID) VALUES (1, 1)";
 		final String FILL_INFO_5 = "INSERT INTO Event (ID, TypeID) VALUES (2, 1)";
