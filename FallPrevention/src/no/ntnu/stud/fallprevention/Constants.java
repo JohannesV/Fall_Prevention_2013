@@ -20,4 +20,10 @@ public class Constants {
 	 * done before
 	 */
 	public static final int GOOD_STEPS_NUMBER = 3000;
+	
+    public static final double GOOD_SPEED_NUMBER = 1500;
+    public static final double BAD_SPEED_NUMBER=3000;
+    
+    public static final double BAD_VARI_NUMBER=3000;
+    public static final double GOOD_VARI_NUMBER=1000;
 }

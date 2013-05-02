@@ -128,7 +128,7 @@ public class ContentProviderHelper {
 	}
 
 	public double getGaitVariability(Timestamp start, Timestamp stop) {
-		double returner = 100;
+		double returner = 3500;
 
 		// Setting variables for the query
 		// sets the unique resource identifier for the data
@@ -186,7 +186,7 @@ public class ContentProviderHelper {
 	}
 
 	public double getGaitSpeed(Timestamp start, Timestamp stop) {
-		double returner = 100;
+		double returner = 3500;
 		// Setting variables for the query
 		// sets the unique resource identifier for the data
 		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
@@ -328,14 +328,22 @@ public class ContentProviderHelper {
 
 	private double getVariabilityScore() {
 		double d = getGaitVariability(getHoursBack(24),getHoursBack(0));
-		double mVariabilityScore=100/(d*10+1);
+		double mVariabilityScore;
+		
 		
 		Log.v(TAG, "Variability: " +d);
-		if(d==100){
-			return 0;	
-		}else if(mVariabilityScore>=110){
-			mVariabilityScore=100;
+		if(d<Constants.GOOD_VARI_NUMBER){
+		    mVariabilityScore=110;
+		}else if(d>Constants.BAD_VARI_NUMBER){
+		    mVariabilityScore=0;
+		} else{
+		    mVariabilityScore=50;
+		  //  mVariabilityScore=100/(d*10+1);
 		}
+		
+		 if(mVariabilityScore>=110){
+			mVariabilityScore=110;
+		 }
 		return mVariabilityScore;
 	}
 
@@ -343,15 +351,18 @@ public class ContentProviderHelper {
 		double mSpeedDayOne=getGaitSpeed(getHoursBack(24),getHoursBack(0));
 		double mSpeedDayTwo=getGaitSpeed(getHoursBack(48),getHoursBack(24));
 		
-		Log.v(TAG, "Speed:" +mSpeedDayOne+", "+mSpeedDayTwo);
+		Log.v(TAG, "Speed:" + mSpeedDayOne +", "+ mSpeedDayTwo);
 		
-		double mGaitSpeedScore= (mSpeedDayTwo+2)*100/(mSpeedDayOne+2);
-		if(mSpeedDayOne==100||mSpeedDayOne==100){
-			return 0;
+		double mGaitSpeedScore =0;
+		if(mSpeedDayOne<Constants.GOOD_SPEED_NUMBER){
+		    mGaitSpeedScore=110;
+		}else if(mSpeedDayOne>Constants.BAD_SPEED_NUMBER){
+		mGaitSpeedScore=0;
+		}else{
+		    mGaitSpeedScore=50;
+//		    mGaitSpeedScore=(mSpeedDayTwo +2)*100/(mSpeedDayTwo+2);
 		}
-		else if(mGaitSpeedScore>=110){
-			mGaitSpeedScore=110;
-		}
+		
 		return mGaitSpeedScore;
 	}
 

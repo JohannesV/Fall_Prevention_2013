@@ -41,11 +41,7 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-<<<<<<< HEAD
         <receiver android:name="ntnu.stud.valens.contentprovider.calculations.AlarmManagerBroadcastReceiver">
-=======
-         <receiver android:name="ntnu.stud.valens.contentprovider.calculations.MainpulatorHelper">
->>>>>>> 0690d416383a5c478cd4c68addb0bfe347b830a4
         </receiver>
     </application>
 

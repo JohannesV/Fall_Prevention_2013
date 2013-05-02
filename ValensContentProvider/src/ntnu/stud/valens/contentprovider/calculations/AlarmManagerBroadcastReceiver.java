@@ -48,6 +48,7 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 
     public void SetAlarm(Context context) {
         Calendar calendar = Calendar.getInstance();
+      
         calendar.set(Calendar.HOUR_OF_DAY, 04);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
