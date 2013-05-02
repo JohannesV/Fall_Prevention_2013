@@ -73,10 +73,12 @@
     <string name="event_list_goodJob_title">You have done well!</string>
     <string name="event_list_badJob_title">You need to move more!</string>
     <string name="event_list_noChange_title">No change</string>
-    <string name="event_list_goodJob_desc">You have moved a lot recently, good job!</string>
-    <string name="event_list_badJob_desc">You haven\'t moved enough recently, try harder!</string>
-    <string name="event_list_noChange_desc">You have moved neither more or less lately</string>
+    <string name="event_list_goodJob_desc">You have moved a lot recently, good job! </string>
+    <string name="event_list_badJob_desc">You haven\'t moved enough recently, try harder! </string>
+    <string name="event_list_noChange_desc">You have moved neither more or less lately. </string>
     
+    <string name="event_desc_two_params">You have walked \%%1 steps today, while yesterday you walked \%%2 steps.</string>
+    <string name="event_null_parameter">an unknown amount</string>
     <string name="notifcation_number">You have 0 notifications!</string>
 
 </resources>

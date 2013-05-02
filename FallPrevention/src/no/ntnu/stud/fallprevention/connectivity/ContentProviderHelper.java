@@ -392,6 +392,10 @@ public class ContentProviderHelper {
 			dbh.dbAddEvent(1);
 		} else if (returner == RiskStatus.VERY_GOOD_JOB.getCode()) {
 			dbh.dbAddEvent(0);
+		}else if(false){
+		    
+		}else if(false){
+		    
 		}
 	}
 
