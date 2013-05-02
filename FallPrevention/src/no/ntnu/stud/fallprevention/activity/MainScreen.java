@@ -67,7 +67,7 @@ public class MainScreen extends Activity {
 			// Problem
 			drawable = null;
 		}
-		shouldPush();
+		checkForPush();
 
 		Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
 		Drawable d = new BitmapDrawable(getResources(),
@@ -90,7 +90,7 @@ public class MainScreen extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		shouldPush();
+		checkForPush();
 		updateVisible();
 	}
 
@@ -148,7 +148,7 @@ public class MainScreen extends Activity {
 	 * Checks if it is time to push the daily notification to the database.
 	 */
 	@SuppressLint("NewApi")
-	private void shouldPush() {
+	private void checkForPush() {
 		Log.v("Main Screen", "Checking for push time");
 		// Fetch current time and time stored in file
 		Calendar current = Calendar.getInstance();
