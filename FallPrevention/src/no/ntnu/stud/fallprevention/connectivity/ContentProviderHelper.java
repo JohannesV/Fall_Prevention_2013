@@ -2,7 +2,6 @@ package no.ntnu.stud.fallprevention.connectivity;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -382,21 +381,6 @@ public class ContentProviderHelper {
 		}
 		return mStepCountScore;
 		
-	}
-
-	public synchronized void pushNotification(int returner) {
-		DatabaseHelper dbh = new DatabaseHelper(context);
-		if (returner == RiskStatus.OK_JOB.getCode()) {
-			dbh.dbAddEvent(2);
-		} else if (returner == RiskStatus.BAD_JOB.getCode()) {
-			dbh.dbAddEvent(1);
-		} else if (returner == RiskStatus.VERY_GOOD_JOB.getCode()) {
-			dbh.dbAddEvent(0);
-		}else if(false){
-		    
-		}else if(false){
-		    
-		}
 	}
 
 	public void cpGetEventList() {

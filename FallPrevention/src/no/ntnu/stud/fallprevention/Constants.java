@@ -8,13 +8,10 @@ package no.ntnu.stud.fallprevention;
  */
 public class Constants {
 	/**
-	 * Definition of small changes in amounts of steps done
+	 * Definition of what is a significant change in step count, measures as the ratio of STEPS_NOW / STEPS_BEFORE
 	 */
-	public static final int SMALL_CHANGE_THRESHOLD = 85;
-	/**
-	 * Definition of large changes in amount of steps done
-	 */
-	public static final int LARGE_CHANGE_THRESHOLD = 50;
+	public static final double GOOD_STEP_CHANGE = 1.10;
+	public static final double BAD_STEP_CHANGE = 0.9;
 	/**
 	 * Definition of what is a good amount of steps regardless of what has been
 	 * done before
