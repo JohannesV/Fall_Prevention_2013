@@ -25,6 +25,8 @@ public abstract class DatabaseContract {
 		public static final String COLUMN_NAME_ID = "ID";
 		public static final String COLUMN_NAME_TYPEID = "TypeID";
 		public static final String COLUMN_NAME_TIMESTAMP = "Time";
+		public static final String COLUMN_NAME_PARAMETER_1="Param1";
+		public static final String COLUMN_NAME_PARAMETER_2="Param2";
 	}
 	
 	public static abstract class Contact implements BaseColumns {
