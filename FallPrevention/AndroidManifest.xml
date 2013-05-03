@@ -20,7 +20,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Default" >
+        android:theme="@style/Theme.Default" android:logo="@drawable/ic_launcher">
         <activity
             android:name="no.ntnu.stud.fallprevention.activity.LaunchActivity"
             android:label="@string/app_name" >
@@ -30,12 +30,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="no.ntnu.stud.fallprevention.activity.WriteName"
-            android:label="@string/title_activity_write_name" >
+            android:name="no.ntnu.stud.fallprevention.activity.WriteName" >
         </activity>
         <activity
-            android:name="no.ntnu.stud.fallprevention.activity.MainScreen"
-            android:label="@string/title_activity_mainscreen" >
+            android:name="no.ntnu.stud.fallprevention.activity.MainScreen" >
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.activity.EventList"
@@ -51,8 +49,7 @@
             android:label="@string/title_activity_statistics" >
         </activity>
         <activity
-            android:name="no.ntnu.stud.fallprevention.activity.Settings"
-            android:label="@string/title_activity_settings" >
+            android:name="no.ntnu.stud.fallprevention.activity.Settings" >
         </activity>
         <activity
             android:name="no.ntnu.stud.fallprevention.activity.Related"

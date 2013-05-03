@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">FallPrevention</string>
+    <string name="app_name">Valens Test</string>
     <string name="menu_settings">Innstillinger</string>
     <string name="menu_statistics">Statistikk</string>
     <string name="menu_related">Pårørande</string>
-    <string name="title_activity_write_name">SkrivNavn</string>
+    <string name="title_activity_write_name">Skriv ditt navn</string>
     <string name="general_hi">Hei!</string>
     <string name="write_name_your_name_query">Hva heter du?</string>
     <string name="write_name_write_name">Navn</string>
