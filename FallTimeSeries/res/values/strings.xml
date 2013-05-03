@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">FallTimeSeries</string>
+    <string name="app_name">Valens Step Detector</string>
     <string name="title_activity_launch">LaunchActivity</string>
     <string name="notification_message">Step detection</string>
     <string name="service_title">Motion Detector</string>
     <string name="service_description">Monitoring your movements, watching your health.</string>
     <string name="service_start">Motion Detector started!</string>
     <string name="title_activity_calibration">CalibrationActivity</string>
-    <string name="instructions">Press the button to lock the screen. \nWhen the screen is locked, put the phone in your pocket. \nAfter 10 seconds, the phone will make a beep. \nWhen you hear the beep, start walking as you normally do. \nKeep walking until you hear another beep. \nThe step detector will then be calibrated.</string>
+    <string name="instructions">Press the button to start calibration. Having pushed the button, you have ten seconds to lock screen and put the mobile in your pocket. After ten seconds a sound will play. When you hear that sound, start walking around in the same way as you normally do. Walk until you hear another beep. When you hear the second beep the calibration is done.</string>
     <string name="lock_screen">Start Calibration</string>
+    <string name="start_button">Start step detection</string>
+    <string name="stop_button">Stop step detection</string>
+    <string name="calibrate_button">Go to calibration screen</string>
 
 </resources>

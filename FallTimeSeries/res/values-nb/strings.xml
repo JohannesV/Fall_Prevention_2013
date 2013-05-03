@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">FallTimeSeries</string>
+    <string name="app_name">Valens skrittoppdager</string>
     <string name="title_activity_launch">Startaktivitet</string>
     <string name="notification_message">Skrittoppdager</string>
     <string name="service_title">Skrittoppdager</string>
@@ -10,5 +10,8 @@
     <string name="title_activity_calibration">Kalibrering</string>
     <string name="instructions">Trykk på knappen for å starte kalibreringa. Når du har trykka på knappen, har ti sekund til å låse skjermen og putte mobilen i lomma. Etter ti sekund har gått, vil du høre en lyd. Start å gå tilfeldig rundt når du hører lyden, og gå helt til du hører en ny lyd. Når du hører den andre lyden, kan du stoppe - kalibreringa vil da være ferdig.</string>
     <string name="lock_screen">Start kalibrering</string>
+    <string name="start_button">Start skrittoppdaging</string>
+    <string name="stop_button">Stop skrittoppdaging</string>
+    <string name="calibrate_button">Gå til kalibreringsskjermen</string>
 
 </resources>

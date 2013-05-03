@@ -9,26 +9,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="Start!"
-        android:onClick="startMain" />
+        android:onClick="startMain"
+        android:text="@string/start_button" />
 
         <Button
             android:id="@+id/btnStopData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/btnStoreData"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/btnStoreData"
             android:onClick="stopMain"
-            android:text="Stop!" />
+            android:text="@string/stop_button" />
 
         <Button
             android:id="@+id/btnCalibrate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/btnStoreData"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/btnStopData"
             android:onClick="calibrate"
-            android:text="Calibrate!" />
+            android:text="@string/calibrate_button" />
 
 </RelativeLayout>
