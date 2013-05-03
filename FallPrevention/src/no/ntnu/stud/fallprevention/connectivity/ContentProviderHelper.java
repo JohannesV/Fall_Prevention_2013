@@ -107,25 +107,6 @@ public class ContentProviderHelper {
 				- TimeUnit.MILLISECONDS.convert(hours, TimeUnit.HOURS));
 	}
 
-	/**
-	 * returns a Riskstatus depending on amounts of steps taken
-	 * 
-	 * @param prevStatus
-	 * @return
-	 */
-	public RiskStatus cpGetStatus(RiskStatus prevStatus) {
-		Log.v(TAG, "Getting status");
-		RiskStatus returner = RiskStatus.OK_JOB;
-
-		// Toast.makeText(context,
-		// String.valueOf(dayOne) + "\n" + String.valueOf(dayTwo),
-		// Toast.LENGTH_LONG).show();
-
-		returner = returner.getStatus(getRiskValue());
-
-		return returner;
-	}
-
 	public double getGaitVariability(Timestamp start, Timestamp stop) {
 		double returner = 3500;
 
@@ -252,12 +233,12 @@ public class ContentProviderHelper {
 	 * 
 	 * @return
 	 */
-	public int getRiskValue() {
+	public RiskStatus getRiskValue() {
 		Log.v(TAG, "Getting value");
 		double mStepsDayOne = getStepCount(getHoursBack(24), getHoursBack(0));
 		double mStepsDayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
 		Log.v(TAG, ""+mStepsDayOne);
-		int returner = 3;
+		RiskStatus returner = RiskStatus.OK_JOB;
 		
 		double mStepCountScore = getStepCountScore(mStepsDayOne);
 		Log.v(TAG, "mStepCountScore: "+mStepCountScore);
@@ -277,42 +258,16 @@ public class ContentProviderHelper {
 		Log.v(TAG, "mTotalRisk: "+mTotalRisk);
 		
 		if(mTotalRisk<=20){
-			returner = RiskStatus.BAD_JOB.getCode();
+			returner = RiskStatus.BAD_JOB;
 		}else if(mTotalRisk<=40){
-			returner = RiskStatus.NOT_SO_OK_JOB.getCode();
+			returner = RiskStatus.NOT_SO_OK_JOB;
 		}else if(mTotalRisk<=60){
-			returner = RiskStatus.OK_JOB.getCode();
+			returner = RiskStatus.OK_JOB;
 		}else if(mTotalRisk<=80){
-			returner = RiskStatus.GOOD_JOB.getCode();
+			returner = RiskStatus.GOOD_JOB;
 		}else {
-			returner = RiskStatus.VERY_GOOD_JOB.getCode();
+			returner = RiskStatus.VERY_GOOD_JOB;
 		}
-
-//		if (dayOne > Constants.GOOD_STEPS_NUMBER) {
-//			returner = RiskStatus.VERY_GOOD_JOB.getCode();
-//		} else {
-//			if (dayOne < dayTwo) {
-//				if (dayOne * 100 / dayTwo > Constants.SMALL_CHANGE_THRESHOLD) {
-//
-//					returner = RiskStatus.OK_JOB.getCode();
-//				} else if (dayOne * 100 / dayTwo > Constants.LARGE_CHANGE_THRESHOLD) {
-//					returner = RiskStatus.NOT_SO_OK_JOB.getCode();
-//				} else {
-//					returner = RiskStatus.BAD_JOB.getCode();
-//				}
-//
-//			} else if (dayOne > dayTwo) {
-//				if (dayTwo * 100 / dayOne > Constants.SMALL_CHANGE_THRESHOLD) {
-//					returner = RiskStatus.OK_JOB.getCode();
-//				} else if (dayTwo * 100 / dayOne > Constants.LARGE_CHANGE_THRESHOLD) {
-//					returner = RiskStatus.GOOD_JOB.getCode();
-//				} else {
-//					returner = RiskStatus.VERY_GOOD_JOB.getCode();
-//				}
-//
-//			}
-//		}
-		// pushNotification(returner);
 		return returner;
 
 	}

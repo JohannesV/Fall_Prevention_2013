@@ -49,8 +49,9 @@ public class WidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
-        
 		super.onUpdate(context, appWidgetManager, appWidgetIds);
+		
+		Log.v("VALENSwidget", "Start of update");
 		
         // Display text
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
@@ -61,10 +62,10 @@ public class WidgetProvider extends AppWidgetProvider {
 		TextView textView = (TextView) layout
 				.findViewById(R.id.textView1);
 		
-		// Update face based on state
-		RiskStatus status = new ContentProviderHelper(context)
-				.cpGetStatus(null);
-		Drawable drawable;
+		// Update face based on state.
+		RiskStatus status = new ContentProviderHelper(context).getRiskValue();
+		
+ 		Drawable drawable;
 		if (status == RiskStatus.BAD_JOB) {
 			drawable = context.getResources().getDrawable(
 					R.drawable.bad_job);
@@ -92,18 +93,18 @@ public class WidgetProvider extends AppWidgetProvider {
 		checkForPush(context);
 		
 		// Redisplay image
+		Log.v("VALENSwidget", "Update");
         views.setTextViewText(R.id.textView1, mTemp);
+        drawable = context.getResources().getDrawable(
+				R.drawable.very_good_job);
         Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-		final float scale = context.getResources().getDisplayMetrics().density;
-		int p = (int) (110 * scale + 0.5f);
-		Bitmap b2 = Bitmap.createScaledBitmap(bitmap, p, p, true);
-		views.setBitmap(R.id.smileyButton, "setImageBitmap", b2);
+        views.setImageViewBitmap(R.id.smiley, bitmap);
         
         // Add onClick listener
 		Intent clickIntent = new Intent(context, EventList.class);
 		PendingIntent pendIntent = PendingIntent.getActivity(context,
 				0, clickIntent, 0);
-		views.setOnClickPendingIntent(R.id.smileyButton, pendIntent);
+		views.setOnClickPendingIntent(R.id.smiley, pendIntent);
 		
 		// Display changes
         appWidgetManager.updateAppWidget(appWidgetIds, views);

@@ -52,7 +52,7 @@ public class MainScreen extends Activity {
 		}
 
 		status = new ContentProviderHelper(getApplicationContext())
-				.cpGetStatus(status);
+				.getRiskValue();
 		if (status == RiskStatus.BAD_JOB) {
 			drawable = getResources().getDrawable(R.drawable.bad_job);
 		} else if (status == RiskStatus.NOT_SO_OK_JOB) {

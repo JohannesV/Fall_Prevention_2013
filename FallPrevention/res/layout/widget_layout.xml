@@ -3,9 +3,9 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_margin="8dip"
-    android:background="@drawable/widget_background_no_messages" >
+    android:background="@drawable/widget_background"
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/textView1"
@@ -14,12 +14,12 @@
         android:text="@string/notifcation_number" />
 
     <ImageView
-        android:id="@+id/smileyButton"
+        android:id="@+id/smiley"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5sp"
         android:layout_marginTop="10sp"
         android:contentDescription="@string/messages_face_display"
-        android:src="@drawable/good_job" />
+        android:src="@drawable/bad_job" />
 
-</LinearLayout> 	
+</LinearLayout>
