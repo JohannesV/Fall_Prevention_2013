@@ -1,21 +1,9 @@
 package no.ntnu.stud.fallprevention.activity;
 
-import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Paint.Align;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 import java.util.List;
+
+import no.ntnu.stud.fallprevention.R;
+import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
@@ -24,17 +12,16 @@ import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
-import com.androidplot.xy.FillDirection;
-import com.androidplot.xy.LineAndPointFormatter;
-import com.androidplot.xy.SimpleXYSeries;
-import com.androidplot.xy.XYPlot;
-import com.androidplot.xy.XYStepMode;
-
-import no.ntnu.stud.fallprevention.R;
-import no.ntnu.stud.fallprevention.R.array;
-import no.ntnu.stud.fallprevention.R.id;
-import no.ntnu.stud.fallprevention.R.layout;
-import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 
 /**
  * Shows the statistic screen
@@ -46,15 +33,10 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	private static final String TAG = "no.ntnu.stud.fallprevention.activity";
 	
 	private Spinner timeSpan, dataType;
-
 	private GraphicalView mChart;
-
     private XYMultipleSeriesDataset mDataset = new XYMultipleSeriesDataset();
-
     private XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
-
     private XYSeries mCurrentSeries;
-
     private XYSeriesRenderer mCurrentRenderer;
     
     private void initChart(String title) {
@@ -64,21 +46,77 @@ public class Statistics extends Activity implements OnItemSelectedListener {
         mRenderer.addSeriesRenderer(mCurrentRenderer);
         mRenderer.setLabelsTextSize(25);
         mRenderer.setLegendTextSize(25);
-        mRenderer.setYTitle("Steg");
-        mRenderer.setXTitle("Dager siden");
         mRenderer.setYLabelsColor(0, Color.BLACK);
         mRenderer.setXLabelsColor(Color.BLACK);
         mRenderer.setMarginsColor(Color.WHITE);
     }
     
-    private void addData() {
-    	List<Integer> data = new ContentProviderHelper(getApplicationContext()).cpGetStepsHistoryWeek();
-    	if(data.size() > 0){
-    		int i = 7;
-    		for(Integer dataset : data){
-    			Log.v(TAG, "Added " + dataset.toString() + " to graph");
-    			mCurrentSeries.add(i, dataset);
-    			i--;
+    private void getData(int timeSpinner, int dataSourceSpinner) {
+    	Log.v(TAG, "GET DATA: " + timeSpinner + ", " + dataSourceSpinner);
+    	mCurrentSeries.clear();
+    	List<Double> data;
+    	
+    	if (dataSourceSpinner == 1) {
+    		// Gait speed, find time
+    		int time;
+    		if (timeSpinner == 0) {
+    			time = 7;
+    		} else if (timeSpinner == 1) {
+    			time = 30;
+    		} else {
+    			time = 90;
+    		}
+            mRenderer.setYTitle(getResources().getString(R.string.statistics_y_label_gait_s));
+            mRenderer.setXTitle(getResources().getString(R.string.statistics_x_label_days));
+    		data = new ContentProviderHelper(getApplicationContext()).cpGetSpeedHistory(time);
+    	} else if (dataSourceSpinner == 2) {
+    		// Gait variability, find time
+    		int time;
+    		if (timeSpinner == 0) {
+    			time = 7;
+    		} else if (timeSpinner == 1) {
+    			time = 30;
+    		} else {
+    			time = 90;
+    		}
+            mRenderer.setYTitle(getResources().getString(R.string.statistics_y_label_gait_v));
+            mRenderer.setXTitle(getResources().getString(R.string.statistics_x_label_days));
+    		data = new ContentProviderHelper(getApplicationContext()).cpGetVariabilityHistory(time);
+    	} else {
+    		// Steps, find number of intervals and interval length
+    		int length, interval;
+    		if (timeSpinner == 0) {
+    			// 1 week = 168 hourly intervals
+    			interval = 1;
+    			length = 168;
+    			mRenderer.setXTitle(getResources().getString(R.string.statistics_x_label_hours));
+    		} else if (timeSpinner == 1) {
+    			// 1 month = 30 daily intervals
+    			interval = 24;
+    			length = 30;
+    			mRenderer.setXTitle(getResources().getString(R.string.statistics_x_label_days));
+    		} else {
+    			// 3 months = 90 daily intervals
+    			interval = 24; 
+    			length = 90;
+    			mRenderer.setXTitle(getResources().getString(R.string.statistics_x_label_days));
+    		}
+    		// Fetch data
+            mRenderer.setYTitle(getResources().getString(R.string.statistics_y_label_steps));
+    		data = new ContentProviderHelper(getApplicationContext()).cpGetStepsHistory(length, interval);
+    	}
+    	
+    	// Extract data from content provider query
+    	double x = 0; double y = 0;
+    	boolean xSet = false;
+    	for (double dp : data) {
+    		if (xSet) {
+    			y = dp;
+    			mCurrentSeries.add(x, y);
+    			xSet = false;
+    		} else {
+    			x = dp;
+    			xSet = true;
     		}
     	}
     }
@@ -90,19 +128,8 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.activity_statistics);
-		LinearLayout layout = (LinearLayout) findViewById(R.id.linear_layout);
-        if (mChart == null) {
-            initChart("Test");
-            addData();
-            mChart = ChartFactory.getCubeLineChartView(this, mDataset, mRenderer, 0.1f);
-            mChart.setBackgroundColor(Color.WHITE);
-            layout.addView(mChart);
-        } else {
-            mChart.repaint();
-        }
-        
+		
 		// Fill the time span spinner with some info
 		timeSpan = (Spinner) findViewById(R.id.time_span_spinner);
 		// Create an ArrayAdapter using the string array and a default spinner
@@ -131,6 +158,19 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 		dataType.setAdapter(dataAdapter);
 
 		dataType.setOnItemSelectedListener(this);
+
+		// Display chart
+		LinearLayout layout = (LinearLayout) findViewById(R.id.linear_layout);
+        initChart("Test");
+        mChart = ChartFactory.getCubeLineChartView(this, mDataset, mRenderer, 0.1f);
+        mChart.setBackgroundColor(Color.WHITE);
+        layout.addView(mChart);
+	}
+	
+	private void repaint(int time, int source) {
+		Log.v(TAG, "REPAINT " + time + ", " + source);
+		getData(time, source);
+        mChart.repaint();
 	}
 
 	/**
@@ -139,7 +179,8 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
-		
+		Log.v(TAG, "item selected");
+		repaint(timeSpan.getSelectedItemPosition(), dataType.getSelectedItemPosition());
 	}
 
 	@Override

@@ -27,12 +27,13 @@
     <string name="title_activity_related">Pårørende</string>
     <string name="main_got_new_events">Du har nye Hendelser. Trykk på smileansiktet for å se dem.</string>
     <string-array name="time_period_array">
- 		 <item>1 dag</item>
-        <item>2 dager</item>
-        <item>4 dager</item>
-        <item>1 uke</item>
-        <item>2 uker</item>
+ 		 <item>1 uke</item>
+        <item>1 måned</item>
+        <item>3 måneder</item>
     </string-array>
+    <string name="statistics_x_label_hours">Timer siden</string>
+    <string name="statistics_x_label_days">Dager siden</string>
+    <string name="statistics_y_label_steps">Skritt</string>
     <string name="new_name_button">Nytt navn</string>
     <string name="contact_person_activity">Kontakt person</string>
     <string name="new_contact_activity">Opprett ny kontakt</string>

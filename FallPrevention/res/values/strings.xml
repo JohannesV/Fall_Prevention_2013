@@ -28,13 +28,16 @@
     <string name="main_got_new_events">You got new events. Click the smiley to see them.</string>
 
     <string-array name="time_period_array">
-        <item>1 day</item>
-        <item>2 days</item>
-        <item>4 days</item>
         <item>1 week</item>
-        <item>2 weeks</item>
+        <item>1 month</item>
+        <item>3 months</item>
     </string-array>
 
+    <string name="statistics_x_label_hours">Hours ago</string>
+    <string name="statistics_x_label_days">Day ago</string>
+    <string name="statistics_y_label_steps">Steps</string>
+    <string name="statistics_y_label_gait_s">Gait speed</string>
+    <string name="statistics_y_label_gait_v">Gait variability</string>
     <string name="new_name_button">New Name</string>
     <string name="contact_person_activity">Contact person</string>
     <string name="new_contact_activity">Add new contact</string>

@@ -155,7 +155,7 @@ public class ValensDataProvider extends ContentProvider {
 			String[] selectionArgs, String sortOrder) {
 		Cursor cursor = null;
 
-		Log.v(TAG, String.valueOf(URI_MATCHER.match(uri)));
+		Log.v(TAG, "query: " + String.valueOf(URI_MATCHER.match(uri)));
 		switch (URI_MATCHER.match(uri)) {
 		case TESTS:
 			if (TextUtils.isEmpty(sortOrder)) {
