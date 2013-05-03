@@ -128,27 +128,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Clears the database on an upgrade, and reset it
         reset(db);
-        try {
-            db.execSQL("DROP TABLE IF EXISTS" + DatabaseContract.EventType.TABLE_NAME);
-        } catch (SQLiteException e) {
-            // Do nothing...
-        }
-        try {
-            db.execSQL("DROP TABLE IF EXISTS" + DatabaseContract.Event.TABLE_NAME);
-        } catch (SQLiteException e) {
-            // Do nothing...
-        }
-        try {
-            db.execSQL("DROP TABLE IF EXISTS" + DatabaseContract.Contact.TABLE_NAME);
-        } catch (SQLiteException e) {
-            // Do nothing...
-        }
-        try {
-            db.execSQL("DROP TABLE IF EXISTS" + DatabaseContract.AlarmTypes.TABLE_NAME);
-        } catch (SQLiteException e) {
-            // Do nothing...
-        }
-        onCreate(db);
     }
 
     /**
