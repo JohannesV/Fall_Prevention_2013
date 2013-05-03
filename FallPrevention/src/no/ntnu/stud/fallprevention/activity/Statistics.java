@@ -86,9 +86,9 @@ public class Statistics extends Activity implements OnItemSelectedListener {
     		// Steps, find number of intervals and interval length
     		int length, interval;
     		if (timeSpinner == 0) {
-    			// 1 week = 168 hourly intervals
-    			interval = 1;
-    			length = 168;
+    			// 1 week = 84 bi-hourly intervals
+    			interval = 2;
+    			length = 84;
     			mRenderer.setXTitle(getResources().getString(R.string.statistics_x_label_hours));
     		} else if (timeSpinner == 1) {
     			// 1 month = 30 daily intervals
