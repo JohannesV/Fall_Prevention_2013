@@ -109,9 +109,6 @@ public class MainScreen extends Activity {
 		txtGreetingName.setText(displayString);
 
 		// Display a message if there are new messages
-		// TODO: DOes not update the screen when we removed all the
-		// notifications, not tested further so need more testing to verify the
-		// source of the problem
 		TextView txtSubGreeting = (TextView) findViewById(R.id.mainScreenSubText);
 		DatabaseHelper dbHelper = new DatabaseHelper(this);
 		if (dbHelper.dbHaveEvents()) {

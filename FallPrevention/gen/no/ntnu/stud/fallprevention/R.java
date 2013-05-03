@@ -101,7 +101,7 @@ public final class R {
         public static final int add_contact_confirm_dialogue_text_1=0x7f060025;
         public static final int add_contact_confirm_dialogue_text_2=0x7f060028;
         public static final int app_name=0x7f060000;
-        public static final int button=0x7f06003f;
+        public static final int button=0x7f060041;
         public static final int contact_added=0x7f06000f;
         public static final int contact_people=0x7f060020;
         public static final int contact_person=0x7f06001c;
@@ -110,14 +110,16 @@ public final class R {
         public static final int contact_person_delete_dialogue_2=0x7f060034;
         public static final int contact_person_delete_info=0x7f060032;
         public static final int contact_person_store_info=0x7f06001f;
-        public static final int delete=0x7f060041;
-        public static final int do_with_event=0x7f060042;
+        public static final int delete=0x7f060043;
+        public static final int do_with_event=0x7f060044;
+        public static final int event_desc_two_params=0x7f06003b;
         public static final int event_list_badJob_desc=0x7f060039;
         public static final int event_list_badJob_title=0x7f060036;
         public static final int event_list_goodJob_desc=0x7f060038;
         public static final int event_list_goodJob_title=0x7f060035;
         public static final int event_list_noChange_desc=0x7f06003a;
         public static final int event_list_noChange_title=0x7f060037;
+        public static final int event_null_parameter=0x7f06003c;
         public static final int eventdetail_delete=0x7f06000d;
         public static final int eventdetail_do_with_event=0x7f060010;
         public static final int eventdetail_keep=0x7f06000e;
@@ -127,10 +129,10 @@ public final class R {
         public static final int general_lorem_short=0x7f060011;
         public static final int greeting=0x7f06000c;
         public static final int hello_world=0x7f060014;
-        public static final int hi=0x7f06003c;
-        public static final int keep=0x7f060040;
-        public static final int lorem_long=0x7f060044;
-        public static final int lorem_short=0x7f060043;
+        public static final int hi=0x7f06003e;
+        public static final int keep=0x7f060042;
+        public static final int lorem_long=0x7f060046;
+        public static final int lorem_short=0x7f060045;
         public static final int main_got_new_events=0x7f060018;
         public static final int menu_related=0x7f060003;
         public static final int menu_settings=0x7f060001;
@@ -141,7 +143,7 @@ public final class R {
         public static final int new_contact_create_new_contact=0x7f060022;
         public static final int new_name_button=0x7f060019;
         public static final int no_events=0x7f060013;
-        public static final int notifcation_number=0x7f06003b;
+        public static final int notifcation_number=0x7f06003d;
         public static final int phone_number=0x7f06001e;
         public static final int preferences_clear_history_summary=0x7f060030;
         public static final int preferences_clear_history_title=0x7f06002f;
@@ -161,10 +163,10 @@ public final class R {
         public static final int title_activity_statistics=0x7f060015;
         public static final int title_activity_write_name=0x7f060004;
         public static final int widget_got_new_events=0x7f060024;
-        public static final int write_name=0x7f06003e;
+        public static final int write_name=0x7f060040;
         public static final int write_name_write_name=0x7f060007;
         public static final int write_name_your_name_query=0x7f060006;
-        public static final int your_name_query=0x7f06003d;
+        public static final int your_name_query=0x7f06003f;
     }
     public static final class style {
         /** 
