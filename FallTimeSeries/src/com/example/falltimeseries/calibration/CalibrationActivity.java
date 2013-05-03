@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.falltimeseries.LaunchActivity;
@@ -48,6 +49,10 @@ public class CalibrationActivity extends Activity {
 		Timer timer = new Timer();
 		CalibrationStartTask cst = new CalibrationStartTask(this);
 		timer.schedule(cst, Values.CAL_WAIT);
+		// Disable calibration button, so the user does not start multiple
+		// calibration threads at the same time.
+		Button calibrationButton = (Button) findViewById(R.id.btnStart);
+		calibrationButton.setEnabled(false);
 	}
 
 	/**
@@ -55,14 +60,16 @@ public class CalibrationActivity extends Activity {
 	 * calculated. It plays a sound to show the user that the calibration is
 	 * finished, and stores the mean and std to file.
 	 * 
-	 * @param mean - the calculated mean
-	 * @param std - the calculated std
+	 * @param mean
+	 *            - the calculated mean
+	 * @param std
+	 *            - the calculated std
 	 */
 	public void finishCalibration(double mean, double std) {
 		// Play sound
 		playSound();
 		// Show message
-		Toast.makeText(this, "Calibration complete!", Toast.LENGTH_LONG).show();
+		Toast.makeText(this, getResources().getString(R.string.calibration_complete), Toast.LENGTH_LONG).show();
 		// Store information in phone using SharedPreferences
 		SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(this);
@@ -70,6 +77,10 @@ public class CalibrationActivity extends Activity {
 		editor.putFloat("mean", (float) mean);
 		editor.putFloat("std", (float) std);
 		editor.commit();
+		// Enable calibration button again, in case the user wants to calibrate
+		// again
+		Button calibrationButton = (Button) findViewById(R.id.btnStart);
+		calibrationButton.setEnabled(true);
 		// Go back to main screen
 		Intent intent = new Intent(this, LaunchActivity.class);
 		startActivity(intent);
@@ -82,4 +93,3 @@ public class CalibrationActivity extends Activity {
 		mMediaPlayer.start();
 	}
 }
-

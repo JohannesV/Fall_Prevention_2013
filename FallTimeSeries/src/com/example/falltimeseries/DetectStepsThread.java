@@ -1,10 +1,9 @@
 package com.example.falltimeseries;
 
 import java.util.List;
+
 import android.content.ContentValues;
-import android.content.SharedPreferences;
 import android.net.Uri;
-import android.preference.PreferenceManager;
 
 /**
  * A separate thread called by StepMainService to calculate the step time stamps based on a time 

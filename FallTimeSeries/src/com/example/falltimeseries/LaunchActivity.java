@@ -1,11 +1,15 @@
 package com.example.falltimeseries;
 
-import com.example.falltimeseries.calibration.CalibrationActivity;
-
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningServiceInfo;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+
+import com.example.falltimeseries.calibration.CalibrationActivity;
 
 /**
  * The Launch activity for the service app. Started when the app is run,
@@ -22,6 +26,24 @@ public class LaunchActivity extends Activity {
 		setContentView(R.layout.activity_launch);
 	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		// Enables only the correct button		
+		Button startButton = (Button)findViewById(R.id.btnStoreData);
+		Button stopButton = (Button)findViewById(R.id.btnStopData);
+		
+		if (isMyServiceRunning()) {
+			startButton.setEnabled(false);
+			stopButton.setEnabled(true);
+		} else {
+			startButton.setEnabled(true);
+			stopButton.setEnabled(false);
+		}
+		
+	}
+	
 	/**
 	 * Called when the "start"-button is pressed. Makes an intent, and starts
 	 * the service wit parameter "stop" = false, so that the service knows that
@@ -34,6 +56,12 @@ public class LaunchActivity extends Activity {
 		Intent intent = new Intent(this, StepMainService.class);
 		intent.putExtra("stop", false);
 		startService(intent);
+		
+		Button startButton = (Button)findViewById(R.id.btnStoreData);
+		Button stopButton = (Button)findViewById(R.id.btnStopData);
+		
+		startButton.setEnabled(false);
+		stopButton.setEnabled(true);
 	}
 
 	/**
@@ -48,6 +76,12 @@ public class LaunchActivity extends Activity {
 		Intent intent = new Intent(this, StepMainService.class);
 		intent.putExtra("stop", true);
 		startService(intent);
+		
+		Button startButton = (Button)findViewById(R.id.btnStoreData);
+		Button stopButton = (Button)findViewById(R.id.btnStopData);
+		
+		startButton.setEnabled(true);
+		stopButton.setEnabled(false);
 	}
 
 	/**
@@ -59,5 +93,20 @@ public class LaunchActivity extends Activity {
 	public void calibrate(View view) {
 		Intent intent = new Intent(this, CalibrationActivity.class);
 		startActivity(intent);
+	}
+	
+	/**
+	 * A method to see if a Valens Step Detector Service is running or not.
+	 * 
+	 * @return A boolean that is true if there is a service running, false otherwise.
+	 */
+	private boolean isMyServiceRunning() {
+	    ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+	    for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+	        if (StepMainService.class.getName().equals(service.service.getClassName())) {
+	            return true;
+	        }
+	    }
+	    return false;
 	}
 }
