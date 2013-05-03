@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Valens skrittoppdager</string>
-    <string name="title_activity_launch">Startaktivitet</string>
     <string name="notification_message">Skrittoppdager</string>
     <string name="service_title">Skrittoppdager</string>
     <string name="service_description">Passer på helsa og bevegelsene dine.</string>
