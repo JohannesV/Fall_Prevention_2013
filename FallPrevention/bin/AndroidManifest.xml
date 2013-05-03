@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.permRead"/>
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
 	
 	
     <permission android:name="android.permission.permRead"/>
@@ -74,6 +75,9 @@
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/awidget_provider"/>
         </receiver>	
-        <receiver android:name=".service.NotificationBroadcastReceiver" android:process=":remote" />        
+        <receiver android:name=".service.NotificationBroadcastReceiver" android:process=":remote"> 
+       </receiver>
+        <receiver android:name="no.ntnu.stud.fallprevention.connectivity.AlarmManagerBroadcastReceiver">
+        </receiver>       
     </application>
 </manifest>
