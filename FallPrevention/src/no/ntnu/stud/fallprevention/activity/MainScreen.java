@@ -106,7 +106,7 @@ public class MainScreen extends Activity {
 				.getDefaultSharedPreferences(this);
 		String name = sp.getString("name", "");
 		String displayString = getString(R.string.greeting) + ", " + name + "!";
-		TextView txtGreetingName = (TextView) findViewById(R.id.textView1);
+		TextView txtGreetingName = (TextView) findViewById(R.id.widget_notification_text);
 		txtGreetingName.setText(displayString);
 
 		// Display a message if there are new messages

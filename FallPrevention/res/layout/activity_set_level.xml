@@ -21,7 +21,7 @@
 
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/widget_notification_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
@@ -33,7 +33,7 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
+        android:layout_alignRight="@+id/widget_notification_text"
         android:layout_below="@+id/editText1"
         android:onClick="fireLevel"
         android:text="@string/general_button" />

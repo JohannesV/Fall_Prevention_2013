@@ -56,11 +56,13 @@ public class WidgetProvider extends AppWidgetProvider {
         // Display text
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
         
-        int i = new DatabaseHelper(context).dbGetEventList().size();
+        int eventListCount = new DatabaseHelper(context).dbGetEventList().size();
+        Log.v("VALENSwidget", "eventListCount: "+eventListCount);
+        
 		LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View layout = layoutInflater.inflate(R.layout.widget_layout, null);
 		TextView textView = (TextView) layout
-				.findViewById(R.id.textView1);
+				.findViewById(R.id.widget_notification_text);
 		
 		// Update face based on state.
 		RiskStatus status = new ContentProviderHelper(context).getRiskValue();
@@ -84,20 +86,24 @@ public class WidgetProvider extends AppWidgetProvider {
 		} else {
 			// Problem. This should never happen
 			throw new RuntimeException(
-					"Error thrown at WidgetProvider.java:76");
+					"Error thrown at WidgetProvider.java:89");
 		}
 		
-		String mTemp=textView.getText().toString().replaceAll("[0-9]+", String.valueOf(i));
-		
+		String mTemp=context.getString(R.string.notifcation_number).replaceAll("%1", String.valueOf(eventListCount));
+		Log.v("VALENSwidget", mTemp);
 		// Check whether we should create a new notification
-		checkForPush(context);
+		//checkForPush(context);
 		
 		// Redisplay image
 		Log.v("VALENSwidget", "Update");
-        views.setTextViewText(R.id.textView1, mTemp);
-        drawable = context.getResources().getDrawable(
-				R.drawable.very_good_job);
-        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+		Log.v("VALENSwidget", "Before: "+textView.getText().toString());
+        textView.setText(mTemp);
+        Log.v("VALENSwidget", "After: "+textView.getText().toString());
+        appWidgetManager.updateAppWidget(R.id.widget_notification_text, views);
+        
+//        drawable = context.getResources().getDrawable(
+//				R.drawable.very_good_job);
+       Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
         views.setImageViewBitmap(R.id.smiley, bitmap);
         
         // Add onClick listener
