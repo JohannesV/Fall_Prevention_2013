@@ -58,7 +58,7 @@ public class ContentProviderHelper {
 				+ " AND timestamp < " + stop.getTime();
 
 		// not used, therefore null
-		String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
+		String[] selectionArgs = null;
 		// no need for sorting
 		String sortOrder = null;
 
@@ -72,6 +72,7 @@ public class ContentProviderHelper {
 			Log.v(TAG, "Steps counted: " + String.valueOf(cursor.getString(0)));
 			mStepCount = cursor.getDouble(0);
 			Log.v(TAG, String.valueOf(mStepCount));
+			cursor.close();
 			Log.v(TAG, "Query done without errors!");
 
 		} catch (SQLException e) {
@@ -80,16 +81,13 @@ public class ContentProviderHelper {
 			e.printStackTrace();
 		} catch (RemoteException e) {
 			// Remote binding problems
-
 			e.printStackTrace();
 		} catch (NullPointerException e) {
 			// Nullpointer problems
-
 			Log.v(TAG, e.toString());
 			e.printStackTrace();
 		}
-		// Toast.makeText(context, String.valueOf(mStepCount),
-		// Toast.LENGTH_LONG).show();
+
 		return (int) mStepCount;
 	}
 
@@ -140,11 +138,12 @@ public class ContentProviderHelper {
 						"Variability: " + String.valueOf(cursor.getString(0)));
 				returner = cursor.getDouble(0);
 				Log.v(TAG, String.valueOf(returner));
-				Log.v(TAG, "Query done without errors!");
+				
 			} else {
 				Log.v(TAG, "Variability : Cursor empty");
 			}
-
+			cursor.close();
+			Log.v(TAG, "Query done without errors!");
 		} catch (SQLException e) {
 			// SQL problems
 			Log.v(TAG, e.toString());
@@ -200,6 +199,7 @@ public class ContentProviderHelper {
 			} else {
 				Log.v(TAG, "Speed: Cursor empty");
 			}
+			cursor.close();
 
 		} catch (SQLException e) {
 			// SQL problems
@@ -217,13 +217,6 @@ public class ContentProviderHelper {
 		} catch (Exception e) {
 			// f* tha code-police
 		}
-		// long stepCount=getStepCount(start,stop);
-		// long
-		// deltatime=TimeUnit.MILLISECONDS.toMinutes(stop.getTime()-start.getTime());
-		// Log.v(TAG, "Step Count: "+stepCount);
-		// Log.v(TAG,"Delta time: "+deltatime);
-		// returner=((double)stepCount/(double)deltatime);
-		// Log.v(TAG, "Result: "+returner);
 		return returner;
 	}
 
@@ -235,6 +228,7 @@ public class ContentProviderHelper {
 	 */
 	public RiskStatus getRiskValue() {
 		Log.v(TAG, "Getting value");
+		
 		double mStepsDayOne = getStepCount(getHoursBack(24), getHoursBack(0));
 		double mStepsDayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
 		Log.v(TAG, ""+mStepsDayOne);
@@ -314,7 +308,6 @@ public class ContentProviderHelper {
 		mGaitSpeedScore=0;
 		}else{
 		    mGaitSpeedScore=50;
-//		    mGaitSpeedScore=(mSpeedDayTwo +2)*100/(mSpeedDayTwo+2);
 		}
 		
 		return mGaitSpeedScore;
@@ -377,9 +370,6 @@ public class ContentProviderHelper {
 		for (int i = 1; i <= 7; i++) {
 			// the list is supposed to be read in an interleaved format, meaning
 			// x and y values alternating
-			// returner.add((double) getStepCount(getHoursBack((24 * (i - 1)) -
-			// Calendar.HOUR_OF_DAY), getHoursBack((24 * i) -
-			// Calendar.HOUR_OF_DAY)));
 			Integer temp = getStepCount(getHoursBack((24 * (i))),
 					getHoursBack((24 * (i - 1))));
 			Log.v(TAG,

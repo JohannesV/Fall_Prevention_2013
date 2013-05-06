@@ -1,9 +1,5 @@
 package no.ntnu.stud.fallprevention.activity;
 
-import java.sql.Timestamp;
-import java.util.Calendar;
-
-import no.ntnu.stud.fallprevention.Constants;
 import no.ntnu.stud.fallprevention.R;
 import no.ntnu.stud.fallprevention.connectivity.AlarmManagerBroadcastReceiver;
 import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
@@ -19,7 +15,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,9 +43,6 @@ public class MainScreen extends Activity {
 
 		// Change image depending on information from the database
 		Drawable drawable;
-		if (status == null) {
-			status = RiskStatus.OK_JOB;
-		}
 
 		status = new ContentProviderHelper(getApplicationContext())
 				.getRiskValue();

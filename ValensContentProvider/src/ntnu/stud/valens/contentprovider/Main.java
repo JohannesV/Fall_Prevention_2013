@@ -154,5 +154,7 @@ public class Main extends Activity {
 		mCount.moveToFirst();
 		testTypes.setText(Integer.toString(mCount.getInt(0)));
 		mCount.close();
+		
+		db.close();
 	}
 }
