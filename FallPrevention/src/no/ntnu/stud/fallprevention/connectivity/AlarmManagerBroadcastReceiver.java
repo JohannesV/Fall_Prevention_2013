@@ -57,20 +57,6 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
         } else {
             dbh.dbAddEvent(2, yesterdaySteps, dayBeforeSteps);
         }
-
-        // You can do the processing here.
-        // Bundle extras = intent.getExtras();
-        // StringBuilder msgStr = new StringBuilder();
-        //
-        // if(extras != null && extras.getBoolean(ONE_TIME, Boolean.FALSE)){
-        // //Make sure this intent has been sent by the one-time timer button.
-        // msgStr.append("One time Timer : ");
-        // }
-        // Format formatter = new SimpleDateFormat("hh:mm:ss a");
-        // msgStr.append(formatter.format(new Date()));
-        //
-        // Toast.makeText(context, msgStr, Toast.LENGTH_LONG).show();
-
         // Release the lock
         wl.release();
     }
