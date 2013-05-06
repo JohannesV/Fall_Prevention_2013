@@ -315,6 +315,9 @@ public class ContentProviderHelper {
 
 	private double getStepCountComparisonScore(double mStepsDayOne,
 			double mStepsDayTwo) {
+	    if(mStepsDayTwo==0){
+	        mStepsDayTwo=1;
+	    }
 		double mStepCountComparisonScore=((mStepsDayOne/mStepsDayTwo)-0.1)*100;
 		if(mStepCountComparisonScore>=110){
 			mStepCountComparisonScore=110;
