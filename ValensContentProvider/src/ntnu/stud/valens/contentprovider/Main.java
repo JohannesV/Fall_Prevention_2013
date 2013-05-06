@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -66,6 +67,7 @@ public class Main extends Activity {
 			public void onClick(DialogInterface dialog, int which) {
 				switch (which) {
 				case DialogInterface.BUTTON_POSITIVE:
+					Log.v("onCLick", "Pressed button!");
 		            new ManipulatorHelper().calculate(getApplicationContext());
 					updateDebugFields();
 					Toast.makeText(getApplicationContext(), "Did calculations",

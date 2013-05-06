@@ -43,6 +43,7 @@ public class ContentProviderHelper {
      * @return A list of list of step timestamps.
      */
     public List<List<Long>> getRawSteps(Timestamp start, Timestamp stop) {
+    	Log.v(TAG, "getRawSteps");
         List<Long> rawSteps = new ArrayList<Long>();
         List<List<Long>> sortedSteps = new ArrayList<List<Long>>();
 
@@ -98,6 +99,7 @@ public class ContentProviderHelper {
             else {
                 Log.v(TAG, "No rows found in content provider. Exiting calculations.");
             }
+            cursor.close();
         } catch (RemoteException e) {
             e.printStackTrace();
         } catch (Exception e) {
