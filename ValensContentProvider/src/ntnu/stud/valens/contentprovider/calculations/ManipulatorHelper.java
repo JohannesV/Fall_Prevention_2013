@@ -41,7 +41,7 @@ public class ManipulatorHelper {
 	 *            to get access to content providers.
 	 */
 	public void calculate(Context context) {
-		// Only update
+		// Only update if no update has happened today.
 		SharedPreferences prefs = context.getSharedPreferences(
 				"ntnu.stud.valens.contentprovider", Context.MODE_PRIVATE);
 		long lastUpdateTime = prefs.getLong("lastUpdateTime", 0);
