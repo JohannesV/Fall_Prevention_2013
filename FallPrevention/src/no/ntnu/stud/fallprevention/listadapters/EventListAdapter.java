@@ -61,7 +61,10 @@ public class EventListAdapter extends ArrayAdapter<String> {
 			imageView.setImageResource(R.drawable.halo);
 		} else if (s.equals("sleep")) {
 			imageView.setImageResource(R.drawable.sleep);
-		} else {
+		} else if (s.equals("warning")) {
+            imageView.setImageResource(R.drawable.warning);
+        }
+		else {
 			imageView.setImageResource(R.drawable.smiley_icon);
 		}
 

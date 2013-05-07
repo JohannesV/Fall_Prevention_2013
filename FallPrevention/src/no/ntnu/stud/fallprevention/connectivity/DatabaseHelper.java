@@ -29,7 +29,7 @@ import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 23;
+    public static final int DATABASE_VERSION = 24;
     public static final String DATABASE_NAME = "FallPrevention.db";
 
     public static final String COMMA = ", ";
@@ -95,15 +95,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         final String FILL_INFO_11 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (3, 'SMS if fall')";
         final String FILL_INFO_12 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (2, 'Event_3', 'Event_3', \'sleep\')";
         final String FILL_INFO_13 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (3,'Event_4','Event_4',\'warning\')";
+        final String FILL_INFO_14 = "INSERT INTO Event(ID,TypeID,Param1,Param2) VALUES(3,3,0,0)";
         db.execSQL(CREATE_TABLE_1);
         db.execSQL(CREATE_TABLE_2);
         db.execSQL(CREATE_TABLE_3);
         db.execSQL(CREATE_TABLE_4);
         db.execSQL(FILL_INFO_1);
         db.execSQL(FILL_INFO_2);
-        db.execSQL(FILL_INFO_3);
-        db.execSQL(FILL_INFO_4);
-        db.execSQL(FILL_INFO_5);
+        //db.execSQL(FILL_INFO_3);
+       // db.execSQL(FILL_INFO_4);
+        //db.execSQL(FILL_INFO_5);
         db.execSQL(FILL_INFO_6);
         db.execSQL(FILL_INFO_7);
         db.execSQL(FILL_INFO_8);
@@ -112,6 +113,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(FILL_INFO_11);
         db.execSQL(FILL_INFO_12);
         db.execSQL(FILL_INFO_13);
+       // db.execSQL(FILL_INFO_14);
     }
 
     /**
@@ -166,8 +168,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + DatabaseContract.Event.TABLE_NAME + DOT
                 + DatabaseContract.Event.COLUMN_NAME_TYPEID + EQUAL
                 + DatabaseContract.EventType.TABLE_NAME + DOT
-                + DatabaseContract.EventType.COLUMN_NAME_ID + " ORDER BY " + DatabaseContract.Event.TABLE_NAME + DOT + DatabaseContract.Event.COLUMN_NAME_ID + " DESC", null);
-Log.v("DatabaseHelper",DatabaseUtils.dumpCursorToString(c));
+                + DatabaseContract.EventType.COLUMN_NAME_ID + " ORDER BY "
+                + DatabaseContract.Event.TABLE_NAME + DOT + DatabaseContract.Event.COLUMN_NAME_ID
+                + " DESC", null);
+        Log.v("DatabaseHelper", DatabaseUtils.dumpCursorToString(c));
         // Iterate over the data fetched
         c.moveToFirst();
         for (int i = 0; i < c.getCount(); i++) {
@@ -201,8 +205,7 @@ Log.v("DatabaseHelper",DatabaseUtils.dumpCursorToString(c));
             mReturner = context.getString(R.string.event_list_noChange_title);
         } else if (origTitle.equalsIgnoreCase("event_4")) {
             mReturner = context.getString(R.string.event_list_warning_title);
-        }
-        else {
+        }else {
             mReturner = origTitle;
         }
         return mReturner;
@@ -224,7 +227,7 @@ Log.v("DatabaseHelper",DatabaseUtils.dumpCursorToString(c));
             mReturner = context.getString(R.string.event_list_badJob_desc);
         } else if (origDesc.equalsIgnoreCase("event_3")) {
             mReturner = context.getString(R.string.event_list_noChange_desc);
-        }else if (origDesc.equalsIgnoreCase("event_4")) {
+        } else if (origDesc.equalsIgnoreCase("event_4")) {
             mReturner = context.getString(R.string.event_list_warning_description);
         } else {
             mReturner = origDesc;
@@ -414,7 +417,7 @@ Log.v("DatabaseHelper",DatabaseUtils.dumpCursorToString(c));
         // Look up the name in the contacts table
         Uri uri = ContactsContract.Contacts.CONTENT_URI;
         String[] projection = new String[] {
-            ContactsContract.Contacts.DISPLAY_NAME
+                ContactsContract.Contacts.DISPLAY_NAME
         };
         String selection = ContactsContract.Contacts._ID + " = " + id;
         String[] selectionArgs = null;
@@ -430,11 +433,11 @@ Log.v("DatabaseHelper",DatabaseUtils.dumpCursorToString(c));
         // Now make another query to get the phone number of the contact
         uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
         projection = new String[] {
-            ContactsContract.CommonDataKinds.Phone.NUMBER
+                ContactsContract.CommonDataKinds.Phone.NUMBER
         };
         selection = ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?";
         selectionArgs = new String[] {
-            id
+                id
         };
         cursor = context.getContentResolver().query(uri, projection, selection,
                 selectionArgs, orderBy);

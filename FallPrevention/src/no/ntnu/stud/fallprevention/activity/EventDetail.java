@@ -38,10 +38,14 @@ public class EventDetail extends Activity {
         textView.setText(eventInformation.get(DatabaseContract.EventType.COLUMN_NAME_TITLE));
         TextView textView2 = (TextView) findViewById(R.id.mainTextView);
         String mTempDesc = getString(R.string.event_desc_two_params);
-        
+        if(textView.getText().toString().equalsIgnoreCase(getString(R.string.event_list_warning_title))){
+            mTempDesc=getString(R.string.event_list_warning_description);
+        }else{
         mTempDesc=mTempDesc.replaceAll("%1", eventInformation.get(DatabaseContract.Event.COLUMN_NAME_PARAMETER_1));
         mTempDesc=mTempDesc.replaceAll("%2", eventInformation.get(DatabaseContract.Event.COLUMN_NAME_PARAMETER_2));
         mTempDesc=mTempDesc.replaceAll("null", getString(R.string.event_null_parameter));
+        
+        }
         textView2.setText(mTempDesc);
 
     }
