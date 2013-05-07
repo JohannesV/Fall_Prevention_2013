@@ -102,6 +102,7 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 		mRenderer.setYLabelsColor(0, Color.BLACK);
 		mRenderer.setXLabelsColor(Color.BLACK);
 		mRenderer.setMarginsColor(Color.WHITE);
+		mRenderer.setBarSpacing(1d);
 		mChart = ChartFactory.getBarChartView(this, mDataset, mRenderer, Type.DEFAULT);
 		mChart.setBackgroundColor(Color.WHITE);
 		LinearLayout layout = (LinearLayout) findViewById(R.id.linear_layout);
