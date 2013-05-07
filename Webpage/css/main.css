@@ -1,0 +1,22 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.hero-unit {
+	background: rgba(255, 255, 255, 0.9);
+}
+
+.footer {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+#manual {
+	min-height: 600px;
+}
+
+.carousel-caption {
+	position: relative;
+}
