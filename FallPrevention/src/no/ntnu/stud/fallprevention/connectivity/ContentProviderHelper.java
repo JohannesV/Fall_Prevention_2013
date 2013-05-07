@@ -269,8 +269,7 @@ public class ContentProviderHelper {
 	private double getTotalRiskScore(double mStepCountScore,
 			double mStepCountComparisonScore, double mGaitSpeedScore,
 			double mVariabilityScore) {
-		double mTotalRisk=0.2*(mStepCountScore)+ 0.5*(mStepCountComparisonScore)+
-		0.2*(mGaitSpeedScore) + 0.1*(mVariabilityScore);
+		double mTotalRisk=mStepCountScore;
 		return mTotalRisk;
 	}
 
@@ -326,7 +325,7 @@ public class ContentProviderHelper {
 	}
 
 	private double getStepCountScore(double mStepsDayOne) {
-		double mStepCountScore=(mStepsDayOne*100)/Constants.GOOD_STEPS_NUMBER;
+		double mStepCountScore=mStepsDayOne/10;
 		if(mStepCountScore>110){
 			mStepCountScore=110;
 		}
