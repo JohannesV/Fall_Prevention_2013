@@ -68,9 +68,9 @@
     <string name="contact_person_delete_dialogue_2">from your contact list?</string>
 
     <string-array name="data_type_array">
-        <item >Steps</item>
-        <item >Gait Speed</item>
-        <item >Gait Variability</item>
+        <item>Steps</item>
+        <item>Gait Speed</item>
+        <item>Gait Variability</item>
     </string-array>
 
     <string name="event_list_goodJob_title">You have done well!</string>
@@ -79,7 +79,8 @@
     <string name="event_list_goodJob_desc">You have moved a lot recently, good job! </string>
     <string name="event_list_badJob_desc">You haven\'t moved enough recently, try harder! </string>
     <string name="event_list_noChange_desc">You have moved neither more or less lately. </string>
-    
+    <string name="event_list_warning_title">Warning!</string>
+    <string name="event_list_warning_description">You have problematic values for speed and variability, and should mention this to your doctor or medical personel!</string>
     <string name="event_desc_two_params">You have walked \%%1 steps today, while yesterday you walked \%%2 steps.</string>
     <string name="event_null_parameter">an unknown amount</string>
     <string name="notifcation_number">You have \%%1 notifications!</string>

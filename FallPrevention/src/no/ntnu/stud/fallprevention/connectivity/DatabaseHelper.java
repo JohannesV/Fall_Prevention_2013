@@ -199,7 +199,10 @@ Log.v("DatabaseHelper",DatabaseUtils.dumpCursorToString(c));
             mReturner = context.getString(R.string.event_list_badJob_title);
         } else if (origTitle.equalsIgnoreCase("event_3")) {
             mReturner = context.getString(R.string.event_list_noChange_title);
-        } else {
+        } else if (origTitle.equalsIgnoreCase("event_4")) {
+            mReturner = context.getString(R.string.event_list_warning_title);
+        }
+        else {
             mReturner = origTitle;
         }
         return mReturner;
@@ -221,6 +224,8 @@ Log.v("DatabaseHelper",DatabaseUtils.dumpCursorToString(c));
             mReturner = context.getString(R.string.event_list_badJob_desc);
         } else if (origDesc.equalsIgnoreCase("event_3")) {
             mReturner = context.getString(R.string.event_list_noChange_desc);
+        }else if (origDesc.equalsIgnoreCase("event_4")) {
+            mReturner = context.getString(R.string.event_list_warning_description);
         } else {
             mReturner = origDesc;
         }
