@@ -166,7 +166,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + DatabaseContract.Event.TABLE_NAME + DOT
                 + DatabaseContract.Event.COLUMN_NAME_TYPEID + EQUAL
                 + DatabaseContract.EventType.TABLE_NAME + DOT
-                + DatabaseContract.EventType.COLUMN_NAME_ID + " ORDER BY DESC", null);
+                + DatabaseContract.EventType.COLUMN_NAME_ID + " ORDER BY " + DatabaseContract.Event.TABLE_NAME + DOT + DatabaseContract.Event.COLUMN_NAME_TIMESTAMP + " DESC", null);
 Log.v("DatabaseHelper",DatabaseUtils.dumpCursorToString(c));
         // Iterate over the data fetched
         c.moveToFirst();
