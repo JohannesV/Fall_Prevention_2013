@@ -94,7 +94,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         final String FILL_INFO_10 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (2, 'SMS if gradual improvement')";
         final String FILL_INFO_11 = "INSERT INTO AlarmTypes (AlarmID, Description) VALUES (3, 'SMS if fall')";
         final String FILL_INFO_12 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (2, 'Event_3', 'Event_3', \'sleep\')";
-        final String FILL_INFO_13 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (3,'Event_4','Event_4',\'halo\')";
+        final String FILL_INFO_13 = "INSERT INTO EventType (TypeID, Description, Headline, Icon) VALUES (3,'Event_4','Event_4',\'warning\')";
         db.execSQL(CREATE_TABLE_1);
         db.execSQL(CREATE_TABLE_2);
         db.execSQL(CREATE_TABLE_3);
