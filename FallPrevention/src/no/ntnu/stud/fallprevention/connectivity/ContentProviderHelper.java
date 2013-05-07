@@ -105,7 +105,7 @@ public class ContentProviderHelper {
 	}
 
 	public double getGaitVariability(Timestamp start, Timestamp stop) {
-		double returner = 3500;
+		double returner = -1;
 
 		// Setting variables for the query
 		// sets the unique resource identifier for the data
