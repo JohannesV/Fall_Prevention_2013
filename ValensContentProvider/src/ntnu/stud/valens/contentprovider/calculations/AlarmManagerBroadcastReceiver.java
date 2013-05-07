@@ -41,7 +41,8 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 		msgStr.append(formatter.format(new Date()));
 
 		Toast.makeText(context, msgStr, Toast.LENGTH_LONG).show();
-		new ManipulatorHelper().calculate(context);
+		ManipulatorHelper mh = new ManipulatorHelper(context);
+		(new Thread(mh)).start();
 
 		// Release the lock
 		wl.release();

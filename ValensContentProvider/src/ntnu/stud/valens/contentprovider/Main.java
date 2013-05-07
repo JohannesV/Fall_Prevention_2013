@@ -68,7 +68,8 @@ public class Main extends Activity {
 				switch (which) {
 				case DialogInterface.BUTTON_POSITIVE:
 					Log.v("onCLick", "Pressed button!");
-		            new ManipulatorHelper().calculate(getApplicationContext());
+		            ManipulatorHelper mh = new ManipulatorHelper(getApplicationContext());
+		            (new Thread(mh)).start();
 					updateDebugFields();
 					Toast.makeText(getApplicationContext(), "Did calculations",
 							Toast.LENGTH_SHORT).show();
