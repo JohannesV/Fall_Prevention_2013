@@ -12,6 +12,7 @@ import android.content.ContentProviderClient;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.util.Log;
@@ -129,11 +130,15 @@ public class ContentProviderHelper {
                 .parse("content://ntnu.stud.valens.contentprovider/steps/");
 
         for (Long step : steps) {
+        	try {
             // Define the row to insert
             ContentValues rowToInsert = new ContentValues();
             rowToInsert.put("timestamp", step);
             // Insert row, hoping that everything works as expected.
             context.getContentResolver().insert(uri, rowToInsert);
+        	} catch (SQLiteConstraintException e) {
+        		Log.e(TAG, "SQLConstraintException when insterting step");
+        	}
         }
     }
 

@@ -158,14 +158,14 @@ public class ContentProviderHelper {
 			Log.v(TAG, e.toString());
 			e.printStackTrace();
 		} catch (Exception e) {
-			// f* tha code-police
+			e.printStackTrace();
 		}
 
 		return returner;
 	}
 
 	public double getGaitSpeed(Timestamp start, Timestamp stop) {
-		double returner = 3500;
+		double returner = -1;
 		// Setting variables for the query
 		// sets the unique resource identifier for the data
 		Uri uri = Uri.parse("content://ntnu.stud.valens.contentprovider");
@@ -180,7 +180,7 @@ public class ContentProviderHelper {
                 + (stop.getTime()+DateUtils.HOUR_IN_MILLIS);
 
 		// not used, therefore null
-		String[] selectionArgs = null;// {String.valueOf(start.getTime()),String.valueOf(stop.getTime())};
+		String[] selectionArgs = null;
 		// no need for sorting
 		String sortOrder = null;
 
@@ -334,10 +334,6 @@ public class ContentProviderHelper {
 		
 	}
 
-	public void cpGetEventList() {
-		// TODO: Rename and write to database in database helper
-	}
-
 	/**
 	 * returns a list containing information for the statistics class to display
 	 * Information is gotten from the content provider and it is sorted with x
@@ -362,24 +358,6 @@ public class ContentProviderHelper {
 					getHoursBack((i + 1) * interval),
 					getHoursBack(i * interval)));
 
-		}
-		return returner;
-	}
-
-	public List<Integer> cpGetStepsHistoryWeek() {
-
-		List<Integer> returner = new ArrayList<Integer>();
-
-		for (int i = 1; i <= 7; i++) {
-			// the list is supposed to be read in an interleaved format, meaning
-			// x and y values alternating
-			Integer temp = getStepCount(getHoursBack((24 * (i))),
-					getHoursBack((24 * (i - 1))));
-			Log.v(TAG,
-					"getStepCount, start" + getHoursBack((24 * (i))).toString()
-							+ " end" + getHoursBack((24 * (i - 1))).toString()
-							+ " steps" + temp.toString());
-			returner.add(temp);
 		}
 		return returner;
 	}
