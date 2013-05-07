@@ -431,11 +431,11 @@ public class ContentProviderHelper {
 			// the list is supposed to be read in an interleaved format, meaning
 			// x and y values alternating
 			returner.add((double) (-i));
-			returner.add((double) getGaitSpeed(getHoursBack((i + 1) * 24),
+			returner.add((double) getGaitVariability(getHoursBack((i + 1) * 24),
 					getHoursBack(i * 24)));
 			Log.v(TAG,
 					"Variability:"
-							+ getGaitSpeed(getHoursBack((i + 1) * 24),
+							+ getGaitVariability(getHoursBack((i + 1) * 24),
 									getHoursBack(i * 24)));
 		}
 
