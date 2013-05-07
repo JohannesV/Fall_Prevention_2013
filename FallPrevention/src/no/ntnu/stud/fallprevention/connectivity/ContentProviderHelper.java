@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import no.ntnu.stud.fallprevention.Constants;
 import no.ntnu.stud.fallprevention.datastructures.RiskStatus;
 import android.annotation.SuppressLint;
 import android.content.ContentProviderClient;
@@ -230,26 +229,11 @@ public class ContentProviderHelper {
 		Log.v(TAG, "Getting value");
 		
 		double mStepsDayOne = getStepCount(getHoursBack(24), getHoursBack(0));
-		double mStepsDayTwo = getStepCount(getHoursBack(48), getHoursBack(24));
 		Log.v(TAG, ""+mStepsDayOne);
 		RiskStatus returner = RiskStatus.OK_JOB;
 		
-		double mStepCountScore = getStepCountScore(mStepsDayOne);
-		Log.v(TAG, "mStepCountScore: "+mStepCountScore);
-		
-		double mStepCountComparisonScore = getStepCountComparisonScore(
-				mStepsDayOne, mStepsDayTwo);
-		Log.v(TAG, "mStepCountComparisonScore:"+ mStepCountComparisonScore);
-		
-		double mGaitSpeedScore = getGaitSpeedScore();
-		Log.v(TAG,"mGaitSpeedScore: " + mGaitSpeedScore);
-		
-		double mVariabilityScore = getVariabilityScore();
-		Log.v(TAG, "mVariabilityScore: "+mVariabilityScore);
-		
-		double mTotalRisk = getTotalRiskScore(mStepCountScore,
-				mStepCountComparisonScore, mGaitSpeedScore, mVariabilityScore);
-		Log.v(TAG, "mTotalRisk: "+mTotalRisk);
+		double mTotalRisk = getStepCountScore(mStepsDayOne);
+		Log.v(TAG, "mStepCountScore: "+mTotalRisk);
 		
 		if(mTotalRisk<=20){
 			returner = RiskStatus.BAD_JOB;
@@ -264,64 +248,6 @@ public class ContentProviderHelper {
 		}
 		return returner;
 
-	}
-
-	private double getTotalRiskScore(double mStepCountScore,
-			double mStepCountComparisonScore, double mGaitSpeedScore,
-			double mVariabilityScore) {
-		double mTotalRisk=mStepCountScore;
-		return mTotalRisk;
-	}
-
-	private double getVariabilityScore() {
-		double d = getGaitVariability(getHoursBack(24),getHoursBack(0));
-		double mVariabilityScore;
-		
-		
-		Log.v(TAG, "Variability: " +d);
-		if(d<Constants.GOOD_VARI_NUMBER){
-		    mVariabilityScore=110;
-		}else if(d>Constants.BAD_VARI_NUMBER){
-		    mVariabilityScore=0;
-		} else{
-		    mVariabilityScore=50;
-		  //  mVariabilityScore=100/(d*10+1);
-		}
-		
-		 if(mVariabilityScore>=110){
-			mVariabilityScore=110;
-		 }
-		return mVariabilityScore;
-	}
-
-	private double getGaitSpeedScore() {
-		double mSpeedDayOne=getGaitSpeed(getHoursBack(24),getHoursBack(0));
-		double mSpeedDayTwo=getGaitSpeed(getHoursBack(48),getHoursBack(24));
-		
-		Log.v(TAG, "Speed:" + mSpeedDayOne +", "+ mSpeedDayTwo);
-		
-		double mGaitSpeedScore =0;
-		if(mSpeedDayOne<Constants.GOOD_SPEED_NUMBER){
-		    mGaitSpeedScore=110;
-		}else if(mSpeedDayOne>Constants.BAD_SPEED_NUMBER){
-		mGaitSpeedScore=0;
-		}else{
-		    mGaitSpeedScore=50;
-		}
-		
-		return mGaitSpeedScore;
-	}
-
-	private double getStepCountComparisonScore(double mStepsDayOne,
-			double mStepsDayTwo) {
-	    if(mStepsDayTwo==0){
-	        mStepsDayTwo=1;
-	    }
-		double mStepCountComparisonScore=((mStepsDayOne/mStepsDayTwo)-0.1)*100;
-		if(mStepCountComparisonScore>=110){
-			mStepCountComparisonScore=110;
-		}
-		return mStepCountComparisonScore;
 	}
 
 	private double getStepCountScore(double mStepsDayOne) {
