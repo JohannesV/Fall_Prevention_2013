@@ -62,6 +62,17 @@
     <string name="contact_person_delete_info">Slett kontakt</string>
     <string name="contact_person_delete_dialogue_1">Er du sikker på at du vil fjerne</string>
     <string name="contact_person_delete_dialogue_2">fra kontaktlisten?</string>
+    <string name="event_list_warning_description">Vi har oppdaga at du har et gangelag som setter deg i risikosonen for fall. Vi anbefaler å diskutere dette med fastlegen din.</string>
+    <string name="event_list_goodJob_title">Veldig bra!</string>
+    <string name="event_list_badJob_title">Du bør gå mer!</string>
+    <string name="event_list_noChange_title">Ingen endring</string>
+    <string name="event_list_goodJob_desc">I går gikk du mer enn dagen før. Veldig bra!</string>
+    <string name="event_list_badJob_desc">I går gikk du mindre enn dagen før. Prøv å bevege deg mer! </string>
+    <string name="event_list_noChange_desc">Du har verken gått mer eller mindre enn normalt i det siste. </string>
+    <string name="event_list_warning_title">Advarsel!</string>
+    <string name="event_desc_two_params">I går gikk du \%%1 skritt, mens du dagen før gikk \%%2 skritt.</string>
+    <string name="event_null_parameter">et ukjent antall</string>
+    <string name="notifcation_number">Du har \%%1 beskjeder!</string>
     <string-array name="data_type_array">
         <item >Skritt</item>
         <item >Gait Speed</item>
