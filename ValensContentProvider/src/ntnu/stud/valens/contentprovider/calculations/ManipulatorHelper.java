@@ -17,13 +17,19 @@ import android.util.Log;
  * 
  * @author Elias
  */
-public class ManipulatorHelper {
+public class ManipulatorHelper implements Runnable {
 
 	private static final String APP_TAG = "ntnu.stud.valens.contentprovider";
 
 	public static final long GROUP_GAP_THRESHOLD = 10000;
 	public static final long GROUP_SIZE_THRESHOLD = 10000;
 
+	private Context context;
+	
+	public ManipulatorHelper(Context context) {
+		this.context = context;
+	}
+	
 	/**
 	 * The calculation method handles the computation of gait parameters and
 	 * finds the true steps. Fetches the data for the last 24 hours from the
@@ -40,8 +46,8 @@ public class ManipulatorHelper {
 	 *            because Android for some reason requires a context to be able
 	 *            to get access to content providers.
 	 */
-	public void calculate(Context context) {
-		// Only update
+	public void run() {
+		// Only update if no update has happened today.
 		SharedPreferences prefs = context.getSharedPreferences(
 				"ntnu.stud.valens.contentprovider", Context.MODE_PRIVATE);
 		long lastUpdateTime = prefs.getLong("lastUpdateTime", 0);
@@ -77,8 +83,7 @@ public class ManipulatorHelper {
 			cph.storeTrueSteps(bestSource);
 
 			// Find the gait parameters for the true steps of the period and
-			// store
-			// them in the content provider
+			// store them in the content provider
 			double[] gaitParameters = findGaitParameters(bestSource);
 			Log.v(APP_TAG, "Gait parameter: " + gaitParameters[0] + ", "
 					+ gaitParameters[1]);
@@ -91,8 +96,7 @@ public class ManipulatorHelper {
 			editor.putLong("lastUpdateTime", lastUpdateTime);
 			editor.commit();
 
-		}
-
+		}		
 	}
 
 	/**

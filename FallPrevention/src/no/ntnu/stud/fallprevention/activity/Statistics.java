@@ -8,6 +8,7 @@ import no.ntnu.stud.fallprevention.connectivity.ContentProviderHelper;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
+import org.achartengine.chart.BarChart.Type;
 import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
@@ -92,14 +93,17 @@ public class Statistics extends Activity implements OnItemSelectedListener {
 											// just annoying.
 		mDataset.addSeries(mCurrentSeries);
 		mCurrentRenderer = new XYSeriesRenderer();
+		mCurrentRenderer.setFillPoints(true);
+		mCurrentRenderer.setLineWidth(1);
+		mCurrentRenderer.setDisplayChartValues(true);
 		mRenderer.addSeriesRenderer(mCurrentRenderer);
 		mRenderer.setLabelsTextSize(25);
 		mRenderer.setLegendTextSize(25);
 		mRenderer.setYLabelsColor(0, Color.BLACK);
 		mRenderer.setXLabelsColor(Color.BLACK);
 		mRenderer.setMarginsColor(Color.WHITE);
-		mChart = ChartFactory.getCubeLineChartView(this, mDataset, mRenderer,
-				0.1f);
+		mRenderer.setBarSpacing(1d);
+		mChart = ChartFactory.getBarChartView(this, mDataset, mRenderer, Type.DEFAULT);
 		mChart.setBackgroundColor(Color.WHITE);
 		LinearLayout layout = (LinearLayout) findViewById(R.id.linear_layout);
 		layout.addView(mChart);

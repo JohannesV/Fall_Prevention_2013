@@ -1,4 +1,3 @@
-
 package ntnu.stud.valens.contentprovider.calculations;
 
 import java.text.Format;
@@ -18,63 +17,51 @@ import android.widget.Toast;
 
 public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 
-    final public static String ONE_TIME = "onetime";
-    final static String TAG = "AlarmBroadcastReciever";
+	final public static String ONE_TIME = "onetime";
+	final static String TAG = "AlarmBroadcastReciever";
 
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "YOUR TAG");
-        // Acquire the lock
-        wl.acquire();
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		PowerManager pm = (PowerManager) context
+				.getSystemService(Context.POWER_SERVICE);
+		PowerManager.WakeLock wl = pm.newWakeLock(
+				PowerManager.PARTIAL_WAKE_LOCK, "YOUR TAG");
+		// Acquire the lock
+		wl.acquire();
 
-      //   You can do the processing here.
-         Bundle extras = intent.getExtras();
-         StringBuilder msgStr = new StringBuilder();
-        
-         if(extras != null && extras.getBoolean(ONE_TIME, Boolean.FALSE)){
-         //Make sure this intent has been sent by the one-time timer button.
-         msgStr.append("One time Timer : ");
-         }
-         Format formatter = new SimpleDateFormat("hh:mm:ss a");
-         msgStr.append(formatter.format(new Date()));
-        
-         Toast.makeText(context, msgStr, Toast.LENGTH_LONG).show();
-        new ManipulatorHelper().calculate(context);
+		// You can do the processing here.
+		Bundle extras = intent.getExtras();
+		StringBuilder msgStr = new StringBuilder();
 
-        // Release the lock
-        wl.release();
-    }
+		if (extras != null && extras.getBoolean(ONE_TIME, Boolean.FALSE)) {
+			// Make sure this intent has been sent by the one-time timer button.
+			msgStr.append("One time Timer : ");
+		}
+		Format formatter = new SimpleDateFormat("hh:mm:ss a");
+		msgStr.append(formatter.format(new Date()));
 
-    public void SetAlarm(Context context) {
-        Calendar calendar = Calendar.getInstance();
-      
-        calendar.set(Calendar.HOUR_OF_DAY, 04);
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.SECOND, 0);
+		Toast.makeText(context, msgStr, Toast.LENGTH_LONG).show();
+		ManipulatorHelper mh = new ManipulatorHelper(context);
+		(new Thread(mh)).start();
 
-        AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(context, AlarmManagerBroadcastReceiver.class);
-        intent.putExtra(ONE_TIME, Boolean.FALSE);
-        PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
-        // After after one day
-        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                DateUtils.DAY_IN_MILLIS, pi);
-    }
+		// Release the lock
+		wl.release();
+	}
 
-    public void CancelAlarm(Context context)
-    {
-        Intent intent = new Intent(context, AlarmManagerBroadcastReceiver.class);
-        PendingIntent sender = PendingIntent.getBroadcast(context, 0, intent, 0);
-        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        alarmManager.cancel(sender);
-    }
+	public void setAlarm(Context context) {
+		Calendar calendar = Calendar.getInstance();
 
-    public void setOnetimeTimer(Context context) {
-        AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(context, AlarmManagerBroadcastReceiver.class);
-        intent.putExtra(ONE_TIME, Boolean.TRUE);
-        PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
-        am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), pi);
-    }
+		calendar.set(Calendar.HOUR_OF_DAY, 4);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+
+		AlarmManager am = (AlarmManager) context
+				.getSystemService(Context.ALARM_SERVICE);
+		Intent intent = new Intent(context, AlarmManagerBroadcastReceiver.class);
+		intent.putExtra(ONE_TIME, Boolean.FALSE);
+		PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
+		// After after one day
+		am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+				DateUtils.DAY_IN_MILLIS, pi);
+	}
 }
