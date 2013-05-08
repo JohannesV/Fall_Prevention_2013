@@ -47,8 +47,13 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
         // Get step counts
         ContentProviderHelper cph = new ContentProviderHelper(context);
         int yesterdaySteps = cph.getStepCount(yesterdayTs, todayTs);
-        int dayBeforeSteps = cph.getStepCount(dayBeforeTs, todayTs);
-        // Finally, generate a message to be stored in the local DB
+        int dayBeforeSteps = cph.getStepCount(dayBeforeTs, yesterdayTs);
+        
+        //Get gait speed and variability
+        double mGaitVariability=cph.getGaitVariability(yesterdayTs, todayTs);
+        double mGaitSpeed= cph.getGaitSpeed(yesterdayTs, todayTs);
+        
+        // Generate a message to be stored in the local DB
         DatabaseHelper dbh = new DatabaseHelper(context);
         if ((double) yesterdaySteps / (double) dayBeforeSteps < Constants.BAD_STEP_CHANGE) {
             dbh.dbAddEvent(1, yesterdaySteps, dayBeforeSteps);
@@ -57,14 +62,20 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
         } else {
             dbh.dbAddEvent(2, yesterdaySteps, dayBeforeSteps);
         }
+        
+        // In case of critical gait parameters push a warning message
+        if (mGaitSpeed > Constants.BAD_SPEED_NUMBER || mGaitVariability > Constants.BAD_VARI_NUMBER) {
+            dbh.dbAddEvent(3, 0, 0);
+        }
+        
         // Release the lock
         wl.release();
     }
 
     public void SetAlarm(Context context) {
         Calendar calendar = Calendar.getInstance();
-
-        calendar.set(Calendar.HOUR_OF_DAY, 23);
+        
+        calendar.set(Calendar.HOUR_OF_DAY, 05);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
 
