@@ -4,8 +4,8 @@ The algorithm used to detect steps is described in this section. The terms not o
 \item[Gait Speed] is the interval between two steps, and measuring it is useful, as it can be used to measure Risk for falling and as a shorthand for physical ability.
 \item[Gait variability] is the standard deviation for gait speed over time. This is significant, because a large variability is correlated with increased risk for falling.
 \end{description}
-\subsection{Development Process}
-As the group had little experience in sensor use and signal processing, a series of experiments were conducted to better understand which sensors provide useful information for step detection, and which patterns predicate steps. To this end, a simple app was developed to observe sensor input and store the raw data as a file, which then could be transferred to a computer. A set of python scripts were written to plot  the data time series. Using python, the group experimented with different step detection algorithms, and a prototype was developed. Finally, the algorithm was implemented in the Valens Step Detector app, modified to work with live data.
+\subsection{Development and purpose of Algorithm}
+As the group had little experience in sensor use and signal processing, a series of experiments were conducted to better understand which sensors provide useful information for step detection, and which patterns predicate steps. To this end, a simple app was developed to observe sensor input and store the raw data as a file, which then could be transferred to a computer. A set of Python scripts were written to plot  the data time series. Using python, the group experimented with different step detection algorithms, and a prototype was developed. Finally, the algorithm was implemented in the Valens Step Detector app, modified to work with live data.
 
 \subsection{Core Algorithm}
 The current section will explain the algorithm used for step detection, formulated as an off-line algorithm. The following section will explain what changes was made to make the algorithm work for live data streams.
