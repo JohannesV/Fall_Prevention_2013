@@ -7,7 +7,7 @@
     <string name="service_description">Monitoring your movements, watching your health.</string>
     <string name="service_start">Motion Detector started!</string>
     <string name="title_activity_calibration">Calibration Screen</string>
-    <string name="instructions">Press the button to start calibration.\nHaving pushed the button, you have ten seconds to lock screen and put the mobile in your pocket.\nAfter ten seconds a sound will play. When you hear that sound, start walking around in the same way as you normally do.\nWalk until you hear another beep.\nWhen you hear the second beep the calibration is done.</string>
+    <string name="instructions">Press the button to start calibration.\nHaving pushed the button, you have ten seconds to lock screen and put the mobile in your pocket.\nAfter ten seconds a sound will play. When you hear that sound, start walking around in the same way as you normally do.\nWalk until you hear another beep.\nWhen you hear the second beep the calibration is done. </string>
     <string name="lock_screen">Start Calibration</string>
     <string name="start_button">Start step detection</string>
     <string name="stop_button">Stop step detection</string>
