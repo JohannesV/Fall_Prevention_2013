@@ -3,10 +3,12 @@ package com.example.falltimeseries.calibration;
 import java.util.Timer;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +36,8 @@ public class CalibrationActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calibration);
 		mMediaPlayer = MediaPlayer.create(this, R.raw.beep);
+
+
 	}
 
 	/**
@@ -90,6 +94,17 @@ public class CalibrationActivity extends Activity {
 	 * Plays the "beep" sound.
 	 */
 	public void playSound() {
+	    mMediaPlayer.setVolume(1.0f, 1.0f);
 		mMediaPlayer.start();
+		
+	      vibrate(500);
+	}
+	/**
+	 * Makes the phone vibrate for ms milliseconds
+	 * @param ms
+	 */
+	private void vibrate(int ms){
+	    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+	        v.vibrate(ms);
 	}
 }
