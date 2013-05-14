@@ -13,5 +13,7 @@
     <string name="stop_button">Stop skrittoppdaging</string>
     <string name="calibrate_button">Gå til kalibreringsskjermen</string>
     <string name="calibration_complete">Skrittoppdageren er no kalibrert!</string>
+        <string name ="calibrated_never">Programmet har ikkje vært kalibrert før!</string>
+    <string name="calibrated_sometime">Kalibrering ble sist gjort den %%1 !</string>
 
 </resources>
