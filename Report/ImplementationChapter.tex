@@ -2,7 +2,7 @@
 
 
 \section{Overall Architecture}
-The product has been implement as a system of independent component applications where each component performs a well-defined task. The motivation behind the modular architecture is two-fold: Primarily, it was desirable that the underlying model for movement and fall risk be independent of the proof-of-concept application, in order to facilitate development of possible future applications employing the model. Likewise, it is desirable to enforce independence between the content provider and the sensor model. Secondly, the standards of Android application development state that a Content Provider should in itself solely provide a interface to the data. This implies that the sensor model, as well as any derivation of secondary data, should be performed in components independent of the Content Provider.
+The product has been implement as a system of independent component applications where each component performs a well-defined task. The motivation behind the modular architecture is two-fold: Primarily, it was desirable that the underlying model for movement and fall risk be independent of the proof-of-concept application, in order to facilitate development of possible future applications employing the model. Likewise, it is desirable to enforce independence between the content provider and the sensor model. Secondly, the standards of Android application development state that a Content Provider\footnote{the database that store the data gathered form the sensors} should in itself solely provide a interface to the data. This implies that the sensor model, as well as any derivation of secondary data, should be performed in components independent of the Content Provider.
 
 The system that has been designed according to these principles therefore consists of five components: The content provider \emph{Valens Content Provider}, the proof-of-concept application \emph{Valens Health Helper}, the sensor model \emph{Valens Step Detector} and a service of deriving secondary data \emph{Valens Content Feeder}. Each of these components fulfils a well-defined role in the total application system: The content provider provides an interface to the data model. The sensor model listens to the sensor data, and feeds the content provider with the timestamps of any detected steps. The Content Feeder listens continually to changes to the data in the content provider. When the data changes, it uses the new data to calculate secondary data, such as gait speed and variability. Finally, the proof-of-concept application demonstrates one simple way in which the data provided by the content provider can be used as a part of a health-promoting app.
 
@@ -44,12 +44,17 @@ As is common in android applications, classes that inherit from the class Activi
 \label{fig:mockupV2}
 \end{figure}
 
-Classes that are not activities can be roughly divided into 5 types: 
 
+The definition of Activity classes are as following:
 \begin{description}
 
 \item[Activity classes]
-define the activities employed in running the app. In Android, an \emph{Activity} is "a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI"\footnote{http://developer.android.com/reference/android/app/Activity.html}. Every GUI screen corresponds to an activity, but not all activities need to have a GUI. In the current implementation, every activity except for \textit{LaunchActivity} has a GUI screen, so see the GUI flowchart for an overview of the activities used in the current implementation. 
+define the activities employed in running the app. In Android, an \emph{Activity} is ``a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI"\footnote{http://developer.android.com/reference/android/app/Activity.html}. Every GUI screen corresponds to an activity, but not all activities need to have a GUI. In the current implementation, every activity except for \textit{LaunchActivity} has a GUI screen, so see the GUI flowchart for an overview of the activities used in the current implementation. 
+
+\end{description}
+
+Classes that are not activities can be roughly divided into four types: 
+
 
 \item[Connectivity classes]
 provide an interface for communication with the database and content providers. There are three connectivity classes:
@@ -90,10 +95,10 @@ provdides the content provider with a basic GUI.
 \input{DataModelDescription}
 \section{Class description and diagram}
 
-The class structure of the Applications changed regularly, and the most recent description is in Figure \ref{fig:ClassDiagram}. Older diagrams and descriptions was placed in the appendix. 
+The class structure of the Applications changed regularly, and the most recent description is in Figure \ref{fig:ClassDiagram}. Older diagrams and descriptions are placed in appendix A.1 and A.2. 
 \begin{figure}[p]
 
-\caption{A class diagram of the current application}
+\caption{A class diagram of the application}
 \label{fig:ClassDiagram}
 
 \setlength\fboxsep{0pt}
@@ -120,7 +125,7 @@ holds the values of the constants used for step detection.
 contains most of the functions used for calculation of peaks.
 
 \item[StepMainService]
-is main class for the sensor model. Is implemented as an Android Service, and as such, it runs in the continually in the background until the user explicitly stops it. Functions as a SensorListener that listens to input from the accelerometer, and keeps track of the sensor vector lengths along with their timestamp. When enough data has been generated\footnote{Enough data is defined as $m+2k+2n$, where k is the size of the smoothing window, n is the size of the peak strength window, and m is a constant which defines how many time steps one wants to use for step detection. As the first and last $k+n$ steps are not used for step detection (see explanation of the algorithm), only $m$ values will actually be used for step detection.} the StepMainService will launch a DetectStepsThread to detect steps in the given data, before clearing its data\footnote{For reasons that will be explained in the description of the algorithm, $2k+2n$ data points are retained.} to ensure that the maximum memory required by the service remains constant. 
+is main class for the sensor model. Is implemented as an Android Service, and as such, it runs in the continually in the background until the user explicitly stops it. Functions as a SensorListener that listens to input from the accelerometer, and keeps track of the sensor vector lengths along with their timestamp. When enough data has been generated\footnote{Enough data is defined as $m+2k+2n$, where k is the size of the smoothing window, n is the size of the peak strength window, and m is a constant which defines how many time steps one wants to use for step detection. As the first and last $k+n$ steps are not used for step detection (see explanation of the algorithm in chapter \ref{def:coreAlgorithm}), only $m$ values will actually be used for step detection.} the StepMainService will launch a DetectStepsThread to detect steps in the given data, before clearing its data\footnote{For reasons that will be explained in the description of the algorithm, $2k+2n$ data points are retained.} to ensure that the maximum memory required by the service remains constant. 
 
 \item[DetectStepsThread]
 searches asynchronously for steps in the data provided to it. Step detection is performed in a separate thread so that sensor input is not interrupted by the calculation.
@@ -129,7 +134,7 @@ searches asynchronously for steps in the data provided to it. Step detection is 
 are a group of classes that are used for calibration, that is adjusting the mean and standard deviation to the step patterns of the user. There is one GUI class, one class used for timing and and one sensor class:
 \begin{description}
 \item[CalibrationActivity]
-handles the GUI functions for the calibration screen. When the "calibrate"-button is pressed, it starts a timer that starts the CalibrationStartTask after a certain amount of time has passed, so that the user has time to lock the screen and put the phone in his/her pocket.
+handles the GUI functions for the calibration screen. When the ``calibrate"-button is pressed, it starts a timer that starts the CalibrationStartTask after a certain amount of time has passed, so that the user has time to lock the screen and put the phone in his/her pocket.
 \item[CalibrationStartTask]
 is a TimerTask that simply plays a sound to indicate that calibration commences, and immediately starts an CalibrationThread. This class only exists because Java requires a TimerTask for the Timer to work properly, and CalibrationActivity can't inherit from TimerTask as it already inherits from Activity and Java does not support multiple inheritance. 
 \item[CalibrationThread]
