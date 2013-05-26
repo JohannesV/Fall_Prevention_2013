@@ -41,6 +41,13 @@ While it is possible to change the algorithm to run completely on-line, classify
 Another issue when working with live data is how to calculate $\mu$ and $\sigma$. First of all, calculation of $\sigma$ requires the entire data series, but retaining the entire series of raw data in main memory is infeasible. Also, in a real life application long periods of inactivity will reduce $\mu$ to unnaturally low levels, potentially creating false positives during step detection. A better solution is to base calculation $\mu$ and $\sigma$ on actual movement data, so the values are adjusted to the relevant movement characteristics of the person. Based on these motivations, the app first requires the user to calibrate it by walking for 30 seconds. Values $\mu$ and $\sigma$ are thus calculated once based on the time series generated during calibration. 
 
 \subsection{Constant values}
+\label{constant_values}
 The constants used by the algorithm play a significant role, and finding good values for these constants is crucial for the performance of the algorithm. However, there it is impossible to know a priori which values give the desired result, but it should be noted that some of the constants (particularly the window size constants) are related to the frequency at which sensor data is generated\footnote{That is, the faster the sensor data is generated, the wider the windows can be without increasing the risk for mixing information between separate peaks.}. Because of this, most constant values have been found by empirical studies during the prototyping step, so there might exist room for improvement, but thorough empirical studies or machine learning techniques may be required to uncover better values for the constants.
 
-\subsection{Blah}
+\subsection{Room for improvement}
+Three areas were identified in which the step detection algorithm has room for improvement:
+\begin{enumerate}
+\item 
+\item Constant values could be tweaked further (see section \ref{constant_values} on Constant Values)
+\item Several different functions can be used for peak detection, and experimentation with different functions could possibly improve detector performance. However, at the time of development, the potential improvement did not outweigh the effort required to implement and test several different functions, and a simple peak strength function was chosen. 
+\end{enumerate}
