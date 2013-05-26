@@ -1,0 +1,5 @@
+\subsection{Score and Smiley Calculation}
+
+The choice of which smiley to be displayed in the main screen and the widget, and which notification to be sent to the user, is determined by the number of steps done by the user recently. In particular, the formula used is as follows: 
+Steps done the last 24 hours is taken as a variable and divided by 100. This will result in a value going from 0 and upwards, with 100 being the result when the user has walked more than 10000 steps in the last day. 10000 is considered a very good amount of steps. This will result in the user getting the best smiley face. If the user's amount of steps drop below 8000, 6000, 4000, 2000, and 0, the user will instead get a smiley face of progressively lower value.  The focus on number of steps is because of the applications focus on health, as a useful tool in preventing falls. The number is 10000 was selected because it was considered a healthy number of steps per day, and the intervals below was because five different possibilities, because that would give a good feedback into the users performance. 
+
