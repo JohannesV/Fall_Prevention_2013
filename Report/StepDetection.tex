@@ -45,9 +45,24 @@ Another issue when working with live data is how to calculate $\mu$ and $\sigma$
 The constants used by the algorithm play a significant role, and finding good values for these constants is crucial for the performance of the algorithm. However, there it is impossible to know a priori which values give the desired result, but it should be noted that some of the constants (particularly the window size constants) are related to the frequency at which sensor data is generated\footnote{That is, the faster the sensor data is generated, the wider the windows can be without increasing the risk for mixing information between separate peaks.}. Because of this, most constant values have been found by empirical studies during the prototyping step, so there might exist room for improvement, but thorough empirical studies or machine learning techniques may be required to uncover better values for the constants.
 
 \subsection{Room for improvement}
-Three areas were identified in which the step detection algorithm has room for improvement:
+The current step detector is rather primitive, and has room for improvements in several areas. Testing has however shown the step detector to perform within acceptable limits, at least for a prototype-stage application. The effort required to produce significant improvements to the step detector was therefore not justifiable given the time limits of the project. However, step detector improvement appears to be a major concern if the application is to be developed further.
+
+The following areas of improvement have been identified:
 \begin{enumerate}
-\item 
+\item Because the phone is kept in a pocket, it is closer to one of the legs. This results in accelerometer output for movement in one foot being significantly higher than the other. Figure \ref{fig:FilipWalks} illustrates this phenomenon. A step detection algorithm that exploits this fact will necessarily be more precise than the current algorithm, which does not. However, it is hard to see exactly such how an algorithm can be devised.
+\item Several different functions can be used for peak detection, and experimentation with different functions could possibly improve detector performance.
 \item Constant values could be tweaked further (see section \ref{constant_values} on Constant Values)
-\item Several different functions can be used for peak detection, and experimentation with different functions could possibly improve detector performance. However, at the time of development, the potential improvement did not outweigh the effort required to implement and test several different functions, and a simple peak strength function was chosen. 
 \end{enumerate}
+
+\begin{figure}[p]
+
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{%
+ \fbox{
+\includegraphics[width=1.45\textwidth , angle=0]{Res/FilipWalks}
+}
+}
+
+\caption{A normal pattern of walking: Notice the alternating peak height in the middle.}
+\label{fig:FilipWalks}
+\end{figure}
