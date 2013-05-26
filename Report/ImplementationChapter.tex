@@ -2,6 +2,11 @@
 
 
 \section{Overall Architecture}
+One of the customer requirements was that a Content Provider be developed to provide access to the model for movement to be designed. Content providers function as data repositories that enable other applications to interact with the stored data. More specifically, content providers provide CRUD (create, retrieve, update, delete) functions.
+
+It is possible to embed a content provider within a single application, but content providers are intended to be used with a repository architecture. In a repository architecture, there is a central data repository which maintains the shared data between the components. The components only communicate directly with the repository, and are therefore independent of each other. This independence makes it easy to add or remove components from the application system. By embedding the content provider within a single application, this independence is lost, nullifying the advantage of a content provider.
+
+The motivation between the requirement that the 
 The product has been implement as a system of independent component applications where each component performs a well-defined task. The motivation behind the modular architecture is two-fold: Primarily, it was desirable that the underlying model for movement and fall risk be independent of the proof-of-concept application, in order to facilitate development of possible future applications employing the model. Likewise, it is desirable to enforce independence between the content provider and the sensor model. Secondly, the standards of Android application development state that a Content Provider\footnote{the database that store the data gathered form the sensors} should in itself solely provide a interface to the data. This implies that the sensor model, as well as any derivation of secondary data, should be performed in components independent of the Content Provider.
 
 The system that has been designed according to these principles therefore consists of five components: The content provider \emph{Valens Content Provider}, the proof-of-concept application \emph{Valens Health Helper}, the sensor model \emph{Valens Step Detector} and a service of deriving secondary data \emph{Valens Content Feeder}. Each of these components fulfils a well-defined role in the total application system: The content provider provides an interface to the data model. The sensor model listens to the sensor data, and feeds the content provider with the timestamps of any detected steps. The Content Feeder listens continually to changes to the data in the content provider. When the data changes, it uses the new data to calculate secondary data, such as gait speed and variability. Finally, the proof-of-concept application demonstrates one simple way in which the data provided by the content provider can be used as a part of a health-promoting app.
@@ -21,9 +26,19 @@ The system that has been designed according to these principles therefore consis
 
 
 \section{Architecture of Valens Health Helper}
-The application is made in a way that is common for all android applications. This means that user interface is described in XML layout files that is called in Java code. Strings and resources is placed in a separate folder and file, to be accessed by the code as needed. This is to separate content and layout in the UI. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily.
+The application follows standard android application architecture, which is based on a Model-view-controller (MVC) architecture. In a MVC architecture, which is a fairly common architecture for GUI-based applications, there are three components:
 
-As is common in android applications, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:GUIFlowchart}.
+\begin{description}
+\item[The model] contains the data and logic of the system.
+\item[The view] is a visual representation of the data. 
+\item[The controller] receives input and converts it into commands for the model or view. 
+\end{description}
+
+In Android, the view is described using XML layout files, the controller is defined using activity classes and the model is defined using the remaining java classes. In practice however the android architecture does not separate the MVC components clearly. For instance, certain graphical features have to be implemented using the activity classes. Also, not a lot of effort was put into maintaining a pure MVC architecture.%TODO: Skal vi skrive dette?
+
+Furthermore, in Android, an additional view layer separates the actual string values and other resources from the layout definitions. Resources are placed in a separate folder and files. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily. 
+
+In the android architecture, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:GUIFlowchart}.
 \begin{figure}
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{
