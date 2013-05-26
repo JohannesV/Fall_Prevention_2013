@@ -6,6 +6,7 @@ Software testing is broken down into several levels, methods and types.
 Software testing has four levels that correspond to how far into the software development process the team has come. The first three test levels refer to the development process and the last level refers to completion, or after development.
 \begin{enumerate}
 \item Unit testing is the first level where all individual components, such as functions, are tested. Often these tests are done by inputting sample data and validating output.
+\item Inspections refers to a peer review or code review process where a team of individuals read through the source code to reveal early and obvious bugs. An error or bug that is not very visible for the developer may be very visible to an inspector.
 \item Integration testing is the next step which takes groups of individual components to verify that they work together or to reveal faults in the integration.
 \item System testing is the last step of test in the development process where the complete system or software is tested to evaluate it's match to it's requirements.
 \item Acceptance testing is the last and highest level of testing where the system or software is tested to verify that it is acceptable for delivery. The test itself is usually Black Box Tests (see page \pageref{def:blackboxtesting}) to see if the customer will receive the desired and expected results.
@@ -26,19 +27,21 @@ Only some of the test types are mentioned in this chapter, though there are many
 \section{Plans and process}
 During the first period of development with the incremental process, test plans were not laid out due to the details of the process with no known end-results which would have added a lot of extra work redesigning testing plans after every customer meeting. After switching to agile development process testing got a lot more focus as described below.
 \subsection{Unit testing}
-Due to the, at first, incremental development process, unit testing was done on-the-fly to make sure that every method worked as it should. When a code change in a specific method was done, the unit was again tested to verify new outputs. To make a test plan when developing incremental seemed unnecessary since the requirements changed and methods were created and removed all the time.
-
-When the process was changed to the agile development process, unit testing became more important to verify the output of each method during development, though the documentation and test were added after finishing a method. A unit test was never sufficiently documented before the initialization of method development. Please refer to Section \ref{tab:TestsStart}.
+Unit testing in the project was never done properly, nor properly documented. The method used was a form that adopted the essence of unit testing, and was done on-the-fly to verify that input correlated with output, and then removed. It was the most of the time done in-line and was not suited for reuse. Instead of heavy unit testing, it was partially replaced by Inspections.
+\subsection{Inspections}
+Inspections done in this project falls under the category "Code review" where part of the team or individuals read blocks of code to ensure its quality and to find bugs. A single developer working on a block of code can often get "blind", saying that they do not see obvious mistakes. Code review by a team member can speed up the process of identifying these bugs and defects for the developer to fix. This method became one of the most important types of testing to fry bugs in this project.
 \subsection{Integration testing}
 The integration of this project is divided into two levels; method- and system integration. Due to the fact that this project essentially consist of three standalone application every application was tested for themselves and then finally together.
 
 The first integration testing was done for every application separately. This was done by just trying to run the application and checking the outcome after every run and was mostly done by the developer themselves. The reason to choose this kind of approach to this form of testing was the fact that an integration test plan takes time to write and every application was very compact with few functions. There are of course negative sides of this kind of approach that include lack of useful documentation, overlooking non-obvious failures and not knowing exactly how the final application should work. The alternative was to have a test plan worked out beforehand to follow and to explain all of this, but due to the lack of knowledge about testing and incremental processes this was neglected due to the reasons stated above.
 
 The second part of integration testing was the system as a whole while developing. This was also done by just trying to run the applications and checking that the data flow between the applications worked. In this stage a form of smoke testing were used by checking if the data storage increased (data being saved to the phone) and by checking the output in the GUI app (statistics screen showing data).
-\subsection{System testing (preliminary)} %TODO Finish chapter, remove preliminary in subsection title.
-The second to last testing level was done almost parallel to the second part of the integration testing to verify that everything was working together and that it met requirements. Differing from the previous level of testing this part had tests laid out beforehand.
+\subsection{System testing}
+System testing is the second to last level of testing, to verify that the system works together as a whole. In the project the system testing was done parallel to the last past of integration testing because of two reasons; time and complexity.\\
 
-The system testing is although done a little bit after the main developing, where it was just testing all parts of visible software (black box testing). All the faults, bugs and defects noted here were noted according to the tests laid out and fixed by a developer before further testing.
+Since the app system consists of very few components the team decided to grasp the opportunity so save time and combining a few of the integration tests and system tests since they in essence overlapped each other.\\
+
+The tests done in this stage is all done in the visible part of software, or also known as black box testing where you are blind to the code behind. Differing from previous methods, this part of testing had tests developed and laid out beforehand and all the faults, bugs and defects were noted according to these tests and afterwards fixed by a developer before commencing new tests. This because an error or bug may be connected and one bug can cause or solve another.
 \subsection{Acceptance testing}
 The last level before handing over the final application to the customer, but tested in a production environment. The same tests were performed as in the system testing level and bugs, faults and defects were again noted to be fixed before rolling out a new version for testing. After no tests failed the application were considered stable and delivered to the customer.
 
