@@ -5,7 +5,7 @@ The algorithm used to detect steps is described in this section. The terms not o
 \item[Gait variability] is the standard deviation for gait speed over time. This is significant, because a large variability is correlated with increased risk for falling.
 \end{description}
 \subsection{Development and purpose of Algorithm}
-As the group had little experience in sensor use and signal processing, a series of experiments were conducted to better understand which sensors provide useful information for step detection, and which patterns predicate steps. To this end, a simple app was developed to observe sensor input and store the raw data as a file, which then could be transferred to a computer. A set of Python scripts were written to plot  the data time series. Using Python, the group experimented with different step detection algorithms, and a prototype was developed. Finally, the algorithm was implemented in the Valens Step Detector app, modified to work with live data.
+As the group had little experience in sensor use and signal processing, a series of experiments were conducted to better understand which sensors provide useful information for step detection, and which patterns predicate steps. To this end, a simple app was developed to observe sensor input and store the raw data as a file, which then could be transferred to a computer. A set of Python scripts were written to plot  the data time series. Using Python, the group experimented with different step detection algorithms, and a computer-based prototype was developed. Finally, the algorithm was implemented in the Valens Step Detector app, modified to work with live data.
 
 \subsection{Core Algorithm}\label{def:coreAlgorithm}
 The current section will explain the algorithm used for step detection, formulated as an off-line algorithm. The following section will explain what changes were made to make the algorithm work for live data streams.
@@ -42,3 +42,5 @@ Another issue when working with live data is how to calculate $\mu$ and $\sigma$
 
 \subsection{Constant values}
 The constants used by the algorithm play a significant role, and finding good values for these constants is crucial for the performance of the algorithm. However, there it is impossible to know a priori which values give the desired result, but it should be noted that some of the constants (particularly the window size constants) are related to the frequency at which sensor data is generated\footnote{That is, the faster the sensor data is generated, the wider the windows can be without increasing the risk for mixing information between separate peaks.}. Because of this, most constant values have been found by empirical studies during the prototyping step, so there might exist room for improvement, but thorough empirical studies or machine learning techniques may be required to uncover better values for the constants.
+
+\subsection{Blah}
