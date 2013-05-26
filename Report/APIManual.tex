@@ -1,0 +1,9 @@
+\section{Application Programming Interface manual}
+The content provider and the content service parts of the application was supposed to be usable by other applications. Because of this, a short description of how the API functions was in order. \\
+The structure of the content provider and service, including how they connect to the rest of the application, has already been described in Figure \ref{fig:Architecture}. The class ValensContentProvider in the Content Provider gives access to a database, and the database contains the information used by the Valens Health App. The same class contains methods to insert, retrieve, update and send other queries to the database, as well as the constants used to access the database. The service parts of the application uses the insert-method to insert new data in the relevant tables, and the Health App part of the application uses the retrieve method to recover useful data. \\
+The database is described in Figure \ref{fig:CPDataModel}, and the methods used to access this database will take parameters as usual for the use of these methods in a content provider. An example of the method is here, and the instructions for the rest of the methods will be found in the javadoc:
+\textbf{public uri insert}
+\begin{itemize}
+\item Uri uri, which is the identifier for the table to be inserted into
+\item ContentValues values, which is the values to insert into the table
+\end{itemize}
