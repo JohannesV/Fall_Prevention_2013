@@ -1,4 +1,4 @@
-\chapter{Implementation}
+\chapter{Design and Architecture}
 
 
 \section{Overall Architecture}
@@ -23,7 +23,7 @@ The system that has been designed according to these principles therefore consis
 \section{Architecture of Valens Health Helper}
 The application is made in a way that is common for all android applications. This means that user interface is described in XML layout files that is called in Java code. Strings and resources is placed in a separate folder and file, to be accessed by the code as needed. This is to separate content and layout in the UI. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily.
 
-As is common in android applications, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:GUIFlowchart}, and an early mockup of the GUI can be seen in Figure \ref{fig:mockupV2}.
+As is common in android applications, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:GUIFlowchart}.
 \begin{figure}
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{
@@ -36,14 +36,6 @@ As is common in android applications, classes that inherit from the class Activi
 \end{figure}
 
 \pagebreak
-\begin{figure}[here]
-\setlength\fboxsep{0pt}
-\setlength\fboxrule{1pt}
-\fbox{\includegraphics[trim = 20mm 180mm 0mm 20mm, clip, width=\linewidth]{Res/mockupV2}}
-\caption{A mockup of the program flow, text is just scribbling}
-\label{fig:mockupV2}
-\end{figure}
-
 
 The definition of Activity classes are as following:
 \begin{description}
@@ -55,7 +47,7 @@ define the activities employed in running the app. In Android, an \emph{Activity
 
 Classes that are not activities can be roughly divided into four types: 
 
-
+\begin{description}
 \item[Connectivity classes]
 provide an interface for communication with the database and content providers. There are three connectivity classes:
 \begin{description}
