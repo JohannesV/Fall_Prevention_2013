@@ -214,7 +214,7 @@ public class ContentProviderHelper {
 			Log.v(TAG, e.toString());
 			e.printStackTrace();
 		} catch (Exception e) {
-			// f* tha code-police
+			e.printStackTrace();
 		}
 		return returner;
 	}
