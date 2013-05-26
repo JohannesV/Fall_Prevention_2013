@@ -1,8 +1,17 @@
 \chapter{Requirements}
-The requirements for the project were mostly given by the customer, but some of the requirements were also formed by the group, course teacher and the supervisor. Some of the requirements given by the customer were for instance to develop a model and content provider, and the requirements given by the course teacher were the documentation of the process. 
+
+The general target of the project is to explore the opportunities that are provided by standard smart phones running the Android Operation System for preventing falls by predicting risk levels, and develop a prototype system. The target groups for the system are:
+\begin{itemize}
+\item Elderly that are self-sufficient and relatively healthy, but have some concerns regarding their own stability. They benefit from the application as it provides feedback about their risk level.
+\item Health personnel. The application can work as an indicator for fall risk among the patients, and perhaps provide insights into possible 
+solutions and causes to the falling problem.
+\item Concerned relatives.
+\end{itemize}
+
+One major problem that was pointed out by the health experts is that the first target group does not, in fact, exist. Falling is an enormous taboo, and even people with a history of falling tend to convince themselves that every fall is an individual exception. To cope with this, the application has to be marketed as a general health promoter when targeting the elderly, but run fall risk detection in the background. Targeting the other two groups, the application can still be marketed as originally planned. 
 
 \section{Initial requirements}
-The requirements presented by the customer at the beginning of the project can be summarized as follows:
+The initial requirements originated largely from the customer, with some course requirements added in. The requirements presented by the customer at the beginning of the project can be summarized as follows:
 
 \begin{itemize}
 \item A model for fall risk assessment based on sensors in Android phones should be developed.
@@ -13,7 +22,7 @@ The requirements presented by the customer at the beginning of the project can b
 \end{itemize}
 
 \section{Elaborating on the requirements}
-The initial requirements were too vague to base an implementation on, so the group worked on specifying the requirements further, in cooperation with the customer and later the health experts. The list of more precise requirement is presented below:
+The initial requirements were too vague to base an implementation on, so a requirements elicitation process was initiated, where the group in conjunction with the customer, and later the health experts, gradually elaborated upon the requirements. The process resulted in a list of more precise requirement, as presented below:
 
 \subsection{Functional requirements}
 \begin{itemize}
@@ -23,42 +32,28 @@ The initial requirements were too vague to base an implementation on, so the gro
 \item Gait variability - The other major predicators of fall risk
 \item Step count - A general measurement of health and activity level.
 \end{itemize}
-\item An example application should the developed. The demo application should:
-\begin{itemize}
-\item Appear as a health assistant, not as an application for fall risk assessment, as the elderly are reluctant to admit they have a risk for falling, and would not use such an application.
-\item Provide useful information for people without a computational background. This way the health people can assess the usefulness of the model without having to learn the computational details.
-\end{itemize}	
+\item An example application should the developed that demonstrates the data model.
 \end{itemize}	
 
 \subsection{Non-functional requirements}
 \begin{itemize}
 \item Development should be done in short iterations, and results should be presentable at each weekly customer meeting.
-\item The demo application should be easy to use, even for elderly people unfamiliar with electronic equipment.
+\item The demo application should appear as a health assistant, not as an application for fall risk assessment, as the elderly are reluctant to admit they have a risk for falling, and would not use such an application.
+\item The demo application should be easy to use, even for elderly people unfamiliar with electronic equipment. This includes localization support at least for Norwegian, few visual details, and simple feedback.
+\item The demo application should provide more detailed information that is useful for health personnel without a computational background.
 \item The application system should be modular and well-documented, so that it is easy to implement new applications based on the content provider, as well as connect new data sources to the content provider.
-\end{itemize}	
-
-
-\section{Understanding the requirements}
-
-The requirements were specified after several meetings with the customer. The understanding the group had of the requirements before meeting the customer was not sufficient to create a rigorous set of requirements. Also, the requirements presented at the beginning of the project were vague, and needed more elaboration as the project progressed. \\
-
-The meetings with the customer served their purpose, and filled in a lot of holes that were missing from the preliminary description for the following reasons:
-\begin{itemize}
-\item In the beginning the development process used an incremental approach. This essentially meant that the requirements expanded as the time went by, and to define the requirements from the beginning was therefore impossible.
-\item Some of the requirements needed domain knowledge to be completely specified, and thus could not be set before the meeting with the health experts.
-\item The customer expected weekly meetings with the whole group present, and that goals had been achieved before each meeting. At each meeting a new goal was set. Later, however, the development process changed, and longer term goals and requirements could be formulated. 
 \end{itemize}
 
-\section{Changes in Requirements}
+\section{Omitted requirements} \label{expert_meeting_requirement}
+The customer did usually only specify requirements that should be done for the current sprint, but the group were given a task to make some user stories (see \ref{user_stories}. The group then formed some requirements from the user stories, which turned out to be too extensive given the time limit.
 
-The customer did usually only specify requirements that should be done for the current sprint, but the group were given a task to make some \footnote{user stories}. The group then formed some requirements from the user stories, which turned out to be too extensive given the time limit.
+\begin{description} 
+\item[Contacts and notifications] An initially desired function was to maintain a list of contacts and their contact information and the possibility to notify the contacts by e-mail or SMS, in order to accommodate the second target group. This requirement was excluded later on because it was difficult to determine which types of situations that should prompt notifications, and that it would require significant amounts of time to develop this non-essential functionality. Before the decision was made to exclude this functionality, a system for creating, importing and maintaining a list of contacts was developed, and exists in the source code, but is the related screens are not accessible in the application.
+\item[Stride length] In addition to step count and gait parameters, \emph{stride length} is another predicator of fall risk that may be measurable using sensors that are available on Android: One approach could be to employ a location detector (for instance GPS) to track distance walked, and find step length as $$\frac{steps taken}{distance walked}$$However, the additional effort required to implement location awareness overshadowed the perceived predicative power of the additional predicator.
+\item[Inactivity detection] Long periods of inactivity are bad for the general health, as well as strong indicators of fall risk. While some effort was put into studying the patterns related to sitting down and getting up to be used in the context of inactivity detection, time constraints and the need to focus on step detection forces this requirement to be excluded. 
+\end{description} 
 
-\begin{itemize} 
-\item Contacts \& contact list - In the beginning the the group tried to make a contact list to notify relatives about the progress of the user. The reason this were excluded later on were simply that it was not needed to make the application work and would require too much work and time, that was better spent to develop the main function of the application. 
-\item Notifications by E-mail \& Short Message Service - At the same period as the group tried to develop the contacts list they also tried to make it so others could receive the notification created by the user either by mail or SMS. The group discarded this idea, together with the contacts idea, as it was too complicated to do with their current experience at that time.
-\end{itemize} 
 The requirements for the interface was altered by an informal usability test done with the medical experts. Their feedback is summarized here: 
-\textbf{Feedback on Interface and Presentation of the program}
 \begin{itemize}
 \item Immediate and summarized feedback was desired, as it would be more helpful than feedback later.
 \item A focus on falling is not a selling point, try health or lifestyle instead.

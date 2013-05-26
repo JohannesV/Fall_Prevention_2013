@@ -1,75 +1,46 @@
-\chapter{Project Management}
+\chapter{Software development and management processes}
+The following chapter explains the software development and management processes that were employed throughout the project. In the following section some of the necessary terminology will be introduced and explained. Subsequently the process description will be given, followed by a comparison to established process models. %TODO Kanskje urdering/konklusjon
+
 \section{Terms}
-Here follows a description of terms that are useful to understand the project management. 
+Here follows a description of terms as used in the current project.
 
 \begin{description}
-\item[Scrum] \label{def:scrum}is an popular agile software development methodology. This means that the work is done in increments called sprints, and daily meetings are held to update the rest of the team on progress and problems. The scrum process also has roles for team members, in particular a team member called scrum master who handles contact between the development team and people outside the team.
 
-\item[Sprint] \label{def:sprint} is a period in which work is planned and done. It has a duration of one week. At the end of each sprint the group is updated on progress achieved, and sets goals for the next sprint. 
-\item[Kanban-board] \label{def:kanban} is a visual aid that was used to display work packages, with content, people assigned to each package, and status of work package (to do, currently worked on, finished). The intent was to simplify and organize the work being done and work in need of finishing.
+\item[Agile methods] \label{def:agile} are a set of software development methods that emphasize on adapting to change over following a predetermined plan, continuous customer collaboration over contract negotiation and implementation over documentation.
+
+\item[Extreme programming] (XP) is an agile software development methodology which favours improving of a software and quick responses, like Iterative development except it is faster. Extreme programming uses a cycle based programming system like the Iterative approach. Unlike the Iterative approach it has a checkpoint after each stage, where the code is being released and new customer requirements is added. The customer are often intimately involved in prioritizing and specifying the requirements. Extreme programming enables the possibility to make it so that several developers can produce code, integrate and test it on the same day.  %TODO: FIX
+
+\item[Incremental development] \label{def:incrementalDev} is an approach to software development that is "based on the idea of developing an initial implementation, exposing this to user comment and evolving it through several versions until an adequate system has been developed"\footnote{\cite{sommerville}, page 32}. Benefits to incremental development include adaptability to changing requirement and facilitation of feedback. In the negative side, it can be hard to keep an overview of the progress of the entire system, making it harder to plan ahead for deadlines.
+
+\item[Plan-driven development] \label{def:plan-driven} is an approach to software development that recommends careful planning of the software development process, work breakdown and scheduling before starting the implementation process. 
+
+\item[Sprint] \label{def:sprint} is the period unit in which work is planned and done. It is customary to operate with sprints of 2-4 weeks, but the current project operated with sprints of 1-2 weeks.
+
+\item[Spike] \label{def:spike} is a sprint spent primarily or solely on non-programming activities, such as research, documentation or planning.
+
+\item[Stand-up] \label{def:dailyScrum} is a meeting in which all the group members explain shortly what they have been doing since the last meeting, what they are planning to do until next time, and any help or advice they need to continue. Stand-ups function as a binding factor that keeps the entire group on the same page, and provides flexibility by giving the opportunity to change the plans and tasks partway through the sprint.
+
 \end{description}
-
-\section{Management Tools}
- 
-\begin{description}
-
-\item[Trello]  \label{def:trello} is a collaboration tool with the ability to create interactive kanban-boards online. This was used to allow the group to coordinate tasks that were to be done, and the progress on the tasks, and which members were to work on which task. 
-
-\item[It's learning] was used to distribute information that was not time -critical, with a message board being used. It's learning would not send messages when a new topic or message appeared, so it's use for time critical messages or making sure that everyone would read it was limited. 
-
-\item[Email] was used for time critical communication, and for information that needed feedback swiftly, often within the same day.
-
-\item[Github] \label{def:github} was used to share and synchronize code, and to describe and mark issues found in the code when problems were discovered. The relevant issues could then be discussed on the website.
-Github is mostly used to update the followers of a repository and give them the newest version of the code, so it is  very ideal for coding in groups, where its users can simply push their finished work and the repository will automatically merge it with the already existing code, if done correctly. See chapter \ref{def:githubDev} for more.
-\end{description}
-
-\section{Work Breakdown Structure}
-With a development methodology that stresses short term goals, it is only possible to plan WBS for the current period. After the customer has specified the goal for the following week, we immediately sat down and defined the WBS for the given period. This was, a WBS was developed incrementally by adjoining the new WBS to the previous. The WBS was made in graphical form, as can be seen in Figure \ref{fig:WBS}.
-
-\begin{figure}[p]
-
-\setlength\fboxsep{0pt}
-\setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{%
- \fbox{
-\includegraphics[width=1.45\textwidth , angle=270]{Res/WBS15313.png}
-}
-}
-
-\caption{The final WBS}
-\label{fig:WBS}
-\end{figure}
 
 \section{Development process}
 \label{def:devProcess}
+The customer required an incremental development process where ideally a new version of the product could be demonstrated at every weekly customer meeting. Furthermore, plans for the following week were to be sketched in collaboration with the customer at the weekly meeting. With such short-term plans, and as the requirements were still vague and the product to be developed largely experimental, a high degree of flexibility was required. A plan-driven approach was therefore impossible at the beginning of the project. The process model employed in the early stages of development was therefore based on agile methods, and extreme programming in particular. Due to the customer requirements, sprint length was set to one week, with the possibility for two week sprints in certain cases, such as when the customer is unable to show up to a weekly meeting, or the required tasks are more extensive than usual. 
 
-The customer favored the use of an iterative approach to the development process, where every sprint added a new layer of functionality, either to the application or the underlying model. Each sprint lasted for a period of 1-2 weeks, and the exact content was worked out in collaboration with the customer. Short term plans were favoured over longer plans, due to the flexibility provided. While this made formulating definite goals for the final product difficult, the customer and the group were in agreement that due to the research intensive nature of the project, a high degree of flexibility was required. 
+%TODO: SKILNAD noraml XP og oss
 
-It was decided that the developers would have on-line meetings twice a week and an off-line meeting once a week. 
-The working hours were set to not less than 20 hours a week, but the developers were free to choose when to work themselves. This number was the expected workload for the course, and made a reasonable target for work per week. This requirement were not met, because of several issues where for instance some of the group members had to travel somewhere or were busy with personal appointments. The meetings with the team was set to two times per week instead of once per day, so it could fit with the schedules of the team members. This was different from other agile methods like Scrum, but if was a necessary adaptation to fit meetings into the entire teams schedule. Updates were shared among the team members with email, Trello\footnote{See page \pageref{def:trello} for more information}, and it's learning as a replacement for daily meetings.
-\input{HowTasksAreAssigned}
+Meetings between the customer and the group normally took place on Fridays, and were followed by a group planning and work session. Stand-ups were originally planned for Wednesdays and Sundays, as these were the only times all the group members were available at the same time. The meetings at Sundays were conducted online, and the Wednesday meetings at the university. The Sunday stand-ups were abolished after a few weeks, as little work had normally been done between the Friday session and the Sunday stand-up. To compensate for the relative low frequency of stand-ups (Agile development teams in full-time work environments normally hold daily stand-ups.) other communication channels, such as e-mail and Trello\footnote{See page \pageref{def:trello} for more information} were heavily used.
 
-\section{Software development}
-\subsection{Agile software development}
-Agile software development is a collection of software development methods. These methods were developed based on iterative and incremental software development. Agile development cuts the working process into short periods of working time, which gives us the possibility to see the progress and act accordingly. Agile development focuses on evolutionary development, where the team can make a plan according to what has been done.  
-
-\subsection{Iterative approach}
-Iterative development simplified is a cycle of agreement, execution and assessment. Most engineering projects using this approach also include stages like requirements and design. The project using iterative development will enter several stages, Requirements, Analysis \& Design, Implementation, Testing, Evaluation, where these stages are repeated in a cycle formation. The cycle will usually contain a planning phase, which makes it relatively easy to react to a current problem, this can for instance be time spent and time left. The software is developed through several rounds with these cycles. 
-
-\subsection{Extreme programming}
-Extreme  programming is an agile software development methodology which favours improving of a software and quick responses, like Iterative development except it is faster. Extreme programming uses a cycle based programming system like the Iterative approach. Unlike the Iterative approach it has a checkpoint after each stage, where the code is being released and new customer requirements is added. The customer are often intimately involved in prioritizing and specifying the requirements. Extreme programming enables the possibility to make it so that several developers can produce code, integrate and test it on the same day.  
-
-
-
-\section{Group development method} 
-At the beginning of the semester the group were given a task to develop an application system. At that time they did not have any idea on how the system as a whole would look like, but they were given small goals every sprint like developing specific parts of the application system. At this time they used a development method almost equal to Extreme programming, but took some concept from Scrum since they were more familiar with terms from Scrum like sprint. The method used gave possibilities for quick responses like editing the code to what the customer wanted or changing algorithms to more effective ones.
-
-After Easter the group got a clearer vision of their final goal, and the development method was switched to Scrum development method with a portion of Extreme Programming. Clearer sprints were formed. Smaller task with estimated time usage were formed on Trello, as Trello was used more frequently than before. Tasks with similar working area were put together in a bigger assignment, but with the possibility to only do the one small task if they wanted to. After establishing the tasks, the Group leader \pageref{def:the group} and the document-organizer\pageref{def:the group} could freely assigned tasks to the rest of the group members, and tasks that had not been assigned were for those who would finish early with their work. This was done for the following reasons:
+After Easter several changes in the circumstances prompted a change in development methodology. These includes:
 \begin{itemize}
-\item The group and the customer had different ideas about what the development model was supposed to entail.
-\item It was possible and desired to dispose and organize the groups time better.
-\item An clear goal was set for what the project should result in, making it useful to define goals on path to accomplishing this.
-\item It was desired to have a way to predict how much work would need to be done in advance, so team members could gauge their performance and practice estimating the amount of work a task would take. 
+\item A much clearer definition of the requirements and the project goals had gradually emerged. 
+\item The time left until the final deadline had decreased significantly.
+\item The number of potential tasks left had remained close to constant throughout the semester, as finishing one task often leads to insights as to what can be done further.
+\item The group had attained a better understanding of its own work process. 
+\item Significant integration and system testing was needed.
 \end{itemize}
+These circumstances revealed the necessity for and possibility to make concrete plans, and prioritize between the potential tasks. Therefore,  the development model was changed to a plan-driven approach that still enforced incremental delivery. Some flexibility was still maintained, by making a buffer of optional tasks in case of delays or unforeseen requirement changes. Some elements from XP were still preserved, such as pair programming and individual choice of tasks.
+
+\input{HowTasksAreAssigned}
 
 \input{MeetingCustomerSupervisor}
 \section{Plans}
@@ -89,10 +60,22 @@ There was not much place for specific roles among the group, as it was a small g
  
  Otherwise the group had no codified responsibilities, and as all the team members were roughly equally experienced at the start, team members were not constantly assigned particular tasks.
  
-\section{LaTeX}
-LaTeX is used to write this report. LaTeX is a typesetting language, with support for varied formatting, including images and including other documents. It also has the option allowed for inclusion of multiple LaTeX documents (.tex documents). This leads to improved readability of LaTeX code and productivity, as several chapters could be altered at the same time.This functionality allows a group of multiple users to avoid the problems associated with multiple users writing in the same document. The editor used was Texmaker, an free latex-editor available on multiple platforms.
 
 \section{Comparison}
 The development model used by the group was a form of agile development. Other well-known examples of agile methodologies are Scrum and Extreme Programming.
  
+\section{Work Breakdown Structure}
+With a development methodology that stresses short term goals, it is only possible to plan WBS for the current period. After the customer has specified the goal for the following week, we immediately sat down and defined the WBS for the given period. This was, a WBS was developed incrementally by adjoining the new WBS to the previous. The WBS was made in graphical form, as can be seen in Figure \ref{fig:WBS}.
 
+\begin{figure}[p]
+
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{%
+ \fbox{
+\includegraphics[width=1.45\textwidth , angle=270]{Res/WBS15313.png}
+}
+}
+
+\caption{The final WBS}
+\label{fig:WBS}
+\end{figure}
