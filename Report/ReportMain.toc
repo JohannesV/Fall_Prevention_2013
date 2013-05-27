@@ -27,61 +27,60 @@
 \contentsline {chapter}{\numberline {4}Software development and management processes}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}Terms}{21}{section.4.1}
 \contentsline {section}{\numberline {4.2}Development process}{23}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}How Tasks are assigned}{24}{subsection.4.2.1}
-\contentsline {section}{\numberline {4.3}Meetings with Customer and Supervisor}{24}{section.4.3}
-\contentsline {section}{\numberline {4.4}Plans}{25}{section.4.4}
-\contentsline {section}{\numberline {4.5}Team Roles and Organization}{25}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}The group}{25}{subsection.4.5.1}
-\contentsline {section}{\numberline {4.6}Comparison}{26}{section.4.6}
-\contentsline {section}{\numberline {4.7}Work Breakdown Structure}{26}{section.4.7}
-\contentsline {chapter}{\numberline {5}Tools}{28}{chapter.5}
-\contentsline {section}{\numberline {5.1}Github}{28}{section.5.1}
-\contentsline {section}{\numberline {5.2}Eclipse with Android Development Tools Plugin}{28}{section.5.2}
-\contentsline {section}{\numberline {5.3}Management Tools}{29}{section.5.3}
-\contentsline {section}{\numberline {5.4}LaTeX}{29}{section.5.4}
-\contentsline {chapter}{\numberline {6}Design and Architecture}{30}{chapter.6}
-\contentsline {section}{\numberline {6.1}Overall Architecture}{30}{section.6.1}
-\contentsline {section}{\numberline {6.2}Architecture of Valens Health Helper}{31}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Translations}{33}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Architecture of the Content Provider}{37}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Data model}{38}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Class description and diagram}{38}{section.6.4}
-\contentsline {section}{\numberline {6.5}Architecture of the Valens Step Detector}{38}{section.6.5}
-\contentsline {section}{\numberline {6.6}Step Detection Algorithm}{42}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Development and purpose of Algorithm}{42}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}Core Algorithm}{43}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3}Application of the algorithm to live data}{44}{subsection.6.6.3}
-\contentsline {subsection}{\numberline {6.6.4}Constant values}{46}{subsection.6.6.4}
-\contentsline {subsection}{\numberline {6.6.5}Gait calculations}{46}{subsection.6.6.5}
-\contentsline {subsection}{\numberline {6.6.6}Room for improvement}{46}{subsection.6.6.6}
-\contentsline {chapter}{\numberline {7}Testing}{49}{chapter.7}
-\contentsline {section}{\numberline {7.1}Levels, methods and types}{49}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Levels}{49}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Methods}{50}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Types}{51}{subsection.7.1.3}
-\contentsline {section}{\numberline {7.2}Plans and process}{52}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Unit testing}{52}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Inspections}{52}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Integration testing}{52}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}System testing}{53}{subsection.7.2.4}
-\contentsline {subsection}{\numberline {7.2.5}Acceptance testing}{54}{subsection.7.2.5}
-\contentsline {subsection}{\numberline {7.2.6}Summary of interview with medical professionals}{54}{subsection.7.2.6}
-\contentsline {subsection}{\numberline {7.2.7}Informal usability test}{55}{subsection.7.2.7}
-\contentsline {subsubsection}{Procedure}{55}{section*.62}
-\contentsline {subsubsection}{Results}{55}{section*.63}
-\contentsline {subsection}{\numberline {7.2.8}Acceptance testing and deployment}{56}{subsection.7.2.8}
-\contentsline {section}{\numberline {7.3}Tests used under development}{56}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}GUI Tests}{56}{subsection.7.3.1}
-\contentsline {chapter}{\numberline {8}Conclusion}{59}{chapter.8}
-\contentsline {section}{\numberline {8.1}New Experiences}{59}{section.8.1}
-\contentsline {section}{\numberline {8.2}Learning experiences from development and tool use}{59}{section.8.2}
-\contentsline {section}{\numberline {8.3}Lessons learned about Research and Prestudies}{60}{section.8.3}
-\contentsline {section}{\numberline {8.4}Conflict handling}{61}{section.8.4}
-\contentsline {section}{\numberline {8.5}Further work}{61}{section.8.5}
-\contentsline {chapter}{\numberline {A}WBS}{65}{appendix.A}
-\contentsline {section}{\numberline {A.1}Previous WBS}{65}{section.A.1}
-\contentsline {chapter}{\numberline {B}Work summary}{73}{appendix.B}
-\contentsline {chapter}{\numberline {C}License }{76}{appendix.C}
-\contentsline {section}{\numberline {C.1}Apache license and notice}{76}{section.C.1}
-\contentsline {section}{\numberline {C.2}Meeting summaries}{82}{section.C.2}
-\contentsline {chapter}{\numberline {D}Test results}{87}{appendix.D}
+\contentsline {section}{\numberline {4.3}Meetings with Customer and Supervisor}{25}{section.4.3}
+\contentsline {section}{\numberline {4.4}Plans}{26}{section.4.4}
+\contentsline {section}{\numberline {4.5}Team Roles and Organization}{26}{section.4.5}
+\contentsline {section}{\numberline {4.6}Work Breakdown Structure}{27}{section.4.6}
+\contentsline {chapter}{\numberline {5}Tools}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Github}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Android Developer Tools Bundle}{29}{section.5.2}
+\contentsline {section}{\numberline {5.3}Trello}{30}{section.5.3}
+\contentsline {section}{\numberline {5.4}It's learning}{30}{section.5.4}
+\contentsline {section}{\numberline {5.5}Email}{31}{section.5.5}
+\contentsline {section}{\numberline {5.6}LaTeX}{31}{section.5.6}
+\contentsline {chapter}{\numberline {6}Design and Architecture}{32}{chapter.6}
+\contentsline {section}{\numberline {6.1}Overall Architecture}{32}{section.6.1}
+\contentsline {section}{\numberline {6.2}Architecture of Valens Health Helper}{33}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Translations}{35}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Architecture of the Content Provider}{39}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Data model}{40}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Class description and diagram}{40}{section.6.4}
+\contentsline {section}{\numberline {6.5}Architecture of the Valens Step Detector}{40}{section.6.5}
+\contentsline {section}{\numberline {6.6}Step Detection Algorithm}{44}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Development and purpose of Algorithm}{44}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Core Algorithm}{45}{subsection.6.6.2}
+\contentsline {subsection}{\numberline {6.6.3}Application of the algorithm to live data}{46}{subsection.6.6.3}
+\contentsline {subsection}{\numberline {6.6.4}Constant values}{48}{subsection.6.6.4}
+\contentsline {subsection}{\numberline {6.6.5}Gait calculations}{48}{subsection.6.6.5}
+\contentsline {subsection}{\numberline {6.6.6}Room for improvement}{48}{subsection.6.6.6}
+\contentsline {chapter}{\numberline {7}Testing}{51}{chapter.7}
+\contentsline {section}{\numberline {7.1}Levels, methods and types}{51}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Levels}{51}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Methods}{52}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Types}{53}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Plans and process}{54}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Unit testing}{54}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Inspections}{54}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Integration testing}{54}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}System testing}{55}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}Acceptance testing}{56}{subsection.7.2.5}
+\contentsline {subsection}{\numberline {7.2.6}Summary of interview with medical professionals}{56}{subsection.7.2.6}
+\contentsline {subsection}{\numberline {7.2.7}Informal usability test}{57}{subsection.7.2.7}
+\contentsline {subsubsection}{Procedure}{57}{section*.60}
+\contentsline {subsubsection}{Results}{57}{section*.61}
+\contentsline {subsection}{\numberline {7.2.8}Acceptance testing and deployment}{58}{subsection.7.2.8}
+\contentsline {section}{\numberline {7.3}Tests used under development}{58}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}GUI Tests}{58}{subsection.7.3.1}
+\contentsline {chapter}{\numberline {8}Conclusion}{61}{chapter.8}
+\contentsline {section}{\numberline {8.1}New Experiences}{61}{section.8.1}
+\contentsline {section}{\numberline {8.2}Learning experiences from development and tool use}{61}{section.8.2}
+\contentsline {section}{\numberline {8.3}Lessons learned about Research and Prestudies}{62}{section.8.3}
+\contentsline {section}{\numberline {8.4}Conflict handling}{63}{section.8.4}
+\contentsline {section}{\numberline {8.5}Further work}{63}{section.8.5}
+\contentsline {chapter}{\numberline {A}WBS}{67}{appendix.A}
+\contentsline {section}{\numberline {A.1}Previous WBS}{67}{section.A.1}
+\contentsline {chapter}{\numberline {B}Work summary}{75}{appendix.B}
+\contentsline {chapter}{\numberline {C}License }{78}{appendix.C}
+\contentsline {section}{\numberline {C.1}Apache license and notice}{78}{section.C.1}
+\contentsline {section}{\numberline {C.2}Meeting summaries}{84}{section.C.2}
+\contentsline {chapter}{\numberline {D}Test results}{89}{appendix.D}
