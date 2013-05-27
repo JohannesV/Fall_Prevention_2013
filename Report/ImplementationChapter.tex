@@ -103,6 +103,14 @@ a subclass of ContentProvider, which is the standard android class for implement
 \item[Main]
 provdides the content provider with a basic GUI.
 \end{description}
+\label{def:contentfeeder}
+The Content Provider also hosts the service called Valens Content Feeder, to simplify maintenance, packaging and roll-outs, which consists of these four classes:
+\begin{itemize}
+\item[ContentProviderHelper] handles communication with the content provider. It contains several methods that sends queries to the Content Provider to fetch and insert data before and after being calculated.
+\item[AlarmManagerBroadcastReceiver] ensures that the calculations gets done and is basically an alarm that fires an event at a fixed time of day.
+\item[ManipulationStarter] handles an event when the phone boots, to check if the AlarmManager had the chance to start the calculations when it should, or if the phone was off during the specified time. If the calculations has not been ran, it will engage the calculations regardless of the time of day.
+\item[ManipulatorHelper] is where all the calculations of Gait speed, Gait variability and calculated steps are commenced.
+\end{itemize}
 
 \input{DataModelDescription}
 
