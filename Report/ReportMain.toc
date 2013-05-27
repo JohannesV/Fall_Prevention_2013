@@ -34,56 +34,55 @@
 \contentsline {section}{\numberline {4.6}Work Breakdown Structure}{29}{section.4.6}
 \contentsline {chapter}{\numberline {5}Tools}{31}{chapter.5}
 \contentsline {section}{\numberline {5.1}Github}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Android Developer Tools Bundle}{31}{section.5.2}
+\contentsline {section}{\numberline {5.2}Android Developer Tools Bundle}{32}{section.5.2}
 \contentsline {section}{\numberline {5.3}Trello}{32}{section.5.3}
-\contentsline {section}{\numberline {5.4}itslearning}{32}{section.5.4}
-\contentsline {section}{\numberline {5.5}Email}{33}{section.5.5}
-\contentsline {section}{\numberline {5.6}LaTeX}{33}{section.5.6}
-\contentsline {chapter}{\numberline {6}Design and Architecture}{34}{chapter.6}
-\contentsline {section}{\numberline {6.1}Overall Architecture}{34}{section.6.1}
-\contentsline {section}{\numberline {6.2}Architecture of Valens Health Helper}{35}{section.6.2}
-\contentsline {section}{\numberline {6.3}Architecture of the Content Provider}{41}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Data model}{42}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Architecture of the Valens Step Detector}{42}{section.6.4}
-\contentsline {section}{\numberline {6.5}Class description and diagram}{45}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Translations}{45}{subsection.6.5.1}
-\contentsline {chapter}{\numberline {7}Step Detection Algorithm}{50}{chapter.7}
-\contentsline {section}{\numberline {7.1}Development and purpose of Algorithm}{50}{section.7.1}
-\contentsline {section}{\numberline {7.2}Core Algorithm}{50}{section.7.2}
-\contentsline {section}{\numberline {7.3}Application of the algorithm to live data}{52}{section.7.3}
-\contentsline {section}{\numberline {7.4}Constant values}{54}{section.7.4}
-\contentsline {section}{\numberline {7.5}Gait calculations}{54}{section.7.5}
-\contentsline {section}{\numberline {7.6}Room for improvement}{55}{section.7.6}
-\contentsline {chapter}{\numberline {8}Testing}{57}{chapter.8}
-\contentsline {section}{\numberline {8.1}Levels, methods and types}{57}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Levels}{57}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Methods}{58}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Types}{59}{subsection.8.1.3}
-\contentsline {section}{\numberline {8.2}Plans and process}{60}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Unit testing}{60}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Inspections}{60}{subsection.8.2.2}
-\contentsline {subsection}{\numberline {8.2.3}Integration testing}{60}{subsection.8.2.3}
-\contentsline {subsection}{\numberline {8.2.4}System testing}{61}{subsection.8.2.4}
-\contentsline {subsection}{\numberline {8.2.5}Acceptance testing}{62}{subsection.8.2.5}
-\contentsline {subsection}{\numberline {8.2.6}Informal usability test}{62}{subsection.8.2.6}
-\contentsline {subsubsection}{Procedure}{62}{section*.64}
-\contentsline {subsubsection}{Results}{62}{section*.65}
-\contentsline {subsection}{\numberline {8.2.7}Acceptance testing and deployment}{63}{subsection.8.2.7}
-\contentsline {section}{\numberline {8.3}Tests used under development}{63}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}GUI Tests}{63}{subsection.8.3.1}
-\contentsline {chapter}{\numberline {9}Conclusion}{66}{chapter.9}
-\contentsline {section}{\numberline {9.1}Lessons learned}{66}{section.9.1}
-\contentsline {subsection}{\numberline {9.1.1}New Experiences}{66}{subsection.9.1.1}
-\contentsline {subsection}{\numberline {9.1.2}Learning experiences from development and tool use}{66}{subsection.9.1.2}
-\contentsline {subsection}{\numberline {9.1.3}Lessons learned about Research and Prestudies}{67}{subsection.9.1.3}
-\contentsline {section}{\numberline {9.2}Conflict handling}{68}{section.9.2}
-\contentsline {section}{\numberline {9.3}Further work}{68}{section.9.3}
-\contentsline {chapter}{Appendix \numberline {A}WBS}{72}{Appendix.a.A}
-\contentsline {section}{\numberline {A.1}Previous WBS}{72}{section.a.A.1}
-\contentsline {chapter}{Appendix \numberline {B}Work summary}{80}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Sprint summaries}{80}{section.a.B.1}
-\contentsline {section}{\numberline {B.2}Meeting summaries}{83}{section.a.B.2}
-\contentsline {chapter}{Appendix \numberline {C}Apache License}{88}{Appendix.a.C}
-\contentsline {chapter}{Appendix \numberline {D}Test results}{94}{Appendix.a.D}
-\contentsline {section}{\numberline {D.1}Summary of interview with medical professionals}{97}{section.a.D.1}
-\contentsline {chapter}{Appendix \numberline {E}Time-sheet}{99}{Appendix.a.E}
+\contentsline {section}{\numberline {5.4}itslearning}{34}{section.5.4}
+\contentsline {section}{\numberline {5.5}Email}{34}{section.5.5}
+\contentsline {section}{\numberline {5.6}LaTeX}{34}{section.5.6}
+\contentsline {chapter}{\numberline {6}Design and Architecture}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Overall Architecture}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Architecture of Valens Health Helper}{36}{section.6.2}
+\contentsline {section}{\numberline {6.3}Architecture of the Content Provider}{42}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Data model}{43}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Architecture of the Valens Step Detector}{43}{section.6.4}
+\contentsline {section}{\numberline {6.5}Class description and diagram}{46}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Translations}{46}{subsection.6.5.1}
+\contentsline {chapter}{\numberline {7}Step Detection Algorithm}{51}{chapter.7}
+\contentsline {section}{\numberline {7.1}Development and purpose of Algorithm}{51}{section.7.1}
+\contentsline {section}{\numberline {7.2}Core Algorithm}{51}{section.7.2}
+\contentsline {section}{\numberline {7.3}Application of the algorithm to live data}{53}{section.7.3}
+\contentsline {section}{\numberline {7.4}Constant values}{55}{section.7.4}
+\contentsline {section}{\numberline {7.5}Gait calculations}{55}{section.7.5}
+\contentsline {section}{\numberline {7.6}Room for improvement}{56}{section.7.6}
+\contentsline {chapter}{\numberline {8}Testing}{58}{chapter.8}
+\contentsline {section}{\numberline {8.1}Levels, methods and types}{58}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Levels}{58}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Methods}{59}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Types}{60}{subsection.8.1.3}
+\contentsline {section}{\numberline {8.2}Plans and process}{61}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Unit testing}{61}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Inspections}{61}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Integration testing}{61}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}System testing}{62}{subsection.8.2.4}
+\contentsline {subsection}{\numberline {8.2.5}Acceptance testing}{63}{subsection.8.2.5}
+\contentsline {subsection}{\numberline {8.2.6}Informal usability test}{63}{subsection.8.2.6}
+\contentsline {subsubsection}{Procedure}{63}{section*.66}
+\contentsline {subsubsection}{Results}{63}{section*.67}
+\contentsline {subsection}{\numberline {8.2.7}Acceptance testing and deployment}{64}{subsection.8.2.7}
+\contentsline {section}{\numberline {8.3}Tests used under development}{64}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}GUI Tests}{64}{subsection.8.3.1}
+\contentsline {chapter}{\numberline {9}Conclusion}{67}{chapter.9}
+\contentsline {section}{\numberline {9.1}Lessons learned}{67}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}New Experiences}{67}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {9.1.2}Learning experiences from development and tool use}{67}{subsection.9.1.2}
+\contentsline {subsection}{\numberline {9.1.3}Lessons learned about Research and Prestudies}{68}{subsection.9.1.3}
+\contentsline {section}{\numberline {9.2}Conflict handling}{69}{section.9.2}
+\contentsline {section}{\numberline {9.3}Further work}{69}{section.9.3}
+\contentsline {chapter}{Appendix \numberline {A}WBS}{73}{Appendix.a.A}
+\contentsline {section}{\numberline {A.1}Previous WBS}{73}{section.a.A.1}
+\contentsline {chapter}{Appendix \numberline {B}Work summary}{81}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Sprint summaries}{81}{section.a.B.1}
+\contentsline {section}{\numberline {B.2}Meeting summaries}{85}{section.a.B.2}
+\contentsline {chapter}{Appendix \numberline {C}Test results}{90}{Appendix.a.C}
+\contentsline {section}{\numberline {C.1}Summary of interview with medical professionals}{93}{section.a.C.1}
+\contentsline {chapter}{Appendix \numberline {D}Time-sheet}{95}{Appendix.a.D}
