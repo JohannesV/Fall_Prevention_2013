@@ -4,7 +4,7 @@
 \section{Overall Architecture}
 One of the customer requirements was that a Content Provider be developed to provide access to the model for movement to be designed. Content providers function as data repositories that enable other applications to interact with the stored data. More specifically, content providers provide CRUD (create, retrieve, update, delete) functions. Content providers are intended to be used with a repository architecture. In a repository architecture, there is a central data repository which maintains the shared data between the components. The components only communicate directly with the repository, and are therefore independent of each other. This independence makes it easy to add or remove components from the application system, which was emphasized as a major requirement from the customer. While it is possible to embed a content provider within a single application, this causes the independence to be lost, nullifying the advantage of using a content provider in the first place.
 
-The system that has been designed according to the repository architecture, and consists of five component apps, each of these components fulfils a well-defined role in the application system architecture:
+The system that has been designed according to the repository architecture, and consists of five component apps, each of these components fulfills a well-defined role in the application system architecture:
 \begin{description}
 \item[Valens Content Provider], the content provider, which has the role of the repository in the repository architecture.
 \item[Valens Health Helper] the proof-of-concept application. Demonstrates one simple way in which the data provided by the content provider can be used as a part of a health-promoting app.
@@ -39,9 +39,10 @@ In Android, the view is described using XML layout files, the controller is defi
 
 Furthermore, in Android, an additional view layer separates the actual string values and other resources from the layout definitions. Resources are placed in a separate folder and files. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily. 
 
+In the android architecture, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:GUIFlowchart}.
+
 \input{translation}
 
-In the android architecture, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:GUIFlowchart}.
 \begin{figure}
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{
