@@ -40,7 +40,7 @@ In Android, the view is described using XML layout files, the controller is defi
 
 Furthermore, in Android, an additional view layer separates the actual string values and other resources from the layout definitions. Resources are placed in a separate folder and files. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily. 
 
-In the android architecture, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:GUIFlowchart}.
+In the Android architecture, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:GUIFlowchart}.
 
 
 
@@ -74,7 +74,7 @@ provide an interface for communication with the database and content providers. 
 \begin{description}
 \item[ContentProviderHelper] handles communication with the content provider. In particular, it contains several methods that sends queries to the Content Provider, interprets the data, and returns useful values to the GUI activities.
 \item[DatabaseHelper] handles communication with the database. The database contains information necessary for the demo application to function, in particular events, messages and contact information.
-\item[DatabaseContract] defines the strings used for table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one. A database contract functions as a "contract" that define the legal interaction between the database and the application, by stating the legal table and column names.
+\item[DatabaseContract] defines the strings used for table and column names in the database. While a DatabaseContract might seem redundant, it is common Android application practice to use one. A database contract functions as a "contract" that define the legal interaction between the database and the application, by stating the legal table and column names.
 \end{description}
 
 \item[Data structure classes]

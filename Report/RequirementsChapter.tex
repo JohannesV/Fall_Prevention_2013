@@ -25,7 +25,7 @@ The initial requirements were too vague to base an implementation on, so a requi
 \item[Gait variability] \label{def:gaitVariability}is defined as the standard deviation of the length of the inter-step intervals. Also a predicator for risk of falling.
 \item[Step Count] \label{def:stepCount}is number of steps done over a period of time. 
 \end{description}
-\item An example application should the developed that demonstrates the data model.
+\item An example application should be developed that demonstrates the data model.
 \end{itemize}	
 
 \subsection{Non-functional requirements}
@@ -36,7 +36,7 @@ The initial requirements were too vague to base an implementation on, so a requi
 \item The demo application should provide more detailed information that is useful for health personnel without a computational background.
 \item The application system should be modular and well-documented, so that it is easy to implement new applications based on the content provider, as well as connect new data sources to the content provider.
 \end{itemize}
-Requirements are normally specified with a quantifiable metric, so that requirement fulfilment can be easily verifiable. However, as this application was largely experimental, neither the group nor the customer had any data to base the specific requirement values on. Any specific value would therefore be a pure guess, and as such not useful as a requirement. The non-functional requirements presented here can thus be regarded as design guidelines rather than concrete requirements. 
+Requirements are normally specified with a quantifiable metric, so that requirement fulfillment can be easily verifiable. However, as this application was largely experimental, neither the group nor the customer had any data to base the specific requirement values on. Any specific value would therefore be a pure guess, and as such not useful as a requirement. The non-functional requirements presented here can thus be regarded as design guidelines rather than concrete requirements. 
 
 \section{Omitted requirements} \label{expert_meeting_requirement}
 During the course of the project, several additional requirements have been proposed but later discarded. Some were derived from the user stories, while others originated from ideas provided by the health experts. Common for all these is that they were discussed with the customer and determined to not be parts of the core required functionality of the application system.
@@ -44,7 +44,7 @@ During the course of the project, several additional requirements have been prop
 \begin{description} 
 \item[Contacts and notifications] An initially desired function was to maintain a list of contacts and their contact information and the possibility to notify the contacts by e-mail or SMS, in order to accommodate the second target audience. This requirement was excluded later on because it was difficult to determine which types of situations that should prompt notifications, and that it would require significant amounts of time to develop this non-essential functionality. Before the decision was made to exclude this functionality, a system for creating, importing and maintaining a list of contacts was developed, and exists in the source code, but the related screens are not accessible in the application.
 \item[Stride length] In addition to step count and gait parameters, \emph{stride length} is another predicator of fall risk that may be measurable using sensors that are available on Android. One approach could be to employ a location detector (for instance GPS) to track distance walked, and find step length as $$\frac{stepsTaken}{distanceWalked}$$However, the additional effort required to implement location awareness overshadowed the perceived predicative power of the additional predicator.
-\item[Inactivity detection] Long periods of inactivity are bad for the general health, as well as strong indicators of fall risk. While some effort was put into studying the patterns related to sitting down and getting up to be used in the context of inactivity detection, time constraints and the need to focus on step detection forces this requirement to be excluded. 
+\item[Inactivity detection] Long periods of inactivity are bad for the general health, as well as strong indicators of fall risk. While some effort was put into studying the patterns related to sitting down and getting up to be used in the context of inactivity detection, time constraints and the need to focus on step detection forced this requirement to be excluded. 
 \end{description} 
 
 

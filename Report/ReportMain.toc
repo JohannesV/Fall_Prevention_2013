@@ -74,7 +74,7 @@
 \contentsline {subsection}{\numberline {9.1.2}Research and prestudies}{64}{subsection.9.1.2}
 \contentsline {subsection}{\numberline {9.1.3}New Experiences}{65}{subsection.9.1.3}
 \contentsline {section}{\numberline {9.2}Conflict handling}{65}{section.9.2}
-\contentsline {section}{\numberline {9.3}Fulfilled requirements and further work}{65}{section.9.3}
+\contentsline {section}{\numberline {9.3}Fulfilled requirements and further work}{66}{section.9.3}
 \contentsline {chapter}{Appendix \numberline {A}WBS}{70}{Appendix.a.A}
 \contentsline {section}{\numberline {A.1}Previous WBS}{70}{section.a.A.1}
 \contentsline {chapter}{Appendix \numberline {B}Work summary}{78}{Appendix.a.B}
