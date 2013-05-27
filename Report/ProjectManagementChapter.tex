@@ -12,6 +12,8 @@ Here follows a description of terms as used in the current project.
 
 \item[Incremental development] \label{def:incrementalDev} is an approach to software development that is "based on the idea of developing an initial implementation, exposing this to user comment and evolving it through several versions until an adequate system has been developed"\footnote{\cite{sommerville}, page 32}. Benefits to incremental development include adaptability to changing requirement and facilitation of feedback. In the negative side, it can be hard to keep an overview of the progress of the entire system, making it harder to plan ahead for deadlines.
 
+\item[Pair programming] \label{def:pairprogram} is a programming technique taken from XP. In PP, coders work in pairs that work on the same workstation. As each line of code is looked at by at least two people, code development simultaneously acts as a review process, making code developed by a programmer pair more reliable and readable than code developed by an individual programmer. For complex coding tasks, the productivity of a programmer pair is normally higher than that of two individual programmers, considering the reduced effort required for bug fixing. For routine tasks, however, productivity is lower in a programming pair.
+
 \item[Plan-driven development] \label{def:plan-driven} is an approach to software development that recommends careful planning of the software development process, work breakdown and scheduling before starting the implementation process. 
 
 \item[Sprint] \label{def:sprint} is the period unit in which work is planned and done. It is customary to operate with sprints of 2-4 weeks, but the current project operated with sprints of 1-2 weeks.
@@ -26,13 +28,17 @@ Here follows a description of terms as used in the current project.
 \label{def:devProcess}
 The customer required an incremental development process where ideally a new version of the product could be demonstrated at every weekly customer meeting. Furthermore, plans for the following week were to be sketched in collaboration with the customer at the weekly meeting. With such short-term plans, and as the requirements were still vague and the product to be developed largely experimental, a high degree of flexibility was required. A plan-driven approach was therefore impossible at the beginning of the project. The process model employed in the early stages of development was therefore based on agile methods, and extreme programming in particular. Due to the customer requirements, sprint length was set to one week, with the possibility for two week sprints in certain cases, such as when the customer is unable to show up to a weekly meeting, or the required tasks are more extensive than usual. 
 
-%TODO: SKILNAD noraml XP og oss
-
 Meetings between the customer and the group normally took place on Fridays, and were followed by a group planning and work session. Stand-ups were originally planned for Wednesdays and Sundays, as these were the only times all the group members were available at the same time. The meetings at Sundays were conducted online, and the Wednesday meetings at the university. The Sunday stand-ups were abolished after a few weeks, as little work had normally been done between the Friday session and the Sunday stand-up. To compensate for the relative low frequency of stand-ups (Agile development teams in full-time work environments normally hold daily stand-ups.) other communication channels, such as e-mail and Trello\footnote{See page \pageref{def:trello} for more information} were heavily used.
+
+The process model incorporated a liberal approach to pair-programming, where coders formed programming pairs only for tasks deemed complex. Another principle that was taken from XP was that of collective ownership of the code. Emphasizing the fact that nobody "owns" a particular class made it easier for the group members to accept changing when demanded, thus ensuring development agility\footnote{In the Javadocs, every class has a listed author that can be contacted if any future developer has any questions regarding the code in that class. While this may break the illusion of collective ownership, the "author" of a class was selected after development were finished, so as to not interfere with the development process.}.
+
+The task assignment procedure was largely agile: After the weekly sprint planning meeting, the individual group members could choose which tasks they would like to work on in the following sprint. Tasks were thus assigned in a first-come first-served fashion. The tasks that were not chosen by anyone were assigned throughout the week, as the first tasks were completed. The Group Leader only had to assign tasks in exceptional cases.
+
+Some elements of extreme programming were not employed in the development process, particularly when it comes to testing. XP advocates \emph{Test-Driven Development} (TDD), where automated unit tests\footnote{See the testing chapter for details on unit testing} are developed before the corresponding code is written. As no group members had any experience in test automation or TDD, employing such an approach appeared to entail more challenges than benefits. 
 
 After Easter several changes in the circumstances prompted a change in development methodology. These includes:
 \begin{itemize}
-\item A much clearer definition of the requirements and the project goals had gradually emerged. 
+\item A much clearer definition of the requirements and the project goals had gradually emerged.
 \item The time left until the final deadline had decreased significantly.
 \item The number of potential tasks left had remained close to constant throughout the semester, as finishing one task often leads to insights as to what can be done further.
 \item The group had attained a better understanding of its own work process. 
@@ -40,32 +46,25 @@ After Easter several changes in the circumstances prompted a change in developme
 \end{itemize}
 These circumstances revealed the necessity for and possibility to make concrete plans, and prioritize between the potential tasks. Therefore,  the development model was changed to a plan-driven approach that still enforced incremental delivery. Some flexibility was still maintained, by making a buffer of optional tasks in case of delays or unforeseen requirement changes. Some elements from XP were still preserved, such as pair programming and individual choice of tasks.
 
-\input{HowTasksAreAssigned}
-
 \input{MeetingCustomerSupervisor}
-\section{Plans}
+\section{Plans}	
 
 Nearing the end of every sprint, the customer and group agreed upon the content of the following sprint. This list has been placed in Figure \ref{tab:sprintList}, and provided a short summary of what was accomplished in a particular time-frame. 
 
 
 \section{Team Roles and Organization}
-\subsection{The group} \label{def:the group}
-There was not much place for specific roles among the group, as it was a small group, and the project required that all the members were capable and willing to work at all the tasks. This makes a difference from development models with specific roles and tasks assigned. Roles that were set for the group were therefore mainly organizers, so that one person was to keep awareness of what work needed to be completed in a particular domain, and share it with the rest of the group:
+Extreme programming advocates a flat structure, where every member of the group is treated required to be were capable and willing to work at all the tasks, and as such there was not much place for specific roles among the group. However, to make sure that no area was neglected, some sort of overview was required, and three roles were therefore defined. Common for the roles is that they entail responsibilities for a particular domain, but provide no advantages.
 
 \begin{description}
-
-\item[Group Leader] Elias was made organizer, and got the responsibilities of reminding the group of what to do.
-\item[Document-organizer] Johannes was tasked with organizing documentation and distributing the work of writing the report to the group. 
+\item[Group Leader] Elias. Responsible for making sure that no areas are neglected, and that the project has maintains a momentum of progress.
+\item[Document-organizer] Johannes. Because the report is a major task, but easily neglected during development, somebody was required to emphasize the importance of continually working on the report. Also responsible for organizing documentation and keeping track of required reports.
+\item[Customer Contact] Filip. To avoid sending redundant or contradictory messages to the customer, one person was assigned to handle customer communication.
 \end{description}
  
  Otherwise the group had no codified responsibilities, and as all the team members were roughly equally experienced at the start, team members were not constantly assigned particular tasks.
  
-
-\section{Comparison}
-The development model used by the group was a form of agile development. Other well-known examples of agile methodologies are Scrum and Extreme Programming.
- 
 \section{Work Breakdown Structure}
-With a development methodology that stresses short term goals, it is only possible to plan WBS for the current period. After the customer has specified the goal for the following week, we immediately sat down and defined the WBS for the given period. This was, a WBS was developed incrementally by adjoining the new WBS to the previous. The WBS was made in graphical form, as can be seen in Figure \ref{fig:WBS}.
+With an agile, incremental development methodology, work breakdown was only possible within the individual sprints, based on the short-term customer requirements as well as on the state of the application at that time. In other words, a WBS was developed incrementally by adjoining the new WBS to the previous. After the change to a plan-based development model, the work breakdown structure (WBS) for the remainder of the project was developed. A graphical representation of the final WBS can be seen in Figure \ref{fig:WBS}.
 
 \begin{figure}[p]
 
