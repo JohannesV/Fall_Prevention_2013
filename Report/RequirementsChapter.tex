@@ -7,15 +7,15 @@ The initial requirements originated largely from the customer, with some course 
 
 \begin{itemize}
 \item A model for fall risk assessment based on sensors in Android phones should be developed.
-\item The model should be accessible through a Content Provider.
+\item The model should be accessible through a Content Provider(See \ref{def:CProvider}).
 \item The model should be accompanied by a proof-of-concept demo application.
-\item The product should be available as open source through the Apache 2.0 license, explained below.
+\item The product should be available as open source through the Apache 2.0 license, explained in section \ref{ref:apacheLicense}.
 \item Development should follow an incremental approach.
 \end{itemize}
 
 \section{Elaborating on the requirements}
 \label{elaboratingrequirements}
-The initial requirements were too vague to base an implementation on, so a requirements elicitation process was initiated, where the group in conjunction with the customer, and later the health experts, gradually elaborated upon the requirements. As a part of this process, the group constructed user stories from which requirements could be elicited, but these requirements were later neglected as the customer deemed them to be too extensive(The user stories can be found in Appendix \ref{ref:userStories}). The process resulted in a list of more precise requirement, as presented below:
+The initial requirements were too vague to base an implementation on, so a requirements elicitation process was initiated, where the group in conjunction with the customer, and later the health experts, gradually elaborated upon the requirements. As a part of this process, the group constructed user stories from which requirements could be elicited, but these requirements were later neglected as the customer deemed them to be too extensive (The user stories can be found in Appendix \ref{ref:userStories}). The process resulted in a list of more precise requirement, as presented below:
 
 \subsection{Functional requirements}
 \begin{itemize}
@@ -42,13 +42,14 @@ Requirements are normally specified with a quantifiable metric, so that requirem
 During the course of the project, several additional requirements have been proposed but later discarded. Some were derived from the user stories, while others originated from ideas provided by the health experts. Common for all these is that they were discussed with the customer and determined to not be parts of the core required functionality of the application system.
 
 \begin{description} 
-\item[Contacts and notifications] An initially desired function was to maintain a list of contacts and their contact information and the possibility to notify the contacts by e-mail or SMS, in order to accommodate the second target group. This requirement was excluded later on because it was difficult to determine which types of situations that should prompt notifications, and that it would require significant amounts of time to develop this non-essential functionality. Before the decision was made to exclude this functionality, a system for creating, importing and maintaining a list of contacts was developed, and exists in the source code, but the related screens are not accessible in the application.
+\item[Contacts and notifications] An initially desired function was to maintain a list of contacts and their contact information and the possibility to notify the contacts by e-mail or SMS, in order to accommodate the second target audience. This requirement was excluded later on because it was difficult to determine which types of situations that should prompt notifications, and that it would require significant amounts of time to develop this non-essential functionality. Before the decision was made to exclude this functionality, a system for creating, importing and maintaining a list of contacts was developed, and exists in the source code, but the related screens are not accessible in the application.
 \item[Stride length] In addition to step count and gait parameters, \emph{stride length} is another predicator of fall risk that may be measurable using sensors that are available on Android. One approach could be to employ a location detector (for instance GPS) to track distance walked, and find step length as $$\frac{stepsTaken}{distanceWalked}$$However, the additional effort required to implement location awareness overshadowed the perceived predicative power of the additional predicator.
 \item[Inactivity detection] Long periods of inactivity are bad for the general health, as well as strong indicators of fall risk. While some effort was put into studying the patterns related to sitting down and getting up to be used in the context of inactivity detection, time constraints and the need to focus on step detection forces this requirement to be excluded. 
 \end{description} 
 
 
 \section{License}
+\label{ref:apacheLicense}
 The results of the project were to be released under the Apache 2.0 license, as requested from the customer. It is an open source license, which can be found  at Apache's web site.\footnote{\url{http://www.apache.org/licenses/LICENSE-2.0.html}\\}
 Highlights of what can, cannot and must be done under the license is described here:\\
 \textbf{Must be done}

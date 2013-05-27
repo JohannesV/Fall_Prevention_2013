@@ -2,6 +2,7 @@
 
 
 \section{Overall Architecture}
+\label{def:CProvider}
 One of the customer requirements was that a Content Provider be developed to provide access to the model for movement to be designed. Content providers function as data repositories that enable other applications to interact with the stored data. More specifically, content providers provide CRUD (create, retrieve, update, delete) functions. Content providers are intended to be used with a repository architecture. In a repository architecture, there is a central data repository which maintains the shared data between the components. The components only communicate directly with the repository, and are therefore independent of each other. This independence makes it easy to add or remove components from the application system, which was emphasized as a major requirement from the customer. While it is possible to embed a content provider within a single application, this causes the independence to be lost, nullifying the advantage of using a content provider in the first place.
 
 The system that has been designed according to the repository architecture, and consists of five component apps, each of these components fulfills a well-defined role in the application system architecture:
@@ -89,6 +90,7 @@ define the functionality of the widget. There are two widget classes:
 \end{description}
 \end{description}
 \section{Architecture of the Content Provider}
+
 In android, Content Providers provide an interface to structured data of some sort. Access to for instance the list of contacts in the phone, or the phone's calendar is managed through standard content providers. Content Providers provide methods for inserting, updating and deleting relevant data. A major part of the assignment was to implement a Content Provider that gives developers access to structured movement data.
 
 The Content Provider component is conceptually very simple, and consists of four classes:
@@ -100,7 +102,7 @@ defines the database model and provides string values for the names of the table
 \item[ValensDataProvider]
 a subclass of ContentProvider, which is the standard android class for implementing content providers. This is the core of the content provider, and describes how queries to the content provider are handled.
 \item[Main]
-provdides the content provider with a basic GUI.
+provides the content provider with a basic GUI.
 \end{description}
 \label{def:contentfeeder}
 The Content Provider also hosts the service called Valens Content Feeder, to simplify maintenance, packaging and roll-outs, which consists of these four classes:
