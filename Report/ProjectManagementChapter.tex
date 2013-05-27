@@ -1,5 +1,5 @@
 \chapter{Software development and management processes}
-The following chapter explains the software development and management processes that were employed throughout the project. In the following section some of the necessary terminology will be introduced and explained. Subsequently the process description will be given, followed by a comparison to established process models. %TODO Kanskje urdering/konklusjon
+The following chapter explains the software development and management processes that were employed throughout the project. In the following section some of the necessary terminology will be introduced and explained. Subsequently the process description will be given, followed by a comparison to established process models.
 
 \section{Terms}
 Here follows a description of terms as used in the current project.
@@ -10,7 +10,7 @@ Here follows a description of terms as used in the current project.
 
 \item[Extreme programming] (XP) is an agile software development methodology which favours improving of a software and quick responses, like Iterative development except it is faster. Extreme programming uses a cycle based programming system like the Iterative approach. Unlike the Iterative approach it has a checkpoint after each stage, where the code is being released and new customer requirements is added. The customer are often intimately involved in prioritizing and specifying the requirements. Extreme programming enables the possibility to make it so that several developers can produce code, integrate and test it on the same day.  %TODO: FIX
 
-\item[Incremental development] \label{def:incrementalDev} is an approach to software development that is "based on the idea of developing an initial implementation, exposing this to user comment and evolving it through several versions until an adequate system has been developed"\footnote{\cite{sommerville}, page 32}. Benefits to incremental development include adaptability to changing requirement and facilitation of feedback. In the negative side, it can be hard to keep an overview of the progress of the entire system, making it harder to plan ahead for deadlines.
+\item[Incremental development] \label{def:incrementalDev} is an approach to software development that is "based on the idea of developing an initial implementation, exposing this to user comment and evolving it through several versions until an adequate system has been developed"\footnote{Sommerville, p32 \cite{sommerville}}. Benefits to incremental development include adaptability to changing requirement and facilitation of feedback. In the negative side, it can be hard to keep an overview of the progress of the entire system, making it harder to plan ahead for deadlines.
 
 \item[Pair programming] \label{def:pairprogram} is a programming technique taken from XP. In PP, coders work in pairs that work on the same workstation. As each line of code is looked at by at least two people, code development simultaneously acts as a review process, making code developed by a programmer pair more reliable and readable than code developed by an individual programmer. For complex coding tasks, the productivity of a programmer pair is normally higher than that of two individual programmers, considering the reduced effort required for bug fixing. For routine tasks, however, productivity is lower in a programming pair.
 
@@ -30,7 +30,7 @@ The customer required an incremental development process where ideally a new ver
 
 Meetings between the customer and the group normally took place on Fridays, and were followed by a group planning and work session. Stand-ups were originally planned for Wednesdays and Sundays, as these were the only times all the group members were available at the same time. The meetings at Sundays were conducted online, and the Wednesday meetings at the university. The Sunday stand-ups were abolished after a few weeks, as little work had normally been done between the Friday session and the Sunday stand-up. To compensate for the relative low frequency of stand-ups (Agile development teams in full-time work environments normally hold daily stand-ups.) other communication channels, such as e-mail and Trello\footnote{See page \pageref{def:trello} for more information} were heavily used.
 
-The process model incorporated a liberal approach to pair-programming, where coders formed programming pairs only for tasks deemed complex. Another principle that was taken from XP was that of collective ownership of the code. Emphasizing the fact that nobody "owns" a particular class made it easier for the group members to accept changing when demanded, thus ensuring development agility\footnote{In the Javadocs, every class has a listed author that can be contacted if any future developer has any questions regarding the code in that class. While this may break the illusion of collective ownership, the "author" of a class was selected after development were finished, so as to not interfere with the development process.}.
+The process model incorporated a liberal approach to pair-programming, where coders formed programming pairs only for tasks deemed complex. Another principle that was taken from XP was that of collective ownership of the code. Emphasizing the fact that nobody "owns" a particular class made it easier for the group members to accept changes when demanded, thus ensuring development agility\footnote{In the Javadocs, every class has a listed author that can be contacted if any future developer has any questions regarding the code in that class. While this may break the illusion of collective ownership, the "author" of a class was selected after development were finished, so as to not interfere with the development process.}.
 
 The task assignment procedure was largely agile: After the weekly sprint planning meeting, the individual group members could choose which tasks they would like to work on in the following sprint. Tasks were thus assigned in a first-come first-served fashion. The tasks that were not chosen by anyone were assigned throughout the week, as the first tasks were completed. The Group Leader only had to assign tasks in exceptional cases.
 
@@ -49,8 +49,13 @@ These circumstances revealed the necessity for and possibility to make concrete 
 \input{MeetingCustomerSupervisor}
 \section{Plans}	
 
-Nearing the end of every sprint, the customer and group agreed upon the content of the following sprint. This list has been placed in Figure \ref{tab:sprintList}, and provided a short summary of what was accomplished in a particular time-frame. 
+Nearing the end of every sprint, the customer and group agreed upon the content of the following sprint. This list has been placed in Appendix \ref{tab:sprintList}, and provided a short summary of what was accomplished in a particular time-frame. 
 
+The customer favoured a user-oriented development method which focused on first developing a complete mock-up GUI, and base development of data models and back-end functionality on what the GUI requires to function properly. Development of the back-end model should in this method proceed "top-down", in that functionality that directly influences user experience should be implemented before more fundamental, data-manipulating methods. Advocates of this development method claim that first developing the GUI puts user-friendliness in focus, and constrains which functions are required in the back-end, so that no superfluous methods need to be implemented. On the downside, this may cause some of the back-end methods to be down-prioritized due to time constraints.
+
+A radically different approach would be a "bottom-up" method that focuses on first developing the most challenging and novel parts of the system, in particular algorithms for step detection and calculation of fall risk scores. This method would only start developing increasingly more user-oriented functionality when the more fundamental methods have been verified. An advantage of this method is that it allocates all the time necessary to master the complex issues first. On the other hand, this could cause development of the user-oriented features to be neglected due to time constraints. 
+
+In fact, the difference between these two approaches only reveals itself in the product when time constraints force certain features to be down-prioritized. As this project followed a user-oriented development method, according to the customer's wishes, ample time was given to GUI development at the expense of implementation and verification of fall risk assessment features\footnote{Acceptance testing confirmed this intuition, see section \ref{def:accTesting} for details.}. If a "bottom-up" method had been used, it seems likely that the project would have resulted in well-tested and extensive fall risk assessment components, but with little or no GUI intended for the target group. 
 
 \section{Team Roles and Organization}
 Extreme programming advocates a flat structure, where every member of the group is treated required to be were capable and willing to work at all the tasks, and as such there was not much place for specific roles among the group. However, to make sure that no area was neglected, some sort of overview was required, and three roles were therefore defined. Common for the roles is that they entail responsibilities for a particular domain, but provide no advantages.
@@ -61,7 +66,7 @@ Extreme programming advocates a flat structure, where every member of the group 
 \item[Customer Contact] Filip. To avoid sending redundant or contradictory messages to the customer, one person was assigned to handle customer communication.
 \end{description}
  
- Otherwise the group had no codified responsibilities, and as all the team members were roughly equally experienced at the start, team members were not constantly assigned particular tasks.
+Otherwise the group had no codified responsibilities, and as all the team members were roughly equally experienced at the start, team members were not constantly assigned particular tasks.
  
 \section{Work Breakdown Structure}
 With an agile, incremental development methodology, work breakdown was only possible within the individual sprints, based on the short-term customer requirements as well as on the state of the application at that time. In other words, a WBS was developed incrementally by adjoining the new WBS to the previous. After the change to a plan-based development model, the work breakdown structure (WBS) for the remainder of the project was developed. A graphical representation of the final WBS can be seen in Figure \ref{fig:WBS}.
@@ -71,7 +76,7 @@ With an agile, incremental development methodology, work breakdown was only poss
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{1pt}\noindent\makebox[\textwidth]{%
  \fbox{
-\includegraphics[width=1.45\textwidth , angle=270]{Res/WBS15313.png}
+\includegraphics[width=1.45\textwidth , angle=270]{Res/WBSlast.png}
 }
 }
 
