@@ -41,7 +41,7 @@ Furthermore, in Android, an additional view layer separates the actual string va
 
 In the android architecture, classes that inherit from the class Activity define a separate screen in the GUI. Because of this, a significant part of all the classes in the application are activity classes. These classes simply define the behaviour of their GUI screen. The flow for the GUI can be seen in Figure \ref{fig:GUIFlowchart}.
 
-\input{translation}
+
 
 \begin{figure}
 \setlength\fboxsep{0pt}
@@ -55,6 +55,7 @@ In the android architecture, classes that inherit from the class Activity define
 \end{figure}
 
 \pagebreak
+\input{translation}
 
 The definition of Activity classes are as following:
 \begin{description}
@@ -106,19 +107,49 @@ provdides the content provider with a basic GUI.
 \input{DataModelDescription}
 \section{Class description and diagram}
 
-The class structure of the Applications changed regularly, and the most recent description is in Figure \ref{fig:ClassDiagram}. Older diagrams and descriptions are placed in appendix A.1 and A.2. 
+The class structures of the applications are relatively complex, as can be seen from the class diagrams in figures \ref{fig:DemoClassDiagram}, \ref{fig:CPClassDiagram} and \ref{fig:StepDetectClassDiagram}. As the class diagrams can be hard to read in the paper format, it is recommended to read the digital version on the application website\footnote{\url{http://valens.brennhe.it/\#documentation}}. The class diagrams are not the recommended way to understand the structure of the code, it would be better to consult the textual description above as well as the JavaDocs\footnote{\url{http://valens.brennhe.it/javadoc/}}.
+
 \begin{figure}[p]
 
-\caption{A class diagram of the application}
-\label{fig:ClassDiagram}
+\caption{Class diagram for the demo application}
+\label{fig:DemoClassDiagram}
 
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{1pt}
 \fbox{
-\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagram}
+\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagramDemonstration}
 }
 
 \end{figure}
+
+\begin{figure}[p]
+
+\caption{Class diagram of the content provider application}
+\label{fig:CPClassDiagraorm}
+
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}
+\fbox{
+\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagramContentProvider}
+}
+
+\end{figure}
+
+
+
+\begin{figure}[p]
+
+\caption{Class diagram for the step detector application}
+\label{fig:StepDetectClassDiagram}
+
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}
+\fbox{
+\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagramStepDetector}
+}
+
+\end{figure}
+
 
 \section{Architecture of the Valens Step Detector}
 
@@ -153,5 +184,5 @@ handles sensor input during calibration. When the calibration time has ended, it
 \end{description}
  
 \end{description}
-\input{StepDetection}
+
 
