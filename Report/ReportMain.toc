@@ -1,85 +1,93 @@
-\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
-\contentsline {section}{\numberline {1.1}IT2901}{4}{section.1.1}
-\contentsline {section}{\numberline {1.2}Group introduction}{5}{section.1.2}
-\contentsline {section}{\numberline {1.3}Stakeholder introduction}{5}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}SINTEF - Customer}{5}{subsection.1.3.1}
-\contentsline {subsubsection}{FARSEEING}{5}{section*.2}
-\contentsline {subsection}{\numberline {1.3.2}Target audience}{6}{subsection.1.3.2}
-\contentsline {section}{\numberline {1.4}Interested parties}{6}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Medical Experts}{6}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Supervisor - Tinna T\'{o}masd\'{o}ttir}{7}{subsection.1.4.2}
-\contentsline {chapter}{\numberline {2}Requirements}{8}{chapter.2}
-\contentsline {section}{\numberline {2.1}Initial requirements}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}Elaborating on the requirements}{9}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Functional requirements}{9}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Non-functional requirements}{9}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Omitted requirements}{10}{section.2.3}
-\contentsline {section}{\numberline {2.4}License}{11}{section.2.4}
-\contentsline {chapter}{\numberline {3}Prestudies and Alternate Solutions}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Causes, consequences and how to avoid falling}{14}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Risk factors}{14}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Advice for prevention}{15}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Physiological aspects}{17}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Related Applications}{18}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Endomondo Sports Tracker\FN@sf@gobble@opt {This application can be found at \url {http://www.endomondo.com}}}{18}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}GPS Status \FN@sf@gobble@opt {This application can be found at \url {https://play.google.com/store/apps/details? id=com.eclipsim.gpsstatus2}}}{19}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Pedometer\FN@sf@gobble@opt {Application can be found at \url {https://code.google.com/p/pedometer/}}}{19}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}GPS Tracker\FN@sf@gobble@opt {Application can be found at: \url {https://code.google.com/p/open-gpstracker}}}{19}{subsection.3.2.4}
-\contentsline {chapter}{\numberline {4}Software development and management processes}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Terms}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Development process}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Meetings with customer and supervisor}{25}{section.4.3}
-\contentsline {section}{\numberline {4.4}Plans}{26}{section.4.4}
-\contentsline {section}{\numberline {4.5}Team Roles and Organization}{27}{section.4.5}
-\contentsline {section}{\numberline {4.6}Work Breakdown Structure}{28}{section.4.6}
-\contentsline {chapter}{\numberline {5}Tools}{30}{chapter.5}
-\contentsline {section}{\numberline {5.1}Github}{30}{section.5.1}
-\contentsline {section}{\numberline {5.2}Android Developer Tools Bundle}{31}{section.5.2}
-\contentsline {section}{\numberline {5.3}Trello}{31}{section.5.3}
-\contentsline {section}{\numberline {5.4}itslearning}{33}{section.5.4}
-\contentsline {section}{\numberline {5.5}Email}{33}{section.5.5}
-\contentsline {section}{\numberline {5.6}LaTeX}{33}{section.5.6}
-\contentsline {chapter}{\numberline {6}Design and Architecture}{34}{chapter.6}
-\contentsline {section}{\numberline {6.1}Overall Architecture}{34}{section.6.1}
-\contentsline {section}{\numberline {6.2}Architecture of Valens Health Helper}{35}{section.6.2}
-\contentsline {section}{\numberline {6.3}Architecture of the Content Provider}{41}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Data model}{42}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Architecture of the Valens Step Detector}{42}{section.6.4}
-\contentsline {section}{\numberline {6.5}Class description and diagram}{45}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Translations}{45}{subsection.6.5.1}
-\contentsline {chapter}{\numberline {7}Step Detection Algorithm}{50}{chapter.7}
-\contentsline {section}{\numberline {7.1}Development and purpose of Algorithm}{50}{section.7.1}
-\contentsline {section}{\numberline {7.2}Core Algorithm}{50}{section.7.2}
-\contentsline {section}{\numberline {7.3}Application of the algorithm to live data}{52}{section.7.3}
-\contentsline {section}{\numberline {7.4}Constant values}{54}{section.7.4}
-\contentsline {section}{\numberline {7.5}Gait calculations}{54}{section.7.5}
-\contentsline {section}{\numberline {7.6}Room for improvement}{55}{section.7.6}
-\contentsline {chapter}{\numberline {8}Testing}{57}{chapter.8}
-\contentsline {section}{\numberline {8.1}Levels, methods and types}{57}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Levels}{57}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Methods}{58}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Types}{59}{subsection.8.1.3}
-\contentsline {section}{\numberline {8.2}Plans and process}{60}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Unit testing}{60}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Inspections}{60}{subsection.8.2.2}
-\contentsline {subsection}{\numberline {8.2.3}Integration testing}{60}{subsection.8.2.3}
-\contentsline {subsection}{\numberline {8.2.4}System testing}{61}{subsection.8.2.4}
-\contentsline {subsection}{\numberline {8.2.5}Acceptance testing}{61}{subsection.8.2.5}
-\contentsline {subsection}{\numberline {8.2.6}Informal usability test}{62}{subsection.8.2.6}
-\contentsline {subsubsection}{Procedure}{62}{section*.66}
-\contentsline {subsubsection}{Results}{62}{section*.67}
-\contentsline {chapter}{\numberline {9}Conclusion}{63}{chapter.9}
-\contentsline {section}{\numberline {9.1}Lessons learned}{63}{section.9.1}
-\contentsline {subsection}{\numberline {9.1.1}Development and tool usage}{63}{subsection.9.1.1}
-\contentsline {subsection}{\numberline {9.1.2}Research and prestudies}{64}{subsection.9.1.2}
-\contentsline {subsection}{\numberline {9.1.3}New Experiences}{65}{subsection.9.1.3}
-\contentsline {section}{\numberline {9.2}Conflict handling}{65}{section.9.2}
-\contentsline {section}{\numberline {9.3}Fulfilled requirements and further work}{65}{section.9.3}
-\contentsline {chapter}{Appendix \numberline {A}WBS}{70}{Appendix.a.A}
-\contentsline {section}{\numberline {A.1}Previous WBS}{70}{section.a.A.1}
-\contentsline {chapter}{Appendix \numberline {B}Work summary}{78}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Sprint summaries}{78}{section.a.B.1}
-\contentsline {section}{\numberline {B.2}Meeting summaries}{82}{section.a.B.2}
-\contentsline {chapter}{Appendix \numberline {C}Test results}{87}{Appendix.a.C}
-\contentsline {section}{\numberline {C.1}Summary of interview with medical professionals}{90}{section.a.C.1}
-\contentsline {chapter}{Appendix \numberline {D}Time-sheet}{92}{Appendix.a.D}
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}IT2901}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Group introduction}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}Stakeholder introduction}{6}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}SINTEF - Customer}{6}{subsection.1.3.1}
+\contentsline {subsubsection}{FARSEEING}{6}{section*.2}
+\contentsline {subsection}{\numberline {1.3.2}Target audience}{7}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}Interested parties}{7}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Medical Experts}{7}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Supervisor - Tinna T\'{o}masd\'{o}ttir}{8}{subsection.1.4.2}
+\contentsline {chapter}{\numberline {2}Requirements}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Initial requirements}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Elaborating on the requirements}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Functional requirements}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Non-functional requirements}{10}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Omitted requirements}{11}{section.2.3}
+\contentsline {section}{\numberline {2.4}License}{12}{section.2.4}
+\contentsline {chapter}{\numberline {3}Prestudies and Alternate Solutions}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}Causes, consequences and how to avoid falling}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Risk factors}{15}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Advice for prevention}{16}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Physiological aspects}{18}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Related Applications}{19}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Endomondo Sports Tracker\FN@sf@gobble@opt {This application can be found at \url {http://www.endomondo.com}}}{19}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}GPS Status \FN@sf@gobble@opt {This application can be found at \url {https://play.google.com/store/apps/details? id=com.eclipsim.gpsstatus2}}}{20}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Pedometer\FN@sf@gobble@opt {Application can be found at \url {https://code.google.com/p/pedometer/}}}{20}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}GPS Tracker\FN@sf@gobble@opt {Application can be found at: \url {https://code.google.com/p/open-gpstracker}}}{20}{subsection.3.2.4}
+\contentsline {chapter}{\numberline {4}Software development and management processes}{22}{chapter.4}
+\contentsline {section}{\numberline {4.1}Terms}{22}{section.4.1}
+\contentsline {section}{\numberline {4.2}Development process}{24}{section.4.2}
+\contentsline {section}{\numberline {4.3}Meetings with customer and supervisor}{26}{section.4.3}
+\contentsline {section}{\numberline {4.4}Plans}{27}{section.4.4}
+\contentsline {section}{\numberline {4.5}Team Roles and Organization}{28}{section.4.5}
+\contentsline {section}{\numberline {4.6}Work Breakdown Structure}{29}{section.4.6}
+\contentsline {chapter}{\numberline {5}Tools}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Github}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}Android Developer Tools Bundle}{32}{section.5.2}
+\contentsline {section}{\numberline {5.3}Trello}{32}{section.5.3}
+\contentsline {section}{\numberline {5.4}itslearning}{34}{section.5.4}
+\contentsline {section}{\numberline {5.5}Email}{34}{section.5.5}
+\contentsline {section}{\numberline {5.6}LaTeX}{34}{section.5.6}
+\contentsline {chapter}{\numberline {6}Design and Architecture}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Overall Architecture}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Architecture of Valens Health Helper}{36}{section.6.2}
+\contentsline {section}{\numberline {6.3}Architecture of the Content Provider}{42}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Data model}{43}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Architecture of the Valens Step Detector}{45}{section.6.4}
+\contentsline {section}{\numberline {6.5}Class description and diagram}{46}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Translations}{46}{subsection.6.5.1}
+\contentsline {chapter}{\numberline {7}Step Detection Algorithm}{51}{chapter.7}
+\contentsline {section}{\numberline {7.1}Development and purpose of Algorithm}{51}{section.7.1}
+\contentsline {section}{\numberline {7.2}Core Algorithm}{51}{section.7.2}
+\contentsline {section}{\numberline {7.3}Application of the algorithm to live data}{53}{section.7.3}
+\contentsline {section}{\numberline {7.4}Constant values}{55}{section.7.4}
+\contentsline {section}{\numberline {7.5}Gait calculations}{55}{section.7.5}
+\contentsline {section}{\numberline {7.6}Room for improvement}{56}{section.7.6}
+\contentsline {chapter}{\numberline {8}Testing}{58}{chapter.8}
+\contentsline {section}{\numberline {8.1}Levels, methods and types}{58}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Levels}{58}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Methods}{59}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Types}{60}{subsection.8.1.3}
+\contentsline {section}{\numberline {8.2}Plans and process}{61}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Unit testing}{61}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Inspections}{61}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Integration testing}{61}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}System testing}{62}{subsection.8.2.4}
+\contentsline {subsection}{\numberline {8.2.5}Acceptance testing}{62}{subsection.8.2.5}
+\contentsline {subsection}{\numberline {8.2.6}Informal usability test}{63}{subsection.8.2.6}
+\contentsline {subsubsection}{Procedure}{63}{section*.66}
+\contentsline {subsubsection}{Results}{63}{section*.67}
+\contentsline {chapter}{\numberline {9}Conclusion}{64}{chapter.9}
+\contentsline {section}{\numberline {9.1}Lessons learned}{64}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}Development and tool usage}{64}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {9.1.2}Research and prestudies}{65}{subsection.9.1.2}
+\contentsline {subsection}{\numberline {9.1.3}New Experiences}{66}{subsection.9.1.3}
+\contentsline {section}{\numberline {9.2}Conflict handling}{66}{section.9.2}
+\contentsline {section}{\numberline {9.3}Fulfilled requirements and further work}{66}{section.9.3}
+\contentsline {chapter}{Appendix \numberline {A}WBS}{71}{Appendix.a.A}
+\contentsline {section}{\numberline {A.1}Previous WBS}{71}{section.a.A.1}
+\contentsline {chapter}{Appendix \numberline {B}Work summary}{79}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Sprint summaries}{79}{section.a.B.1}
+\contentsline {section}{\numberline {B.2}Meeting summaries}{83}{section.a.B.2}
+\contentsline {chapter}{Appendix \numberline {C}Test results}{88}{Appendix.a.C}
+\contentsline {section}{\numberline {C.1}Summary of interview with medical professionals}{91}{section.a.C.1}
+\contentsline {chapter}{Appendix \numberline {D}Time-sheet}{93}{Appendix.a.D}
+\contentsline {chapter}{Appendix \numberline {E}User Stories}{95}{Appendix.a.E}
+\contentsline {section}{\numberline {E.1}Scenario 1: Ole Pedersen has osteoporosis}{95}{section.a.E.1}
+\contentsline {section}{\numberline {E.2}Scenario 2: A worried relative}{96}{section.a.E.2}
+\contentsline {section}{\numberline {E.3}Scenario 3: A troublesome user}{98}{section.a.E.3}
+\contentsline {section}{\numberline {E.4}Scenario 4: The gamer}{98}{section.a.E.4}
+\contentsline {section}{\numberline {E.5}Scenario 5: The scoundrel}{99}{section.a.E.5}
+\contentsline {section}{\numberline {E.6}Scenario 6: The boy with narcolepsy}{99}{section.a.E.6}
+\contentsline {section}{\numberline {E.7}Scenario 7: Mrs. Mc Hipo with the new artificial hip and the new product need to been tested}{100}{section.a.E.7}

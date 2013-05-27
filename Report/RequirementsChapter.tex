@@ -1,6 +1,6 @@
 \chapter{Requirements}
 
-The main goal of the project is to explore the advanced technology in any standard smartphone. A standard smartphone is packed with heavy duty processors and sensors. To put these senors and processing power this project focus on developing a prototype app for Android Operating System to predict risk of falling. 
+The main goal of the project is to explore the advanced technology in any standard smartphone. A standard smartphone is packed with heavy duty processors and sensors. To put these sensors and processing power this project focus on developing a prototype app for Android Operating System to predict risk of falling. 
 
 \section{Initial requirements}
 The initial requirements originated largely from the customer, with some course requirements added in. The requirements presented by the customer at the beginning of the project can be summarized as follows:
@@ -15,21 +15,20 @@ The initial requirements originated largely from the customer, with some course 
 
 \section{Elaborating on the requirements}
 \label{elaboratingrequirements}
-The initial requirements were too vague to base an implementation on, so a requirements elicitation process was initiated, where the group in conjunction with the customer, and later the health experts, gradually elaborated upon the requirements. The process resulted in a list of more precise requirement, as presented below:
+The initial requirements were too vague to base an implementation on, so a requirements elicitation process was initiated, where the group in conjunction with the customer, and later the health experts, gradually elaborated upon the requirements. As a part of this process, the group constructed user stories from which requirements could be elicited, but these requirements were later neglected as the customer deemed them to be too extensive(The user stories can be found in Appendix \ref{ref:userStories}). The process resulted in a list of more precise requirement, as presented below:
 
 \subsection{Functional requirements}
 \begin{itemize}
 \item A standard Android content provider should provide an interface to the generated risk data. The data model should contain enough details to be able give at least a basic predication of fall risk. The data model should include 
 \begin{description}
-\item[Gait Speed] \label{def:gaitSpeed}is the interval between two steps, and measuring it is useful, as it can be used to measure Risk for falling and as a shorthand for physical ability.
-\item[Gait variability] \label{def:gaitVariability}is the standard deviation for gait speed over time. This is significant, because a large variability is correlated with increased risk for falling.
+\item[Gait Speed] \label{def:gaitSpeed}is defined as the mean length of the inter-step intervals. It is a predicator for risk for falling and an indicator of physical ability.
+\item[Gait variability] \label{def:gaitVariability}is defined as the standard deviation of the length of the inter-step intervals. Also a predicator for risk of falling.
 \item[Step Count] \label{def:stepCount}is number of steps done over a period of time. 
 \end{description}
 \item An example application should the developed that demonstrates the data model.
 \end{itemize}	
 
 \subsection{Non-functional requirements}
-It is common to include measurable metrics when writing non-functional requirements, however, measurements are not included in these requirements. This was because of the vagueness of the requirements, and the fact that if the group had little data to go on regarding what metrics would be useful or relevant. As adding more metrics and measurements to the requirements would not be helpful, it was decided to keep them as guidelines for further development, and not make metrics a part of them.
 \begin{itemize}
 \item Development should be done in short iterations, and results should be presentable at each weekly customer meeting.
 \item The demo application should appear as a health assistant, not as an application for fall risk assessment, as the elderly are reluctant to admit they have a risk for falling, and would not use such an application.
@@ -37,9 +36,10 @@ It is common to include measurable metrics when writing non-functional requireme
 \item The demo application should provide more detailed information that is useful for health personnel without a computational background.
 \item The application system should be modular and well-documented, so that it is easy to implement new applications based on the content provider, as well as connect new data sources to the content provider.
 \end{itemize}
+Requirements are normally specified with a quantifiable metric, so that requirement fulfilment can be easily verifiable. However, as this application was largely experimental, neither the group nor the customer had any data to base the specific requirement values on. Any specific value would therefore be a pure guess, and as such not useful as a requirement. The non-functional requirements presented here can thus be regarded as design guidelines rather than concrete requirements. 
 
 \section{Omitted requirements} \label{expert_meeting_requirement}
-The customer did usually only specify requirements that should be done for the current sprint, but the group were given a task to make some user stories. The group then formed some requirements from the user stories, which turned out to be too extensive given the time limit.
+During the course of the project, several additional requirements have been proposed but later discarded. Some were derived from the user stories, while others originated from ideas provided by the health experts. Common for all these is that they were discussed with the customer and determined to not be parts of the core required functionality of the application system.
 
 \begin{description} 
 \item[Contacts and notifications] An initially desired function was to maintain a list of contacts and their contact information and the possibility to notify the contacts by e-mail or SMS, in order to accommodate the second target group. This requirement was excluded later on because it was difficult to determine which types of situations that should prompt notifications, and that it would require significant amounts of time to develop this non-essential functionality. Before the decision was made to exclude this functionality, a system for creating, importing and maintaining a list of contacts was developed, and exists in the source code, but the related screens are not accessible in the application.
