@@ -49,10 +49,10 @@
 \contentsline {section}{\numberline {6.6}Step Detection Algorithm}{44}{section.6.6}
 \contentsline {subsection}{\numberline {6.6.1}Development and purpose of Algorithm}{44}{subsection.6.6.1}
 \contentsline {subsection}{\numberline {6.6.2}Core Algorithm}{45}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3}Application of the algorithm to live data}{46}{subsection.6.6.3}
+\contentsline {subsection}{\numberline {6.6.3}Application of the algorithm to live data}{47}{subsection.6.6.3}
 \contentsline {subsection}{\numberline {6.6.4}Constant values}{48}{subsection.6.6.4}
 \contentsline {subsection}{\numberline {6.6.5}Gait calculations}{48}{subsection.6.6.5}
-\contentsline {subsection}{\numberline {6.6.6}Room for improvement}{48}{subsection.6.6.6}
+\contentsline {subsection}{\numberline {6.6.6}Room for improvement}{49}{subsection.6.6.6}
 \contentsline {chapter}{\numberline {7}Testing}{51}{chapter.7}
 \contentsline {section}{\numberline {7.1}Levels, methods and types}{51}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Levels}{51}{subsection.7.1.1}
