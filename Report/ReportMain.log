@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  27 MAY 2013 14:16
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.8)  27 MAY 2013 14:30
 entering extended mode
 **ReportMain.tex
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ReportMain.tex
@@ -702,21 +702,22 @@ Overfull \hbox (8.99739pt too wide) in paragraph at lines 26--27
 ed re-search project
  []
 
-[6])
-(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\RequirementsCha
-pter.tex [7]
-Chapter 2.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 5.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+[6]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 31.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
- [8
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
+)
+(C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\RequirementsCha
+pter.tex [7]
+Chapter 2.
+[8
 
 ] [9]
 
-LaTeX Warning: Reference `user_stories' on page 10 undefined on input line 48.
+LaTeX Warning: Reference `user_stories' on page 10 undefined on input line 40.
 
 [10] [11])
 (C:\Users\Johannes\Documents\GitHub\Fall_Prevention_2013\Report\ResearchChapter
@@ -1805,14 +1806,11 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 72.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
  9903 strings out of 493921
- 149896 string characters out of 3144868
+ 149901 string characters out of 3144868
  244121 words of memory out of 3000000
  12659 multiletter control sequences out of 15000+200000
  16540 words of font info for 64 fonts, out of 3000000 for 9000
@@ -1903,7 +1901,7 @@ pe1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmtt12.pfb>
-Output written on ReportMain.pdf (96 pages, 2970409 bytes).
+Output written on ReportMain.pdf (96 pages, 2970493 bytes).
 PDF statistics:
  1279 PDF objects out of 1440 (max. 8388607)
  312 named destinations out of 1000 (max. 500000)
