@@ -1,6 +1,6 @@
 \chapter{Requirements}
 
-The general target of the project is to explore the opportunities that are provided by standard smart phones running the Android Operation System for preventing falls by predicting risk levels, and develop a prototype system. 
+The main goal of the project is to explore the advanced technology in any standard smartphone. A standard smartphone is packed with heavy duty processors and sensors. To put these senors and processing power this project focus on developing a prototype app for Android Operating System to predict risk of falling. 
 
 \section{Initial requirements}
 The initial requirements originated largely from the customer, with some course requirements added in. The requirements presented by the customer at the beginning of the project can be summarized as follows:
@@ -18,12 +18,12 @@ The initial requirements were too vague to base an implementation on, so a requi
 
 \subsection{Functional requirements}
 \begin{itemize}
-\item A standard Android content provider should provide an interface to the generated risk data. The data model should contain enough details to be able give at least a basic predication of fall risk. The data model should include:
-\begin{itemize}
-\item Gait speed - One of two major predicators of fall risk
-\item Gait variability - The other major predicators of fall risk
-\item Step count - A general measurement of health and activity level.
-\end{itemize}
+\item A standard Android content provider should provide an interface to the generated risk data. The data model should contain enough details to be able give at least a basic predication of fall risk. The data model should include 
+\begin{description}
+\item[Gait Speed] \label{def:gaitSpeed}is the interval between two steps, and measuring it is useful, as it can be used to measure Risk for falling and as a shorthand for physical ability.
+\item[Gait variability] \label{def:gaitVariability}is the standard deviation for gait speed over time. This is significant, because a large variability is correlated with increased risk for falling.
+\item[Step Count] \label{def:stepCount}is number of steps done over a period of time. 
+\end{description}
 \item An example application should the developed that demonstrates the data model.
 \end{itemize}	
 
@@ -37,17 +37,17 @@ The initial requirements were too vague to base an implementation on, so a requi
 \end{itemize}
 
 \section{Omitted requirements} \label{expert_meeting_requirement}
-The customer did usually only specify requirements that should be done for the current sprint, but the group were given a task to make some user stories (see \ref{user_stories}. The group then formed some requirements from the user stories, which turned out to be too extensive given the time limit.
+The customer did usually only specify requirements that should be done for the current sprint, but the group were given a task to make some user stories. The group then formed some requirements from the user stories, which turned out to be too extensive given the time limit.
 
 \begin{description} 
-\item[Contacts and notifications] An initially desired function was to maintain a list of contacts and their contact information and the possibility to notify the contacts by e-mail or SMS, in order to accommodate the second target group. This requirement was excluded later on because it was difficult to determine which types of situations that should prompt notifications, and that it would require significant amounts of time to develop this non-essential functionality. Before the decision was made to exclude this functionality, a system for creating, importing and maintaining a list of contacts was developed, and exists in the source code, but is the related screens are not accessible in the application.
-\item[Stride length] In addition to step count and gait parameters, \emph{stride length} is another predicator of fall risk that may be measurable using sensors that are available on Android: One approach could be to employ a location detector (for instance GPS) to track distance walked, and find step length as $$\frac{steps taken}{distance walked}$$However, the additional effort required to implement location awareness overshadowed the perceived predicative power of the additional predicator.
+\item[Contacts and notifications] An initially desired function was to maintain a list of contacts and their contact information and the possibility to notify the contacts by e-mail or SMS, in order to accommodate the second target group. This requirement was excluded later on because it was difficult to determine which types of situations that should prompt notifications, and that it would require significant amounts of time to develop this non-essential functionality. Before the decision was made to exclude this functionality, a system for creating, importing and maintaining a list of contacts was developed, and exists in the source code, but the related screens are not accessible in the application.
+\item[Stride length] In addition to step count and gait parameters, \emph{stride length} is another predicator of fall risk that may be measurable using sensors that are available on Android. One approach could be to employ a location detector (for instance GPS) to track distance walked, and find step length as $$\frac{stepsTaken}{distanceWalked}$$However, the additional effort required to implement location awareness overshadowed the perceived predicative power of the additional predicator.
 \item[Inactivity detection] Long periods of inactivity are bad for the general health, as well as strong indicators of fall risk. While some effort was put into studying the patterns related to sitting down and getting up to be used in the context of inactivity detection, time constraints and the need to focus on step detection forces this requirement to be excluded. 
 \end{description} 
 
 
 \section{License}
-The results of the project were to be released under the Apache 2.0 license, as requested from the customer. It is an open source license, which can be found  at their web site.\footnote{\url{http://www.apache.org/licenses/LICENSE-2.0.html}\\}
+The results of the project were to be released under the Apache 2.0 license, as requested from the customer. It is an open source license, which can be found  at Apache's web site.\footnote{\url{http://www.apache.org/licenses/LICENSE-2.0.html}\\}
 Highlights of what can, cannot and must be done under the license is described here:\\
 \textbf{Must be done}
 \begin{itemize}
@@ -66,4 +66,4 @@ Highlights of what can, cannot and must be done under the license is described h
 \begin{itemize}
 \item Trademark the licensed work
 \end{itemize}
-The specific terms can be found at the mentioned address, and have also been included in the appendix, see \ref{appendix:license}, along with License and Notice files.
+The specific terms can be found at the mentioned address, along with License and Notice files.

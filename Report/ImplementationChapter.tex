@@ -6,10 +6,10 @@ One of the customer requirements was that a Content Provider be developed to pro
 
 The system that has been designed according to the repository architecture, and consists of five component apps, each of these components fulfills a well-defined role in the application system architecture:
 \begin{description}
-\item[Valens Content Provider], the content provider, which has the role of the repository in the repository architecture.
+\item[Valens Content Provider] has the role of the repository in the repository architecture.
 \item[Valens Health Helper] the proof-of-concept application. Demonstrates one simple way in which the data provided by the content provider can be used as a part of a health-promoting app.
 \item[Valens Step Detector] the sensor model. The sensor model listens to the sensor data, and feeds the content provider with the timestamps of any detected steps.
-\item[Valens Content Feeder] a service of deriving secondary data from the raw data provided by the step detector(s). This includes filtering out steps that have been counted by multiple step detectors to ensure that every step is counted just once, as well as deriving gait parameters.
+\item[Valens Content Feeder] a service of deriving secondary data from the raw data provided by the step detector(s). This includes filtering out steps that have been counted by multiple step detectors to ensure that every step is counted just once, as well as deriving gait parameters. The code is integrated with the Content Providers APK for reasons of maintainability, but they are still logically independent.
 \end{description}
 
 \begin{figure}[p]
@@ -27,7 +27,7 @@ The system that has been designed according to the repository architecture, and 
 
 
 \section{Architecture of Valens Health Helper}
-The application follows standard android application architecture, which is based on a Model-view-controller (MVC) architecture. In a MVC architecture, which is a fairly common architecture for GUI-based applications, there are three components:
+The application follows standard android application architecture, which is based on a Model-View-Controller (MVC) architecture. In a MVC architecture, which is a fairly common architecture for GUI-based applications, there are three components:
 
 \begin{description}
 \item[The model] contains the data and logic of the system.
@@ -35,7 +35,7 @@ The application follows standard android application architecture, which is base
 \item[The controller] receives input and converts it into commands for the model or view. 
 \end{description}
 
-In Android, the view is described using XML layout files, the controller is defined using activity classes and the model is defined using the remaining java classes. In practice however the android architecture does not separate the MVC components clearly. For instance, certain graphical features have to be implemented using the activity classes. Also, not a lot of effort was put into maintaining a pure MVC architecture.%TODO: Skal vi skrive dette?
+In Android, the view is described using XML layout files, the controller is defined using activity classes and the model is defined using the remaining Java classes. In practice, however, the android architecture does not separate the MVC components clearly. For instance, certain graphical features have to be implemented using the activity classes. Also, not a lot of effort was put into maintaining a pure MVC architecture.%TODO: Skal vi skrive dette?
 
 Furthermore, in Android, an additional view layer separates the actual string values and other resources from the layout definitions. Resources are placed in a separate folder and files. The separation of layout and strings enables different localizations, so that the application can provide a user interface in different languages easily. 
 
@@ -50,12 +50,12 @@ In the android architecture, classes that inherit from the class Activity define
 \includegraphics[width=1.2\textwidth, angle = 0]{Res/GUIFlowchart.png}
 }
 }
-\caption{Flow chart describing the Graphical User Interface, grey lines mark old}
+\caption{Flow chart describing the Graphical User Interface, grey lines mark features not used in the current application}
 \label{fig:GUIFlowchart}
 \end{figure}
 
 \pagebreak
-\input{translation}
+
 
 The definition of Activity classes are as following:
 \begin{description}
@@ -73,7 +73,7 @@ provide an interface for communication with the database and content providers. 
 \begin{description}
 \item[ContentProviderHelper] handles communication with the content provider. In particular, it contains several methods that sends queries to the Content Provider, interprets the data, and returns useful values to the GUI activities.
 \item[DatabaseHelper] handles communication with the database. The database contains information necessary for the demo application to function, in particular events, messages and contact information.
-\item[DatabaseContract] defines the strings used for table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one. A database contract functions as a "contract" the define the legal interaction between the database and the application, by stating the legal table and column names.
+\item[DatabaseContract] defines the strings used for table and column names in the database. While a DatabaseContract might seem redundant, it is common android application practice to use one. A database contract functions as a "contract" that define the legal interaction between the database and the application, by stating the legal table and column names.
 \end{description}
 
 \item[Data structure classes]
@@ -81,7 +81,7 @@ each define a useful data structure in the program. The data structure classes i
 
 \item[List adapter classes]
 define how elements in a list should be displayed, and what kind of data should be associated with each element.
-
+\newpage
 \item[Widget classes]
 define the functionality of the widget. There are two widget classes:
 \begin{description}
@@ -105,51 +105,6 @@ provdides the content provider with a basic GUI.
 \end{description}
 
 \input{DataModelDescription}
-\section{Class description and diagram}
-
-The class structures of the applications are relatively complex, as can be seen from the class diagrams in figures \ref{fig:DemoClassDiagram}, \ref{fig:CPClassDiagram} and \ref{fig:StepDetectClassDiagram}. As the class diagrams can be hard to read in the paper format, it is recommended to read the digital version on the application website\footnote{\url{http://valens.brennhe.it/\#documentation}}. The class diagrams are not the recommended way to understand the structure of the code, it would be better to consult the textual description above as well as the JavaDocs\footnote{\url{http://valens.brennhe.it/javadoc/}}.
-
-\begin{figure}[p]
-
-\caption{Class diagram for the demo application}
-\label{fig:DemoClassDiagram}
-
-\setlength\fboxsep{0pt}
-\setlength\fboxrule{1pt}
-\fbox{
-\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagramDemonstration}
-}
-
-\end{figure}
-
-\begin{figure}[p]
-
-\caption{Class diagram of the content provider application}
-\label{fig:CPClassDiagraorm}
-
-\setlength\fboxsep{0pt}
-\setlength\fboxrule{1pt}
-\fbox{
-\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagramContentProvider}
-}
-
-\end{figure}
-
-
-
-\begin{figure}[p]
-
-\caption{Class diagram for the step detector application}
-\label{fig:StepDetectClassDiagram}
-
-\setlength\fboxsep{0pt}
-\setlength\fboxrule{1pt}
-\fbox{
-\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagramStepDetector}
-}
-
-\end{figure}
-
 
 \section{Architecture of the Valens Step Detector}
 
@@ -184,5 +139,50 @@ handles sensor input during calibration. When the calibration time has ended, it
 \end{description}
  
 \end{description}
+\section{Class description and diagram}
+
+The class structures of the applications are relatively complex, as can be seen from the class diagrams in figures \ref{fig:DemoClassDiagram}, \ref{fig:CPClassDiagram} and \ref{fig:StepDetectClassDiagram}. As the class diagrams can be hard to read in the paper format, it is recommended to read the digital version on the application website\footnote{\url{http://valens.brennhe.it/\#documentation}}. The class diagrams are not the recommended way to understand the structure of the code, it would be better to consult the textual description above as well as the JavaDocs\footnote{\url{http://valens.brennhe.it/javadoc/}}.
+
+\begin{figure}[p]
+
+\caption{Class diagram for the demo application}
+\label{fig:DemoClassDiagram}
+
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}
+\fbox{
+\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagramDemonstration}
+}
+
+\end{figure}
+
+\begin{figure}[p]
+
+\caption{Class diagram of the content provider application}
+\label{fig:CPClassDiagrarm}
+
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}
+\fbox{
+\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagramContentProvider}
+}
+
+\end{figure}
+
+
+
+\begin{figure}[p]
+
+\caption{Class diagram for the step detector application}
+\label{fig:StepDetectClassDiagram}
+
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}
+\fbox{
+\includegraphics[width=1.2\textwidth, angle = 270]{Res/ClassDiagramStepDetector}
+}
+
+\end{figure}
+\input{translation}
 
 

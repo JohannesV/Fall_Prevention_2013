@@ -1,7 +1,7 @@
 \chapter{Testing}
 This chapter only touches the surface of general software testing, while focusing on methods, types and levels used in this project.
 \section{Levels, methods and types}
-Software testing is broken down into several levels, methods and types.
+Software testing is generally broken down into several levels, methods and types. This section will introduce general testing terminology.
 \subsection{Levels}
 Software testing has four levels that correspond to how far into the software development process the team has come. The first three test levels refer to the development process and the last level refers to completion, or after development.
 \begin{enumerate}
@@ -9,7 +9,7 @@ Software testing has four levels that correspond to how far into the software de
 \item Inspections refers to a peer review or code review process where a team of individuals read through the source code to reveal early and obvious bugs. An error or bug that is not very visible for the developer may be very visible to an inspector.
 \item Integration testing is the next step which takes groups of individual components to verify that they work together or to reveal faults in the integration.
 \item System testing is the last step of test in the development process where the complete system or software is tested to evaluate it's match to it's requirements.
-\item Acceptance testing is the last and highest level of testing where the system or software is tested to verify that it is acceptable for delivery. The test itself is usually Black Box Tests (see page \pageref{def:blackboxtesting}) to see if the customer will receive the desired and expected results.
+\item Acceptance testing is the last and highest level of testing where the system or software is tested to verify that it is acceptable for delivery. The test itself is usually Black Box Tests (see Section \ref{def:blackboxtesting}) to see if the customer will receive the desired and expected results.
 \end{enumerate}
 \subsection{Methods}
 The approach to software testing is called methods or techniques. Primarily there are two methods when testing software; black box testing, and white box testing.
@@ -27,7 +27,7 @@ Only some of the test types are mentioned in this chapter, though there are many
 \section{Plans and process}
 During the first period of development with the incremental process, test plans were not laid out due to the details of the process with no known end-results which would have added a lot of extra work redesigning testing plans after every customer meeting. After switching to agile development process testing got a lot more focus as described below.
 \subsection{Unit testing}
-Unit testing in the project was never done properly, nor properly documented. The method used was a form that adopted the essence of unit testing, and was done on-the-fly to verify that input correlated with output, and then removed. It was the most of the time done in-line and was not suited for reuse. Instead of heavy unit testing, it was partially replaced by Inspections.
+Unit testing in the project was never done properly, nor properly documented. The method used was a form that adopted the essence of unit testing, and was done on-the-fly to verify that input correlated with output, and then removed. Most of the time it was done in-line and was not suited for reuse. Instead of heavy unit testing, it was partially replaced by Inspections.
 \subsection{Inspections}
 Inspections done in this project falls under the category "Code review" where part of the team or individuals read blocks of code to ensure its quality and to find bugs. A single developer working on a block of code can often get "blind", saying that they do not see obvious mistakes. Code review by a team member can speed up the process of identifying these bugs and defects for the developer to fix. This method became one of the most important types of testing to fry bugs in this project.
 \subsection{Integration testing}
@@ -46,6 +46,6 @@ The tests done in this stage is all done in the visible part of software, or als
 \label{def:accTesting}
 The last level before handing over the final application to the customer, but tested in a production environment. The same tests were performed as in the system testing level and bugs, faults and defects were again noted to be fixed before rolling out a new version for testing. After no tests failed the application were considered stable and delivered to the customer.
 
-\input{InterviewSummary}
+
 \input{Testdata}
 \input{TestTable}
