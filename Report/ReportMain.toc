@@ -77,11 +77,11 @@
 \contentsline {section}{\numberline {9.3}Lessons learned about Research and Prestudies}{65}{section.9.3}
 \contentsline {section}{\numberline {9.4}Conflict handling}{66}{section.9.4}
 \contentsline {section}{\numberline {9.5}Further work}{66}{section.9.5}
-\contentsline {chapter}{\numberline {A}WBS}{70}{appendix.A}
-\contentsline {section}{\numberline {A.1}Previous WBS}{70}{section.A.1}
-\contentsline {chapter}{\numberline {B}Work summary}{78}{appendix.B}
-\contentsline {section}{\numberline {B.1}Sprint summaries}{78}{section.B.1}
-\contentsline {section}{\numberline {B.2}Meeting summaries}{81}{section.B.2}
-\contentsline {chapter}{\numberline {C}Apache License}{86}{appendix.C}
-\contentsline {chapter}{\numberline {D}Test results}{92}{appendix.D}
-\contentsline {chapter}{\numberline {E}Time-sheet}{95}{appendix.E}
+\contentsline {chapter}{Appendix \numberline {A}WBS}{70}{Appendix.a.A}
+\contentsline {section}{\numberline {A.1}Previous WBS}{70}{section.a.A.1}
+\contentsline {chapter}{Appendix \numberline {B}Work summary}{78}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Sprint summaries}{78}{section.a.B.1}
+\contentsline {section}{\numberline {B.2}Meeting summaries}{81}{section.a.B.2}
+\contentsline {chapter}{Appendix \numberline {C}Apache License}{86}{Appendix.a.C}
+\contentsline {chapter}{Appendix \numberline {D}Test results}{92}{Appendix.a.D}
+\contentsline {chapter}{Appendix \numberline {E}Time-sheet}{95}{Appendix.a.E}
