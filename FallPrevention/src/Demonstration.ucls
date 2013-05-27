@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" language="java" name="ntnu.stud.valens.demonstration.widget.WidgetProvider" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/widget/WidgetProvider.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="257" x="2501" y="287"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="ntnu.stud.valens.demonstration.NotificationBroadcastReciever" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/NotificationBroadcastReciever.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="197" x="786" y="-153"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="ntnu.stud.valens.demonstration.activity.EventList" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/EventList.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="234" x="1710" y="552"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="4" language="java" name="ntnu.stud.valens.demonstration.connectivity" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/connectivity" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="274" x="1079" y="943"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <package id="5" language="java" name="ntnu.stud.valens.demonstration.activity" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="246" x="725" y="552"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="6" language="java" name="ntnu.stud.valens.demonstration.activity.WriteName" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/WriteName.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="177" x="1811" y="4"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="ntnu.stud.valens.demonstration.connectivity.DatabaseContract.EventType" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/connectivity/DatabaseContract.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="209" x="1110" y="2080"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="ntnu.stud.valens.demonstration.activity.LaunchActivity" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/LaunchActivity.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="177" x="2009" y="-153"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="9" language="java" name="ntnu.stud.valens.demonstration.listadapters" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/listadapters" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="274" x="765" y="943"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <package id="10" language="java" name="ntnu.stud.valens.demonstration.datastructures" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/datastructures" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="291" x="744" y="1190"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="11" language="java" name="ntnu.stud.valens.demonstration.listadapters.EventListAdapter" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/listadapters/EventListAdapter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="233" x="1414" y="943"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="ntnu.stud.valens.demonstration.activity.MainScreen" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/MainScreen.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="230" x="2009" y="287"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="ntnu.stud.valens.demonstration.activity.Statistics" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/Statistics.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="351" width="278" x="2181" y="552"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="14" language="java" name="ntnu.stud.valens.demonstration.widget" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/widget" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="244" x="1668" y="287"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="15" language="java" name="ntnu.stud.valens.demonstration.listadapters.EditContactAdapter" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/listadapters/EditContactAdapter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="224" x="81" y="1190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="ntnu.stud.valens.demonstration.connectivity.ContentProviderHelper" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/connectivity/ContentProviderHelper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="254" x="2268" y="1190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="ntnu.stud.valens.demonstration.connectivity.DatabaseContract" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/connectivity/DatabaseContract.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="197" x="662" y="1797"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="ntnu.stud.valens.demonstration.activity.ClearHistory" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/ClearHistory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="204" x="142" y="943"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="ntnu.stud.valens.demonstration.Constants" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/Constants.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="175" x="2053" y="1190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="ntnu.stud.valens.demonstration.connectivity.DatabaseHelper" 
+    project="FallPrevention" file="/FallPrevention/src/ntnu/stud/valens/demonstration/connectivity/DatabaseHelper.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="567" width="232" x="367" y="1190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="ntnu.stud.valens.demonstration.activity.NewContact" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/NewContact.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="177" x="-159" y="552"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="ntnu.stud.valens.demonstration.activity.EventDetail" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/EventDetail.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="177" x="1750" y="943"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="ntnu.stud.valens.demonstration.activity.CreateContact" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/CreateContact.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="177" x="-138" y="943"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="ntnu.stud.valens.demonstration.connectivity.DatabaseContract.Event" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/connectivity/DatabaseContract.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="217" x="853" y="2080"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="ntnu.stud.valens.demonstration.connectivity.DatabaseContract.AlarmTypes" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/connectivity/DatabaseContract.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="209" x="604" y="2080"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="ntnu.stud.valens.demonstration.connectivity.DatabaseContract.Contact" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/connectivity/DatabaseContract.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="197" x="367" y="2080"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="27" language="java" name="ntnu.stud.valens.demonstration.datastructures.RiskStatus" 
+    project="FallPrevention" file="/FallPrevention/src/ntnu/stud/valens/demonstration/datastructures/RiskStatus.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="205" x="1969" y="1797"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="28" language="java" name="ntnu.stud.valens.demonstration.connectivity.AlarmManagerBroadcastReceiver" 
+    project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/connectivity/AlarmManagerBroadcastReceiver.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="217" x="2009" y="943"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="ntnu.stud.valens.demonstration.activity.ContactPerson" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/ContactPerson.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="177" x="81" y="4"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="ntnu.stud.valens.demonstration.activity.Related" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/Related.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="177" x="-117" y="287"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="ntnu.stud.valens.demonstration.datastructures.Contact" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/datastructures/Contact.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="205" x="-138" y="1797"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="ntnu.stud.valens.demonstration.datastructures.Event" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/datastructures/Event.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="205" x="1079" y="1797"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="33" language="java" name="ntnu.stud.valens.demonstration" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="203" x="1374" y="1190"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="34" language="java" name="ntnu.stud.valens.demonstration.activity.Settings" project="FallPrevention" 
+    file="/FallPrevention/src/ntnu/stud/valens/demonstration/activity/Settings.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="177" x="422" y="552"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <dependency id="35">    
+    <bendpoint x="1383" y="552"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <nesting id="36">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="24"/>  
+  </nesting>  
+  <dependency id="37">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="38">    
+    <bendpoint x="2573" y="552"/>    
+    <bendpoint x="2573" y="943"/>    
+    <bendpoint x="2573" y="1190"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="39">    
+    <bendpoint x="494" y="1797"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="40">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <dependency id="41">    
+    <bendpoint x="1978" y="552"/>    
+    <bendpoint x="1978" y="943"/>    
+    <bendpoint x="1978" y="1190"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <nesting id="42">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="7"/>  
+  </nesting>  
+  <dependency id="43">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="44">    
+    <bendpoint x="48" y="552"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="45">    
+    <bendpoint x="1088" y="1190"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="46">    
+    <bendpoint x="2531" y="552"/>    
+    <bendpoint x="2552" y="943"/>    
+    <bendpoint x="2552" y="1190"/>    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="47" name="status"/>      
+      <multiplicity id="48" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="49">    
+    <bendpoint x="566" y="943"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="50">    
+    <bendpoint x="2298" y="943"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="51">    
+    <bendpoint x="889" y="1797"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="52">    
+    <bendpoint x="2552" y="552"/>    
+    <bendpoint x="2531" y="943"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <association id="53">    
+    <bendpoint x="-169" y="943"/>    
+    <bendpoint x="-169" y="1190"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="54" name="contacts"/>      
+      <multiplicity id="55" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="56">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="57">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="58">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="59">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="60">    
+    <bendpoint x="608" y="943"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="61">    
+    <bendpoint x="2489" y="552"/>    
+    <bendpoint x="2489" y="943"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="62">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="63">    
+    <bendpoint x="1256" y="1190"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="64" name="events"/>      
+      <multiplicity id="65" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="66">    
+    <bendpoint x="629" y="943"/>    
+    <bendpoint x="629" y="1190"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="67">    
+    <bendpoint x="391" y="552"/>    
+    <bendpoint x="397" y="943"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="68">    
+    <bendpoint x="692" y="1190"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="69">    
+    <bendpoint x="2018" y="552"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="70">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="71">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="72">    
+    <bendpoint x="2018" y="4"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="73">    
+    <bendpoint x="692" y="943"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="74">    
+    <bendpoint x="1719" y="1190"/>    
+    <bendpoint x="1719" y="1797"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="75">    
+    <bendpoint x="69" y="943"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="76">    
+    <bendpoint x="1065" y="1190"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <nesting id="77">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="25"/>  
+  </nesting>  
+  <dependency id="78">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="79">    
+    <bendpoint x="-211" y="287"/>    
+    <bendpoint x="-211" y="552"/>    
+    <bendpoint x="-211" y="943"/>    
+    <bendpoint x="-211" y="1190"/>    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="80" name="contact"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="82">    
+    <bendpoint x="90" y="287"/>    
+    <bendpoint x="90" y="552"/>    
+    <bendpoint x="90" y="943"/>    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="83">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="84">    
+    <bendpoint x="671" y="552"/>    
+    <bendpoint x="587" y="943"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="85">    
+    <bendpoint x="1607" y="1190"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="86">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="87">    
+    <bendpoint x="1957" y="943"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="88">    
+    <bendpoint x="1698" y="943"/>    
+    <bendpoint x="1698" y="1190"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="89">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <association id="90">    
+    <bendpoint x="-190" y="552"/>    
+    <bendpoint x="-190" y="943"/>    
+    <bendpoint x="-190" y="1190"/>    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="91" name="contacts"/>      
+      <multiplicity id="92" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="93">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="26"/>  
+  </nesting>  
+  <dependency id="94">    
+    <bendpoint x="1740" y="1190"/>    
+    <bendpoint x="1740" y="1797"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="95">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="96">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="97">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="98">    
+    <bendpoint x="713" y="943"/>    
+    <bendpoint x="713" y="1190"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="99">    
+    <bendpoint x="629" y="552"/>    
+    <bendpoint x="545" y="943"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="100">    
+    <bendpoint x="370" y="287"/>    
+    <bendpoint x="370" y="552"/>    
+    <bendpoint x="376" y="943"/>    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="101">    
+    <bendpoint x="1677" y="552"/>    
+    <bendpoint x="1677" y="943"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="102">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="103">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="104">    
+    <bendpoint x="2510" y="552"/>    
+    <bendpoint x="2510" y="943"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="105">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="106">    
+    <bendpoint x="2129" y="552"/>    
+    <bendpoint x="2256" y="943"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="107">    
+    <bendpoint x="69" y="552"/>    
+    <bendpoint x="111" y="943"/>    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="108">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="109">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="110">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="111">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="112">    
+    <bendpoint x="376" y="1797"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="113">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="114">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="115">    
+    <bendpoint x="619" y="1797"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="116">    
+    <bendpoint x="-129" y="1190"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="117">    
+    <bendpoint x="671" y="943"/>    
+    <bendpoint x="671" y="1190"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="118">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="119">    
+    <bendpoint x="650" y="552"/>    
+    <bendpoint x="650" y="943"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="120">    
+    <bendpoint x="2150" y="552"/>    
+    <bendpoint x="2277" y="943"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="121">    
+    <bendpoint x="734" y="943"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="122">    
+    <bendpoint x="1383" y="943"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="123">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <association id="124">    
+    <bendpoint x="1719" y="943"/>    
+    <bendpoint x="1677" y="1190"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="125" name="events"/>      
+      <multiplicity id="126" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="127">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="128">    
+    <bendpoint x="1343" y="1190"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="129">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="130">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="131">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="132">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
