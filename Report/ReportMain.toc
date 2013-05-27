@@ -34,9 +34,9 @@
 \contentsline {section}{\numberline {4.6}Work Breakdown Structure}{29}{section.4.6}
 \contentsline {chapter}{\numberline {5}Tools}{31}{chapter.5}
 \contentsline {section}{\numberline {5.1}Github}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Android Developer Tools Bundle}{31}{section.5.2}
+\contentsline {section}{\numberline {5.2}Android Developer Tools Bundle}{32}{section.5.2}
 \contentsline {section}{\numberline {5.3}Trello}{32}{section.5.3}
-\contentsline {section}{\numberline {5.4}itslearning}{32}{section.5.4}
+\contentsline {section}{\numberline {5.4}itslearning}{34}{section.5.4}
 \contentsline {section}{\numberline {5.5}Email}{34}{section.5.5}
 \contentsline {section}{\numberline {5.6}LaTeX}{34}{section.5.6}
 \contentsline {chapter}{\numberline {6}Design and Architecture}{35}{chapter.6}
