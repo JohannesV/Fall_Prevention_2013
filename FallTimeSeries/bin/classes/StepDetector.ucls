@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" language="java" name="ntnu.stud.valens.stepdetector.calibration.CalibrationStartTask" 
+    project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/calibration/CalibrationStartTask.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="215" x="38" y="-22"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="2" language="java" name="ntnu.stud.valens.stepdetector" project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="193" x="274" y="-202"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <package id="3" language="java" name="ntnu.stud.valens.stepdetector.calibration" project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/calibration" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="255" x="722" y="-112"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="4" language="java" name="ntnu.stud.valens.stepdetector.StepMainServiceStarter" project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/StepMainServiceStarter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="174" x="527" y="-22"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="ntnu.stud.valens.stepdetector.Methods" project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/Methods.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="308" x="532" y="580"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="ntnu.stud.valens.stepdetector.Values" project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/Values.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="199" x="532" y="827"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="ntnu.stud.valens.stepdetector.LaunchActivity" project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/LaunchActivity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="173" x="314" y="-22"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="ntnu.stud.valens.stepdetector.calibration.CalibrationThread" 
+    project="FallTimeSeries" file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/calibration/CalibrationThread.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="209" x="23" y="225"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="ntnu.stud.valens.stepdetector.StepMainService" project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/StepMainService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="209" x="492" y="225"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="ntnu.stud.valens.stepdetector.DetectStepsThread" project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/DetectStepsThread.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="389" x="762" y="-22"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="ntnu.stud.valens.stepdetector.calibration.CalibrationActivity" 
+    project="FallTimeSeries" 
+    file="/FallTimeSeries/src/ntnu/stud/valens/stepdetector/calibration/CalibrationActivity.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="200" x="271" y="580"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <association id="12">    
+    <bendpoint x="262" y="225"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="13" name="c"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="17">    
+    <bendpoint x="501" y="580"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="18">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="19">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="20" name="activity"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="22">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="23">    
+    <bendpoint x="752" y="225"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="24">    
+    <bendpoint x="870" y="225"/>    
+    <bendpoint x="870" y="580"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="25">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="26">    
+    <bendpoint x="731" y="-22"/>    
+    <bendpoint x="731" y="225"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="28">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="29">    
+    <bendpoint x="304" y="225"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="30">    
+    <bendpoint x="1181" y="-22"/>    
+    <bendpoint x="1181" y="225"/>    
+    <bendpoint x="1181" y="580"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="31">    
+    <bendpoint x="283" y="-112"/>    
+    <bendpoint x="283" y="-22"/>    
+    <bendpoint x="283" y="225"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="32">    
+    <bendpoint x="240" y="580"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <association id="33">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="34" name="context"/>      
+      <multiplicity id="35" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="36">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="37">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

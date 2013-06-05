@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Licensed to UbiCollab.org under one or more contributor
+  license agreements.  See the NOTICE file distributed 
+  with this work for additional information regarding
+  copyright ownership. UbiCollab.org licenses this file
+  to you under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance
+  with the License. You may obtain a copy of the License at
+  
+      http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ntnu.stud.valens.demonstration"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:installLocation="internalOnly" >
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+    
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.permRead"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	
+	
+    <permission android:name="android.permission.permRead"/>
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Default" android:logo="@drawable/ic_launcher">
+        <activity
+            android:name="ntnu.stud.valens.demonstration.activity.LaunchActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ntnu.stud.valens.demonstration.activity.WriteName" >
+        </activity>
+        <activity
+            android:name="ntnu.stud.valens.demonstration.activity.MainScreen" >
+        </activity>
+        <activity
+            android:name="ntnu.stud.valens.demonstration.activity.EventList"
+            android:label="@string/title_activity_eventlist"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="ntnu.stud.valens.demonstration.activity.EventDetail"
+            android:label="@string/title_activity_eventdetail" >
+        </activity>
+        <activity
+            android:name="ntnu.stud.valens.demonstration.activity.Statistics"
+            android:label="@string/title_activity_statistics" >
+        </activity>
+        <activity
+            android:name="ntnu.stud.valens.demonstration.activity.Settings" >
+        </activity>
+        <activity
+            android:name="ntnu.stud.valens.demonstration.activity.Related"
+            android:label="@string/title_activity_related"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name="ntnu.stud.valens.demonstration.activity.ContactPerson"
+            android:label="@string/contact_person_activity">
+        </activity>
+        <activity 
+            android:name="ntnu.stud.valens.demonstration.activity.CreateContact"
+            android:label="@string/title_activity_create_contact"> 
+        </activity>
+        <activity 
+            android:name="ntnu.stud.valens.demonstration.activity.NewContact"
+            android:label="@string/new_contact_activity" >
+        </activity>
+		<receiver android:name="ntnu.stud.valens.demonstration.widget.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/awidget_provider"/>
+        </receiver>	
+        <receiver android:name=".service.NotificationBroadcastReceiver" android:process=":remote"> 
+       </receiver>
+		<receiver android:name="ntnu.stud.valens.demonstration.connectivity.AlarmManagerBroadcastReceiver">
+        </receiver>       
+    </application>
+</manifest>
